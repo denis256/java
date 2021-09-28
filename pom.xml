@@ -45,7 +45,7 @@
     <snakeyaml.version>1.29</snakeyaml.version>
     <slf4j.version>1.7.32</slf4j.version>
     <caffeine.version>2.9.2</caffeine.version>
-    <protobuf.version>3.17.3</protobuf.version>
+    <protobuf.version>3.18.0</protobuf.version>
     <junit.version>4.13</junit.version>
     <bucket4j.version>6.2.0</bucket4j.version>
     <bouncycastle.version>1.69</bouncycastle.version>
@@ -53,15 +53,15 @@
     <jsr305.version>3.0.2</jsr305.version>
     <okhttp3.version>4.9.1</okhttp3.version>
     <swagger-core.version>1.6.2</swagger-core.version>
-    <sundrio.version>0.50.0</sundrio.version>
+    <sundrio.version>0.50.2</sundrio.version>
     <gsonfire.version>1.8.5</gsonfire.version>
     <apache.commons.lang3.version>3.12.0</apache.commons.lang3.version>
     <apache.commons.collections4.version>4.4</apache.commons.collections4.version>
     <apache.commons.compress>1.21</apache.commons.compress>
     <apache.commons.io>2.11.0</apache.commons.io>
     <common.codec.version>1.15</common.codec.version>
-    <spring.boot.version>2.5.4</spring.boot.version>
-    <spring.version>5.3.9</spring.version>
+    <spring.boot.version>2.5.5</spring.boot.version>
+    <spring.version>5.3.10</spring.version>
     <prometheus.client.version>0.12.0</prometheus.client.version>
 
     <e2e.skip>true</e2e.skip>
@@ -234,7 +234,7 @@
       <dependency>
         <groupId>ch.qos.logback</groupId>
         <artifactId>logback-classic</artifactId>
-        <version>1.2.5</version>
+        <version>1.2.6</version>
         <scope>test</scope>
       </dependency>
       <dependency>
@@ -293,7 +293,7 @@
       <dependency>
         <groupId>org.assertj</groupId>
         <artifactId>assertj-core</artifactId>
-        <version>3.20.2</version>
+        <version>3.21.0</version>
         <scope>test</scope>
       </dependency>
 
@@ -325,7 +325,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>3.3.0</version>
+          <version>3.3.1</version>
           <configuration>
             <doclint>none</doclint>
           </configuration>
@@ -376,7 +376,7 @@
         <plugin>
           <groupId>org.codehaus.gmavenplus</groupId>
           <artifactId>gmavenplus-plugin</artifactId>
-          <version>1.12.1</version>
+          <version>1.13.0</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -423,7 +423,7 @@
       <plugin>
         <groupId>com.diffplug.spotless</groupId>
         <artifactId>spotless-maven-plugin</artifactId>
-        <version>2.12.3</version>
+        <version>2.13.1</version>
         <configuration>
           <formats>
             <!-- common settings -->
