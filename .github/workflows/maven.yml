@@ -14,43 +14,42 @@ jobs:
     runs-on: ubuntu-latest
     name: Verify Source Format
     steps:
-      - uses: actions/checkout@v2.3.5
+      - uses: actions/checkout@v2.4.0
       - name: Setup Java
         uses: actions/setup-java@v2
         with:
-          distribution: 'adopt'
+          distribution: 'temurin'
           java-version: 8.0.x
       - name: Verify Format and License
         run: mvn spotless:check
   build:
-    runs-on: ubuntu-latest
     name: Java ${{ matrix.java }} Maven Test
     strategy:
       matrix:
-        # test against latest update of each major Java version, as well as specific updates of LTS versions:
-        java: [ 8.0.x, 9.0.x, 10.0.x, 11.0.x, 12.0.x, 16.0.x ]
+        # Test against the LTS Java versions. TODO: add JDK18 when it becomes available.
+        java: [ 8.0.x, 11.0.x, 17.0.x ]
+        os: [ windows-latest, ubuntu-latest ]
+    runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v2.3.5
+      - uses: actions/checkout@v2.4.0
       - name: Setup Java
         uses: actions/setup-java@v2
         with:
-          distribution: 'adopt'
+          distribution: 'temurin'
           java-version: ${{ matrix.java }}
       - name: Cache local Maven repository
-        uses: actions/cache@v2.1.6
+        uses: actions/cache@v2.1.7
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ matrix.java }}-${{ hashFiles('pom.xml', '**/pom.xml') }}
-      - name: Buid with Maven
+      - name: Build with Maven
         run: |
-          sudo mvn clean test \
-            -q \
-            -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
+          mvn clean test -q -B --define=org.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
   build-graalvm:
     runs-on: ubuntu-latest
     name: GraalVM Maven Test
     steps:
-      - uses: actions/checkout@v2.3.5
+      - uses: actions/checkout@v2.4.0
       - uses: DeLaGuardo/setup-graalvm@48f2bf339ab7d35e31029b1822a213681fdfc42e
         with:
           graalvm-version: '19.3.0.java8'
@@ -60,7 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     name: End-to-End Test Against Real Cluster
     steps:
-      - uses: actions/checkout@v2.3.5
+      - uses: actions/checkout@v2.4.0
       - name: Create k8s Kind Cluster
         uses: helm/kind-action@v1.2.0
       - name: Run E2E with Maven
@@ -77,14 +76,14 @@ jobs:
     runs-on: ubuntu-latest
     name: Examples smoke test
     steps:
-      - uses: actions/checkout@v2.3.5
+      - uses: actions/checkout@v2.4.0
       - name: Setup Java
         uses: actions/setup-java@v2
         with:
-          distribution: 'adopt'
+          distribution: 'temurin'
           java-version: 11.0.x
       - name: Cache local Maven repository
-        uses: actions/cache@v2.1.6
+        uses: actions/cache@v2.1.7
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
@@ -128,7 +127,7 @@ jobs:
           - 5000:5000
     name: CRD Java Models Code Generation
     steps:
-      - uses: actions/checkout@v2.3.5
+      - uses: actions/checkout@v2.4.0
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:

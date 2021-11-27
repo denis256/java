@@ -140,7 +140,6 @@ public class ClientBuilder {
     if (kubeConfigPath == null) {
       return null;
     }
-
     final File kubeConfig = new File(kubeConfigPath);
     if (kubeConfig.exists()) {
       return kubeConfig;
@@ -277,6 +276,9 @@ public class ClientBuilder {
     final ClientBuilder builder = new ClientBuilder();
 
     String server = config.getServer();
+    if (server == null) {
+      throw new IllegalArgumentException("No server in kubeconfig");
+    }
     if (!server.contains("://")) {
       if (server.contains(":443")) {
         server = "https://" + server;
