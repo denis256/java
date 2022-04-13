@@ -6,20 +6,33 @@ on:
       - master
   workflow_dispatch: {}
 
+permissions:
+  contents: read
+
 jobs:
   verify:
     name: latest-images
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Java
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
           java-version: 8.0.x
+          server-id: ossrh
+          server-username: OSSRH_USERNAME
+          server-password: OSSRH_TOKEN
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
           gpg-passphrase: GPG_PASSPHRASE
+      - name: Assert Snapshot Version
+        run: |
+          ./mvnw clean install -Dmaven.test.skip=true
+          ./mvnw -q \
+            -Dexec.executable=echo \
+            -Dexec.args='${project.version}' \
+            exec:exec | perl -ne 'die unless m/.*-SNAPSHOT/'
       - name: Publish to Apache Maven Central
         run: ./mvnw deploy
         env:
