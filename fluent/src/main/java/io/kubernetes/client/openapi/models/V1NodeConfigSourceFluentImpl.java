@@ -12,80 +12,75 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+
 /** Generated */
-public class V1NodeConfigSourceFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1NodeConfigSourceFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1NodeConfigSourceFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1NodeConfigSourceFluentImpl<A extends V1NodeConfigSourceFluent<A>>
+    extends BaseFluent<A> implements V1NodeConfigSourceFluent<A> {
   public V1NodeConfigSourceFluentImpl() {}
 
-  public V1NodeConfigSourceFluentImpl(
-      io.kubernetes.client.openapi.models.V1NodeConfigSource instance) {
+  public V1NodeConfigSourceFluentImpl(V1NodeConfigSource instance) {
     this.withConfigMap(instance.getConfigMap());
   }
 
-  private io.kubernetes.client.openapi.models.V1ConfigMapNodeConfigSourceBuilder configMap;
+  private V1ConfigMapNodeConfigSourceBuilder configMap;
 
   /**
    * This method has been deprecated, please use method buildConfigMap instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ConfigMapNodeConfigSource getConfigMap() {
+  @Deprecated
+  public V1ConfigMapNodeConfigSource getConfigMap() {
     return this.configMap != null ? this.configMap.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1ConfigMapNodeConfigSource buildConfigMap() {
+  public V1ConfigMapNodeConfigSource buildConfigMap() {
     return this.configMap != null ? this.configMap.build() : null;
   }
 
-  public A withConfigMap(
-      io.kubernetes.client.openapi.models.V1ConfigMapNodeConfigSource configMap) {
+  public A withConfigMap(V1ConfigMapNodeConfigSource configMap) {
     _visitables.get("configMap").remove(this.configMap);
     if (configMap != null) {
-      this.configMap =
-          new io.kubernetes.client.openapi.models.V1ConfigMapNodeConfigSourceBuilder(configMap);
+      this.configMap = new V1ConfigMapNodeConfigSourceBuilder(configMap);
       _visitables.get("configMap").add(this.configMap);
+    } else {
+      this.configMap = null;
+      _visitables.get("configMap").remove(this.configMap);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasConfigMap() {
+  public Boolean hasConfigMap() {
     return this.configMap != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1NodeConfigSourceFluent.ConfigMapNested<A>
-      withNewConfigMap() {
-    return new io.kubernetes.client.openapi.models.V1NodeConfigSourceFluentImpl
-        .ConfigMapNestedImpl();
+  public V1NodeConfigSourceFluent.ConfigMapNested<A> withNewConfigMap() {
+    return new V1NodeConfigSourceFluentImpl.ConfigMapNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1NodeConfigSourceFluent.ConfigMapNested<A>
-      withNewConfigMapLike(io.kubernetes.client.openapi.models.V1ConfigMapNodeConfigSource item) {
-    return new io.kubernetes.client.openapi.models.V1NodeConfigSourceFluentImpl.ConfigMapNestedImpl(
-        item);
+  public V1NodeConfigSourceFluent.ConfigMapNested<A> withNewConfigMapLike(
+      V1ConfigMapNodeConfigSource item) {
+    return new V1NodeConfigSourceFluentImpl.ConfigMapNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1NodeConfigSourceFluent.ConfigMapNested<A>
-      editConfigMap() {
+  public V1NodeConfigSourceFluent.ConfigMapNested<A> editConfigMap() {
     return withNewConfigMapLike(getConfigMap());
   }
 
-  public io.kubernetes.client.openapi.models.V1NodeConfigSourceFluent.ConfigMapNested<A>
-      editOrNewConfigMap() {
+  public V1NodeConfigSourceFluent.ConfigMapNested<A> editOrNewConfigMap() {
     return withNewConfigMapLike(
-        getConfigMap() != null
-            ? getConfigMap()
-            : new io.kubernetes.client.openapi.models.V1ConfigMapNodeConfigSourceBuilder().build());
+        getConfigMap() != null ? getConfigMap() : new V1ConfigMapNodeConfigSourceBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1NodeConfigSourceFluent.ConfigMapNested<A>
-      editOrNewConfigMapLike(io.kubernetes.client.openapi.models.V1ConfigMapNodeConfigSource item) {
+  public V1NodeConfigSourceFluent.ConfigMapNested<A> editOrNewConfigMapLike(
+      V1ConfigMapNodeConfigSource item) {
     return withNewConfigMapLike(getConfigMap() != null ? getConfigMap() : item);
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1NodeConfigSourceFluentImpl that = (V1NodeConfigSourceFluentImpl) o;
@@ -98,22 +93,29 @@ public class V1NodeConfigSourceFluentImpl<
     return java.util.Objects.hash(configMap, super.hashCode());
   }
 
-  public class ConfigMapNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1ConfigMapNodeConfigSourceFluentImpl<
-          io.kubernetes.client.openapi.models.V1NodeConfigSourceFluent.ConfigMapNested<N>>
-      implements io.kubernetes.client.openapi.models.V1NodeConfigSourceFluent.ConfigMapNested<N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    ConfigMapNestedImpl(io.kubernetes.client.openapi.models.V1ConfigMapNodeConfigSource item) {
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1ConfigMapNodeConfigSourceBuilder(this, item);
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (configMap != null) {
+      sb.append("configMap:");
+      sb.append(configMap);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class ConfigMapNestedImpl<N>
+      extends V1ConfigMapNodeConfigSourceFluentImpl<V1NodeConfigSourceFluent.ConfigMapNested<N>>
+      implements V1NodeConfigSourceFluent.ConfigMapNested<N>, Nested<N> {
+    ConfigMapNestedImpl(V1ConfigMapNodeConfigSource item) {
+      this.builder = new V1ConfigMapNodeConfigSourceBuilder(this, item);
     }
 
     ConfigMapNestedImpl() {
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1ConfigMapNodeConfigSourceBuilder(this);
+      this.builder = new V1ConfigMapNodeConfigSourceBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1ConfigMapNodeConfigSourceBuilder builder;
+    V1ConfigMapNodeConfigSourceBuilder builder;
 
     public N and() {
       return (N) V1NodeConfigSourceFluentImpl.this.withConfigMap(builder.build());

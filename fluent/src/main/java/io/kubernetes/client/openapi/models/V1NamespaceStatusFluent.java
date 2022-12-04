@@ -12,97 +12,79 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-/** Generated */
-public interface V1NamespaceStatusFluent<
-        A extends io.kubernetes.client.openapi.models.V1NamespaceStatusFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public A addToConditions(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1NamespaceCondition item);
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
 
-  public A setToConditions(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1NamespaceCondition item);
+/** Generated */
+public interface V1NamespaceStatusFluent<A extends V1NamespaceStatusFluent<A>> extends Fluent<A> {
+  public A addToConditions(Integer index, V1NamespaceCondition item);
+
+  public A setToConditions(Integer index, V1NamespaceCondition item);
 
   public A addToConditions(io.kubernetes.client.openapi.models.V1NamespaceCondition... items);
 
-  public A addAllToConditions(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1NamespaceCondition> items);
+  public A addAllToConditions(Collection<V1NamespaceCondition> items);
 
   public A removeFromConditions(io.kubernetes.client.openapi.models.V1NamespaceCondition... items);
 
-  public A removeAllFromConditions(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1NamespaceCondition> items);
+  public A removeAllFromConditions(Collection<V1NamespaceCondition> items);
 
-  public A removeMatchingFromConditions(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1NamespaceConditionBuilder>
-          predicate);
+  public A removeMatchingFromConditions(Predicate<V1NamespaceConditionBuilder> predicate);
 
   /**
    * This method has been deprecated, please use method buildConditions instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V1NamespaceCondition> getConditions();
+  @Deprecated
+  public List<V1NamespaceCondition> getConditions();
 
-  public java.util.List<io.kubernetes.client.openapi.models.V1NamespaceCondition> buildConditions();
+  public List<V1NamespaceCondition> buildConditions();
 
-  public io.kubernetes.client.openapi.models.V1NamespaceCondition buildCondition(
-      java.lang.Integer index);
+  public V1NamespaceCondition buildCondition(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1NamespaceCondition buildFirstCondition();
+  public V1NamespaceCondition buildFirstCondition();
 
-  public io.kubernetes.client.openapi.models.V1NamespaceCondition buildLastCondition();
+  public V1NamespaceCondition buildLastCondition();
 
-  public io.kubernetes.client.openapi.models.V1NamespaceCondition buildMatchingCondition(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1NamespaceConditionBuilder>
-          predicate);
+  public V1NamespaceCondition buildMatchingCondition(
+      Predicate<V1NamespaceConditionBuilder> predicate);
 
-  public java.lang.Boolean hasMatchingCondition(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1NamespaceConditionBuilder>
-          predicate);
+  public Boolean hasMatchingCondition(Predicate<V1NamespaceConditionBuilder> predicate);
 
-  public A withConditions(
-      java.util.List<io.kubernetes.client.openapi.models.V1NamespaceCondition> conditions);
+  public A withConditions(List<V1NamespaceCondition> conditions);
 
   public A withConditions(io.kubernetes.client.openapi.models.V1NamespaceCondition... conditions);
 
-  public java.lang.Boolean hasConditions();
+  public Boolean hasConditions();
 
-  public io.kubernetes.client.openapi.models.V1NamespaceStatusFluent.ConditionsNested<A>
-      addNewCondition();
+  public V1NamespaceStatusFluent.ConditionsNested<A> addNewCondition();
 
-  public io.kubernetes.client.openapi.models.V1NamespaceStatusFluent.ConditionsNested<A>
-      addNewConditionLike(io.kubernetes.client.openapi.models.V1NamespaceCondition item);
+  public V1NamespaceStatusFluent.ConditionsNested<A> addNewConditionLike(V1NamespaceCondition item);
 
-  public io.kubernetes.client.openapi.models.V1NamespaceStatusFluent.ConditionsNested<A>
-      setNewConditionLike(
-          java.lang.Integer index, io.kubernetes.client.openapi.models.V1NamespaceCondition item);
+  public V1NamespaceStatusFluent.ConditionsNested<A> setNewConditionLike(
+      Integer index, V1NamespaceCondition item);
 
-  public io.kubernetes.client.openapi.models.V1NamespaceStatusFluent.ConditionsNested<A>
-      editCondition(java.lang.Integer index);
+  public V1NamespaceStatusFluent.ConditionsNested<A> editCondition(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1NamespaceStatusFluent.ConditionsNested<A>
-      editFirstCondition();
+  public V1NamespaceStatusFluent.ConditionsNested<A> editFirstCondition();
 
-  public io.kubernetes.client.openapi.models.V1NamespaceStatusFluent.ConditionsNested<A>
-      editLastCondition();
+  public V1NamespaceStatusFluent.ConditionsNested<A> editLastCondition();
 
-  public io.kubernetes.client.openapi.models.V1NamespaceStatusFluent.ConditionsNested<A>
-      editMatchingCondition(
-          java.util.function.Predicate<
-                  io.kubernetes.client.openapi.models.V1NamespaceConditionBuilder>
-              predicate);
+  public V1NamespaceStatusFluent.ConditionsNested<A> editMatchingCondition(
+      Predicate<V1NamespaceConditionBuilder> predicate);
 
-  public io.kubernetes.client.openapi.models.V1NamespaceStatus.PhaseEnum getPhase();
+  public String getPhase();
 
-  public A withPhase(io.kubernetes.client.openapi.models.V1NamespaceStatus.PhaseEnum phase);
+  public A withPhase(String phase);
 
-  public java.lang.Boolean hasPhase();
+  public Boolean hasPhase();
 
   public interface ConditionsNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1NamespaceConditionFluent<
-              io.kubernetes.client.openapi.models.V1NamespaceStatusFluent.ConditionsNested<N>> {
+      extends Nested<N>, V1NamespaceConditionFluent<V1NamespaceStatusFluent.ConditionsNested<N>> {
     public N and();
 
     public N endCondition();

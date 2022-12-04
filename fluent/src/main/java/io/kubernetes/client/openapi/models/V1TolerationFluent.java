@@ -12,45 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
-public interface V1TolerationFluent<
-        A extends io.kubernetes.client.openapi.models.V1TolerationFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public io.kubernetes.client.openapi.models.V1Toleration.EffectEnum getEffect();
+public interface V1TolerationFluent<A extends V1TolerationFluent<A>> extends Fluent<A> {
+  public String getEffect();
 
-  public A withEffect(io.kubernetes.client.openapi.models.V1Toleration.EffectEnum effect);
+  public A withEffect(String effect);
 
-  public java.lang.Boolean hasEffect();
+  public Boolean hasEffect();
 
-  public java.lang.String getKey();
+  public String getKey();
 
-  public A withKey(java.lang.String key);
+  public A withKey(String key);
 
-  public java.lang.Boolean hasKey();
+  public Boolean hasKey();
 
-  /** Method is deprecated. use withKey instead. */
-  @java.lang.Deprecated
-  public A withNewKey(java.lang.String original);
+  public String getOperator();
 
-  public io.kubernetes.client.openapi.models.V1Toleration.OperatorEnum getOperator();
+  public A withOperator(String operator);
 
-  public A withOperator(io.kubernetes.client.openapi.models.V1Toleration.OperatorEnum operator);
+  public Boolean hasOperator();
 
-  public java.lang.Boolean hasOperator();
+  public Long getTolerationSeconds();
 
-  public java.lang.Long getTolerationSeconds();
+  public A withTolerationSeconds(Long tolerationSeconds);
 
-  public A withTolerationSeconds(java.lang.Long tolerationSeconds);
+  public Boolean hasTolerationSeconds();
 
-  public java.lang.Boolean hasTolerationSeconds();
+  public String getValue();
 
-  public java.lang.String getValue();
+  public A withValue(String value);
 
-  public A withValue(java.lang.String value);
-
-  public java.lang.Boolean hasValue();
-
-  /** Method is deprecated. use withValue instead. */
-  @java.lang.Deprecated
-  public A withNewValue(java.lang.String original);
+  public Boolean hasValue();
 }

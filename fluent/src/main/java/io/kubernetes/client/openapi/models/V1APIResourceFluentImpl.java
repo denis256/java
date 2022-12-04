@@ -12,14 +12,19 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
+
 /** Generated */
-public class V1APIResourceFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1APIResourceFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1APIResourceFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1APIResourceFluentImpl<A extends V1APIResourceFluent<A>> extends BaseFluent<A>
+    implements V1APIResourceFluent<A> {
   public V1APIResourceFluentImpl() {}
 
-  public V1APIResourceFluentImpl(io.kubernetes.client.openapi.models.V1APIResource instance) {
+  public V1APIResourceFluentImpl(V1APIResource instance) {
     this.withCategories(instance.getCategories());
 
     this.withGroup(instance.getGroup());
@@ -41,28 +46,28 @@ public class V1APIResourceFluentImpl<
     this.withVersion(instance.getVersion());
   }
 
-  private java.util.List<java.lang.String> categories;
-  private java.lang.String group;
-  private java.lang.String kind;
-  private java.lang.String name;
-  private java.lang.Boolean namespaced;
-  private java.util.List<java.lang.String> shortNames;
-  private java.lang.String singularName;
-  private java.lang.String storageVersionHash;
-  private java.util.List<java.lang.String> verbs;
-  private java.lang.String version;
+  private List<String> categories;
+  private String group;
+  private String kind;
+  private String name;
+  private Boolean namespaced;
+  private List<String> shortNames;
+  private String singularName;
+  private String storageVersionHash;
+  private List<String> verbs;
+  private String version;
 
-  public A addToCategories(java.lang.Integer index, java.lang.String item) {
+  public A addToCategories(Integer index, String item) {
     if (this.categories == null) {
-      this.categories = new java.util.ArrayList<java.lang.String>();
+      this.categories = new ArrayList<String>();
     }
     this.categories.add(index, item);
     return (A) this;
   }
 
-  public A setToCategories(java.lang.Integer index, java.lang.String item) {
+  public A setToCategories(Integer index, String item) {
     if (this.categories == null) {
-      this.categories = new java.util.ArrayList<java.lang.String>();
+      this.categories = new ArrayList<String>();
     }
     this.categories.set(index, item);
     return (A) this;
@@ -70,26 +75,26 @@ public class V1APIResourceFluentImpl<
 
   public A addToCategories(java.lang.String... items) {
     if (this.categories == null) {
-      this.categories = new java.util.ArrayList<java.lang.String>();
+      this.categories = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.categories.add(item);
     }
     return (A) this;
   }
 
-  public A addAllToCategories(java.util.Collection<java.lang.String> items) {
+  public A addAllToCategories(Collection<String> items) {
     if (this.categories == null) {
-      this.categories = new java.util.ArrayList<java.lang.String>();
+      this.categories = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.categories.add(item);
     }
     return (A) this;
   }
 
   public A removeFromCategories(java.lang.String... items) {
-    for (java.lang.String item : items) {
+    for (String item : items) {
       if (this.categories != null) {
         this.categories.remove(item);
       }
@@ -97,8 +102,8 @@ public class V1APIResourceFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromCategories(java.util.Collection<java.lang.String> items) {
-    for (java.lang.String item : items) {
+  public A removeAllFromCategories(Collection<String> items) {
+    for (String item : items) {
       if (this.categories != null) {
         this.categories.remove(item);
       }
@@ -106,25 +111,24 @@ public class V1APIResourceFluentImpl<
     return (A) this;
   }
 
-  public java.util.List<java.lang.String> getCategories() {
+  public List<String> getCategories() {
     return this.categories;
   }
 
-  public java.lang.String getCategory(java.lang.Integer index) {
+  public String getCategory(Integer index) {
     return this.categories.get(index);
   }
 
-  public java.lang.String getFirstCategory() {
+  public String getFirstCategory() {
     return this.categories.get(0);
   }
 
-  public java.lang.String getLastCategory() {
+  public String getLastCategory() {
     return this.categories.get(categories.size() - 1);
   }
 
-  public java.lang.String getMatchingCategory(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : categories) {
+  public String getMatchingCategory(Predicate<String> predicate) {
+    for (String item : categories) {
       if (predicate.test(item)) {
         return item;
       }
@@ -132,9 +136,8 @@ public class V1APIResourceFluentImpl<
     return null;
   }
 
-  public java.lang.Boolean hasMatchingCategory(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : categories) {
+  public Boolean hasMatchingCategory(Predicate<String> predicate) {
+    for (String item : categories) {
       if (predicate.test(item)) {
         return true;
       }
@@ -142,10 +145,10 @@ public class V1APIResourceFluentImpl<
     return false;
   }
 
-  public A withCategories(java.util.List<java.lang.String> categories) {
+  public A withCategories(List<String> categories) {
     if (categories != null) {
-      this.categories = new java.util.ArrayList();
-      for (java.lang.String item : categories) {
+      this.categories = new ArrayList();
+      for (String item : categories) {
         this.addToCategories(item);
       }
     } else {
@@ -159,102 +162,80 @@ public class V1APIResourceFluentImpl<
       this.categories.clear();
     }
     if (categories != null) {
-      for (java.lang.String item : categories) {
+      for (String item : categories) {
         this.addToCategories(item);
       }
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasCategories() {
+  public Boolean hasCategories() {
     return categories != null && !categories.isEmpty();
   }
 
-  public A addNewCategory(java.lang.String original) {
-    return (A) addToCategories(new String(original));
-  }
-
-  public java.lang.String getGroup() {
+  public String getGroup() {
     return this.group;
   }
 
-  public A withGroup(java.lang.String group) {
+  public A withGroup(String group) {
     this.group = group;
     return (A) this;
   }
 
-  public java.lang.Boolean hasGroup() {
+  public Boolean hasGroup() {
     return this.group != null;
   }
 
-  /** Method is deprecated. use withGroup instead. */
-  @java.lang.Deprecated
-  public A withNewGroup(java.lang.String original) {
-    return (A) withGroup(new String(original));
-  }
-
-  public java.lang.String getKind() {
+  public String getKind() {
     return this.kind;
   }
 
-  public A withKind(java.lang.String kind) {
+  public A withKind(String kind) {
     this.kind = kind;
     return (A) this;
   }
 
-  public java.lang.Boolean hasKind() {
+  public Boolean hasKind() {
     return this.kind != null;
   }
 
-  /** Method is deprecated. use withKind instead. */
-  @java.lang.Deprecated
-  public A withNewKind(java.lang.String original) {
-    return (A) withKind(new String(original));
-  }
-
-  public java.lang.String getName() {
+  public String getName() {
     return this.name;
   }
 
-  public A withName(java.lang.String name) {
+  public A withName(String name) {
     this.name = name;
     return (A) this;
   }
 
-  public java.lang.Boolean hasName() {
+  public Boolean hasName() {
     return this.name != null;
   }
 
-  /** Method is deprecated. use withName instead. */
-  @java.lang.Deprecated
-  public A withNewName(java.lang.String original) {
-    return (A) withName(new String(original));
-  }
-
-  public java.lang.Boolean getNamespaced() {
+  public Boolean getNamespaced() {
     return this.namespaced;
   }
 
-  public A withNamespaced(java.lang.Boolean namespaced) {
+  public A withNamespaced(Boolean namespaced) {
     this.namespaced = namespaced;
     return (A) this;
   }
 
-  public java.lang.Boolean hasNamespaced() {
+  public Boolean hasNamespaced() {
     return this.namespaced != null;
   }
 
-  public A addToShortNames(java.lang.Integer index, java.lang.String item) {
+  public A addToShortNames(Integer index, String item) {
     if (this.shortNames == null) {
-      this.shortNames = new java.util.ArrayList<java.lang.String>();
+      this.shortNames = new ArrayList<String>();
     }
     this.shortNames.add(index, item);
     return (A) this;
   }
 
-  public A setToShortNames(java.lang.Integer index, java.lang.String item) {
+  public A setToShortNames(Integer index, String item) {
     if (this.shortNames == null) {
-      this.shortNames = new java.util.ArrayList<java.lang.String>();
+      this.shortNames = new ArrayList<String>();
     }
     this.shortNames.set(index, item);
     return (A) this;
@@ -262,26 +243,26 @@ public class V1APIResourceFluentImpl<
 
   public A addToShortNames(java.lang.String... items) {
     if (this.shortNames == null) {
-      this.shortNames = new java.util.ArrayList<java.lang.String>();
+      this.shortNames = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.shortNames.add(item);
     }
     return (A) this;
   }
 
-  public A addAllToShortNames(java.util.Collection<java.lang.String> items) {
+  public A addAllToShortNames(Collection<String> items) {
     if (this.shortNames == null) {
-      this.shortNames = new java.util.ArrayList<java.lang.String>();
+      this.shortNames = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.shortNames.add(item);
     }
     return (A) this;
   }
 
   public A removeFromShortNames(java.lang.String... items) {
-    for (java.lang.String item : items) {
+    for (String item : items) {
       if (this.shortNames != null) {
         this.shortNames.remove(item);
       }
@@ -289,8 +270,8 @@ public class V1APIResourceFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromShortNames(java.util.Collection<java.lang.String> items) {
-    for (java.lang.String item : items) {
+  public A removeAllFromShortNames(Collection<String> items) {
+    for (String item : items) {
       if (this.shortNames != null) {
         this.shortNames.remove(item);
       }
@@ -298,25 +279,24 @@ public class V1APIResourceFluentImpl<
     return (A) this;
   }
 
-  public java.util.List<java.lang.String> getShortNames() {
+  public List<String> getShortNames() {
     return this.shortNames;
   }
 
-  public java.lang.String getShortName(java.lang.Integer index) {
+  public String getShortName(Integer index) {
     return this.shortNames.get(index);
   }
 
-  public java.lang.String getFirstShortName() {
+  public String getFirstShortName() {
     return this.shortNames.get(0);
   }
 
-  public java.lang.String getLastShortName() {
+  public String getLastShortName() {
     return this.shortNames.get(shortNames.size() - 1);
   }
 
-  public java.lang.String getMatchingShortName(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : shortNames) {
+  public String getMatchingShortName(Predicate<String> predicate) {
+    for (String item : shortNames) {
       if (predicate.test(item)) {
         return item;
       }
@@ -324,9 +304,8 @@ public class V1APIResourceFluentImpl<
     return null;
   }
 
-  public java.lang.Boolean hasMatchingShortName(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : shortNames) {
+  public Boolean hasMatchingShortName(Predicate<String> predicate) {
+    for (String item : shortNames) {
       if (predicate.test(item)) {
         return true;
       }
@@ -334,10 +313,10 @@ public class V1APIResourceFluentImpl<
     return false;
   }
 
-  public A withShortNames(java.util.List<java.lang.String> shortNames) {
+  public A withShortNames(List<String> shortNames) {
     if (shortNames != null) {
-      this.shortNames = new java.util.ArrayList();
-      for (java.lang.String item : shortNames) {
+      this.shortNames = new ArrayList();
+      for (String item : shortNames) {
         this.addToShortNames(item);
       }
     } else {
@@ -351,70 +330,54 @@ public class V1APIResourceFluentImpl<
       this.shortNames.clear();
     }
     if (shortNames != null) {
-      for (java.lang.String item : shortNames) {
+      for (String item : shortNames) {
         this.addToShortNames(item);
       }
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasShortNames() {
+  public Boolean hasShortNames() {
     return shortNames != null && !shortNames.isEmpty();
   }
 
-  public A addNewShortName(java.lang.String original) {
-    return (A) addToShortNames(new String(original));
-  }
-
-  public java.lang.String getSingularName() {
+  public String getSingularName() {
     return this.singularName;
   }
 
-  public A withSingularName(java.lang.String singularName) {
+  public A withSingularName(String singularName) {
     this.singularName = singularName;
     return (A) this;
   }
 
-  public java.lang.Boolean hasSingularName() {
+  public Boolean hasSingularName() {
     return this.singularName != null;
   }
 
-  /** Method is deprecated. use withSingularName instead. */
-  @java.lang.Deprecated
-  public A withNewSingularName(java.lang.String original) {
-    return (A) withSingularName(new String(original));
-  }
-
-  public java.lang.String getStorageVersionHash() {
+  public String getStorageVersionHash() {
     return this.storageVersionHash;
   }
 
-  public A withStorageVersionHash(java.lang.String storageVersionHash) {
+  public A withStorageVersionHash(String storageVersionHash) {
     this.storageVersionHash = storageVersionHash;
     return (A) this;
   }
 
-  public java.lang.Boolean hasStorageVersionHash() {
+  public Boolean hasStorageVersionHash() {
     return this.storageVersionHash != null;
   }
 
-  /** Method is deprecated. use withStorageVersionHash instead. */
-  @java.lang.Deprecated
-  public A withNewStorageVersionHash(java.lang.String original) {
-    return (A) withStorageVersionHash(new String(original));
-  }
-
-  public A addToVerbs(java.lang.Integer index, java.lang.String item) {
+  public A addToVerbs(Integer index, String item) {
     if (this.verbs == null) {
-      this.verbs = new java.util.ArrayList<java.lang.String>();
+      this.verbs = new ArrayList<String>();
     }
     this.verbs.add(index, item);
     return (A) this;
   }
 
-  public A setToVerbs(java.lang.Integer index, java.lang.String item) {
+  public A setToVerbs(Integer index, String item) {
     if (this.verbs == null) {
-      this.verbs = new java.util.ArrayList<java.lang.String>();
+      this.verbs = new ArrayList<String>();
     }
     this.verbs.set(index, item);
     return (A) this;
@@ -422,26 +385,26 @@ public class V1APIResourceFluentImpl<
 
   public A addToVerbs(java.lang.String... items) {
     if (this.verbs == null) {
-      this.verbs = new java.util.ArrayList<java.lang.String>();
+      this.verbs = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.verbs.add(item);
     }
     return (A) this;
   }
 
-  public A addAllToVerbs(java.util.Collection<java.lang.String> items) {
+  public A addAllToVerbs(Collection<String> items) {
     if (this.verbs == null) {
-      this.verbs = new java.util.ArrayList<java.lang.String>();
+      this.verbs = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.verbs.add(item);
     }
     return (A) this;
   }
 
   public A removeFromVerbs(java.lang.String... items) {
-    for (java.lang.String item : items) {
+    for (String item : items) {
       if (this.verbs != null) {
         this.verbs.remove(item);
       }
@@ -449,8 +412,8 @@ public class V1APIResourceFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromVerbs(java.util.Collection<java.lang.String> items) {
-    for (java.lang.String item : items) {
+  public A removeAllFromVerbs(Collection<String> items) {
+    for (String item : items) {
       if (this.verbs != null) {
         this.verbs.remove(item);
       }
@@ -458,25 +421,24 @@ public class V1APIResourceFluentImpl<
     return (A) this;
   }
 
-  public java.util.List<java.lang.String> getVerbs() {
+  public List<String> getVerbs() {
     return this.verbs;
   }
 
-  public java.lang.String getVerb(java.lang.Integer index) {
+  public String getVerb(Integer index) {
     return this.verbs.get(index);
   }
 
-  public java.lang.String getFirstVerb() {
+  public String getFirstVerb() {
     return this.verbs.get(0);
   }
 
-  public java.lang.String getLastVerb() {
+  public String getLastVerb() {
     return this.verbs.get(verbs.size() - 1);
   }
 
-  public java.lang.String getMatchingVerb(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : verbs) {
+  public String getMatchingVerb(Predicate<String> predicate) {
+    for (String item : verbs) {
       if (predicate.test(item)) {
         return item;
       }
@@ -484,9 +446,8 @@ public class V1APIResourceFluentImpl<
     return null;
   }
 
-  public java.lang.Boolean hasMatchingVerb(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : verbs) {
+  public Boolean hasMatchingVerb(Predicate<String> predicate) {
+    for (String item : verbs) {
       if (predicate.test(item)) {
         return true;
       }
@@ -494,10 +455,10 @@ public class V1APIResourceFluentImpl<
     return false;
   }
 
-  public A withVerbs(java.util.List<java.lang.String> verbs) {
+  public A withVerbs(List<String> verbs) {
     if (verbs != null) {
-      this.verbs = new java.util.ArrayList();
-      for (java.lang.String item : verbs) {
+      this.verbs = new ArrayList();
+      for (String item : verbs) {
         this.addToVerbs(item);
       }
     } else {
@@ -511,41 +472,31 @@ public class V1APIResourceFluentImpl<
       this.verbs.clear();
     }
     if (verbs != null) {
-      for (java.lang.String item : verbs) {
+      for (String item : verbs) {
         this.addToVerbs(item);
       }
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasVerbs() {
+  public Boolean hasVerbs() {
     return verbs != null && !verbs.isEmpty();
   }
 
-  public A addNewVerb(java.lang.String original) {
-    return (A) addToVerbs(new String(original));
-  }
-
-  public java.lang.String getVersion() {
+  public String getVersion() {
     return this.version;
   }
 
-  public A withVersion(java.lang.String version) {
+  public A withVersion(String version) {
     this.version = version;
     return (A) this;
   }
 
-  public java.lang.Boolean hasVersion() {
+  public Boolean hasVersion() {
     return this.version != null;
   }
 
-  /** Method is deprecated. use withVersion instead. */
-  @java.lang.Deprecated
-  public A withNewVersion(java.lang.String original) {
-    return (A) withVersion(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1APIResourceFluentImpl that = (V1APIResourceFluentImpl) o;
@@ -581,5 +532,56 @@ public class V1APIResourceFluentImpl<
         verbs,
         version,
         super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (categories != null && !categories.isEmpty()) {
+      sb.append("categories:");
+      sb.append(categories + ",");
+    }
+    if (group != null) {
+      sb.append("group:");
+      sb.append(group + ",");
+    }
+    if (kind != null) {
+      sb.append("kind:");
+      sb.append(kind + ",");
+    }
+    if (name != null) {
+      sb.append("name:");
+      sb.append(name + ",");
+    }
+    if (namespaced != null) {
+      sb.append("namespaced:");
+      sb.append(namespaced + ",");
+    }
+    if (shortNames != null && !shortNames.isEmpty()) {
+      sb.append("shortNames:");
+      sb.append(shortNames + ",");
+    }
+    if (singularName != null) {
+      sb.append("singularName:");
+      sb.append(singularName + ",");
+    }
+    if (storageVersionHash != null) {
+      sb.append("storageVersionHash:");
+      sb.append(storageVersionHash + ",");
+    }
+    if (verbs != null && !verbs.isEmpty()) {
+      sb.append("verbs:");
+      sb.append(verbs + ",");
+    }
+    if (version != null) {
+      sb.append("version:");
+      sb.append(version);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  public A withNamespaced() {
+    return withNamespaced(true);
   }
 }

@@ -12,61 +12,50 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1AttachedVolumeFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1AttachedVolumeFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1AttachedVolumeFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1AttachedVolumeFluentImpl<A extends V1AttachedVolumeFluent<A>> extends BaseFluent<A>
+    implements V1AttachedVolumeFluent<A> {
   public V1AttachedVolumeFluentImpl() {}
 
-  public V1AttachedVolumeFluentImpl(io.kubernetes.client.openapi.models.V1AttachedVolume instance) {
+  public V1AttachedVolumeFluentImpl(V1AttachedVolume instance) {
     this.withDevicePath(instance.getDevicePath());
 
     this.withName(instance.getName());
   }
 
-  private java.lang.String devicePath;
-  private java.lang.String name;
+  private String devicePath;
+  private String name;
 
-  public java.lang.String getDevicePath() {
+  public String getDevicePath() {
     return this.devicePath;
   }
 
-  public A withDevicePath(java.lang.String devicePath) {
+  public A withDevicePath(String devicePath) {
     this.devicePath = devicePath;
     return (A) this;
   }
 
-  public java.lang.Boolean hasDevicePath() {
+  public Boolean hasDevicePath() {
     return this.devicePath != null;
   }
 
-  /** Method is deprecated. use withDevicePath instead. */
-  @java.lang.Deprecated
-  public A withNewDevicePath(java.lang.String original) {
-    return (A) withDevicePath(new String(original));
-  }
-
-  public java.lang.String getName() {
+  public String getName() {
     return this.name;
   }
 
-  public A withName(java.lang.String name) {
+  public A withName(String name) {
     this.name = name;
     return (A) this;
   }
 
-  public java.lang.Boolean hasName() {
+  public Boolean hasName() {
     return this.name != null;
   }
 
-  /** Method is deprecated. use withName instead. */
-  @java.lang.Deprecated
-  public A withNewName(java.lang.String original) {
-    return (A) withName(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1AttachedVolumeFluentImpl that = (V1AttachedVolumeFluentImpl) o;
@@ -78,5 +67,20 @@ public class V1AttachedVolumeFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(devicePath, name, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (devicePath != null) {
+      sb.append("devicePath:");
+      sb.append(devicePath + ",");
+    }
+    if (name != null) {
+      sb.append("name:");
+      sb.append(name);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

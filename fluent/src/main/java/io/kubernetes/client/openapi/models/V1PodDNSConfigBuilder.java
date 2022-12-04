@@ -12,40 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1PodDNSConfigBuilder
-    extends io.kubernetes.client.openapi.models.V1PodDNSConfigFluentImpl<
-        io.kubernetes.client.openapi.models.V1PodDNSConfigBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1PodDNSConfig,
-        io.kubernetes.client.openapi.models.V1PodDNSConfigBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1PodDNSConfigBuilder extends V1PodDNSConfigFluentImpl<V1PodDNSConfigBuilder>
+    implements VisitableBuilder<V1PodDNSConfig, V1PodDNSConfigBuilder> {
   public V1PodDNSConfigBuilder() {
     this(false);
   }
 
-  public V1PodDNSConfigBuilder(java.lang.Boolean validationEnabled) {
+  public V1PodDNSConfigBuilder(Boolean validationEnabled) {
     this(new V1PodDNSConfig(), validationEnabled);
   }
 
-  public V1PodDNSConfigBuilder(io.kubernetes.client.openapi.models.V1PodDNSConfigFluent<?> fluent) {
+  public V1PodDNSConfigBuilder(V1PodDNSConfigFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1PodDNSConfigBuilder(
-      io.kubernetes.client.openapi.models.V1PodDNSConfigFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1PodDNSConfigBuilder(V1PodDNSConfigFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1PodDNSConfig(), validationEnabled);
   }
 
-  public V1PodDNSConfigBuilder(
-      io.kubernetes.client.openapi.models.V1PodDNSConfigFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1PodDNSConfig instance) {
+  public V1PodDNSConfigBuilder(V1PodDNSConfigFluent<?> fluent, V1PodDNSConfig instance) {
     this(fluent, instance, false);
   }
 
   public V1PodDNSConfigBuilder(
-      io.kubernetes.client.openapi.models.V1PodDNSConfigFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1PodDNSConfig instance,
-      java.lang.Boolean validationEnabled) {
+      V1PodDNSConfigFluent<?> fluent, V1PodDNSConfig instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withNameservers(instance.getNameservers());
 
@@ -56,13 +48,11 @@ public class V1PodDNSConfigBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1PodDNSConfigBuilder(io.kubernetes.client.openapi.models.V1PodDNSConfig instance) {
+  public V1PodDNSConfigBuilder(V1PodDNSConfig instance) {
     this(instance, false);
   }
 
-  public V1PodDNSConfigBuilder(
-      io.kubernetes.client.openapi.models.V1PodDNSConfig instance,
-      java.lang.Boolean validationEnabled) {
+  public V1PodDNSConfigBuilder(V1PodDNSConfig instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withNameservers(instance.getNameservers());
 
@@ -73,33 +63,14 @@ public class V1PodDNSConfigBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1PodDNSConfigFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1PodDNSConfigFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1PodDNSConfig build() {
+  public V1PodDNSConfig build() {
     V1PodDNSConfig buildable = new V1PodDNSConfig();
     buildable.setNameservers(fluent.getNameservers());
     buildable.setOptions(fluent.getOptions());
     buildable.setSearches(fluent.getSearches());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1PodDNSConfigBuilder that = (V1PodDNSConfigBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

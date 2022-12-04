@@ -12,42 +12,31 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
-public interface V1ListMetaFluent<A extends io.kubernetes.client.openapi.models.V1ListMetaFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getContinue();
+public interface V1ListMetaFluent<A extends V1ListMetaFluent<A>> extends Fluent<A> {
+  public String getContinue();
 
-  public A withContinue(java.lang.String _continue);
+  public A withContinue(String _continue);
 
-  public java.lang.Boolean hasContinue();
+  public Boolean hasContinue();
 
-  /** Method is deprecated. use withContinue instead. */
-  @java.lang.Deprecated
-  public A withNewContinue(java.lang.String original);
+  public Long getRemainingItemCount();
 
-  public java.lang.Long getRemainingItemCount();
+  public A withRemainingItemCount(Long remainingItemCount);
 
-  public A withRemainingItemCount(java.lang.Long remainingItemCount);
+  public Boolean hasRemainingItemCount();
 
-  public java.lang.Boolean hasRemainingItemCount();
+  public String getResourceVersion();
 
-  public java.lang.String getResourceVersion();
+  public A withResourceVersion(String resourceVersion);
 
-  public A withResourceVersion(java.lang.String resourceVersion);
+  public Boolean hasResourceVersion();
 
-  public java.lang.Boolean hasResourceVersion();
+  public String getSelfLink();
 
-  /** Method is deprecated. use withResourceVersion instead. */
-  @java.lang.Deprecated
-  public A withNewResourceVersion(java.lang.String original);
+  public A withSelfLink(String selfLink);
 
-  public java.lang.String getSelfLink();
-
-  public A withSelfLink(java.lang.String selfLink);
-
-  public java.lang.Boolean hasSelfLink();
-
-  /** Method is deprecated. use withSelfLink instead. */
-  @java.lang.Deprecated
-  public A withNewSelfLink(java.lang.String original);
+  public Boolean hasSelfLink();
 }

@@ -1,5 +1,5 @@
 /*
-Copyright 2021 The Kubernetes Authors.
+Copyright 2022 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -22,7 +22,7 @@ import java.util.Objects;
 @ApiModel(description = "ContainerStateTerminated is a terminated state of a container.")
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    date = "2021-12-10T19:11:23.904Z[Etc/UTC]")
+    date = "2022-09-15T17:00:37.921Z[Etc/UTC]")
 public class V1ContainerStateTerminated {
   public static final String SERIALIZED_NAME_CONTAINER_I_D = "containerID";
 
@@ -66,12 +66,12 @@ public class V1ContainerStateTerminated {
   }
 
   /**
-   * Container&#39;s ID in the format &#39;docker://&lt;container_id&gt;&#39;
+   * Container&#39;s ID in the format &#39;&lt;type&gt;://&lt;container_id&gt;&#39;
    *
    * @return containerID
    */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Container's ID in the format 'docker://<container_id>'")
+  @ApiModelProperty(value = "Container's ID in the format '<type>://<container_id>'")
   public String getContainerID() {
     return containerID;
   }

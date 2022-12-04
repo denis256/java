@@ -12,13 +12,26 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.custom.IntOrString;
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
 public interface V1RollingUpdateStatefulSetStrategyFluent<
-        A extends io.kubernetes.client.openapi.models.V1RollingUpdateStatefulSetStrategyFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.Integer getPartition();
+        A extends V1RollingUpdateStatefulSetStrategyFluent<A>>
+    extends Fluent<A> {
+  public IntOrString getMaxUnavailable();
 
-  public A withPartition(java.lang.Integer partition);
+  public A withMaxUnavailable(IntOrString maxUnavailable);
 
-  public java.lang.Boolean hasPartition();
+  public Boolean hasMaxUnavailable();
+
+  public A withNewMaxUnavailable(int value);
+
+  public A withNewMaxUnavailable(String value);
+
+  public Integer getPartition();
+
+  public A withPartition(Integer partition);
+
+  public Boolean hasPartition();
 }

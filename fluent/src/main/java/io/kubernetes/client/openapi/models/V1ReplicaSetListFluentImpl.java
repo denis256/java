@@ -12,17 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Predicate;
 
 /** Generated */
-public class V1ReplicaSetListFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1ReplicaSetListFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1ReplicaSetListFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1ReplicaSetListFluentImpl<A extends V1ReplicaSetListFluent<A>> extends BaseFluent<A>
+    implements V1ReplicaSetListFluent<A> {
   public V1ReplicaSetListFluentImpl() {}
 
-  public V1ReplicaSetListFluentImpl(io.kubernetes.client.openapi.models.V1ReplicaSetList instance) {
+  public V1ReplicaSetListFluentImpl(V1ReplicaSetList instance) {
     this.withApiVersion(instance.getApiVersion());
 
     this.withItems(instance.getItems());
@@ -32,51 +36,39 @@ public class V1ReplicaSetListFluentImpl<
     this.withMetadata(instance.getMetadata());
   }
 
-  private java.lang.String apiVersion;
-  private java.util.ArrayList<io.kubernetes.client.openapi.models.V1ReplicaSetBuilder> items;
-  private java.lang.String kind;
-  private io.kubernetes.client.openapi.models.V1ListMetaBuilder metadata;
+  private String apiVersion;
+  private ArrayList<V1ReplicaSetBuilder> items;
+  private String kind;
+  private V1ListMetaBuilder metadata;
 
-  public java.lang.String getApiVersion() {
+  public String getApiVersion() {
     return this.apiVersion;
   }
 
-  public A withApiVersion(java.lang.String apiVersion) {
+  public A withApiVersion(String apiVersion) {
     this.apiVersion = apiVersion;
     return (A) this;
   }
 
-  public java.lang.Boolean hasApiVersion() {
+  public Boolean hasApiVersion() {
     return this.apiVersion != null;
   }
 
-  /** Method is deprecated. use withApiVersion instead. */
-  @java.lang.Deprecated
-  public A withNewApiVersion(java.lang.String original) {
-    return (A) withApiVersion(new String(original));
-  }
-
-  public A addToItems(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1ReplicaSet item) {
+  public A addToItems(Integer index, V1ReplicaSet item) {
     if (this.items == null) {
-      this.items =
-          new java.util.ArrayList<io.kubernetes.client.openapi.models.V1ReplicaSetBuilder>();
+      this.items = new ArrayList<V1ReplicaSetBuilder>();
     }
-    io.kubernetes.client.openapi.models.V1ReplicaSetBuilder builder =
-        new io.kubernetes.client.openapi.models.V1ReplicaSetBuilder(item);
+    V1ReplicaSetBuilder builder = new V1ReplicaSetBuilder(item);
     _visitables.get("items").add(index >= 0 ? index : _visitables.get("items").size(), builder);
     this.items.add(index >= 0 ? index : items.size(), builder);
     return (A) this;
   }
 
-  public A setToItems(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1ReplicaSet item) {
+  public A setToItems(Integer index, V1ReplicaSet item) {
     if (this.items == null) {
-      this.items =
-          new java.util.ArrayList<io.kubernetes.client.openapi.models.V1ReplicaSetBuilder>();
+      this.items = new ArrayList<V1ReplicaSetBuilder>();
     }
-    io.kubernetes.client.openapi.models.V1ReplicaSetBuilder builder =
-        new io.kubernetes.client.openapi.models.V1ReplicaSetBuilder(item);
+    V1ReplicaSetBuilder builder = new V1ReplicaSetBuilder(item);
     if (index < 0 || index >= _visitables.get("items").size()) {
       _visitables.get("items").add(builder);
     } else {
@@ -92,27 +84,22 @@ public class V1ReplicaSetListFluentImpl<
 
   public A addToItems(io.kubernetes.client.openapi.models.V1ReplicaSet... items) {
     if (this.items == null) {
-      this.items =
-          new java.util.ArrayList<io.kubernetes.client.openapi.models.V1ReplicaSetBuilder>();
+      this.items = new ArrayList<V1ReplicaSetBuilder>();
     }
-    for (io.kubernetes.client.openapi.models.V1ReplicaSet item : items) {
-      io.kubernetes.client.openapi.models.V1ReplicaSetBuilder builder =
-          new io.kubernetes.client.openapi.models.V1ReplicaSetBuilder(item);
+    for (V1ReplicaSet item : items) {
+      V1ReplicaSetBuilder builder = new V1ReplicaSetBuilder(item);
       _visitables.get("items").add(builder);
       this.items.add(builder);
     }
     return (A) this;
   }
 
-  public A addAllToItems(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1ReplicaSet> items) {
+  public A addAllToItems(Collection<V1ReplicaSet> items) {
     if (this.items == null) {
-      this.items =
-          new java.util.ArrayList<io.kubernetes.client.openapi.models.V1ReplicaSetBuilder>();
+      this.items = new ArrayList<V1ReplicaSetBuilder>();
     }
-    for (io.kubernetes.client.openapi.models.V1ReplicaSet item : items) {
-      io.kubernetes.client.openapi.models.V1ReplicaSetBuilder builder =
-          new io.kubernetes.client.openapi.models.V1ReplicaSetBuilder(item);
+    for (V1ReplicaSet item : items) {
+      V1ReplicaSetBuilder builder = new V1ReplicaSetBuilder(item);
       _visitables.get("items").add(builder);
       this.items.add(builder);
     }
@@ -120,9 +107,8 @@ public class V1ReplicaSetListFluentImpl<
   }
 
   public A removeFromItems(io.kubernetes.client.openapi.models.V1ReplicaSet... items) {
-    for (io.kubernetes.client.openapi.models.V1ReplicaSet item : items) {
-      io.kubernetes.client.openapi.models.V1ReplicaSetBuilder builder =
-          new io.kubernetes.client.openapi.models.V1ReplicaSetBuilder(item);
+    for (V1ReplicaSet item : items) {
+      V1ReplicaSetBuilder builder = new V1ReplicaSetBuilder(item);
       _visitables.get("items").remove(builder);
       if (this.items != null) {
         this.items.remove(builder);
@@ -131,11 +117,9 @@ public class V1ReplicaSetListFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromItems(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1ReplicaSet> items) {
-    for (io.kubernetes.client.openapi.models.V1ReplicaSet item : items) {
-      io.kubernetes.client.openapi.models.V1ReplicaSetBuilder builder =
-          new io.kubernetes.client.openapi.models.V1ReplicaSetBuilder(item);
+  public A removeAllFromItems(Collection<V1ReplicaSet> items) {
+    for (V1ReplicaSet item : items) {
+      V1ReplicaSetBuilder builder = new V1ReplicaSetBuilder(item);
       _visitables.get("items").remove(builder);
       if (this.items != null) {
         this.items.remove(builder);
@@ -144,14 +128,12 @@ public class V1ReplicaSetListFluentImpl<
     return (A) this;
   }
 
-  public A removeMatchingFromItems(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1ReplicaSetBuilder>
-          predicate) {
+  public A removeMatchingFromItems(Predicate<V1ReplicaSetBuilder> predicate) {
     if (items == null) return (A) this;
-    final Iterator<io.kubernetes.client.openapi.models.V1ReplicaSetBuilder> each = items.iterator();
+    final Iterator<V1ReplicaSetBuilder> each = items.iterator();
     final List visitables = _visitables.get("items");
     while (each.hasNext()) {
-      io.kubernetes.client.openapi.models.V1ReplicaSetBuilder builder = each.next();
+      V1ReplicaSetBuilder builder = each.next();
       if (predicate.test(builder)) {
         visitables.remove(builder);
         each.remove();
@@ -165,31 +147,29 @@ public class V1ReplicaSetListFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V1ReplicaSet> getItems() {
+  @Deprecated
+  public List<V1ReplicaSet> getItems() {
     return items != null ? build(items) : null;
   }
 
-  public java.util.List<io.kubernetes.client.openapi.models.V1ReplicaSet> buildItems() {
+  public List<V1ReplicaSet> buildItems() {
     return items != null ? build(items) : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1ReplicaSet buildItem(java.lang.Integer index) {
+  public V1ReplicaSet buildItem(Integer index) {
     return this.items.get(index).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1ReplicaSet buildFirstItem() {
+  public V1ReplicaSet buildFirstItem() {
     return this.items.get(0).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1ReplicaSet buildLastItem() {
+  public V1ReplicaSet buildLastItem() {
     return this.items.get(items.size() - 1).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1ReplicaSet buildMatchingItem(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1ReplicaSetBuilder>
-          predicate) {
-    for (io.kubernetes.client.openapi.models.V1ReplicaSetBuilder item : items) {
+  public V1ReplicaSet buildMatchingItem(Predicate<V1ReplicaSetBuilder> predicate) {
+    for (V1ReplicaSetBuilder item : items) {
       if (predicate.test(item)) {
         return item.build();
       }
@@ -197,10 +177,8 @@ public class V1ReplicaSetListFluentImpl<
     return null;
   }
 
-  public java.lang.Boolean hasMatchingItem(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1ReplicaSetBuilder>
-          predicate) {
-    for (io.kubernetes.client.openapi.models.V1ReplicaSetBuilder item : items) {
+  public Boolean hasMatchingItem(Predicate<V1ReplicaSetBuilder> predicate) {
+    for (V1ReplicaSetBuilder item : items) {
       if (predicate.test(item)) {
         return true;
       }
@@ -208,13 +186,13 @@ public class V1ReplicaSetListFluentImpl<
     return false;
   }
 
-  public A withItems(java.util.List<io.kubernetes.client.openapi.models.V1ReplicaSet> items) {
+  public A withItems(List<V1ReplicaSet> items) {
     if (this.items != null) {
       _visitables.get("items").removeAll(this.items);
     }
     if (items != null) {
-      this.items = new java.util.ArrayList();
-      for (io.kubernetes.client.openapi.models.V1ReplicaSet item : items) {
+      this.items = new ArrayList();
+      for (V1ReplicaSet item : items) {
         this.addToItems(item);
       }
     } else {
@@ -228,53 +206,47 @@ public class V1ReplicaSetListFluentImpl<
       this.items.clear();
     }
     if (items != null) {
-      for (io.kubernetes.client.openapi.models.V1ReplicaSet item : items) {
+      for (V1ReplicaSet item : items) {
         this.addToItems(item);
       }
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasItems() {
+  public Boolean hasItems() {
     return items != null && !items.isEmpty();
   }
 
-  public io.kubernetes.client.openapi.models.V1ReplicaSetListFluent.ItemsNested<A> addNewItem() {
-    return new io.kubernetes.client.openapi.models.V1ReplicaSetListFluentImpl.ItemsNestedImpl();
+  public V1ReplicaSetListFluent.ItemsNested<A> addNewItem() {
+    return new V1ReplicaSetListFluentImpl.ItemsNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1ReplicaSetListFluent.ItemsNested<A> addNewItemLike(
-      io.kubernetes.client.openapi.models.V1ReplicaSet item) {
-    return new io.kubernetes.client.openapi.models.V1ReplicaSetListFluentImpl.ItemsNestedImpl(
-        -1, item);
+  public V1ReplicaSetListFluent.ItemsNested<A> addNewItemLike(V1ReplicaSet item) {
+    return new V1ReplicaSetListFluentImpl.ItemsNestedImpl(-1, item);
   }
 
-  public io.kubernetes.client.openapi.models.V1ReplicaSetListFluent.ItemsNested<A> setNewItemLike(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1ReplicaSet item) {
-    return new io.kubernetes.client.openapi.models.V1ReplicaSetListFluentImpl.ItemsNestedImpl(
-        index, item);
+  public V1ReplicaSetListFluent.ItemsNested<A> setNewItemLike(Integer index, V1ReplicaSet item) {
+    return new V1ReplicaSetListFluentImpl.ItemsNestedImpl(index, item);
   }
 
-  public io.kubernetes.client.openapi.models.V1ReplicaSetListFluent.ItemsNested<A> editItem(
-      java.lang.Integer index) {
+  public V1ReplicaSetListFluent.ItemsNested<A> editItem(Integer index) {
     if (items.size() <= index) throw new RuntimeException("Can't edit items. Index exceeds size.");
     return setNewItemLike(index, buildItem(index));
   }
 
-  public io.kubernetes.client.openapi.models.V1ReplicaSetListFluent.ItemsNested<A> editFirstItem() {
+  public V1ReplicaSetListFluent.ItemsNested<A> editFirstItem() {
     if (items.size() == 0) throw new RuntimeException("Can't edit first items. The list is empty.");
     return setNewItemLike(0, buildItem(0));
   }
 
-  public io.kubernetes.client.openapi.models.V1ReplicaSetListFluent.ItemsNested<A> editLastItem() {
+  public V1ReplicaSetListFluent.ItemsNested<A> editLastItem() {
     int index = items.size() - 1;
     if (index < 0) throw new RuntimeException("Can't edit last items. The list is empty.");
     return setNewItemLike(index, buildItem(index));
   }
 
-  public io.kubernetes.client.openapi.models.V1ReplicaSetListFluent.ItemsNested<A> editMatchingItem(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1ReplicaSetBuilder>
-          predicate) {
+  public V1ReplicaSetListFluent.ItemsNested<A> editMatchingItem(
+      Predicate<V1ReplicaSetBuilder> predicate) {
     int index = -1;
     for (int i = 0; i < items.size(); i++) {
       if (predicate.test(items.get(i))) {
@@ -286,23 +258,17 @@ public class V1ReplicaSetListFluentImpl<
     return setNewItemLike(index, buildItem(index));
   }
 
-  public java.lang.String getKind() {
+  public String getKind() {
     return this.kind;
   }
 
-  public A withKind(java.lang.String kind) {
+  public A withKind(String kind) {
     this.kind = kind;
     return (A) this;
   }
 
-  public java.lang.Boolean hasKind() {
+  public Boolean hasKind() {
     return this.kind != null;
-  }
-
-  /** Method is deprecated. use withKind instead. */
-  @java.lang.Deprecated
-  public A withNewKind(java.lang.String original) {
-    return (A) withKind(new String(original));
   }
 
   /**
@@ -310,58 +276,53 @@ public class V1ReplicaSetListFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ListMeta getMetadata() {
+  @Deprecated
+  public V1ListMeta getMetadata() {
     return this.metadata != null ? this.metadata.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1ListMeta buildMetadata() {
+  public V1ListMeta buildMetadata() {
     return this.metadata != null ? this.metadata.build() : null;
   }
 
-  public A withMetadata(io.kubernetes.client.openapi.models.V1ListMeta metadata) {
+  public A withMetadata(V1ListMeta metadata) {
     _visitables.get("metadata").remove(this.metadata);
     if (metadata != null) {
-      this.metadata = new io.kubernetes.client.openapi.models.V1ListMetaBuilder(metadata);
+      this.metadata = new V1ListMetaBuilder(metadata);
       _visitables.get("metadata").add(this.metadata);
+    } else {
+      this.metadata = null;
+      _visitables.get("metadata").remove(this.metadata);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasMetadata() {
+  public Boolean hasMetadata() {
     return this.metadata != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1ReplicaSetListFluent.MetadataNested<A>
-      withNewMetadata() {
-    return new io.kubernetes.client.openapi.models.V1ReplicaSetListFluentImpl.MetadataNestedImpl();
+  public V1ReplicaSetListFluent.MetadataNested<A> withNewMetadata() {
+    return new V1ReplicaSetListFluentImpl.MetadataNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1ReplicaSetListFluent.MetadataNested<A>
-      withNewMetadataLike(io.kubernetes.client.openapi.models.V1ListMeta item) {
-    return new io.kubernetes.client.openapi.models.V1ReplicaSetListFluentImpl.MetadataNestedImpl(
-        item);
+  public V1ReplicaSetListFluent.MetadataNested<A> withNewMetadataLike(V1ListMeta item) {
+    return new V1ReplicaSetListFluentImpl.MetadataNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1ReplicaSetListFluent.MetadataNested<A>
-      editMetadata() {
+  public V1ReplicaSetListFluent.MetadataNested<A> editMetadata() {
     return withNewMetadataLike(getMetadata());
   }
 
-  public io.kubernetes.client.openapi.models.V1ReplicaSetListFluent.MetadataNested<A>
-      editOrNewMetadata() {
+  public V1ReplicaSetListFluent.MetadataNested<A> editOrNewMetadata() {
     return withNewMetadataLike(
-        getMetadata() != null
-            ? getMetadata()
-            : new io.kubernetes.client.openapi.models.V1ListMetaBuilder().build());
+        getMetadata() != null ? getMetadata() : new V1ListMetaBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1ReplicaSetListFluent.MetadataNested<A>
-      editOrNewMetadataLike(io.kubernetes.client.openapi.models.V1ListMeta item) {
+  public V1ReplicaSetListFluent.MetadataNested<A> editOrNewMetadataLike(V1ListMeta item) {
     return withNewMetadataLike(getMetadata() != null ? getMetadata() : item);
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1ReplicaSetListFluentImpl that = (V1ReplicaSetListFluentImpl) o;
@@ -377,24 +338,43 @@ public class V1ReplicaSetListFluentImpl<
     return java.util.Objects.hash(apiVersion, items, kind, metadata, super.hashCode());
   }
 
-  public class ItemsNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1ReplicaSetFluentImpl<
-          io.kubernetes.client.openapi.models.V1ReplicaSetListFluent.ItemsNested<N>>
-      implements io.kubernetes.client.openapi.models.V1ReplicaSetListFluent.ItemsNested<N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    ItemsNestedImpl(
-        java.lang.Integer index, io.kubernetes.client.openapi.models.V1ReplicaSet item) {
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (apiVersion != null) {
+      sb.append("apiVersion:");
+      sb.append(apiVersion + ",");
+    }
+    if (items != null && !items.isEmpty()) {
+      sb.append("items:");
+      sb.append(items + ",");
+    }
+    if (kind != null) {
+      sb.append("kind:");
+      sb.append(kind + ",");
+    }
+    if (metadata != null) {
+      sb.append("metadata:");
+      sb.append(metadata);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class ItemsNestedImpl<N> extends V1ReplicaSetFluentImpl<V1ReplicaSetListFluent.ItemsNested<N>>
+      implements V1ReplicaSetListFluent.ItemsNested<N>, Nested<N> {
+    ItemsNestedImpl(Integer index, V1ReplicaSet item) {
       this.index = index;
-      this.builder = new io.kubernetes.client.openapi.models.V1ReplicaSetBuilder(this, item);
+      this.builder = new V1ReplicaSetBuilder(this, item);
     }
 
     ItemsNestedImpl() {
       this.index = -1;
-      this.builder = new io.kubernetes.client.openapi.models.V1ReplicaSetBuilder(this);
+      this.builder = new V1ReplicaSetBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1ReplicaSetBuilder builder;
-    java.lang.Integer index;
+    V1ReplicaSetBuilder builder;
+    Integer index;
 
     public N and() {
       return (N) V1ReplicaSetListFluentImpl.this.setToItems(index, builder.build());
@@ -405,20 +385,17 @@ public class V1ReplicaSetListFluentImpl<
     }
   }
 
-  public class MetadataNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1ListMetaFluentImpl<
-          io.kubernetes.client.openapi.models.V1ReplicaSetListFluent.MetadataNested<N>>
-      implements io.kubernetes.client.openapi.models.V1ReplicaSetListFluent.MetadataNested<N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    MetadataNestedImpl(io.kubernetes.client.openapi.models.V1ListMeta item) {
-      this.builder = new io.kubernetes.client.openapi.models.V1ListMetaBuilder(this, item);
+  class MetadataNestedImpl<N> extends V1ListMetaFluentImpl<V1ReplicaSetListFluent.MetadataNested<N>>
+      implements V1ReplicaSetListFluent.MetadataNested<N>, Nested<N> {
+    MetadataNestedImpl(V1ListMeta item) {
+      this.builder = new V1ListMetaBuilder(this, item);
     }
 
     MetadataNestedImpl() {
-      this.builder = new io.kubernetes.client.openapi.models.V1ListMetaBuilder(this);
+      this.builder = new V1ListMetaBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1ListMetaBuilder builder;
+    V1ListMetaBuilder builder;
 
     public N and() {
       return (N) V1ReplicaSetListFluentImpl.this.withMetadata(builder.build());

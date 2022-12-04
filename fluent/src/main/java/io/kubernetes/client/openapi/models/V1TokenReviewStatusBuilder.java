@@ -12,41 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1TokenReviewStatusBuilder
-    extends io.kubernetes.client.openapi.models.V1TokenReviewStatusFluentImpl<
-        io.kubernetes.client.openapi.models.V1TokenReviewStatusBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1TokenReviewStatus,
-        io.kubernetes.client.openapi.models.V1TokenReviewStatusBuilder> {
+    extends V1TokenReviewStatusFluentImpl<V1TokenReviewStatusBuilder>
+    implements VisitableBuilder<V1TokenReviewStatus, V1TokenReviewStatusBuilder> {
   public V1TokenReviewStatusBuilder() {
     this(false);
   }
 
-  public V1TokenReviewStatusBuilder(java.lang.Boolean validationEnabled) {
+  public V1TokenReviewStatusBuilder(Boolean validationEnabled) {
     this(new V1TokenReviewStatus(), validationEnabled);
   }
 
-  public V1TokenReviewStatusBuilder(
-      io.kubernetes.client.openapi.models.V1TokenReviewStatusFluent<?> fluent) {
+  public V1TokenReviewStatusBuilder(V1TokenReviewStatusFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1TokenReviewStatusBuilder(
-      io.kubernetes.client.openapi.models.V1TokenReviewStatusFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1TokenReviewStatusFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1TokenReviewStatus(), validationEnabled);
   }
 
   public V1TokenReviewStatusBuilder(
-      io.kubernetes.client.openapi.models.V1TokenReviewStatusFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1TokenReviewStatus instance) {
+      V1TokenReviewStatusFluent<?> fluent, V1TokenReviewStatus instance) {
     this(fluent, instance, false);
   }
 
   public V1TokenReviewStatusBuilder(
-      io.kubernetes.client.openapi.models.V1TokenReviewStatusFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1TokenReviewStatus instance,
-      java.lang.Boolean validationEnabled) {
+      V1TokenReviewStatusFluent<?> fluent,
+      V1TokenReviewStatus instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withAudiences(instance.getAudiences());
 
@@ -59,14 +55,11 @@ public class V1TokenReviewStatusBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1TokenReviewStatusBuilder(
-      io.kubernetes.client.openapi.models.V1TokenReviewStatus instance) {
+  public V1TokenReviewStatusBuilder(V1TokenReviewStatus instance) {
     this(instance, false);
   }
 
-  public V1TokenReviewStatusBuilder(
-      io.kubernetes.client.openapi.models.V1TokenReviewStatus instance,
-      java.lang.Boolean validationEnabled) {
+  public V1TokenReviewStatusBuilder(V1TokenReviewStatus instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withAudiences(instance.getAudiences());
 
@@ -79,34 +72,15 @@ public class V1TokenReviewStatusBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1TokenReviewStatusFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1TokenReviewStatusFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1TokenReviewStatus build() {
+  public V1TokenReviewStatus build() {
     V1TokenReviewStatus buildable = new V1TokenReviewStatus();
     buildable.setAudiences(fluent.getAudiences());
     buildable.setAuthenticated(fluent.getAuthenticated());
     buildable.setError(fluent.getError());
     buildable.setUser(fluent.getUser());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1TokenReviewStatusBuilder that = (V1TokenReviewStatusBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

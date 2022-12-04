@@ -1,5 +1,5 @@
 /*
-Copyright 2021 The Kubernetes Authors.
+Copyright 2022 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -26,7 +26,7 @@ import java.util.Objects;
         "Represents an NFS mount that lasts the lifetime of a pod. NFS volumes do not support ownership management or SELinux relabeling.")
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    date = "2021-12-10T19:11:23.904Z[Etc/UTC]")
+    date = "2022-09-15T17:00:37.921Z[Etc/UTC]")
 public class V1NFSVolumeSource {
   public static final String SERIALIZED_NAME_PATH = "path";
 
@@ -50,7 +50,7 @@ public class V1NFSVolumeSource {
   }
 
   /**
-   * Path that is exported by the NFS server. More info:
+   * path that is exported by the NFS server. More info:
    * https://kubernetes.io/docs/concepts/storage/volumes#nfs
    *
    * @return path
@@ -58,7 +58,7 @@ public class V1NFSVolumeSource {
   @ApiModelProperty(
       required = true,
       value =
-          "Path that is exported by the NFS server. More info: https://kubernetes.io/docs/concepts/storage/volumes#nfs")
+          "path that is exported by the NFS server. More info: https://kubernetes.io/docs/concepts/storage/volumes#nfs")
   public String getPath() {
     return path;
   }
@@ -74,7 +74,7 @@ public class V1NFSVolumeSource {
   }
 
   /**
-   * ReadOnly here will force the NFS export to be mounted with read-only permissions. Defaults to
+   * readOnly here will force the NFS export to be mounted with read-only permissions. Defaults to
    * false. More info: https://kubernetes.io/docs/concepts/storage/volumes#nfs
    *
    * @return readOnly
@@ -82,7 +82,7 @@ public class V1NFSVolumeSource {
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "ReadOnly here will force the NFS export to be mounted with read-only permissions. Defaults to false. More info: https://kubernetes.io/docs/concepts/storage/volumes#nfs")
+          "readOnly here will force the NFS export to be mounted with read-only permissions. Defaults to false. More info: https://kubernetes.io/docs/concepts/storage/volumes#nfs")
   public Boolean getReadOnly() {
     return readOnly;
   }
@@ -98,7 +98,7 @@ public class V1NFSVolumeSource {
   }
 
   /**
-   * Server is the hostname or IP address of the NFS server. More info:
+   * server is the hostname or IP address of the NFS server. More info:
    * https://kubernetes.io/docs/concepts/storage/volumes#nfs
    *
    * @return server
@@ -106,7 +106,7 @@ public class V1NFSVolumeSource {
   @ApiModelProperty(
       required = true,
       value =
-          "Server is the hostname or IP address of the NFS server. More info: https://kubernetes.io/docs/concepts/storage/volumes#nfs")
+          "server is the hostname or IP address of the NFS server. More info: https://kubernetes.io/docs/concepts/storage/volumes#nfs")
   public String getServer() {
     return server;
   }

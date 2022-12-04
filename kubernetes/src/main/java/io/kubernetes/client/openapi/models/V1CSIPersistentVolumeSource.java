@@ -1,5 +1,5 @@
 /*
-Copyright 2021 The Kubernetes Authors.
+Copyright 2022 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -25,7 +25,7 @@ import java.util.Objects;
         "Represents storage that is managed by an external CSI volume driver (Beta feature)")
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    date = "2021-12-10T19:11:23.904Z[Etc/UTC]")
+    date = "2022-09-15T17:00:37.921Z[Etc/UTC]")
 public class V1CSIPersistentVolumeSource {
   public static final String SERIALIZED_NAME_CONTROLLER_EXPAND_SECRET_REF =
       "controllerExpandSecretRef";
@@ -48,6 +48,11 @@ public class V1CSIPersistentVolumeSource {
 
   @SerializedName(SERIALIZED_NAME_FS_TYPE)
   private String fsType;
+
+  public static final String SERIALIZED_NAME_NODE_EXPAND_SECRET_REF = "nodeExpandSecretRef";
+
+  @SerializedName(SERIALIZED_NAME_NODE_EXPAND_SECRET_REF)
+  private V1SecretReference nodeExpandSecretRef;
 
   public static final String SERIALIZED_NAME_NODE_PUBLISH_SECRET_REF = "nodePublishSecretRef";
 
@@ -125,13 +130,13 @@ public class V1CSIPersistentVolumeSource {
   }
 
   /**
-   * Driver is the name of the driver to use for this volume. Required.
+   * driver is the name of the driver to use for this volume. Required.
    *
    * @return driver
    */
   @ApiModelProperty(
       required = true,
-      value = "Driver is the name of the driver to use for this volume. Required.")
+      value = "driver is the name of the driver to use for this volume. Required.")
   public String getDriver() {
     return driver;
   }
@@ -147,7 +152,7 @@ public class V1CSIPersistentVolumeSource {
   }
 
   /**
-   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex.
+   * fsType to mount. Must be a filesystem type supported by the host operating system. Ex.
    * \&quot;ext4\&quot;, \&quot;xfs\&quot;, \&quot;ntfs\&quot;.
    *
    * @return fsType
@@ -155,13 +160,34 @@ public class V1CSIPersistentVolumeSource {
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. \"ext4\", \"xfs\", \"ntfs\".")
+          "fsType to mount. Must be a filesystem type supported by the host operating system. Ex. \"ext4\", \"xfs\", \"ntfs\".")
   public String getFsType() {
     return fsType;
   }
 
   public void setFsType(String fsType) {
     this.fsType = fsType;
+  }
+
+  public V1CSIPersistentVolumeSource nodeExpandSecretRef(V1SecretReference nodeExpandSecretRef) {
+
+    this.nodeExpandSecretRef = nodeExpandSecretRef;
+    return this;
+  }
+
+  /**
+   * Get nodeExpandSecretRef
+   *
+   * @return nodeExpandSecretRef
+   */
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  public V1SecretReference getNodeExpandSecretRef() {
+    return nodeExpandSecretRef;
+  }
+
+  public void setNodeExpandSecretRef(V1SecretReference nodeExpandSecretRef) {
+    this.nodeExpandSecretRef = nodeExpandSecretRef;
   }
 
   public V1CSIPersistentVolumeSource nodePublishSecretRef(V1SecretReference nodePublishSecretRef) {
@@ -213,14 +239,14 @@ public class V1CSIPersistentVolumeSource {
   }
 
   /**
-   * Optional: The value to pass to ControllerPublishVolumeRequest. Defaults to false (read/write).
+   * readOnly value to pass to ControllerPublishVolumeRequest. Defaults to false (read/write).
    *
    * @return readOnly
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "Optional: The value to pass to ControllerPublishVolumeRequest. Defaults to false (read/write).")
+          "readOnly value to pass to ControllerPublishVolumeRequest. Defaults to false (read/write).")
   public Boolean getReadOnly() {
     return readOnly;
   }
@@ -245,12 +271,12 @@ public class V1CSIPersistentVolumeSource {
   }
 
   /**
-   * Attributes of the volume to publish.
+   * volumeAttributes of the volume to publish.
    *
    * @return volumeAttributes
    */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Attributes of the volume to publish.")
+  @ApiModelProperty(value = "volumeAttributes of the volume to publish.")
   public Map<String, String> getVolumeAttributes() {
     return volumeAttributes;
   }
@@ -266,7 +292,7 @@ public class V1CSIPersistentVolumeSource {
   }
 
   /**
-   * VolumeHandle is the unique volume name returned by the CSI volume plugin’s CreateVolume to
+   * volumeHandle is the unique volume name returned by the CSI volume plugin’s CreateVolume to
    * refer to the volume on all subsequent calls. Required.
    *
    * @return volumeHandle
@@ -274,7 +300,7 @@ public class V1CSIPersistentVolumeSource {
   @ApiModelProperty(
       required = true,
       value =
-          "VolumeHandle is the unique volume name returned by the CSI volume plugin’s CreateVolume to refer to the volume on all subsequent calls. Required.")
+          "volumeHandle is the unique volume name returned by the CSI volume plugin’s CreateVolume to refer to the volume on all subsequent calls. Required.")
   public String getVolumeHandle() {
     return volumeHandle;
   }
@@ -298,6 +324,7 @@ public class V1CSIPersistentVolumeSource {
             this.controllerPublishSecretRef, v1CSIPersistentVolumeSource.controllerPublishSecretRef)
         && Objects.equals(this.driver, v1CSIPersistentVolumeSource.driver)
         && Objects.equals(this.fsType, v1CSIPersistentVolumeSource.fsType)
+        && Objects.equals(this.nodeExpandSecretRef, v1CSIPersistentVolumeSource.nodeExpandSecretRef)
         && Objects.equals(
             this.nodePublishSecretRef, v1CSIPersistentVolumeSource.nodePublishSecretRef)
         && Objects.equals(this.nodeStageSecretRef, v1CSIPersistentVolumeSource.nodeStageSecretRef)
@@ -313,6 +340,7 @@ public class V1CSIPersistentVolumeSource {
         controllerPublishSecretRef,
         driver,
         fsType,
+        nodeExpandSecretRef,
         nodePublishSecretRef,
         nodeStageSecretRef,
         readOnly,
@@ -332,6 +360,9 @@ public class V1CSIPersistentVolumeSource {
         .append("\n");
     sb.append("    driver: ").append(toIndentedString(driver)).append("\n");
     sb.append("    fsType: ").append(toIndentedString(fsType)).append("\n");
+    sb.append("    nodeExpandSecretRef: ")
+        .append(toIndentedString(nodeExpandSecretRef))
+        .append("\n");
     sb.append("    nodePublishSecretRef: ")
         .append(toIndentedString(nodePublishSecretRef))
         .append("\n");

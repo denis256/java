@@ -12,41 +12,40 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-/** Generated */
-public interface V1ExecActionFluent<
-        A extends io.kubernetes.client.openapi.models.V1ExecActionFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public A addToCommand(java.lang.Integer index, java.lang.String item);
+import io.kubernetes.client.fluent.Fluent;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
 
-  public A setToCommand(java.lang.Integer index, java.lang.String item);
+/** Generated */
+public interface V1ExecActionFluent<A extends V1ExecActionFluent<A>> extends Fluent<A> {
+  public A addToCommand(Integer index, String item);
+
+  public A setToCommand(Integer index, String item);
 
   public A addToCommand(java.lang.String... items);
 
-  public A addAllToCommand(java.util.Collection<java.lang.String> items);
+  public A addAllToCommand(Collection<String> items);
 
   public A removeFromCommand(java.lang.String... items);
 
-  public A removeAllFromCommand(java.util.Collection<java.lang.String> items);
+  public A removeAllFromCommand(Collection<String> items);
 
-  public java.util.List<java.lang.String> getCommand();
+  public List<String> getCommand();
 
-  public java.lang.String getCommand(java.lang.Integer index);
+  public String getCommand(Integer index);
 
-  public java.lang.String getFirstCommand();
+  public String getFirstCommand();
 
-  public java.lang.String getLastCommand();
+  public String getLastCommand();
 
-  public java.lang.String getMatchingCommand(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public String getMatchingCommand(Predicate<String> predicate);
 
-  public java.lang.Boolean hasMatchingCommand(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public Boolean hasMatchingCommand(Predicate<String> predicate);
 
-  public A withCommand(java.util.List<java.lang.String> command);
+  public A withCommand(List<String> command);
 
   public A withCommand(java.lang.String... command);
 
-  public java.lang.Boolean hasCommand();
-
-  public A addNewCommand(java.lang.String original);
+  public Boolean hasCommand();
 }

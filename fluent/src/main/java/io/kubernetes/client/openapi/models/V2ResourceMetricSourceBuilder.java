@@ -12,41 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V2ResourceMetricSourceBuilder
-    extends io.kubernetes.client.openapi.models.V2ResourceMetricSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V2ResourceMetricSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V2ResourceMetricSource,
-        io.kubernetes.client.openapi.models.V2ResourceMetricSourceBuilder> {
+    extends V2ResourceMetricSourceFluentImpl<V2ResourceMetricSourceBuilder>
+    implements VisitableBuilder<V2ResourceMetricSource, V2ResourceMetricSourceBuilder> {
   public V2ResourceMetricSourceBuilder() {
     this(false);
   }
 
-  public V2ResourceMetricSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V2ResourceMetricSourceBuilder(Boolean validationEnabled) {
     this(new V2ResourceMetricSource(), validationEnabled);
   }
 
-  public V2ResourceMetricSourceBuilder(
-      io.kubernetes.client.openapi.models.V2ResourceMetricSourceFluent<?> fluent) {
+  public V2ResourceMetricSourceBuilder(V2ResourceMetricSourceFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V2ResourceMetricSourceBuilder(
-      io.kubernetes.client.openapi.models.V2ResourceMetricSourceFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V2ResourceMetricSourceFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V2ResourceMetricSource(), validationEnabled);
   }
 
   public V2ResourceMetricSourceBuilder(
-      io.kubernetes.client.openapi.models.V2ResourceMetricSourceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V2ResourceMetricSource instance) {
+      V2ResourceMetricSourceFluent<?> fluent, V2ResourceMetricSource instance) {
     this(fluent, instance, false);
   }
 
   public V2ResourceMetricSourceBuilder(
-      io.kubernetes.client.openapi.models.V2ResourceMetricSourceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V2ResourceMetricSource instance,
-      java.lang.Boolean validationEnabled) {
+      V2ResourceMetricSourceFluent<?> fluent,
+      V2ResourceMetricSource instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withName(instance.getName());
 
@@ -55,14 +51,11 @@ public class V2ResourceMetricSourceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V2ResourceMetricSourceBuilder(
-      io.kubernetes.client.openapi.models.V2ResourceMetricSource instance) {
+  public V2ResourceMetricSourceBuilder(V2ResourceMetricSource instance) {
     this(instance, false);
   }
 
-  public V2ResourceMetricSourceBuilder(
-      io.kubernetes.client.openapi.models.V2ResourceMetricSource instance,
-      java.lang.Boolean validationEnabled) {
+  public V2ResourceMetricSourceBuilder(V2ResourceMetricSource instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withName(instance.getName());
 
@@ -71,32 +64,13 @@ public class V2ResourceMetricSourceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V2ResourceMetricSourceFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V2ResourceMetricSourceFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V2ResourceMetricSource build() {
+  public V2ResourceMetricSource build() {
     V2ResourceMetricSource buildable = new V2ResourceMetricSource();
     buildable.setName(fluent.getName());
     buildable.setTarget(fluent.getTarget());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V2ResourceMetricSourceBuilder that = (V2ResourceMetricSourceBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

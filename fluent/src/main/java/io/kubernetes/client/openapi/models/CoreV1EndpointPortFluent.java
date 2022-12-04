@@ -12,40 +12,31 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
-public interface CoreV1EndpointPortFluent<
-        A extends io.kubernetes.client.openapi.models.CoreV1EndpointPortFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getAppProtocol();
+public interface CoreV1EndpointPortFluent<A extends CoreV1EndpointPortFluent<A>> extends Fluent<A> {
+  public String getAppProtocol();
 
-  public A withAppProtocol(java.lang.String appProtocol);
+  public A withAppProtocol(String appProtocol);
 
-  public java.lang.Boolean hasAppProtocol();
+  public Boolean hasAppProtocol();
 
-  /** Method is deprecated. use withAppProtocol instead. */
-  @java.lang.Deprecated
-  public A withNewAppProtocol(java.lang.String original);
+  public String getName();
 
-  public java.lang.String getName();
+  public A withName(String name);
 
-  public A withName(java.lang.String name);
+  public Boolean hasName();
 
-  public java.lang.Boolean hasName();
+  public Integer getPort();
 
-  /** Method is deprecated. use withName instead. */
-  @java.lang.Deprecated
-  public A withNewName(java.lang.String original);
+  public A withPort(Integer port);
 
-  public java.lang.Integer getPort();
+  public Boolean hasPort();
 
-  public A withPort(java.lang.Integer port);
+  public String getProtocol();
 
-  public java.lang.Boolean hasPort();
+  public A withProtocol(String protocol);
 
-  public io.kubernetes.client.openapi.models.CoreV1EndpointPort.ProtocolEnum getProtocol();
-
-  public A withProtocol(
-      io.kubernetes.client.openapi.models.CoreV1EndpointPort.ProtocolEnum protocol);
-
-  public java.lang.Boolean hasProtocol();
+  public Boolean hasProtocol();
 }

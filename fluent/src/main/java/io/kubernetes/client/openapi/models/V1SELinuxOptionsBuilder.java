@@ -12,41 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1SELinuxOptionsBuilder
-    extends io.kubernetes.client.openapi.models.V1SELinuxOptionsFluentImpl<
-        io.kubernetes.client.openapi.models.V1SELinuxOptionsBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1SELinuxOptions,
-        io.kubernetes.client.openapi.models.V1SELinuxOptionsBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1SELinuxOptionsBuilder extends V1SELinuxOptionsFluentImpl<V1SELinuxOptionsBuilder>
+    implements VisitableBuilder<V1SELinuxOptions, V1SELinuxOptionsBuilder> {
   public V1SELinuxOptionsBuilder() {
     this(false);
   }
 
-  public V1SELinuxOptionsBuilder(java.lang.Boolean validationEnabled) {
+  public V1SELinuxOptionsBuilder(Boolean validationEnabled) {
     this(new V1SELinuxOptions(), validationEnabled);
   }
 
-  public V1SELinuxOptionsBuilder(
-      io.kubernetes.client.openapi.models.V1SELinuxOptionsFluent<?> fluent) {
+  public V1SELinuxOptionsBuilder(V1SELinuxOptionsFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1SELinuxOptionsBuilder(
-      io.kubernetes.client.openapi.models.V1SELinuxOptionsFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1SELinuxOptionsBuilder(V1SELinuxOptionsFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1SELinuxOptions(), validationEnabled);
   }
 
-  public V1SELinuxOptionsBuilder(
-      io.kubernetes.client.openapi.models.V1SELinuxOptionsFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1SELinuxOptions instance) {
+  public V1SELinuxOptionsBuilder(V1SELinuxOptionsFluent<?> fluent, V1SELinuxOptions instance) {
     this(fluent, instance, false);
   }
 
   public V1SELinuxOptionsBuilder(
-      io.kubernetes.client.openapi.models.V1SELinuxOptionsFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1SELinuxOptions instance,
-      java.lang.Boolean validationEnabled) {
+      V1SELinuxOptionsFluent<?> fluent, V1SELinuxOptions instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withLevel(instance.getLevel());
 
@@ -59,13 +50,11 @@ public class V1SELinuxOptionsBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1SELinuxOptionsBuilder(io.kubernetes.client.openapi.models.V1SELinuxOptions instance) {
+  public V1SELinuxOptionsBuilder(V1SELinuxOptions instance) {
     this(instance, false);
   }
 
-  public V1SELinuxOptionsBuilder(
-      io.kubernetes.client.openapi.models.V1SELinuxOptions instance,
-      java.lang.Boolean validationEnabled) {
+  public V1SELinuxOptionsBuilder(V1SELinuxOptions instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withLevel(instance.getLevel());
 
@@ -78,34 +67,15 @@ public class V1SELinuxOptionsBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1SELinuxOptionsFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1SELinuxOptionsFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1SELinuxOptions build() {
+  public V1SELinuxOptions build() {
     V1SELinuxOptions buildable = new V1SELinuxOptions();
     buildable.setLevel(fluent.getLevel());
     buildable.setRole(fluent.getRole());
     buildable.setType(fluent.getType());
     buildable.setUser(fluent.getUser());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1SELinuxOptionsBuilder that = (V1SELinuxOptionsBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

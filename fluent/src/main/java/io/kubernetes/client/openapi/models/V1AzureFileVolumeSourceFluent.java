@@ -12,33 +12,28 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
-public interface V1AzureFileVolumeSourceFluent<
-        A extends io.kubernetes.client.openapi.models.V1AzureFileVolumeSourceFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.Boolean getReadOnly();
+public interface V1AzureFileVolumeSourceFluent<A extends V1AzureFileVolumeSourceFluent<A>>
+    extends Fluent<A> {
+  public Boolean getReadOnly();
 
-  public A withReadOnly(java.lang.Boolean readOnly);
+  public A withReadOnly(Boolean readOnly);
 
-  public java.lang.Boolean hasReadOnly();
+  public Boolean hasReadOnly();
 
-  public java.lang.String getSecretName();
+  public String getSecretName();
 
-  public A withSecretName(java.lang.String secretName);
+  public A withSecretName(String secretName);
 
-  public java.lang.Boolean hasSecretName();
+  public Boolean hasSecretName();
 
-  /** Method is deprecated. use withSecretName instead. */
-  @java.lang.Deprecated
-  public A withNewSecretName(java.lang.String original);
+  public String getShareName();
 
-  public java.lang.String getShareName();
+  public A withShareName(String shareName);
 
-  public A withShareName(java.lang.String shareName);
+  public Boolean hasShareName();
 
-  public java.lang.Boolean hasShareName();
-
-  /** Method is deprecated. use withShareName instead. */
-  @java.lang.Deprecated
-  public A withNewShareName(java.lang.String original);
+  public A withReadOnly();
 }

@@ -12,101 +12,91 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+
 /** Generated */
-public class V1beta2LimitResponseFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1beta2LimitResponseFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1beta2LimitResponseFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1beta2LimitResponseFluentImpl<A extends V1beta2LimitResponseFluent<A>>
+    extends BaseFluent<A> implements V1beta2LimitResponseFluent<A> {
   public V1beta2LimitResponseFluentImpl() {}
 
-  public V1beta2LimitResponseFluentImpl(
-      io.kubernetes.client.openapi.models.V1beta2LimitResponse instance) {
+  public V1beta2LimitResponseFluentImpl(V1beta2LimitResponse instance) {
     this.withQueuing(instance.getQueuing());
 
     this.withType(instance.getType());
   }
 
-  private io.kubernetes.client.openapi.models.V1beta2QueuingConfigurationBuilder queuing;
-  private java.lang.String type;
+  private V1beta2QueuingConfigurationBuilder queuing;
+  private String type;
 
   /**
    * This method has been deprecated, please use method buildQueuing instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1beta2QueuingConfiguration getQueuing() {
+  @Deprecated
+  public V1beta2QueuingConfiguration getQueuing() {
     return this.queuing != null ? this.queuing.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1beta2QueuingConfiguration buildQueuing() {
+  public V1beta2QueuingConfiguration buildQueuing() {
     return this.queuing != null ? this.queuing.build() : null;
   }
 
-  public A withQueuing(io.kubernetes.client.openapi.models.V1beta2QueuingConfiguration queuing) {
+  public A withQueuing(V1beta2QueuingConfiguration queuing) {
     _visitables.get("queuing").remove(this.queuing);
     if (queuing != null) {
-      this.queuing =
-          new io.kubernetes.client.openapi.models.V1beta2QueuingConfigurationBuilder(queuing);
+      this.queuing = new V1beta2QueuingConfigurationBuilder(queuing);
       _visitables.get("queuing").add(this.queuing);
+    } else {
+      this.queuing = null;
+      _visitables.get("queuing").remove(this.queuing);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasQueuing() {
+  public Boolean hasQueuing() {
     return this.queuing != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1beta2LimitResponseFluent.QueuingNested<A>
-      withNewQueuing() {
-    return new io.kubernetes.client.openapi.models.V1beta2LimitResponseFluentImpl
-        .QueuingNestedImpl();
+  public V1beta2LimitResponseFluent.QueuingNested<A> withNewQueuing() {
+    return new V1beta2LimitResponseFluentImpl.QueuingNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1beta2LimitResponseFluent.QueuingNested<A>
-      withNewQueuingLike(io.kubernetes.client.openapi.models.V1beta2QueuingConfiguration item) {
-    return new io.kubernetes.client.openapi.models.V1beta2LimitResponseFluentImpl.QueuingNestedImpl(
-        item);
+  public V1beta2LimitResponseFluent.QueuingNested<A> withNewQueuingLike(
+      V1beta2QueuingConfiguration item) {
+    return new V1beta2LimitResponseFluentImpl.QueuingNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1beta2LimitResponseFluent.QueuingNested<A>
-      editQueuing() {
+  public V1beta2LimitResponseFluent.QueuingNested<A> editQueuing() {
     return withNewQueuingLike(getQueuing());
   }
 
-  public io.kubernetes.client.openapi.models.V1beta2LimitResponseFluent.QueuingNested<A>
-      editOrNewQueuing() {
+  public V1beta2LimitResponseFluent.QueuingNested<A> editOrNewQueuing() {
     return withNewQueuingLike(
-        getQueuing() != null
-            ? getQueuing()
-            : new io.kubernetes.client.openapi.models.V1beta2QueuingConfigurationBuilder().build());
+        getQueuing() != null ? getQueuing() : new V1beta2QueuingConfigurationBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1beta2LimitResponseFluent.QueuingNested<A>
-      editOrNewQueuingLike(io.kubernetes.client.openapi.models.V1beta2QueuingConfiguration item) {
+  public V1beta2LimitResponseFluent.QueuingNested<A> editOrNewQueuingLike(
+      V1beta2QueuingConfiguration item) {
     return withNewQueuingLike(getQueuing() != null ? getQueuing() : item);
   }
 
-  public java.lang.String getType() {
+  public String getType() {
     return this.type;
   }
 
-  public A withType(java.lang.String type) {
+  public A withType(String type) {
     this.type = type;
     return (A) this;
   }
 
-  public java.lang.Boolean hasType() {
+  public Boolean hasType() {
     return this.type != null;
   }
 
-  /** Method is deprecated. use withType instead. */
-  @java.lang.Deprecated
-  public A withNewType(java.lang.String original) {
-    return (A) withType(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1beta2LimitResponseFluentImpl that = (V1beta2LimitResponseFluentImpl) o;
@@ -119,22 +109,33 @@ public class V1beta2LimitResponseFluentImpl<
     return java.util.Objects.hash(queuing, type, super.hashCode());
   }
 
-  public class QueuingNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1beta2QueuingConfigurationFluentImpl<
-          io.kubernetes.client.openapi.models.V1beta2LimitResponseFluent.QueuingNested<N>>
-      implements io.kubernetes.client.openapi.models.V1beta2LimitResponseFluent.QueuingNested<N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    QueuingNestedImpl(io.kubernetes.client.openapi.models.V1beta2QueuingConfiguration item) {
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1beta2QueuingConfigurationBuilder(this, item);
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (queuing != null) {
+      sb.append("queuing:");
+      sb.append(queuing + ",");
+    }
+    if (type != null) {
+      sb.append("type:");
+      sb.append(type);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class QueuingNestedImpl<N>
+      extends V1beta2QueuingConfigurationFluentImpl<V1beta2LimitResponseFluent.QueuingNested<N>>
+      implements V1beta2LimitResponseFluent.QueuingNested<N>, Nested<N> {
+    QueuingNestedImpl(V1beta2QueuingConfiguration item) {
+      this.builder = new V1beta2QueuingConfigurationBuilder(this, item);
     }
 
     QueuingNestedImpl() {
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1beta2QueuingConfigurationBuilder(this);
+      this.builder = new V1beta2QueuingConfigurationBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1beta2QueuingConfigurationBuilder builder;
+    V1beta2QueuingConfigurationBuilder builder;
 
     public N and() {
       return (N) V1beta2LimitResponseFluentImpl.this.withQueuing(builder.build());

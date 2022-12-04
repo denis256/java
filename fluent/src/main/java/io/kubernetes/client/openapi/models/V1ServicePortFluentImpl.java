@@ -13,15 +13,15 @@ limitations under the License.
 package io.kubernetes.client.openapi.models;
 
 import io.kubernetes.client.custom.IntOrString;
+import io.kubernetes.client.fluent.BaseFluent;
 
 /** Generated */
-public class V1ServicePortFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1ServicePortFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1ServicePortFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1ServicePortFluentImpl<A extends V1ServicePortFluent<A>> extends BaseFluent<A>
+    implements V1ServicePortFluent<A> {
   public V1ServicePortFluentImpl() {}
 
-  public V1ServicePortFluentImpl(io.kubernetes.client.openapi.models.V1ServicePort instance) {
+  public V1ServicePortFluentImpl(V1ServicePort instance) {
     this.withAppProtocol(instance.getAppProtocol());
 
     this.withName(instance.getName());
@@ -35,100 +35,88 @@ public class V1ServicePortFluentImpl<
     this.withTargetPort(instance.getTargetPort());
   }
 
-  private java.lang.String appProtocol;
-  private java.lang.String name;
-  private java.lang.Integer nodePort;
-  private java.lang.Integer port;
-  private io.kubernetes.client.openapi.models.V1ServicePort.ProtocolEnum protocol;
-  private io.kubernetes.client.custom.IntOrString targetPort;
+  private String appProtocol;
+  private String name;
+  private Integer nodePort;
+  private Integer port;
+  private String protocol;
+  private IntOrString targetPort;
 
-  public java.lang.String getAppProtocol() {
+  public String getAppProtocol() {
     return this.appProtocol;
   }
 
-  public A withAppProtocol(java.lang.String appProtocol) {
+  public A withAppProtocol(String appProtocol) {
     this.appProtocol = appProtocol;
     return (A) this;
   }
 
-  public java.lang.Boolean hasAppProtocol() {
+  public Boolean hasAppProtocol() {
     return this.appProtocol != null;
   }
 
-  /** Method is deprecated. use withAppProtocol instead. */
-  @java.lang.Deprecated
-  public A withNewAppProtocol(java.lang.String original) {
-    return (A) withAppProtocol(new String(original));
-  }
-
-  public java.lang.String getName() {
+  public String getName() {
     return this.name;
   }
 
-  public A withName(java.lang.String name) {
+  public A withName(String name) {
     this.name = name;
     return (A) this;
   }
 
-  public java.lang.Boolean hasName() {
+  public Boolean hasName() {
     return this.name != null;
   }
 
-  /** Method is deprecated. use withName instead. */
-  @java.lang.Deprecated
-  public A withNewName(java.lang.String original) {
-    return (A) withName(new String(original));
-  }
-
-  public java.lang.Integer getNodePort() {
+  public Integer getNodePort() {
     return this.nodePort;
   }
 
-  public A withNodePort(java.lang.Integer nodePort) {
+  public A withNodePort(Integer nodePort) {
     this.nodePort = nodePort;
     return (A) this;
   }
 
-  public java.lang.Boolean hasNodePort() {
+  public Boolean hasNodePort() {
     return this.nodePort != null;
   }
 
-  public java.lang.Integer getPort() {
+  public Integer getPort() {
     return this.port;
   }
 
-  public A withPort(java.lang.Integer port) {
+  public A withPort(Integer port) {
     this.port = port;
     return (A) this;
   }
 
-  public java.lang.Boolean hasPort() {
+  public Boolean hasPort() {
     return this.port != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1ServicePort.ProtocolEnum getProtocol() {
+  public String getProtocol() {
     return this.protocol;
   }
 
-  public A withProtocol(io.kubernetes.client.openapi.models.V1ServicePort.ProtocolEnum protocol) {
+  public A withProtocol(String protocol) {
     this.protocol = protocol;
     return (A) this;
   }
 
-  public java.lang.Boolean hasProtocol() {
+  public Boolean hasProtocol() {
     return this.protocol != null;
   }
 
-  public io.kubernetes.client.custom.IntOrString getTargetPort() {
+  public IntOrString getTargetPort() {
     return this.targetPort;
   }
 
-  public A withTargetPort(io.kubernetes.client.custom.IntOrString targetPort) {
+  public A withTargetPort(IntOrString targetPort) {
     this.targetPort = targetPort;
     return (A) this;
   }
 
-  public java.lang.Boolean hasTargetPort() {
+  public Boolean hasTargetPort() {
     return this.targetPort != null;
   }
 
@@ -136,11 +124,11 @@ public class V1ServicePortFluentImpl<
     return (A) withTargetPort(new IntOrString(value));
   }
 
-  public A withNewTargetPort(java.lang.String value) {
+  public A withNewTargetPort(String value) {
     return (A) withTargetPort(new IntOrString(value));
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1ServicePortFluentImpl that = (V1ServicePortFluentImpl) o;
@@ -158,5 +146,36 @@ public class V1ServicePortFluentImpl<
   public int hashCode() {
     return java.util.Objects.hash(
         appProtocol, name, nodePort, port, protocol, targetPort, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (appProtocol != null) {
+      sb.append("appProtocol:");
+      sb.append(appProtocol + ",");
+    }
+    if (name != null) {
+      sb.append("name:");
+      sb.append(name + ",");
+    }
+    if (nodePort != null) {
+      sb.append("nodePort:");
+      sb.append(nodePort + ",");
+    }
+    if (port != null) {
+      sb.append("port:");
+      sb.append(port + ",");
+    }
+    if (protocol != null) {
+      sb.append("protocol:");
+      sb.append(protocol + ",");
+    }
+    if (targetPort != null) {
+      sb.append("targetPort:");
+      sb.append(targetPort);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

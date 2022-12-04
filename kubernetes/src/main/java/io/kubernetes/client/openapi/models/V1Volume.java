@@ -1,5 +1,5 @@
 /*
-Copyright 2021 The Kubernetes Authors.
+Copyright 2022 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -23,7 +23,7 @@ import java.util.Objects;
         "Volume represents a named volume in a pod that may be accessed by any container in the pod.")
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    date = "2021-12-10T19:11:23.904Z[Etc/UTC]")
+    date = "2022-09-15T17:00:37.921Z[Etc/UTC]")
 public class V1Volume {
   public static final String SERIALIZED_NAME_AWS_ELASTIC_BLOCK_STORE = "awsElasticBlockStore";
 
@@ -560,7 +560,7 @@ public class V1Volume {
   }
 
   /**
-   * Volume&#39;s name. Must be a DNS_LABEL and unique within the pod. More info:
+   * name of the volume. Must be a DNS_LABEL and unique within the pod. More info:
    * https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
    *
    * @return name
@@ -568,7 +568,7 @@ public class V1Volume {
   @ApiModelProperty(
       required = true,
       value =
-          "Volume's name. Must be a DNS_LABEL and unique within the pod. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names")
+          "name of the volume. Must be a DNS_LABEL and unique within the pod. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names")
   public String getName() {
     return name;
   }

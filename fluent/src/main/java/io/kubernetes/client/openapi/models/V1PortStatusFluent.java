@@ -12,29 +12,25 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
-public interface V1PortStatusFluent<
-        A extends io.kubernetes.client.openapi.models.V1PortStatusFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getError();
+public interface V1PortStatusFluent<A extends V1PortStatusFluent<A>> extends Fluent<A> {
+  public String getError();
 
-  public A withError(java.lang.String error);
+  public A withError(String error);
 
-  public java.lang.Boolean hasError();
+  public Boolean hasError();
 
-  /** Method is deprecated. use withError instead. */
-  @java.lang.Deprecated
-  public A withNewError(java.lang.String original);
+  public Integer getPort();
 
-  public java.lang.Integer getPort();
+  public A withPort(Integer port);
 
-  public A withPort(java.lang.Integer port);
+  public Boolean hasPort();
 
-  public java.lang.Boolean hasPort();
+  public String getProtocol();
 
-  public io.kubernetes.client.openapi.models.V1PortStatus.ProtocolEnum getProtocol();
+  public A withProtocol(String protocol);
 
-  public A withProtocol(io.kubernetes.client.openapi.models.V1PortStatus.ProtocolEnum protocol);
-
-  public java.lang.Boolean hasProtocol();
+  public Boolean hasProtocol();
 }

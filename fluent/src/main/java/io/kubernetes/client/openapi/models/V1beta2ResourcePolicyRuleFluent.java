@@ -12,148 +12,139 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-/** Generated */
-public interface V1beta2ResourcePolicyRuleFluent<
-        A extends io.kubernetes.client.openapi.models.V1beta2ResourcePolicyRuleFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public A addToApiGroups(java.lang.Integer index, java.lang.String item);
+import io.kubernetes.client.fluent.Fluent;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
 
-  public A setToApiGroups(java.lang.Integer index, java.lang.String item);
+/** Generated */
+public interface V1beta2ResourcePolicyRuleFluent<A extends V1beta2ResourcePolicyRuleFluent<A>>
+    extends Fluent<A> {
+  public A addToApiGroups(Integer index, String item);
+
+  public A setToApiGroups(Integer index, String item);
 
   public A addToApiGroups(java.lang.String... items);
 
-  public A addAllToApiGroups(java.util.Collection<java.lang.String> items);
+  public A addAllToApiGroups(Collection<String> items);
 
   public A removeFromApiGroups(java.lang.String... items);
 
-  public A removeAllFromApiGroups(java.util.Collection<java.lang.String> items);
+  public A removeAllFromApiGroups(Collection<String> items);
 
-  public java.util.List<java.lang.String> getApiGroups();
+  public List<String> getApiGroups();
 
-  public java.lang.String getApiGroup(java.lang.Integer index);
+  public String getApiGroup(Integer index);
 
-  public java.lang.String getFirstApiGroup();
+  public String getFirstApiGroup();
 
-  public java.lang.String getLastApiGroup();
+  public String getLastApiGroup();
 
-  public java.lang.String getMatchingApiGroup(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public String getMatchingApiGroup(Predicate<String> predicate);
 
-  public java.lang.Boolean hasMatchingApiGroup(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public Boolean hasMatchingApiGroup(Predicate<String> predicate);
 
-  public A withApiGroups(java.util.List<java.lang.String> apiGroups);
+  public A withApiGroups(List<String> apiGroups);
 
   public A withApiGroups(java.lang.String... apiGroups);
 
-  public java.lang.Boolean hasApiGroups();
+  public Boolean hasApiGroups();
 
-  public A addNewApiGroup(java.lang.String original);
+  public Boolean getClusterScope();
 
-  public java.lang.Boolean getClusterScope();
+  public A withClusterScope(Boolean clusterScope);
 
-  public A withClusterScope(java.lang.Boolean clusterScope);
+  public Boolean hasClusterScope();
 
-  public java.lang.Boolean hasClusterScope();
+  public A addToNamespaces(Integer index, String item);
 
-  public A addToNamespaces(java.lang.Integer index, java.lang.String item);
-
-  public A setToNamespaces(java.lang.Integer index, java.lang.String item);
+  public A setToNamespaces(Integer index, String item);
 
   public A addToNamespaces(java.lang.String... items);
 
-  public A addAllToNamespaces(java.util.Collection<java.lang.String> items);
+  public A addAllToNamespaces(Collection<String> items);
 
   public A removeFromNamespaces(java.lang.String... items);
 
-  public A removeAllFromNamespaces(java.util.Collection<java.lang.String> items);
+  public A removeAllFromNamespaces(Collection<String> items);
 
-  public java.util.List<java.lang.String> getNamespaces();
+  public List<String> getNamespaces();
 
-  public java.lang.String getNamespace(java.lang.Integer index);
+  public String getNamespace(Integer index);
 
-  public java.lang.String getFirstNamespace();
+  public String getFirstNamespace();
 
-  public java.lang.String getLastNamespace();
+  public String getLastNamespace();
 
-  public java.lang.String getMatchingNamespace(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public String getMatchingNamespace(Predicate<String> predicate);
 
-  public java.lang.Boolean hasMatchingNamespace(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public Boolean hasMatchingNamespace(Predicate<String> predicate);
 
-  public A withNamespaces(java.util.List<java.lang.String> namespaces);
+  public A withNamespaces(List<String> namespaces);
 
   public A withNamespaces(java.lang.String... namespaces);
 
-  public java.lang.Boolean hasNamespaces();
+  public Boolean hasNamespaces();
 
-  public A addNewNamespace(java.lang.String original);
+  public A addToResources(Integer index, String item);
 
-  public A addToResources(java.lang.Integer index, java.lang.String item);
-
-  public A setToResources(java.lang.Integer index, java.lang.String item);
+  public A setToResources(Integer index, String item);
 
   public A addToResources(java.lang.String... items);
 
-  public A addAllToResources(java.util.Collection<java.lang.String> items);
+  public A addAllToResources(Collection<String> items);
 
   public A removeFromResources(java.lang.String... items);
 
-  public A removeAllFromResources(java.util.Collection<java.lang.String> items);
+  public A removeAllFromResources(Collection<String> items);
 
-  public java.util.List<java.lang.String> getResources();
+  public List<String> getResources();
 
-  public java.lang.String getResource(java.lang.Integer index);
+  public String getResource(Integer index);
 
-  public java.lang.String getFirstResource();
+  public String getFirstResource();
 
-  public java.lang.String getLastResource();
+  public String getLastResource();
 
-  public java.lang.String getMatchingResource(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public String getMatchingResource(Predicate<String> predicate);
 
-  public java.lang.Boolean hasMatchingResource(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public Boolean hasMatchingResource(Predicate<String> predicate);
 
-  public A withResources(java.util.List<java.lang.String> resources);
+  public A withResources(List<String> resources);
 
   public A withResources(java.lang.String... resources);
 
-  public java.lang.Boolean hasResources();
+  public Boolean hasResources();
 
-  public A addNewResource(java.lang.String original);
+  public A addToVerbs(Integer index, String item);
 
-  public A addToVerbs(java.lang.Integer index, java.lang.String item);
-
-  public A setToVerbs(java.lang.Integer index, java.lang.String item);
+  public A setToVerbs(Integer index, String item);
 
   public A addToVerbs(java.lang.String... items);
 
-  public A addAllToVerbs(java.util.Collection<java.lang.String> items);
+  public A addAllToVerbs(Collection<String> items);
 
   public A removeFromVerbs(java.lang.String... items);
 
-  public A removeAllFromVerbs(java.util.Collection<java.lang.String> items);
+  public A removeAllFromVerbs(Collection<String> items);
 
-  public java.util.List<java.lang.String> getVerbs();
+  public List<String> getVerbs();
 
-  public java.lang.String getVerb(java.lang.Integer index);
+  public String getVerb(Integer index);
 
-  public java.lang.String getFirstVerb();
+  public String getFirstVerb();
 
-  public java.lang.String getLastVerb();
+  public String getLastVerb();
 
-  public java.lang.String getMatchingVerb(java.util.function.Predicate<java.lang.String> predicate);
+  public String getMatchingVerb(Predicate<String> predicate);
 
-  public java.lang.Boolean hasMatchingVerb(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public Boolean hasMatchingVerb(Predicate<String> predicate);
 
-  public A withVerbs(java.util.List<java.lang.String> verbs);
+  public A withVerbs(List<String> verbs);
 
   public A withVerbs(java.lang.String... verbs);
 
-  public java.lang.Boolean hasVerbs();
+  public Boolean hasVerbs();
 
-  public A addNewVerb(java.lang.String original);
+  public A withClusterScope();
 }

@@ -12,17 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Predicate;
 
 /** Generated */
-public class V1APIVersionsFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1APIVersionsFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1APIVersionsFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1APIVersionsFluentImpl<A extends V1APIVersionsFluent<A>> extends BaseFluent<A>
+    implements V1APIVersionsFluent<A> {
   public V1APIVersionsFluentImpl() {}
 
-  public V1APIVersionsFluentImpl(io.kubernetes.client.openapi.models.V1APIVersions instance) {
+  public V1APIVersionsFluentImpl(V1APIVersions instance) {
     this.withApiVersion(instance.getApiVersion());
 
     this.withKind(instance.getKind());
@@ -32,61 +36,42 @@ public class V1APIVersionsFluentImpl<
     this.withVersions(instance.getVersions());
   }
 
-  private java.lang.String apiVersion;
-  private java.lang.String kind;
-  private java.util.ArrayList<
-          io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder>
-      serverAddressByClientCIDRs;
-  private java.util.List<java.lang.String> versions;
+  private String apiVersion;
+  private String kind;
+  private ArrayList<V1ServerAddressByClientCIDRBuilder> serverAddressByClientCIDRs;
+  private List<String> versions;
 
-  public java.lang.String getApiVersion() {
+  public String getApiVersion() {
     return this.apiVersion;
   }
 
-  public A withApiVersion(java.lang.String apiVersion) {
+  public A withApiVersion(String apiVersion) {
     this.apiVersion = apiVersion;
     return (A) this;
   }
 
-  public java.lang.Boolean hasApiVersion() {
+  public Boolean hasApiVersion() {
     return this.apiVersion != null;
   }
 
-  /** Method is deprecated. use withApiVersion instead. */
-  @java.lang.Deprecated
-  public A withNewApiVersion(java.lang.String original) {
-    return (A) withApiVersion(new String(original));
-  }
-
-  public java.lang.String getKind() {
+  public String getKind() {
     return this.kind;
   }
 
-  public A withKind(java.lang.String kind) {
+  public A withKind(String kind) {
     this.kind = kind;
     return (A) this;
   }
 
-  public java.lang.Boolean hasKind() {
+  public Boolean hasKind() {
     return this.kind != null;
   }
 
-  /** Method is deprecated. use withKind instead. */
-  @java.lang.Deprecated
-  public A withNewKind(java.lang.String original) {
-    return (A) withKind(new String(original));
-  }
-
-  public A addToServerAddressByClientCIDRs(
-      java.lang.Integer index,
-      io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDR item) {
+  public A addToServerAddressByClientCIDRs(Integer index, V1ServerAddressByClientCIDR item) {
     if (this.serverAddressByClientCIDRs == null) {
-      this.serverAddressByClientCIDRs =
-          new java.util.ArrayList<
-              io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder>();
+      this.serverAddressByClientCIDRs = new ArrayList<V1ServerAddressByClientCIDRBuilder>();
     }
-    io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder builder =
-        new io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder(item);
+    V1ServerAddressByClientCIDRBuilder builder = new V1ServerAddressByClientCIDRBuilder(item);
     _visitables
         .get("serverAddressByClientCIDRs")
         .add(index >= 0 ? index : _visitables.get("serverAddressByClientCIDRs").size(), builder);
@@ -95,16 +80,11 @@ public class V1APIVersionsFluentImpl<
     return (A) this;
   }
 
-  public A setToServerAddressByClientCIDRs(
-      java.lang.Integer index,
-      io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDR item) {
+  public A setToServerAddressByClientCIDRs(Integer index, V1ServerAddressByClientCIDR item) {
     if (this.serverAddressByClientCIDRs == null) {
-      this.serverAddressByClientCIDRs =
-          new java.util.ArrayList<
-              io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder>();
+      this.serverAddressByClientCIDRs = new ArrayList<V1ServerAddressByClientCIDRBuilder>();
     }
-    io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder builder =
-        new io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder(item);
+    V1ServerAddressByClientCIDRBuilder builder = new V1ServerAddressByClientCIDRBuilder(item);
     if (index < 0 || index >= _visitables.get("serverAddressByClientCIDRs").size()) {
       _visitables.get("serverAddressByClientCIDRs").add(builder);
     } else {
@@ -121,29 +101,22 @@ public class V1APIVersionsFluentImpl<
   public A addToServerAddressByClientCIDRs(
       io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDR... items) {
     if (this.serverAddressByClientCIDRs == null) {
-      this.serverAddressByClientCIDRs =
-          new java.util.ArrayList<
-              io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder>();
+      this.serverAddressByClientCIDRs = new ArrayList<V1ServerAddressByClientCIDRBuilder>();
     }
-    for (io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDR item : items) {
-      io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder builder =
-          new io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder(item);
+    for (V1ServerAddressByClientCIDR item : items) {
+      V1ServerAddressByClientCIDRBuilder builder = new V1ServerAddressByClientCIDRBuilder(item);
       _visitables.get("serverAddressByClientCIDRs").add(builder);
       this.serverAddressByClientCIDRs.add(builder);
     }
     return (A) this;
   }
 
-  public A addAllToServerAddressByClientCIDRs(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDR> items) {
+  public A addAllToServerAddressByClientCIDRs(Collection<V1ServerAddressByClientCIDR> items) {
     if (this.serverAddressByClientCIDRs == null) {
-      this.serverAddressByClientCIDRs =
-          new java.util.ArrayList<
-              io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder>();
+      this.serverAddressByClientCIDRs = new ArrayList<V1ServerAddressByClientCIDRBuilder>();
     }
-    for (io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDR item : items) {
-      io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder builder =
-          new io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder(item);
+    for (V1ServerAddressByClientCIDR item : items) {
+      V1ServerAddressByClientCIDRBuilder builder = new V1ServerAddressByClientCIDRBuilder(item);
       _visitables.get("serverAddressByClientCIDRs").add(builder);
       this.serverAddressByClientCIDRs.add(builder);
     }
@@ -152,9 +125,8 @@ public class V1APIVersionsFluentImpl<
 
   public A removeFromServerAddressByClientCIDRs(
       io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDR... items) {
-    for (io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDR item : items) {
-      io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder builder =
-          new io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder(item);
+    for (V1ServerAddressByClientCIDR item : items) {
+      V1ServerAddressByClientCIDRBuilder builder = new V1ServerAddressByClientCIDRBuilder(item);
       _visitables.get("serverAddressByClientCIDRs").remove(builder);
       if (this.serverAddressByClientCIDRs != null) {
         this.serverAddressByClientCIDRs.remove(builder);
@@ -163,11 +135,9 @@ public class V1APIVersionsFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromServerAddressByClientCIDRs(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDR> items) {
-    for (io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDR item : items) {
-      io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder builder =
-          new io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder(item);
+  public A removeAllFromServerAddressByClientCIDRs(Collection<V1ServerAddressByClientCIDR> items) {
+    for (V1ServerAddressByClientCIDR item : items) {
+      V1ServerAddressByClientCIDRBuilder builder = new V1ServerAddressByClientCIDRBuilder(item);
       _visitables.get("serverAddressByClientCIDRs").remove(builder);
       if (this.serverAddressByClientCIDRs != null) {
         this.serverAddressByClientCIDRs.remove(builder);
@@ -177,15 +147,12 @@ public class V1APIVersionsFluentImpl<
   }
 
   public A removeMatchingFromServerAddressByClientCIDRs(
-      java.util.function.Predicate<
-              io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder>
-          predicate) {
+      Predicate<V1ServerAddressByClientCIDRBuilder> predicate) {
     if (serverAddressByClientCIDRs == null) return (A) this;
-    final Iterator<io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder> each =
-        serverAddressByClientCIDRs.iterator();
+    final Iterator<V1ServerAddressByClientCIDRBuilder> each = serverAddressByClientCIDRs.iterator();
     final List visitables = _visitables.get("serverAddressByClientCIDRs");
     while (each.hasNext()) {
-      io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder builder = each.next();
+      V1ServerAddressByClientCIDRBuilder builder = each.next();
       if (predicate.test(builder)) {
         visitables.remove(builder);
         each.remove();
@@ -199,39 +166,30 @@ public class V1APIVersionsFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDR>
-      getServerAddressByClientCIDRs() {
+  @Deprecated
+  public List<V1ServerAddressByClientCIDR> getServerAddressByClientCIDRs() {
     return serverAddressByClientCIDRs != null ? build(serverAddressByClientCIDRs) : null;
   }
 
-  public java.util.List<io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDR>
-      buildServerAddressByClientCIDRs() {
+  public List<V1ServerAddressByClientCIDR> buildServerAddressByClientCIDRs() {
     return serverAddressByClientCIDRs != null ? build(serverAddressByClientCIDRs) : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDR
-      buildServerAddressByClientCIDR(java.lang.Integer index) {
+  public V1ServerAddressByClientCIDR buildServerAddressByClientCIDR(Integer index) {
     return this.serverAddressByClientCIDRs.get(index).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDR
-      buildFirstServerAddressByClientCIDR() {
+  public V1ServerAddressByClientCIDR buildFirstServerAddressByClientCIDR() {
     return this.serverAddressByClientCIDRs.get(0).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDR
-      buildLastServerAddressByClientCIDR() {
+  public V1ServerAddressByClientCIDR buildLastServerAddressByClientCIDR() {
     return this.serverAddressByClientCIDRs.get(serverAddressByClientCIDRs.size() - 1).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDR
-      buildMatchingServerAddressByClientCIDR(
-          java.util.function.Predicate<
-                  io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder>
-              predicate) {
-    for (io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder item :
-        serverAddressByClientCIDRs) {
+  public V1ServerAddressByClientCIDR buildMatchingServerAddressByClientCIDR(
+      Predicate<V1ServerAddressByClientCIDRBuilder> predicate) {
+    for (V1ServerAddressByClientCIDRBuilder item : serverAddressByClientCIDRs) {
       if (predicate.test(item)) {
         return item.build();
       }
@@ -239,12 +197,9 @@ public class V1APIVersionsFluentImpl<
     return null;
   }
 
-  public java.lang.Boolean hasMatchingServerAddressByClientCIDR(
-      java.util.function.Predicate<
-              io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder>
-          predicate) {
-    for (io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder item :
-        serverAddressByClientCIDRs) {
+  public Boolean hasMatchingServerAddressByClientCIDR(
+      Predicate<V1ServerAddressByClientCIDRBuilder> predicate) {
+    for (V1ServerAddressByClientCIDRBuilder item : serverAddressByClientCIDRs) {
       if (predicate.test(item)) {
         return true;
       }
@@ -253,15 +208,13 @@ public class V1APIVersionsFluentImpl<
   }
 
   public A withServerAddressByClientCIDRs(
-      java.util.List<io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDR>
-          serverAddressByClientCIDRs) {
+      List<V1ServerAddressByClientCIDR> serverAddressByClientCIDRs) {
     if (this.serverAddressByClientCIDRs != null) {
       _visitables.get("serverAddressByClientCIDRs").removeAll(this.serverAddressByClientCIDRs);
     }
     if (serverAddressByClientCIDRs != null) {
-      this.serverAddressByClientCIDRs = new java.util.ArrayList();
-      for (io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDR item :
-          serverAddressByClientCIDRs) {
+      this.serverAddressByClientCIDRs = new ArrayList();
+      for (V1ServerAddressByClientCIDR item : serverAddressByClientCIDRs) {
         this.addToServerAddressByClientCIDRs(item);
       }
     } else {
@@ -277,54 +230,46 @@ public class V1APIVersionsFluentImpl<
       this.serverAddressByClientCIDRs.clear();
     }
     if (serverAddressByClientCIDRs != null) {
-      for (io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDR item :
-          serverAddressByClientCIDRs) {
+      for (V1ServerAddressByClientCIDR item : serverAddressByClientCIDRs) {
         this.addToServerAddressByClientCIDRs(item);
       }
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasServerAddressByClientCIDRs() {
+  public Boolean hasServerAddressByClientCIDRs() {
     return serverAddressByClientCIDRs != null && !serverAddressByClientCIDRs.isEmpty();
   }
 
-  public io.kubernetes.client.openapi.models.V1APIVersionsFluent.ServerAddressByClientCIDRsNested<A>
-      addNewServerAddressByClientCIDR() {
-    return new io.kubernetes.client.openapi.models.V1APIVersionsFluentImpl
-        .ServerAddressByClientCIDRsNestedImpl();
+  public V1APIVersionsFluent.ServerAddressByClientCIDRsNested<A> addNewServerAddressByClientCIDR() {
+    return new V1APIVersionsFluentImpl.ServerAddressByClientCIDRsNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1APIVersionsFluent.ServerAddressByClientCIDRsNested<A>
-      addNewServerAddressByClientCIDRLike(
-          io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDR item) {
-    return new io.kubernetes.client.openapi.models.V1APIVersionsFluentImpl
-        .ServerAddressByClientCIDRsNestedImpl(-1, item);
+  public V1APIVersionsFluent.ServerAddressByClientCIDRsNested<A>
+      addNewServerAddressByClientCIDRLike(V1ServerAddressByClientCIDR item) {
+    return new V1APIVersionsFluentImpl.ServerAddressByClientCIDRsNestedImpl(-1, item);
   }
 
-  public io.kubernetes.client.openapi.models.V1APIVersionsFluent.ServerAddressByClientCIDRsNested<A>
-      setNewServerAddressByClientCIDRLike(
-          java.lang.Integer index,
-          io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDR item) {
-    return new io.kubernetes.client.openapi.models.V1APIVersionsFluentImpl
-        .ServerAddressByClientCIDRsNestedImpl(index, item);
+  public V1APIVersionsFluent.ServerAddressByClientCIDRsNested<A>
+      setNewServerAddressByClientCIDRLike(Integer index, V1ServerAddressByClientCIDR item) {
+    return new V1APIVersionsFluentImpl.ServerAddressByClientCIDRsNestedImpl(index, item);
   }
 
-  public io.kubernetes.client.openapi.models.V1APIVersionsFluent.ServerAddressByClientCIDRsNested<A>
-      editServerAddressByClientCIDR(java.lang.Integer index) {
+  public V1APIVersionsFluent.ServerAddressByClientCIDRsNested<A> editServerAddressByClientCIDR(
+      Integer index) {
     if (serverAddressByClientCIDRs.size() <= index)
       throw new RuntimeException("Can't edit serverAddressByClientCIDRs. Index exceeds size.");
     return setNewServerAddressByClientCIDRLike(index, buildServerAddressByClientCIDR(index));
   }
 
-  public io.kubernetes.client.openapi.models.V1APIVersionsFluent.ServerAddressByClientCIDRsNested<A>
+  public V1APIVersionsFluent.ServerAddressByClientCIDRsNested<A>
       editFirstServerAddressByClientCIDR() {
     if (serverAddressByClientCIDRs.size() == 0)
       throw new RuntimeException("Can't edit first serverAddressByClientCIDRs. The list is empty.");
     return setNewServerAddressByClientCIDRLike(0, buildServerAddressByClientCIDR(0));
   }
 
-  public io.kubernetes.client.openapi.models.V1APIVersionsFluent.ServerAddressByClientCIDRsNested<A>
+  public V1APIVersionsFluent.ServerAddressByClientCIDRsNested<A>
       editLastServerAddressByClientCIDR() {
     int index = serverAddressByClientCIDRs.size() - 1;
     if (index < 0)
@@ -332,11 +277,9 @@ public class V1APIVersionsFluentImpl<
     return setNewServerAddressByClientCIDRLike(index, buildServerAddressByClientCIDR(index));
   }
 
-  public io.kubernetes.client.openapi.models.V1APIVersionsFluent.ServerAddressByClientCIDRsNested<A>
+  public V1APIVersionsFluent.ServerAddressByClientCIDRsNested<A>
       editMatchingServerAddressByClientCIDR(
-          java.util.function.Predicate<
-                  io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder>
-              predicate) {
+          Predicate<V1ServerAddressByClientCIDRBuilder> predicate) {
     int index = -1;
     for (int i = 0; i < serverAddressByClientCIDRs.size(); i++) {
       if (predicate.test(serverAddressByClientCIDRs.get(i))) {
@@ -349,17 +292,17 @@ public class V1APIVersionsFluentImpl<
     return setNewServerAddressByClientCIDRLike(index, buildServerAddressByClientCIDR(index));
   }
 
-  public A addToVersions(java.lang.Integer index, java.lang.String item) {
+  public A addToVersions(Integer index, String item) {
     if (this.versions == null) {
-      this.versions = new java.util.ArrayList<java.lang.String>();
+      this.versions = new ArrayList<String>();
     }
     this.versions.add(index, item);
     return (A) this;
   }
 
-  public A setToVersions(java.lang.Integer index, java.lang.String item) {
+  public A setToVersions(Integer index, String item) {
     if (this.versions == null) {
-      this.versions = new java.util.ArrayList<java.lang.String>();
+      this.versions = new ArrayList<String>();
     }
     this.versions.set(index, item);
     return (A) this;
@@ -367,26 +310,26 @@ public class V1APIVersionsFluentImpl<
 
   public A addToVersions(java.lang.String... items) {
     if (this.versions == null) {
-      this.versions = new java.util.ArrayList<java.lang.String>();
+      this.versions = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.versions.add(item);
     }
     return (A) this;
   }
 
-  public A addAllToVersions(java.util.Collection<java.lang.String> items) {
+  public A addAllToVersions(Collection<String> items) {
     if (this.versions == null) {
-      this.versions = new java.util.ArrayList<java.lang.String>();
+      this.versions = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.versions.add(item);
     }
     return (A) this;
   }
 
   public A removeFromVersions(java.lang.String... items) {
-    for (java.lang.String item : items) {
+    for (String item : items) {
       if (this.versions != null) {
         this.versions.remove(item);
       }
@@ -394,8 +337,8 @@ public class V1APIVersionsFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromVersions(java.util.Collection<java.lang.String> items) {
-    for (java.lang.String item : items) {
+  public A removeAllFromVersions(Collection<String> items) {
+    for (String item : items) {
       if (this.versions != null) {
         this.versions.remove(item);
       }
@@ -403,25 +346,24 @@ public class V1APIVersionsFluentImpl<
     return (A) this;
   }
 
-  public java.util.List<java.lang.String> getVersions() {
+  public List<String> getVersions() {
     return this.versions;
   }
 
-  public java.lang.String getVersion(java.lang.Integer index) {
+  public String getVersion(Integer index) {
     return this.versions.get(index);
   }
 
-  public java.lang.String getFirstVersion() {
+  public String getFirstVersion() {
     return this.versions.get(0);
   }
 
-  public java.lang.String getLastVersion() {
+  public String getLastVersion() {
     return this.versions.get(versions.size() - 1);
   }
 
-  public java.lang.String getMatchingVersion(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : versions) {
+  public String getMatchingVersion(Predicate<String> predicate) {
+    for (String item : versions) {
       if (predicate.test(item)) {
         return item;
       }
@@ -429,9 +371,8 @@ public class V1APIVersionsFluentImpl<
     return null;
   }
 
-  public java.lang.Boolean hasMatchingVersion(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : versions) {
+  public Boolean hasMatchingVersion(Predicate<String> predicate) {
+    for (String item : versions) {
       if (predicate.test(item)) {
         return true;
       }
@@ -439,10 +380,10 @@ public class V1APIVersionsFluentImpl<
     return false;
   }
 
-  public A withVersions(java.util.List<java.lang.String> versions) {
+  public A withVersions(List<String> versions) {
     if (versions != null) {
-      this.versions = new java.util.ArrayList();
-      for (java.lang.String item : versions) {
+      this.versions = new ArrayList();
+      for (String item : versions) {
         this.addToVersions(item);
       }
     } else {
@@ -456,22 +397,18 @@ public class V1APIVersionsFluentImpl<
       this.versions.clear();
     }
     if (versions != null) {
-      for (java.lang.String item : versions) {
+      for (String item : versions) {
         this.addToVersions(item);
       }
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasVersions() {
+  public Boolean hasVersions() {
     return versions != null && !versions.isEmpty();
   }
 
-  public A addNewVersion(java.lang.String original) {
-    return (A) addToVersions(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1APIVersionsFluentImpl that = (V1APIVersionsFluentImpl) o;
@@ -490,30 +427,45 @@ public class V1APIVersionsFluentImpl<
         apiVersion, kind, serverAddressByClientCIDRs, versions, super.hashCode());
   }
 
-  public class ServerAddressByClientCIDRsNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRFluentImpl<
-          io.kubernetes.client.openapi.models.V1APIVersionsFluent.ServerAddressByClientCIDRsNested<
-              N>>
-      implements io.kubernetes.client.openapi.models.V1APIVersionsFluent
-                  .ServerAddressByClientCIDRsNested<
-              N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    ServerAddressByClientCIDRsNestedImpl(
-        java.lang.Integer index,
-        io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDR item) {
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (apiVersion != null) {
+      sb.append("apiVersion:");
+      sb.append(apiVersion + ",");
+    }
+    if (kind != null) {
+      sb.append("kind:");
+      sb.append(kind + ",");
+    }
+    if (serverAddressByClientCIDRs != null && !serverAddressByClientCIDRs.isEmpty()) {
+      sb.append("serverAddressByClientCIDRs:");
+      sb.append(serverAddressByClientCIDRs + ",");
+    }
+    if (versions != null && !versions.isEmpty()) {
+      sb.append("versions:");
+      sb.append(versions);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class ServerAddressByClientCIDRsNestedImpl<N>
+      extends V1ServerAddressByClientCIDRFluentImpl<
+          V1APIVersionsFluent.ServerAddressByClientCIDRsNested<N>>
+      implements V1APIVersionsFluent.ServerAddressByClientCIDRsNested<N>, Nested<N> {
+    ServerAddressByClientCIDRsNestedImpl(Integer index, V1ServerAddressByClientCIDR item) {
       this.index = index;
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder(this, item);
+      this.builder = new V1ServerAddressByClientCIDRBuilder(this, item);
     }
 
     ServerAddressByClientCIDRsNestedImpl() {
       this.index = -1;
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder(this);
+      this.builder = new V1ServerAddressByClientCIDRBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1ServerAddressByClientCIDRBuilder builder;
-    java.lang.Integer index;
+    V1ServerAddressByClientCIDRBuilder builder;
+    Integer index;
 
     public N and() {
       return (N)

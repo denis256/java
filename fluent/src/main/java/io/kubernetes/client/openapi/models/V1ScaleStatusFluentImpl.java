@@ -12,55 +12,50 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1ScaleStatusFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1ScaleStatusFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1ScaleStatusFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1ScaleStatusFluentImpl<A extends V1ScaleStatusFluent<A>> extends BaseFluent<A>
+    implements V1ScaleStatusFluent<A> {
   public V1ScaleStatusFluentImpl() {}
 
-  public V1ScaleStatusFluentImpl(io.kubernetes.client.openapi.models.V1ScaleStatus instance) {
+  public V1ScaleStatusFluentImpl(V1ScaleStatus instance) {
     this.withReplicas(instance.getReplicas());
 
     this.withSelector(instance.getSelector());
   }
 
-  private java.lang.Integer replicas;
-  private java.lang.String selector;
+  private Integer replicas;
+  private String selector;
 
-  public java.lang.Integer getReplicas() {
+  public Integer getReplicas() {
     return this.replicas;
   }
 
-  public A withReplicas(java.lang.Integer replicas) {
+  public A withReplicas(Integer replicas) {
     this.replicas = replicas;
     return (A) this;
   }
 
-  public java.lang.Boolean hasReplicas() {
+  public Boolean hasReplicas() {
     return this.replicas != null;
   }
 
-  public java.lang.String getSelector() {
+  public String getSelector() {
     return this.selector;
   }
 
-  public A withSelector(java.lang.String selector) {
+  public A withSelector(String selector) {
     this.selector = selector;
     return (A) this;
   }
 
-  public java.lang.Boolean hasSelector() {
+  public Boolean hasSelector() {
     return this.selector != null;
   }
 
-  /** Method is deprecated. use withSelector instead. */
-  @java.lang.Deprecated
-  public A withNewSelector(java.lang.String original) {
-    return (A) withSelector(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1ScaleStatusFluentImpl that = (V1ScaleStatusFluentImpl) o;
@@ -71,5 +66,20 @@ public class V1ScaleStatusFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(replicas, selector, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (replicas != null) {
+      sb.append("replicas:");
+      sb.append(replicas + ",");
+    }
+    if (selector != null) {
+      sb.append("selector:");
+      sb.append(selector);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

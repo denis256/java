@@ -12,56 +12,51 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import java.time.OffsetDateTime;
+
 /** Generated */
-public class V1TokenRequestStatusFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1TokenRequestStatusFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1TokenRequestStatusFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1TokenRequestStatusFluentImpl<A extends V1TokenRequestStatusFluent<A>>
+    extends BaseFluent<A> implements V1TokenRequestStatusFluent<A> {
   public V1TokenRequestStatusFluentImpl() {}
 
-  public V1TokenRequestStatusFluentImpl(
-      io.kubernetes.client.openapi.models.V1TokenRequestStatus instance) {
+  public V1TokenRequestStatusFluentImpl(V1TokenRequestStatus instance) {
     this.withExpirationTimestamp(instance.getExpirationTimestamp());
 
     this.withToken(instance.getToken());
   }
 
-  private java.time.OffsetDateTime expirationTimestamp;
-  private java.lang.String token;
+  private OffsetDateTime expirationTimestamp;
+  private String token;
 
-  public java.time.OffsetDateTime getExpirationTimestamp() {
+  public OffsetDateTime getExpirationTimestamp() {
     return this.expirationTimestamp;
   }
 
-  public A withExpirationTimestamp(java.time.OffsetDateTime expirationTimestamp) {
+  public A withExpirationTimestamp(OffsetDateTime expirationTimestamp) {
     this.expirationTimestamp = expirationTimestamp;
     return (A) this;
   }
 
-  public java.lang.Boolean hasExpirationTimestamp() {
+  public Boolean hasExpirationTimestamp() {
     return this.expirationTimestamp != null;
   }
 
-  public java.lang.String getToken() {
+  public String getToken() {
     return this.token;
   }
 
-  public A withToken(java.lang.String token) {
+  public A withToken(String token) {
     this.token = token;
     return (A) this;
   }
 
-  public java.lang.Boolean hasToken() {
+  public Boolean hasToken() {
     return this.token != null;
   }
 
-  /** Method is deprecated. use withToken instead. */
-  @java.lang.Deprecated
-  public A withNewToken(java.lang.String original) {
-    return (A) withToken(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1TokenRequestStatusFluentImpl that = (V1TokenRequestStatusFluentImpl) o;
@@ -74,5 +69,20 @@ public class V1TokenRequestStatusFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(expirationTimestamp, token, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (expirationTimestamp != null) {
+      sb.append("expirationTimestamp:");
+      sb.append(expirationTimestamp + ",");
+    }
+    if (token != null) {
+      sb.append("token:");
+      sb.append(token);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

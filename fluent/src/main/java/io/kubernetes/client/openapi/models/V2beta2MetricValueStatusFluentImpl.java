@@ -13,16 +13,15 @@ limitations under the License.
 package io.kubernetes.client.openapi.models;
 
 import io.kubernetes.client.custom.Quantity;
+import io.kubernetes.client.fluent.BaseFluent;
 
 /** Generated */
-public class V2beta2MetricValueStatusFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V2beta2MetricValueStatusFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V2beta2MetricValueStatusFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V2beta2MetricValueStatusFluentImpl<A extends V2beta2MetricValueStatusFluent<A>>
+    extends BaseFluent<A> implements V2beta2MetricValueStatusFluent<A> {
   public V2beta2MetricValueStatusFluentImpl() {}
 
-  public V2beta2MetricValueStatusFluentImpl(
-      io.kubernetes.client.openapi.models.V2beta2MetricValueStatus instance) {
+  public V2beta2MetricValueStatusFluentImpl(V2beta2MetricValueStatus instance) {
     this.withAverageUtilization(instance.getAverageUtilization());
 
     this.withAverageValue(instance.getAverageValue());
@@ -30,58 +29,58 @@ public class V2beta2MetricValueStatusFluentImpl<
     this.withValue(instance.getValue());
   }
 
-  private java.lang.Integer averageUtilization;
-  private io.kubernetes.client.custom.Quantity averageValue;
-  private io.kubernetes.client.custom.Quantity value;
+  private Integer averageUtilization;
+  private Quantity averageValue;
+  private Quantity value;
 
-  public java.lang.Integer getAverageUtilization() {
+  public Integer getAverageUtilization() {
     return this.averageUtilization;
   }
 
-  public A withAverageUtilization(java.lang.Integer averageUtilization) {
+  public A withAverageUtilization(Integer averageUtilization) {
     this.averageUtilization = averageUtilization;
     return (A) this;
   }
 
-  public java.lang.Boolean hasAverageUtilization() {
+  public Boolean hasAverageUtilization() {
     return this.averageUtilization != null;
   }
 
-  public io.kubernetes.client.custom.Quantity getAverageValue() {
+  public Quantity getAverageValue() {
     return this.averageValue;
   }
 
-  public A withAverageValue(io.kubernetes.client.custom.Quantity averageValue) {
+  public A withAverageValue(Quantity averageValue) {
     this.averageValue = averageValue;
     return (A) this;
   }
 
-  public java.lang.Boolean hasAverageValue() {
+  public Boolean hasAverageValue() {
     return this.averageValue != null;
   }
 
-  public A withNewAverageValue(java.lang.String value) {
+  public A withNewAverageValue(String value) {
     return (A) withAverageValue(new Quantity(value));
   }
 
-  public io.kubernetes.client.custom.Quantity getValue() {
+  public Quantity getValue() {
     return this.value;
   }
 
-  public A withValue(io.kubernetes.client.custom.Quantity value) {
+  public A withValue(Quantity value) {
     this.value = value;
     return (A) this;
   }
 
-  public java.lang.Boolean hasValue() {
+  public Boolean hasValue() {
     return this.value != null;
   }
 
-  public A withNewValue(java.lang.String value) {
+  public A withNewValue(String value) {
     return (A) withValue(new Quantity(value));
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V2beta2MetricValueStatusFluentImpl that = (V2beta2MetricValueStatusFluentImpl) o;
@@ -96,5 +95,24 @@ public class V2beta2MetricValueStatusFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(averageUtilization, averageValue, value, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (averageUtilization != null) {
+      sb.append("averageUtilization:");
+      sb.append(averageUtilization + ",");
+    }
+    if (averageValue != null) {
+      sb.append("averageValue:");
+      sb.append(averageValue + ",");
+    }
+    if (value != null) {
+      sb.append("value:");
+      sb.append(value);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

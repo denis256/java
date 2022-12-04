@@ -12,41 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1ReplicaSetListBuilder
-    extends io.kubernetes.client.openapi.models.V1ReplicaSetListFluentImpl<
-        io.kubernetes.client.openapi.models.V1ReplicaSetListBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1ReplicaSetList,
-        io.kubernetes.client.openapi.models.V1ReplicaSetListBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1ReplicaSetListBuilder extends V1ReplicaSetListFluentImpl<V1ReplicaSetListBuilder>
+    implements VisitableBuilder<V1ReplicaSetList, V1ReplicaSetListBuilder> {
   public V1ReplicaSetListBuilder() {
     this(false);
   }
 
-  public V1ReplicaSetListBuilder(java.lang.Boolean validationEnabled) {
+  public V1ReplicaSetListBuilder(Boolean validationEnabled) {
     this(new V1ReplicaSetList(), validationEnabled);
   }
 
-  public V1ReplicaSetListBuilder(
-      io.kubernetes.client.openapi.models.V1ReplicaSetListFluent<?> fluent) {
+  public V1ReplicaSetListBuilder(V1ReplicaSetListFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1ReplicaSetListBuilder(
-      io.kubernetes.client.openapi.models.V1ReplicaSetListFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1ReplicaSetListBuilder(V1ReplicaSetListFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1ReplicaSetList(), validationEnabled);
   }
 
-  public V1ReplicaSetListBuilder(
-      io.kubernetes.client.openapi.models.V1ReplicaSetListFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ReplicaSetList instance) {
+  public V1ReplicaSetListBuilder(V1ReplicaSetListFluent<?> fluent, V1ReplicaSetList instance) {
     this(fluent, instance, false);
   }
 
   public V1ReplicaSetListBuilder(
-      io.kubernetes.client.openapi.models.V1ReplicaSetListFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ReplicaSetList instance,
-      java.lang.Boolean validationEnabled) {
+      V1ReplicaSetListFluent<?> fluent, V1ReplicaSetList instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withApiVersion(instance.getApiVersion());
 
@@ -59,13 +50,11 @@ public class V1ReplicaSetListBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1ReplicaSetListBuilder(io.kubernetes.client.openapi.models.V1ReplicaSetList instance) {
+  public V1ReplicaSetListBuilder(V1ReplicaSetList instance) {
     this(instance, false);
   }
 
-  public V1ReplicaSetListBuilder(
-      io.kubernetes.client.openapi.models.V1ReplicaSetList instance,
-      java.lang.Boolean validationEnabled) {
+  public V1ReplicaSetListBuilder(V1ReplicaSetList instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withApiVersion(instance.getApiVersion());
 
@@ -78,34 +67,15 @@ public class V1ReplicaSetListBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1ReplicaSetListFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1ReplicaSetListFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1ReplicaSetList build() {
+  public V1ReplicaSetList build() {
     V1ReplicaSetList buildable = new V1ReplicaSetList();
     buildable.setApiVersion(fluent.getApiVersion());
     buildable.setItems(fluent.getItems());
     buildable.setKind(fluent.getKind());
     buildable.setMetadata(fluent.getMetadata());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1ReplicaSetListBuilder that = (V1ReplicaSetListBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

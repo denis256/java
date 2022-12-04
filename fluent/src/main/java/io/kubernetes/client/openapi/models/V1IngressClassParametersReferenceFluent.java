@@ -12,57 +12,39 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
 public interface V1IngressClassParametersReferenceFluent<
-        A extends io.kubernetes.client.openapi.models.V1IngressClassParametersReferenceFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getApiGroup();
+        A extends V1IngressClassParametersReferenceFluent<A>>
+    extends Fluent<A> {
+  public String getApiGroup();
 
-  public A withApiGroup(java.lang.String apiGroup);
+  public A withApiGroup(String apiGroup);
 
-  public java.lang.Boolean hasApiGroup();
+  public Boolean hasApiGroup();
 
-  /** Method is deprecated. use withApiGroup instead. */
-  @java.lang.Deprecated
-  public A withNewApiGroup(java.lang.String original);
+  public String getKind();
 
-  public java.lang.String getKind();
+  public A withKind(String kind);
 
-  public A withKind(java.lang.String kind);
+  public Boolean hasKind();
 
-  public java.lang.Boolean hasKind();
+  public String getName();
 
-  /** Method is deprecated. use withKind instead. */
-  @java.lang.Deprecated
-  public A withNewKind(java.lang.String original);
+  public A withName(String name);
 
-  public java.lang.String getName();
+  public Boolean hasName();
 
-  public A withName(java.lang.String name);
+  public String getNamespace();
 
-  public java.lang.Boolean hasName();
+  public A withNamespace(String namespace);
 
-  /** Method is deprecated. use withName instead. */
-  @java.lang.Deprecated
-  public A withNewName(java.lang.String original);
+  public Boolean hasNamespace();
 
-  public java.lang.String getNamespace();
+  public String getScope();
 
-  public A withNamespace(java.lang.String namespace);
+  public A withScope(String scope);
 
-  public java.lang.Boolean hasNamespace();
-
-  /** Method is deprecated. use withNamespace instead. */
-  @java.lang.Deprecated
-  public A withNewNamespace(java.lang.String original);
-
-  public java.lang.String getScope();
-
-  public A withScope(java.lang.String scope);
-
-  public java.lang.Boolean hasScope();
-
-  /** Method is deprecated. use withScope instead. */
-  @java.lang.Deprecated
-  public A withNewScope(java.lang.String original);
+  public Boolean hasScope();
 }

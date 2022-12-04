@@ -12,40 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1IngressBuilder
-    extends io.kubernetes.client.openapi.models.V1IngressFluentImpl<
-        io.kubernetes.client.openapi.models.V1IngressBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1Ingress,
-        io.kubernetes.client.openapi.models.V1IngressBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1IngressBuilder extends V1IngressFluentImpl<V1IngressBuilder>
+    implements VisitableBuilder<V1Ingress, V1IngressBuilder> {
   public V1IngressBuilder() {
     this(false);
   }
 
-  public V1IngressBuilder(java.lang.Boolean validationEnabled) {
+  public V1IngressBuilder(Boolean validationEnabled) {
     this(new V1Ingress(), validationEnabled);
   }
 
-  public V1IngressBuilder(io.kubernetes.client.openapi.models.V1IngressFluent<?> fluent) {
+  public V1IngressBuilder(V1IngressFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1IngressBuilder(
-      io.kubernetes.client.openapi.models.V1IngressFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1IngressBuilder(V1IngressFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1Ingress(), validationEnabled);
   }
 
-  public V1IngressBuilder(
-      io.kubernetes.client.openapi.models.V1IngressFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1Ingress instance) {
+  public V1IngressBuilder(V1IngressFluent<?> fluent, V1Ingress instance) {
     this(fluent, instance, false);
   }
 
   public V1IngressBuilder(
-      io.kubernetes.client.openapi.models.V1IngressFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1Ingress instance,
-      java.lang.Boolean validationEnabled) {
+      V1IngressFluent<?> fluent, V1Ingress instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withApiVersion(instance.getApiVersion());
 
@@ -60,12 +52,11 @@ public class V1IngressBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1IngressBuilder(io.kubernetes.client.openapi.models.V1Ingress instance) {
+  public V1IngressBuilder(V1Ingress instance) {
     this(instance, false);
   }
 
-  public V1IngressBuilder(
-      io.kubernetes.client.openapi.models.V1Ingress instance, java.lang.Boolean validationEnabled) {
+  public V1IngressBuilder(V1Ingress instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withApiVersion(instance.getApiVersion());
 
@@ -80,10 +71,10 @@ public class V1IngressBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1IngressFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1IngressFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1Ingress build() {
+  public V1Ingress build() {
     V1Ingress buildable = new V1Ingress();
     buildable.setApiVersion(fluent.getApiVersion());
     buildable.setKind(fluent.getKind());
@@ -91,24 +82,5 @@ public class V1IngressBuilder
     buildable.setSpec(fluent.getSpec());
     buildable.setStatus(fluent.getStatus());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1IngressBuilder that = (V1IngressBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

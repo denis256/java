@@ -12,62 +12,51 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
+@SuppressWarnings(value = "unchecked")
 public class V1PhotonPersistentDiskVolumeSourceFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1PhotonPersistentDiskVolumeSourceFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1PhotonPersistentDiskVolumeSourceFluent<A> {
+        A extends V1PhotonPersistentDiskVolumeSourceFluent<A>>
+    extends BaseFluent<A> implements V1PhotonPersistentDiskVolumeSourceFluent<A> {
   public V1PhotonPersistentDiskVolumeSourceFluentImpl() {}
 
-  public V1PhotonPersistentDiskVolumeSourceFluentImpl(
-      io.kubernetes.client.openapi.models.V1PhotonPersistentDiskVolumeSource instance) {
+  public V1PhotonPersistentDiskVolumeSourceFluentImpl(V1PhotonPersistentDiskVolumeSource instance) {
     this.withFsType(instance.getFsType());
 
     this.withPdID(instance.getPdID());
   }
 
-  private java.lang.String fsType;
-  private java.lang.String pdID;
+  private String fsType;
+  private String pdID;
 
-  public java.lang.String getFsType() {
+  public String getFsType() {
     return this.fsType;
   }
 
-  public A withFsType(java.lang.String fsType) {
+  public A withFsType(String fsType) {
     this.fsType = fsType;
     return (A) this;
   }
 
-  public java.lang.Boolean hasFsType() {
+  public Boolean hasFsType() {
     return this.fsType != null;
   }
 
-  /** Method is deprecated. use withFsType instead. */
-  @java.lang.Deprecated
-  public A withNewFsType(java.lang.String original) {
-    return (A) withFsType(new String(original));
-  }
-
-  public java.lang.String getPdID() {
+  public String getPdID() {
     return this.pdID;
   }
 
-  public A withPdID(java.lang.String pdID) {
+  public A withPdID(String pdID) {
     this.pdID = pdID;
     return (A) this;
   }
 
-  public java.lang.Boolean hasPdID() {
+  public Boolean hasPdID() {
     return this.pdID != null;
   }
 
-  /** Method is deprecated. use withPdID instead. */
-  @java.lang.Deprecated
-  public A withNewPdID(java.lang.String original) {
-    return (A) withPdID(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1PhotonPersistentDiskVolumeSourceFluentImpl that =
@@ -79,5 +68,20 @@ public class V1PhotonPersistentDiskVolumeSourceFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(fsType, pdID, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (fsType != null) {
+      sb.append("fsType:");
+      sb.append(fsType + ",");
+    }
+    if (pdID != null) {
+      sb.append("pdID:");
+      sb.append(pdID);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

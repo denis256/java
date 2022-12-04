@@ -12,41 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1alpha1StorageVersionBuilder
-    extends io.kubernetes.client.openapi.models.V1alpha1StorageVersionFluentImpl<
-        io.kubernetes.client.openapi.models.V1alpha1StorageVersionBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1alpha1StorageVersion,
-        io.kubernetes.client.openapi.models.V1alpha1StorageVersionBuilder> {
+    extends V1alpha1StorageVersionFluentImpl<V1alpha1StorageVersionBuilder>
+    implements VisitableBuilder<V1alpha1StorageVersion, V1alpha1StorageVersionBuilder> {
   public V1alpha1StorageVersionBuilder() {
     this(false);
   }
 
-  public V1alpha1StorageVersionBuilder(java.lang.Boolean validationEnabled) {
+  public V1alpha1StorageVersionBuilder(Boolean validationEnabled) {
     this(new V1alpha1StorageVersion(), validationEnabled);
   }
 
-  public V1alpha1StorageVersionBuilder(
-      io.kubernetes.client.openapi.models.V1alpha1StorageVersionFluent<?> fluent) {
+  public V1alpha1StorageVersionBuilder(V1alpha1StorageVersionFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1alpha1StorageVersionBuilder(
-      io.kubernetes.client.openapi.models.V1alpha1StorageVersionFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1alpha1StorageVersionFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1alpha1StorageVersion(), validationEnabled);
   }
 
   public V1alpha1StorageVersionBuilder(
-      io.kubernetes.client.openapi.models.V1alpha1StorageVersionFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1alpha1StorageVersion instance) {
+      V1alpha1StorageVersionFluent<?> fluent, V1alpha1StorageVersion instance) {
     this(fluent, instance, false);
   }
 
   public V1alpha1StorageVersionBuilder(
-      io.kubernetes.client.openapi.models.V1alpha1StorageVersionFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1alpha1StorageVersion instance,
-      java.lang.Boolean validationEnabled) {
+      V1alpha1StorageVersionFluent<?> fluent,
+      V1alpha1StorageVersion instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withApiVersion(instance.getApiVersion());
 
@@ -61,14 +57,11 @@ public class V1alpha1StorageVersionBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1alpha1StorageVersionBuilder(
-      io.kubernetes.client.openapi.models.V1alpha1StorageVersion instance) {
+  public V1alpha1StorageVersionBuilder(V1alpha1StorageVersion instance) {
     this(instance, false);
   }
 
-  public V1alpha1StorageVersionBuilder(
-      io.kubernetes.client.openapi.models.V1alpha1StorageVersion instance,
-      java.lang.Boolean validationEnabled) {
+  public V1alpha1StorageVersionBuilder(V1alpha1StorageVersion instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withApiVersion(instance.getApiVersion());
 
@@ -83,10 +76,10 @@ public class V1alpha1StorageVersionBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1alpha1StorageVersionFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1alpha1StorageVersionFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1alpha1StorageVersion build() {
+  public V1alpha1StorageVersion build() {
     V1alpha1StorageVersion buildable = new V1alpha1StorageVersion();
     buildable.setApiVersion(fluent.getApiVersion());
     buildable.setKind(fluent.getKind());
@@ -94,24 +87,5 @@ public class V1alpha1StorageVersionBuilder
     buildable.setSpec(fluent.getSpec());
     buildable.setStatus(fluent.getStatus());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1alpha1StorageVersionBuilder that = (V1alpha1StorageVersionBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

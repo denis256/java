@@ -12,292 +12,236 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+import java.time.OffsetDateTime;
+
 /** Generated */
-public interface EventsV1EventFluent<
-        A extends io.kubernetes.client.openapi.models.EventsV1EventFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getAction();
+public interface EventsV1EventFluent<A extends EventsV1EventFluent<A>> extends Fluent<A> {
+  public String getAction();
 
-  public A withAction(java.lang.String action);
+  public A withAction(String action);
 
-  public java.lang.Boolean hasAction();
+  public Boolean hasAction();
 
-  /** Method is deprecated. use withAction instead. */
-  @java.lang.Deprecated
-  public A withNewAction(java.lang.String original);
+  public String getApiVersion();
 
-  public java.lang.String getApiVersion();
+  public A withApiVersion(String apiVersion);
 
-  public A withApiVersion(java.lang.String apiVersion);
+  public Boolean hasApiVersion();
 
-  public java.lang.Boolean hasApiVersion();
+  public Integer getDeprecatedCount();
 
-  /** Method is deprecated. use withApiVersion instead. */
-  @java.lang.Deprecated
-  public A withNewApiVersion(java.lang.String original);
+  public A withDeprecatedCount(Integer deprecatedCount);
 
-  public java.lang.Integer getDeprecatedCount();
+  public Boolean hasDeprecatedCount();
 
-  public A withDeprecatedCount(java.lang.Integer deprecatedCount);
+  public OffsetDateTime getDeprecatedFirstTimestamp();
 
-  public java.lang.Boolean hasDeprecatedCount();
+  public A withDeprecatedFirstTimestamp(OffsetDateTime deprecatedFirstTimestamp);
 
-  public java.time.OffsetDateTime getDeprecatedFirstTimestamp();
+  public Boolean hasDeprecatedFirstTimestamp();
 
-  public A withDeprecatedFirstTimestamp(java.time.OffsetDateTime deprecatedFirstTimestamp);
+  public OffsetDateTime getDeprecatedLastTimestamp();
 
-  public java.lang.Boolean hasDeprecatedFirstTimestamp();
+  public A withDeprecatedLastTimestamp(OffsetDateTime deprecatedLastTimestamp);
 
-  public java.time.OffsetDateTime getDeprecatedLastTimestamp();
-
-  public A withDeprecatedLastTimestamp(java.time.OffsetDateTime deprecatedLastTimestamp);
-
-  public java.lang.Boolean hasDeprecatedLastTimestamp();
+  public Boolean hasDeprecatedLastTimestamp();
 
   /**
    * This method has been deprecated, please use method buildDeprecatedSource instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1EventSource getDeprecatedSource();
+  @Deprecated
+  public V1EventSource getDeprecatedSource();
 
-  public io.kubernetes.client.openapi.models.V1EventSource buildDeprecatedSource();
+  public V1EventSource buildDeprecatedSource();
 
-  public A withDeprecatedSource(io.kubernetes.client.openapi.models.V1EventSource deprecatedSource);
+  public A withDeprecatedSource(V1EventSource deprecatedSource);
 
-  public java.lang.Boolean hasDeprecatedSource();
+  public Boolean hasDeprecatedSource();
 
-  public io.kubernetes.client.openapi.models.EventsV1EventFluent.DeprecatedSourceNested<A>
-      withNewDeprecatedSource();
+  public EventsV1EventFluent.DeprecatedSourceNested<A> withNewDeprecatedSource();
 
-  public io.kubernetes.client.openapi.models.EventsV1EventFluent.DeprecatedSourceNested<A>
-      withNewDeprecatedSourceLike(io.kubernetes.client.openapi.models.V1EventSource item);
+  public EventsV1EventFluent.DeprecatedSourceNested<A> withNewDeprecatedSourceLike(
+      V1EventSource item);
 
-  public io.kubernetes.client.openapi.models.EventsV1EventFluent.DeprecatedSourceNested<A>
-      editDeprecatedSource();
+  public EventsV1EventFluent.DeprecatedSourceNested<A> editDeprecatedSource();
 
-  public io.kubernetes.client.openapi.models.EventsV1EventFluent.DeprecatedSourceNested<A>
-      editOrNewDeprecatedSource();
+  public EventsV1EventFluent.DeprecatedSourceNested<A> editOrNewDeprecatedSource();
 
-  public io.kubernetes.client.openapi.models.EventsV1EventFluent.DeprecatedSourceNested<A>
-      editOrNewDeprecatedSourceLike(io.kubernetes.client.openapi.models.V1EventSource item);
+  public EventsV1EventFluent.DeprecatedSourceNested<A> editOrNewDeprecatedSourceLike(
+      V1EventSource item);
 
-  public java.time.OffsetDateTime getEventTime();
+  public OffsetDateTime getEventTime();
 
-  public A withEventTime(java.time.OffsetDateTime eventTime);
+  public A withEventTime(OffsetDateTime eventTime);
 
-  public java.lang.Boolean hasEventTime();
+  public Boolean hasEventTime();
 
-  public java.lang.String getKind();
+  public String getKind();
 
-  public A withKind(java.lang.String kind);
+  public A withKind(String kind);
 
-  public java.lang.Boolean hasKind();
-
-  /** Method is deprecated. use withKind instead. */
-  @java.lang.Deprecated
-  public A withNewKind(java.lang.String original);
+  public Boolean hasKind();
 
   /**
    * This method has been deprecated, please use method buildMetadata instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ObjectMeta getMetadata();
+  @Deprecated
+  public V1ObjectMeta getMetadata();
 
-  public io.kubernetes.client.openapi.models.V1ObjectMeta buildMetadata();
+  public V1ObjectMeta buildMetadata();
 
-  public A withMetadata(io.kubernetes.client.openapi.models.V1ObjectMeta metadata);
+  public A withMetadata(V1ObjectMeta metadata);
 
-  public java.lang.Boolean hasMetadata();
+  public Boolean hasMetadata();
 
-  public io.kubernetes.client.openapi.models.EventsV1EventFluent.MetadataNested<A>
-      withNewMetadata();
+  public EventsV1EventFluent.MetadataNested<A> withNewMetadata();
 
-  public io.kubernetes.client.openapi.models.EventsV1EventFluent.MetadataNested<A>
-      withNewMetadataLike(io.kubernetes.client.openapi.models.V1ObjectMeta item);
+  public EventsV1EventFluent.MetadataNested<A> withNewMetadataLike(V1ObjectMeta item);
 
-  public io.kubernetes.client.openapi.models.EventsV1EventFluent.MetadataNested<A> editMetadata();
+  public EventsV1EventFluent.MetadataNested<A> editMetadata();
 
-  public io.kubernetes.client.openapi.models.EventsV1EventFluent.MetadataNested<A>
-      editOrNewMetadata();
+  public EventsV1EventFluent.MetadataNested<A> editOrNewMetadata();
 
-  public io.kubernetes.client.openapi.models.EventsV1EventFluent.MetadataNested<A>
-      editOrNewMetadataLike(io.kubernetes.client.openapi.models.V1ObjectMeta item);
+  public EventsV1EventFluent.MetadataNested<A> editOrNewMetadataLike(V1ObjectMeta item);
 
-  public java.lang.String getNote();
+  public String getNote();
 
-  public A withNote(java.lang.String note);
+  public A withNote(String note);
 
-  public java.lang.Boolean hasNote();
+  public Boolean hasNote();
 
-  /** Method is deprecated. use withNote instead. */
-  @java.lang.Deprecated
-  public A withNewNote(java.lang.String original);
+  public String getReason();
 
-  public java.lang.String getReason();
+  public A withReason(String reason);
 
-  public A withReason(java.lang.String reason);
-
-  public java.lang.Boolean hasReason();
-
-  /** Method is deprecated. use withReason instead. */
-  @java.lang.Deprecated
-  public A withNewReason(java.lang.String original);
+  public Boolean hasReason();
 
   /**
    * This method has been deprecated, please use method buildRegarding instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ObjectReference getRegarding();
+  @Deprecated
+  public V1ObjectReference getRegarding();
 
-  public io.kubernetes.client.openapi.models.V1ObjectReference buildRegarding();
+  public V1ObjectReference buildRegarding();
 
-  public A withRegarding(io.kubernetes.client.openapi.models.V1ObjectReference regarding);
+  public A withRegarding(V1ObjectReference regarding);
 
-  public java.lang.Boolean hasRegarding();
+  public Boolean hasRegarding();
 
-  public io.kubernetes.client.openapi.models.EventsV1EventFluent.RegardingNested<A>
-      withNewRegarding();
+  public EventsV1EventFluent.RegardingNested<A> withNewRegarding();
 
-  public io.kubernetes.client.openapi.models.EventsV1EventFluent.RegardingNested<A>
-      withNewRegardingLike(io.kubernetes.client.openapi.models.V1ObjectReference item);
+  public EventsV1EventFluent.RegardingNested<A> withNewRegardingLike(V1ObjectReference item);
 
-  public io.kubernetes.client.openapi.models.EventsV1EventFluent.RegardingNested<A> editRegarding();
+  public EventsV1EventFluent.RegardingNested<A> editRegarding();
 
-  public io.kubernetes.client.openapi.models.EventsV1EventFluent.RegardingNested<A>
-      editOrNewRegarding();
+  public EventsV1EventFluent.RegardingNested<A> editOrNewRegarding();
 
-  public io.kubernetes.client.openapi.models.EventsV1EventFluent.RegardingNested<A>
-      editOrNewRegardingLike(io.kubernetes.client.openapi.models.V1ObjectReference item);
+  public EventsV1EventFluent.RegardingNested<A> editOrNewRegardingLike(V1ObjectReference item);
 
   /**
    * This method has been deprecated, please use method buildRelated instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ObjectReference getRelated();
+  @Deprecated
+  public V1ObjectReference getRelated();
 
-  public io.kubernetes.client.openapi.models.V1ObjectReference buildRelated();
+  public V1ObjectReference buildRelated();
 
-  public A withRelated(io.kubernetes.client.openapi.models.V1ObjectReference related);
+  public A withRelated(V1ObjectReference related);
 
-  public java.lang.Boolean hasRelated();
+  public Boolean hasRelated();
 
-  public io.kubernetes.client.openapi.models.EventsV1EventFluent.RelatedNested<A> withNewRelated();
+  public EventsV1EventFluent.RelatedNested<A> withNewRelated();
 
-  public io.kubernetes.client.openapi.models.EventsV1EventFluent.RelatedNested<A>
-      withNewRelatedLike(io.kubernetes.client.openapi.models.V1ObjectReference item);
+  public EventsV1EventFluent.RelatedNested<A> withNewRelatedLike(V1ObjectReference item);
 
-  public io.kubernetes.client.openapi.models.EventsV1EventFluent.RelatedNested<A> editRelated();
+  public EventsV1EventFluent.RelatedNested<A> editRelated();
 
-  public io.kubernetes.client.openapi.models.EventsV1EventFluent.RelatedNested<A>
-      editOrNewRelated();
+  public EventsV1EventFluent.RelatedNested<A> editOrNewRelated();
 
-  public io.kubernetes.client.openapi.models.EventsV1EventFluent.RelatedNested<A>
-      editOrNewRelatedLike(io.kubernetes.client.openapi.models.V1ObjectReference item);
+  public EventsV1EventFluent.RelatedNested<A> editOrNewRelatedLike(V1ObjectReference item);
 
-  public java.lang.String getReportingController();
+  public String getReportingController();
 
-  public A withReportingController(java.lang.String reportingController);
+  public A withReportingController(String reportingController);
 
-  public java.lang.Boolean hasReportingController();
+  public Boolean hasReportingController();
 
-  /** Method is deprecated. use withReportingController instead. */
-  @java.lang.Deprecated
-  public A withNewReportingController(java.lang.String original);
+  public String getReportingInstance();
 
-  public java.lang.String getReportingInstance();
+  public A withReportingInstance(String reportingInstance);
 
-  public A withReportingInstance(java.lang.String reportingInstance);
-
-  public java.lang.Boolean hasReportingInstance();
-
-  /** Method is deprecated. use withReportingInstance instead. */
-  @java.lang.Deprecated
-  public A withNewReportingInstance(java.lang.String original);
+  public Boolean hasReportingInstance();
 
   /**
    * This method has been deprecated, please use method buildSeries instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.EventsV1EventSeries getSeries();
+  @Deprecated
+  public EventsV1EventSeries getSeries();
 
-  public io.kubernetes.client.openapi.models.EventsV1EventSeries buildSeries();
+  public EventsV1EventSeries buildSeries();
 
-  public A withSeries(io.kubernetes.client.openapi.models.EventsV1EventSeries series);
+  public A withSeries(EventsV1EventSeries series);
 
-  public java.lang.Boolean hasSeries();
+  public Boolean hasSeries();
 
-  public io.kubernetes.client.openapi.models.EventsV1EventFluent.SeriesNested<A> withNewSeries();
+  public EventsV1EventFluent.SeriesNested<A> withNewSeries();
 
-  public io.kubernetes.client.openapi.models.EventsV1EventFluent.SeriesNested<A> withNewSeriesLike(
-      io.kubernetes.client.openapi.models.EventsV1EventSeries item);
+  public EventsV1EventFluent.SeriesNested<A> withNewSeriesLike(EventsV1EventSeries item);
 
-  public io.kubernetes.client.openapi.models.EventsV1EventFluent.SeriesNested<A> editSeries();
+  public EventsV1EventFluent.SeriesNested<A> editSeries();
 
-  public io.kubernetes.client.openapi.models.EventsV1EventFluent.SeriesNested<A> editOrNewSeries();
+  public EventsV1EventFluent.SeriesNested<A> editOrNewSeries();
 
-  public io.kubernetes.client.openapi.models.EventsV1EventFluent.SeriesNested<A>
-      editOrNewSeriesLike(io.kubernetes.client.openapi.models.EventsV1EventSeries item);
+  public EventsV1EventFluent.SeriesNested<A> editOrNewSeriesLike(EventsV1EventSeries item);
 
-  public java.lang.String getType();
+  public String getType();
 
-  public A withType(java.lang.String type);
+  public A withType(String type);
 
-  public java.lang.Boolean hasType();
-
-  /** Method is deprecated. use withType instead. */
-  @java.lang.Deprecated
-  public A withNewType(java.lang.String original);
+  public Boolean hasType();
 
   public interface DeprecatedSourceNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1EventSourceFluent<
-              io.kubernetes.client.openapi.models.EventsV1EventFluent.DeprecatedSourceNested<N>> {
+      extends Nested<N>, V1EventSourceFluent<EventsV1EventFluent.DeprecatedSourceNested<N>> {
     public N and();
 
     public N endDeprecatedSource();
   }
 
   public interface MetadataNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1ObjectMetaFluent<
-              io.kubernetes.client.openapi.models.EventsV1EventFluent.MetadataNested<N>> {
+      extends Nested<N>, V1ObjectMetaFluent<EventsV1EventFluent.MetadataNested<N>> {
     public N and();
 
     public N endMetadata();
   }
 
   public interface RegardingNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1ObjectReferenceFluent<
-              io.kubernetes.client.openapi.models.EventsV1EventFluent.RegardingNested<N>> {
+      extends Nested<N>, V1ObjectReferenceFluent<EventsV1EventFluent.RegardingNested<N>> {
     public N and();
 
     public N endRegarding();
   }
 
   public interface RelatedNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1ObjectReferenceFluent<
-              io.kubernetes.client.openapi.models.EventsV1EventFluent.RelatedNested<N>> {
+      extends Nested<N>, V1ObjectReferenceFluent<EventsV1EventFluent.RelatedNested<N>> {
     public N and();
 
     public N endRelated();
   }
 
   public interface SeriesNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.EventsV1EventSeriesFluent<
-              io.kubernetes.client.openapi.models.EventsV1EventFluent.SeriesNested<N>> {
+      extends Nested<N>, EventsV1EventSeriesFluent<EventsV1EventFluent.SeriesNested<N>> {
     public N and();
 
     public N endSeries();

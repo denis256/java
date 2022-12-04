@@ -12,40 +12,34 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1SelfSubjectRulesReviewSpecFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1SelfSubjectRulesReviewSpecFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1SelfSubjectRulesReviewSpecFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1SelfSubjectRulesReviewSpecFluentImpl<A extends V1SelfSubjectRulesReviewSpecFluent<A>>
+    extends BaseFluent<A> implements V1SelfSubjectRulesReviewSpecFluent<A> {
   public V1SelfSubjectRulesReviewSpecFluentImpl() {}
 
-  public V1SelfSubjectRulesReviewSpecFluentImpl(
-      io.kubernetes.client.openapi.models.V1SelfSubjectRulesReviewSpec instance) {
+  public V1SelfSubjectRulesReviewSpecFluentImpl(V1SelfSubjectRulesReviewSpec instance) {
     this.withNamespace(instance.getNamespace());
   }
 
-  private java.lang.String namespace;
+  private String namespace;
 
-  public java.lang.String getNamespace() {
+  public String getNamespace() {
     return this.namespace;
   }
 
-  public A withNamespace(java.lang.String namespace) {
+  public A withNamespace(String namespace) {
     this.namespace = namespace;
     return (A) this;
   }
 
-  public java.lang.Boolean hasNamespace() {
+  public Boolean hasNamespace() {
     return this.namespace != null;
   }
 
-  /** Method is deprecated. use withNamespace instead. */
-  @java.lang.Deprecated
-  public A withNewNamespace(java.lang.String original) {
-    return (A) withNamespace(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1SelfSubjectRulesReviewSpecFluentImpl that = (V1SelfSubjectRulesReviewSpecFluentImpl) o;
@@ -56,5 +50,16 @@ public class V1SelfSubjectRulesReviewSpecFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(namespace, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (namespace != null) {
+      sb.append("namespace:");
+      sb.append(namespace);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

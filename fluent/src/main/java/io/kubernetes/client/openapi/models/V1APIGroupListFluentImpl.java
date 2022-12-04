@@ -12,17 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Predicate;
 
 /** Generated */
-public class V1APIGroupListFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1APIGroupListFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1APIGroupListFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1APIGroupListFluentImpl<A extends V1APIGroupListFluent<A>> extends BaseFluent<A>
+    implements V1APIGroupListFluent<A> {
   public V1APIGroupListFluentImpl() {}
 
-  public V1APIGroupListFluentImpl(io.kubernetes.client.openapi.models.V1APIGroupList instance) {
+  public V1APIGroupListFluentImpl(V1APIGroupList instance) {
     this.withApiVersion(instance.getApiVersion());
 
     this.withGroups(instance.getGroups());
@@ -30,50 +34,38 @@ public class V1APIGroupListFluentImpl<
     this.withKind(instance.getKind());
   }
 
-  private java.lang.String apiVersion;
-  private java.util.ArrayList<io.kubernetes.client.openapi.models.V1APIGroupBuilder> groups;
-  private java.lang.String kind;
+  private String apiVersion;
+  private ArrayList<V1APIGroupBuilder> groups;
+  private String kind;
 
-  public java.lang.String getApiVersion() {
+  public String getApiVersion() {
     return this.apiVersion;
   }
 
-  public A withApiVersion(java.lang.String apiVersion) {
+  public A withApiVersion(String apiVersion) {
     this.apiVersion = apiVersion;
     return (A) this;
   }
 
-  public java.lang.Boolean hasApiVersion() {
+  public Boolean hasApiVersion() {
     return this.apiVersion != null;
   }
 
-  /** Method is deprecated. use withApiVersion instead. */
-  @java.lang.Deprecated
-  public A withNewApiVersion(java.lang.String original) {
-    return (A) withApiVersion(new String(original));
-  }
-
-  public A addToGroups(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1APIGroup item) {
+  public A addToGroups(Integer index, V1APIGroup item) {
     if (this.groups == null) {
-      this.groups =
-          new java.util.ArrayList<io.kubernetes.client.openapi.models.V1APIGroupBuilder>();
+      this.groups = new ArrayList<V1APIGroupBuilder>();
     }
-    io.kubernetes.client.openapi.models.V1APIGroupBuilder builder =
-        new io.kubernetes.client.openapi.models.V1APIGroupBuilder(item);
+    V1APIGroupBuilder builder = new V1APIGroupBuilder(item);
     _visitables.get("groups").add(index >= 0 ? index : _visitables.get("groups").size(), builder);
     this.groups.add(index >= 0 ? index : groups.size(), builder);
     return (A) this;
   }
 
-  public A setToGroups(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1APIGroup item) {
+  public A setToGroups(Integer index, V1APIGroup item) {
     if (this.groups == null) {
-      this.groups =
-          new java.util.ArrayList<io.kubernetes.client.openapi.models.V1APIGroupBuilder>();
+      this.groups = new ArrayList<V1APIGroupBuilder>();
     }
-    io.kubernetes.client.openapi.models.V1APIGroupBuilder builder =
-        new io.kubernetes.client.openapi.models.V1APIGroupBuilder(item);
+    V1APIGroupBuilder builder = new V1APIGroupBuilder(item);
     if (index < 0 || index >= _visitables.get("groups").size()) {
       _visitables.get("groups").add(builder);
     } else {
@@ -89,27 +81,22 @@ public class V1APIGroupListFluentImpl<
 
   public A addToGroups(io.kubernetes.client.openapi.models.V1APIGroup... items) {
     if (this.groups == null) {
-      this.groups =
-          new java.util.ArrayList<io.kubernetes.client.openapi.models.V1APIGroupBuilder>();
+      this.groups = new ArrayList<V1APIGroupBuilder>();
     }
-    for (io.kubernetes.client.openapi.models.V1APIGroup item : items) {
-      io.kubernetes.client.openapi.models.V1APIGroupBuilder builder =
-          new io.kubernetes.client.openapi.models.V1APIGroupBuilder(item);
+    for (V1APIGroup item : items) {
+      V1APIGroupBuilder builder = new V1APIGroupBuilder(item);
       _visitables.get("groups").add(builder);
       this.groups.add(builder);
     }
     return (A) this;
   }
 
-  public A addAllToGroups(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1APIGroup> items) {
+  public A addAllToGroups(Collection<V1APIGroup> items) {
     if (this.groups == null) {
-      this.groups =
-          new java.util.ArrayList<io.kubernetes.client.openapi.models.V1APIGroupBuilder>();
+      this.groups = new ArrayList<V1APIGroupBuilder>();
     }
-    for (io.kubernetes.client.openapi.models.V1APIGroup item : items) {
-      io.kubernetes.client.openapi.models.V1APIGroupBuilder builder =
-          new io.kubernetes.client.openapi.models.V1APIGroupBuilder(item);
+    for (V1APIGroup item : items) {
+      V1APIGroupBuilder builder = new V1APIGroupBuilder(item);
       _visitables.get("groups").add(builder);
       this.groups.add(builder);
     }
@@ -117,9 +104,8 @@ public class V1APIGroupListFluentImpl<
   }
 
   public A removeFromGroups(io.kubernetes.client.openapi.models.V1APIGroup... items) {
-    for (io.kubernetes.client.openapi.models.V1APIGroup item : items) {
-      io.kubernetes.client.openapi.models.V1APIGroupBuilder builder =
-          new io.kubernetes.client.openapi.models.V1APIGroupBuilder(item);
+    for (V1APIGroup item : items) {
+      V1APIGroupBuilder builder = new V1APIGroupBuilder(item);
       _visitables.get("groups").remove(builder);
       if (this.groups != null) {
         this.groups.remove(builder);
@@ -128,11 +114,9 @@ public class V1APIGroupListFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromGroups(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1APIGroup> items) {
-    for (io.kubernetes.client.openapi.models.V1APIGroup item : items) {
-      io.kubernetes.client.openapi.models.V1APIGroupBuilder builder =
-          new io.kubernetes.client.openapi.models.V1APIGroupBuilder(item);
+  public A removeAllFromGroups(Collection<V1APIGroup> items) {
+    for (V1APIGroup item : items) {
+      V1APIGroupBuilder builder = new V1APIGroupBuilder(item);
       _visitables.get("groups").remove(builder);
       if (this.groups != null) {
         this.groups.remove(builder);
@@ -141,14 +125,12 @@ public class V1APIGroupListFluentImpl<
     return (A) this;
   }
 
-  public A removeMatchingFromGroups(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1APIGroupBuilder>
-          predicate) {
+  public A removeMatchingFromGroups(Predicate<V1APIGroupBuilder> predicate) {
     if (groups == null) return (A) this;
-    final Iterator<io.kubernetes.client.openapi.models.V1APIGroupBuilder> each = groups.iterator();
+    final Iterator<V1APIGroupBuilder> each = groups.iterator();
     final List visitables = _visitables.get("groups");
     while (each.hasNext()) {
-      io.kubernetes.client.openapi.models.V1APIGroupBuilder builder = each.next();
+      V1APIGroupBuilder builder = each.next();
       if (predicate.test(builder)) {
         visitables.remove(builder);
         each.remove();
@@ -162,31 +144,29 @@ public class V1APIGroupListFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V1APIGroup> getGroups() {
+  @Deprecated
+  public List<V1APIGroup> getGroups() {
     return groups != null ? build(groups) : null;
   }
 
-  public java.util.List<io.kubernetes.client.openapi.models.V1APIGroup> buildGroups() {
+  public List<V1APIGroup> buildGroups() {
     return groups != null ? build(groups) : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1APIGroup buildGroup(java.lang.Integer index) {
+  public V1APIGroup buildGroup(Integer index) {
     return this.groups.get(index).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1APIGroup buildFirstGroup() {
+  public V1APIGroup buildFirstGroup() {
     return this.groups.get(0).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1APIGroup buildLastGroup() {
+  public V1APIGroup buildLastGroup() {
     return this.groups.get(groups.size() - 1).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1APIGroup buildMatchingGroup(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1APIGroupBuilder>
-          predicate) {
-    for (io.kubernetes.client.openapi.models.V1APIGroupBuilder item : groups) {
+  public V1APIGroup buildMatchingGroup(Predicate<V1APIGroupBuilder> predicate) {
+    for (V1APIGroupBuilder item : groups) {
       if (predicate.test(item)) {
         return item.build();
       }
@@ -194,10 +174,8 @@ public class V1APIGroupListFluentImpl<
     return null;
   }
 
-  public java.lang.Boolean hasMatchingGroup(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1APIGroupBuilder>
-          predicate) {
-    for (io.kubernetes.client.openapi.models.V1APIGroupBuilder item : groups) {
+  public Boolean hasMatchingGroup(Predicate<V1APIGroupBuilder> predicate) {
+    for (V1APIGroupBuilder item : groups) {
       if (predicate.test(item)) {
         return true;
       }
@@ -205,13 +183,13 @@ public class V1APIGroupListFluentImpl<
     return false;
   }
 
-  public A withGroups(java.util.List<io.kubernetes.client.openapi.models.V1APIGroup> groups) {
+  public A withGroups(List<V1APIGroup> groups) {
     if (this.groups != null) {
       _visitables.get("groups").removeAll(this.groups);
     }
     if (groups != null) {
-      this.groups = new java.util.ArrayList();
-      for (io.kubernetes.client.openapi.models.V1APIGroup item : groups) {
+      this.groups = new ArrayList();
+      for (V1APIGroup item : groups) {
         this.addToGroups(item);
       }
     } else {
@@ -225,55 +203,49 @@ public class V1APIGroupListFluentImpl<
       this.groups.clear();
     }
     if (groups != null) {
-      for (io.kubernetes.client.openapi.models.V1APIGroup item : groups) {
+      for (V1APIGroup item : groups) {
         this.addToGroups(item);
       }
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasGroups() {
+  public Boolean hasGroups() {
     return groups != null && !groups.isEmpty();
   }
 
-  public io.kubernetes.client.openapi.models.V1APIGroupListFluent.GroupsNested<A> addNewGroup() {
-    return new io.kubernetes.client.openapi.models.V1APIGroupListFluentImpl.GroupsNestedImpl();
+  public V1APIGroupListFluent.GroupsNested<A> addNewGroup() {
+    return new V1APIGroupListFluentImpl.GroupsNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1APIGroupListFluent.GroupsNested<A> addNewGroupLike(
-      io.kubernetes.client.openapi.models.V1APIGroup item) {
-    return new io.kubernetes.client.openapi.models.V1APIGroupListFluentImpl.GroupsNestedImpl(
-        -1, item);
+  public V1APIGroupListFluent.GroupsNested<A> addNewGroupLike(V1APIGroup item) {
+    return new V1APIGroupListFluentImpl.GroupsNestedImpl(-1, item);
   }
 
-  public io.kubernetes.client.openapi.models.V1APIGroupListFluent.GroupsNested<A> setNewGroupLike(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1APIGroup item) {
-    return new io.kubernetes.client.openapi.models.V1APIGroupListFluentImpl.GroupsNestedImpl(
-        index, item);
+  public V1APIGroupListFluent.GroupsNested<A> setNewGroupLike(Integer index, V1APIGroup item) {
+    return new V1APIGroupListFluentImpl.GroupsNestedImpl(index, item);
   }
 
-  public io.kubernetes.client.openapi.models.V1APIGroupListFluent.GroupsNested<A> editGroup(
-      java.lang.Integer index) {
+  public V1APIGroupListFluent.GroupsNested<A> editGroup(Integer index) {
     if (groups.size() <= index)
       throw new RuntimeException("Can't edit groups. Index exceeds size.");
     return setNewGroupLike(index, buildGroup(index));
   }
 
-  public io.kubernetes.client.openapi.models.V1APIGroupListFluent.GroupsNested<A> editFirstGroup() {
+  public V1APIGroupListFluent.GroupsNested<A> editFirstGroup() {
     if (groups.size() == 0)
       throw new RuntimeException("Can't edit first groups. The list is empty.");
     return setNewGroupLike(0, buildGroup(0));
   }
 
-  public io.kubernetes.client.openapi.models.V1APIGroupListFluent.GroupsNested<A> editLastGroup() {
+  public V1APIGroupListFluent.GroupsNested<A> editLastGroup() {
     int index = groups.size() - 1;
     if (index < 0) throw new RuntimeException("Can't edit last groups. The list is empty.");
     return setNewGroupLike(index, buildGroup(index));
   }
 
-  public io.kubernetes.client.openapi.models.V1APIGroupListFluent.GroupsNested<A> editMatchingGroup(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1APIGroupBuilder>
-          predicate) {
+  public V1APIGroupListFluent.GroupsNested<A> editMatchingGroup(
+      Predicate<V1APIGroupBuilder> predicate) {
     int index = -1;
     for (int i = 0; i < groups.size(); i++) {
       if (predicate.test(groups.get(i))) {
@@ -285,26 +257,20 @@ public class V1APIGroupListFluentImpl<
     return setNewGroupLike(index, buildGroup(index));
   }
 
-  public java.lang.String getKind() {
+  public String getKind() {
     return this.kind;
   }
 
-  public A withKind(java.lang.String kind) {
+  public A withKind(String kind) {
     this.kind = kind;
     return (A) this;
   }
 
-  public java.lang.Boolean hasKind() {
+  public Boolean hasKind() {
     return this.kind != null;
   }
 
-  /** Method is deprecated. use withKind instead. */
-  @java.lang.Deprecated
-  public A withNewKind(java.lang.String original) {
-    return (A) withKind(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1APIGroupListFluentImpl that = (V1APIGroupListFluentImpl) o;
@@ -319,23 +285,39 @@ public class V1APIGroupListFluentImpl<
     return java.util.Objects.hash(apiVersion, groups, kind, super.hashCode());
   }
 
-  public class GroupsNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1APIGroupFluentImpl<
-          io.kubernetes.client.openapi.models.V1APIGroupListFluent.GroupsNested<N>>
-      implements io.kubernetes.client.openapi.models.V1APIGroupListFluent.GroupsNested<N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    GroupsNestedImpl(java.lang.Integer index, io.kubernetes.client.openapi.models.V1APIGroup item) {
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (apiVersion != null) {
+      sb.append("apiVersion:");
+      sb.append(apiVersion + ",");
+    }
+    if (groups != null && !groups.isEmpty()) {
+      sb.append("groups:");
+      sb.append(groups + ",");
+    }
+    if (kind != null) {
+      sb.append("kind:");
+      sb.append(kind);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class GroupsNestedImpl<N> extends V1APIGroupFluentImpl<V1APIGroupListFluent.GroupsNested<N>>
+      implements V1APIGroupListFluent.GroupsNested<N>, Nested<N> {
+    GroupsNestedImpl(Integer index, V1APIGroup item) {
       this.index = index;
-      this.builder = new io.kubernetes.client.openapi.models.V1APIGroupBuilder(this, item);
+      this.builder = new V1APIGroupBuilder(this, item);
     }
 
     GroupsNestedImpl() {
       this.index = -1;
-      this.builder = new io.kubernetes.client.openapi.models.V1APIGroupBuilder(this);
+      this.builder = new V1APIGroupBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1APIGroupBuilder builder;
-    java.lang.Integer index;
+    V1APIGroupBuilder builder;
+    Integer index;
 
     public N and() {
       return (N) V1APIGroupListFluentImpl.this.setToGroups(index, builder.build());

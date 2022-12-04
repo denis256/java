@@ -1,5 +1,5 @@
 /*
-Copyright 2021 The Kubernetes Authors.
+Copyright 2022 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -27,7 +27,7 @@ import java.util.Objects;
         "OwnerReference contains enough information to let you identify an owning object. An owning object must be in the same namespace as the dependent, or be cluster-scoped, so there is no namespace field.")
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    date = "2021-12-10T19:11:23.904Z[Etc/UTC]")
+    date = "2022-09-15T17:00:37.921Z[Etc/UTC]")
 public class V1OwnerReference {
   public static final String SERIALIZED_NAME_API_VERSION = "apiVersion";
 
@@ -87,16 +87,18 @@ public class V1OwnerReference {
 
   /**
    * If true, AND if the owner has the \&quot;foregroundDeletion\&quot; finalizer, then the owner
-   * cannot be deleted from the key-value store until this reference is removed. Defaults to false.
-   * To set this field, a user needs \&quot;delete\&quot; permission of the owner, otherwise 422
-   * (Unprocessable Entity) will be returned.
+   * cannot be deleted from the key-value store until this reference is removed. See
+   * https://kubernetes.io/docs/concepts/architecture/garbage-collection/#foreground-deletion for
+   * how the garbage collector interacts with this field and enforces the foreground deletion.
+   * Defaults to false. To set this field, a user needs \&quot;delete\&quot; permission of the
+   * owner, otherwise 422 (Unprocessable Entity) will be returned.
    *
    * @return blockOwnerDeletion
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed. Defaults to false. To set this field, a user needs \"delete\" permission of the owner, otherwise 422 (Unprocessable Entity) will be returned.")
+          "If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed. See https://kubernetes.io/docs/concepts/architecture/garbage-collection/#foreground-deletion for how the garbage collector interacts with this field and enforces the foreground deletion. Defaults to false. To set this field, a user needs \"delete\" permission of the owner, otherwise 422 (Unprocessable Entity) will be returned.")
   public Boolean getBlockOwnerDeletion() {
     return blockOwnerDeletion;
   }

@@ -12,213 +12,158 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
+
 /** Generated */
-public interface V1SubjectRulesReviewStatusFluent<
-        A extends io.kubernetes.client.openapi.models.V1SubjectRulesReviewStatusFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getEvaluationError();
+public interface V1SubjectRulesReviewStatusFluent<A extends V1SubjectRulesReviewStatusFluent<A>>
+    extends Fluent<A> {
+  public String getEvaluationError();
 
-  public A withEvaluationError(java.lang.String evaluationError);
+  public A withEvaluationError(String evaluationError);
 
-  public java.lang.Boolean hasEvaluationError();
+  public Boolean hasEvaluationError();
 
-  /** Method is deprecated. use withEvaluationError instead. */
-  @java.lang.Deprecated
-  public A withNewEvaluationError(java.lang.String original);
+  public Boolean getIncomplete();
 
-  public java.lang.Boolean getIncomplete();
+  public A withIncomplete(Boolean incomplete);
 
-  public A withIncomplete(java.lang.Boolean incomplete);
+  public Boolean hasIncomplete();
 
-  public java.lang.Boolean hasIncomplete();
+  public A addToNonResourceRules(Integer index, V1NonResourceRule item);
 
-  public A addToNonResourceRules(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1NonResourceRule item);
-
-  public A setToNonResourceRules(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1NonResourceRule item);
+  public A setToNonResourceRules(Integer index, V1NonResourceRule item);
 
   public A addToNonResourceRules(io.kubernetes.client.openapi.models.V1NonResourceRule... items);
 
-  public A addAllToNonResourceRules(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1NonResourceRule> items);
+  public A addAllToNonResourceRules(Collection<V1NonResourceRule> items);
 
   public A removeFromNonResourceRules(
       io.kubernetes.client.openapi.models.V1NonResourceRule... items);
 
-  public A removeAllFromNonResourceRules(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1NonResourceRule> items);
+  public A removeAllFromNonResourceRules(Collection<V1NonResourceRule> items);
 
-  public A removeMatchingFromNonResourceRules(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1NonResourceRuleBuilder>
-          predicate);
+  public A removeMatchingFromNonResourceRules(Predicate<V1NonResourceRuleBuilder> predicate);
 
   /**
    * This method has been deprecated, please use method buildNonResourceRules instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V1NonResourceRule>
-      getNonResourceRules();
+  @Deprecated
+  public List<V1NonResourceRule> getNonResourceRules();
 
-  public java.util.List<io.kubernetes.client.openapi.models.V1NonResourceRule>
-      buildNonResourceRules();
+  public List<V1NonResourceRule> buildNonResourceRules();
 
-  public io.kubernetes.client.openapi.models.V1NonResourceRule buildNonResourceRule(
-      java.lang.Integer index);
+  public V1NonResourceRule buildNonResourceRule(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1NonResourceRule buildFirstNonResourceRule();
+  public V1NonResourceRule buildFirstNonResourceRule();
 
-  public io.kubernetes.client.openapi.models.V1NonResourceRule buildLastNonResourceRule();
+  public V1NonResourceRule buildLastNonResourceRule();
 
-  public io.kubernetes.client.openapi.models.V1NonResourceRule buildMatchingNonResourceRule(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1NonResourceRuleBuilder>
-          predicate);
+  public V1NonResourceRule buildMatchingNonResourceRule(
+      Predicate<V1NonResourceRuleBuilder> predicate);
 
-  public java.lang.Boolean hasMatchingNonResourceRule(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1NonResourceRuleBuilder>
-          predicate);
+  public Boolean hasMatchingNonResourceRule(Predicate<V1NonResourceRuleBuilder> predicate);
 
-  public A withNonResourceRules(
-      java.util.List<io.kubernetes.client.openapi.models.V1NonResourceRule> nonResourceRules);
+  public A withNonResourceRules(List<V1NonResourceRule> nonResourceRules);
 
   public A withNonResourceRules(
       io.kubernetes.client.openapi.models.V1NonResourceRule... nonResourceRules);
 
-  public java.lang.Boolean hasNonResourceRules();
+  public Boolean hasNonResourceRules();
 
-  public io.kubernetes.client.openapi.models.V1SubjectRulesReviewStatusFluent
-              .NonResourceRulesNested<
-          A>
-      addNewNonResourceRule();
+  public V1SubjectRulesReviewStatusFluent.NonResourceRulesNested<A> addNewNonResourceRule();
 
-  public io.kubernetes.client.openapi.models.V1SubjectRulesReviewStatusFluent
-              .NonResourceRulesNested<
-          A>
-      addNewNonResourceRuleLike(io.kubernetes.client.openapi.models.V1NonResourceRule item);
+  public V1SubjectRulesReviewStatusFluent.NonResourceRulesNested<A> addNewNonResourceRuleLike(
+      V1NonResourceRule item);
 
-  public io.kubernetes.client.openapi.models.V1SubjectRulesReviewStatusFluent
-              .NonResourceRulesNested<
-          A>
-      setNewNonResourceRuleLike(
-          java.lang.Integer index, io.kubernetes.client.openapi.models.V1NonResourceRule item);
+  public V1SubjectRulesReviewStatusFluent.NonResourceRulesNested<A> setNewNonResourceRuleLike(
+      Integer index, V1NonResourceRule item);
 
-  public io.kubernetes.client.openapi.models.V1SubjectRulesReviewStatusFluent
-              .NonResourceRulesNested<
-          A>
-      editNonResourceRule(java.lang.Integer index);
+  public V1SubjectRulesReviewStatusFluent.NonResourceRulesNested<A> editNonResourceRule(
+      Integer index);
 
-  public io.kubernetes.client.openapi.models.V1SubjectRulesReviewStatusFluent
-              .NonResourceRulesNested<
-          A>
-      editFirstNonResourceRule();
+  public V1SubjectRulesReviewStatusFluent.NonResourceRulesNested<A> editFirstNonResourceRule();
 
-  public io.kubernetes.client.openapi.models.V1SubjectRulesReviewStatusFluent
-              .NonResourceRulesNested<
-          A>
-      editLastNonResourceRule();
+  public V1SubjectRulesReviewStatusFluent.NonResourceRulesNested<A> editLastNonResourceRule();
 
-  public io.kubernetes.client.openapi.models.V1SubjectRulesReviewStatusFluent
-              .NonResourceRulesNested<
-          A>
-      editMatchingNonResourceRule(
-          java.util.function.Predicate<io.kubernetes.client.openapi.models.V1NonResourceRuleBuilder>
-              predicate);
+  public V1SubjectRulesReviewStatusFluent.NonResourceRulesNested<A> editMatchingNonResourceRule(
+      Predicate<V1NonResourceRuleBuilder> predicate);
 
-  public A addToResourceRules(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1ResourceRule item);
+  public A addToResourceRules(Integer index, V1ResourceRule item);
 
-  public A setToResourceRules(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1ResourceRule item);
+  public A setToResourceRules(Integer index, V1ResourceRule item);
 
   public A addToResourceRules(io.kubernetes.client.openapi.models.V1ResourceRule... items);
 
-  public A addAllToResourceRules(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1ResourceRule> items);
+  public A addAllToResourceRules(Collection<V1ResourceRule> items);
 
   public A removeFromResourceRules(io.kubernetes.client.openapi.models.V1ResourceRule... items);
 
-  public A removeAllFromResourceRules(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1ResourceRule> items);
+  public A removeAllFromResourceRules(Collection<V1ResourceRule> items);
 
-  public A removeMatchingFromResourceRules(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1ResourceRuleBuilder>
-          predicate);
+  public A removeMatchingFromResourceRules(Predicate<V1ResourceRuleBuilder> predicate);
 
   /**
    * This method has been deprecated, please use method buildResourceRules instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V1ResourceRule> getResourceRules();
+  @Deprecated
+  public List<V1ResourceRule> getResourceRules();
 
-  public java.util.List<io.kubernetes.client.openapi.models.V1ResourceRule> buildResourceRules();
+  public List<V1ResourceRule> buildResourceRules();
 
-  public io.kubernetes.client.openapi.models.V1ResourceRule buildResourceRule(
-      java.lang.Integer index);
+  public V1ResourceRule buildResourceRule(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1ResourceRule buildFirstResourceRule();
+  public V1ResourceRule buildFirstResourceRule();
 
-  public io.kubernetes.client.openapi.models.V1ResourceRule buildLastResourceRule();
+  public V1ResourceRule buildLastResourceRule();
 
-  public io.kubernetes.client.openapi.models.V1ResourceRule buildMatchingResourceRule(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1ResourceRuleBuilder>
-          predicate);
+  public V1ResourceRule buildMatchingResourceRule(Predicate<V1ResourceRuleBuilder> predicate);
 
-  public java.lang.Boolean hasMatchingResourceRule(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1ResourceRuleBuilder>
-          predicate);
+  public Boolean hasMatchingResourceRule(Predicate<V1ResourceRuleBuilder> predicate);
 
-  public A withResourceRules(
-      java.util.List<io.kubernetes.client.openapi.models.V1ResourceRule> resourceRules);
+  public A withResourceRules(List<V1ResourceRule> resourceRules);
 
   public A withResourceRules(io.kubernetes.client.openapi.models.V1ResourceRule... resourceRules);
 
-  public java.lang.Boolean hasResourceRules();
+  public Boolean hasResourceRules();
 
-  public io.kubernetes.client.openapi.models.V1SubjectRulesReviewStatusFluent.ResourceRulesNested<A>
-      addNewResourceRule();
+  public V1SubjectRulesReviewStatusFluent.ResourceRulesNested<A> addNewResourceRule();
 
-  public io.kubernetes.client.openapi.models.V1SubjectRulesReviewStatusFluent.ResourceRulesNested<A>
-      addNewResourceRuleLike(io.kubernetes.client.openapi.models.V1ResourceRule item);
+  public V1SubjectRulesReviewStatusFluent.ResourceRulesNested<A> addNewResourceRuleLike(
+      V1ResourceRule item);
 
-  public io.kubernetes.client.openapi.models.V1SubjectRulesReviewStatusFluent.ResourceRulesNested<A>
-      setNewResourceRuleLike(
-          java.lang.Integer index, io.kubernetes.client.openapi.models.V1ResourceRule item);
+  public V1SubjectRulesReviewStatusFluent.ResourceRulesNested<A> setNewResourceRuleLike(
+      Integer index, V1ResourceRule item);
 
-  public io.kubernetes.client.openapi.models.V1SubjectRulesReviewStatusFluent.ResourceRulesNested<A>
-      editResourceRule(java.lang.Integer index);
+  public V1SubjectRulesReviewStatusFluent.ResourceRulesNested<A> editResourceRule(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1SubjectRulesReviewStatusFluent.ResourceRulesNested<A>
-      editFirstResourceRule();
+  public V1SubjectRulesReviewStatusFluent.ResourceRulesNested<A> editFirstResourceRule();
 
-  public io.kubernetes.client.openapi.models.V1SubjectRulesReviewStatusFluent.ResourceRulesNested<A>
-      editLastResourceRule();
+  public V1SubjectRulesReviewStatusFluent.ResourceRulesNested<A> editLastResourceRule();
 
-  public io.kubernetes.client.openapi.models.V1SubjectRulesReviewStatusFluent.ResourceRulesNested<A>
-      editMatchingResourceRule(
-          java.util.function.Predicate<io.kubernetes.client.openapi.models.V1ResourceRuleBuilder>
-              predicate);
+  public V1SubjectRulesReviewStatusFluent.ResourceRulesNested<A> editMatchingResourceRule(
+      Predicate<V1ResourceRuleBuilder> predicate);
+
+  public A withIncomplete();
 
   public interface NonResourceRulesNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1NonResourceRuleFluent<
-              io.kubernetes.client.openapi.models.V1SubjectRulesReviewStatusFluent
-                      .NonResourceRulesNested<
-                  N>> {
+      extends Nested<N>,
+          V1NonResourceRuleFluent<V1SubjectRulesReviewStatusFluent.NonResourceRulesNested<N>> {
     public N and();
 
     public N endNonResourceRule();
   }
 
   public interface ResourceRulesNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1ResourceRuleFluent<
-              io.kubernetes.client.openapi.models.V1SubjectRulesReviewStatusFluent
-                      .ResourceRulesNested<
-                  N>> {
+      extends Nested<N>,
+          V1ResourceRuleFluent<V1SubjectRulesReviewStatusFluent.ResourceRulesNested<N>> {
     public N and();
 
     public N endResourceRule();

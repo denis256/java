@@ -1,5 +1,5 @@
 /*
-Copyright 2021 The Kubernetes Authors.
+Copyright 2022 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -21,7 +21,7 @@ import java.util.Objects;
 @ApiModel(description = "Represents a Photon Controller persistent disk resource.")
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    date = "2021-12-10T19:11:23.904Z[Etc/UTC]")
+    date = "2022-09-15T17:00:37.921Z[Etc/UTC]")
 public class V1PhotonPersistentDiskVolumeSource {
   public static final String SERIALIZED_NAME_FS_TYPE = "fsType";
 
@@ -40,16 +40,16 @@ public class V1PhotonPersistentDiskVolumeSource {
   }
 
   /**
-   * Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex.
-   * \&quot;ext4\&quot;, \&quot;xfs\&quot;, \&quot;ntfs\&quot;. Implicitly inferred to be
-   * \&quot;ext4\&quot; if unspecified.
+   * fsType is the filesystem type to mount. Must be a filesystem type supported by the host
+   * operating system. Ex. \&quot;ext4\&quot;, \&quot;xfs\&quot;, \&quot;ntfs\&quot;. Implicitly
+   * inferred to be \&quot;ext4\&quot; if unspecified.
    *
    * @return fsType
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. \"ext4\", \"xfs\", \"ntfs\". Implicitly inferred to be \"ext4\" if unspecified.")
+          "fsType is the filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. \"ext4\", \"xfs\", \"ntfs\". Implicitly inferred to be \"ext4\" if unspecified.")
   public String getFsType() {
     return fsType;
   }
@@ -65,11 +65,13 @@ public class V1PhotonPersistentDiskVolumeSource {
   }
 
   /**
-   * ID that identifies Photon Controller persistent disk
+   * pdID is the ID that identifies Photon Controller persistent disk
    *
    * @return pdID
    */
-  @ApiModelProperty(required = true, value = "ID that identifies Photon Controller persistent disk")
+  @ApiModelProperty(
+      required = true,
+      value = "pdID is the ID that identifies Photon Controller persistent disk")
   public String getPdID() {
     return pdID;
   }

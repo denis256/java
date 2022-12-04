@@ -12,107 +12,67 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
-public interface V1NodeSystemInfoFluent<
-        A extends io.kubernetes.client.openapi.models.V1NodeSystemInfoFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getArchitecture();
+public interface V1NodeSystemInfoFluent<A extends V1NodeSystemInfoFluent<A>> extends Fluent<A> {
+  public String getArchitecture();
 
-  public A withArchitecture(java.lang.String architecture);
+  public A withArchitecture(String architecture);
 
-  public java.lang.Boolean hasArchitecture();
+  public Boolean hasArchitecture();
 
-  /** Method is deprecated. use withArchitecture instead. */
-  @java.lang.Deprecated
-  public A withNewArchitecture(java.lang.String original);
+  public String getBootID();
 
-  public java.lang.String getBootID();
+  public A withBootID(String bootID);
 
-  public A withBootID(java.lang.String bootID);
+  public Boolean hasBootID();
 
-  public java.lang.Boolean hasBootID();
+  public String getContainerRuntimeVersion();
 
-  /** Method is deprecated. use withBootID instead. */
-  @java.lang.Deprecated
-  public A withNewBootID(java.lang.String original);
+  public A withContainerRuntimeVersion(String containerRuntimeVersion);
 
-  public java.lang.String getContainerRuntimeVersion();
+  public Boolean hasContainerRuntimeVersion();
 
-  public A withContainerRuntimeVersion(java.lang.String containerRuntimeVersion);
+  public String getKernelVersion();
 
-  public java.lang.Boolean hasContainerRuntimeVersion();
+  public A withKernelVersion(String kernelVersion);
 
-  /** Method is deprecated. use withContainerRuntimeVersion instead. */
-  @java.lang.Deprecated
-  public A withNewContainerRuntimeVersion(java.lang.String original);
+  public Boolean hasKernelVersion();
 
-  public java.lang.String getKernelVersion();
+  public String getKubeProxyVersion();
 
-  public A withKernelVersion(java.lang.String kernelVersion);
+  public A withKubeProxyVersion(String kubeProxyVersion);
 
-  public java.lang.Boolean hasKernelVersion();
+  public Boolean hasKubeProxyVersion();
 
-  /** Method is deprecated. use withKernelVersion instead. */
-  @java.lang.Deprecated
-  public A withNewKernelVersion(java.lang.String original);
+  public String getKubeletVersion();
 
-  public java.lang.String getKubeProxyVersion();
+  public A withKubeletVersion(String kubeletVersion);
 
-  public A withKubeProxyVersion(java.lang.String kubeProxyVersion);
+  public Boolean hasKubeletVersion();
 
-  public java.lang.Boolean hasKubeProxyVersion();
+  public String getMachineID();
 
-  /** Method is deprecated. use withKubeProxyVersion instead. */
-  @java.lang.Deprecated
-  public A withNewKubeProxyVersion(java.lang.String original);
+  public A withMachineID(String machineID);
 
-  public java.lang.String getKubeletVersion();
+  public Boolean hasMachineID();
 
-  public A withKubeletVersion(java.lang.String kubeletVersion);
+  public String getOperatingSystem();
 
-  public java.lang.Boolean hasKubeletVersion();
+  public A withOperatingSystem(String operatingSystem);
 
-  /** Method is deprecated. use withKubeletVersion instead. */
-  @java.lang.Deprecated
-  public A withNewKubeletVersion(java.lang.String original);
+  public Boolean hasOperatingSystem();
 
-  public java.lang.String getMachineID();
+  public String getOsImage();
 
-  public A withMachineID(java.lang.String machineID);
+  public A withOsImage(String osImage);
 
-  public java.lang.Boolean hasMachineID();
+  public Boolean hasOsImage();
 
-  /** Method is deprecated. use withMachineID instead. */
-  @java.lang.Deprecated
-  public A withNewMachineID(java.lang.String original);
+  public String getSystemUUID();
 
-  public java.lang.String getOperatingSystem();
+  public A withSystemUUID(String systemUUID);
 
-  public A withOperatingSystem(java.lang.String operatingSystem);
-
-  public java.lang.Boolean hasOperatingSystem();
-
-  /** Method is deprecated. use withOperatingSystem instead. */
-  @java.lang.Deprecated
-  public A withNewOperatingSystem(java.lang.String original);
-
-  public java.lang.String getOsImage();
-
-  public A withOsImage(java.lang.String osImage);
-
-  public java.lang.Boolean hasOsImage();
-
-  /** Method is deprecated. use withOsImage instead. */
-  @java.lang.Deprecated
-  public A withNewOsImage(java.lang.String original);
-
-  public java.lang.String getSystemUUID();
-
-  public A withSystemUUID(java.lang.String systemUUID);
-
-  public java.lang.Boolean hasSystemUUID();
-
-  /** Method is deprecated. use withSystemUUID instead. */
-  @java.lang.Deprecated
-  public A withNewSystemUUID(java.lang.String original);
+  public Boolean hasSystemUUID();
 }

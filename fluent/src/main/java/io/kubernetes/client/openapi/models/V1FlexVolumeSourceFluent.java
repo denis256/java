@@ -12,83 +12,74 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.Map;
+
 /** Generated */
-public interface V1FlexVolumeSourceFluent<
-        A extends io.kubernetes.client.openapi.models.V1FlexVolumeSourceFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getDriver();
+public interface V1FlexVolumeSourceFluent<A extends V1FlexVolumeSourceFluent<A>> extends Fluent<A> {
+  public String getDriver();
 
-  public A withDriver(java.lang.String driver);
+  public A withDriver(String driver);
 
-  public java.lang.Boolean hasDriver();
+  public Boolean hasDriver();
 
-  /** Method is deprecated. use withDriver instead. */
-  @java.lang.Deprecated
-  public A withNewDriver(java.lang.String original);
+  public String getFsType();
 
-  public java.lang.String getFsType();
+  public A withFsType(String fsType);
 
-  public A withFsType(java.lang.String fsType);
+  public Boolean hasFsType();
 
-  public java.lang.Boolean hasFsType();
+  public A addToOptions(String key, String value);
 
-  /** Method is deprecated. use withFsType instead. */
-  @java.lang.Deprecated
-  public A withNewFsType(java.lang.String original);
+  public A addToOptions(Map<String, String> map);
 
-  public A addToOptions(java.lang.String key, java.lang.String value);
+  public A removeFromOptions(String key);
 
-  public A addToOptions(java.util.Map<java.lang.String, java.lang.String> map);
+  public A removeFromOptions(Map<String, String> map);
 
-  public A removeFromOptions(java.lang.String key);
+  public Map<String, String> getOptions();
 
-  public A removeFromOptions(java.util.Map<java.lang.String, java.lang.String> map);
+  public <K, V> A withOptions(Map<String, String> options);
 
-  public java.util.Map<java.lang.String, java.lang.String> getOptions();
+  public Boolean hasOptions();
 
-  public <K, V> A withOptions(java.util.Map<java.lang.String, java.lang.String> options);
+  public Boolean getReadOnly();
 
-  public java.lang.Boolean hasOptions();
+  public A withReadOnly(Boolean readOnly);
 
-  public java.lang.Boolean getReadOnly();
-
-  public A withReadOnly(java.lang.Boolean readOnly);
-
-  public java.lang.Boolean hasReadOnly();
+  public Boolean hasReadOnly();
 
   /**
    * This method has been deprecated, please use method buildSecretRef instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1LocalObjectReference getSecretRef();
+  @Deprecated
+  public V1LocalObjectReference getSecretRef();
 
-  public io.kubernetes.client.openapi.models.V1LocalObjectReference buildSecretRef();
+  public V1LocalObjectReference buildSecretRef();
 
-  public A withSecretRef(io.kubernetes.client.openapi.models.V1LocalObjectReference secretRef);
+  public A withSecretRef(V1LocalObjectReference secretRef);
 
-  public java.lang.Boolean hasSecretRef();
+  public Boolean hasSecretRef();
 
-  public io.kubernetes.client.openapi.models.V1FlexVolumeSourceFluent.SecretRefNested<A>
-      withNewSecretRef();
+  public V1FlexVolumeSourceFluent.SecretRefNested<A> withNewSecretRef();
 
-  public io.kubernetes.client.openapi.models.V1FlexVolumeSourceFluent.SecretRefNested<A>
-      withNewSecretRefLike(io.kubernetes.client.openapi.models.V1LocalObjectReference item);
+  public V1FlexVolumeSourceFluent.SecretRefNested<A> withNewSecretRefLike(
+      V1LocalObjectReference item);
 
-  public io.kubernetes.client.openapi.models.V1FlexVolumeSourceFluent.SecretRefNested<A>
-      editSecretRef();
+  public V1FlexVolumeSourceFluent.SecretRefNested<A> editSecretRef();
 
-  public io.kubernetes.client.openapi.models.V1FlexVolumeSourceFluent.SecretRefNested<A>
-      editOrNewSecretRef();
+  public V1FlexVolumeSourceFluent.SecretRefNested<A> editOrNewSecretRef();
 
-  public io.kubernetes.client.openapi.models.V1FlexVolumeSourceFluent.SecretRefNested<A>
-      editOrNewSecretRefLike(io.kubernetes.client.openapi.models.V1LocalObjectReference item);
+  public V1FlexVolumeSourceFluent.SecretRefNested<A> editOrNewSecretRefLike(
+      V1LocalObjectReference item);
+
+  public A withReadOnly();
 
   public interface SecretRefNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1LocalObjectReferenceFluent<
-              io.kubernetes.client.openapi.models.V1FlexVolumeSourceFluent.SecretRefNested<N>> {
+      extends Nested<N>, V1LocalObjectReferenceFluent<V1FlexVolumeSourceFluent.SecretRefNested<N>> {
     public N and();
 
     public N endSecretRef();

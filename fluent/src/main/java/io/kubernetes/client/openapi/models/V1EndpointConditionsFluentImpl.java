@@ -12,15 +12,15 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1EndpointConditionsFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1EndpointConditionsFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1EndpointConditionsFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1EndpointConditionsFluentImpl<A extends V1EndpointConditionsFluent<A>>
+    extends BaseFluent<A> implements V1EndpointConditionsFluent<A> {
   public V1EndpointConditionsFluentImpl() {}
 
-  public V1EndpointConditionsFluentImpl(
-      io.kubernetes.client.openapi.models.V1EndpointConditions instance) {
+  public V1EndpointConditionsFluentImpl(V1EndpointConditions instance) {
     this.withReady(instance.getReady());
 
     this.withServing(instance.getServing());
@@ -28,50 +28,50 @@ public class V1EndpointConditionsFluentImpl<
     this.withTerminating(instance.getTerminating());
   }
 
-  private java.lang.Boolean ready;
-  private java.lang.Boolean serving;
-  private java.lang.Boolean terminating;
+  private Boolean ready;
+  private Boolean serving;
+  private Boolean terminating;
 
-  public java.lang.Boolean getReady() {
+  public Boolean getReady() {
     return this.ready;
   }
 
-  public A withReady(java.lang.Boolean ready) {
+  public A withReady(Boolean ready) {
     this.ready = ready;
     return (A) this;
   }
 
-  public java.lang.Boolean hasReady() {
+  public Boolean hasReady() {
     return this.ready != null;
   }
 
-  public java.lang.Boolean getServing() {
+  public Boolean getServing() {
     return this.serving;
   }
 
-  public A withServing(java.lang.Boolean serving) {
+  public A withServing(Boolean serving) {
     this.serving = serving;
     return (A) this;
   }
 
-  public java.lang.Boolean hasServing() {
+  public Boolean hasServing() {
     return this.serving != null;
   }
 
-  public java.lang.Boolean getTerminating() {
+  public Boolean getTerminating() {
     return this.terminating;
   }
 
-  public A withTerminating(java.lang.Boolean terminating) {
+  public A withTerminating(Boolean terminating) {
     this.terminating = terminating;
     return (A) this;
   }
 
-  public java.lang.Boolean hasTerminating() {
+  public Boolean hasTerminating() {
     return this.terminating != null;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1EndpointConditionsFluentImpl that = (V1EndpointConditionsFluentImpl) o;
@@ -84,5 +84,36 @@ public class V1EndpointConditionsFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(ready, serving, terminating, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (ready != null) {
+      sb.append("ready:");
+      sb.append(ready + ",");
+    }
+    if (serving != null) {
+      sb.append("serving:");
+      sb.append(serving + ",");
+    }
+    if (terminating != null) {
+      sb.append("terminating:");
+      sb.append(terminating);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  public A withReady() {
+    return withReady(true);
+  }
+
+  public A withServing() {
+    return withServing(true);
+  }
+
+  public A withTerminating() {
+    return withTerminating(true);
   }
 }

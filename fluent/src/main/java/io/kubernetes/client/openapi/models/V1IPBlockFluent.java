@@ -12,50 +12,46 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
+
 /** Generated */
-public interface V1IPBlockFluent<A extends io.kubernetes.client.openapi.models.V1IPBlockFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getCidr();
+public interface V1IPBlockFluent<A extends V1IPBlockFluent<A>> extends Fluent<A> {
+  public String getCidr();
 
-  public A withCidr(java.lang.String cidr);
+  public A withCidr(String cidr);
 
-  public java.lang.Boolean hasCidr();
+  public Boolean hasCidr();
 
-  /** Method is deprecated. use withCidr instead. */
-  @java.lang.Deprecated
-  public A withNewCidr(java.lang.String original);
+  public A addToExcept(Integer index, String item);
 
-  public A addToExcept(java.lang.Integer index, java.lang.String item);
-
-  public A setToExcept(java.lang.Integer index, java.lang.String item);
+  public A setToExcept(Integer index, String item);
 
   public A addToExcept(java.lang.String... items);
 
-  public A addAllToExcept(java.util.Collection<java.lang.String> items);
+  public A addAllToExcept(Collection<String> items);
 
   public A removeFromExcept(java.lang.String... items);
 
-  public A removeAllFromExcept(java.util.Collection<java.lang.String> items);
+  public A removeAllFromExcept(Collection<String> items);
 
-  public java.util.List<java.lang.String> getExcept();
+  public List<String> getExcept();
 
-  public java.lang.String getExcept(java.lang.Integer index);
+  public String getExcept(Integer index);
 
-  public java.lang.String getFirstExcept();
+  public String getFirstExcept();
 
-  public java.lang.String getLastExcept();
+  public String getLastExcept();
 
-  public java.lang.String getMatchingExcept(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public String getMatchingExcept(Predicate<String> predicate);
 
-  public java.lang.Boolean hasMatchingExcept(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public Boolean hasMatchingExcept(Predicate<String> predicate);
 
-  public A withExcept(java.util.List<java.lang.String> except);
+  public A withExcept(List<String> except);
 
   public A withExcept(java.lang.String... except);
 
-  public java.lang.Boolean hasExcept();
-
-  public A addNewExcept(java.lang.String original);
+  public Boolean hasExcept();
 }

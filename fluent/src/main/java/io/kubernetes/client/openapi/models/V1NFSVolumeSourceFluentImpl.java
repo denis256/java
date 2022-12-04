@@ -12,15 +12,15 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1NFSVolumeSourceFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1NFSVolumeSourceFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1NFSVolumeSourceFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1NFSVolumeSourceFluentImpl<A extends V1NFSVolumeSourceFluent<A>> extends BaseFluent<A>
+    implements V1NFSVolumeSourceFluent<A> {
   public V1NFSVolumeSourceFluentImpl() {}
 
-  public V1NFSVolumeSourceFluentImpl(
-      io.kubernetes.client.openapi.models.V1NFSVolumeSource instance) {
+  public V1NFSVolumeSourceFluentImpl(V1NFSVolumeSource instance) {
     this.withPath(instance.getPath());
 
     this.withReadOnly(instance.getReadOnly());
@@ -28,62 +28,50 @@ public class V1NFSVolumeSourceFluentImpl<
     this.withServer(instance.getServer());
   }
 
-  private java.lang.String path;
-  private java.lang.Boolean readOnly;
-  private java.lang.String server;
+  private String path;
+  private Boolean readOnly;
+  private String server;
 
-  public java.lang.String getPath() {
+  public String getPath() {
     return this.path;
   }
 
-  public A withPath(java.lang.String path) {
+  public A withPath(String path) {
     this.path = path;
     return (A) this;
   }
 
-  public java.lang.Boolean hasPath() {
+  public Boolean hasPath() {
     return this.path != null;
   }
 
-  /** Method is deprecated. use withPath instead. */
-  @java.lang.Deprecated
-  public A withNewPath(java.lang.String original) {
-    return (A) withPath(new String(original));
-  }
-
-  public java.lang.Boolean getReadOnly() {
+  public Boolean getReadOnly() {
     return this.readOnly;
   }
 
-  public A withReadOnly(java.lang.Boolean readOnly) {
+  public A withReadOnly(Boolean readOnly) {
     this.readOnly = readOnly;
     return (A) this;
   }
 
-  public java.lang.Boolean hasReadOnly() {
+  public Boolean hasReadOnly() {
     return this.readOnly != null;
   }
 
-  public java.lang.String getServer() {
+  public String getServer() {
     return this.server;
   }
 
-  public A withServer(java.lang.String server) {
+  public A withServer(String server) {
     this.server = server;
     return (A) this;
   }
 
-  public java.lang.Boolean hasServer() {
+  public Boolean hasServer() {
     return this.server != null;
   }
 
-  /** Method is deprecated. use withServer instead. */
-  @java.lang.Deprecated
-  public A withNewServer(java.lang.String original) {
-    return (A) withServer(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1NFSVolumeSourceFluentImpl that = (V1NFSVolumeSourceFluentImpl) o;
@@ -95,5 +83,28 @@ public class V1NFSVolumeSourceFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(path, readOnly, server, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (path != null) {
+      sb.append("path:");
+      sb.append(path + ",");
+    }
+    if (readOnly != null) {
+      sb.append("readOnly:");
+      sb.append(readOnly + ",");
+    }
+    if (server != null) {
+      sb.append("server:");
+      sb.append(server);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  public A withReadOnly() {
+    return withReadOnly(true);
   }
 }

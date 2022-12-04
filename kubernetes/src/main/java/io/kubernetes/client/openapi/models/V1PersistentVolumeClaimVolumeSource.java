@@ -1,5 +1,5 @@
 /*
-Copyright 2021 The Kubernetes Authors.
+Copyright 2022 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -28,7 +28,7 @@ import java.util.Objects;
         "PersistentVolumeClaimVolumeSource references the user's PVC in the same namespace. This volume finds the bound PV and mounts that volume for the pod. A PersistentVolumeClaimVolumeSource is, essentially, a wrapper around another type of volume that is owned by someone else (the system).")
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    date = "2021-12-10T19:11:23.904Z[Etc/UTC]")
+    date = "2022-09-15T17:00:37.921Z[Etc/UTC]")
 public class V1PersistentVolumeClaimVolumeSource {
   public static final String SERIALIZED_NAME_CLAIM_NAME = "claimName";
 
@@ -47,7 +47,7 @@ public class V1PersistentVolumeClaimVolumeSource {
   }
 
   /**
-   * ClaimName is the name of a PersistentVolumeClaim in the same namespace as the pod using this
+   * claimName is the name of a PersistentVolumeClaim in the same namespace as the pod using this
    * volume. More info:
    * https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims
    *
@@ -56,7 +56,7 @@ public class V1PersistentVolumeClaimVolumeSource {
   @ApiModelProperty(
       required = true,
       value =
-          "ClaimName is the name of a PersistentVolumeClaim in the same namespace as the pod using this volume. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims")
+          "claimName is the name of a PersistentVolumeClaim in the same namespace as the pod using this volume. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims")
   public String getClaimName() {
     return claimName;
   }
@@ -72,12 +72,13 @@ public class V1PersistentVolumeClaimVolumeSource {
   }
 
   /**
-   * Will force the ReadOnly setting in VolumeMounts. Default false.
+   * readOnly Will force the ReadOnly setting in VolumeMounts. Default false.
    *
    * @return readOnly
    */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Will force the ReadOnly setting in VolumeMounts. Default false.")
+  @ApiModelProperty(
+      value = "readOnly Will force the ReadOnly setting in VolumeMounts. Default false.")
   public Boolean getReadOnly() {
     return readOnly;
   }

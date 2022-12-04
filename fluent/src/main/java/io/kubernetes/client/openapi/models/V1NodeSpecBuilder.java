@@ -12,40 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1NodeSpecBuilder
-    extends io.kubernetes.client.openapi.models.V1NodeSpecFluentImpl<
-        io.kubernetes.client.openapi.models.V1NodeSpecBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1NodeSpec,
-        io.kubernetes.client.openapi.models.V1NodeSpecBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1NodeSpecBuilder extends V1NodeSpecFluentImpl<V1NodeSpecBuilder>
+    implements VisitableBuilder<V1NodeSpec, V1NodeSpecBuilder> {
   public V1NodeSpecBuilder() {
     this(false);
   }
 
-  public V1NodeSpecBuilder(java.lang.Boolean validationEnabled) {
+  public V1NodeSpecBuilder(Boolean validationEnabled) {
     this(new V1NodeSpec(), validationEnabled);
   }
 
-  public V1NodeSpecBuilder(io.kubernetes.client.openapi.models.V1NodeSpecFluent<?> fluent) {
+  public V1NodeSpecBuilder(V1NodeSpecFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1NodeSpecBuilder(
-      io.kubernetes.client.openapi.models.V1NodeSpecFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1NodeSpecBuilder(V1NodeSpecFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1NodeSpec(), validationEnabled);
   }
 
-  public V1NodeSpecBuilder(
-      io.kubernetes.client.openapi.models.V1NodeSpecFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1NodeSpec instance) {
+  public V1NodeSpecBuilder(V1NodeSpecFluent<?> fluent, V1NodeSpec instance) {
     this(fluent, instance, false);
   }
 
   public V1NodeSpecBuilder(
-      io.kubernetes.client.openapi.models.V1NodeSpecFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1NodeSpec instance,
-      java.lang.Boolean validationEnabled) {
+      V1NodeSpecFluent<?> fluent, V1NodeSpec instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withConfigSource(instance.getConfigSource());
 
@@ -64,13 +56,11 @@ public class V1NodeSpecBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1NodeSpecBuilder(io.kubernetes.client.openapi.models.V1NodeSpec instance) {
+  public V1NodeSpecBuilder(V1NodeSpec instance) {
     this(instance, false);
   }
 
-  public V1NodeSpecBuilder(
-      io.kubernetes.client.openapi.models.V1NodeSpec instance,
-      java.lang.Boolean validationEnabled) {
+  public V1NodeSpecBuilder(V1NodeSpec instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withConfigSource(instance.getConfigSource());
 
@@ -89,10 +79,10 @@ public class V1NodeSpecBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1NodeSpecFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1NodeSpecFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1NodeSpec build() {
+  public V1NodeSpec build() {
     V1NodeSpec buildable = new V1NodeSpec();
     buildable.setConfigSource(fluent.getConfigSource());
     buildable.setExternalID(fluent.getExternalID());
@@ -102,24 +92,5 @@ public class V1NodeSpecBuilder
     buildable.setTaints(fluent.getTaints());
     buildable.setUnschedulable(fluent.getUnschedulable());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1NodeSpecBuilder that = (V1NodeSpecBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

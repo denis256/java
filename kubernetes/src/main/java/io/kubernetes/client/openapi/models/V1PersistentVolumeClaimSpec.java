@@ -1,5 +1,5 @@
 /*
-Copyright 2021 The Kubernetes Authors.
+Copyright 2022 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -28,7 +28,7 @@ import java.util.Objects;
         "PersistentVolumeClaimSpec describes the common attributes of storage devices and allows a Source for provider-specific attributes")
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    date = "2021-12-10T19:11:23.904Z[Etc/UTC]")
+    date = "2022-09-15T17:00:37.921Z[Etc/UTC]")
 public class V1PersistentVolumeClaimSpec {
   public static final String SERIALIZED_NAME_ACCESS_MODES = "accessModes";
 
@@ -85,7 +85,7 @@ public class V1PersistentVolumeClaimSpec {
   }
 
   /**
-   * AccessModes contains the desired access modes the volume should have. More info:
+   * accessModes contains the desired access modes the volume should have. More info:
    * https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1
    *
    * @return accessModes
@@ -93,7 +93,7 @@ public class V1PersistentVolumeClaimSpec {
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "AccessModes contains the desired access modes the volume should have. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1")
+          "accessModes contains the desired access modes the volume should have. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1")
   public List<String> getAccessModes() {
     return accessModes;
   }
@@ -193,7 +193,7 @@ public class V1PersistentVolumeClaimSpec {
   }
 
   /**
-   * Name of the StorageClass required by the claim. More info:
+   * storageClassName is the name of the StorageClass required by the claim. More info:
    * https://kubernetes.io/docs/concepts/storage/persistent-volumes#class-1
    *
    * @return storageClassName
@@ -201,7 +201,7 @@ public class V1PersistentVolumeClaimSpec {
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "Name of the StorageClass required by the claim. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#class-1")
+          "storageClassName is the name of the StorageClass required by the claim. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#class-1")
   public String getStorageClassName() {
     return storageClassName;
   }
@@ -241,13 +241,13 @@ public class V1PersistentVolumeClaimSpec {
   }
 
   /**
-   * VolumeName is the binding reference to the PersistentVolume backing this claim.
+   * volumeName is the binding reference to the PersistentVolume backing this claim.
    *
    * @return volumeName
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
-      value = "VolumeName is the binding reference to the PersistentVolume backing this claim.")
+      value = "volumeName is the binding reference to the PersistentVolume backing this claim.")
   public String getVolumeName() {
     return volumeName;
   }

@@ -12,18 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Predicate;
 
 /** Generated */
-public class V1StatefulSetStatusFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1StatefulSetStatusFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1StatefulSetStatusFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1StatefulSetStatusFluentImpl<A extends V1StatefulSetStatusFluent<A>>
+    extends BaseFluent<A> implements V1StatefulSetStatusFluent<A> {
   public V1StatefulSetStatusFluentImpl() {}
 
-  public V1StatefulSetStatusFluentImpl(
-      io.kubernetes.client.openapi.models.V1StatefulSetStatus instance) {
+  public V1StatefulSetStatusFluentImpl(V1StatefulSetStatus instance) {
     this.withAvailableReplicas(instance.getAvailableReplicas());
 
     this.withCollisionCount(instance.getCollisionCount());
@@ -45,53 +48,48 @@ public class V1StatefulSetStatusFluentImpl<
     this.withUpdatedReplicas(instance.getUpdatedReplicas());
   }
 
-  private java.lang.Integer availableReplicas;
-  private java.lang.Integer collisionCount;
-  private java.util.ArrayList<io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder>
-      conditions;
-  private java.lang.Integer currentReplicas;
-  private java.lang.String currentRevision;
-  private java.lang.Long observedGeneration;
-  private java.lang.Integer readyReplicas;
-  private java.lang.Integer replicas;
-  private java.lang.String updateRevision;
-  private java.lang.Integer updatedReplicas;
+  private Integer availableReplicas;
+  private Integer collisionCount;
+  private ArrayList<V1StatefulSetConditionBuilder> conditions;
+  private Integer currentReplicas;
+  private String currentRevision;
+  private Long observedGeneration;
+  private Integer readyReplicas;
+  private Integer replicas;
+  private String updateRevision;
+  private Integer updatedReplicas;
 
-  public java.lang.Integer getAvailableReplicas() {
+  public Integer getAvailableReplicas() {
     return this.availableReplicas;
   }
 
-  public A withAvailableReplicas(java.lang.Integer availableReplicas) {
+  public A withAvailableReplicas(Integer availableReplicas) {
     this.availableReplicas = availableReplicas;
     return (A) this;
   }
 
-  public java.lang.Boolean hasAvailableReplicas() {
+  public Boolean hasAvailableReplicas() {
     return this.availableReplicas != null;
   }
 
-  public java.lang.Integer getCollisionCount() {
+  public Integer getCollisionCount() {
     return this.collisionCount;
   }
 
-  public A withCollisionCount(java.lang.Integer collisionCount) {
+  public A withCollisionCount(Integer collisionCount) {
     this.collisionCount = collisionCount;
     return (A) this;
   }
 
-  public java.lang.Boolean hasCollisionCount() {
+  public Boolean hasCollisionCount() {
     return this.collisionCount != null;
   }
 
-  public A addToConditions(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1StatefulSetCondition item) {
+  public A addToConditions(Integer index, V1StatefulSetCondition item) {
     if (this.conditions == null) {
-      this.conditions =
-          new java.util.ArrayList<
-              io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder>();
+      this.conditions = new ArrayList<V1StatefulSetConditionBuilder>();
     }
-    io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder builder =
-        new io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder(item);
+    V1StatefulSetConditionBuilder builder = new V1StatefulSetConditionBuilder(item);
     _visitables
         .get("conditions")
         .add(index >= 0 ? index : _visitables.get("conditions").size(), builder);
@@ -99,15 +97,11 @@ public class V1StatefulSetStatusFluentImpl<
     return (A) this;
   }
 
-  public A setToConditions(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1StatefulSetCondition item) {
+  public A setToConditions(Integer index, V1StatefulSetCondition item) {
     if (this.conditions == null) {
-      this.conditions =
-          new java.util.ArrayList<
-              io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder>();
+      this.conditions = new ArrayList<V1StatefulSetConditionBuilder>();
     }
-    io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder builder =
-        new io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder(item);
+    V1StatefulSetConditionBuilder builder = new V1StatefulSetConditionBuilder(item);
     if (index < 0 || index >= _visitables.get("conditions").size()) {
       _visitables.get("conditions").add(builder);
     } else {
@@ -123,29 +117,22 @@ public class V1StatefulSetStatusFluentImpl<
 
   public A addToConditions(io.kubernetes.client.openapi.models.V1StatefulSetCondition... items) {
     if (this.conditions == null) {
-      this.conditions =
-          new java.util.ArrayList<
-              io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder>();
+      this.conditions = new ArrayList<V1StatefulSetConditionBuilder>();
     }
-    for (io.kubernetes.client.openapi.models.V1StatefulSetCondition item : items) {
-      io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder builder =
-          new io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder(item);
+    for (V1StatefulSetCondition item : items) {
+      V1StatefulSetConditionBuilder builder = new V1StatefulSetConditionBuilder(item);
       _visitables.get("conditions").add(builder);
       this.conditions.add(builder);
     }
     return (A) this;
   }
 
-  public A addAllToConditions(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1StatefulSetCondition> items) {
+  public A addAllToConditions(Collection<V1StatefulSetCondition> items) {
     if (this.conditions == null) {
-      this.conditions =
-          new java.util.ArrayList<
-              io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder>();
+      this.conditions = new ArrayList<V1StatefulSetConditionBuilder>();
     }
-    for (io.kubernetes.client.openapi.models.V1StatefulSetCondition item : items) {
-      io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder builder =
-          new io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder(item);
+    for (V1StatefulSetCondition item : items) {
+      V1StatefulSetConditionBuilder builder = new V1StatefulSetConditionBuilder(item);
       _visitables.get("conditions").add(builder);
       this.conditions.add(builder);
     }
@@ -154,9 +141,8 @@ public class V1StatefulSetStatusFluentImpl<
 
   public A removeFromConditions(
       io.kubernetes.client.openapi.models.V1StatefulSetCondition... items) {
-    for (io.kubernetes.client.openapi.models.V1StatefulSetCondition item : items) {
-      io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder builder =
-          new io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder(item);
+    for (V1StatefulSetCondition item : items) {
+      V1StatefulSetConditionBuilder builder = new V1StatefulSetConditionBuilder(item);
       _visitables.get("conditions").remove(builder);
       if (this.conditions != null) {
         this.conditions.remove(builder);
@@ -165,11 +151,9 @@ public class V1StatefulSetStatusFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromConditions(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1StatefulSetCondition> items) {
-    for (io.kubernetes.client.openapi.models.V1StatefulSetCondition item : items) {
-      io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder builder =
-          new io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder(item);
+  public A removeAllFromConditions(Collection<V1StatefulSetCondition> items) {
+    for (V1StatefulSetCondition item : items) {
+      V1StatefulSetConditionBuilder builder = new V1StatefulSetConditionBuilder(item);
       _visitables.get("conditions").remove(builder);
       if (this.conditions != null) {
         this.conditions.remove(builder);
@@ -178,16 +162,12 @@ public class V1StatefulSetStatusFluentImpl<
     return (A) this;
   }
 
-  public A removeMatchingFromConditions(
-      java.util.function.Predicate<
-              io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder>
-          predicate) {
+  public A removeMatchingFromConditions(Predicate<V1StatefulSetConditionBuilder> predicate) {
     if (conditions == null) return (A) this;
-    final Iterator<io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder> each =
-        conditions.iterator();
+    final Iterator<V1StatefulSetConditionBuilder> each = conditions.iterator();
     final List visitables = _visitables.get("conditions");
     while (each.hasNext()) {
-      io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder builder = each.next();
+      V1StatefulSetConditionBuilder builder = each.next();
       if (predicate.test(builder)) {
         visitables.remove(builder);
         each.remove();
@@ -201,35 +181,30 @@ public class V1StatefulSetStatusFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V1StatefulSetCondition>
-      getConditions() {
+  @Deprecated
+  public List<V1StatefulSetCondition> getConditions() {
     return conditions != null ? build(conditions) : null;
   }
 
-  public java.util.List<io.kubernetes.client.openapi.models.V1StatefulSetCondition>
-      buildConditions() {
+  public List<V1StatefulSetCondition> buildConditions() {
     return conditions != null ? build(conditions) : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1StatefulSetCondition buildCondition(
-      java.lang.Integer index) {
+  public V1StatefulSetCondition buildCondition(Integer index) {
     return this.conditions.get(index).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1StatefulSetCondition buildFirstCondition() {
+  public V1StatefulSetCondition buildFirstCondition() {
     return this.conditions.get(0).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1StatefulSetCondition buildLastCondition() {
+  public V1StatefulSetCondition buildLastCondition() {
     return this.conditions.get(conditions.size() - 1).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1StatefulSetCondition buildMatchingCondition(
-      java.util.function.Predicate<
-              io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder>
-          predicate) {
-    for (io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder item : conditions) {
+  public V1StatefulSetCondition buildMatchingCondition(
+      Predicate<V1StatefulSetConditionBuilder> predicate) {
+    for (V1StatefulSetConditionBuilder item : conditions) {
       if (predicate.test(item)) {
         return item.build();
       }
@@ -237,11 +212,8 @@ public class V1StatefulSetStatusFluentImpl<
     return null;
   }
 
-  public java.lang.Boolean hasMatchingCondition(
-      java.util.function.Predicate<
-              io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder>
-          predicate) {
-    for (io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder item : conditions) {
+  public Boolean hasMatchingCondition(Predicate<V1StatefulSetConditionBuilder> predicate) {
+    for (V1StatefulSetConditionBuilder item : conditions) {
       if (predicate.test(item)) {
         return true;
       }
@@ -249,14 +221,13 @@ public class V1StatefulSetStatusFluentImpl<
     return false;
   }
 
-  public A withConditions(
-      java.util.List<io.kubernetes.client.openapi.models.V1StatefulSetCondition> conditions) {
+  public A withConditions(List<V1StatefulSetCondition> conditions) {
     if (this.conditions != null) {
       _visitables.get("conditions").removeAll(this.conditions);
     }
     if (conditions != null) {
-      this.conditions = new java.util.ArrayList();
-      for (io.kubernetes.client.openapi.models.V1StatefulSetCondition item : conditions) {
+      this.conditions = new ArrayList();
+      for (V1StatefulSetCondition item : conditions) {
         this.addToConditions(item);
       }
     } else {
@@ -271,63 +242,51 @@ public class V1StatefulSetStatusFluentImpl<
       this.conditions.clear();
     }
     if (conditions != null) {
-      for (io.kubernetes.client.openapi.models.V1StatefulSetCondition item : conditions) {
+      for (V1StatefulSetCondition item : conditions) {
         this.addToConditions(item);
       }
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasConditions() {
+  public Boolean hasConditions() {
     return conditions != null && !conditions.isEmpty();
   }
 
-  public io.kubernetes.client.openapi.models.V1StatefulSetStatusFluent.ConditionsNested<A>
-      addNewCondition() {
-    return new io.kubernetes.client.openapi.models.V1StatefulSetStatusFluentImpl
-        .ConditionsNestedImpl();
+  public V1StatefulSetStatusFluent.ConditionsNested<A> addNewCondition() {
+    return new V1StatefulSetStatusFluentImpl.ConditionsNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1StatefulSetStatusFluent.ConditionsNested<A>
-      addNewConditionLike(io.kubernetes.client.openapi.models.V1StatefulSetCondition item) {
-    return new io.kubernetes.client.openapi.models.V1StatefulSetStatusFluentImpl
-        .ConditionsNestedImpl(-1, item);
+  public V1StatefulSetStatusFluent.ConditionsNested<A> addNewConditionLike(
+      V1StatefulSetCondition item) {
+    return new V1StatefulSetStatusFluentImpl.ConditionsNestedImpl(-1, item);
   }
 
-  public io.kubernetes.client.openapi.models.V1StatefulSetStatusFluent.ConditionsNested<A>
-      setNewConditionLike(
-          java.lang.Integer index,
-          io.kubernetes.client.openapi.models.V1StatefulSetCondition item) {
-    return new io.kubernetes.client.openapi.models.V1StatefulSetStatusFluentImpl
-        .ConditionsNestedImpl(index, item);
+  public V1StatefulSetStatusFluent.ConditionsNested<A> setNewConditionLike(
+      Integer index, V1StatefulSetCondition item) {
+    return new V1StatefulSetStatusFluentImpl.ConditionsNestedImpl(index, item);
   }
 
-  public io.kubernetes.client.openapi.models.V1StatefulSetStatusFluent.ConditionsNested<A>
-      editCondition(java.lang.Integer index) {
+  public V1StatefulSetStatusFluent.ConditionsNested<A> editCondition(Integer index) {
     if (conditions.size() <= index)
       throw new RuntimeException("Can't edit conditions. Index exceeds size.");
     return setNewConditionLike(index, buildCondition(index));
   }
 
-  public io.kubernetes.client.openapi.models.V1StatefulSetStatusFluent.ConditionsNested<A>
-      editFirstCondition() {
+  public V1StatefulSetStatusFluent.ConditionsNested<A> editFirstCondition() {
     if (conditions.size() == 0)
       throw new RuntimeException("Can't edit first conditions. The list is empty.");
     return setNewConditionLike(0, buildCondition(0));
   }
 
-  public io.kubernetes.client.openapi.models.V1StatefulSetStatusFluent.ConditionsNested<A>
-      editLastCondition() {
+  public V1StatefulSetStatusFluent.ConditionsNested<A> editLastCondition() {
     int index = conditions.size() - 1;
     if (index < 0) throw new RuntimeException("Can't edit last conditions. The list is empty.");
     return setNewConditionLike(index, buildCondition(index));
   }
 
-  public io.kubernetes.client.openapi.models.V1StatefulSetStatusFluent.ConditionsNested<A>
-      editMatchingCondition(
-          java.util.function.Predicate<
-                  io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder>
-              predicate) {
+  public V1StatefulSetStatusFluent.ConditionsNested<A> editMatchingCondition(
+      Predicate<V1StatefulSetConditionBuilder> predicate) {
     int index = -1;
     for (int i = 0; i < conditions.size(); i++) {
       if (predicate.test(conditions.get(i))) {
@@ -339,110 +298,98 @@ public class V1StatefulSetStatusFluentImpl<
     return setNewConditionLike(index, buildCondition(index));
   }
 
-  public java.lang.Integer getCurrentReplicas() {
+  public Integer getCurrentReplicas() {
     return this.currentReplicas;
   }
 
-  public A withCurrentReplicas(java.lang.Integer currentReplicas) {
+  public A withCurrentReplicas(Integer currentReplicas) {
     this.currentReplicas = currentReplicas;
     return (A) this;
   }
 
-  public java.lang.Boolean hasCurrentReplicas() {
+  public Boolean hasCurrentReplicas() {
     return this.currentReplicas != null;
   }
 
-  public java.lang.String getCurrentRevision() {
+  public String getCurrentRevision() {
     return this.currentRevision;
   }
 
-  public A withCurrentRevision(java.lang.String currentRevision) {
+  public A withCurrentRevision(String currentRevision) {
     this.currentRevision = currentRevision;
     return (A) this;
   }
 
-  public java.lang.Boolean hasCurrentRevision() {
+  public Boolean hasCurrentRevision() {
     return this.currentRevision != null;
   }
 
-  /** Method is deprecated. use withCurrentRevision instead. */
-  @java.lang.Deprecated
-  public A withNewCurrentRevision(java.lang.String original) {
-    return (A) withCurrentRevision(new String(original));
-  }
-
-  public java.lang.Long getObservedGeneration() {
+  public Long getObservedGeneration() {
     return this.observedGeneration;
   }
 
-  public A withObservedGeneration(java.lang.Long observedGeneration) {
+  public A withObservedGeneration(Long observedGeneration) {
     this.observedGeneration = observedGeneration;
     return (A) this;
   }
 
-  public java.lang.Boolean hasObservedGeneration() {
+  public Boolean hasObservedGeneration() {
     return this.observedGeneration != null;
   }
 
-  public java.lang.Integer getReadyReplicas() {
+  public Integer getReadyReplicas() {
     return this.readyReplicas;
   }
 
-  public A withReadyReplicas(java.lang.Integer readyReplicas) {
+  public A withReadyReplicas(Integer readyReplicas) {
     this.readyReplicas = readyReplicas;
     return (A) this;
   }
 
-  public java.lang.Boolean hasReadyReplicas() {
+  public Boolean hasReadyReplicas() {
     return this.readyReplicas != null;
   }
 
-  public java.lang.Integer getReplicas() {
+  public Integer getReplicas() {
     return this.replicas;
   }
 
-  public A withReplicas(java.lang.Integer replicas) {
+  public A withReplicas(Integer replicas) {
     this.replicas = replicas;
     return (A) this;
   }
 
-  public java.lang.Boolean hasReplicas() {
+  public Boolean hasReplicas() {
     return this.replicas != null;
   }
 
-  public java.lang.String getUpdateRevision() {
+  public String getUpdateRevision() {
     return this.updateRevision;
   }
 
-  public A withUpdateRevision(java.lang.String updateRevision) {
+  public A withUpdateRevision(String updateRevision) {
     this.updateRevision = updateRevision;
     return (A) this;
   }
 
-  public java.lang.Boolean hasUpdateRevision() {
+  public Boolean hasUpdateRevision() {
     return this.updateRevision != null;
   }
 
-  /** Method is deprecated. use withUpdateRevision instead. */
-  @java.lang.Deprecated
-  public A withNewUpdateRevision(java.lang.String original) {
-    return (A) withUpdateRevision(new String(original));
-  }
-
-  public java.lang.Integer getUpdatedReplicas() {
+  public Integer getUpdatedReplicas() {
     return this.updatedReplicas;
   }
 
-  public A withUpdatedReplicas(java.lang.Integer updatedReplicas) {
+  public A withUpdatedReplicas(Integer updatedReplicas) {
     this.updatedReplicas = updatedReplicas;
     return (A) this;
   }
 
-  public java.lang.Boolean hasUpdatedReplicas() {
+  public Boolean hasUpdatedReplicas() {
     return this.updatedReplicas != null;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1StatefulSetStatusFluentImpl that = (V1StatefulSetStatusFluentImpl) o;
@@ -491,25 +438,68 @@ public class V1StatefulSetStatusFluentImpl<
         super.hashCode());
   }
 
-  public class ConditionsNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1StatefulSetConditionFluentImpl<
-          io.kubernetes.client.openapi.models.V1StatefulSetStatusFluent.ConditionsNested<N>>
-      implements io.kubernetes.client.openapi.models.V1StatefulSetStatusFluent.ConditionsNested<N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    ConditionsNestedImpl(
-        java.lang.Integer index, io.kubernetes.client.openapi.models.V1StatefulSetCondition item) {
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (availableReplicas != null) {
+      sb.append("availableReplicas:");
+      sb.append(availableReplicas + ",");
+    }
+    if (collisionCount != null) {
+      sb.append("collisionCount:");
+      sb.append(collisionCount + ",");
+    }
+    if (conditions != null && !conditions.isEmpty()) {
+      sb.append("conditions:");
+      sb.append(conditions + ",");
+    }
+    if (currentReplicas != null) {
+      sb.append("currentReplicas:");
+      sb.append(currentReplicas + ",");
+    }
+    if (currentRevision != null) {
+      sb.append("currentRevision:");
+      sb.append(currentRevision + ",");
+    }
+    if (observedGeneration != null) {
+      sb.append("observedGeneration:");
+      sb.append(observedGeneration + ",");
+    }
+    if (readyReplicas != null) {
+      sb.append("readyReplicas:");
+      sb.append(readyReplicas + ",");
+    }
+    if (replicas != null) {
+      sb.append("replicas:");
+      sb.append(replicas + ",");
+    }
+    if (updateRevision != null) {
+      sb.append("updateRevision:");
+      sb.append(updateRevision + ",");
+    }
+    if (updatedReplicas != null) {
+      sb.append("updatedReplicas:");
+      sb.append(updatedReplicas);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class ConditionsNestedImpl<N>
+      extends V1StatefulSetConditionFluentImpl<V1StatefulSetStatusFluent.ConditionsNested<N>>
+      implements V1StatefulSetStatusFluent.ConditionsNested<N>, Nested<N> {
+    ConditionsNestedImpl(Integer index, V1StatefulSetCondition item) {
       this.index = index;
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder(this, item);
+      this.builder = new V1StatefulSetConditionBuilder(this, item);
     }
 
     ConditionsNestedImpl() {
       this.index = -1;
-      this.builder = new io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder(this);
+      this.builder = new V1StatefulSetConditionBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1StatefulSetConditionBuilder builder;
-    java.lang.Integer index;
+    V1StatefulSetConditionBuilder builder;
+    Integer index;
 
     public N and() {
       return (N) V1StatefulSetStatusFluentImpl.this.setToConditions(index, builder.build());

@@ -46,8 +46,9 @@ public class LeaderElectingControllerTest {
     AtomicReference<LeaderElectionRecord> record = new AtomicReference<>();
     record.set(new LeaderElectionRecord());
 
-    Semaphore latch = new Semaphore(2);
-    Semaphore controllerLatch = new Semaphore(2);
+    Semaphore apiClientSem = new Semaphore(0);
+    Semaphore controllerStartSem = new Semaphore(0);
+    Semaphore controllerStopSem = new Semaphore(0);
 
     when(mockLock.identity()).thenReturn("foo");
     when(mockLock.get())
@@ -58,7 +59,7 @@ public class LeaderElectingControllerTest {
     doAnswer(
             invocationOnMock -> {
               record.set(invocationOnMock.getArgument(0));
-              latch.release();
+              apiClientSem.release();
               return true;
             })
         .when(mockLock)
@@ -66,15 +67,16 @@ public class LeaderElectingControllerTest {
 
     doAnswer(
             invocationOnMock -> {
-              latch.release();
-              return false;
+              record.set(invocationOnMock.getArgument(0));
+              apiClientSem.release();
+              return true;
             })
         .when(mockLock)
         .update(any());
 
     doAnswer(
             invocationOnMock -> {
-              controllerLatch.release();
+              controllerStartSem.release();
               return null;
             })
         .when(mockController)
@@ -82,7 +84,7 @@ public class LeaderElectingControllerTest {
 
     doAnswer(
             invocationOnMock -> {
-              controllerLatch.release();
+              controllerStopSem.release();
               return null;
             })
         .when(mockController)
@@ -98,18 +100,16 @@ public class LeaderElectingControllerTest {
                     Duration.ofMillis(100))),
             mockController);
 
-    latch.acquire(2);
-    controllerLatch.acquire(2);
-
     Thread controllerThread = new Thread(leaderElectingController::run);
     controllerThread.start();
-    latch.acquire(2);
+    apiClientSem.acquire(2);
+    controllerStartSem.acquire(1);
     controllerThread.interrupt();
 
     verify(mockLock, times(1)).create(any());
     verify(mockLock, atLeastOnce()).update(any());
 
-    controllerLatch.acquire(2);
+    controllerStopSem.acquire(1);
     verify(mockController, times(1)).run();
     verify(mockController, times(1)).shutdown();
   }

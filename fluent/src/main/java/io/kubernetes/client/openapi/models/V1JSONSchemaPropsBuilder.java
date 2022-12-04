@@ -12,41 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1JSONSchemaPropsBuilder
-    extends io.kubernetes.client.openapi.models.V1JSONSchemaPropsFluentImpl<
-        io.kubernetes.client.openapi.models.V1JSONSchemaPropsBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1JSONSchemaProps,
-        io.kubernetes.client.openapi.models.V1JSONSchemaPropsBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1JSONSchemaPropsBuilder extends V1JSONSchemaPropsFluentImpl<V1JSONSchemaPropsBuilder>
+    implements VisitableBuilder<V1JSONSchemaProps, V1JSONSchemaPropsBuilder> {
   public V1JSONSchemaPropsBuilder() {
     this(false);
   }
 
-  public V1JSONSchemaPropsBuilder(java.lang.Boolean validationEnabled) {
+  public V1JSONSchemaPropsBuilder(Boolean validationEnabled) {
     this(new V1JSONSchemaProps(), validationEnabled);
   }
 
-  public V1JSONSchemaPropsBuilder(
-      io.kubernetes.client.openapi.models.V1JSONSchemaPropsFluent<?> fluent) {
+  public V1JSONSchemaPropsBuilder(V1JSONSchemaPropsFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1JSONSchemaPropsBuilder(
-      io.kubernetes.client.openapi.models.V1JSONSchemaPropsFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1JSONSchemaPropsBuilder(V1JSONSchemaPropsFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1JSONSchemaProps(), validationEnabled);
   }
 
-  public V1JSONSchemaPropsBuilder(
-      io.kubernetes.client.openapi.models.V1JSONSchemaPropsFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1JSONSchemaProps instance) {
+  public V1JSONSchemaPropsBuilder(V1JSONSchemaPropsFluent<?> fluent, V1JSONSchemaProps instance) {
     this(fluent, instance, false);
   }
 
   public V1JSONSchemaPropsBuilder(
-      io.kubernetes.client.openapi.models.V1JSONSchemaPropsFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1JSONSchemaProps instance,
-      java.lang.Boolean validationEnabled) {
+      V1JSONSchemaPropsFluent<?> fluent, V1JSONSchemaProps instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withRef(instance.get$Ref());
 
@@ -125,13 +116,11 @@ public class V1JSONSchemaPropsBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1JSONSchemaPropsBuilder(io.kubernetes.client.openapi.models.V1JSONSchemaProps instance) {
+  public V1JSONSchemaPropsBuilder(V1JSONSchemaProps instance) {
     this(instance, false);
   }
 
-  public V1JSONSchemaPropsBuilder(
-      io.kubernetes.client.openapi.models.V1JSONSchemaProps instance,
-      java.lang.Boolean validationEnabled) {
+  public V1JSONSchemaPropsBuilder(V1JSONSchemaProps instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withRef(instance.get$Ref());
 
@@ -210,10 +199,10 @@ public class V1JSONSchemaPropsBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1JSONSchemaPropsFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1JSONSchemaPropsFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1JSONSchemaProps build() {
+  public V1JSONSchemaProps build() {
     V1JSONSchemaProps buildable = new V1JSONSchemaProps();
     buildable.set$Ref(fluent.getRef());
     buildable.set$Schema(fluent.getSchema());
@@ -253,24 +242,5 @@ public class V1JSONSchemaPropsBuilder
     buildable.setType(fluent.getType());
     buildable.setUniqueItems(fluent.getUniqueItems());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1JSONSchemaPropsBuilder that = (V1JSONSchemaPropsBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

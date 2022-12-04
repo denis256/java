@@ -12,41 +12,38 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1VsphereVirtualDiskVolumeSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1VsphereVirtualDiskVolumeSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1VsphereVirtualDiskVolumeSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1VsphereVirtualDiskVolumeSource,
-        io.kubernetes.client.openapi.models.V1VsphereVirtualDiskVolumeSourceBuilder> {
+    extends V1VsphereVirtualDiskVolumeSourceFluentImpl<V1VsphereVirtualDiskVolumeSourceBuilder>
+    implements VisitableBuilder<
+        V1VsphereVirtualDiskVolumeSource, V1VsphereVirtualDiskVolumeSourceBuilder> {
   public V1VsphereVirtualDiskVolumeSourceBuilder() {
     this(false);
   }
 
-  public V1VsphereVirtualDiskVolumeSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1VsphereVirtualDiskVolumeSourceBuilder(Boolean validationEnabled) {
     this(new V1VsphereVirtualDiskVolumeSource(), validationEnabled);
   }
 
-  public V1VsphereVirtualDiskVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1VsphereVirtualDiskVolumeSourceFluent<?> fluent) {
+  public V1VsphereVirtualDiskVolumeSourceBuilder(V1VsphereVirtualDiskVolumeSourceFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1VsphereVirtualDiskVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1VsphereVirtualDiskVolumeSourceFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1VsphereVirtualDiskVolumeSourceFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1VsphereVirtualDiskVolumeSource(), validationEnabled);
   }
 
   public V1VsphereVirtualDiskVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1VsphereVirtualDiskVolumeSourceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1VsphereVirtualDiskVolumeSource instance) {
+      V1VsphereVirtualDiskVolumeSourceFluent<?> fluent, V1VsphereVirtualDiskVolumeSource instance) {
     this(fluent, instance, false);
   }
 
   public V1VsphereVirtualDiskVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1VsphereVirtualDiskVolumeSourceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1VsphereVirtualDiskVolumeSource instance,
-      java.lang.Boolean validationEnabled) {
+      V1VsphereVirtualDiskVolumeSourceFluent<?> fluent,
+      V1VsphereVirtualDiskVolumeSource instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withFsType(instance.getFsType());
 
@@ -59,14 +56,12 @@ public class V1VsphereVirtualDiskVolumeSourceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1VsphereVirtualDiskVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1VsphereVirtualDiskVolumeSource instance) {
+  public V1VsphereVirtualDiskVolumeSourceBuilder(V1VsphereVirtualDiskVolumeSource instance) {
     this(instance, false);
   }
 
   public V1VsphereVirtualDiskVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1VsphereVirtualDiskVolumeSource instance,
-      java.lang.Boolean validationEnabled) {
+      V1VsphereVirtualDiskVolumeSource instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withFsType(instance.getFsType());
 
@@ -79,34 +74,15 @@ public class V1VsphereVirtualDiskVolumeSourceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1VsphereVirtualDiskVolumeSourceFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1VsphereVirtualDiskVolumeSourceFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1VsphereVirtualDiskVolumeSource build() {
+  public V1VsphereVirtualDiskVolumeSource build() {
     V1VsphereVirtualDiskVolumeSource buildable = new V1VsphereVirtualDiskVolumeSource();
     buildable.setFsType(fluent.getFsType());
     buildable.setStoragePolicyID(fluent.getStoragePolicyID());
     buildable.setStoragePolicyName(fluent.getStoragePolicyName());
     buildable.setVolumePath(fluent.getVolumePath());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1VsphereVirtualDiskVolumeSourceBuilder that = (V1VsphereVirtualDiskVolumeSourceBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

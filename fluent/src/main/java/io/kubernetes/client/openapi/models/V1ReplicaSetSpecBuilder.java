@@ -12,41 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1ReplicaSetSpecBuilder
-    extends io.kubernetes.client.openapi.models.V1ReplicaSetSpecFluentImpl<
-        io.kubernetes.client.openapi.models.V1ReplicaSetSpecBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1ReplicaSetSpec,
-        io.kubernetes.client.openapi.models.V1ReplicaSetSpecBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1ReplicaSetSpecBuilder extends V1ReplicaSetSpecFluentImpl<V1ReplicaSetSpecBuilder>
+    implements VisitableBuilder<V1ReplicaSetSpec, V1ReplicaSetSpecBuilder> {
   public V1ReplicaSetSpecBuilder() {
     this(false);
   }
 
-  public V1ReplicaSetSpecBuilder(java.lang.Boolean validationEnabled) {
+  public V1ReplicaSetSpecBuilder(Boolean validationEnabled) {
     this(new V1ReplicaSetSpec(), validationEnabled);
   }
 
-  public V1ReplicaSetSpecBuilder(
-      io.kubernetes.client.openapi.models.V1ReplicaSetSpecFluent<?> fluent) {
+  public V1ReplicaSetSpecBuilder(V1ReplicaSetSpecFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1ReplicaSetSpecBuilder(
-      io.kubernetes.client.openapi.models.V1ReplicaSetSpecFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1ReplicaSetSpecBuilder(V1ReplicaSetSpecFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1ReplicaSetSpec(), validationEnabled);
   }
 
-  public V1ReplicaSetSpecBuilder(
-      io.kubernetes.client.openapi.models.V1ReplicaSetSpecFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ReplicaSetSpec instance) {
+  public V1ReplicaSetSpecBuilder(V1ReplicaSetSpecFluent<?> fluent, V1ReplicaSetSpec instance) {
     this(fluent, instance, false);
   }
 
   public V1ReplicaSetSpecBuilder(
-      io.kubernetes.client.openapi.models.V1ReplicaSetSpecFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ReplicaSetSpec instance,
-      java.lang.Boolean validationEnabled) {
+      V1ReplicaSetSpecFluent<?> fluent, V1ReplicaSetSpec instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withMinReadySeconds(instance.getMinReadySeconds());
 
@@ -59,13 +50,11 @@ public class V1ReplicaSetSpecBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1ReplicaSetSpecBuilder(io.kubernetes.client.openapi.models.V1ReplicaSetSpec instance) {
+  public V1ReplicaSetSpecBuilder(V1ReplicaSetSpec instance) {
     this(instance, false);
   }
 
-  public V1ReplicaSetSpecBuilder(
-      io.kubernetes.client.openapi.models.V1ReplicaSetSpec instance,
-      java.lang.Boolean validationEnabled) {
+  public V1ReplicaSetSpecBuilder(V1ReplicaSetSpec instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withMinReadySeconds(instance.getMinReadySeconds());
 
@@ -78,34 +67,15 @@ public class V1ReplicaSetSpecBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1ReplicaSetSpecFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1ReplicaSetSpecFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1ReplicaSetSpec build() {
+  public V1ReplicaSetSpec build() {
     V1ReplicaSetSpec buildable = new V1ReplicaSetSpec();
     buildable.setMinReadySeconds(fluent.getMinReadySeconds());
     buildable.setReplicas(fluent.getReplicas());
     buildable.setSelector(fluent.getSelector());
     buildable.setTemplate(fluent.getTemplate());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1ReplicaSetSpecBuilder that = (V1ReplicaSetSpecBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

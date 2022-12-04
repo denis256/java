@@ -12,17 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 /** Generated */
+@SuppressWarnings(value = "unchecked")
 public class AdmissionregistrationV1WebhookClientConfigFluentImpl<
-        A extends
-            io.kubernetes.client.openapi.models.AdmissionregistrationV1WebhookClientConfigFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.AdmissionregistrationV1WebhookClientConfigFluent<
-        A> {
+        A extends AdmissionregistrationV1WebhookClientConfigFluent<A>>
+    extends BaseFluent<A> implements AdmissionregistrationV1WebhookClientConfigFluent<A> {
   public AdmissionregistrationV1WebhookClientConfigFluentImpl() {}
 
   public AdmissionregistrationV1WebhookClientConfigFluentImpl(
-      io.kubernetes.client.openapi.models.AdmissionregistrationV1WebhookClientConfig instance) {
+      AdmissionregistrationV1WebhookClientConfig instance) {
     this.withCaBundle(instance.getCaBundle());
 
     this.withService(instance.getService());
@@ -30,10 +34,9 @@ public class AdmissionregistrationV1WebhookClientConfigFluentImpl<
     this.withUrl(instance.getUrl());
   }
 
-  private java.util.List<java.lang.Byte> caBundle;
-  private io.kubernetes.client.openapi.models.AdmissionregistrationV1ServiceReferenceBuilder
-      service;
-  private java.lang.String url;
+  private List<Byte> caBundle;
+  private AdmissionregistrationV1ServiceReferenceBuilder service;
+  private String url;
 
   public A withCaBundle(byte... caBundle) {
     if (this.caBundle != null) {
@@ -61,17 +64,17 @@ public class AdmissionregistrationV1WebhookClientConfigFluentImpl<
     return result;
   }
 
-  public A addToCaBundle(java.lang.Integer index, java.lang.Byte item) {
+  public A addToCaBundle(Integer index, Byte item) {
     if (this.caBundle == null) {
-      this.caBundle = new java.util.ArrayList<java.lang.Byte>();
+      this.caBundle = new ArrayList<Byte>();
     }
     this.caBundle.add(index, item);
     return (A) this;
   }
 
-  public A setToCaBundle(java.lang.Integer index, java.lang.Byte item) {
+  public A setToCaBundle(Integer index, Byte item) {
     if (this.caBundle == null) {
-      this.caBundle = new java.util.ArrayList<java.lang.Byte>();
+      this.caBundle = new ArrayList<Byte>();
     }
     this.caBundle.set(index, item);
     return (A) this;
@@ -79,26 +82,26 @@ public class AdmissionregistrationV1WebhookClientConfigFluentImpl<
 
   public A addToCaBundle(java.lang.Byte... items) {
     if (this.caBundle == null) {
-      this.caBundle = new java.util.ArrayList<java.lang.Byte>();
+      this.caBundle = new ArrayList<Byte>();
     }
-    for (java.lang.Byte item : items) {
+    for (Byte item : items) {
       this.caBundle.add(item);
     }
     return (A) this;
   }
 
-  public A addAllToCaBundle(java.util.Collection<java.lang.Byte> items) {
+  public A addAllToCaBundle(Collection<Byte> items) {
     if (this.caBundle == null) {
-      this.caBundle = new java.util.ArrayList<java.lang.Byte>();
+      this.caBundle = new ArrayList<Byte>();
     }
-    for (java.lang.Byte item : items) {
+    for (Byte item : items) {
       this.caBundle.add(item);
     }
     return (A) this;
   }
 
   public A removeFromCaBundle(java.lang.Byte... items) {
-    for (java.lang.Byte item : items) {
+    for (Byte item : items) {
       if (this.caBundle != null) {
         this.caBundle.remove(item);
       }
@@ -106,8 +109,8 @@ public class AdmissionregistrationV1WebhookClientConfigFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromCaBundle(java.util.Collection<java.lang.Byte> items) {
-    for (java.lang.Byte item : items) {
+  public A removeAllFromCaBundle(Collection<Byte> items) {
+    for (Byte item : items) {
       if (this.caBundle != null) {
         this.caBundle.remove(item);
       }
@@ -115,7 +118,7 @@ public class AdmissionregistrationV1WebhookClientConfigFluentImpl<
     return (A) this;
   }
 
-  public java.lang.Boolean hasCaBundle() {
+  public Boolean hasCaBundle() {
     return caBundle != null && !caBundle.isEmpty();
   }
 
@@ -124,96 +127,70 @@ public class AdmissionregistrationV1WebhookClientConfigFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.AdmissionregistrationV1ServiceReference getService() {
+  @Deprecated
+  public AdmissionregistrationV1ServiceReference getService() {
     return this.service != null ? this.service.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.AdmissionregistrationV1ServiceReference
-      buildService() {
+  public AdmissionregistrationV1ServiceReference buildService() {
     return this.service != null ? this.service.build() : null;
   }
 
-  public A withService(
-      io.kubernetes.client.openapi.models.AdmissionregistrationV1ServiceReference service) {
+  public A withService(AdmissionregistrationV1ServiceReference service) {
     _visitables.get("service").remove(this.service);
     if (service != null) {
-      this.service =
-          new io.kubernetes.client.openapi.models.AdmissionregistrationV1ServiceReferenceBuilder(
-              service);
+      this.service = new AdmissionregistrationV1ServiceReferenceBuilder(service);
       _visitables.get("service").add(this.service);
+    } else {
+      this.service = null;
+      _visitables.get("service").remove(this.service);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasService() {
+  public Boolean hasService() {
     return this.service != null;
   }
 
-  public io.kubernetes.client.openapi.models.AdmissionregistrationV1WebhookClientConfigFluent
-              .ServiceNested<
-          A>
-      withNewService() {
-    return new io.kubernetes.client.openapi.models
-        .AdmissionregistrationV1WebhookClientConfigFluentImpl.ServiceNestedImpl();
+  public AdmissionregistrationV1WebhookClientConfigFluent.ServiceNested<A> withNewService() {
+    return new AdmissionregistrationV1WebhookClientConfigFluentImpl.ServiceNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.AdmissionregistrationV1WebhookClientConfigFluent
-              .ServiceNested<
-          A>
-      withNewServiceLike(
-          io.kubernetes.client.openapi.models.AdmissionregistrationV1ServiceReference item) {
-    return new io.kubernetes.client.openapi.models
-        .AdmissionregistrationV1WebhookClientConfigFluentImpl.ServiceNestedImpl(item);
+  public AdmissionregistrationV1WebhookClientConfigFluent.ServiceNested<A> withNewServiceLike(
+      AdmissionregistrationV1ServiceReference item) {
+    return new AdmissionregistrationV1WebhookClientConfigFluentImpl.ServiceNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.AdmissionregistrationV1WebhookClientConfigFluent
-              .ServiceNested<
-          A>
-      editService() {
+  public AdmissionregistrationV1WebhookClientConfigFluent.ServiceNested<A> editService() {
     return withNewServiceLike(getService());
   }
 
-  public io.kubernetes.client.openapi.models.AdmissionregistrationV1WebhookClientConfigFluent
-              .ServiceNested<
-          A>
-      editOrNewService() {
+  public AdmissionregistrationV1WebhookClientConfigFluent.ServiceNested<A> editOrNewService() {
     return withNewServiceLike(
         getService() != null
             ? getService()
-            : new io.kubernetes.client.openapi.models
-                    .AdmissionregistrationV1ServiceReferenceBuilder()
-                .build());
+            : new AdmissionregistrationV1ServiceReferenceBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.AdmissionregistrationV1WebhookClientConfigFluent
-              .ServiceNested<
-          A>
-      editOrNewServiceLike(
-          io.kubernetes.client.openapi.models.AdmissionregistrationV1ServiceReference item) {
+  public AdmissionregistrationV1WebhookClientConfigFluent.ServiceNested<A> editOrNewServiceLike(
+      AdmissionregistrationV1ServiceReference item) {
     return withNewServiceLike(getService() != null ? getService() : item);
   }
 
-  public java.lang.String getUrl() {
+  public String getUrl() {
     return this.url;
   }
 
-  public A withUrl(java.lang.String url) {
+  public A withUrl(String url) {
     this.url = url;
     return (A) this;
   }
 
-  public java.lang.Boolean hasUrl() {
+  public Boolean hasUrl() {
     return this.url != null;
   }
 
-  /** Method is deprecated. use withUrl instead. */
-  @java.lang.Deprecated
-  public A withNewUrl(java.lang.String original) {
-    return (A) withUrl(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     AdmissionregistrationV1WebhookClientConfigFluentImpl that =
@@ -228,29 +205,38 @@ public class AdmissionregistrationV1WebhookClientConfigFluentImpl<
     return java.util.Objects.hash(caBundle, service, url, super.hashCode());
   }
 
-  public class ServiceNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.AdmissionregistrationV1ServiceReferenceFluentImpl<
-          io.kubernetes.client.openapi.models.AdmissionregistrationV1WebhookClientConfigFluent
-                  .ServiceNested<
-              N>>
-      implements io.kubernetes.client.openapi.models
-                  .AdmissionregistrationV1WebhookClientConfigFluent.ServiceNested<
-              N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    ServiceNestedImpl(
-        io.kubernetes.client.openapi.models.AdmissionregistrationV1ServiceReference item) {
-      this.builder =
-          new io.kubernetes.client.openapi.models.AdmissionregistrationV1ServiceReferenceBuilder(
-              this, item);
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (caBundle != null && !caBundle.isEmpty()) {
+      sb.append("caBundle:");
+      sb.append(caBundle + ",");
+    }
+    if (service != null) {
+      sb.append("service:");
+      sb.append(service + ",");
+    }
+    if (url != null) {
+      sb.append("url:");
+      sb.append(url);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class ServiceNestedImpl<N>
+      extends AdmissionregistrationV1ServiceReferenceFluentImpl<
+          AdmissionregistrationV1WebhookClientConfigFluent.ServiceNested<N>>
+      implements AdmissionregistrationV1WebhookClientConfigFluent.ServiceNested<N>, Nested<N> {
+    ServiceNestedImpl(AdmissionregistrationV1ServiceReference item) {
+      this.builder = new AdmissionregistrationV1ServiceReferenceBuilder(this, item);
     }
 
     ServiceNestedImpl() {
-      this.builder =
-          new io.kubernetes.client.openapi.models.AdmissionregistrationV1ServiceReferenceBuilder(
-              this);
+      this.builder = new AdmissionregistrationV1ServiceReferenceBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.AdmissionregistrationV1ServiceReferenceBuilder builder;
+    AdmissionregistrationV1ServiceReferenceBuilder builder;
 
     public N and() {
       return (N)

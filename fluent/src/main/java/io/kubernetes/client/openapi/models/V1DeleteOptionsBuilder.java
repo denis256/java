@@ -12,41 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1DeleteOptionsBuilder
-    extends io.kubernetes.client.openapi.models.V1DeleteOptionsFluentImpl<
-        io.kubernetes.client.openapi.models.V1DeleteOptionsBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1DeleteOptions,
-        io.kubernetes.client.openapi.models.V1DeleteOptionsBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1DeleteOptionsBuilder extends V1DeleteOptionsFluentImpl<V1DeleteOptionsBuilder>
+    implements VisitableBuilder<V1DeleteOptions, V1DeleteOptionsBuilder> {
   public V1DeleteOptionsBuilder() {
     this(false);
   }
 
-  public V1DeleteOptionsBuilder(java.lang.Boolean validationEnabled) {
+  public V1DeleteOptionsBuilder(Boolean validationEnabled) {
     this(new V1DeleteOptions(), validationEnabled);
   }
 
-  public V1DeleteOptionsBuilder(
-      io.kubernetes.client.openapi.models.V1DeleteOptionsFluent<?> fluent) {
+  public V1DeleteOptionsBuilder(V1DeleteOptionsFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1DeleteOptionsBuilder(
-      io.kubernetes.client.openapi.models.V1DeleteOptionsFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1DeleteOptionsBuilder(V1DeleteOptionsFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1DeleteOptions(), validationEnabled);
   }
 
-  public V1DeleteOptionsBuilder(
-      io.kubernetes.client.openapi.models.V1DeleteOptionsFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1DeleteOptions instance) {
+  public V1DeleteOptionsBuilder(V1DeleteOptionsFluent<?> fluent, V1DeleteOptions instance) {
     this(fluent, instance, false);
   }
 
   public V1DeleteOptionsBuilder(
-      io.kubernetes.client.openapi.models.V1DeleteOptionsFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1DeleteOptions instance,
-      java.lang.Boolean validationEnabled) {
+      V1DeleteOptionsFluent<?> fluent, V1DeleteOptions instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withApiVersion(instance.getApiVersion());
 
@@ -65,13 +56,11 @@ public class V1DeleteOptionsBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1DeleteOptionsBuilder(io.kubernetes.client.openapi.models.V1DeleteOptions instance) {
+  public V1DeleteOptionsBuilder(V1DeleteOptions instance) {
     this(instance, false);
   }
 
-  public V1DeleteOptionsBuilder(
-      io.kubernetes.client.openapi.models.V1DeleteOptions instance,
-      java.lang.Boolean validationEnabled) {
+  public V1DeleteOptionsBuilder(V1DeleteOptions instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withApiVersion(instance.getApiVersion());
 
@@ -90,10 +79,10 @@ public class V1DeleteOptionsBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1DeleteOptionsFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1DeleteOptionsFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1DeleteOptions build() {
+  public V1DeleteOptions build() {
     V1DeleteOptions buildable = new V1DeleteOptions();
     buildable.setApiVersion(fluent.getApiVersion());
     buildable.setDryRun(fluent.getDryRun());
@@ -103,24 +92,5 @@ public class V1DeleteOptionsBuilder
     buildable.setPreconditions(fluent.getPreconditions());
     buildable.setPropagationPolicy(fluent.getPropagationPolicy());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1DeleteOptionsBuilder that = (V1DeleteOptionsBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

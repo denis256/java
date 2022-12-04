@@ -12,41 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V2ExternalMetricStatusBuilder
-    extends io.kubernetes.client.openapi.models.V2ExternalMetricStatusFluentImpl<
-        io.kubernetes.client.openapi.models.V2ExternalMetricStatusBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V2ExternalMetricStatus,
-        io.kubernetes.client.openapi.models.V2ExternalMetricStatusBuilder> {
+    extends V2ExternalMetricStatusFluentImpl<V2ExternalMetricStatusBuilder>
+    implements VisitableBuilder<V2ExternalMetricStatus, V2ExternalMetricStatusBuilder> {
   public V2ExternalMetricStatusBuilder() {
     this(false);
   }
 
-  public V2ExternalMetricStatusBuilder(java.lang.Boolean validationEnabled) {
+  public V2ExternalMetricStatusBuilder(Boolean validationEnabled) {
     this(new V2ExternalMetricStatus(), validationEnabled);
   }
 
-  public V2ExternalMetricStatusBuilder(
-      io.kubernetes.client.openapi.models.V2ExternalMetricStatusFluent<?> fluent) {
+  public V2ExternalMetricStatusBuilder(V2ExternalMetricStatusFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V2ExternalMetricStatusBuilder(
-      io.kubernetes.client.openapi.models.V2ExternalMetricStatusFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V2ExternalMetricStatusFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V2ExternalMetricStatus(), validationEnabled);
   }
 
   public V2ExternalMetricStatusBuilder(
-      io.kubernetes.client.openapi.models.V2ExternalMetricStatusFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V2ExternalMetricStatus instance) {
+      V2ExternalMetricStatusFluent<?> fluent, V2ExternalMetricStatus instance) {
     this(fluent, instance, false);
   }
 
   public V2ExternalMetricStatusBuilder(
-      io.kubernetes.client.openapi.models.V2ExternalMetricStatusFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V2ExternalMetricStatus instance,
-      java.lang.Boolean validationEnabled) {
+      V2ExternalMetricStatusFluent<?> fluent,
+      V2ExternalMetricStatus instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withCurrent(instance.getCurrent());
 
@@ -55,14 +51,11 @@ public class V2ExternalMetricStatusBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V2ExternalMetricStatusBuilder(
-      io.kubernetes.client.openapi.models.V2ExternalMetricStatus instance) {
+  public V2ExternalMetricStatusBuilder(V2ExternalMetricStatus instance) {
     this(instance, false);
   }
 
-  public V2ExternalMetricStatusBuilder(
-      io.kubernetes.client.openapi.models.V2ExternalMetricStatus instance,
-      java.lang.Boolean validationEnabled) {
+  public V2ExternalMetricStatusBuilder(V2ExternalMetricStatus instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withCurrent(instance.getCurrent());
 
@@ -71,32 +64,13 @@ public class V2ExternalMetricStatusBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V2ExternalMetricStatusFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V2ExternalMetricStatusFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V2ExternalMetricStatus build() {
+  public V2ExternalMetricStatus build() {
     V2ExternalMetricStatus buildable = new V2ExternalMetricStatus();
     buildable.setCurrent(fluent.getCurrent());
     buildable.setMetric(fluent.getMetric());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V2ExternalMetricStatusBuilder that = (V2ExternalMetricStatusBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

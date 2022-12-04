@@ -12,39 +12,35 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
 public interface V1AWSElasticBlockStoreVolumeSourceFluent<
-        A extends io.kubernetes.client.openapi.models.V1AWSElasticBlockStoreVolumeSourceFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getFsType();
+        A extends V1AWSElasticBlockStoreVolumeSourceFluent<A>>
+    extends Fluent<A> {
+  public String getFsType();
 
-  public A withFsType(java.lang.String fsType);
+  public A withFsType(String fsType);
 
-  public java.lang.Boolean hasFsType();
+  public Boolean hasFsType();
 
-  /** Method is deprecated. use withFsType instead. */
-  @java.lang.Deprecated
-  public A withNewFsType(java.lang.String original);
+  public Integer getPartition();
 
-  public java.lang.Integer getPartition();
+  public A withPartition(Integer partition);
 
-  public A withPartition(java.lang.Integer partition);
+  public Boolean hasPartition();
 
-  public java.lang.Boolean hasPartition();
+  public Boolean getReadOnly();
 
-  public java.lang.Boolean getReadOnly();
+  public A withReadOnly(Boolean readOnly);
 
-  public A withReadOnly(java.lang.Boolean readOnly);
+  public Boolean hasReadOnly();
 
-  public java.lang.Boolean hasReadOnly();
+  public String getVolumeID();
 
-  public java.lang.String getVolumeID();
+  public A withVolumeID(String volumeID);
 
-  public A withVolumeID(java.lang.String volumeID);
+  public Boolean hasVolumeID();
 
-  public java.lang.Boolean hasVolumeID();
-
-  /** Method is deprecated. use withVolumeID instead. */
-  @java.lang.Deprecated
-  public A withNewVolumeID(java.lang.String original);
+  public A withReadOnly();
 }

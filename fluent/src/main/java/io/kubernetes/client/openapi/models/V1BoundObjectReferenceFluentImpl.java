@@ -12,15 +12,15 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1BoundObjectReferenceFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1BoundObjectReferenceFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1BoundObjectReferenceFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1BoundObjectReferenceFluentImpl<A extends V1BoundObjectReferenceFluent<A>>
+    extends BaseFluent<A> implements V1BoundObjectReferenceFluent<A> {
   public V1BoundObjectReferenceFluentImpl() {}
 
-  public V1BoundObjectReferenceFluentImpl(
-      io.kubernetes.client.openapi.models.V1BoundObjectReference instance) {
+  public V1BoundObjectReferenceFluentImpl(V1BoundObjectReference instance) {
     this.withApiVersion(instance.getApiVersion());
 
     this.withKind(instance.getKind());
@@ -30,88 +30,64 @@ public class V1BoundObjectReferenceFluentImpl<
     this.withUid(instance.getUid());
   }
 
-  private java.lang.String apiVersion;
-  private java.lang.String kind;
-  private java.lang.String name;
-  private java.lang.String uid;
+  private String apiVersion;
+  private String kind;
+  private String name;
+  private String uid;
 
-  public java.lang.String getApiVersion() {
+  public String getApiVersion() {
     return this.apiVersion;
   }
 
-  public A withApiVersion(java.lang.String apiVersion) {
+  public A withApiVersion(String apiVersion) {
     this.apiVersion = apiVersion;
     return (A) this;
   }
 
-  public java.lang.Boolean hasApiVersion() {
+  public Boolean hasApiVersion() {
     return this.apiVersion != null;
   }
 
-  /** Method is deprecated. use withApiVersion instead. */
-  @java.lang.Deprecated
-  public A withNewApiVersion(java.lang.String original) {
-    return (A) withApiVersion(new String(original));
-  }
-
-  public java.lang.String getKind() {
+  public String getKind() {
     return this.kind;
   }
 
-  public A withKind(java.lang.String kind) {
+  public A withKind(String kind) {
     this.kind = kind;
     return (A) this;
   }
 
-  public java.lang.Boolean hasKind() {
+  public Boolean hasKind() {
     return this.kind != null;
   }
 
-  /** Method is deprecated. use withKind instead. */
-  @java.lang.Deprecated
-  public A withNewKind(java.lang.String original) {
-    return (A) withKind(new String(original));
-  }
-
-  public java.lang.String getName() {
+  public String getName() {
     return this.name;
   }
 
-  public A withName(java.lang.String name) {
+  public A withName(String name) {
     this.name = name;
     return (A) this;
   }
 
-  public java.lang.Boolean hasName() {
+  public Boolean hasName() {
     return this.name != null;
   }
 
-  /** Method is deprecated. use withName instead. */
-  @java.lang.Deprecated
-  public A withNewName(java.lang.String original) {
-    return (A) withName(new String(original));
-  }
-
-  public java.lang.String getUid() {
+  public String getUid() {
     return this.uid;
   }
 
-  public A withUid(java.lang.String uid) {
+  public A withUid(String uid) {
     this.uid = uid;
     return (A) this;
   }
 
-  public java.lang.Boolean hasUid() {
+  public Boolean hasUid() {
     return this.uid != null;
   }
 
-  /** Method is deprecated. use withUid instead. */
-  @java.lang.Deprecated
-  public A withNewUid(java.lang.String original) {
-    return (A) withUid(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1BoundObjectReferenceFluentImpl that = (V1BoundObjectReferenceFluentImpl) o;
@@ -125,5 +101,28 @@ public class V1BoundObjectReferenceFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(apiVersion, kind, name, uid, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (apiVersion != null) {
+      sb.append("apiVersion:");
+      sb.append(apiVersion + ",");
+    }
+    if (kind != null) {
+      sb.append("kind:");
+      sb.append(kind + ",");
+    }
+    if (name != null) {
+      sb.append("name:");
+      sb.append(name + ",");
+    }
+    if (uid != null) {
+      sb.append("uid:");
+      sb.append(uid);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

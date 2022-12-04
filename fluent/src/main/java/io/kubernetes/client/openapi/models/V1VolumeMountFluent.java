@@ -12,63 +12,45 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
-public interface V1VolumeMountFluent<
-        A extends io.kubernetes.client.openapi.models.V1VolumeMountFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getMountPath();
+public interface V1VolumeMountFluent<A extends V1VolumeMountFluent<A>> extends Fluent<A> {
+  public String getMountPath();
 
-  public A withMountPath(java.lang.String mountPath);
+  public A withMountPath(String mountPath);
 
-  public java.lang.Boolean hasMountPath();
+  public Boolean hasMountPath();
 
-  /** Method is deprecated. use withMountPath instead. */
-  @java.lang.Deprecated
-  public A withNewMountPath(java.lang.String original);
+  public String getMountPropagation();
 
-  public java.lang.String getMountPropagation();
+  public A withMountPropagation(String mountPropagation);
 
-  public A withMountPropagation(java.lang.String mountPropagation);
+  public Boolean hasMountPropagation();
 
-  public java.lang.Boolean hasMountPropagation();
+  public String getName();
 
-  /** Method is deprecated. use withMountPropagation instead. */
-  @java.lang.Deprecated
-  public A withNewMountPropagation(java.lang.String original);
+  public A withName(String name);
 
-  public java.lang.String getName();
+  public Boolean hasName();
 
-  public A withName(java.lang.String name);
+  public Boolean getReadOnly();
 
-  public java.lang.Boolean hasName();
+  public A withReadOnly(Boolean readOnly);
 
-  /** Method is deprecated. use withName instead. */
-  @java.lang.Deprecated
-  public A withNewName(java.lang.String original);
+  public Boolean hasReadOnly();
 
-  public java.lang.Boolean getReadOnly();
+  public String getSubPath();
 
-  public A withReadOnly(java.lang.Boolean readOnly);
+  public A withSubPath(String subPath);
 
-  public java.lang.Boolean hasReadOnly();
+  public Boolean hasSubPath();
 
-  public java.lang.String getSubPath();
+  public String getSubPathExpr();
 
-  public A withSubPath(java.lang.String subPath);
+  public A withSubPathExpr(String subPathExpr);
 
-  public java.lang.Boolean hasSubPath();
+  public Boolean hasSubPathExpr();
 
-  /** Method is deprecated. use withSubPath instead. */
-  @java.lang.Deprecated
-  public A withNewSubPath(java.lang.String original);
-
-  public java.lang.String getSubPathExpr();
-
-  public A withSubPathExpr(java.lang.String subPathExpr);
-
-  public java.lang.Boolean hasSubPathExpr();
-
-  /** Method is deprecated. use withSubPathExpr instead. */
-  @java.lang.Deprecated
-  public A withNewSubPathExpr(java.lang.String original);
+  public A withReadOnly();
 }

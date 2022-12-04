@@ -12,41 +12,38 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1HorizontalPodAutoscalerSpecBuilder
-    extends io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerSpecFluentImpl<
-        io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerSpecBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerSpec,
-        io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerSpecBuilder> {
+    extends V1HorizontalPodAutoscalerSpecFluentImpl<V1HorizontalPodAutoscalerSpecBuilder>
+    implements VisitableBuilder<
+        V1HorizontalPodAutoscalerSpec, V1HorizontalPodAutoscalerSpecBuilder> {
   public V1HorizontalPodAutoscalerSpecBuilder() {
     this(false);
   }
 
-  public V1HorizontalPodAutoscalerSpecBuilder(java.lang.Boolean validationEnabled) {
+  public V1HorizontalPodAutoscalerSpecBuilder(Boolean validationEnabled) {
     this(new V1HorizontalPodAutoscalerSpec(), validationEnabled);
   }
 
-  public V1HorizontalPodAutoscalerSpecBuilder(
-      io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerSpecFluent<?> fluent) {
+  public V1HorizontalPodAutoscalerSpecBuilder(V1HorizontalPodAutoscalerSpecFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1HorizontalPodAutoscalerSpecBuilder(
-      io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerSpecFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1HorizontalPodAutoscalerSpecFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1HorizontalPodAutoscalerSpec(), validationEnabled);
   }
 
   public V1HorizontalPodAutoscalerSpecBuilder(
-      io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerSpecFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerSpec instance) {
+      V1HorizontalPodAutoscalerSpecFluent<?> fluent, V1HorizontalPodAutoscalerSpec instance) {
     this(fluent, instance, false);
   }
 
   public V1HorizontalPodAutoscalerSpecBuilder(
-      io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerSpecFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerSpec instance,
-      java.lang.Boolean validationEnabled) {
+      V1HorizontalPodAutoscalerSpecFluent<?> fluent,
+      V1HorizontalPodAutoscalerSpec instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withMaxReplicas(instance.getMaxReplicas());
 
@@ -59,14 +56,12 @@ public class V1HorizontalPodAutoscalerSpecBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1HorizontalPodAutoscalerSpecBuilder(
-      io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerSpec instance) {
+  public V1HorizontalPodAutoscalerSpecBuilder(V1HorizontalPodAutoscalerSpec instance) {
     this(instance, false);
   }
 
   public V1HorizontalPodAutoscalerSpecBuilder(
-      io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerSpec instance,
-      java.lang.Boolean validationEnabled) {
+      V1HorizontalPodAutoscalerSpec instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withMaxReplicas(instance.getMaxReplicas());
 
@@ -79,34 +74,15 @@ public class V1HorizontalPodAutoscalerSpecBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerSpecFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1HorizontalPodAutoscalerSpecFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerSpec build() {
+  public V1HorizontalPodAutoscalerSpec build() {
     V1HorizontalPodAutoscalerSpec buildable = new V1HorizontalPodAutoscalerSpec();
     buildable.setMaxReplicas(fluent.getMaxReplicas());
     buildable.setMinReplicas(fluent.getMinReplicas());
     buildable.setScaleTargetRef(fluent.getScaleTargetRef());
     buildable.setTargetCPUUtilizationPercentage(fluent.getTargetCPUUtilizationPercentage());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1HorizontalPodAutoscalerSpecBuilder that = (V1HorizontalPodAutoscalerSpecBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

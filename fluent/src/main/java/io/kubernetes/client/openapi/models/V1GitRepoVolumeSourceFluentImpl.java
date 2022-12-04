@@ -12,15 +12,15 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1GitRepoVolumeSourceFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1GitRepoVolumeSourceFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1GitRepoVolumeSourceFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1GitRepoVolumeSourceFluentImpl<A extends V1GitRepoVolumeSourceFluent<A>>
+    extends BaseFluent<A> implements V1GitRepoVolumeSourceFluent<A> {
   public V1GitRepoVolumeSourceFluentImpl() {}
 
-  public V1GitRepoVolumeSourceFluentImpl(
-      io.kubernetes.client.openapi.models.V1GitRepoVolumeSource instance) {
+  public V1GitRepoVolumeSourceFluentImpl(V1GitRepoVolumeSource instance) {
     this.withDirectory(instance.getDirectory());
 
     this.withRepository(instance.getRepository());
@@ -28,68 +28,50 @@ public class V1GitRepoVolumeSourceFluentImpl<
     this.withRevision(instance.getRevision());
   }
 
-  private java.lang.String directory;
-  private java.lang.String repository;
-  private java.lang.String revision;
+  private String directory;
+  private String repository;
+  private String revision;
 
-  public java.lang.String getDirectory() {
+  public String getDirectory() {
     return this.directory;
   }
 
-  public A withDirectory(java.lang.String directory) {
+  public A withDirectory(String directory) {
     this.directory = directory;
     return (A) this;
   }
 
-  public java.lang.Boolean hasDirectory() {
+  public Boolean hasDirectory() {
     return this.directory != null;
   }
 
-  /** Method is deprecated. use withDirectory instead. */
-  @java.lang.Deprecated
-  public A withNewDirectory(java.lang.String original) {
-    return (A) withDirectory(new String(original));
-  }
-
-  public java.lang.String getRepository() {
+  public String getRepository() {
     return this.repository;
   }
 
-  public A withRepository(java.lang.String repository) {
+  public A withRepository(String repository) {
     this.repository = repository;
     return (A) this;
   }
 
-  public java.lang.Boolean hasRepository() {
+  public Boolean hasRepository() {
     return this.repository != null;
   }
 
-  /** Method is deprecated. use withRepository instead. */
-  @java.lang.Deprecated
-  public A withNewRepository(java.lang.String original) {
-    return (A) withRepository(new String(original));
-  }
-
-  public java.lang.String getRevision() {
+  public String getRevision() {
     return this.revision;
   }
 
-  public A withRevision(java.lang.String revision) {
+  public A withRevision(String revision) {
     this.revision = revision;
     return (A) this;
   }
 
-  public java.lang.Boolean hasRevision() {
+  public Boolean hasRevision() {
     return this.revision != null;
   }
 
-  /** Method is deprecated. use withRevision instead. */
-  @java.lang.Deprecated
-  public A withNewRevision(java.lang.String original) {
-    return (A) withRevision(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1GitRepoVolumeSourceFluentImpl that = (V1GitRepoVolumeSourceFluentImpl) o;
@@ -103,5 +85,24 @@ public class V1GitRepoVolumeSourceFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(directory, repository, revision, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (directory != null) {
+      sb.append("directory:");
+      sb.append(directory + ",");
+    }
+    if (repository != null) {
+      sb.append("repository:");
+      sb.append(repository + ",");
+    }
+    if (revision != null) {
+      sb.append("revision:");
+      sb.append(revision);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

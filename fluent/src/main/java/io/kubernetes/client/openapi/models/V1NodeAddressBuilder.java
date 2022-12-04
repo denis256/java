@@ -12,40 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1NodeAddressBuilder
-    extends io.kubernetes.client.openapi.models.V1NodeAddressFluentImpl<
-        io.kubernetes.client.openapi.models.V1NodeAddressBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1NodeAddress,
-        io.kubernetes.client.openapi.models.V1NodeAddressBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1NodeAddressBuilder extends V1NodeAddressFluentImpl<V1NodeAddressBuilder>
+    implements VisitableBuilder<V1NodeAddress, V1NodeAddressBuilder> {
   public V1NodeAddressBuilder() {
     this(false);
   }
 
-  public V1NodeAddressBuilder(java.lang.Boolean validationEnabled) {
+  public V1NodeAddressBuilder(Boolean validationEnabled) {
     this(new V1NodeAddress(), validationEnabled);
   }
 
-  public V1NodeAddressBuilder(io.kubernetes.client.openapi.models.V1NodeAddressFluent<?> fluent) {
+  public V1NodeAddressBuilder(V1NodeAddressFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1NodeAddressBuilder(
-      io.kubernetes.client.openapi.models.V1NodeAddressFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1NodeAddressBuilder(V1NodeAddressFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1NodeAddress(), validationEnabled);
   }
 
-  public V1NodeAddressBuilder(
-      io.kubernetes.client.openapi.models.V1NodeAddressFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1NodeAddress instance) {
+  public V1NodeAddressBuilder(V1NodeAddressFluent<?> fluent, V1NodeAddress instance) {
     this(fluent, instance, false);
   }
 
   public V1NodeAddressBuilder(
-      io.kubernetes.client.openapi.models.V1NodeAddressFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1NodeAddress instance,
-      java.lang.Boolean validationEnabled) {
+      V1NodeAddressFluent<?> fluent, V1NodeAddress instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withAddress(instance.getAddress());
 
@@ -54,13 +46,11 @@ public class V1NodeAddressBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1NodeAddressBuilder(io.kubernetes.client.openapi.models.V1NodeAddress instance) {
+  public V1NodeAddressBuilder(V1NodeAddress instance) {
     this(instance, false);
   }
 
-  public V1NodeAddressBuilder(
-      io.kubernetes.client.openapi.models.V1NodeAddress instance,
-      java.lang.Boolean validationEnabled) {
+  public V1NodeAddressBuilder(V1NodeAddress instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withAddress(instance.getAddress());
 
@@ -69,32 +59,13 @@ public class V1NodeAddressBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1NodeAddressFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1NodeAddressFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1NodeAddress build() {
+  public V1NodeAddress build() {
     V1NodeAddress buildable = new V1NodeAddress();
     buildable.setAddress(fluent.getAddress());
     buildable.setType(fluent.getType());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1NodeAddressBuilder that = (V1NodeAddressBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

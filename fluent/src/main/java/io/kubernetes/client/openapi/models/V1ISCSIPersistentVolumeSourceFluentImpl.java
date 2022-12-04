@@ -12,15 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
+
 /** Generated */
+@SuppressWarnings(value = "unchecked")
 public class V1ISCSIPersistentVolumeSourceFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSourceFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSourceFluent<A> {
+        A extends V1ISCSIPersistentVolumeSourceFluent<A>>
+    extends BaseFluent<A> implements V1ISCSIPersistentVolumeSourceFluent<A> {
   public V1ISCSIPersistentVolumeSourceFluentImpl() {}
 
-  public V1ISCSIPersistentVolumeSourceFluentImpl(
-      io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSource instance) {
+  public V1ISCSIPersistentVolumeSourceFluentImpl(V1ISCSIPersistentVolumeSource instance) {
     this.withChapAuthDiscovery(instance.getChapAuthDiscovery());
 
     this.withChapAuthSession(instance.getChapAuthSession());
@@ -44,144 +50,120 @@ public class V1ISCSIPersistentVolumeSourceFluentImpl<
     this.withTargetPortal(instance.getTargetPortal());
   }
 
-  private java.lang.Boolean chapAuthDiscovery;
-  private java.lang.Boolean chapAuthSession;
-  private java.lang.String fsType;
-  private java.lang.String initiatorName;
-  private java.lang.String iqn;
-  private java.lang.String iscsiInterface;
-  private java.lang.Integer lun;
-  private java.util.List<java.lang.String> portals;
-  private java.lang.Boolean readOnly;
-  private io.kubernetes.client.openapi.models.V1SecretReferenceBuilder secretRef;
-  private java.lang.String targetPortal;
+  private Boolean chapAuthDiscovery;
+  private Boolean chapAuthSession;
+  private String fsType;
+  private String initiatorName;
+  private String iqn;
+  private String iscsiInterface;
+  private Integer lun;
+  private List<String> portals;
+  private Boolean readOnly;
+  private V1SecretReferenceBuilder secretRef;
+  private String targetPortal;
 
-  public java.lang.Boolean getChapAuthDiscovery() {
+  public Boolean getChapAuthDiscovery() {
     return this.chapAuthDiscovery;
   }
 
-  public A withChapAuthDiscovery(java.lang.Boolean chapAuthDiscovery) {
+  public A withChapAuthDiscovery(Boolean chapAuthDiscovery) {
     this.chapAuthDiscovery = chapAuthDiscovery;
     return (A) this;
   }
 
-  public java.lang.Boolean hasChapAuthDiscovery() {
+  public Boolean hasChapAuthDiscovery() {
     return this.chapAuthDiscovery != null;
   }
 
-  public java.lang.Boolean getChapAuthSession() {
+  public Boolean getChapAuthSession() {
     return this.chapAuthSession;
   }
 
-  public A withChapAuthSession(java.lang.Boolean chapAuthSession) {
+  public A withChapAuthSession(Boolean chapAuthSession) {
     this.chapAuthSession = chapAuthSession;
     return (A) this;
   }
 
-  public java.lang.Boolean hasChapAuthSession() {
+  public Boolean hasChapAuthSession() {
     return this.chapAuthSession != null;
   }
 
-  public java.lang.String getFsType() {
+  public String getFsType() {
     return this.fsType;
   }
 
-  public A withFsType(java.lang.String fsType) {
+  public A withFsType(String fsType) {
     this.fsType = fsType;
     return (A) this;
   }
 
-  public java.lang.Boolean hasFsType() {
+  public Boolean hasFsType() {
     return this.fsType != null;
   }
 
-  /** Method is deprecated. use withFsType instead. */
-  @java.lang.Deprecated
-  public A withNewFsType(java.lang.String original) {
-    return (A) withFsType(new String(original));
-  }
-
-  public java.lang.String getInitiatorName() {
+  public String getInitiatorName() {
     return this.initiatorName;
   }
 
-  public A withInitiatorName(java.lang.String initiatorName) {
+  public A withInitiatorName(String initiatorName) {
     this.initiatorName = initiatorName;
     return (A) this;
   }
 
-  public java.lang.Boolean hasInitiatorName() {
+  public Boolean hasInitiatorName() {
     return this.initiatorName != null;
   }
 
-  /** Method is deprecated. use withInitiatorName instead. */
-  @java.lang.Deprecated
-  public A withNewInitiatorName(java.lang.String original) {
-    return (A) withInitiatorName(new String(original));
-  }
-
-  public java.lang.String getIqn() {
+  public String getIqn() {
     return this.iqn;
   }
 
-  public A withIqn(java.lang.String iqn) {
+  public A withIqn(String iqn) {
     this.iqn = iqn;
     return (A) this;
   }
 
-  public java.lang.Boolean hasIqn() {
+  public Boolean hasIqn() {
     return this.iqn != null;
   }
 
-  /** Method is deprecated. use withIqn instead. */
-  @java.lang.Deprecated
-  public A withNewIqn(java.lang.String original) {
-    return (A) withIqn(new String(original));
-  }
-
-  public java.lang.String getIscsiInterface() {
+  public String getIscsiInterface() {
     return this.iscsiInterface;
   }
 
-  public A withIscsiInterface(java.lang.String iscsiInterface) {
+  public A withIscsiInterface(String iscsiInterface) {
     this.iscsiInterface = iscsiInterface;
     return (A) this;
   }
 
-  public java.lang.Boolean hasIscsiInterface() {
+  public Boolean hasIscsiInterface() {
     return this.iscsiInterface != null;
   }
 
-  /** Method is deprecated. use withIscsiInterface instead. */
-  @java.lang.Deprecated
-  public A withNewIscsiInterface(java.lang.String original) {
-    return (A) withIscsiInterface(new String(original));
-  }
-
-  public java.lang.Integer getLun() {
+  public Integer getLun() {
     return this.lun;
   }
 
-  public A withLun(java.lang.Integer lun) {
+  public A withLun(Integer lun) {
     this.lun = lun;
     return (A) this;
   }
 
-  public java.lang.Boolean hasLun() {
+  public Boolean hasLun() {
     return this.lun != null;
   }
 
-  public A addToPortals(java.lang.Integer index, java.lang.String item) {
+  public A addToPortals(Integer index, String item) {
     if (this.portals == null) {
-      this.portals = new java.util.ArrayList<java.lang.String>();
+      this.portals = new ArrayList<String>();
     }
     this.portals.add(index, item);
     return (A) this;
   }
 
-  public A setToPortals(java.lang.Integer index, java.lang.String item) {
+  public A setToPortals(Integer index, String item) {
     if (this.portals == null) {
-      this.portals = new java.util.ArrayList<java.lang.String>();
+      this.portals = new ArrayList<String>();
     }
     this.portals.set(index, item);
     return (A) this;
@@ -189,26 +171,26 @@ public class V1ISCSIPersistentVolumeSourceFluentImpl<
 
   public A addToPortals(java.lang.String... items) {
     if (this.portals == null) {
-      this.portals = new java.util.ArrayList<java.lang.String>();
+      this.portals = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.portals.add(item);
     }
     return (A) this;
   }
 
-  public A addAllToPortals(java.util.Collection<java.lang.String> items) {
+  public A addAllToPortals(Collection<String> items) {
     if (this.portals == null) {
-      this.portals = new java.util.ArrayList<java.lang.String>();
+      this.portals = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.portals.add(item);
     }
     return (A) this;
   }
 
   public A removeFromPortals(java.lang.String... items) {
-    for (java.lang.String item : items) {
+    for (String item : items) {
       if (this.portals != null) {
         this.portals.remove(item);
       }
@@ -216,8 +198,8 @@ public class V1ISCSIPersistentVolumeSourceFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromPortals(java.util.Collection<java.lang.String> items) {
-    for (java.lang.String item : items) {
+  public A removeAllFromPortals(Collection<String> items) {
+    for (String item : items) {
       if (this.portals != null) {
         this.portals.remove(item);
       }
@@ -225,25 +207,24 @@ public class V1ISCSIPersistentVolumeSourceFluentImpl<
     return (A) this;
   }
 
-  public java.util.List<java.lang.String> getPortals() {
+  public List<String> getPortals() {
     return this.portals;
   }
 
-  public java.lang.String getPortal(java.lang.Integer index) {
+  public String getPortal(Integer index) {
     return this.portals.get(index);
   }
 
-  public java.lang.String getFirstPortal() {
+  public String getFirstPortal() {
     return this.portals.get(0);
   }
 
-  public java.lang.String getLastPortal() {
+  public String getLastPortal() {
     return this.portals.get(portals.size() - 1);
   }
 
-  public java.lang.String getMatchingPortal(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : portals) {
+  public String getMatchingPortal(Predicate<String> predicate) {
+    for (String item : portals) {
       if (predicate.test(item)) {
         return item;
       }
@@ -251,9 +232,8 @@ public class V1ISCSIPersistentVolumeSourceFluentImpl<
     return null;
   }
 
-  public java.lang.Boolean hasMatchingPortal(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : portals) {
+  public Boolean hasMatchingPortal(Predicate<String> predicate) {
+    for (String item : portals) {
       if (predicate.test(item)) {
         return true;
       }
@@ -261,10 +241,10 @@ public class V1ISCSIPersistentVolumeSourceFluentImpl<
     return false;
   }
 
-  public A withPortals(java.util.List<java.lang.String> portals) {
+  public A withPortals(List<String> portals) {
     if (portals != null) {
-      this.portals = new java.util.ArrayList();
-      for (java.lang.String item : portals) {
+      this.portals = new ArrayList();
+      for (String item : portals) {
         this.addToPortals(item);
       }
     } else {
@@ -278,31 +258,27 @@ public class V1ISCSIPersistentVolumeSourceFluentImpl<
       this.portals.clear();
     }
     if (portals != null) {
-      for (java.lang.String item : portals) {
+      for (String item : portals) {
         this.addToPortals(item);
       }
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasPortals() {
+  public Boolean hasPortals() {
     return portals != null && !portals.isEmpty();
   }
 
-  public A addNewPortal(java.lang.String original) {
-    return (A) addToPortals(new String(original));
-  }
-
-  public java.lang.Boolean getReadOnly() {
+  public Boolean getReadOnly() {
     return this.readOnly;
   }
 
-  public A withReadOnly(java.lang.Boolean readOnly) {
+  public A withReadOnly(Boolean readOnly) {
     this.readOnly = readOnly;
     return (A) this;
   }
 
-  public java.lang.Boolean hasReadOnly() {
+  public Boolean hasReadOnly() {
     return this.readOnly != null;
   }
 
@@ -311,78 +287,68 @@ public class V1ISCSIPersistentVolumeSourceFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1SecretReference getSecretRef() {
+  @Deprecated
+  public V1SecretReference getSecretRef() {
     return this.secretRef != null ? this.secretRef.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1SecretReference buildSecretRef() {
+  public V1SecretReference buildSecretRef() {
     return this.secretRef != null ? this.secretRef.build() : null;
   }
 
-  public A withSecretRef(io.kubernetes.client.openapi.models.V1SecretReference secretRef) {
+  public A withSecretRef(V1SecretReference secretRef) {
     _visitables.get("secretRef").remove(this.secretRef);
     if (secretRef != null) {
-      this.secretRef = new io.kubernetes.client.openapi.models.V1SecretReferenceBuilder(secretRef);
+      this.secretRef = new V1SecretReferenceBuilder(secretRef);
       _visitables.get("secretRef").add(this.secretRef);
+    } else {
+      this.secretRef = null;
+      _visitables.get("secretRef").remove(this.secretRef);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasSecretRef() {
+  public Boolean hasSecretRef() {
     return this.secretRef != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSourceFluent.SecretRefNested<A>
-      withNewSecretRef() {
-    return new io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSourceFluentImpl
-        .SecretRefNestedImpl();
+  public V1ISCSIPersistentVolumeSourceFluent.SecretRefNested<A> withNewSecretRef() {
+    return new V1ISCSIPersistentVolumeSourceFluentImpl.SecretRefNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSourceFluent.SecretRefNested<A>
-      withNewSecretRefLike(io.kubernetes.client.openapi.models.V1SecretReference item) {
-    return new io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSourceFluentImpl
-        .SecretRefNestedImpl(item);
+  public V1ISCSIPersistentVolumeSourceFluent.SecretRefNested<A> withNewSecretRefLike(
+      V1SecretReference item) {
+    return new V1ISCSIPersistentVolumeSourceFluentImpl.SecretRefNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSourceFluent.SecretRefNested<A>
-      editSecretRef() {
+  public V1ISCSIPersistentVolumeSourceFluent.SecretRefNested<A> editSecretRef() {
     return withNewSecretRefLike(getSecretRef());
   }
 
-  public io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSourceFluent.SecretRefNested<A>
-      editOrNewSecretRef() {
+  public V1ISCSIPersistentVolumeSourceFluent.SecretRefNested<A> editOrNewSecretRef() {
     return withNewSecretRefLike(
-        getSecretRef() != null
-            ? getSecretRef()
-            : new io.kubernetes.client.openapi.models.V1SecretReferenceBuilder().build());
+        getSecretRef() != null ? getSecretRef() : new V1SecretReferenceBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSourceFluent.SecretRefNested<A>
-      editOrNewSecretRefLike(io.kubernetes.client.openapi.models.V1SecretReference item) {
+  public V1ISCSIPersistentVolumeSourceFluent.SecretRefNested<A> editOrNewSecretRefLike(
+      V1SecretReference item) {
     return withNewSecretRefLike(getSecretRef() != null ? getSecretRef() : item);
   }
 
-  public java.lang.String getTargetPortal() {
+  public String getTargetPortal() {
     return this.targetPortal;
   }
 
-  public A withTargetPortal(java.lang.String targetPortal) {
+  public A withTargetPortal(String targetPortal) {
     this.targetPortal = targetPortal;
     return (A) this;
   }
 
-  public java.lang.Boolean hasTargetPortal() {
+  public Boolean hasTargetPortal() {
     return this.targetPortal != null;
   }
 
-  /** Method is deprecated. use withTargetPortal instead. */
-  @java.lang.Deprecated
-  public A withNewTargetPortal(java.lang.String original) {
-    return (A) withTargetPortal(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1ISCSIPersistentVolumeSourceFluentImpl that = (V1ISCSIPersistentVolumeSourceFluentImpl) o;
@@ -426,23 +392,81 @@ public class V1ISCSIPersistentVolumeSourceFluentImpl<
         super.hashCode());
   }
 
-  public class SecretRefNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1SecretReferenceFluentImpl<
-          io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSourceFluent.SecretRefNested<
-              N>>
-      implements io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSourceFluent
-                  .SecretRefNested<
-              N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    SecretRefNestedImpl(io.kubernetes.client.openapi.models.V1SecretReference item) {
-      this.builder = new io.kubernetes.client.openapi.models.V1SecretReferenceBuilder(this, item);
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (chapAuthDiscovery != null) {
+      sb.append("chapAuthDiscovery:");
+      sb.append(chapAuthDiscovery + ",");
+    }
+    if (chapAuthSession != null) {
+      sb.append("chapAuthSession:");
+      sb.append(chapAuthSession + ",");
+    }
+    if (fsType != null) {
+      sb.append("fsType:");
+      sb.append(fsType + ",");
+    }
+    if (initiatorName != null) {
+      sb.append("initiatorName:");
+      sb.append(initiatorName + ",");
+    }
+    if (iqn != null) {
+      sb.append("iqn:");
+      sb.append(iqn + ",");
+    }
+    if (iscsiInterface != null) {
+      sb.append("iscsiInterface:");
+      sb.append(iscsiInterface + ",");
+    }
+    if (lun != null) {
+      sb.append("lun:");
+      sb.append(lun + ",");
+    }
+    if (portals != null && !portals.isEmpty()) {
+      sb.append("portals:");
+      sb.append(portals + ",");
+    }
+    if (readOnly != null) {
+      sb.append("readOnly:");
+      sb.append(readOnly + ",");
+    }
+    if (secretRef != null) {
+      sb.append("secretRef:");
+      sb.append(secretRef + ",");
+    }
+    if (targetPortal != null) {
+      sb.append("targetPortal:");
+      sb.append(targetPortal);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  public A withChapAuthDiscovery() {
+    return withChapAuthDiscovery(true);
+  }
+
+  public A withChapAuthSession() {
+    return withChapAuthSession(true);
+  }
+
+  public A withReadOnly() {
+    return withReadOnly(true);
+  }
+
+  class SecretRefNestedImpl<N>
+      extends V1SecretReferenceFluentImpl<V1ISCSIPersistentVolumeSourceFluent.SecretRefNested<N>>
+      implements V1ISCSIPersistentVolumeSourceFluent.SecretRefNested<N>, Nested<N> {
+    SecretRefNestedImpl(V1SecretReference item) {
+      this.builder = new V1SecretReferenceBuilder(this, item);
     }
 
     SecretRefNestedImpl() {
-      this.builder = new io.kubernetes.client.openapi.models.V1SecretReferenceBuilder(this);
+      this.builder = new V1SecretReferenceBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1SecretReferenceBuilder builder;
+    V1SecretReferenceBuilder builder;
 
     public N and() {
       return (N) V1ISCSIPersistentVolumeSourceFluentImpl.this.withSecretRef(builder.build());

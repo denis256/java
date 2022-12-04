@@ -12,47 +12,33 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
 public interface V1VsphereVirtualDiskVolumeSourceFluent<
-        A extends io.kubernetes.client.openapi.models.V1VsphereVirtualDiskVolumeSourceFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getFsType();
+        A extends V1VsphereVirtualDiskVolumeSourceFluent<A>>
+    extends Fluent<A> {
+  public String getFsType();
 
-  public A withFsType(java.lang.String fsType);
+  public A withFsType(String fsType);
 
-  public java.lang.Boolean hasFsType();
+  public Boolean hasFsType();
 
-  /** Method is deprecated. use withFsType instead. */
-  @java.lang.Deprecated
-  public A withNewFsType(java.lang.String original);
+  public String getStoragePolicyID();
 
-  public java.lang.String getStoragePolicyID();
+  public A withStoragePolicyID(String storagePolicyID);
 
-  public A withStoragePolicyID(java.lang.String storagePolicyID);
+  public Boolean hasStoragePolicyID();
 
-  public java.lang.Boolean hasStoragePolicyID();
+  public String getStoragePolicyName();
 
-  /** Method is deprecated. use withStoragePolicyID instead. */
-  @java.lang.Deprecated
-  public A withNewStoragePolicyID(java.lang.String original);
+  public A withStoragePolicyName(String storagePolicyName);
 
-  public java.lang.String getStoragePolicyName();
+  public Boolean hasStoragePolicyName();
 
-  public A withStoragePolicyName(java.lang.String storagePolicyName);
+  public String getVolumePath();
 
-  public java.lang.Boolean hasStoragePolicyName();
+  public A withVolumePath(String volumePath);
 
-  /** Method is deprecated. use withStoragePolicyName instead. */
-  @java.lang.Deprecated
-  public A withNewStoragePolicyName(java.lang.String original);
-
-  public java.lang.String getVolumePath();
-
-  public A withVolumePath(java.lang.String volumePath);
-
-  public java.lang.Boolean hasVolumePath();
-
-  /** Method is deprecated. use withVolumePath instead. */
-  @java.lang.Deprecated
-  public A withNewVolumePath(java.lang.String original);
+  public Boolean hasVolumePath();
 }

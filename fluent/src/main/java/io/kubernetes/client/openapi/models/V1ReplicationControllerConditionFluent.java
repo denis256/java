@@ -12,53 +12,40 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import java.time.OffsetDateTime;
+
 /** Generated */
 public interface V1ReplicationControllerConditionFluent<
-        A extends io.kubernetes.client.openapi.models.V1ReplicationControllerConditionFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.time.OffsetDateTime getLastTransitionTime();
+        A extends V1ReplicationControllerConditionFluent<A>>
+    extends Fluent<A> {
+  public OffsetDateTime getLastTransitionTime();
 
-  public A withLastTransitionTime(java.time.OffsetDateTime lastTransitionTime);
+  public A withLastTransitionTime(OffsetDateTime lastTransitionTime);
 
-  public java.lang.Boolean hasLastTransitionTime();
+  public Boolean hasLastTransitionTime();
 
-  public java.lang.String getMessage();
+  public String getMessage();
 
-  public A withMessage(java.lang.String message);
+  public A withMessage(String message);
 
-  public java.lang.Boolean hasMessage();
+  public Boolean hasMessage();
 
-  /** Method is deprecated. use withMessage instead. */
-  @java.lang.Deprecated
-  public A withNewMessage(java.lang.String original);
+  public String getReason();
 
-  public java.lang.String getReason();
+  public A withReason(String reason);
 
-  public A withReason(java.lang.String reason);
+  public Boolean hasReason();
 
-  public java.lang.Boolean hasReason();
+  public String getStatus();
 
-  /** Method is deprecated. use withReason instead. */
-  @java.lang.Deprecated
-  public A withNewReason(java.lang.String original);
+  public A withStatus(String status);
 
-  public java.lang.String getStatus();
+  public Boolean hasStatus();
 
-  public A withStatus(java.lang.String status);
+  public String getType();
 
-  public java.lang.Boolean hasStatus();
+  public A withType(String type);
 
-  /** Method is deprecated. use withStatus instead. */
-  @java.lang.Deprecated
-  public A withNewStatus(java.lang.String original);
-
-  public java.lang.String getType();
-
-  public A withType(java.lang.String type);
-
-  public java.lang.Boolean hasType();
-
-  /** Method is deprecated. use withType instead. */
-  @java.lang.Deprecated
-  public A withNewType(java.lang.String original);
+  public Boolean hasType();
 }

@@ -12,259 +12,180 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+import java.time.OffsetDateTime;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
+
 /** Generated */
 public interface V2beta2HorizontalPodAutoscalerStatusFluent<
-        A extends io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatusFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public A addToConditions(
-      java.lang.Integer index,
-      io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerCondition item);
+        A extends V2beta2HorizontalPodAutoscalerStatusFluent<A>>
+    extends Fluent<A> {
+  public A addToConditions(Integer index, V2beta2HorizontalPodAutoscalerCondition item);
 
-  public A setToConditions(
-      java.lang.Integer index,
-      io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerCondition item);
+  public A setToConditions(Integer index, V2beta2HorizontalPodAutoscalerCondition item);
 
   public A addToConditions(
       io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerCondition... items);
 
-  public A addAllToConditions(
-      java.util.Collection<
-              io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerCondition>
-          items);
+  public A addAllToConditions(Collection<V2beta2HorizontalPodAutoscalerCondition> items);
 
   public A removeFromConditions(
       io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerCondition... items);
 
-  public A removeAllFromConditions(
-      java.util.Collection<
-              io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerCondition>
-          items);
+  public A removeAllFromConditions(Collection<V2beta2HorizontalPodAutoscalerCondition> items);
 
   public A removeMatchingFromConditions(
-      java.util.function.Predicate<
-              io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerConditionBuilder>
-          predicate);
+      Predicate<V2beta2HorizontalPodAutoscalerConditionBuilder> predicate);
 
   /**
    * This method has been deprecated, please use method buildConditions instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerCondition>
-      getConditions();
+  @Deprecated
+  public List<V2beta2HorizontalPodAutoscalerCondition> getConditions();
 
-  public java.util.List<io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerCondition>
-      buildConditions();
+  public List<V2beta2HorizontalPodAutoscalerCondition> buildConditions();
 
-  public io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerCondition buildCondition(
-      java.lang.Integer index);
+  public V2beta2HorizontalPodAutoscalerCondition buildCondition(Integer index);
 
-  public io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerCondition
-      buildFirstCondition();
+  public V2beta2HorizontalPodAutoscalerCondition buildFirstCondition();
 
-  public io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerCondition
-      buildLastCondition();
+  public V2beta2HorizontalPodAutoscalerCondition buildLastCondition();
 
-  public io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerCondition
-      buildMatchingCondition(
-          java.util.function.Predicate<
-                  io.kubernetes.client.openapi.models
-                      .V2beta2HorizontalPodAutoscalerConditionBuilder>
-              predicate);
+  public V2beta2HorizontalPodAutoscalerCondition buildMatchingCondition(
+      Predicate<V2beta2HorizontalPodAutoscalerConditionBuilder> predicate);
 
-  public java.lang.Boolean hasMatchingCondition(
-      java.util.function.Predicate<
-              io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerConditionBuilder>
-          predicate);
+  public Boolean hasMatchingCondition(
+      Predicate<V2beta2HorizontalPodAutoscalerConditionBuilder> predicate);
 
-  public A withConditions(
-      java.util.List<io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerCondition>
-          conditions);
+  public A withConditions(List<V2beta2HorizontalPodAutoscalerCondition> conditions);
 
   public A withConditions(
       io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerCondition... conditions);
 
-  public java.lang.Boolean hasConditions();
+  public Boolean hasConditions();
 
-  public io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatusFluent
-              .ConditionsNested<
-          A>
-      addNewCondition();
+  public V2beta2HorizontalPodAutoscalerStatusFluent.ConditionsNested<A> addNewCondition();
 
-  public io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatusFluent
-              .ConditionsNested<
-          A>
-      addNewConditionLike(
-          io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerCondition item);
+  public V2beta2HorizontalPodAutoscalerStatusFluent.ConditionsNested<A> addNewConditionLike(
+      V2beta2HorizontalPodAutoscalerCondition item);
 
-  public io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatusFluent
-              .ConditionsNested<
-          A>
-      setNewConditionLike(
-          java.lang.Integer index,
-          io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerCondition item);
+  public V2beta2HorizontalPodAutoscalerStatusFluent.ConditionsNested<A> setNewConditionLike(
+      Integer index, V2beta2HorizontalPodAutoscalerCondition item);
 
-  public io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatusFluent
-              .ConditionsNested<
-          A>
-      editCondition(java.lang.Integer index);
+  public V2beta2HorizontalPodAutoscalerStatusFluent.ConditionsNested<A> editCondition(
+      Integer index);
 
-  public io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatusFluent
-              .ConditionsNested<
-          A>
-      editFirstCondition();
+  public V2beta2HorizontalPodAutoscalerStatusFluent.ConditionsNested<A> editFirstCondition();
 
-  public io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatusFluent
-              .ConditionsNested<
-          A>
-      editLastCondition();
+  public V2beta2HorizontalPodAutoscalerStatusFluent.ConditionsNested<A> editLastCondition();
 
-  public io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatusFluent
-              .ConditionsNested<
-          A>
-      editMatchingCondition(
-          java.util.function.Predicate<
-                  io.kubernetes.client.openapi.models
-                      .V2beta2HorizontalPodAutoscalerConditionBuilder>
-              predicate);
+  public V2beta2HorizontalPodAutoscalerStatusFluent.ConditionsNested<A> editMatchingCondition(
+      Predicate<V2beta2HorizontalPodAutoscalerConditionBuilder> predicate);
 
-  public A addToCurrentMetrics(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V2beta2MetricStatus item);
+  public A addToCurrentMetrics(Integer index, V2beta2MetricStatus item);
 
-  public A setToCurrentMetrics(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V2beta2MetricStatus item);
+  public A setToCurrentMetrics(Integer index, V2beta2MetricStatus item);
 
   public A addToCurrentMetrics(io.kubernetes.client.openapi.models.V2beta2MetricStatus... items);
 
-  public A addAllToCurrentMetrics(
-      java.util.Collection<io.kubernetes.client.openapi.models.V2beta2MetricStatus> items);
+  public A addAllToCurrentMetrics(Collection<V2beta2MetricStatus> items);
 
   public A removeFromCurrentMetrics(
       io.kubernetes.client.openapi.models.V2beta2MetricStatus... items);
 
-  public A removeAllFromCurrentMetrics(
-      java.util.Collection<io.kubernetes.client.openapi.models.V2beta2MetricStatus> items);
+  public A removeAllFromCurrentMetrics(Collection<V2beta2MetricStatus> items);
 
-  public A removeMatchingFromCurrentMetrics(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V2beta2MetricStatusBuilder>
-          predicate);
+  public A removeMatchingFromCurrentMetrics(Predicate<V2beta2MetricStatusBuilder> predicate);
 
   /**
    * This method has been deprecated, please use method buildCurrentMetrics instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V2beta2MetricStatus>
-      getCurrentMetrics();
+  @Deprecated
+  public List<V2beta2MetricStatus> getCurrentMetrics();
 
-  public java.util.List<io.kubernetes.client.openapi.models.V2beta2MetricStatus>
-      buildCurrentMetrics();
+  public List<V2beta2MetricStatus> buildCurrentMetrics();
 
-  public io.kubernetes.client.openapi.models.V2beta2MetricStatus buildCurrentMetric(
-      java.lang.Integer index);
+  public V2beta2MetricStatus buildCurrentMetric(Integer index);
 
-  public io.kubernetes.client.openapi.models.V2beta2MetricStatus buildFirstCurrentMetric();
+  public V2beta2MetricStatus buildFirstCurrentMetric();
 
-  public io.kubernetes.client.openapi.models.V2beta2MetricStatus buildLastCurrentMetric();
+  public V2beta2MetricStatus buildLastCurrentMetric();
 
-  public io.kubernetes.client.openapi.models.V2beta2MetricStatus buildMatchingCurrentMetric(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V2beta2MetricStatusBuilder>
-          predicate);
+  public V2beta2MetricStatus buildMatchingCurrentMetric(
+      Predicate<V2beta2MetricStatusBuilder> predicate);
 
-  public java.lang.Boolean hasMatchingCurrentMetric(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V2beta2MetricStatusBuilder>
-          predicate);
+  public Boolean hasMatchingCurrentMetric(Predicate<V2beta2MetricStatusBuilder> predicate);
 
-  public A withCurrentMetrics(
-      java.util.List<io.kubernetes.client.openapi.models.V2beta2MetricStatus> currentMetrics);
+  public A withCurrentMetrics(List<V2beta2MetricStatus> currentMetrics);
 
   public A withCurrentMetrics(
       io.kubernetes.client.openapi.models.V2beta2MetricStatus... currentMetrics);
 
-  public java.lang.Boolean hasCurrentMetrics();
+  public Boolean hasCurrentMetrics();
 
-  public io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatusFluent
-              .CurrentMetricsNested<
-          A>
-      addNewCurrentMetric();
+  public V2beta2HorizontalPodAutoscalerStatusFluent.CurrentMetricsNested<A> addNewCurrentMetric();
 
-  public io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatusFluent
-              .CurrentMetricsNested<
-          A>
-      addNewCurrentMetricLike(io.kubernetes.client.openapi.models.V2beta2MetricStatus item);
+  public V2beta2HorizontalPodAutoscalerStatusFluent.CurrentMetricsNested<A> addNewCurrentMetricLike(
+      V2beta2MetricStatus item);
 
-  public io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatusFluent
-              .CurrentMetricsNested<
-          A>
-      setNewCurrentMetricLike(
-          java.lang.Integer index, io.kubernetes.client.openapi.models.V2beta2MetricStatus item);
+  public V2beta2HorizontalPodAutoscalerStatusFluent.CurrentMetricsNested<A> setNewCurrentMetricLike(
+      Integer index, V2beta2MetricStatus item);
 
-  public io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatusFluent
-              .CurrentMetricsNested<
-          A>
-      editCurrentMetric(java.lang.Integer index);
+  public V2beta2HorizontalPodAutoscalerStatusFluent.CurrentMetricsNested<A> editCurrentMetric(
+      Integer index);
 
-  public io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatusFluent
-              .CurrentMetricsNested<
-          A>
+  public V2beta2HorizontalPodAutoscalerStatusFluent.CurrentMetricsNested<A>
       editFirstCurrentMetric();
 
-  public io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatusFluent
-              .CurrentMetricsNested<
-          A>
-      editLastCurrentMetric();
+  public V2beta2HorizontalPodAutoscalerStatusFluent.CurrentMetricsNested<A> editLastCurrentMetric();
 
-  public io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatusFluent
-              .CurrentMetricsNested<
-          A>
-      editMatchingCurrentMetric(
-          java.util.function.Predicate<
-                  io.kubernetes.client.openapi.models.V2beta2MetricStatusBuilder>
-              predicate);
+  public V2beta2HorizontalPodAutoscalerStatusFluent.CurrentMetricsNested<A>
+      editMatchingCurrentMetric(Predicate<V2beta2MetricStatusBuilder> predicate);
 
-  public java.lang.Integer getCurrentReplicas();
+  public Integer getCurrentReplicas();
 
-  public A withCurrentReplicas(java.lang.Integer currentReplicas);
+  public A withCurrentReplicas(Integer currentReplicas);
 
-  public java.lang.Boolean hasCurrentReplicas();
+  public Boolean hasCurrentReplicas();
 
-  public java.lang.Integer getDesiredReplicas();
+  public Integer getDesiredReplicas();
 
-  public A withDesiredReplicas(java.lang.Integer desiredReplicas);
+  public A withDesiredReplicas(Integer desiredReplicas);
 
-  public java.lang.Boolean hasDesiredReplicas();
+  public Boolean hasDesiredReplicas();
 
-  public java.time.OffsetDateTime getLastScaleTime();
+  public OffsetDateTime getLastScaleTime();
 
-  public A withLastScaleTime(java.time.OffsetDateTime lastScaleTime);
+  public A withLastScaleTime(OffsetDateTime lastScaleTime);
 
-  public java.lang.Boolean hasLastScaleTime();
+  public Boolean hasLastScaleTime();
 
-  public java.lang.Long getObservedGeneration();
+  public Long getObservedGeneration();
 
-  public A withObservedGeneration(java.lang.Long observedGeneration);
+  public A withObservedGeneration(Long observedGeneration);
 
-  public java.lang.Boolean hasObservedGeneration();
+  public Boolean hasObservedGeneration();
 
   public interface ConditionsNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerConditionFluent<
-              io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatusFluent
-                      .ConditionsNested<
-                  N>> {
+      extends Nested<N>,
+          V2beta2HorizontalPodAutoscalerConditionFluent<
+              V2beta2HorizontalPodAutoscalerStatusFluent.ConditionsNested<N>> {
     public N and();
 
     public N endCondition();
   }
 
   public interface CurrentMetricsNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V2beta2MetricStatusFluent<
-              io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatusFluent
-                      .CurrentMetricsNested<
-                  N>> {
+      extends Nested<N>,
+          V2beta2MetricStatusFluent<
+              V2beta2HorizontalPodAutoscalerStatusFluent.CurrentMetricsNested<N>> {
     public N and();
 
     public N endCurrentMetric();

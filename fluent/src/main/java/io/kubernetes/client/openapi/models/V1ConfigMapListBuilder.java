@@ -12,41 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1ConfigMapListBuilder
-    extends io.kubernetes.client.openapi.models.V1ConfigMapListFluentImpl<
-        io.kubernetes.client.openapi.models.V1ConfigMapListBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1ConfigMapList,
-        io.kubernetes.client.openapi.models.V1ConfigMapListBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1ConfigMapListBuilder extends V1ConfigMapListFluentImpl<V1ConfigMapListBuilder>
+    implements VisitableBuilder<V1ConfigMapList, V1ConfigMapListBuilder> {
   public V1ConfigMapListBuilder() {
     this(false);
   }
 
-  public V1ConfigMapListBuilder(java.lang.Boolean validationEnabled) {
+  public V1ConfigMapListBuilder(Boolean validationEnabled) {
     this(new V1ConfigMapList(), validationEnabled);
   }
 
-  public V1ConfigMapListBuilder(
-      io.kubernetes.client.openapi.models.V1ConfigMapListFluent<?> fluent) {
+  public V1ConfigMapListBuilder(V1ConfigMapListFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1ConfigMapListBuilder(
-      io.kubernetes.client.openapi.models.V1ConfigMapListFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1ConfigMapListBuilder(V1ConfigMapListFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1ConfigMapList(), validationEnabled);
   }
 
-  public V1ConfigMapListBuilder(
-      io.kubernetes.client.openapi.models.V1ConfigMapListFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ConfigMapList instance) {
+  public V1ConfigMapListBuilder(V1ConfigMapListFluent<?> fluent, V1ConfigMapList instance) {
     this(fluent, instance, false);
   }
 
   public V1ConfigMapListBuilder(
-      io.kubernetes.client.openapi.models.V1ConfigMapListFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ConfigMapList instance,
-      java.lang.Boolean validationEnabled) {
+      V1ConfigMapListFluent<?> fluent, V1ConfigMapList instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withApiVersion(instance.getApiVersion());
 
@@ -59,13 +50,11 @@ public class V1ConfigMapListBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1ConfigMapListBuilder(io.kubernetes.client.openapi.models.V1ConfigMapList instance) {
+  public V1ConfigMapListBuilder(V1ConfigMapList instance) {
     this(instance, false);
   }
 
-  public V1ConfigMapListBuilder(
-      io.kubernetes.client.openapi.models.V1ConfigMapList instance,
-      java.lang.Boolean validationEnabled) {
+  public V1ConfigMapListBuilder(V1ConfigMapList instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withApiVersion(instance.getApiVersion());
 
@@ -78,34 +67,15 @@ public class V1ConfigMapListBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1ConfigMapListFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1ConfigMapListFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1ConfigMapList build() {
+  public V1ConfigMapList build() {
     V1ConfigMapList buildable = new V1ConfigMapList();
     buildable.setApiVersion(fluent.getApiVersion());
     buildable.setItems(fluent.getItems());
     buildable.setKind(fluent.getKind());
     buildable.setMetadata(fluent.getMetadata());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1ConfigMapListBuilder that = (V1ConfigMapListBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

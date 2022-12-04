@@ -12,41 +12,38 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1HorizontalPodAutoscalerListBuilder
-    extends io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerListFluentImpl<
-        io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerListBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerList,
-        io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerListBuilder> {
+    extends V1HorizontalPodAutoscalerListFluentImpl<V1HorizontalPodAutoscalerListBuilder>
+    implements VisitableBuilder<
+        V1HorizontalPodAutoscalerList, V1HorizontalPodAutoscalerListBuilder> {
   public V1HorizontalPodAutoscalerListBuilder() {
     this(false);
   }
 
-  public V1HorizontalPodAutoscalerListBuilder(java.lang.Boolean validationEnabled) {
+  public V1HorizontalPodAutoscalerListBuilder(Boolean validationEnabled) {
     this(new V1HorizontalPodAutoscalerList(), validationEnabled);
   }
 
-  public V1HorizontalPodAutoscalerListBuilder(
-      io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerListFluent<?> fluent) {
+  public V1HorizontalPodAutoscalerListBuilder(V1HorizontalPodAutoscalerListFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1HorizontalPodAutoscalerListBuilder(
-      io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerListFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1HorizontalPodAutoscalerListFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1HorizontalPodAutoscalerList(), validationEnabled);
   }
 
   public V1HorizontalPodAutoscalerListBuilder(
-      io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerListFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerList instance) {
+      V1HorizontalPodAutoscalerListFluent<?> fluent, V1HorizontalPodAutoscalerList instance) {
     this(fluent, instance, false);
   }
 
   public V1HorizontalPodAutoscalerListBuilder(
-      io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerListFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerList instance,
-      java.lang.Boolean validationEnabled) {
+      V1HorizontalPodAutoscalerListFluent<?> fluent,
+      V1HorizontalPodAutoscalerList instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withApiVersion(instance.getApiVersion());
 
@@ -59,14 +56,12 @@ public class V1HorizontalPodAutoscalerListBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1HorizontalPodAutoscalerListBuilder(
-      io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerList instance) {
+  public V1HorizontalPodAutoscalerListBuilder(V1HorizontalPodAutoscalerList instance) {
     this(instance, false);
   }
 
   public V1HorizontalPodAutoscalerListBuilder(
-      io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerList instance,
-      java.lang.Boolean validationEnabled) {
+      V1HorizontalPodAutoscalerList instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withApiVersion(instance.getApiVersion());
 
@@ -79,34 +74,15 @@ public class V1HorizontalPodAutoscalerListBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerListFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1HorizontalPodAutoscalerListFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerList build() {
+  public V1HorizontalPodAutoscalerList build() {
     V1HorizontalPodAutoscalerList buildable = new V1HorizontalPodAutoscalerList();
     buildable.setApiVersion(fluent.getApiVersion());
     buildable.setItems(fluent.getItems());
     buildable.setKind(fluent.getKind());
     buildable.setMetadata(fluent.getMetadata());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1HorizontalPodAutoscalerListBuilder that = (V1HorizontalPodAutoscalerListBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

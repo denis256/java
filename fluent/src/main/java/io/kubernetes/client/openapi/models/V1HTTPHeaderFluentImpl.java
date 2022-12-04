@@ -12,61 +12,50 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1HTTPHeaderFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1HTTPHeaderFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1HTTPHeaderFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1HTTPHeaderFluentImpl<A extends V1HTTPHeaderFluent<A>> extends BaseFluent<A>
+    implements V1HTTPHeaderFluent<A> {
   public V1HTTPHeaderFluentImpl() {}
 
-  public V1HTTPHeaderFluentImpl(io.kubernetes.client.openapi.models.V1HTTPHeader instance) {
+  public V1HTTPHeaderFluentImpl(V1HTTPHeader instance) {
     this.withName(instance.getName());
 
     this.withValue(instance.getValue());
   }
 
-  private java.lang.String name;
-  private java.lang.String value;
+  private String name;
+  private String value;
 
-  public java.lang.String getName() {
+  public String getName() {
     return this.name;
   }
 
-  public A withName(java.lang.String name) {
+  public A withName(String name) {
     this.name = name;
     return (A) this;
   }
 
-  public java.lang.Boolean hasName() {
+  public Boolean hasName() {
     return this.name != null;
   }
 
-  /** Method is deprecated. use withName instead. */
-  @java.lang.Deprecated
-  public A withNewName(java.lang.String original) {
-    return (A) withName(new String(original));
-  }
-
-  public java.lang.String getValue() {
+  public String getValue() {
     return this.value;
   }
 
-  public A withValue(java.lang.String value) {
+  public A withValue(String value) {
     this.value = value;
     return (A) this;
   }
 
-  public java.lang.Boolean hasValue() {
+  public Boolean hasValue() {
     return this.value != null;
   }
 
-  /** Method is deprecated. use withValue instead. */
-  @java.lang.Deprecated
-  public A withNewValue(java.lang.String original) {
-    return (A) withValue(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1HTTPHeaderFluentImpl that = (V1HTTPHeaderFluentImpl) o;
@@ -77,5 +66,20 @@ public class V1HTTPHeaderFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(name, value, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (name != null) {
+      sb.append("name:");
+      sb.append(name + ",");
+    }
+    if (value != null) {
+      sb.append("value:");
+      sb.append(value);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

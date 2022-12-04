@@ -12,15 +12,15 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1PersistentVolumeStatusFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1PersistentVolumeStatusFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1PersistentVolumeStatusFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1PersistentVolumeStatusFluentImpl<A extends V1PersistentVolumeStatusFluent<A>>
+    extends BaseFluent<A> implements V1PersistentVolumeStatusFluent<A> {
   public V1PersistentVolumeStatusFluentImpl() {}
 
-  public V1PersistentVolumeStatusFluentImpl(
-      io.kubernetes.client.openapi.models.V1PersistentVolumeStatus instance) {
+  public V1PersistentVolumeStatusFluentImpl(V1PersistentVolumeStatus instance) {
     this.withMessage(instance.getMessage());
 
     this.withPhase(instance.getPhase());
@@ -28,62 +28,50 @@ public class V1PersistentVolumeStatusFluentImpl<
     this.withReason(instance.getReason());
   }
 
-  private java.lang.String message;
-  private io.kubernetes.client.openapi.models.V1PersistentVolumeStatus.PhaseEnum phase;
-  private java.lang.String reason;
+  private String message;
+  private String phase;
+  private String reason;
 
-  public java.lang.String getMessage() {
+  public String getMessage() {
     return this.message;
   }
 
-  public A withMessage(java.lang.String message) {
+  public A withMessage(String message) {
     this.message = message;
     return (A) this;
   }
 
-  public java.lang.Boolean hasMessage() {
+  public Boolean hasMessage() {
     return this.message != null;
   }
 
-  /** Method is deprecated. use withMessage instead. */
-  @java.lang.Deprecated
-  public A withNewMessage(java.lang.String original) {
-    return (A) withMessage(new String(original));
-  }
-
-  public io.kubernetes.client.openapi.models.V1PersistentVolumeStatus.PhaseEnum getPhase() {
+  public String getPhase() {
     return this.phase;
   }
 
-  public A withPhase(io.kubernetes.client.openapi.models.V1PersistentVolumeStatus.PhaseEnum phase) {
+  public A withPhase(String phase) {
     this.phase = phase;
     return (A) this;
   }
 
-  public java.lang.Boolean hasPhase() {
+  public Boolean hasPhase() {
     return this.phase != null;
   }
 
-  public java.lang.String getReason() {
+  public String getReason() {
     return this.reason;
   }
 
-  public A withReason(java.lang.String reason) {
+  public A withReason(String reason) {
     this.reason = reason;
     return (A) this;
   }
 
-  public java.lang.Boolean hasReason() {
+  public Boolean hasReason() {
     return this.reason != null;
   }
 
-  /** Method is deprecated. use withReason instead. */
-  @java.lang.Deprecated
-  public A withNewReason(java.lang.String original) {
-    return (A) withReason(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1PersistentVolumeStatusFluentImpl that = (V1PersistentVolumeStatusFluentImpl) o;
@@ -95,5 +83,24 @@ public class V1PersistentVolumeStatusFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(message, phase, reason, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (message != null) {
+      sb.append("message:");
+      sb.append(message + ",");
+    }
+    if (phase != null) {
+      sb.append("phase:");
+      sb.append(phase + ",");
+    }
+    if (reason != null) {
+      sb.append("reason:");
+      sb.append(reason);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

@@ -12,37 +12,26 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
-public interface V1GitRepoVolumeSourceFluent<
-        A extends io.kubernetes.client.openapi.models.V1GitRepoVolumeSourceFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getDirectory();
+public interface V1GitRepoVolumeSourceFluent<A extends V1GitRepoVolumeSourceFluent<A>>
+    extends Fluent<A> {
+  public String getDirectory();
 
-  public A withDirectory(java.lang.String directory);
+  public A withDirectory(String directory);
 
-  public java.lang.Boolean hasDirectory();
+  public Boolean hasDirectory();
 
-  /** Method is deprecated. use withDirectory instead. */
-  @java.lang.Deprecated
-  public A withNewDirectory(java.lang.String original);
+  public String getRepository();
 
-  public java.lang.String getRepository();
+  public A withRepository(String repository);
 
-  public A withRepository(java.lang.String repository);
+  public Boolean hasRepository();
 
-  public java.lang.Boolean hasRepository();
+  public String getRevision();
 
-  /** Method is deprecated. use withRepository instead. */
-  @java.lang.Deprecated
-  public A withNewRepository(java.lang.String original);
+  public A withRevision(String revision);
 
-  public java.lang.String getRevision();
-
-  public A withRevision(java.lang.String revision);
-
-  public java.lang.Boolean hasRevision();
-
-  /** Method is deprecated. use withRevision instead. */
-  @java.lang.Deprecated
-  public A withNewRevision(java.lang.String original);
+  public Boolean hasRevision();
 }

@@ -12,15 +12,15 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1PortworxVolumeSourceFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1PortworxVolumeSourceFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1PortworxVolumeSourceFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1PortworxVolumeSourceFluentImpl<A extends V1PortworxVolumeSourceFluent<A>>
+    extends BaseFluent<A> implements V1PortworxVolumeSourceFluent<A> {
   public V1PortworxVolumeSourceFluentImpl() {}
 
-  public V1PortworxVolumeSourceFluentImpl(
-      io.kubernetes.client.openapi.models.V1PortworxVolumeSource instance) {
+  public V1PortworxVolumeSourceFluentImpl(V1PortworxVolumeSource instance) {
     this.withFsType(instance.getFsType());
 
     this.withReadOnly(instance.getReadOnly());
@@ -28,62 +28,50 @@ public class V1PortworxVolumeSourceFluentImpl<
     this.withVolumeID(instance.getVolumeID());
   }
 
-  private java.lang.String fsType;
-  private java.lang.Boolean readOnly;
-  private java.lang.String volumeID;
+  private String fsType;
+  private Boolean readOnly;
+  private String volumeID;
 
-  public java.lang.String getFsType() {
+  public String getFsType() {
     return this.fsType;
   }
 
-  public A withFsType(java.lang.String fsType) {
+  public A withFsType(String fsType) {
     this.fsType = fsType;
     return (A) this;
   }
 
-  public java.lang.Boolean hasFsType() {
+  public Boolean hasFsType() {
     return this.fsType != null;
   }
 
-  /** Method is deprecated. use withFsType instead. */
-  @java.lang.Deprecated
-  public A withNewFsType(java.lang.String original) {
-    return (A) withFsType(new String(original));
-  }
-
-  public java.lang.Boolean getReadOnly() {
+  public Boolean getReadOnly() {
     return this.readOnly;
   }
 
-  public A withReadOnly(java.lang.Boolean readOnly) {
+  public A withReadOnly(Boolean readOnly) {
     this.readOnly = readOnly;
     return (A) this;
   }
 
-  public java.lang.Boolean hasReadOnly() {
+  public Boolean hasReadOnly() {
     return this.readOnly != null;
   }
 
-  public java.lang.String getVolumeID() {
+  public String getVolumeID() {
     return this.volumeID;
   }
 
-  public A withVolumeID(java.lang.String volumeID) {
+  public A withVolumeID(String volumeID) {
     this.volumeID = volumeID;
     return (A) this;
   }
 
-  public java.lang.Boolean hasVolumeID() {
+  public Boolean hasVolumeID() {
     return this.volumeID != null;
   }
 
-  /** Method is deprecated. use withVolumeID instead. */
-  @java.lang.Deprecated
-  public A withNewVolumeID(java.lang.String original) {
-    return (A) withVolumeID(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1PortworxVolumeSourceFluentImpl that = (V1PortworxVolumeSourceFluentImpl) o;
@@ -95,5 +83,28 @@ public class V1PortworxVolumeSourceFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(fsType, readOnly, volumeID, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (fsType != null) {
+      sb.append("fsType:");
+      sb.append(fsType + ",");
+    }
+    if (readOnly != null) {
+      sb.append("readOnly:");
+      sb.append(readOnly + ",");
+    }
+    if (volumeID != null) {
+      sb.append("volumeID:");
+      sb.append(volumeID);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  public A withReadOnly() {
+    return withReadOnly(true);
   }
 }

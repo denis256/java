@@ -12,41 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta2LimitResponseBuilder
-    extends io.kubernetes.client.openapi.models.V1beta2LimitResponseFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta2LimitResponseBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1beta2LimitResponse,
-        io.kubernetes.client.openapi.models.V1beta2LimitResponseBuilder> {
+    extends V1beta2LimitResponseFluentImpl<V1beta2LimitResponseBuilder>
+    implements VisitableBuilder<V1beta2LimitResponse, V1beta2LimitResponseBuilder> {
   public V1beta2LimitResponseBuilder() {
     this(false);
   }
 
-  public V1beta2LimitResponseBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta2LimitResponseBuilder(Boolean validationEnabled) {
     this(new V1beta2LimitResponse(), validationEnabled);
   }
 
-  public V1beta2LimitResponseBuilder(
-      io.kubernetes.client.openapi.models.V1beta2LimitResponseFluent<?> fluent) {
+  public V1beta2LimitResponseBuilder(V1beta2LimitResponseFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1beta2LimitResponseBuilder(
-      io.kubernetes.client.openapi.models.V1beta2LimitResponseFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1beta2LimitResponseFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1beta2LimitResponse(), validationEnabled);
   }
 
   public V1beta2LimitResponseBuilder(
-      io.kubernetes.client.openapi.models.V1beta2LimitResponseFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1beta2LimitResponse instance) {
+      V1beta2LimitResponseFluent<?> fluent, V1beta2LimitResponse instance) {
     this(fluent, instance, false);
   }
 
   public V1beta2LimitResponseBuilder(
-      io.kubernetes.client.openapi.models.V1beta2LimitResponseFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1beta2LimitResponse instance,
-      java.lang.Boolean validationEnabled) {
+      V1beta2LimitResponseFluent<?> fluent,
+      V1beta2LimitResponse instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withQueuing(instance.getQueuing());
 
@@ -55,14 +51,11 @@ public class V1beta2LimitResponseBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1beta2LimitResponseBuilder(
-      io.kubernetes.client.openapi.models.V1beta2LimitResponse instance) {
+  public V1beta2LimitResponseBuilder(V1beta2LimitResponse instance) {
     this(instance, false);
   }
 
-  public V1beta2LimitResponseBuilder(
-      io.kubernetes.client.openapi.models.V1beta2LimitResponse instance,
-      java.lang.Boolean validationEnabled) {
+  public V1beta2LimitResponseBuilder(V1beta2LimitResponse instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withQueuing(instance.getQueuing());
 
@@ -71,32 +64,13 @@ public class V1beta2LimitResponseBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1beta2LimitResponseFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1beta2LimitResponseFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1beta2LimitResponse build() {
+  public V1beta2LimitResponse build() {
     V1beta2LimitResponse buildable = new V1beta2LimitResponse();
     buildable.setQueuing(fluent.getQueuing());
     buildable.setType(fluent.getType());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1beta2LimitResponseBuilder that = (V1beta2LimitResponseBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

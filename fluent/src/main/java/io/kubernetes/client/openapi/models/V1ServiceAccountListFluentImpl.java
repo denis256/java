@@ -12,18 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Predicate;
 
 /** Generated */
-public class V1ServiceAccountListFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1ServiceAccountListFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1ServiceAccountListFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1ServiceAccountListFluentImpl<A extends V1ServiceAccountListFluent<A>>
+    extends BaseFluent<A> implements V1ServiceAccountListFluent<A> {
   public V1ServiceAccountListFluentImpl() {}
 
-  public V1ServiceAccountListFluentImpl(
-      io.kubernetes.client.openapi.models.V1ServiceAccountList instance) {
+  public V1ServiceAccountListFluentImpl(V1ServiceAccountList instance) {
     this.withApiVersion(instance.getApiVersion());
 
     this.withItems(instance.getItems());
@@ -33,51 +36,39 @@ public class V1ServiceAccountListFluentImpl<
     this.withMetadata(instance.getMetadata());
   }
 
-  private java.lang.String apiVersion;
-  private java.util.ArrayList<io.kubernetes.client.openapi.models.V1ServiceAccountBuilder> items;
-  private java.lang.String kind;
-  private io.kubernetes.client.openapi.models.V1ListMetaBuilder metadata;
+  private String apiVersion;
+  private ArrayList<V1ServiceAccountBuilder> items;
+  private String kind;
+  private V1ListMetaBuilder metadata;
 
-  public java.lang.String getApiVersion() {
+  public String getApiVersion() {
     return this.apiVersion;
   }
 
-  public A withApiVersion(java.lang.String apiVersion) {
+  public A withApiVersion(String apiVersion) {
     this.apiVersion = apiVersion;
     return (A) this;
   }
 
-  public java.lang.Boolean hasApiVersion() {
+  public Boolean hasApiVersion() {
     return this.apiVersion != null;
   }
 
-  /** Method is deprecated. use withApiVersion instead. */
-  @java.lang.Deprecated
-  public A withNewApiVersion(java.lang.String original) {
-    return (A) withApiVersion(new String(original));
-  }
-
-  public A addToItems(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1ServiceAccount item) {
+  public A addToItems(Integer index, V1ServiceAccount item) {
     if (this.items == null) {
-      this.items =
-          new java.util.ArrayList<io.kubernetes.client.openapi.models.V1ServiceAccountBuilder>();
+      this.items = new ArrayList<V1ServiceAccountBuilder>();
     }
-    io.kubernetes.client.openapi.models.V1ServiceAccountBuilder builder =
-        new io.kubernetes.client.openapi.models.V1ServiceAccountBuilder(item);
+    V1ServiceAccountBuilder builder = new V1ServiceAccountBuilder(item);
     _visitables.get("items").add(index >= 0 ? index : _visitables.get("items").size(), builder);
     this.items.add(index >= 0 ? index : items.size(), builder);
     return (A) this;
   }
 
-  public A setToItems(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1ServiceAccount item) {
+  public A setToItems(Integer index, V1ServiceAccount item) {
     if (this.items == null) {
-      this.items =
-          new java.util.ArrayList<io.kubernetes.client.openapi.models.V1ServiceAccountBuilder>();
+      this.items = new ArrayList<V1ServiceAccountBuilder>();
     }
-    io.kubernetes.client.openapi.models.V1ServiceAccountBuilder builder =
-        new io.kubernetes.client.openapi.models.V1ServiceAccountBuilder(item);
+    V1ServiceAccountBuilder builder = new V1ServiceAccountBuilder(item);
     if (index < 0 || index >= _visitables.get("items").size()) {
       _visitables.get("items").add(builder);
     } else {
@@ -93,27 +84,22 @@ public class V1ServiceAccountListFluentImpl<
 
   public A addToItems(io.kubernetes.client.openapi.models.V1ServiceAccount... items) {
     if (this.items == null) {
-      this.items =
-          new java.util.ArrayList<io.kubernetes.client.openapi.models.V1ServiceAccountBuilder>();
+      this.items = new ArrayList<V1ServiceAccountBuilder>();
     }
-    for (io.kubernetes.client.openapi.models.V1ServiceAccount item : items) {
-      io.kubernetes.client.openapi.models.V1ServiceAccountBuilder builder =
-          new io.kubernetes.client.openapi.models.V1ServiceAccountBuilder(item);
+    for (V1ServiceAccount item : items) {
+      V1ServiceAccountBuilder builder = new V1ServiceAccountBuilder(item);
       _visitables.get("items").add(builder);
       this.items.add(builder);
     }
     return (A) this;
   }
 
-  public A addAllToItems(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1ServiceAccount> items) {
+  public A addAllToItems(Collection<V1ServiceAccount> items) {
     if (this.items == null) {
-      this.items =
-          new java.util.ArrayList<io.kubernetes.client.openapi.models.V1ServiceAccountBuilder>();
+      this.items = new ArrayList<V1ServiceAccountBuilder>();
     }
-    for (io.kubernetes.client.openapi.models.V1ServiceAccount item : items) {
-      io.kubernetes.client.openapi.models.V1ServiceAccountBuilder builder =
-          new io.kubernetes.client.openapi.models.V1ServiceAccountBuilder(item);
+    for (V1ServiceAccount item : items) {
+      V1ServiceAccountBuilder builder = new V1ServiceAccountBuilder(item);
       _visitables.get("items").add(builder);
       this.items.add(builder);
     }
@@ -121,9 +107,8 @@ public class V1ServiceAccountListFluentImpl<
   }
 
   public A removeFromItems(io.kubernetes.client.openapi.models.V1ServiceAccount... items) {
-    for (io.kubernetes.client.openapi.models.V1ServiceAccount item : items) {
-      io.kubernetes.client.openapi.models.V1ServiceAccountBuilder builder =
-          new io.kubernetes.client.openapi.models.V1ServiceAccountBuilder(item);
+    for (V1ServiceAccount item : items) {
+      V1ServiceAccountBuilder builder = new V1ServiceAccountBuilder(item);
       _visitables.get("items").remove(builder);
       if (this.items != null) {
         this.items.remove(builder);
@@ -132,11 +117,9 @@ public class V1ServiceAccountListFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromItems(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1ServiceAccount> items) {
-    for (io.kubernetes.client.openapi.models.V1ServiceAccount item : items) {
-      io.kubernetes.client.openapi.models.V1ServiceAccountBuilder builder =
-          new io.kubernetes.client.openapi.models.V1ServiceAccountBuilder(item);
+  public A removeAllFromItems(Collection<V1ServiceAccount> items) {
+    for (V1ServiceAccount item : items) {
+      V1ServiceAccountBuilder builder = new V1ServiceAccountBuilder(item);
       _visitables.get("items").remove(builder);
       if (this.items != null) {
         this.items.remove(builder);
@@ -145,15 +128,12 @@ public class V1ServiceAccountListFluentImpl<
     return (A) this;
   }
 
-  public A removeMatchingFromItems(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1ServiceAccountBuilder>
-          predicate) {
+  public A removeMatchingFromItems(Predicate<V1ServiceAccountBuilder> predicate) {
     if (items == null) return (A) this;
-    final Iterator<io.kubernetes.client.openapi.models.V1ServiceAccountBuilder> each =
-        items.iterator();
+    final Iterator<V1ServiceAccountBuilder> each = items.iterator();
     final List visitables = _visitables.get("items");
     while (each.hasNext()) {
-      io.kubernetes.client.openapi.models.V1ServiceAccountBuilder builder = each.next();
+      V1ServiceAccountBuilder builder = each.next();
       if (predicate.test(builder)) {
         visitables.remove(builder);
         each.remove();
@@ -167,31 +147,29 @@ public class V1ServiceAccountListFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V1ServiceAccount> getItems() {
+  @Deprecated
+  public List<V1ServiceAccount> getItems() {
     return items != null ? build(items) : null;
   }
 
-  public java.util.List<io.kubernetes.client.openapi.models.V1ServiceAccount> buildItems() {
+  public List<V1ServiceAccount> buildItems() {
     return items != null ? build(items) : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1ServiceAccount buildItem(java.lang.Integer index) {
+  public V1ServiceAccount buildItem(Integer index) {
     return this.items.get(index).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1ServiceAccount buildFirstItem() {
+  public V1ServiceAccount buildFirstItem() {
     return this.items.get(0).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1ServiceAccount buildLastItem() {
+  public V1ServiceAccount buildLastItem() {
     return this.items.get(items.size() - 1).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1ServiceAccount buildMatchingItem(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1ServiceAccountBuilder>
-          predicate) {
-    for (io.kubernetes.client.openapi.models.V1ServiceAccountBuilder item : items) {
+  public V1ServiceAccount buildMatchingItem(Predicate<V1ServiceAccountBuilder> predicate) {
+    for (V1ServiceAccountBuilder item : items) {
       if (predicate.test(item)) {
         return item.build();
       }
@@ -199,10 +177,8 @@ public class V1ServiceAccountListFluentImpl<
     return null;
   }
 
-  public java.lang.Boolean hasMatchingItem(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1ServiceAccountBuilder>
-          predicate) {
-    for (io.kubernetes.client.openapi.models.V1ServiceAccountBuilder item : items) {
+  public Boolean hasMatchingItem(Predicate<V1ServiceAccountBuilder> predicate) {
+    for (V1ServiceAccountBuilder item : items) {
       if (predicate.test(item)) {
         return true;
       }
@@ -210,13 +186,13 @@ public class V1ServiceAccountListFluentImpl<
     return false;
   }
 
-  public A withItems(java.util.List<io.kubernetes.client.openapi.models.V1ServiceAccount> items) {
+  public A withItems(List<V1ServiceAccount> items) {
     if (this.items != null) {
       _visitables.get("items").removeAll(this.items);
     }
     if (items != null) {
-      this.items = new java.util.ArrayList();
-      for (io.kubernetes.client.openapi.models.V1ServiceAccount item : items) {
+      this.items = new ArrayList();
+      for (V1ServiceAccount item : items) {
         this.addToItems(item);
       }
     } else {
@@ -230,58 +206,48 @@ public class V1ServiceAccountListFluentImpl<
       this.items.clear();
     }
     if (items != null) {
-      for (io.kubernetes.client.openapi.models.V1ServiceAccount item : items) {
+      for (V1ServiceAccount item : items) {
         this.addToItems(item);
       }
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasItems() {
+  public Boolean hasItems() {
     return items != null && !items.isEmpty();
   }
 
-  public io.kubernetes.client.openapi.models.V1ServiceAccountListFluent.ItemsNested<A>
-      addNewItem() {
-    return new io.kubernetes.client.openapi.models.V1ServiceAccountListFluentImpl.ItemsNestedImpl();
+  public V1ServiceAccountListFluent.ItemsNested<A> addNewItem() {
+    return new V1ServiceAccountListFluentImpl.ItemsNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1ServiceAccountListFluent.ItemsNested<A>
-      addNewItemLike(io.kubernetes.client.openapi.models.V1ServiceAccount item) {
-    return new io.kubernetes.client.openapi.models.V1ServiceAccountListFluentImpl.ItemsNestedImpl(
-        -1, item);
+  public V1ServiceAccountListFluent.ItemsNested<A> addNewItemLike(V1ServiceAccount item) {
+    return new V1ServiceAccountListFluentImpl.ItemsNestedImpl(-1, item);
   }
 
-  public io.kubernetes.client.openapi.models.V1ServiceAccountListFluent.ItemsNested<A>
-      setNewItemLike(
-          java.lang.Integer index, io.kubernetes.client.openapi.models.V1ServiceAccount item) {
-    return new io.kubernetes.client.openapi.models.V1ServiceAccountListFluentImpl.ItemsNestedImpl(
-        index, item);
+  public V1ServiceAccountListFluent.ItemsNested<A> setNewItemLike(
+      Integer index, V1ServiceAccount item) {
+    return new V1ServiceAccountListFluentImpl.ItemsNestedImpl(index, item);
   }
 
-  public io.kubernetes.client.openapi.models.V1ServiceAccountListFluent.ItemsNested<A> editItem(
-      java.lang.Integer index) {
+  public V1ServiceAccountListFluent.ItemsNested<A> editItem(Integer index) {
     if (items.size() <= index) throw new RuntimeException("Can't edit items. Index exceeds size.");
     return setNewItemLike(index, buildItem(index));
   }
 
-  public io.kubernetes.client.openapi.models.V1ServiceAccountListFluent.ItemsNested<A>
-      editFirstItem() {
+  public V1ServiceAccountListFluent.ItemsNested<A> editFirstItem() {
     if (items.size() == 0) throw new RuntimeException("Can't edit first items. The list is empty.");
     return setNewItemLike(0, buildItem(0));
   }
 
-  public io.kubernetes.client.openapi.models.V1ServiceAccountListFluent.ItemsNested<A>
-      editLastItem() {
+  public V1ServiceAccountListFluent.ItemsNested<A> editLastItem() {
     int index = items.size() - 1;
     if (index < 0) throw new RuntimeException("Can't edit last items. The list is empty.");
     return setNewItemLike(index, buildItem(index));
   }
 
-  public io.kubernetes.client.openapi.models.V1ServiceAccountListFluent.ItemsNested<A>
-      editMatchingItem(
-          java.util.function.Predicate<io.kubernetes.client.openapi.models.V1ServiceAccountBuilder>
-              predicate) {
+  public V1ServiceAccountListFluent.ItemsNested<A> editMatchingItem(
+      Predicate<V1ServiceAccountBuilder> predicate) {
     int index = -1;
     for (int i = 0; i < items.size(); i++) {
       if (predicate.test(items.get(i))) {
@@ -293,23 +259,17 @@ public class V1ServiceAccountListFluentImpl<
     return setNewItemLike(index, buildItem(index));
   }
 
-  public java.lang.String getKind() {
+  public String getKind() {
     return this.kind;
   }
 
-  public A withKind(java.lang.String kind) {
+  public A withKind(String kind) {
     this.kind = kind;
     return (A) this;
   }
 
-  public java.lang.Boolean hasKind() {
+  public Boolean hasKind() {
     return this.kind != null;
-  }
-
-  /** Method is deprecated. use withKind instead. */
-  @java.lang.Deprecated
-  public A withNewKind(java.lang.String original) {
-    return (A) withKind(new String(original));
   }
 
   /**
@@ -317,59 +277,53 @@ public class V1ServiceAccountListFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ListMeta getMetadata() {
+  @Deprecated
+  public V1ListMeta getMetadata() {
     return this.metadata != null ? this.metadata.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1ListMeta buildMetadata() {
+  public V1ListMeta buildMetadata() {
     return this.metadata != null ? this.metadata.build() : null;
   }
 
-  public A withMetadata(io.kubernetes.client.openapi.models.V1ListMeta metadata) {
+  public A withMetadata(V1ListMeta metadata) {
     _visitables.get("metadata").remove(this.metadata);
     if (metadata != null) {
-      this.metadata = new io.kubernetes.client.openapi.models.V1ListMetaBuilder(metadata);
+      this.metadata = new V1ListMetaBuilder(metadata);
       _visitables.get("metadata").add(this.metadata);
+    } else {
+      this.metadata = null;
+      _visitables.get("metadata").remove(this.metadata);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasMetadata() {
+  public Boolean hasMetadata() {
     return this.metadata != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1ServiceAccountListFluent.MetadataNested<A>
-      withNewMetadata() {
-    return new io.kubernetes.client.openapi.models.V1ServiceAccountListFluentImpl
-        .MetadataNestedImpl();
+  public V1ServiceAccountListFluent.MetadataNested<A> withNewMetadata() {
+    return new V1ServiceAccountListFluentImpl.MetadataNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1ServiceAccountListFluent.MetadataNested<A>
-      withNewMetadataLike(io.kubernetes.client.openapi.models.V1ListMeta item) {
-    return new io.kubernetes.client.openapi.models.V1ServiceAccountListFluentImpl
-        .MetadataNestedImpl(item);
+  public V1ServiceAccountListFluent.MetadataNested<A> withNewMetadataLike(V1ListMeta item) {
+    return new V1ServiceAccountListFluentImpl.MetadataNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1ServiceAccountListFluent.MetadataNested<A>
-      editMetadata() {
+  public V1ServiceAccountListFluent.MetadataNested<A> editMetadata() {
     return withNewMetadataLike(getMetadata());
   }
 
-  public io.kubernetes.client.openapi.models.V1ServiceAccountListFluent.MetadataNested<A>
-      editOrNewMetadata() {
+  public V1ServiceAccountListFluent.MetadataNested<A> editOrNewMetadata() {
     return withNewMetadataLike(
-        getMetadata() != null
-            ? getMetadata()
-            : new io.kubernetes.client.openapi.models.V1ListMetaBuilder().build());
+        getMetadata() != null ? getMetadata() : new V1ListMetaBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1ServiceAccountListFluent.MetadataNested<A>
-      editOrNewMetadataLike(io.kubernetes.client.openapi.models.V1ListMeta item) {
+  public V1ServiceAccountListFluent.MetadataNested<A> editOrNewMetadataLike(V1ListMeta item) {
     return withNewMetadataLike(getMetadata() != null ? getMetadata() : item);
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1ServiceAccountListFluentImpl that = (V1ServiceAccountListFluentImpl) o;
@@ -385,24 +339,44 @@ public class V1ServiceAccountListFluentImpl<
     return java.util.Objects.hash(apiVersion, items, kind, metadata, super.hashCode());
   }
 
-  public class ItemsNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1ServiceAccountFluentImpl<
-          io.kubernetes.client.openapi.models.V1ServiceAccountListFluent.ItemsNested<N>>
-      implements io.kubernetes.client.openapi.models.V1ServiceAccountListFluent.ItemsNested<N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    ItemsNestedImpl(
-        java.lang.Integer index, io.kubernetes.client.openapi.models.V1ServiceAccount item) {
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (apiVersion != null) {
+      sb.append("apiVersion:");
+      sb.append(apiVersion + ",");
+    }
+    if (items != null && !items.isEmpty()) {
+      sb.append("items:");
+      sb.append(items + ",");
+    }
+    if (kind != null) {
+      sb.append("kind:");
+      sb.append(kind + ",");
+    }
+    if (metadata != null) {
+      sb.append("metadata:");
+      sb.append(metadata);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class ItemsNestedImpl<N>
+      extends V1ServiceAccountFluentImpl<V1ServiceAccountListFluent.ItemsNested<N>>
+      implements V1ServiceAccountListFluent.ItemsNested<N>, Nested<N> {
+    ItemsNestedImpl(Integer index, V1ServiceAccount item) {
       this.index = index;
-      this.builder = new io.kubernetes.client.openapi.models.V1ServiceAccountBuilder(this, item);
+      this.builder = new V1ServiceAccountBuilder(this, item);
     }
 
     ItemsNestedImpl() {
       this.index = -1;
-      this.builder = new io.kubernetes.client.openapi.models.V1ServiceAccountBuilder(this);
+      this.builder = new V1ServiceAccountBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1ServiceAccountBuilder builder;
-    java.lang.Integer index;
+    V1ServiceAccountBuilder builder;
+    Integer index;
 
     public N and() {
       return (N) V1ServiceAccountListFluentImpl.this.setToItems(index, builder.build());
@@ -413,20 +387,18 @@ public class V1ServiceAccountListFluentImpl<
     }
   }
 
-  public class MetadataNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1ListMetaFluentImpl<
-          io.kubernetes.client.openapi.models.V1ServiceAccountListFluent.MetadataNested<N>>
-      implements io.kubernetes.client.openapi.models.V1ServiceAccountListFluent.MetadataNested<N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    MetadataNestedImpl(io.kubernetes.client.openapi.models.V1ListMeta item) {
-      this.builder = new io.kubernetes.client.openapi.models.V1ListMetaBuilder(this, item);
+  class MetadataNestedImpl<N>
+      extends V1ListMetaFluentImpl<V1ServiceAccountListFluent.MetadataNested<N>>
+      implements V1ServiceAccountListFluent.MetadataNested<N>, Nested<N> {
+    MetadataNestedImpl(V1ListMeta item) {
+      this.builder = new V1ListMetaBuilder(this, item);
     }
 
     MetadataNestedImpl() {
-      this.builder = new io.kubernetes.client.openapi.models.V1ListMetaBuilder(this);
+      this.builder = new V1ListMetaBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1ListMetaBuilder builder;
+    V1ListMetaBuilder builder;
 
     public N and() {
       return (N) V1ServiceAccountListFluentImpl.this.withMetadata(builder.build());

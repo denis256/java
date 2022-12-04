@@ -12,236 +12,195 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-/** Generated */
-public interface V1PersistentVolumeClaimSpecFluent<
-        A extends io.kubernetes.client.openapi.models.V1PersistentVolumeClaimSpecFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public A addToAccessModes(java.lang.Integer index, java.lang.String item);
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
 
-  public A setToAccessModes(java.lang.Integer index, java.lang.String item);
+/** Generated */
+public interface V1PersistentVolumeClaimSpecFluent<A extends V1PersistentVolumeClaimSpecFluent<A>>
+    extends Fluent<A> {
+  public A addToAccessModes(Integer index, String item);
+
+  public A setToAccessModes(Integer index, String item);
 
   public A addToAccessModes(java.lang.String... items);
 
-  public A addAllToAccessModes(java.util.Collection<java.lang.String> items);
+  public A addAllToAccessModes(Collection<String> items);
 
   public A removeFromAccessModes(java.lang.String... items);
 
-  public A removeAllFromAccessModes(java.util.Collection<java.lang.String> items);
+  public A removeAllFromAccessModes(Collection<String> items);
 
-  public java.util.List<java.lang.String> getAccessModes();
+  public List<String> getAccessModes();
 
-  public java.lang.String getAccessMode(java.lang.Integer index);
+  public String getAccessMode(Integer index);
 
-  public java.lang.String getFirstAccessMode();
+  public String getFirstAccessMode();
 
-  public java.lang.String getLastAccessMode();
+  public String getLastAccessMode();
 
-  public java.lang.String getMatchingAccessMode(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public String getMatchingAccessMode(Predicate<String> predicate);
 
-  public java.lang.Boolean hasMatchingAccessMode(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public Boolean hasMatchingAccessMode(Predicate<String> predicate);
 
-  public A withAccessModes(java.util.List<java.lang.String> accessModes);
+  public A withAccessModes(List<String> accessModes);
 
   public A withAccessModes(java.lang.String... accessModes);
 
-  public java.lang.Boolean hasAccessModes();
-
-  public A addNewAccessMode(java.lang.String original);
+  public Boolean hasAccessModes();
 
   /**
    * This method has been deprecated, please use method buildDataSource instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1TypedLocalObjectReference getDataSource();
+  @Deprecated
+  public V1TypedLocalObjectReference getDataSource();
 
-  public io.kubernetes.client.openapi.models.V1TypedLocalObjectReference buildDataSource();
+  public V1TypedLocalObjectReference buildDataSource();
 
-  public A withDataSource(
-      io.kubernetes.client.openapi.models.V1TypedLocalObjectReference dataSource);
+  public A withDataSource(V1TypedLocalObjectReference dataSource);
 
-  public java.lang.Boolean hasDataSource();
+  public Boolean hasDataSource();
 
-  public io.kubernetes.client.openapi.models.V1PersistentVolumeClaimSpecFluent.DataSourceNested<A>
-      withNewDataSource();
+  public V1PersistentVolumeClaimSpecFluent.DataSourceNested<A> withNewDataSource();
 
-  public io.kubernetes.client.openapi.models.V1PersistentVolumeClaimSpecFluent.DataSourceNested<A>
-      withNewDataSourceLike(io.kubernetes.client.openapi.models.V1TypedLocalObjectReference item);
+  public V1PersistentVolumeClaimSpecFluent.DataSourceNested<A> withNewDataSourceLike(
+      V1TypedLocalObjectReference item);
 
-  public io.kubernetes.client.openapi.models.V1PersistentVolumeClaimSpecFluent.DataSourceNested<A>
-      editDataSource();
+  public V1PersistentVolumeClaimSpecFluent.DataSourceNested<A> editDataSource();
 
-  public io.kubernetes.client.openapi.models.V1PersistentVolumeClaimSpecFluent.DataSourceNested<A>
-      editOrNewDataSource();
+  public V1PersistentVolumeClaimSpecFluent.DataSourceNested<A> editOrNewDataSource();
 
-  public io.kubernetes.client.openapi.models.V1PersistentVolumeClaimSpecFluent.DataSourceNested<A>
-      editOrNewDataSourceLike(io.kubernetes.client.openapi.models.V1TypedLocalObjectReference item);
+  public V1PersistentVolumeClaimSpecFluent.DataSourceNested<A> editOrNewDataSourceLike(
+      V1TypedLocalObjectReference item);
 
   /**
    * This method has been deprecated, please use method buildDataSourceRef instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1TypedLocalObjectReference getDataSourceRef();
+  @Deprecated
+  public V1TypedLocalObjectReference getDataSourceRef();
 
-  public io.kubernetes.client.openapi.models.V1TypedLocalObjectReference buildDataSourceRef();
+  public V1TypedLocalObjectReference buildDataSourceRef();
 
-  public A withDataSourceRef(
-      io.kubernetes.client.openapi.models.V1TypedLocalObjectReference dataSourceRef);
+  public A withDataSourceRef(V1TypedLocalObjectReference dataSourceRef);
 
-  public java.lang.Boolean hasDataSourceRef();
+  public Boolean hasDataSourceRef();
 
-  public io.kubernetes.client.openapi.models.V1PersistentVolumeClaimSpecFluent.DataSourceRefNested<
-          A>
-      withNewDataSourceRef();
+  public V1PersistentVolumeClaimSpecFluent.DataSourceRefNested<A> withNewDataSourceRef();
 
-  public io.kubernetes.client.openapi.models.V1PersistentVolumeClaimSpecFluent.DataSourceRefNested<
-          A>
-      withNewDataSourceRefLike(
-          io.kubernetes.client.openapi.models.V1TypedLocalObjectReference item);
+  public V1PersistentVolumeClaimSpecFluent.DataSourceRefNested<A> withNewDataSourceRefLike(
+      V1TypedLocalObjectReference item);
 
-  public io.kubernetes.client.openapi.models.V1PersistentVolumeClaimSpecFluent.DataSourceRefNested<
-          A>
-      editDataSourceRef();
+  public V1PersistentVolumeClaimSpecFluent.DataSourceRefNested<A> editDataSourceRef();
 
-  public io.kubernetes.client.openapi.models.V1PersistentVolumeClaimSpecFluent.DataSourceRefNested<
-          A>
-      editOrNewDataSourceRef();
+  public V1PersistentVolumeClaimSpecFluent.DataSourceRefNested<A> editOrNewDataSourceRef();
 
-  public io.kubernetes.client.openapi.models.V1PersistentVolumeClaimSpecFluent.DataSourceRefNested<
-          A>
-      editOrNewDataSourceRefLike(
-          io.kubernetes.client.openapi.models.V1TypedLocalObjectReference item);
+  public V1PersistentVolumeClaimSpecFluent.DataSourceRefNested<A> editOrNewDataSourceRefLike(
+      V1TypedLocalObjectReference item);
 
   /**
    * This method has been deprecated, please use method buildResources instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ResourceRequirements getResources();
+  @Deprecated
+  public V1ResourceRequirements getResources();
 
-  public io.kubernetes.client.openapi.models.V1ResourceRequirements buildResources();
+  public V1ResourceRequirements buildResources();
 
-  public A withResources(io.kubernetes.client.openapi.models.V1ResourceRequirements resources);
+  public A withResources(V1ResourceRequirements resources);
 
-  public java.lang.Boolean hasResources();
+  public Boolean hasResources();
 
-  public io.kubernetes.client.openapi.models.V1PersistentVolumeClaimSpecFluent.ResourcesNested<A>
-      withNewResources();
+  public V1PersistentVolumeClaimSpecFluent.ResourcesNested<A> withNewResources();
 
-  public io.kubernetes.client.openapi.models.V1PersistentVolumeClaimSpecFluent.ResourcesNested<A>
-      withNewResourcesLike(io.kubernetes.client.openapi.models.V1ResourceRequirements item);
+  public V1PersistentVolumeClaimSpecFluent.ResourcesNested<A> withNewResourcesLike(
+      V1ResourceRequirements item);
 
-  public io.kubernetes.client.openapi.models.V1PersistentVolumeClaimSpecFluent.ResourcesNested<A>
-      editResources();
+  public V1PersistentVolumeClaimSpecFluent.ResourcesNested<A> editResources();
 
-  public io.kubernetes.client.openapi.models.V1PersistentVolumeClaimSpecFluent.ResourcesNested<A>
-      editOrNewResources();
+  public V1PersistentVolumeClaimSpecFluent.ResourcesNested<A> editOrNewResources();
 
-  public io.kubernetes.client.openapi.models.V1PersistentVolumeClaimSpecFluent.ResourcesNested<A>
-      editOrNewResourcesLike(io.kubernetes.client.openapi.models.V1ResourceRequirements item);
+  public V1PersistentVolumeClaimSpecFluent.ResourcesNested<A> editOrNewResourcesLike(
+      V1ResourceRequirements item);
 
   /**
    * This method has been deprecated, please use method buildSelector instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1LabelSelector getSelector();
+  @Deprecated
+  public V1LabelSelector getSelector();
 
-  public io.kubernetes.client.openapi.models.V1LabelSelector buildSelector();
+  public V1LabelSelector buildSelector();
 
-  public A withSelector(io.kubernetes.client.openapi.models.V1LabelSelector selector);
+  public A withSelector(V1LabelSelector selector);
 
-  public java.lang.Boolean hasSelector();
+  public Boolean hasSelector();
 
-  public io.kubernetes.client.openapi.models.V1PersistentVolumeClaimSpecFluent.SelectorNested<A>
-      withNewSelector();
+  public V1PersistentVolumeClaimSpecFluent.SelectorNested<A> withNewSelector();
 
-  public io.kubernetes.client.openapi.models.V1PersistentVolumeClaimSpecFluent.SelectorNested<A>
-      withNewSelectorLike(io.kubernetes.client.openapi.models.V1LabelSelector item);
+  public V1PersistentVolumeClaimSpecFluent.SelectorNested<A> withNewSelectorLike(
+      V1LabelSelector item);
 
-  public io.kubernetes.client.openapi.models.V1PersistentVolumeClaimSpecFluent.SelectorNested<A>
-      editSelector();
+  public V1PersistentVolumeClaimSpecFluent.SelectorNested<A> editSelector();
 
-  public io.kubernetes.client.openapi.models.V1PersistentVolumeClaimSpecFluent.SelectorNested<A>
-      editOrNewSelector();
+  public V1PersistentVolumeClaimSpecFluent.SelectorNested<A> editOrNewSelector();
 
-  public io.kubernetes.client.openapi.models.V1PersistentVolumeClaimSpecFluent.SelectorNested<A>
-      editOrNewSelectorLike(io.kubernetes.client.openapi.models.V1LabelSelector item);
+  public V1PersistentVolumeClaimSpecFluent.SelectorNested<A> editOrNewSelectorLike(
+      V1LabelSelector item);
 
-  public java.lang.String getStorageClassName();
+  public String getStorageClassName();
 
-  public A withStorageClassName(java.lang.String storageClassName);
+  public A withStorageClassName(String storageClassName);
 
-  public java.lang.Boolean hasStorageClassName();
+  public Boolean hasStorageClassName();
 
-  /** Method is deprecated. use withStorageClassName instead. */
-  @java.lang.Deprecated
-  public A withNewStorageClassName(java.lang.String original);
+  public String getVolumeMode();
 
-  public java.lang.String getVolumeMode();
+  public A withVolumeMode(String volumeMode);
 
-  public A withVolumeMode(java.lang.String volumeMode);
+  public Boolean hasVolumeMode();
 
-  public java.lang.Boolean hasVolumeMode();
+  public String getVolumeName();
 
-  /** Method is deprecated. use withVolumeMode instead. */
-  @java.lang.Deprecated
-  public A withNewVolumeMode(java.lang.String original);
+  public A withVolumeName(String volumeName);
 
-  public java.lang.String getVolumeName();
-
-  public A withVolumeName(java.lang.String volumeName);
-
-  public java.lang.Boolean hasVolumeName();
-
-  /** Method is deprecated. use withVolumeName instead. */
-  @java.lang.Deprecated
-  public A withNewVolumeName(java.lang.String original);
+  public Boolean hasVolumeName();
 
   public interface DataSourceNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1TypedLocalObjectReferenceFluent<
-              io.kubernetes.client.openapi.models.V1PersistentVolumeClaimSpecFluent
-                      .DataSourceNested<
-                  N>> {
+      extends Nested<N>,
+          V1TypedLocalObjectReferenceFluent<V1PersistentVolumeClaimSpecFluent.DataSourceNested<N>> {
     public N and();
 
     public N endDataSource();
   }
 
   public interface DataSourceRefNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1TypedLocalObjectReferenceFluent<
-              io.kubernetes.client.openapi.models.V1PersistentVolumeClaimSpecFluent
-                      .DataSourceRefNested<
-                  N>> {
+      extends Nested<N>,
+          V1TypedLocalObjectReferenceFluent<
+              V1PersistentVolumeClaimSpecFluent.DataSourceRefNested<N>> {
     public N and();
 
     public N endDataSourceRef();
   }
 
   public interface ResourcesNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1ResourceRequirementsFluent<
-              io.kubernetes.client.openapi.models.V1PersistentVolumeClaimSpecFluent.ResourcesNested<
-                  N>> {
+      extends Nested<N>,
+          V1ResourceRequirementsFluent<V1PersistentVolumeClaimSpecFluent.ResourcesNested<N>> {
     public N and();
 
     public N endResources();
   }
 
   public interface SelectorNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1LabelSelectorFluent<
-              io.kubernetes.client.openapi.models.V1PersistentVolumeClaimSpecFluent.SelectorNested<
-                  N>> {
+      extends Nested<N>,
+          V1LabelSelectorFluent<V1PersistentVolumeClaimSpecFluent.SelectorNested<N>> {
     public N and();
 
     public N endSelector();

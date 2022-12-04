@@ -12,41 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1RBDPersistentVolumeSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1RBDPersistentVolumeSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1RBDPersistentVolumeSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1RBDPersistentVolumeSource,
-        io.kubernetes.client.openapi.models.V1RBDPersistentVolumeSourceBuilder> {
+    extends V1RBDPersistentVolumeSourceFluentImpl<V1RBDPersistentVolumeSourceBuilder>
+    implements VisitableBuilder<V1RBDPersistentVolumeSource, V1RBDPersistentVolumeSourceBuilder> {
   public V1RBDPersistentVolumeSourceBuilder() {
     this(false);
   }
 
-  public V1RBDPersistentVolumeSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1RBDPersistentVolumeSourceBuilder(Boolean validationEnabled) {
     this(new V1RBDPersistentVolumeSource(), validationEnabled);
   }
 
-  public V1RBDPersistentVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1RBDPersistentVolumeSourceFluent<?> fluent) {
+  public V1RBDPersistentVolumeSourceBuilder(V1RBDPersistentVolumeSourceFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1RBDPersistentVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1RBDPersistentVolumeSourceFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1RBDPersistentVolumeSourceFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1RBDPersistentVolumeSource(), validationEnabled);
   }
 
   public V1RBDPersistentVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1RBDPersistentVolumeSourceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1RBDPersistentVolumeSource instance) {
+      V1RBDPersistentVolumeSourceFluent<?> fluent, V1RBDPersistentVolumeSource instance) {
     this(fluent, instance, false);
   }
 
   public V1RBDPersistentVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1RBDPersistentVolumeSourceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1RBDPersistentVolumeSource instance,
-      java.lang.Boolean validationEnabled) {
+      V1RBDPersistentVolumeSourceFluent<?> fluent,
+      V1RBDPersistentVolumeSource instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withFsType(instance.getFsType());
 
@@ -67,14 +63,12 @@ public class V1RBDPersistentVolumeSourceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1RBDPersistentVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1RBDPersistentVolumeSource instance) {
+  public V1RBDPersistentVolumeSourceBuilder(V1RBDPersistentVolumeSource instance) {
     this(instance, false);
   }
 
   public V1RBDPersistentVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1RBDPersistentVolumeSource instance,
-      java.lang.Boolean validationEnabled) {
+      V1RBDPersistentVolumeSource instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withFsType(instance.getFsType());
 
@@ -95,10 +89,10 @@ public class V1RBDPersistentVolumeSourceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1RBDPersistentVolumeSourceFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1RBDPersistentVolumeSourceFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1RBDPersistentVolumeSource build() {
+  public V1RBDPersistentVolumeSource build() {
     V1RBDPersistentVolumeSource buildable = new V1RBDPersistentVolumeSource();
     buildable.setFsType(fluent.getFsType());
     buildable.setImage(fluent.getImage());
@@ -109,24 +103,5 @@ public class V1RBDPersistentVolumeSourceBuilder
     buildable.setSecretRef(fluent.getSecretRef());
     buildable.setUser(fluent.getUser());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1RBDPersistentVolumeSourceBuilder that = (V1RBDPersistentVolumeSourceBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

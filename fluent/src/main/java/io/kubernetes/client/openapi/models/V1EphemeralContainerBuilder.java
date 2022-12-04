@@ -12,41 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1EphemeralContainerBuilder
-    extends io.kubernetes.client.openapi.models.V1EphemeralContainerFluentImpl<
-        io.kubernetes.client.openapi.models.V1EphemeralContainerBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1EphemeralContainer,
-        io.kubernetes.client.openapi.models.V1EphemeralContainerBuilder> {
+    extends V1EphemeralContainerFluentImpl<V1EphemeralContainerBuilder>
+    implements VisitableBuilder<V1EphemeralContainer, V1EphemeralContainerBuilder> {
   public V1EphemeralContainerBuilder() {
     this(false);
   }
 
-  public V1EphemeralContainerBuilder(java.lang.Boolean validationEnabled) {
+  public V1EphemeralContainerBuilder(Boolean validationEnabled) {
     this(new V1EphemeralContainer(), validationEnabled);
   }
 
-  public V1EphemeralContainerBuilder(
-      io.kubernetes.client.openapi.models.V1EphemeralContainerFluent<?> fluent) {
+  public V1EphemeralContainerBuilder(V1EphemeralContainerFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1EphemeralContainerBuilder(
-      io.kubernetes.client.openapi.models.V1EphemeralContainerFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1EphemeralContainerFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1EphemeralContainer(), validationEnabled);
   }
 
   public V1EphemeralContainerBuilder(
-      io.kubernetes.client.openapi.models.V1EphemeralContainerFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1EphemeralContainer instance) {
+      V1EphemeralContainerFluent<?> fluent, V1EphemeralContainer instance) {
     this(fluent, instance, false);
   }
 
   public V1EphemeralContainerBuilder(
-      io.kubernetes.client.openapi.models.V1EphemeralContainerFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1EphemeralContainer instance,
-      java.lang.Boolean validationEnabled) {
+      V1EphemeralContainerFluent<?> fluent,
+      V1EphemeralContainer instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withArgs(instance.getArgs());
 
@@ -97,14 +93,11 @@ public class V1EphemeralContainerBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1EphemeralContainerBuilder(
-      io.kubernetes.client.openapi.models.V1EphemeralContainer instance) {
+  public V1EphemeralContainerBuilder(V1EphemeralContainer instance) {
     this(instance, false);
   }
 
-  public V1EphemeralContainerBuilder(
-      io.kubernetes.client.openapi.models.V1EphemeralContainer instance,
-      java.lang.Boolean validationEnabled) {
+  public V1EphemeralContainerBuilder(V1EphemeralContainer instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withArgs(instance.getArgs());
 
@@ -155,10 +148,10 @@ public class V1EphemeralContainerBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1EphemeralContainerFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1EphemeralContainerFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1EphemeralContainer build() {
+  public V1EphemeralContainer build() {
     V1EphemeralContainer buildable = new V1EphemeralContainer();
     buildable.setArgs(fluent.getArgs());
     buildable.setCommand(fluent.getCommand());
@@ -184,24 +177,5 @@ public class V1EphemeralContainerBuilder
     buildable.setVolumeMounts(fluent.getVolumeMounts());
     buildable.setWorkingDir(fluent.getWorkingDir());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1EphemeralContainerBuilder that = (V1EphemeralContainerBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

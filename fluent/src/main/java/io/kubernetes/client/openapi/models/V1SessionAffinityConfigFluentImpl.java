@@ -12,78 +12,75 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+
 /** Generated */
-public class V1SessionAffinityConfigFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1SessionAffinityConfigFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1SessionAffinityConfigFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1SessionAffinityConfigFluentImpl<A extends V1SessionAffinityConfigFluent<A>>
+    extends BaseFluent<A> implements V1SessionAffinityConfigFluent<A> {
   public V1SessionAffinityConfigFluentImpl() {}
 
-  public V1SessionAffinityConfigFluentImpl(
-      io.kubernetes.client.openapi.models.V1SessionAffinityConfig instance) {
+  public V1SessionAffinityConfigFluentImpl(V1SessionAffinityConfig instance) {
     this.withClientIP(instance.getClientIP());
   }
 
-  private io.kubernetes.client.openapi.models.V1ClientIPConfigBuilder clientIP;
+  private V1ClientIPConfigBuilder clientIP;
 
   /**
    * This method has been deprecated, please use method buildClientIP instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ClientIPConfig getClientIP() {
+  @Deprecated
+  public V1ClientIPConfig getClientIP() {
     return this.clientIP != null ? this.clientIP.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1ClientIPConfig buildClientIP() {
+  public V1ClientIPConfig buildClientIP() {
     return this.clientIP != null ? this.clientIP.build() : null;
   }
 
-  public A withClientIP(io.kubernetes.client.openapi.models.V1ClientIPConfig clientIP) {
+  public A withClientIP(V1ClientIPConfig clientIP) {
     _visitables.get("clientIP").remove(this.clientIP);
     if (clientIP != null) {
-      this.clientIP = new io.kubernetes.client.openapi.models.V1ClientIPConfigBuilder(clientIP);
+      this.clientIP = new V1ClientIPConfigBuilder(clientIP);
       _visitables.get("clientIP").add(this.clientIP);
+    } else {
+      this.clientIP = null;
+      _visitables.get("clientIP").remove(this.clientIP);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasClientIP() {
+  public Boolean hasClientIP() {
     return this.clientIP != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1SessionAffinityConfigFluent.ClientIPNested<A>
-      withNewClientIP() {
-    return new io.kubernetes.client.openapi.models.V1SessionAffinityConfigFluentImpl
-        .ClientIPNestedImpl();
+  public V1SessionAffinityConfigFluent.ClientIPNested<A> withNewClientIP() {
+    return new V1SessionAffinityConfigFluentImpl.ClientIPNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1SessionAffinityConfigFluent.ClientIPNested<A>
-      withNewClientIPLike(io.kubernetes.client.openapi.models.V1ClientIPConfig item) {
-    return new io.kubernetes.client.openapi.models.V1SessionAffinityConfigFluentImpl
-        .ClientIPNestedImpl(item);
+  public V1SessionAffinityConfigFluent.ClientIPNested<A> withNewClientIPLike(
+      V1ClientIPConfig item) {
+    return new V1SessionAffinityConfigFluentImpl.ClientIPNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1SessionAffinityConfigFluent.ClientIPNested<A>
-      editClientIP() {
+  public V1SessionAffinityConfigFluent.ClientIPNested<A> editClientIP() {
     return withNewClientIPLike(getClientIP());
   }
 
-  public io.kubernetes.client.openapi.models.V1SessionAffinityConfigFluent.ClientIPNested<A>
-      editOrNewClientIP() {
+  public V1SessionAffinityConfigFluent.ClientIPNested<A> editOrNewClientIP() {
     return withNewClientIPLike(
-        getClientIP() != null
-            ? getClientIP()
-            : new io.kubernetes.client.openapi.models.V1ClientIPConfigBuilder().build());
+        getClientIP() != null ? getClientIP() : new V1ClientIPConfigBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1SessionAffinityConfigFluent.ClientIPNested<A>
-      editOrNewClientIPLike(io.kubernetes.client.openapi.models.V1ClientIPConfig item) {
+  public V1SessionAffinityConfigFluent.ClientIPNested<A> editOrNewClientIPLike(
+      V1ClientIPConfig item) {
     return withNewClientIPLike(getClientIP() != null ? getClientIP() : item);
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1SessionAffinityConfigFluentImpl that = (V1SessionAffinityConfigFluentImpl) o;
@@ -95,21 +92,29 @@ public class V1SessionAffinityConfigFluentImpl<
     return java.util.Objects.hash(clientIP, super.hashCode());
   }
 
-  public class ClientIPNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1ClientIPConfigFluentImpl<
-          io.kubernetes.client.openapi.models.V1SessionAffinityConfigFluent.ClientIPNested<N>>
-      implements io.kubernetes.client.openapi.models.V1SessionAffinityConfigFluent.ClientIPNested<
-              N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    ClientIPNestedImpl(io.kubernetes.client.openapi.models.V1ClientIPConfig item) {
-      this.builder = new io.kubernetes.client.openapi.models.V1ClientIPConfigBuilder(this, item);
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (clientIP != null) {
+      sb.append("clientIP:");
+      sb.append(clientIP);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class ClientIPNestedImpl<N>
+      extends V1ClientIPConfigFluentImpl<V1SessionAffinityConfigFluent.ClientIPNested<N>>
+      implements V1SessionAffinityConfigFluent.ClientIPNested<N>, Nested<N> {
+    ClientIPNestedImpl(V1ClientIPConfig item) {
+      this.builder = new V1ClientIPConfigBuilder(this, item);
     }
 
     ClientIPNestedImpl() {
-      this.builder = new io.kubernetes.client.openapi.models.V1ClientIPConfigBuilder(this);
+      this.builder = new V1ClientIPConfigBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1ClientIPConfigBuilder builder;
+    V1ClientIPConfigBuilder builder;
 
     public N and() {
       return (N) V1SessionAffinityConfigFluentImpl.this.withClientIP(builder.build());

@@ -12,97 +12,61 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
-public interface VersionInfoFluent<
-        A extends io.kubernetes.client.openapi.models.VersionInfoFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getBuildDate();
+public interface VersionInfoFluent<A extends VersionInfoFluent<A>> extends Fluent<A> {
+  public String getBuildDate();
 
-  public A withBuildDate(java.lang.String buildDate);
+  public A withBuildDate(String buildDate);
 
-  public java.lang.Boolean hasBuildDate();
+  public Boolean hasBuildDate();
 
-  /** Method is deprecated. use withBuildDate instead. */
-  @java.lang.Deprecated
-  public A withNewBuildDate(java.lang.String original);
+  public String getCompiler();
 
-  public java.lang.String getCompiler();
+  public A withCompiler(String compiler);
 
-  public A withCompiler(java.lang.String compiler);
+  public Boolean hasCompiler();
 
-  public java.lang.Boolean hasCompiler();
+  public String getGitCommit();
 
-  /** Method is deprecated. use withCompiler instead. */
-  @java.lang.Deprecated
-  public A withNewCompiler(java.lang.String original);
+  public A withGitCommit(String gitCommit);
 
-  public java.lang.String getGitCommit();
+  public Boolean hasGitCommit();
 
-  public A withGitCommit(java.lang.String gitCommit);
+  public String getGitTreeState();
 
-  public java.lang.Boolean hasGitCommit();
+  public A withGitTreeState(String gitTreeState);
 
-  /** Method is deprecated. use withGitCommit instead. */
-  @java.lang.Deprecated
-  public A withNewGitCommit(java.lang.String original);
+  public Boolean hasGitTreeState();
 
-  public java.lang.String getGitTreeState();
+  public String getGitVersion();
 
-  public A withGitTreeState(java.lang.String gitTreeState);
+  public A withGitVersion(String gitVersion);
 
-  public java.lang.Boolean hasGitTreeState();
+  public Boolean hasGitVersion();
 
-  /** Method is deprecated. use withGitTreeState instead. */
-  @java.lang.Deprecated
-  public A withNewGitTreeState(java.lang.String original);
+  public String getGoVersion();
 
-  public java.lang.String getGitVersion();
+  public A withGoVersion(String goVersion);
 
-  public A withGitVersion(java.lang.String gitVersion);
+  public Boolean hasGoVersion();
 
-  public java.lang.Boolean hasGitVersion();
+  public String getMajor();
 
-  /** Method is deprecated. use withGitVersion instead. */
-  @java.lang.Deprecated
-  public A withNewGitVersion(java.lang.String original);
+  public A withMajor(String major);
 
-  public java.lang.String getGoVersion();
+  public Boolean hasMajor();
 
-  public A withGoVersion(java.lang.String goVersion);
+  public String getMinor();
 
-  public java.lang.Boolean hasGoVersion();
+  public A withMinor(String minor);
 
-  /** Method is deprecated. use withGoVersion instead. */
-  @java.lang.Deprecated
-  public A withNewGoVersion(java.lang.String original);
+  public Boolean hasMinor();
 
-  public java.lang.String getMajor();
+  public String getPlatform();
 
-  public A withMajor(java.lang.String major);
+  public A withPlatform(String platform);
 
-  public java.lang.Boolean hasMajor();
-
-  /** Method is deprecated. use withMajor instead. */
-  @java.lang.Deprecated
-  public A withNewMajor(java.lang.String original);
-
-  public java.lang.String getMinor();
-
-  public A withMinor(java.lang.String minor);
-
-  public java.lang.Boolean hasMinor();
-
-  /** Method is deprecated. use withMinor instead. */
-  @java.lang.Deprecated
-  public A withNewMinor(java.lang.String original);
-
-  public java.lang.String getPlatform();
-
-  public A withPlatform(java.lang.String platform);
-
-  public java.lang.Boolean hasPlatform();
-
-  /** Method is deprecated. use withPlatform instead. */
-  @java.lang.Deprecated
-  public A withNewPlatform(java.lang.String original);
+  public Boolean hasPlatform();
 }

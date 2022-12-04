@@ -12,126 +12,153 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+
 /** Generated */
-public interface V1JobSpecFluent<A extends io.kubernetes.client.openapi.models.V1JobSpecFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.Long getActiveDeadlineSeconds();
+public interface V1JobSpecFluent<A extends V1JobSpecFluent<A>> extends Fluent<A> {
+  public Long getActiveDeadlineSeconds();
 
-  public A withActiveDeadlineSeconds(java.lang.Long activeDeadlineSeconds);
+  public A withActiveDeadlineSeconds(Long activeDeadlineSeconds);
 
-  public java.lang.Boolean hasActiveDeadlineSeconds();
+  public Boolean hasActiveDeadlineSeconds();
 
-  public java.lang.Integer getBackoffLimit();
+  public Integer getBackoffLimit();
 
-  public A withBackoffLimit(java.lang.Integer backoffLimit);
+  public A withBackoffLimit(Integer backoffLimit);
 
-  public java.lang.Boolean hasBackoffLimit();
+  public Boolean hasBackoffLimit();
 
-  public java.lang.String getCompletionMode();
+  public String getCompletionMode();
 
-  public A withCompletionMode(java.lang.String completionMode);
+  public A withCompletionMode(String completionMode);
 
-  public java.lang.Boolean hasCompletionMode();
+  public Boolean hasCompletionMode();
 
-  /** Method is deprecated. use withCompletionMode instead. */
-  @java.lang.Deprecated
-  public A withNewCompletionMode(java.lang.String original);
+  public Integer getCompletions();
 
-  public java.lang.Integer getCompletions();
+  public A withCompletions(Integer completions);
 
-  public A withCompletions(java.lang.Integer completions);
+  public Boolean hasCompletions();
 
-  public java.lang.Boolean hasCompletions();
+  public Boolean getManualSelector();
 
-  public java.lang.Boolean getManualSelector();
+  public A withManualSelector(Boolean manualSelector);
 
-  public A withManualSelector(java.lang.Boolean manualSelector);
+  public Boolean hasManualSelector();
 
-  public java.lang.Boolean hasManualSelector();
+  public Integer getParallelism();
 
-  public java.lang.Integer getParallelism();
+  public A withParallelism(Integer parallelism);
 
-  public A withParallelism(java.lang.Integer parallelism);
+  public Boolean hasParallelism();
 
-  public java.lang.Boolean hasParallelism();
+  /**
+   * This method has been deprecated, please use method buildPodFailurePolicy instead.
+   *
+   * @return The buildable object.
+   */
+  @Deprecated
+  public V1PodFailurePolicy getPodFailurePolicy();
+
+  public V1PodFailurePolicy buildPodFailurePolicy();
+
+  public A withPodFailurePolicy(V1PodFailurePolicy podFailurePolicy);
+
+  public Boolean hasPodFailurePolicy();
+
+  public V1JobSpecFluent.PodFailurePolicyNested<A> withNewPodFailurePolicy();
+
+  public V1JobSpecFluent.PodFailurePolicyNested<A> withNewPodFailurePolicyLike(
+      V1PodFailurePolicy item);
+
+  public V1JobSpecFluent.PodFailurePolicyNested<A> editPodFailurePolicy();
+
+  public V1JobSpecFluent.PodFailurePolicyNested<A> editOrNewPodFailurePolicy();
+
+  public V1JobSpecFluent.PodFailurePolicyNested<A> editOrNewPodFailurePolicyLike(
+      V1PodFailurePolicy item);
 
   /**
    * This method has been deprecated, please use method buildSelector instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1LabelSelector getSelector();
+  @Deprecated
+  public V1LabelSelector getSelector();
 
-  public io.kubernetes.client.openapi.models.V1LabelSelector buildSelector();
+  public V1LabelSelector buildSelector();
 
-  public A withSelector(io.kubernetes.client.openapi.models.V1LabelSelector selector);
+  public A withSelector(V1LabelSelector selector);
 
-  public java.lang.Boolean hasSelector();
+  public Boolean hasSelector();
 
-  public io.kubernetes.client.openapi.models.V1JobSpecFluent.SelectorNested<A> withNewSelector();
+  public V1JobSpecFluent.SelectorNested<A> withNewSelector();
 
-  public io.kubernetes.client.openapi.models.V1JobSpecFluent.SelectorNested<A> withNewSelectorLike(
-      io.kubernetes.client.openapi.models.V1LabelSelector item);
+  public V1JobSpecFluent.SelectorNested<A> withNewSelectorLike(V1LabelSelector item);
 
-  public io.kubernetes.client.openapi.models.V1JobSpecFluent.SelectorNested<A> editSelector();
+  public V1JobSpecFluent.SelectorNested<A> editSelector();
 
-  public io.kubernetes.client.openapi.models.V1JobSpecFluent.SelectorNested<A> editOrNewSelector();
+  public V1JobSpecFluent.SelectorNested<A> editOrNewSelector();
 
-  public io.kubernetes.client.openapi.models.V1JobSpecFluent.SelectorNested<A>
-      editOrNewSelectorLike(io.kubernetes.client.openapi.models.V1LabelSelector item);
+  public V1JobSpecFluent.SelectorNested<A> editOrNewSelectorLike(V1LabelSelector item);
 
-  public java.lang.Boolean getSuspend();
+  public Boolean getSuspend();
 
-  public A withSuspend(java.lang.Boolean suspend);
+  public A withSuspend(Boolean suspend);
 
-  public java.lang.Boolean hasSuspend();
+  public Boolean hasSuspend();
 
   /**
    * This method has been deprecated, please use method buildTemplate instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1PodTemplateSpec getTemplate();
+  @Deprecated
+  public V1PodTemplateSpec getTemplate();
 
-  public io.kubernetes.client.openapi.models.V1PodTemplateSpec buildTemplate();
+  public V1PodTemplateSpec buildTemplate();
 
-  public A withTemplate(io.kubernetes.client.openapi.models.V1PodTemplateSpec template);
+  public A withTemplate(V1PodTemplateSpec template);
 
-  public java.lang.Boolean hasTemplate();
+  public Boolean hasTemplate();
 
-  public io.kubernetes.client.openapi.models.V1JobSpecFluent.TemplateNested<A> withNewTemplate();
+  public V1JobSpecFluent.TemplateNested<A> withNewTemplate();
 
-  public io.kubernetes.client.openapi.models.V1JobSpecFluent.TemplateNested<A> withNewTemplateLike(
-      io.kubernetes.client.openapi.models.V1PodTemplateSpec item);
+  public V1JobSpecFluent.TemplateNested<A> withNewTemplateLike(V1PodTemplateSpec item);
 
-  public io.kubernetes.client.openapi.models.V1JobSpecFluent.TemplateNested<A> editTemplate();
+  public V1JobSpecFluent.TemplateNested<A> editTemplate();
 
-  public io.kubernetes.client.openapi.models.V1JobSpecFluent.TemplateNested<A> editOrNewTemplate();
+  public V1JobSpecFluent.TemplateNested<A> editOrNewTemplate();
 
-  public io.kubernetes.client.openapi.models.V1JobSpecFluent.TemplateNested<A>
-      editOrNewTemplateLike(io.kubernetes.client.openapi.models.V1PodTemplateSpec item);
+  public V1JobSpecFluent.TemplateNested<A> editOrNewTemplateLike(V1PodTemplateSpec item);
 
-  public java.lang.Integer getTtlSecondsAfterFinished();
+  public Integer getTtlSecondsAfterFinished();
 
-  public A withTtlSecondsAfterFinished(java.lang.Integer ttlSecondsAfterFinished);
+  public A withTtlSecondsAfterFinished(Integer ttlSecondsAfterFinished);
 
-  public java.lang.Boolean hasTtlSecondsAfterFinished();
+  public Boolean hasTtlSecondsAfterFinished();
+
+  public A withManualSelector();
+
+  public A withSuspend();
+
+  public interface PodFailurePolicyNested<N>
+      extends Nested<N>, V1PodFailurePolicyFluent<V1JobSpecFluent.PodFailurePolicyNested<N>> {
+    public N and();
+
+    public N endPodFailurePolicy();
+  }
 
   public interface SelectorNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1LabelSelectorFluent<
-              io.kubernetes.client.openapi.models.V1JobSpecFluent.SelectorNested<N>> {
+      extends Nested<N>, V1LabelSelectorFluent<V1JobSpecFluent.SelectorNested<N>> {
     public N and();
 
     public N endSelector();
   }
 
   public interface TemplateNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1PodTemplateSpecFluent<
-              io.kubernetes.client.openapi.models.V1JobSpecFluent.TemplateNested<N>> {
+      extends Nested<N>, V1PodTemplateSpecFluent<V1JobSpecFluent.TemplateNested<N>> {
     public N and();
 
     public N endTemplate();

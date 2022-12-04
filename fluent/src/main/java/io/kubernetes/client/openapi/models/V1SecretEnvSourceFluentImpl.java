@@ -12,56 +12,50 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1SecretEnvSourceFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1SecretEnvSourceFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1SecretEnvSourceFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1SecretEnvSourceFluentImpl<A extends V1SecretEnvSourceFluent<A>> extends BaseFluent<A>
+    implements V1SecretEnvSourceFluent<A> {
   public V1SecretEnvSourceFluentImpl() {}
 
-  public V1SecretEnvSourceFluentImpl(
-      io.kubernetes.client.openapi.models.V1SecretEnvSource instance) {
+  public V1SecretEnvSourceFluentImpl(V1SecretEnvSource instance) {
     this.withName(instance.getName());
 
     this.withOptional(instance.getOptional());
   }
 
-  private java.lang.String name;
-  private java.lang.Boolean optional;
+  private String name;
+  private Boolean optional;
 
-  public java.lang.String getName() {
+  public String getName() {
     return this.name;
   }
 
-  public A withName(java.lang.String name) {
+  public A withName(String name) {
     this.name = name;
     return (A) this;
   }
 
-  public java.lang.Boolean hasName() {
+  public Boolean hasName() {
     return this.name != null;
   }
 
-  /** Method is deprecated. use withName instead. */
-  @java.lang.Deprecated
-  public A withNewName(java.lang.String original) {
-    return (A) withName(new String(original));
-  }
-
-  public java.lang.Boolean getOptional() {
+  public Boolean getOptional() {
     return this.optional;
   }
 
-  public A withOptional(java.lang.Boolean optional) {
+  public A withOptional(Boolean optional) {
     this.optional = optional;
     return (A) this;
   }
 
-  public java.lang.Boolean hasOptional() {
+  public Boolean hasOptional() {
     return this.optional != null;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1SecretEnvSourceFluentImpl that = (V1SecretEnvSourceFluentImpl) o;
@@ -72,5 +66,24 @@ public class V1SecretEnvSourceFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(name, optional, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (name != null) {
+      sb.append("name:");
+      sb.append(name + ",");
+    }
+    if (optional != null) {
+      sb.append("optional:");
+      sb.append(optional);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  public A withOptional() {
+    return withOptional(true);
   }
 }

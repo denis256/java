@@ -12,41 +12,38 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1CrossVersionObjectReferenceBuilder
-    extends io.kubernetes.client.openapi.models.V1CrossVersionObjectReferenceFluentImpl<
-        io.kubernetes.client.openapi.models.V1CrossVersionObjectReferenceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1CrossVersionObjectReference,
-        io.kubernetes.client.openapi.models.V1CrossVersionObjectReferenceBuilder> {
+    extends V1CrossVersionObjectReferenceFluentImpl<V1CrossVersionObjectReferenceBuilder>
+    implements VisitableBuilder<
+        V1CrossVersionObjectReference, V1CrossVersionObjectReferenceBuilder> {
   public V1CrossVersionObjectReferenceBuilder() {
     this(false);
   }
 
-  public V1CrossVersionObjectReferenceBuilder(java.lang.Boolean validationEnabled) {
+  public V1CrossVersionObjectReferenceBuilder(Boolean validationEnabled) {
     this(new V1CrossVersionObjectReference(), validationEnabled);
   }
 
-  public V1CrossVersionObjectReferenceBuilder(
-      io.kubernetes.client.openapi.models.V1CrossVersionObjectReferenceFluent<?> fluent) {
+  public V1CrossVersionObjectReferenceBuilder(V1CrossVersionObjectReferenceFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1CrossVersionObjectReferenceBuilder(
-      io.kubernetes.client.openapi.models.V1CrossVersionObjectReferenceFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1CrossVersionObjectReferenceFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1CrossVersionObjectReference(), validationEnabled);
   }
 
   public V1CrossVersionObjectReferenceBuilder(
-      io.kubernetes.client.openapi.models.V1CrossVersionObjectReferenceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1CrossVersionObjectReference instance) {
+      V1CrossVersionObjectReferenceFluent<?> fluent, V1CrossVersionObjectReference instance) {
     this(fluent, instance, false);
   }
 
   public V1CrossVersionObjectReferenceBuilder(
-      io.kubernetes.client.openapi.models.V1CrossVersionObjectReferenceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1CrossVersionObjectReference instance,
-      java.lang.Boolean validationEnabled) {
+      V1CrossVersionObjectReferenceFluent<?> fluent,
+      V1CrossVersionObjectReference instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withApiVersion(instance.getApiVersion());
 
@@ -57,14 +54,12 @@ public class V1CrossVersionObjectReferenceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1CrossVersionObjectReferenceBuilder(
-      io.kubernetes.client.openapi.models.V1CrossVersionObjectReference instance) {
+  public V1CrossVersionObjectReferenceBuilder(V1CrossVersionObjectReference instance) {
     this(instance, false);
   }
 
   public V1CrossVersionObjectReferenceBuilder(
-      io.kubernetes.client.openapi.models.V1CrossVersionObjectReference instance,
-      java.lang.Boolean validationEnabled) {
+      V1CrossVersionObjectReference instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withApiVersion(instance.getApiVersion());
 
@@ -75,33 +70,14 @@ public class V1CrossVersionObjectReferenceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1CrossVersionObjectReferenceFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1CrossVersionObjectReferenceFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1CrossVersionObjectReference build() {
+  public V1CrossVersionObjectReference build() {
     V1CrossVersionObjectReference buildable = new V1CrossVersionObjectReference();
     buildable.setApiVersion(fluent.getApiVersion());
     buildable.setKind(fluent.getKind());
     buildable.setName(fluent.getName());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1CrossVersionObjectReferenceBuilder that = (V1CrossVersionObjectReferenceBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

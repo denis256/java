@@ -12,41 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1ContainerStateTerminatedBuilder
-    extends io.kubernetes.client.openapi.models.V1ContainerStateTerminatedFluentImpl<
-        io.kubernetes.client.openapi.models.V1ContainerStateTerminatedBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1ContainerStateTerminated,
-        io.kubernetes.client.openapi.models.V1ContainerStateTerminatedBuilder> {
+    extends V1ContainerStateTerminatedFluentImpl<V1ContainerStateTerminatedBuilder>
+    implements VisitableBuilder<V1ContainerStateTerminated, V1ContainerStateTerminatedBuilder> {
   public V1ContainerStateTerminatedBuilder() {
     this(false);
   }
 
-  public V1ContainerStateTerminatedBuilder(java.lang.Boolean validationEnabled) {
+  public V1ContainerStateTerminatedBuilder(Boolean validationEnabled) {
     this(new V1ContainerStateTerminated(), validationEnabled);
   }
 
-  public V1ContainerStateTerminatedBuilder(
-      io.kubernetes.client.openapi.models.V1ContainerStateTerminatedFluent<?> fluent) {
+  public V1ContainerStateTerminatedBuilder(V1ContainerStateTerminatedFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1ContainerStateTerminatedBuilder(
-      io.kubernetes.client.openapi.models.V1ContainerStateTerminatedFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1ContainerStateTerminatedFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1ContainerStateTerminated(), validationEnabled);
   }
 
   public V1ContainerStateTerminatedBuilder(
-      io.kubernetes.client.openapi.models.V1ContainerStateTerminatedFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ContainerStateTerminated instance) {
+      V1ContainerStateTerminatedFluent<?> fluent, V1ContainerStateTerminated instance) {
     this(fluent, instance, false);
   }
 
   public V1ContainerStateTerminatedBuilder(
-      io.kubernetes.client.openapi.models.V1ContainerStateTerminatedFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ContainerStateTerminated instance,
-      java.lang.Boolean validationEnabled) {
+      V1ContainerStateTerminatedFluent<?> fluent,
+      V1ContainerStateTerminated instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withContainerID(instance.getContainerID());
 
@@ -65,14 +61,12 @@ public class V1ContainerStateTerminatedBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1ContainerStateTerminatedBuilder(
-      io.kubernetes.client.openapi.models.V1ContainerStateTerminated instance) {
+  public V1ContainerStateTerminatedBuilder(V1ContainerStateTerminated instance) {
     this(instance, false);
   }
 
   public V1ContainerStateTerminatedBuilder(
-      io.kubernetes.client.openapi.models.V1ContainerStateTerminated instance,
-      java.lang.Boolean validationEnabled) {
+      V1ContainerStateTerminated instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withContainerID(instance.getContainerID());
 
@@ -91,10 +85,10 @@ public class V1ContainerStateTerminatedBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1ContainerStateTerminatedFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1ContainerStateTerminatedFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1ContainerStateTerminated build() {
+  public V1ContainerStateTerminated build() {
     V1ContainerStateTerminated buildable = new V1ContainerStateTerminated();
     buildable.setContainerID(fluent.getContainerID());
     buildable.setExitCode(fluent.getExitCode());
@@ -104,24 +98,5 @@ public class V1ContainerStateTerminatedBuilder
     buildable.setSignal(fluent.getSignal());
     buildable.setStartedAt(fluent.getStartedAt());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1ContainerStateTerminatedBuilder that = (V1ContainerStateTerminatedBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

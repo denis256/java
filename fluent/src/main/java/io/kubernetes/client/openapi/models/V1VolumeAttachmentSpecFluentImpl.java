@@ -12,15 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+
 /** Generated */
-public class V1VolumeAttachmentSpecFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1VolumeAttachmentSpecFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1VolumeAttachmentSpecFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1VolumeAttachmentSpecFluentImpl<A extends V1VolumeAttachmentSpecFluent<A>>
+    extends BaseFluent<A> implements V1VolumeAttachmentSpecFluent<A> {
   public V1VolumeAttachmentSpecFluentImpl() {}
 
-  public V1VolumeAttachmentSpecFluentImpl(
-      io.kubernetes.client.openapi.models.V1VolumeAttachmentSpec instance) {
+  public V1VolumeAttachmentSpecFluentImpl(V1VolumeAttachmentSpec instance) {
     this.withAttacher(instance.getAttacher());
 
     this.withNodeName(instance.getNodeName());
@@ -28,46 +29,34 @@ public class V1VolumeAttachmentSpecFluentImpl<
     this.withSource(instance.getSource());
   }
 
-  private java.lang.String attacher;
-  private java.lang.String nodeName;
-  private io.kubernetes.client.openapi.models.V1VolumeAttachmentSourceBuilder source;
+  private String attacher;
+  private String nodeName;
+  private V1VolumeAttachmentSourceBuilder source;
 
-  public java.lang.String getAttacher() {
+  public String getAttacher() {
     return this.attacher;
   }
 
-  public A withAttacher(java.lang.String attacher) {
+  public A withAttacher(String attacher) {
     this.attacher = attacher;
     return (A) this;
   }
 
-  public java.lang.Boolean hasAttacher() {
+  public Boolean hasAttacher() {
     return this.attacher != null;
   }
 
-  /** Method is deprecated. use withAttacher instead. */
-  @java.lang.Deprecated
-  public A withNewAttacher(java.lang.String original) {
-    return (A) withAttacher(new String(original));
-  }
-
-  public java.lang.String getNodeName() {
+  public String getNodeName() {
     return this.nodeName;
   }
 
-  public A withNodeName(java.lang.String nodeName) {
+  public A withNodeName(String nodeName) {
     this.nodeName = nodeName;
     return (A) this;
   }
 
-  public java.lang.Boolean hasNodeName() {
+  public Boolean hasNodeName() {
     return this.nodeName != null;
-  }
-
-  /** Method is deprecated. use withNodeName instead. */
-  @java.lang.Deprecated
-  public A withNewNodeName(java.lang.String original) {
-    return (A) withNodeName(new String(original));
   }
 
   /**
@@ -75,59 +64,55 @@ public class V1VolumeAttachmentSpecFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1VolumeAttachmentSource getSource() {
+  @Deprecated
+  public V1VolumeAttachmentSource getSource() {
     return this.source != null ? this.source.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1VolumeAttachmentSource buildSource() {
+  public V1VolumeAttachmentSource buildSource() {
     return this.source != null ? this.source.build() : null;
   }
 
-  public A withSource(io.kubernetes.client.openapi.models.V1VolumeAttachmentSource source) {
+  public A withSource(V1VolumeAttachmentSource source) {
     _visitables.get("source").remove(this.source);
     if (source != null) {
-      this.source = new io.kubernetes.client.openapi.models.V1VolumeAttachmentSourceBuilder(source);
+      this.source = new V1VolumeAttachmentSourceBuilder(source);
       _visitables.get("source").add(this.source);
+    } else {
+      this.source = null;
+      _visitables.get("source").remove(this.source);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasSource() {
+  public Boolean hasSource() {
     return this.source != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1VolumeAttachmentSpecFluent.SourceNested<A>
-      withNewSource() {
-    return new io.kubernetes.client.openapi.models.V1VolumeAttachmentSpecFluentImpl
-        .SourceNestedImpl();
+  public V1VolumeAttachmentSpecFluent.SourceNested<A> withNewSource() {
+    return new V1VolumeAttachmentSpecFluentImpl.SourceNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1VolumeAttachmentSpecFluent.SourceNested<A>
-      withNewSourceLike(io.kubernetes.client.openapi.models.V1VolumeAttachmentSource item) {
-    return new io.kubernetes.client.openapi.models.V1VolumeAttachmentSpecFluentImpl
-        .SourceNestedImpl(item);
+  public V1VolumeAttachmentSpecFluent.SourceNested<A> withNewSourceLike(
+      V1VolumeAttachmentSource item) {
+    return new V1VolumeAttachmentSpecFluentImpl.SourceNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1VolumeAttachmentSpecFluent.SourceNested<A>
-      editSource() {
+  public V1VolumeAttachmentSpecFluent.SourceNested<A> editSource() {
     return withNewSourceLike(getSource());
   }
 
-  public io.kubernetes.client.openapi.models.V1VolumeAttachmentSpecFluent.SourceNested<A>
-      editOrNewSource() {
+  public V1VolumeAttachmentSpecFluent.SourceNested<A> editOrNewSource() {
     return withNewSourceLike(
-        getSource() != null
-            ? getSource()
-            : new io.kubernetes.client.openapi.models.V1VolumeAttachmentSourceBuilder().build());
+        getSource() != null ? getSource() : new V1VolumeAttachmentSourceBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1VolumeAttachmentSpecFluent.SourceNested<A>
-      editOrNewSourceLike(io.kubernetes.client.openapi.models.V1VolumeAttachmentSource item) {
+  public V1VolumeAttachmentSpecFluent.SourceNested<A> editOrNewSourceLike(
+      V1VolumeAttachmentSource item) {
     return withNewSourceLike(getSource() != null ? getSource() : item);
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1VolumeAttachmentSpecFluentImpl that = (V1VolumeAttachmentSpecFluentImpl) o;
@@ -141,21 +126,37 @@ public class V1VolumeAttachmentSpecFluentImpl<
     return java.util.Objects.hash(attacher, nodeName, source, super.hashCode());
   }
 
-  public class SourceNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1VolumeAttachmentSourceFluentImpl<
-          io.kubernetes.client.openapi.models.V1VolumeAttachmentSpecFluent.SourceNested<N>>
-      implements io.kubernetes.client.openapi.models.V1VolumeAttachmentSpecFluent.SourceNested<N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    SourceNestedImpl(io.kubernetes.client.openapi.models.V1VolumeAttachmentSource item) {
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1VolumeAttachmentSourceBuilder(this, item);
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (attacher != null) {
+      sb.append("attacher:");
+      sb.append(attacher + ",");
+    }
+    if (nodeName != null) {
+      sb.append("nodeName:");
+      sb.append(nodeName + ",");
+    }
+    if (source != null) {
+      sb.append("source:");
+      sb.append(source);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class SourceNestedImpl<N>
+      extends V1VolumeAttachmentSourceFluentImpl<V1VolumeAttachmentSpecFluent.SourceNested<N>>
+      implements V1VolumeAttachmentSpecFluent.SourceNested<N>, Nested<N> {
+    SourceNestedImpl(V1VolumeAttachmentSource item) {
+      this.builder = new V1VolumeAttachmentSourceBuilder(this, item);
     }
 
     SourceNestedImpl() {
-      this.builder = new io.kubernetes.client.openapi.models.V1VolumeAttachmentSourceBuilder(this);
+      this.builder = new V1VolumeAttachmentSourceBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1VolumeAttachmentSourceBuilder builder;
+    V1VolumeAttachmentSourceBuilder builder;
 
     public N and() {
       return (N) V1VolumeAttachmentSpecFluentImpl.this.withSource(builder.build());

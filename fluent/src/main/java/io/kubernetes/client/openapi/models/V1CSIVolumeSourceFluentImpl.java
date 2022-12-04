@@ -12,15 +12,18 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 /** Generated */
-public class V1CSIVolumeSourceFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1CSIVolumeSourceFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1CSIVolumeSourceFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1CSIVolumeSourceFluentImpl<A extends V1CSIVolumeSourceFluent<A>> extends BaseFluent<A>
+    implements V1CSIVolumeSourceFluent<A> {
   public V1CSIVolumeSourceFluentImpl() {}
 
-  public V1CSIVolumeSourceFluentImpl(
-      io.kubernetes.client.openapi.models.V1CSIVolumeSource instance) {
+  public V1CSIVolumeSourceFluentImpl(V1CSIVolumeSource instance) {
     this.withDriver(instance.getDriver());
 
     this.withFsType(instance.getFsType());
@@ -32,48 +35,36 @@ public class V1CSIVolumeSourceFluentImpl<
     this.withVolumeAttributes(instance.getVolumeAttributes());
   }
 
-  private java.lang.String driver;
-  private java.lang.String fsType;
-  private io.kubernetes.client.openapi.models.V1LocalObjectReferenceBuilder nodePublishSecretRef;
-  private java.lang.Boolean readOnly;
-  private java.util.Map<java.lang.String, java.lang.String> volumeAttributes;
+  private String driver;
+  private String fsType;
+  private V1LocalObjectReferenceBuilder nodePublishSecretRef;
+  private Boolean readOnly;
+  private Map<String, String> volumeAttributes;
 
-  public java.lang.String getDriver() {
+  public String getDriver() {
     return this.driver;
   }
 
-  public A withDriver(java.lang.String driver) {
+  public A withDriver(String driver) {
     this.driver = driver;
     return (A) this;
   }
 
-  public java.lang.Boolean hasDriver() {
+  public Boolean hasDriver() {
     return this.driver != null;
   }
 
-  /** Method is deprecated. use withDriver instead. */
-  @java.lang.Deprecated
-  public A withNewDriver(java.lang.String original) {
-    return (A) withDriver(new String(original));
-  }
-
-  public java.lang.String getFsType() {
+  public String getFsType() {
     return this.fsType;
   }
 
-  public A withFsType(java.lang.String fsType) {
+  public A withFsType(String fsType) {
     this.fsType = fsType;
     return (A) this;
   }
 
-  public java.lang.Boolean hasFsType() {
+  public Boolean hasFsType() {
     return this.fsType != null;
-  }
-
-  /** Method is deprecated. use withFsType instead. */
-  @java.lang.Deprecated
-  public A withNewFsType(java.lang.String original) {
-    return (A) withFsType(new String(original));
   }
 
   /**
@@ -81,80 +72,73 @@ public class V1CSIVolumeSourceFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1LocalObjectReference getNodePublishSecretRef() {
+  @Deprecated
+  public V1LocalObjectReference getNodePublishSecretRef() {
     return this.nodePublishSecretRef != null ? this.nodePublishSecretRef.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1LocalObjectReference buildNodePublishSecretRef() {
+  public V1LocalObjectReference buildNodePublishSecretRef() {
     return this.nodePublishSecretRef != null ? this.nodePublishSecretRef.build() : null;
   }
 
-  public A withNodePublishSecretRef(
-      io.kubernetes.client.openapi.models.V1LocalObjectReference nodePublishSecretRef) {
+  public A withNodePublishSecretRef(V1LocalObjectReference nodePublishSecretRef) {
     _visitables.get("nodePublishSecretRef").remove(this.nodePublishSecretRef);
     if (nodePublishSecretRef != null) {
-      this.nodePublishSecretRef =
-          new io.kubernetes.client.openapi.models.V1LocalObjectReferenceBuilder(
-              nodePublishSecretRef);
+      this.nodePublishSecretRef = new V1LocalObjectReferenceBuilder(nodePublishSecretRef);
       _visitables.get("nodePublishSecretRef").add(this.nodePublishSecretRef);
+    } else {
+      this.nodePublishSecretRef = null;
+      _visitables.get("nodePublishSecretRef").remove(this.nodePublishSecretRef);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasNodePublishSecretRef() {
+  public Boolean hasNodePublishSecretRef() {
     return this.nodePublishSecretRef != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1CSIVolumeSourceFluent.NodePublishSecretRefNested<A>
-      withNewNodePublishSecretRef() {
-    return new io.kubernetes.client.openapi.models.V1CSIVolumeSourceFluentImpl
-        .NodePublishSecretRefNestedImpl();
+  public V1CSIVolumeSourceFluent.NodePublishSecretRefNested<A> withNewNodePublishSecretRef() {
+    return new V1CSIVolumeSourceFluentImpl.NodePublishSecretRefNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1CSIVolumeSourceFluent.NodePublishSecretRefNested<A>
-      withNewNodePublishSecretRefLike(
-          io.kubernetes.client.openapi.models.V1LocalObjectReference item) {
-    return new io.kubernetes.client.openapi.models.V1CSIVolumeSourceFluentImpl
-        .NodePublishSecretRefNestedImpl(item);
+  public V1CSIVolumeSourceFluent.NodePublishSecretRefNested<A> withNewNodePublishSecretRefLike(
+      V1LocalObjectReference item) {
+    return new V1CSIVolumeSourceFluentImpl.NodePublishSecretRefNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1CSIVolumeSourceFluent.NodePublishSecretRefNested<A>
-      editNodePublishSecretRef() {
+  public V1CSIVolumeSourceFluent.NodePublishSecretRefNested<A> editNodePublishSecretRef() {
     return withNewNodePublishSecretRefLike(getNodePublishSecretRef());
   }
 
-  public io.kubernetes.client.openapi.models.V1CSIVolumeSourceFluent.NodePublishSecretRefNested<A>
-      editOrNewNodePublishSecretRef() {
+  public V1CSIVolumeSourceFluent.NodePublishSecretRefNested<A> editOrNewNodePublishSecretRef() {
     return withNewNodePublishSecretRefLike(
         getNodePublishSecretRef() != null
             ? getNodePublishSecretRef()
-            : new io.kubernetes.client.openapi.models.V1LocalObjectReferenceBuilder().build());
+            : new V1LocalObjectReferenceBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1CSIVolumeSourceFluent.NodePublishSecretRefNested<A>
-      editOrNewNodePublishSecretRefLike(
-          io.kubernetes.client.openapi.models.V1LocalObjectReference item) {
+  public V1CSIVolumeSourceFluent.NodePublishSecretRefNested<A> editOrNewNodePublishSecretRefLike(
+      V1LocalObjectReference item) {
     return withNewNodePublishSecretRefLike(
         getNodePublishSecretRef() != null ? getNodePublishSecretRef() : item);
   }
 
-  public java.lang.Boolean getReadOnly() {
+  public Boolean getReadOnly() {
     return this.readOnly;
   }
 
-  public A withReadOnly(java.lang.Boolean readOnly) {
+  public A withReadOnly(Boolean readOnly) {
     this.readOnly = readOnly;
     return (A) this;
   }
 
-  public java.lang.Boolean hasReadOnly() {
+  public Boolean hasReadOnly() {
     return this.readOnly != null;
   }
 
-  public A addToVolumeAttributes(java.lang.String key, java.lang.String value) {
+  public A addToVolumeAttributes(String key, String value) {
     if (this.volumeAttributes == null && key != null && value != null) {
-      this.volumeAttributes = new java.util.LinkedHashMap();
+      this.volumeAttributes = new LinkedHashMap();
     }
     if (key != null && value != null) {
       this.volumeAttributes.put(key, value);
@@ -162,9 +146,9 @@ public class V1CSIVolumeSourceFluentImpl<
     return (A) this;
   }
 
-  public A addToVolumeAttributes(java.util.Map<java.lang.String, java.lang.String> map) {
+  public A addToVolumeAttributes(Map<String, String> map) {
     if (this.volumeAttributes == null && map != null) {
-      this.volumeAttributes = new java.util.LinkedHashMap();
+      this.volumeAttributes = new LinkedHashMap();
     }
     if (map != null) {
       this.volumeAttributes.putAll(map);
@@ -172,7 +156,7 @@ public class V1CSIVolumeSourceFluentImpl<
     return (A) this;
   }
 
-  public A removeFromVolumeAttributes(java.lang.String key) {
+  public A removeFromVolumeAttributes(String key) {
     if (this.volumeAttributes == null) {
       return (A) this;
     }
@@ -182,7 +166,7 @@ public class V1CSIVolumeSourceFluentImpl<
     return (A) this;
   }
 
-  public A removeFromVolumeAttributes(java.util.Map<java.lang.String, java.lang.String> map) {
+  public A removeFromVolumeAttributes(Map<String, String> map) {
     if (this.volumeAttributes == null) {
       return (A) this;
     }
@@ -196,25 +180,24 @@ public class V1CSIVolumeSourceFluentImpl<
     return (A) this;
   }
 
-  public java.util.Map<java.lang.String, java.lang.String> getVolumeAttributes() {
+  public Map<String, String> getVolumeAttributes() {
     return this.volumeAttributes;
   }
 
-  public <K, V> A withVolumeAttributes(
-      java.util.Map<java.lang.String, java.lang.String> volumeAttributes) {
+  public <K, V> A withVolumeAttributes(Map<String, String> volumeAttributes) {
     if (volumeAttributes == null) {
       this.volumeAttributes = null;
     } else {
-      this.volumeAttributes = new java.util.LinkedHashMap(volumeAttributes);
+      this.volumeAttributes = new LinkedHashMap(volumeAttributes);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasVolumeAttributes() {
+  public Boolean hasVolumeAttributes() {
     return this.volumeAttributes != null;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1CSIVolumeSourceFluentImpl that = (V1CSIVolumeSourceFluentImpl) o;
@@ -235,24 +218,50 @@ public class V1CSIVolumeSourceFluentImpl<
         driver, fsType, nodePublishSecretRef, readOnly, volumeAttributes, super.hashCode());
   }
 
-  public class NodePublishSecretRefNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1LocalObjectReferenceFluentImpl<
-          io.kubernetes.client.openapi.models.V1CSIVolumeSourceFluent.NodePublishSecretRefNested<N>>
-      implements io.kubernetes.client.openapi.models.V1CSIVolumeSourceFluent
-                  .NodePublishSecretRefNested<
-              N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    NodePublishSecretRefNestedImpl(
-        io.kubernetes.client.openapi.models.V1LocalObjectReference item) {
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1LocalObjectReferenceBuilder(this, item);
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (driver != null) {
+      sb.append("driver:");
+      sb.append(driver + ",");
+    }
+    if (fsType != null) {
+      sb.append("fsType:");
+      sb.append(fsType + ",");
+    }
+    if (nodePublishSecretRef != null) {
+      sb.append("nodePublishSecretRef:");
+      sb.append(nodePublishSecretRef + ",");
+    }
+    if (readOnly != null) {
+      sb.append("readOnly:");
+      sb.append(readOnly + ",");
+    }
+    if (volumeAttributes != null && !volumeAttributes.isEmpty()) {
+      sb.append("volumeAttributes:");
+      sb.append(volumeAttributes);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  public A withReadOnly() {
+    return withReadOnly(true);
+  }
+
+  class NodePublishSecretRefNestedImpl<N>
+      extends V1LocalObjectReferenceFluentImpl<
+          V1CSIVolumeSourceFluent.NodePublishSecretRefNested<N>>
+      implements V1CSIVolumeSourceFluent.NodePublishSecretRefNested<N>, Nested<N> {
+    NodePublishSecretRefNestedImpl(V1LocalObjectReference item) {
+      this.builder = new V1LocalObjectReferenceBuilder(this, item);
     }
 
     NodePublishSecretRefNestedImpl() {
-      this.builder = new io.kubernetes.client.openapi.models.V1LocalObjectReferenceBuilder(this);
+      this.builder = new V1LocalObjectReferenceBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1LocalObjectReferenceBuilder builder;
+    V1LocalObjectReferenceBuilder builder;
 
     public N and() {
       return (N) V1CSIVolumeSourceFluentImpl.this.withNodePublishSecretRef(builder.build());

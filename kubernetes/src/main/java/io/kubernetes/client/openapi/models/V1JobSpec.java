@@ -1,5 +1,5 @@
 /*
-Copyright 2021 The Kubernetes Authors.
+Copyright 2022 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -21,7 +21,7 @@ import java.util.Objects;
 @ApiModel(description = "JobSpec describes how the job execution will look like.")
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    date = "2021-12-10T19:11:23.904Z[Etc/UTC]")
+    date = "2022-09-15T17:00:37.921Z[Etc/UTC]")
 public class V1JobSpec {
   public static final String SERIALIZED_NAME_ACTIVE_DEADLINE_SECONDS = "activeDeadlineSeconds";
 
@@ -52,6 +52,11 @@ public class V1JobSpec {
 
   @SerializedName(SERIALIZED_NAME_PARALLELISM)
   private Integer parallelism;
+
+  public static final String SERIALIZED_NAME_POD_FAILURE_POLICY = "podFailurePolicy";
+
+  @SerializedName(SERIALIZED_NAME_POD_FAILURE_POLICY)
+  private V1PodFailurePolicy podFailurePolicy;
 
   public static final String SERIALIZED_NAME_SELECTOR = "selector";
 
@@ -137,16 +142,16 @@ public class V1JobSpec {
    * successfully completed Pod for each index. When value is &#x60;Indexed&#x60;, .spec.completions
    * must be specified and &#x60;.spec.parallelism&#x60; must be less than or equal to 10^5. In
    * addition, The Pod name takes the form &#x60;$(job-name)-$(index)-$(random-string)&#x60;, the
-   * Pod hostname takes the form &#x60;$(job-name)-$(index)&#x60;. This field is beta-level. More
-   * completion modes can be added in the future. If the Job controller observes a mode that it
-   * doesn&#39;t recognize, the controller skips updates for the Job.
+   * Pod hostname takes the form &#x60;$(job-name)-$(index)&#x60;. More completion modes can be
+   * added in the future. If the Job controller observes a mode that it doesn&#39;t recognize, which
+   * is possible during upgrades due to version skew, the controller skips updates for the Job.
    *
    * @return completionMode
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "CompletionMode specifies how Pod completions are tracked. It can be `NonIndexed` (default) or `Indexed`.  `NonIndexed` means that the Job is considered complete when there have been .spec.completions successfully completed Pods. Each Pod completion is homologous to each other.  `Indexed` means that the Pods of a Job get an associated completion index from 0 to (.spec.completions - 1), available in the annotation batch.kubernetes.io/job-completion-index. The Job is considered complete when there is one successfully completed Pod for each index. When value is `Indexed`, .spec.completions must be specified and `.spec.parallelism` must be less than or equal to 10^5. In addition, The Pod name takes the form `$(job-name)-$(index)-$(random-string)`, the Pod hostname takes the form `$(job-name)-$(index)`.  This field is beta-level. More completion modes can be added in the future. If the Job controller observes a mode that it doesn't recognize, the controller skips updates for the Job.")
+          "CompletionMode specifies how Pod completions are tracked. It can be `NonIndexed` (default) or `Indexed`.  `NonIndexed` means that the Job is considered complete when there have been .spec.completions successfully completed Pods. Each Pod completion is homologous to each other.  `Indexed` means that the Pods of a Job get an associated completion index from 0 to (.spec.completions - 1), available in the annotation batch.kubernetes.io/job-completion-index. The Job is considered complete when there is one successfully completed Pod for each index. When value is `Indexed`, .spec.completions must be specified and `.spec.parallelism` must be less than or equal to 10^5. In addition, The Pod name takes the form `$(job-name)-$(index)-$(random-string)`, the Pod hostname takes the form `$(job-name)-$(index)`.  More completion modes can be added in the future. If the Job controller observes a mode that it doesn't recognize, which is possible during upgrades due to version skew, the controller skips updates for the Job.")
   public String getCompletionMode() {
     return completionMode;
   }
@@ -239,6 +244,27 @@ public class V1JobSpec {
     this.parallelism = parallelism;
   }
 
+  public V1JobSpec podFailurePolicy(V1PodFailurePolicy podFailurePolicy) {
+
+    this.podFailurePolicy = podFailurePolicy;
+    return this;
+  }
+
+  /**
+   * Get podFailurePolicy
+   *
+   * @return podFailurePolicy
+   */
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+  public V1PodFailurePolicy getPodFailurePolicy() {
+    return podFailurePolicy;
+  }
+
+  public void setPodFailurePolicy(V1PodFailurePolicy podFailurePolicy) {
+    this.podFailurePolicy = podFailurePolicy;
+  }
+
   public V1JobSpec selector(V1LabelSelector selector) {
 
     this.selector = selector;
@@ -272,15 +298,14 @@ public class V1JobSpec {
    * after creation (i.e. the flag goes from false to true), the Job controller will delete all
    * active Pods associated with this Job. Users must design their workload to gracefully handle
    * this. Suspending a Job will reset the StartTime field of the Job, effectively resetting the
-   * ActiveDeadlineSeconds timer too. Defaults to false. This field is beta-level, gated by
-   * SuspendJob feature flag (enabled by default).
+   * ActiveDeadlineSeconds timer too. Defaults to false.
    *
    * @return suspend
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "Suspend specifies whether the Job controller should create Pods or not. If a Job is created with suspend set to true, no Pods are created by the Job controller. If a Job is suspended after creation (i.e. the flag goes from false to true), the Job controller will delete all active Pods associated with this Job. Users must design their workload to gracefully handle this. Suspending a Job will reset the StartTime field of the Job, effectively resetting the ActiveDeadlineSeconds timer too. Defaults to false.  This field is beta-level, gated by SuspendJob feature flag (enabled by default).")
+          "Suspend specifies whether the Job controller should create Pods or not. If a Job is created with suspend set to true, no Pods are created by the Job controller. If a Job is suspended after creation (i.e. the flag goes from false to true), the Job controller will delete all active Pods associated with this Job. Users must design their workload to gracefully handle this. Suspending a Job will reset the StartTime field of the Job, effectively resetting the ActiveDeadlineSeconds timer too. Defaults to false.")
   public Boolean getSuspend() {
     return suspend;
   }
@@ -352,6 +377,7 @@ public class V1JobSpec {
         && Objects.equals(this.completions, v1JobSpec.completions)
         && Objects.equals(this.manualSelector, v1JobSpec.manualSelector)
         && Objects.equals(this.parallelism, v1JobSpec.parallelism)
+        && Objects.equals(this.podFailurePolicy, v1JobSpec.podFailurePolicy)
         && Objects.equals(this.selector, v1JobSpec.selector)
         && Objects.equals(this.suspend, v1JobSpec.suspend)
         && Objects.equals(this.template, v1JobSpec.template)
@@ -367,6 +393,7 @@ public class V1JobSpec {
         completions,
         manualSelector,
         parallelism,
+        podFailurePolicy,
         selector,
         suspend,
         template,
@@ -385,6 +412,7 @@ public class V1JobSpec {
     sb.append("    completions: ").append(toIndentedString(completions)).append("\n");
     sb.append("    manualSelector: ").append(toIndentedString(manualSelector)).append("\n");
     sb.append("    parallelism: ").append(toIndentedString(parallelism)).append("\n");
+    sb.append("    podFailurePolicy: ").append(toIndentedString(podFailurePolicy)).append("\n");
     sb.append("    selector: ").append(toIndentedString(selector)).append("\n");
     sb.append("    suspend: ").append(toIndentedString(suspend)).append("\n");
     sb.append("    template: ").append(toIndentedString(template)).append("\n");

@@ -12,47 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
-public interface V1ComponentConditionFluent<
-        A extends io.kubernetes.client.openapi.models.V1ComponentConditionFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getError();
+public interface V1ComponentConditionFluent<A extends V1ComponentConditionFluent<A>>
+    extends Fluent<A> {
+  public String getError();
 
-  public A withError(java.lang.String error);
+  public A withError(String error);
 
-  public java.lang.Boolean hasError();
+  public Boolean hasError();
 
-  /** Method is deprecated. use withError instead. */
-  @java.lang.Deprecated
-  public A withNewError(java.lang.String original);
+  public String getMessage();
 
-  public java.lang.String getMessage();
+  public A withMessage(String message);
 
-  public A withMessage(java.lang.String message);
+  public Boolean hasMessage();
 
-  public java.lang.Boolean hasMessage();
+  public String getStatus();
 
-  /** Method is deprecated. use withMessage instead. */
-  @java.lang.Deprecated
-  public A withNewMessage(java.lang.String original);
+  public A withStatus(String status);
 
-  public java.lang.String getStatus();
+  public Boolean hasStatus();
 
-  public A withStatus(java.lang.String status);
+  public String getType();
 
-  public java.lang.Boolean hasStatus();
+  public A withType(String type);
 
-  /** Method is deprecated. use withStatus instead. */
-  @java.lang.Deprecated
-  public A withNewStatus(java.lang.String original);
-
-  public java.lang.String getType();
-
-  public A withType(java.lang.String type);
-
-  public java.lang.Boolean hasType();
-
-  /** Method is deprecated. use withType instead. */
-  @java.lang.Deprecated
-  public A withNewType(java.lang.String original);
+  public Boolean hasType();
 }

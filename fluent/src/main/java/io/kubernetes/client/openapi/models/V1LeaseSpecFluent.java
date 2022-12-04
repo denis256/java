@@ -12,41 +12,38 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import java.time.OffsetDateTime;
+
 /** Generated */
-public interface V1LeaseSpecFluent<
-        A extends io.kubernetes.client.openapi.models.V1LeaseSpecFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.time.OffsetDateTime getAcquireTime();
+public interface V1LeaseSpecFluent<A extends V1LeaseSpecFluent<A>> extends Fluent<A> {
+  public OffsetDateTime getAcquireTime();
 
-  public A withAcquireTime(java.time.OffsetDateTime acquireTime);
+  public A withAcquireTime(OffsetDateTime acquireTime);
 
-  public java.lang.Boolean hasAcquireTime();
+  public Boolean hasAcquireTime();
 
-  public java.lang.String getHolderIdentity();
+  public String getHolderIdentity();
 
-  public A withHolderIdentity(java.lang.String holderIdentity);
+  public A withHolderIdentity(String holderIdentity);
 
-  public java.lang.Boolean hasHolderIdentity();
+  public Boolean hasHolderIdentity();
 
-  /** Method is deprecated. use withHolderIdentity instead. */
-  @java.lang.Deprecated
-  public A withNewHolderIdentity(java.lang.String original);
+  public Integer getLeaseDurationSeconds();
 
-  public java.lang.Integer getLeaseDurationSeconds();
+  public A withLeaseDurationSeconds(Integer leaseDurationSeconds);
 
-  public A withLeaseDurationSeconds(java.lang.Integer leaseDurationSeconds);
+  public Boolean hasLeaseDurationSeconds();
 
-  public java.lang.Boolean hasLeaseDurationSeconds();
+  public Integer getLeaseTransitions();
 
-  public java.lang.Integer getLeaseTransitions();
+  public A withLeaseTransitions(Integer leaseTransitions);
 
-  public A withLeaseTransitions(java.lang.Integer leaseTransitions);
+  public Boolean hasLeaseTransitions();
 
-  public java.lang.Boolean hasLeaseTransitions();
+  public OffsetDateTime getRenewTime();
 
-  public java.time.OffsetDateTime getRenewTime();
+  public A withRenewTime(OffsetDateTime renewTime);
 
-  public A withRenewTime(java.time.OffsetDateTime renewTime);
-
-  public java.lang.Boolean hasRenewTime();
+  public Boolean hasRenewTime();
 }

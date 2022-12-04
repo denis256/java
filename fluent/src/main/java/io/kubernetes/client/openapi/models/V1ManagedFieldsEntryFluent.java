@@ -12,69 +12,51 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import java.time.OffsetDateTime;
+
 /** Generated */
-public interface V1ManagedFieldsEntryFluent<
-        A extends io.kubernetes.client.openapi.models.V1ManagedFieldsEntryFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getApiVersion();
+public interface V1ManagedFieldsEntryFluent<A extends V1ManagedFieldsEntryFluent<A>>
+    extends Fluent<A> {
+  public String getApiVersion();
 
-  public A withApiVersion(java.lang.String apiVersion);
+  public A withApiVersion(String apiVersion);
 
-  public java.lang.Boolean hasApiVersion();
+  public Boolean hasApiVersion();
 
-  /** Method is deprecated. use withApiVersion instead. */
-  @java.lang.Deprecated
-  public A withNewApiVersion(java.lang.String original);
+  public String getFieldsType();
 
-  public java.lang.String getFieldsType();
+  public A withFieldsType(String fieldsType);
 
-  public A withFieldsType(java.lang.String fieldsType);
+  public Boolean hasFieldsType();
 
-  public java.lang.Boolean hasFieldsType();
+  public Object getFieldsV1();
 
-  /** Method is deprecated. use withFieldsType instead. */
-  @java.lang.Deprecated
-  public A withNewFieldsType(java.lang.String original);
+  public A withFieldsV1(Object fieldsV1);
 
-  public java.lang.Object getFieldsV1();
+  public Boolean hasFieldsV1();
 
-  public A withFieldsV1(java.lang.Object fieldsV1);
+  public String getManager();
 
-  public java.lang.Boolean hasFieldsV1();
+  public A withManager(String manager);
 
-  public java.lang.String getManager();
+  public Boolean hasManager();
 
-  public A withManager(java.lang.String manager);
+  public String getOperation();
 
-  public java.lang.Boolean hasManager();
+  public A withOperation(String operation);
 
-  /** Method is deprecated. use withManager instead. */
-  @java.lang.Deprecated
-  public A withNewManager(java.lang.String original);
+  public Boolean hasOperation();
 
-  public java.lang.String getOperation();
+  public String getSubresource();
 
-  public A withOperation(java.lang.String operation);
+  public A withSubresource(String subresource);
 
-  public java.lang.Boolean hasOperation();
+  public Boolean hasSubresource();
 
-  /** Method is deprecated. use withOperation instead. */
-  @java.lang.Deprecated
-  public A withNewOperation(java.lang.String original);
+  public OffsetDateTime getTime();
 
-  public java.lang.String getSubresource();
+  public A withTime(OffsetDateTime time);
 
-  public A withSubresource(java.lang.String subresource);
-
-  public java.lang.Boolean hasSubresource();
-
-  /** Method is deprecated. use withSubresource instead. */
-  @java.lang.Deprecated
-  public A withNewSubresource(java.lang.String original);
-
-  public java.time.OffsetDateTime getTime();
-
-  public A withTime(java.time.OffsetDateTime time);
-
-  public java.lang.Boolean hasTime();
+  public Boolean hasTime();
 }

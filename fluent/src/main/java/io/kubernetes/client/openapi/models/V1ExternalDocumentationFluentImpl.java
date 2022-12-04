@@ -12,62 +12,50 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1ExternalDocumentationFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1ExternalDocumentationFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1ExternalDocumentationFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1ExternalDocumentationFluentImpl<A extends V1ExternalDocumentationFluent<A>>
+    extends BaseFluent<A> implements V1ExternalDocumentationFluent<A> {
   public V1ExternalDocumentationFluentImpl() {}
 
-  public V1ExternalDocumentationFluentImpl(
-      io.kubernetes.client.openapi.models.V1ExternalDocumentation instance) {
+  public V1ExternalDocumentationFluentImpl(V1ExternalDocumentation instance) {
     this.withDescription(instance.getDescription());
 
     this.withUrl(instance.getUrl());
   }
 
-  private java.lang.String description;
-  private java.lang.String url;
+  private String description;
+  private String url;
 
-  public java.lang.String getDescription() {
+  public String getDescription() {
     return this.description;
   }
 
-  public A withDescription(java.lang.String description) {
+  public A withDescription(String description) {
     this.description = description;
     return (A) this;
   }
 
-  public java.lang.Boolean hasDescription() {
+  public Boolean hasDescription() {
     return this.description != null;
   }
 
-  /** Method is deprecated. use withDescription instead. */
-  @java.lang.Deprecated
-  public A withNewDescription(java.lang.String original) {
-    return (A) withDescription(new String(original));
-  }
-
-  public java.lang.String getUrl() {
+  public String getUrl() {
     return this.url;
   }
 
-  public A withUrl(java.lang.String url) {
+  public A withUrl(String url) {
     this.url = url;
     return (A) this;
   }
 
-  public java.lang.Boolean hasUrl() {
+  public Boolean hasUrl() {
     return this.url != null;
   }
 
-  /** Method is deprecated. use withUrl instead. */
-  @java.lang.Deprecated
-  public A withNewUrl(java.lang.String original) {
-    return (A) withUrl(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1ExternalDocumentationFluentImpl that = (V1ExternalDocumentationFluentImpl) o;
@@ -79,5 +67,20 @@ public class V1ExternalDocumentationFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(description, url, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (description != null) {
+      sb.append("description:");
+      sb.append(description + ",");
+    }
+    if (url != null) {
+      sb.append("url:");
+      sb.append(url);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

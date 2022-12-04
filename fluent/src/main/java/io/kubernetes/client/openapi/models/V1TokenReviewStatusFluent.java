@@ -12,91 +12,85 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-/** Generated */
-public interface V1TokenReviewStatusFluent<
-        A extends io.kubernetes.client.openapi.models.V1TokenReviewStatusFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public A addToAudiences(java.lang.Integer index, java.lang.String item);
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
 
-  public A setToAudiences(java.lang.Integer index, java.lang.String item);
+/** Generated */
+public interface V1TokenReviewStatusFluent<A extends V1TokenReviewStatusFluent<A>>
+    extends Fluent<A> {
+  public A addToAudiences(Integer index, String item);
+
+  public A setToAudiences(Integer index, String item);
 
   public A addToAudiences(java.lang.String... items);
 
-  public A addAllToAudiences(java.util.Collection<java.lang.String> items);
+  public A addAllToAudiences(Collection<String> items);
 
   public A removeFromAudiences(java.lang.String... items);
 
-  public A removeAllFromAudiences(java.util.Collection<java.lang.String> items);
+  public A removeAllFromAudiences(Collection<String> items);
 
-  public java.util.List<java.lang.String> getAudiences();
+  public List<String> getAudiences();
 
-  public java.lang.String getAudience(java.lang.Integer index);
+  public String getAudience(Integer index);
 
-  public java.lang.String getFirstAudience();
+  public String getFirstAudience();
 
-  public java.lang.String getLastAudience();
+  public String getLastAudience();
 
-  public java.lang.String getMatchingAudience(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public String getMatchingAudience(Predicate<String> predicate);
 
-  public java.lang.Boolean hasMatchingAudience(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public Boolean hasMatchingAudience(Predicate<String> predicate);
 
-  public A withAudiences(java.util.List<java.lang.String> audiences);
+  public A withAudiences(List<String> audiences);
 
   public A withAudiences(java.lang.String... audiences);
 
-  public java.lang.Boolean hasAudiences();
+  public Boolean hasAudiences();
 
-  public A addNewAudience(java.lang.String original);
+  public Boolean getAuthenticated();
 
-  public java.lang.Boolean getAuthenticated();
+  public A withAuthenticated(Boolean authenticated);
 
-  public A withAuthenticated(java.lang.Boolean authenticated);
+  public Boolean hasAuthenticated();
 
-  public java.lang.Boolean hasAuthenticated();
+  public String getError();
 
-  public java.lang.String getError();
+  public A withError(String error);
 
-  public A withError(java.lang.String error);
-
-  public java.lang.Boolean hasError();
-
-  /** Method is deprecated. use withError instead. */
-  @java.lang.Deprecated
-  public A withNewError(java.lang.String original);
+  public Boolean hasError();
 
   /**
    * This method has been deprecated, please use method buildUser instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1UserInfo getUser();
+  @Deprecated
+  public V1UserInfo getUser();
 
-  public io.kubernetes.client.openapi.models.V1UserInfo buildUser();
+  public V1UserInfo buildUser();
 
-  public A withUser(io.kubernetes.client.openapi.models.V1UserInfo user);
+  public A withUser(V1UserInfo user);
 
-  public java.lang.Boolean hasUser();
+  public Boolean hasUser();
 
-  public io.kubernetes.client.openapi.models.V1TokenReviewStatusFluent.UserNested<A> withNewUser();
+  public V1TokenReviewStatusFluent.UserNested<A> withNewUser();
 
-  public io.kubernetes.client.openapi.models.V1TokenReviewStatusFluent.UserNested<A>
-      withNewUserLike(io.kubernetes.client.openapi.models.V1UserInfo item);
+  public V1TokenReviewStatusFluent.UserNested<A> withNewUserLike(V1UserInfo item);
 
-  public io.kubernetes.client.openapi.models.V1TokenReviewStatusFluent.UserNested<A> editUser();
+  public V1TokenReviewStatusFluent.UserNested<A> editUser();
 
-  public io.kubernetes.client.openapi.models.V1TokenReviewStatusFluent.UserNested<A>
-      editOrNewUser();
+  public V1TokenReviewStatusFluent.UserNested<A> editOrNewUser();
 
-  public io.kubernetes.client.openapi.models.V1TokenReviewStatusFluent.UserNested<A>
-      editOrNewUserLike(io.kubernetes.client.openapi.models.V1UserInfo item);
+  public V1TokenReviewStatusFluent.UserNested<A> editOrNewUserLike(V1UserInfo item);
+
+  public A withAuthenticated();
 
   public interface UserNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1UserInfoFluent<
-              io.kubernetes.client.openapi.models.V1TokenReviewStatusFluent.UserNested<N>> {
+      extends Nested<N>, V1UserInfoFluent<V1TokenReviewStatusFluent.UserNested<N>> {
     public N and();
 
     public N endUser();

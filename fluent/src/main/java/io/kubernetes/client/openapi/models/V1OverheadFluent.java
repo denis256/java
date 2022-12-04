@@ -12,22 +12,23 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.custom.Quantity;
+import io.kubernetes.client.fluent.Fluent;
+import java.util.Map;
+
 /** Generated */
-public interface V1OverheadFluent<A extends io.kubernetes.client.openapi.models.V1OverheadFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public A addToPodFixed(java.lang.String key, io.kubernetes.client.custom.Quantity value);
+public interface V1OverheadFluent<A extends V1OverheadFluent<A>> extends Fluent<A> {
+  public A addToPodFixed(String key, Quantity value);
 
-  public A addToPodFixed(java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> map);
+  public A addToPodFixed(Map<String, Quantity> map);
 
-  public A removeFromPodFixed(java.lang.String key);
+  public A removeFromPodFixed(String key);
 
-  public A removeFromPodFixed(
-      java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> map);
+  public A removeFromPodFixed(Map<String, Quantity> map);
 
-  public java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> getPodFixed();
+  public Map<String, Quantity> getPodFixed();
 
-  public <K, V> A withPodFixed(
-      java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> podFixed);
+  public <K, V> A withPodFixed(Map<String, Quantity> podFixed);
 
-  public java.lang.Boolean hasPodFixed();
+  public Boolean hasPodFixed();
 }

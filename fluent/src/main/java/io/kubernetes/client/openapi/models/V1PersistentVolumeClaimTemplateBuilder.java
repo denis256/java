@@ -12,41 +12,38 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1PersistentVolumeClaimTemplateBuilder
-    extends io.kubernetes.client.openapi.models.V1PersistentVolumeClaimTemplateFluentImpl<
-        io.kubernetes.client.openapi.models.V1PersistentVolumeClaimTemplateBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1PersistentVolumeClaimTemplate,
-        io.kubernetes.client.openapi.models.V1PersistentVolumeClaimTemplateBuilder> {
+    extends V1PersistentVolumeClaimTemplateFluentImpl<V1PersistentVolumeClaimTemplateBuilder>
+    implements VisitableBuilder<
+        V1PersistentVolumeClaimTemplate, V1PersistentVolumeClaimTemplateBuilder> {
   public V1PersistentVolumeClaimTemplateBuilder() {
     this(false);
   }
 
-  public V1PersistentVolumeClaimTemplateBuilder(java.lang.Boolean validationEnabled) {
+  public V1PersistentVolumeClaimTemplateBuilder(Boolean validationEnabled) {
     this(new V1PersistentVolumeClaimTemplate(), validationEnabled);
   }
 
-  public V1PersistentVolumeClaimTemplateBuilder(
-      io.kubernetes.client.openapi.models.V1PersistentVolumeClaimTemplateFluent<?> fluent) {
+  public V1PersistentVolumeClaimTemplateBuilder(V1PersistentVolumeClaimTemplateFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1PersistentVolumeClaimTemplateBuilder(
-      io.kubernetes.client.openapi.models.V1PersistentVolumeClaimTemplateFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1PersistentVolumeClaimTemplateFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1PersistentVolumeClaimTemplate(), validationEnabled);
   }
 
   public V1PersistentVolumeClaimTemplateBuilder(
-      io.kubernetes.client.openapi.models.V1PersistentVolumeClaimTemplateFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1PersistentVolumeClaimTemplate instance) {
+      V1PersistentVolumeClaimTemplateFluent<?> fluent, V1PersistentVolumeClaimTemplate instance) {
     this(fluent, instance, false);
   }
 
   public V1PersistentVolumeClaimTemplateBuilder(
-      io.kubernetes.client.openapi.models.V1PersistentVolumeClaimTemplateFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1PersistentVolumeClaimTemplate instance,
-      java.lang.Boolean validationEnabled) {
+      V1PersistentVolumeClaimTemplateFluent<?> fluent,
+      V1PersistentVolumeClaimTemplate instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withMetadata(instance.getMetadata());
 
@@ -55,14 +52,12 @@ public class V1PersistentVolumeClaimTemplateBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1PersistentVolumeClaimTemplateBuilder(
-      io.kubernetes.client.openapi.models.V1PersistentVolumeClaimTemplate instance) {
+  public V1PersistentVolumeClaimTemplateBuilder(V1PersistentVolumeClaimTemplate instance) {
     this(instance, false);
   }
 
   public V1PersistentVolumeClaimTemplateBuilder(
-      io.kubernetes.client.openapi.models.V1PersistentVolumeClaimTemplate instance,
-      java.lang.Boolean validationEnabled) {
+      V1PersistentVolumeClaimTemplate instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withMetadata(instance.getMetadata());
 
@@ -71,32 +66,13 @@ public class V1PersistentVolumeClaimTemplateBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1PersistentVolumeClaimTemplateFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1PersistentVolumeClaimTemplateFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1PersistentVolumeClaimTemplate build() {
+  public V1PersistentVolumeClaimTemplate build() {
     V1PersistentVolumeClaimTemplate buildable = new V1PersistentVolumeClaimTemplate();
     buildable.setMetadata(fluent.getMetadata());
     buildable.setSpec(fluent.getSpec());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1PersistentVolumeClaimTemplateBuilder that = (V1PersistentVolumeClaimTemplateBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

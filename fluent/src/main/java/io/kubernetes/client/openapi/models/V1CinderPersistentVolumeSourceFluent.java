@@ -12,71 +12,62 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+
 /** Generated */
 public interface V1CinderPersistentVolumeSourceFluent<
-        A extends io.kubernetes.client.openapi.models.V1CinderPersistentVolumeSourceFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getFsType();
+        A extends V1CinderPersistentVolumeSourceFluent<A>>
+    extends Fluent<A> {
+  public String getFsType();
 
-  public A withFsType(java.lang.String fsType);
+  public A withFsType(String fsType);
 
-  public java.lang.Boolean hasFsType();
+  public Boolean hasFsType();
 
-  /** Method is deprecated. use withFsType instead. */
-  @java.lang.Deprecated
-  public A withNewFsType(java.lang.String original);
+  public Boolean getReadOnly();
 
-  public java.lang.Boolean getReadOnly();
+  public A withReadOnly(Boolean readOnly);
 
-  public A withReadOnly(java.lang.Boolean readOnly);
-
-  public java.lang.Boolean hasReadOnly();
+  public Boolean hasReadOnly();
 
   /**
    * This method has been deprecated, please use method buildSecretRef instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1SecretReference getSecretRef();
+  @Deprecated
+  public V1SecretReference getSecretRef();
 
-  public io.kubernetes.client.openapi.models.V1SecretReference buildSecretRef();
+  public V1SecretReference buildSecretRef();
 
-  public A withSecretRef(io.kubernetes.client.openapi.models.V1SecretReference secretRef);
+  public A withSecretRef(V1SecretReference secretRef);
 
-  public java.lang.Boolean hasSecretRef();
+  public Boolean hasSecretRef();
 
-  public io.kubernetes.client.openapi.models.V1CinderPersistentVolumeSourceFluent.SecretRefNested<A>
-      withNewSecretRef();
+  public V1CinderPersistentVolumeSourceFluent.SecretRefNested<A> withNewSecretRef();
 
-  public io.kubernetes.client.openapi.models.V1CinderPersistentVolumeSourceFluent.SecretRefNested<A>
-      withNewSecretRefLike(io.kubernetes.client.openapi.models.V1SecretReference item);
+  public V1CinderPersistentVolumeSourceFluent.SecretRefNested<A> withNewSecretRefLike(
+      V1SecretReference item);
 
-  public io.kubernetes.client.openapi.models.V1CinderPersistentVolumeSourceFluent.SecretRefNested<A>
-      editSecretRef();
+  public V1CinderPersistentVolumeSourceFluent.SecretRefNested<A> editSecretRef();
 
-  public io.kubernetes.client.openapi.models.V1CinderPersistentVolumeSourceFluent.SecretRefNested<A>
-      editOrNewSecretRef();
+  public V1CinderPersistentVolumeSourceFluent.SecretRefNested<A> editOrNewSecretRef();
 
-  public io.kubernetes.client.openapi.models.V1CinderPersistentVolumeSourceFluent.SecretRefNested<A>
-      editOrNewSecretRefLike(io.kubernetes.client.openapi.models.V1SecretReference item);
+  public V1CinderPersistentVolumeSourceFluent.SecretRefNested<A> editOrNewSecretRefLike(
+      V1SecretReference item);
 
-  public java.lang.String getVolumeID();
+  public String getVolumeID();
 
-  public A withVolumeID(java.lang.String volumeID);
+  public A withVolumeID(String volumeID);
 
-  public java.lang.Boolean hasVolumeID();
+  public Boolean hasVolumeID();
 
-  /** Method is deprecated. use withVolumeID instead. */
-  @java.lang.Deprecated
-  public A withNewVolumeID(java.lang.String original);
+  public A withReadOnly();
 
   public interface SecretRefNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1SecretReferenceFluent<
-              io.kubernetes.client.openapi.models.V1CinderPersistentVolumeSourceFluent
-                      .SecretRefNested<
-                  N>> {
+      extends Nested<N>,
+          V1SecretReferenceFluent<V1CinderPersistentVolumeSourceFluent.SecretRefNested<N>> {
     public N and();
 
     public N endSecretRef();

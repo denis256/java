@@ -12,55 +12,50 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1NodeAddressFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1NodeAddressFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1NodeAddressFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1NodeAddressFluentImpl<A extends V1NodeAddressFluent<A>> extends BaseFluent<A>
+    implements V1NodeAddressFluent<A> {
   public V1NodeAddressFluentImpl() {}
 
-  public V1NodeAddressFluentImpl(io.kubernetes.client.openapi.models.V1NodeAddress instance) {
+  public V1NodeAddressFluentImpl(V1NodeAddress instance) {
     this.withAddress(instance.getAddress());
 
     this.withType(instance.getType());
   }
 
-  private java.lang.String address;
-  private io.kubernetes.client.openapi.models.V1NodeAddress.TypeEnum type;
+  private String address;
+  private String type;
 
-  public java.lang.String getAddress() {
+  public String getAddress() {
     return this.address;
   }
 
-  public A withAddress(java.lang.String address) {
+  public A withAddress(String address) {
     this.address = address;
     return (A) this;
   }
 
-  public java.lang.Boolean hasAddress() {
+  public Boolean hasAddress() {
     return this.address != null;
   }
 
-  /** Method is deprecated. use withAddress instead. */
-  @java.lang.Deprecated
-  public A withNewAddress(java.lang.String original) {
-    return (A) withAddress(new String(original));
-  }
-
-  public io.kubernetes.client.openapi.models.V1NodeAddress.TypeEnum getType() {
+  public String getType() {
     return this.type;
   }
 
-  public A withType(io.kubernetes.client.openapi.models.V1NodeAddress.TypeEnum type) {
+  public A withType(String type) {
     this.type = type;
     return (A) this;
   }
 
-  public java.lang.Boolean hasType() {
+  public Boolean hasType() {
     return this.type != null;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1NodeAddressFluentImpl that = (V1NodeAddressFluentImpl) o;
@@ -71,5 +66,20 @@ public class V1NodeAddressFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(address, type, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (address != null) {
+      sb.append("address:");
+      sb.append(address + ",");
+    }
+    if (type != null) {
+      sb.append("type:");
+      sb.append(type);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

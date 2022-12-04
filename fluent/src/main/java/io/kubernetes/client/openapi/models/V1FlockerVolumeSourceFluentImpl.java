@@ -12,62 +12,50 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1FlockerVolumeSourceFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1FlockerVolumeSourceFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1FlockerVolumeSourceFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1FlockerVolumeSourceFluentImpl<A extends V1FlockerVolumeSourceFluent<A>>
+    extends BaseFluent<A> implements V1FlockerVolumeSourceFluent<A> {
   public V1FlockerVolumeSourceFluentImpl() {}
 
-  public V1FlockerVolumeSourceFluentImpl(
-      io.kubernetes.client.openapi.models.V1FlockerVolumeSource instance) {
+  public V1FlockerVolumeSourceFluentImpl(V1FlockerVolumeSource instance) {
     this.withDatasetName(instance.getDatasetName());
 
     this.withDatasetUUID(instance.getDatasetUUID());
   }
 
-  private java.lang.String datasetName;
-  private java.lang.String datasetUUID;
+  private String datasetName;
+  private String datasetUUID;
 
-  public java.lang.String getDatasetName() {
+  public String getDatasetName() {
     return this.datasetName;
   }
 
-  public A withDatasetName(java.lang.String datasetName) {
+  public A withDatasetName(String datasetName) {
     this.datasetName = datasetName;
     return (A) this;
   }
 
-  public java.lang.Boolean hasDatasetName() {
+  public Boolean hasDatasetName() {
     return this.datasetName != null;
   }
 
-  /** Method is deprecated. use withDatasetName instead. */
-  @java.lang.Deprecated
-  public A withNewDatasetName(java.lang.String original) {
-    return (A) withDatasetName(new String(original));
-  }
-
-  public java.lang.String getDatasetUUID() {
+  public String getDatasetUUID() {
     return this.datasetUUID;
   }
 
-  public A withDatasetUUID(java.lang.String datasetUUID) {
+  public A withDatasetUUID(String datasetUUID) {
     this.datasetUUID = datasetUUID;
     return (A) this;
   }
 
-  public java.lang.Boolean hasDatasetUUID() {
+  public Boolean hasDatasetUUID() {
     return this.datasetUUID != null;
   }
 
-  /** Method is deprecated. use withDatasetUUID instead. */
-  @java.lang.Deprecated
-  public A withNewDatasetUUID(java.lang.String original) {
-    return (A) withDatasetUUID(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1FlockerVolumeSourceFluentImpl that = (V1FlockerVolumeSourceFluentImpl) o;
@@ -80,5 +68,20 @@ public class V1FlockerVolumeSourceFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(datasetName, datasetUUID, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (datasetName != null) {
+      sb.append("datasetName:");
+      sb.append(datasetName + ",");
+    }
+    if (datasetUUID != null) {
+      sb.append("datasetUUID:");
+      sb.append(datasetUUID);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

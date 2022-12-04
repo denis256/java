@@ -1,5 +1,5 @@
 /*
-Copyright 2021 The Kubernetes Authors.
+Copyright 2022 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -26,7 +26,7 @@ import java.util.Objects;
         "SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace")
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    date = "2021-12-10T19:11:23.904Z[Etc/UTC]")
+    date = "2022-09-15T17:00:37.921Z[Etc/UTC]")
 public class V1SecretReference {
   public static final String SERIALIZED_NAME_NAME = "name";
 
@@ -45,12 +45,12 @@ public class V1SecretReference {
   }
 
   /**
-   * Name is unique within a namespace to reference a secret resource.
+   * name is unique within a namespace to reference a secret resource.
    *
    * @return name
    */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Name is unique within a namespace to reference a secret resource.")
+  @ApiModelProperty(value = "name is unique within a namespace to reference a secret resource.")
   public String getName() {
     return name;
   }
@@ -66,13 +66,13 @@ public class V1SecretReference {
   }
 
   /**
-   * Namespace defines the space within which the secret name must be unique.
+   * namespace defines the space within which the secret name must be unique.
    *
    * @return namespace
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
-      value = "Namespace defines the space within which the secret name must be unique.")
+      value = "namespace defines the space within which the secret name must be unique.")
   public String getNamespace() {
     return namespace;
   }

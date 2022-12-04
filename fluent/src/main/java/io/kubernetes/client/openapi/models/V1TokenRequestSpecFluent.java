@@ -12,85 +12,79 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-/** Generated */
-public interface V1TokenRequestSpecFluent<
-        A extends io.kubernetes.client.openapi.models.V1TokenRequestSpecFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public A addToAudiences(java.lang.Integer index, java.lang.String item);
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
 
-  public A setToAudiences(java.lang.Integer index, java.lang.String item);
+/** Generated */
+public interface V1TokenRequestSpecFluent<A extends V1TokenRequestSpecFluent<A>> extends Fluent<A> {
+  public A addToAudiences(Integer index, String item);
+
+  public A setToAudiences(Integer index, String item);
 
   public A addToAudiences(java.lang.String... items);
 
-  public A addAllToAudiences(java.util.Collection<java.lang.String> items);
+  public A addAllToAudiences(Collection<String> items);
 
   public A removeFromAudiences(java.lang.String... items);
 
-  public A removeAllFromAudiences(java.util.Collection<java.lang.String> items);
+  public A removeAllFromAudiences(Collection<String> items);
 
-  public java.util.List<java.lang.String> getAudiences();
+  public List<String> getAudiences();
 
-  public java.lang.String getAudience(java.lang.Integer index);
+  public String getAudience(Integer index);
 
-  public java.lang.String getFirstAudience();
+  public String getFirstAudience();
 
-  public java.lang.String getLastAudience();
+  public String getLastAudience();
 
-  public java.lang.String getMatchingAudience(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public String getMatchingAudience(Predicate<String> predicate);
 
-  public java.lang.Boolean hasMatchingAudience(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public Boolean hasMatchingAudience(Predicate<String> predicate);
 
-  public A withAudiences(java.util.List<java.lang.String> audiences);
+  public A withAudiences(List<String> audiences);
 
   public A withAudiences(java.lang.String... audiences);
 
-  public java.lang.Boolean hasAudiences();
-
-  public A addNewAudience(java.lang.String original);
+  public Boolean hasAudiences();
 
   /**
    * This method has been deprecated, please use method buildBoundObjectRef instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1BoundObjectReference getBoundObjectRef();
+  @Deprecated
+  public V1BoundObjectReference getBoundObjectRef();
 
-  public io.kubernetes.client.openapi.models.V1BoundObjectReference buildBoundObjectRef();
+  public V1BoundObjectReference buildBoundObjectRef();
 
-  public A withBoundObjectRef(
-      io.kubernetes.client.openapi.models.V1BoundObjectReference boundObjectRef);
+  public A withBoundObjectRef(V1BoundObjectReference boundObjectRef);
 
-  public java.lang.Boolean hasBoundObjectRef();
+  public Boolean hasBoundObjectRef();
 
-  public io.kubernetes.client.openapi.models.V1TokenRequestSpecFluent.BoundObjectRefNested<A>
-      withNewBoundObjectRef();
+  public V1TokenRequestSpecFluent.BoundObjectRefNested<A> withNewBoundObjectRef();
 
-  public io.kubernetes.client.openapi.models.V1TokenRequestSpecFluent.BoundObjectRefNested<A>
-      withNewBoundObjectRefLike(io.kubernetes.client.openapi.models.V1BoundObjectReference item);
+  public V1TokenRequestSpecFluent.BoundObjectRefNested<A> withNewBoundObjectRefLike(
+      V1BoundObjectReference item);
 
-  public io.kubernetes.client.openapi.models.V1TokenRequestSpecFluent.BoundObjectRefNested<A>
-      editBoundObjectRef();
+  public V1TokenRequestSpecFluent.BoundObjectRefNested<A> editBoundObjectRef();
 
-  public io.kubernetes.client.openapi.models.V1TokenRequestSpecFluent.BoundObjectRefNested<A>
-      editOrNewBoundObjectRef();
+  public V1TokenRequestSpecFluent.BoundObjectRefNested<A> editOrNewBoundObjectRef();
 
-  public io.kubernetes.client.openapi.models.V1TokenRequestSpecFluent.BoundObjectRefNested<A>
-      editOrNewBoundObjectRefLike(io.kubernetes.client.openapi.models.V1BoundObjectReference item);
+  public V1TokenRequestSpecFluent.BoundObjectRefNested<A> editOrNewBoundObjectRefLike(
+      V1BoundObjectReference item);
 
-  public java.lang.Long getExpirationSeconds();
+  public Long getExpirationSeconds();
 
-  public A withExpirationSeconds(java.lang.Long expirationSeconds);
+  public A withExpirationSeconds(Long expirationSeconds);
 
-  public java.lang.Boolean hasExpirationSeconds();
+  public Boolean hasExpirationSeconds();
 
   public interface BoundObjectRefNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1BoundObjectReferenceFluent<
-              io.kubernetes.client.openapi.models.V1TokenRequestSpecFluent.BoundObjectRefNested<
-                  N>> {
+      extends Nested<N>,
+          V1BoundObjectReferenceFluent<V1TokenRequestSpecFluent.BoundObjectRefNested<N>> {
     public N and();
 
     public N endBoundObjectRef();

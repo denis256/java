@@ -12,33 +12,28 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
-public interface V1GlusterfsVolumeSourceFluent<
-        A extends io.kubernetes.client.openapi.models.V1GlusterfsVolumeSourceFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getEndpoints();
+public interface V1GlusterfsVolumeSourceFluent<A extends V1GlusterfsVolumeSourceFluent<A>>
+    extends Fluent<A> {
+  public String getEndpoints();
 
-  public A withEndpoints(java.lang.String endpoints);
+  public A withEndpoints(String endpoints);
 
-  public java.lang.Boolean hasEndpoints();
+  public Boolean hasEndpoints();
 
-  /** Method is deprecated. use withEndpoints instead. */
-  @java.lang.Deprecated
-  public A withNewEndpoints(java.lang.String original);
+  public String getPath();
 
-  public java.lang.String getPath();
+  public A withPath(String path);
 
-  public A withPath(java.lang.String path);
+  public Boolean hasPath();
 
-  public java.lang.Boolean hasPath();
+  public Boolean getReadOnly();
 
-  /** Method is deprecated. use withPath instead. */
-  @java.lang.Deprecated
-  public A withNewPath(java.lang.String original);
+  public A withReadOnly(Boolean readOnly);
 
-  public java.lang.Boolean getReadOnly();
+  public Boolean hasReadOnly();
 
-  public A withReadOnly(java.lang.Boolean readOnly);
-
-  public java.lang.Boolean hasReadOnly();
+  public A withReadOnly();
 }

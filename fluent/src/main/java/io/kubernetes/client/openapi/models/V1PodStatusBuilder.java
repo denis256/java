@@ -12,40 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1PodStatusBuilder
-    extends io.kubernetes.client.openapi.models.V1PodStatusFluentImpl<
-        io.kubernetes.client.openapi.models.V1PodStatusBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1PodStatus,
-        io.kubernetes.client.openapi.models.V1PodStatusBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1PodStatusBuilder extends V1PodStatusFluentImpl<V1PodStatusBuilder>
+    implements VisitableBuilder<V1PodStatus, V1PodStatusBuilder> {
   public V1PodStatusBuilder() {
     this(false);
   }
 
-  public V1PodStatusBuilder(java.lang.Boolean validationEnabled) {
+  public V1PodStatusBuilder(Boolean validationEnabled) {
     this(new V1PodStatus(), validationEnabled);
   }
 
-  public V1PodStatusBuilder(io.kubernetes.client.openapi.models.V1PodStatusFluent<?> fluent) {
+  public V1PodStatusBuilder(V1PodStatusFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1PodStatusBuilder(
-      io.kubernetes.client.openapi.models.V1PodStatusFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1PodStatusBuilder(V1PodStatusFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1PodStatus(), validationEnabled);
   }
 
-  public V1PodStatusBuilder(
-      io.kubernetes.client.openapi.models.V1PodStatusFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1PodStatus instance) {
+  public V1PodStatusBuilder(V1PodStatusFluent<?> fluent, V1PodStatus instance) {
     this(fluent, instance, false);
   }
 
   public V1PodStatusBuilder(
-      io.kubernetes.client.openapi.models.V1PodStatusFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1PodStatus instance,
-      java.lang.Boolean validationEnabled) {
+      V1PodStatusFluent<?> fluent, V1PodStatus instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withConditions(instance.getConditions());
 
@@ -76,13 +68,11 @@ public class V1PodStatusBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1PodStatusBuilder(io.kubernetes.client.openapi.models.V1PodStatus instance) {
+  public V1PodStatusBuilder(V1PodStatus instance) {
     this(instance, false);
   }
 
-  public V1PodStatusBuilder(
-      io.kubernetes.client.openapi.models.V1PodStatus instance,
-      java.lang.Boolean validationEnabled) {
+  public V1PodStatusBuilder(V1PodStatus instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withConditions(instance.getConditions());
 
@@ -113,10 +103,10 @@ public class V1PodStatusBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1PodStatusFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1PodStatusFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1PodStatus build() {
+  public V1PodStatus build() {
     V1PodStatus buildable = new V1PodStatus();
     buildable.setConditions(fluent.getConditions());
     buildable.setContainerStatuses(fluent.getContainerStatuses());
@@ -132,24 +122,5 @@ public class V1PodStatusBuilder
     buildable.setReason(fluent.getReason());
     buildable.setStartTime(fluent.getStartTime());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1PodStatusBuilder that = (V1PodStatusBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

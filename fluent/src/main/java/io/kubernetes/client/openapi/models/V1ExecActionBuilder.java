@@ -12,84 +12,55 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1ExecActionBuilder
-    extends io.kubernetes.client.openapi.models.V1ExecActionFluentImpl<
-        io.kubernetes.client.openapi.models.V1ExecActionBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1ExecAction,
-        io.kubernetes.client.openapi.models.V1ExecActionBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1ExecActionBuilder extends V1ExecActionFluentImpl<V1ExecActionBuilder>
+    implements VisitableBuilder<V1ExecAction, V1ExecActionBuilder> {
   public V1ExecActionBuilder() {
     this(false);
   }
 
-  public V1ExecActionBuilder(java.lang.Boolean validationEnabled) {
+  public V1ExecActionBuilder(Boolean validationEnabled) {
     this(new V1ExecAction(), validationEnabled);
   }
 
-  public V1ExecActionBuilder(io.kubernetes.client.openapi.models.V1ExecActionFluent<?> fluent) {
+  public V1ExecActionBuilder(V1ExecActionFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1ExecActionBuilder(
-      io.kubernetes.client.openapi.models.V1ExecActionFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1ExecActionBuilder(V1ExecActionFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1ExecAction(), validationEnabled);
   }
 
-  public V1ExecActionBuilder(
-      io.kubernetes.client.openapi.models.V1ExecActionFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ExecAction instance) {
+  public V1ExecActionBuilder(V1ExecActionFluent<?> fluent, V1ExecAction instance) {
     this(fluent, instance, false);
   }
 
   public V1ExecActionBuilder(
-      io.kubernetes.client.openapi.models.V1ExecActionFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ExecAction instance,
-      java.lang.Boolean validationEnabled) {
+      V1ExecActionFluent<?> fluent, V1ExecAction instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withCommand(instance.getCommand());
 
     this.validationEnabled = validationEnabled;
   }
 
-  public V1ExecActionBuilder(io.kubernetes.client.openapi.models.V1ExecAction instance) {
+  public V1ExecActionBuilder(V1ExecAction instance) {
     this(instance, false);
   }
 
-  public V1ExecActionBuilder(
-      io.kubernetes.client.openapi.models.V1ExecAction instance,
-      java.lang.Boolean validationEnabled) {
+  public V1ExecActionBuilder(V1ExecAction instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withCommand(instance.getCommand());
 
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1ExecActionFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1ExecActionFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1ExecAction build() {
+  public V1ExecAction build() {
     V1ExecAction buildable = new V1ExecAction();
     buildable.setCommand(fluent.getCommand());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1ExecActionBuilder that = (V1ExecActionBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

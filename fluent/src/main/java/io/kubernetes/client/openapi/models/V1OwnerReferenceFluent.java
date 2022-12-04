@@ -12,59 +12,47 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
-public interface V1OwnerReferenceFluent<
-        A extends io.kubernetes.client.openapi.models.V1OwnerReferenceFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getApiVersion();
+public interface V1OwnerReferenceFluent<A extends V1OwnerReferenceFluent<A>> extends Fluent<A> {
+  public String getApiVersion();
 
-  public A withApiVersion(java.lang.String apiVersion);
+  public A withApiVersion(String apiVersion);
 
-  public java.lang.Boolean hasApiVersion();
+  public Boolean hasApiVersion();
 
-  /** Method is deprecated. use withApiVersion instead. */
-  @java.lang.Deprecated
-  public A withNewApiVersion(java.lang.String original);
+  public Boolean getBlockOwnerDeletion();
 
-  public java.lang.Boolean getBlockOwnerDeletion();
+  public A withBlockOwnerDeletion(Boolean blockOwnerDeletion);
 
-  public A withBlockOwnerDeletion(java.lang.Boolean blockOwnerDeletion);
+  public Boolean hasBlockOwnerDeletion();
 
-  public java.lang.Boolean hasBlockOwnerDeletion();
+  public Boolean getController();
 
-  public java.lang.Boolean getController();
+  public A withController(Boolean controller);
 
-  public A withController(java.lang.Boolean controller);
+  public Boolean hasController();
 
-  public java.lang.Boolean hasController();
+  public String getKind();
 
-  public java.lang.String getKind();
+  public A withKind(String kind);
 
-  public A withKind(java.lang.String kind);
+  public Boolean hasKind();
 
-  public java.lang.Boolean hasKind();
+  public String getName();
 
-  /** Method is deprecated. use withKind instead. */
-  @java.lang.Deprecated
-  public A withNewKind(java.lang.String original);
+  public A withName(String name);
 
-  public java.lang.String getName();
+  public Boolean hasName();
 
-  public A withName(java.lang.String name);
+  public String getUid();
 
-  public java.lang.Boolean hasName();
+  public A withUid(String uid);
 
-  /** Method is deprecated. use withName instead. */
-  @java.lang.Deprecated
-  public A withNewName(java.lang.String original);
+  public Boolean hasUid();
 
-  public java.lang.String getUid();
+  public A withBlockOwnerDeletion();
 
-  public A withUid(java.lang.String uid);
-
-  public java.lang.Boolean hasUid();
-
-  /** Method is deprecated. use withUid instead. */
-  @java.lang.Deprecated
-  public A withNewUid(java.lang.String original);
+  public A withController();
 }

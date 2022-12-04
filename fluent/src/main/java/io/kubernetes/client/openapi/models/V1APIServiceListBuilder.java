@@ -12,41 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1APIServiceListBuilder
-    extends io.kubernetes.client.openapi.models.V1APIServiceListFluentImpl<
-        io.kubernetes.client.openapi.models.V1APIServiceListBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1APIServiceList,
-        io.kubernetes.client.openapi.models.V1APIServiceListBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1APIServiceListBuilder extends V1APIServiceListFluentImpl<V1APIServiceListBuilder>
+    implements VisitableBuilder<V1APIServiceList, V1APIServiceListBuilder> {
   public V1APIServiceListBuilder() {
     this(false);
   }
 
-  public V1APIServiceListBuilder(java.lang.Boolean validationEnabled) {
+  public V1APIServiceListBuilder(Boolean validationEnabled) {
     this(new V1APIServiceList(), validationEnabled);
   }
 
-  public V1APIServiceListBuilder(
-      io.kubernetes.client.openapi.models.V1APIServiceListFluent<?> fluent) {
+  public V1APIServiceListBuilder(V1APIServiceListFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1APIServiceListBuilder(
-      io.kubernetes.client.openapi.models.V1APIServiceListFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1APIServiceListBuilder(V1APIServiceListFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1APIServiceList(), validationEnabled);
   }
 
-  public V1APIServiceListBuilder(
-      io.kubernetes.client.openapi.models.V1APIServiceListFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1APIServiceList instance) {
+  public V1APIServiceListBuilder(V1APIServiceListFluent<?> fluent, V1APIServiceList instance) {
     this(fluent, instance, false);
   }
 
   public V1APIServiceListBuilder(
-      io.kubernetes.client.openapi.models.V1APIServiceListFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1APIServiceList instance,
-      java.lang.Boolean validationEnabled) {
+      V1APIServiceListFluent<?> fluent, V1APIServiceList instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withApiVersion(instance.getApiVersion());
 
@@ -59,13 +50,11 @@ public class V1APIServiceListBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1APIServiceListBuilder(io.kubernetes.client.openapi.models.V1APIServiceList instance) {
+  public V1APIServiceListBuilder(V1APIServiceList instance) {
     this(instance, false);
   }
 
-  public V1APIServiceListBuilder(
-      io.kubernetes.client.openapi.models.V1APIServiceList instance,
-      java.lang.Boolean validationEnabled) {
+  public V1APIServiceListBuilder(V1APIServiceList instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withApiVersion(instance.getApiVersion());
 
@@ -78,34 +67,15 @@ public class V1APIServiceListBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1APIServiceListFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1APIServiceListFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1APIServiceList build() {
+  public V1APIServiceList build() {
     V1APIServiceList buildable = new V1APIServiceList();
     buildable.setApiVersion(fluent.getApiVersion());
     buildable.setItems(fluent.getItems());
     buildable.setKind(fluent.getKind());
     buildable.setMetadata(fluent.getMetadata());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1APIServiceListBuilder that = (V1APIServiceListBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

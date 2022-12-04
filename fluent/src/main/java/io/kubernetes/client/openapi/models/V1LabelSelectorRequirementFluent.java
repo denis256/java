@@ -12,61 +12,53 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
+
 /** Generated */
-public interface V1LabelSelectorRequirementFluent<
-        A extends io.kubernetes.client.openapi.models.V1LabelSelectorRequirementFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getKey();
+public interface V1LabelSelectorRequirementFluent<A extends V1LabelSelectorRequirementFluent<A>>
+    extends Fluent<A> {
+  public String getKey();
 
-  public A withKey(java.lang.String key);
+  public A withKey(String key);
 
-  public java.lang.Boolean hasKey();
+  public Boolean hasKey();
 
-  /** Method is deprecated. use withKey instead. */
-  @java.lang.Deprecated
-  public A withNewKey(java.lang.String original);
+  public String getOperator();
 
-  public java.lang.String getOperator();
+  public A withOperator(String operator);
 
-  public A withOperator(java.lang.String operator);
+  public Boolean hasOperator();
 
-  public java.lang.Boolean hasOperator();
+  public A addToValues(Integer index, String item);
 
-  /** Method is deprecated. use withOperator instead. */
-  @java.lang.Deprecated
-  public A withNewOperator(java.lang.String original);
-
-  public A addToValues(java.lang.Integer index, java.lang.String item);
-
-  public A setToValues(java.lang.Integer index, java.lang.String item);
+  public A setToValues(Integer index, String item);
 
   public A addToValues(java.lang.String... items);
 
-  public A addAllToValues(java.util.Collection<java.lang.String> items);
+  public A addAllToValues(Collection<String> items);
 
   public A removeFromValues(java.lang.String... items);
 
-  public A removeAllFromValues(java.util.Collection<java.lang.String> items);
+  public A removeAllFromValues(Collection<String> items);
 
-  public java.util.List<java.lang.String> getValues();
+  public List<String> getValues();
 
-  public java.lang.String getValue(java.lang.Integer index);
+  public String getValue(Integer index);
 
-  public java.lang.String getFirstValue();
+  public String getFirstValue();
 
-  public java.lang.String getLastValue();
+  public String getLastValue();
 
-  public java.lang.String getMatchingValue(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public String getMatchingValue(Predicate<String> predicate);
 
-  public java.lang.Boolean hasMatchingValue(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public Boolean hasMatchingValue(Predicate<String> predicate);
 
-  public A withValues(java.util.List<java.lang.String> values);
+  public A withValues(List<String> values);
 
   public A withValues(java.lang.String... values);
 
-  public java.lang.Boolean hasValues();
-
-  public A addNewValue(java.lang.String original);
+  public Boolean hasValues();
 }

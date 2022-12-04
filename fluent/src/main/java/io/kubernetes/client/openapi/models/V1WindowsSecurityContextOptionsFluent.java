@@ -12,43 +12,35 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
 public interface V1WindowsSecurityContextOptionsFluent<
-        A extends io.kubernetes.client.openapi.models.V1WindowsSecurityContextOptionsFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getGmsaCredentialSpec();
+        A extends V1WindowsSecurityContextOptionsFluent<A>>
+    extends Fluent<A> {
+  public String getGmsaCredentialSpec();
 
-  public A withGmsaCredentialSpec(java.lang.String gmsaCredentialSpec);
+  public A withGmsaCredentialSpec(String gmsaCredentialSpec);
 
-  public java.lang.Boolean hasGmsaCredentialSpec();
+  public Boolean hasGmsaCredentialSpec();
 
-  /** Method is deprecated. use withGmsaCredentialSpec instead. */
-  @java.lang.Deprecated
-  public A withNewGmsaCredentialSpec(java.lang.String original);
+  public String getGmsaCredentialSpecName();
 
-  public java.lang.String getGmsaCredentialSpecName();
+  public A withGmsaCredentialSpecName(String gmsaCredentialSpecName);
 
-  public A withGmsaCredentialSpecName(java.lang.String gmsaCredentialSpecName);
+  public Boolean hasGmsaCredentialSpecName();
 
-  public java.lang.Boolean hasGmsaCredentialSpecName();
+  public Boolean getHostProcess();
 
-  /** Method is deprecated. use withGmsaCredentialSpecName instead. */
-  @java.lang.Deprecated
-  public A withNewGmsaCredentialSpecName(java.lang.String original);
+  public A withHostProcess(Boolean hostProcess);
 
-  public java.lang.Boolean getHostProcess();
+  public Boolean hasHostProcess();
 
-  public A withHostProcess(java.lang.Boolean hostProcess);
+  public String getRunAsUserName();
 
-  public java.lang.Boolean hasHostProcess();
+  public A withRunAsUserName(String runAsUserName);
 
-  public java.lang.String getRunAsUserName();
+  public Boolean hasRunAsUserName();
 
-  public A withRunAsUserName(java.lang.String runAsUserName);
-
-  public java.lang.Boolean hasRunAsUserName();
-
-  /** Method is deprecated. use withRunAsUserName instead. */
-  @java.lang.Deprecated
-  public A withNewRunAsUserName(java.lang.String original);
+  public A withHostProcess();
 }

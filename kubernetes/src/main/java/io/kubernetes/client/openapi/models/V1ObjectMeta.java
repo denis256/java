@@ -1,5 +1,5 @@
 /*
-Copyright 2021 The Kubernetes Authors.
+Copyright 2022 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -31,17 +31,12 @@ import java.util.Objects;
         "ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.")
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    date = "2021-12-10T19:11:23.904Z[Etc/UTC]")
+    date = "2022-09-15T17:00:37.921Z[Etc/UTC]")
 public class V1ObjectMeta {
   public static final String SERIALIZED_NAME_ANNOTATIONS = "annotations";
 
   @SerializedName(SERIALIZED_NAME_ANNOTATIONS)
   private Map<String, String> annotations = null;
-
-  public static final String SERIALIZED_NAME_CLUSTER_NAME = "clusterName";
-
-  @SerializedName(SERIALIZED_NAME_CLUSTER_NAME)
-  private String clusterName;
 
   public static final String SERIALIZED_NAME_CREATION_TIMESTAMP = "creationTimestamp";
 
@@ -145,31 +140,6 @@ public class V1ObjectMeta {
 
   public void setAnnotations(Map<String, String> annotations) {
     this.annotations = annotations;
-  }
-
-  public V1ObjectMeta clusterName(String clusterName) {
-
-    this.clusterName = clusterName;
-    return this;
-  }
-
-  /**
-   * The name of the cluster which the object belongs to. This is used to distinguish resources with
-   * same name and namespace in different clusters. This field is not set anywhere right now and
-   * apiserver is going to ignore it if set in create or update request.
-   *
-   * @return clusterName
-   */
-  @javax.annotation.Nullable
-  @ApiModelProperty(
-      value =
-          "The name of the cluster which the object belongs to. This is used to distinguish resources with same name and namespace in different clusters. This field is not set anywhere right now and apiserver is going to ignore it if set in create or update request.")
-  public String getClusterName() {
-    return clusterName;
-  }
-
-  public void setClusterName(String clusterName) {
-    this.clusterName = clusterName;
   }
 
   public V1ObjectMeta creationTimestamp(OffsetDateTime creationTimestamp) {
@@ -312,10 +282,8 @@ public class V1ObjectMeta {
    * be different than the name passed. This value will also be combined with a unique suffix. The
    * provided value has the same validation rules as the Name field, and may be truncated by the
    * length of the suffix required to make the value unique on the server. If this field is
-   * specified and the generated name exists, the server will NOT return a 409 - instead, it will
-   * either return 201 Created or 500 with Reason ServerTimeout indicating a unique name could not
-   * be found in the time allotted, and the client should retry (optionally after the time indicated
-   * in the Retry-After header). Applied only if Name is not specified. More info:
+   * specified and the generated name exists, the server will return a 409. Applied only if Name is
+   * not specified. More info:
    * https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotency
    *
    * @return generateName
@@ -323,7 +291,7 @@ public class V1ObjectMeta {
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "GenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server.  If this field is specified and the generated name exists, the server will NOT return a 409 - instead, it will either return 201 Created or 500 with Reason ServerTimeout indicating a unique name could not be found in the time allotted, and the client should retry (optionally after the time indicated in the Retry-After header).  Applied only if Name is not specified. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotency")
+          "GenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server.  If this field is specified and the generated name exists, the server will return a 409.  Applied only if Name is not specified. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotency")
   public String getGenerateName() {
     return generateName;
   }
@@ -547,16 +515,14 @@ public class V1ObjectMeta {
   }
 
   /**
-   * SelfLink is a URL representing this object. Populated by the system. Read-only. DEPRECATED
-   * Kubernetes will stop propagating this field in 1.20 release and the field is planned to be
-   * removed in 1.21 release.
+   * Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.
    *
    * @return selfLink
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "SelfLink is a URL representing this object. Populated by the system. Read-only.  DEPRECATED Kubernetes will stop propagating this field in 1.20 release and the field is planned to be removed in 1.21 release.")
+          "Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.")
   public String getSelfLink() {
     return selfLink;
   }
@@ -601,7 +567,6 @@ public class V1ObjectMeta {
     }
     V1ObjectMeta v1ObjectMeta = (V1ObjectMeta) o;
     return Objects.equals(this.annotations, v1ObjectMeta.annotations)
-        && Objects.equals(this.clusterName, v1ObjectMeta.clusterName)
         && Objects.equals(this.creationTimestamp, v1ObjectMeta.creationTimestamp)
         && Objects.equals(this.deletionGracePeriodSeconds, v1ObjectMeta.deletionGracePeriodSeconds)
         && Objects.equals(this.deletionTimestamp, v1ObjectMeta.deletionTimestamp)
@@ -622,7 +587,6 @@ public class V1ObjectMeta {
   public int hashCode() {
     return Objects.hash(
         annotations,
-        clusterName,
         creationTimestamp,
         deletionGracePeriodSeconds,
         deletionTimestamp,
@@ -644,7 +608,6 @@ public class V1ObjectMeta {
     StringBuilder sb = new StringBuilder();
     sb.append("class V1ObjectMeta {\n");
     sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
-    sb.append("    clusterName: ").append(toIndentedString(clusterName)).append("\n");
     sb.append("    creationTimestamp: ").append(toIndentedString(creationTimestamp)).append("\n");
     sb.append("    deletionGracePeriodSeconds: ")
         .append(toIndentedString(deletionGracePeriodSeconds))

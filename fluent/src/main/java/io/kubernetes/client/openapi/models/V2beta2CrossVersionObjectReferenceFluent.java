@@ -12,37 +12,27 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
 public interface V2beta2CrossVersionObjectReferenceFluent<
-        A extends io.kubernetes.client.openapi.models.V2beta2CrossVersionObjectReferenceFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getApiVersion();
+        A extends V2beta2CrossVersionObjectReferenceFluent<A>>
+    extends Fluent<A> {
+  public String getApiVersion();
 
-  public A withApiVersion(java.lang.String apiVersion);
+  public A withApiVersion(String apiVersion);
 
-  public java.lang.Boolean hasApiVersion();
+  public Boolean hasApiVersion();
 
-  /** Method is deprecated. use withApiVersion instead. */
-  @java.lang.Deprecated
-  public A withNewApiVersion(java.lang.String original);
+  public String getKind();
 
-  public java.lang.String getKind();
+  public A withKind(String kind);
 
-  public A withKind(java.lang.String kind);
+  public Boolean hasKind();
 
-  public java.lang.Boolean hasKind();
+  public String getName();
 
-  /** Method is deprecated. use withKind instead. */
-  @java.lang.Deprecated
-  public A withNewKind(java.lang.String original);
+  public A withName(String name);
 
-  public java.lang.String getName();
-
-  public A withName(java.lang.String name);
-
-  public java.lang.Boolean hasName();
-
-  /** Method is deprecated. use withName instead. */
-  @java.lang.Deprecated
-  public A withNewName(java.lang.String original);
+  public Boolean hasName();
 }

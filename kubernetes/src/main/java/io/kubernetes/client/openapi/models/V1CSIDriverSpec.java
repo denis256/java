@@ -1,5 +1,5 @@
 /*
-Copyright 2021 The Kubernetes Authors.
+Copyright 2022 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -23,7 +23,7 @@ import java.util.Objects;
 @ApiModel(description = "CSIDriverSpec is the specification of a CSIDriver.")
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    date = "2021-12-10T19:11:23.904Z[Etc/UTC]")
+    date = "2022-09-15T17:00:37.921Z[Etc/UTC]")
 public class V1CSIDriverSpec {
   public static final String SERIALIZED_NAME_ATTACH_REQUIRED = "attachRequired";
 
@@ -44,6 +44,11 @@ public class V1CSIDriverSpec {
 
   @SerializedName(SERIALIZED_NAME_REQUIRES_REPUBLISH)
   private Boolean requiresRepublish;
+
+  public static final String SERIALIZED_NAME_SE_LINUX_MOUNT = "seLinuxMount";
+
+  @SerializedName(SERIALIZED_NAME_SE_LINUX_MOUNT)
+  private Boolean seLinuxMount;
 
   public static final String SERIALIZED_NAME_STORAGE_CAPACITY = "storageCapacity";
 
@@ -185,6 +190,39 @@ public class V1CSIDriverSpec {
     this.requiresRepublish = requiresRepublish;
   }
 
+  public V1CSIDriverSpec seLinuxMount(Boolean seLinuxMount) {
+
+    this.seLinuxMount = seLinuxMount;
+    return this;
+  }
+
+  /**
+   * SELinuxMount specifies if the CSI driver supports \&quot;-o context\&quot; mount option. When
+   * \&quot;true\&quot;, the CSI driver must ensure that all volumes provided by this CSI driver can
+   * be mounted separately with different &#x60;-o context&#x60; options. This is typical for
+   * storage backends that provide volumes as filesystems on block devices or as independent shared
+   * volumes. Kubernetes will call NodeStage / NodePublish with \&quot;-o context&#x3D;xyz\&quot;
+   * mount option when mounting a ReadWriteOncePod volume used in Pod that has explicitly set
+   * SELinux context. In the future, it may be expanded to other volume AccessModes. In any case,
+   * Kubernetes will ensure that the volume is mounted only with a single SELinux context. When
+   * \&quot;false\&quot;, Kubernetes won&#39;t pass any special SELinux mount options to the driver.
+   * This is typical for volumes that represent subdirectories of a bigger shared filesystem.
+   * Default is \&quot;false\&quot;.
+   *
+   * @return seLinuxMount
+   */
+  @javax.annotation.Nullable
+  @ApiModelProperty(
+      value =
+          "SELinuxMount specifies if the CSI driver supports \"-o context\" mount option.  When \"true\", the CSI driver must ensure that all volumes provided by this CSI driver can be mounted separately with different `-o context` options. This is typical for storage backends that provide volumes as filesystems on block devices or as independent shared volumes. Kubernetes will call NodeStage / NodePublish with \"-o context=xyz\" mount option when mounting a ReadWriteOncePod volume used in Pod that has explicitly set SELinux context. In the future, it may be expanded to other volume AccessModes. In any case, Kubernetes will ensure that the volume is mounted only with a single SELinux context.  When \"false\", Kubernetes won't pass any special SELinux mount options to the driver. This is typical for volumes that represent subdirectories of a bigger shared filesystem.  Default is \"false\".")
+  public Boolean getSeLinuxMount() {
+    return seLinuxMount;
+  }
+
+  public void setSeLinuxMount(Boolean seLinuxMount) {
+    this.seLinuxMount = seLinuxMount;
+  }
+
   public V1CSIDriverSpec storageCapacity(Boolean storageCapacity) {
 
     this.storageCapacity = storageCapacity;
@@ -199,15 +237,14 @@ public class V1CSIDriverSpec {
    * the driver deployment has published some suitable CSIStorageCapacity object. Alternatively, the
    * driver can be deployed with the field unset or false and it can be flipped later when storage
    * capacity information has been published. This field was immutable in Kubernetes &lt;&#x3D; 1.22
-   * and now is mutable. This is a beta field and only available when the CSIStorageCapacity feature
-   * is enabled. The default is false.
+   * and now is mutable.
    *
    * @return storageCapacity
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "If set to true, storageCapacity indicates that the CSI volume driver wants pod scheduling to consider the storage capacity that the driver deployment will report by creating CSIStorageCapacity objects with capacity information.  The check can be enabled immediately when deploying a driver. In that case, provisioning new volumes with late binding will pause until the driver deployment has published some suitable CSIStorageCapacity object.  Alternatively, the driver can be deployed with the field unset or false and it can be flipped later when storage capacity information has been published.  This field was immutable in Kubernetes <= 1.22 and now is mutable.  This is a beta field and only available when the CSIStorageCapacity feature is enabled. The default is false.")
+          "If set to true, storageCapacity indicates that the CSI volume driver wants pod scheduling to consider the storage capacity that the driver deployment will report by creating CSIStorageCapacity objects with capacity information.  The check can be enabled immediately when deploying a driver. In that case, provisioning new volumes with late binding will pause until the driver deployment has published some suitable CSIStorageCapacity object.  Alternatively, the driver can be deployed with the field unset or false and it can be flipped later when storage capacity information has been published.  This field was immutable in Kubernetes <= 1.22 and now is mutable.")
   public Boolean getStorageCapacity() {
     return storageCapacity;
   }
@@ -308,6 +345,7 @@ public class V1CSIDriverSpec {
         && Objects.equals(this.fsGroupPolicy, v1CSIDriverSpec.fsGroupPolicy)
         && Objects.equals(this.podInfoOnMount, v1CSIDriverSpec.podInfoOnMount)
         && Objects.equals(this.requiresRepublish, v1CSIDriverSpec.requiresRepublish)
+        && Objects.equals(this.seLinuxMount, v1CSIDriverSpec.seLinuxMount)
         && Objects.equals(this.storageCapacity, v1CSIDriverSpec.storageCapacity)
         && Objects.equals(this.tokenRequests, v1CSIDriverSpec.tokenRequests)
         && Objects.equals(this.volumeLifecycleModes, v1CSIDriverSpec.volumeLifecycleModes);
@@ -320,6 +358,7 @@ public class V1CSIDriverSpec {
         fsGroupPolicy,
         podInfoOnMount,
         requiresRepublish,
+        seLinuxMount,
         storageCapacity,
         tokenRequests,
         volumeLifecycleModes);
@@ -333,6 +372,7 @@ public class V1CSIDriverSpec {
     sb.append("    fsGroupPolicy: ").append(toIndentedString(fsGroupPolicy)).append("\n");
     sb.append("    podInfoOnMount: ").append(toIndentedString(podInfoOnMount)).append("\n");
     sb.append("    requiresRepublish: ").append(toIndentedString(requiresRepublish)).append("\n");
+    sb.append("    seLinuxMount: ").append(toIndentedString(seLinuxMount)).append("\n");
     sb.append("    storageCapacity: ").append(toIndentedString(storageCapacity)).append("\n");
     sb.append("    tokenRequests: ").append(toIndentedString(tokenRequests)).append("\n");
     sb.append("    volumeLifecycleModes: ")

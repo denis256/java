@@ -12,18 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Predicate;
 
 /** Generated */
-public class V1APIResourceListFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1APIResourceListFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1APIResourceListFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1APIResourceListFluentImpl<A extends V1APIResourceListFluent<A>> extends BaseFluent<A>
+    implements V1APIResourceListFluent<A> {
   public V1APIResourceListFluentImpl() {}
 
-  public V1APIResourceListFluentImpl(
-      io.kubernetes.client.openapi.models.V1APIResourceList instance) {
+  public V1APIResourceListFluentImpl(V1APIResourceList instance) {
     this.withApiVersion(instance.getApiVersion());
 
     this.withGroupVersion(instance.getGroupVersion());
@@ -33,76 +36,55 @@ public class V1APIResourceListFluentImpl<
     this.withResources(instance.getResources());
   }
 
-  private java.lang.String apiVersion;
-  private java.lang.String groupVersion;
-  private java.lang.String kind;
-  private java.util.ArrayList<io.kubernetes.client.openapi.models.V1APIResourceBuilder> resources;
+  private String apiVersion;
+  private String groupVersion;
+  private String kind;
+  private ArrayList<V1APIResourceBuilder> resources;
 
-  public java.lang.String getApiVersion() {
+  public String getApiVersion() {
     return this.apiVersion;
   }
 
-  public A withApiVersion(java.lang.String apiVersion) {
+  public A withApiVersion(String apiVersion) {
     this.apiVersion = apiVersion;
     return (A) this;
   }
 
-  public java.lang.Boolean hasApiVersion() {
+  public Boolean hasApiVersion() {
     return this.apiVersion != null;
   }
 
-  /** Method is deprecated. use withApiVersion instead. */
-  @java.lang.Deprecated
-  public A withNewApiVersion(java.lang.String original) {
-    return (A) withApiVersion(new String(original));
-  }
-
-  public java.lang.String getGroupVersion() {
+  public String getGroupVersion() {
     return this.groupVersion;
   }
 
-  public A withGroupVersion(java.lang.String groupVersion) {
+  public A withGroupVersion(String groupVersion) {
     this.groupVersion = groupVersion;
     return (A) this;
   }
 
-  public java.lang.Boolean hasGroupVersion() {
+  public Boolean hasGroupVersion() {
     return this.groupVersion != null;
   }
 
-  /** Method is deprecated. use withGroupVersion instead. */
-  @java.lang.Deprecated
-  public A withNewGroupVersion(java.lang.String original) {
-    return (A) withGroupVersion(new String(original));
-  }
-
-  public java.lang.String getKind() {
+  public String getKind() {
     return this.kind;
   }
 
-  public A withKind(java.lang.String kind) {
+  public A withKind(String kind) {
     this.kind = kind;
     return (A) this;
   }
 
-  public java.lang.Boolean hasKind() {
+  public Boolean hasKind() {
     return this.kind != null;
   }
 
-  /** Method is deprecated. use withKind instead. */
-  @java.lang.Deprecated
-  public A withNewKind(java.lang.String original) {
-    return (A) withKind(new String(original));
-  }
-
-  public A addToResources(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1APIResource item) {
+  public A addToResources(Integer index, V1APIResource item) {
     if (this.resources == null) {
-      this.resources =
-          new java.util.ArrayList<io.kubernetes.client.openapi.models.V1APIResourceBuilder>();
+      this.resources = new ArrayList<V1APIResourceBuilder>();
     }
-    io.kubernetes.client.openapi.models.V1APIResourceBuilder builder =
-        new io.kubernetes.client.openapi.models.V1APIResourceBuilder(item);
+    V1APIResourceBuilder builder = new V1APIResourceBuilder(item);
     _visitables
         .get("resources")
         .add(index >= 0 ? index : _visitables.get("resources").size(), builder);
@@ -110,14 +92,11 @@ public class V1APIResourceListFluentImpl<
     return (A) this;
   }
 
-  public A setToResources(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1APIResource item) {
+  public A setToResources(Integer index, V1APIResource item) {
     if (this.resources == null) {
-      this.resources =
-          new java.util.ArrayList<io.kubernetes.client.openapi.models.V1APIResourceBuilder>();
+      this.resources = new ArrayList<V1APIResourceBuilder>();
     }
-    io.kubernetes.client.openapi.models.V1APIResourceBuilder builder =
-        new io.kubernetes.client.openapi.models.V1APIResourceBuilder(item);
+    V1APIResourceBuilder builder = new V1APIResourceBuilder(item);
     if (index < 0 || index >= _visitables.get("resources").size()) {
       _visitables.get("resources").add(builder);
     } else {
@@ -133,27 +112,22 @@ public class V1APIResourceListFluentImpl<
 
   public A addToResources(io.kubernetes.client.openapi.models.V1APIResource... items) {
     if (this.resources == null) {
-      this.resources =
-          new java.util.ArrayList<io.kubernetes.client.openapi.models.V1APIResourceBuilder>();
+      this.resources = new ArrayList<V1APIResourceBuilder>();
     }
-    for (io.kubernetes.client.openapi.models.V1APIResource item : items) {
-      io.kubernetes.client.openapi.models.V1APIResourceBuilder builder =
-          new io.kubernetes.client.openapi.models.V1APIResourceBuilder(item);
+    for (V1APIResource item : items) {
+      V1APIResourceBuilder builder = new V1APIResourceBuilder(item);
       _visitables.get("resources").add(builder);
       this.resources.add(builder);
     }
     return (A) this;
   }
 
-  public A addAllToResources(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1APIResource> items) {
+  public A addAllToResources(Collection<V1APIResource> items) {
     if (this.resources == null) {
-      this.resources =
-          new java.util.ArrayList<io.kubernetes.client.openapi.models.V1APIResourceBuilder>();
+      this.resources = new ArrayList<V1APIResourceBuilder>();
     }
-    for (io.kubernetes.client.openapi.models.V1APIResource item : items) {
-      io.kubernetes.client.openapi.models.V1APIResourceBuilder builder =
-          new io.kubernetes.client.openapi.models.V1APIResourceBuilder(item);
+    for (V1APIResource item : items) {
+      V1APIResourceBuilder builder = new V1APIResourceBuilder(item);
       _visitables.get("resources").add(builder);
       this.resources.add(builder);
     }
@@ -161,9 +135,8 @@ public class V1APIResourceListFluentImpl<
   }
 
   public A removeFromResources(io.kubernetes.client.openapi.models.V1APIResource... items) {
-    for (io.kubernetes.client.openapi.models.V1APIResource item : items) {
-      io.kubernetes.client.openapi.models.V1APIResourceBuilder builder =
-          new io.kubernetes.client.openapi.models.V1APIResourceBuilder(item);
+    for (V1APIResource item : items) {
+      V1APIResourceBuilder builder = new V1APIResourceBuilder(item);
       _visitables.get("resources").remove(builder);
       if (this.resources != null) {
         this.resources.remove(builder);
@@ -172,11 +145,9 @@ public class V1APIResourceListFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromResources(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1APIResource> items) {
-    for (io.kubernetes.client.openapi.models.V1APIResource item : items) {
-      io.kubernetes.client.openapi.models.V1APIResourceBuilder builder =
-          new io.kubernetes.client.openapi.models.V1APIResourceBuilder(item);
+  public A removeAllFromResources(Collection<V1APIResource> items) {
+    for (V1APIResource item : items) {
+      V1APIResourceBuilder builder = new V1APIResourceBuilder(item);
       _visitables.get("resources").remove(builder);
       if (this.resources != null) {
         this.resources.remove(builder);
@@ -185,15 +156,12 @@ public class V1APIResourceListFluentImpl<
     return (A) this;
   }
 
-  public A removeMatchingFromResources(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1APIResourceBuilder>
-          predicate) {
+  public A removeMatchingFromResources(Predicate<V1APIResourceBuilder> predicate) {
     if (resources == null) return (A) this;
-    final Iterator<io.kubernetes.client.openapi.models.V1APIResourceBuilder> each =
-        resources.iterator();
+    final Iterator<V1APIResourceBuilder> each = resources.iterator();
     final List visitables = _visitables.get("resources");
     while (each.hasNext()) {
-      io.kubernetes.client.openapi.models.V1APIResourceBuilder builder = each.next();
+      V1APIResourceBuilder builder = each.next();
       if (predicate.test(builder)) {
         visitables.remove(builder);
         each.remove();
@@ -207,31 +175,29 @@ public class V1APIResourceListFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V1APIResource> getResources() {
+  @Deprecated
+  public List<V1APIResource> getResources() {
     return resources != null ? build(resources) : null;
   }
 
-  public java.util.List<io.kubernetes.client.openapi.models.V1APIResource> buildResources() {
+  public List<V1APIResource> buildResources() {
     return resources != null ? build(resources) : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1APIResource buildResource(java.lang.Integer index) {
+  public V1APIResource buildResource(Integer index) {
     return this.resources.get(index).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1APIResource buildFirstResource() {
+  public V1APIResource buildFirstResource() {
     return this.resources.get(0).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1APIResource buildLastResource() {
+  public V1APIResource buildLastResource() {
     return this.resources.get(resources.size() - 1).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1APIResource buildMatchingResource(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1APIResourceBuilder>
-          predicate) {
-    for (io.kubernetes.client.openapi.models.V1APIResourceBuilder item : resources) {
+  public V1APIResource buildMatchingResource(Predicate<V1APIResourceBuilder> predicate) {
+    for (V1APIResourceBuilder item : resources) {
       if (predicate.test(item)) {
         return item.build();
       }
@@ -239,10 +205,8 @@ public class V1APIResourceListFluentImpl<
     return null;
   }
 
-  public java.lang.Boolean hasMatchingResource(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1APIResourceBuilder>
-          predicate) {
-    for (io.kubernetes.client.openapi.models.V1APIResourceBuilder item : resources) {
+  public Boolean hasMatchingResource(Predicate<V1APIResourceBuilder> predicate) {
+    for (V1APIResourceBuilder item : resources) {
       if (predicate.test(item)) {
         return true;
       }
@@ -250,14 +214,13 @@ public class V1APIResourceListFluentImpl<
     return false;
   }
 
-  public A withResources(
-      java.util.List<io.kubernetes.client.openapi.models.V1APIResource> resources) {
+  public A withResources(List<V1APIResource> resources) {
     if (this.resources != null) {
       _visitables.get("resources").removeAll(this.resources);
     }
     if (resources != null) {
-      this.resources = new java.util.ArrayList();
-      for (io.kubernetes.client.openapi.models.V1APIResource item : resources) {
+      this.resources = new ArrayList();
+      for (V1APIResource item : resources) {
         this.addToResources(item);
       }
     } else {
@@ -271,61 +234,50 @@ public class V1APIResourceListFluentImpl<
       this.resources.clear();
     }
     if (resources != null) {
-      for (io.kubernetes.client.openapi.models.V1APIResource item : resources) {
+      for (V1APIResource item : resources) {
         this.addToResources(item);
       }
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasResources() {
+  public Boolean hasResources() {
     return resources != null && !resources.isEmpty();
   }
 
-  public io.kubernetes.client.openapi.models.V1APIResourceListFluent.ResourcesNested<A>
-      addNewResource() {
-    return new io.kubernetes.client.openapi.models.V1APIResourceListFluentImpl
-        .ResourcesNestedImpl();
+  public V1APIResourceListFluent.ResourcesNested<A> addNewResource() {
+    return new V1APIResourceListFluentImpl.ResourcesNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1APIResourceListFluent.ResourcesNested<A>
-      addNewResourceLike(io.kubernetes.client.openapi.models.V1APIResource item) {
-    return new io.kubernetes.client.openapi.models.V1APIResourceListFluentImpl.ResourcesNestedImpl(
-        -1, item);
+  public V1APIResourceListFluent.ResourcesNested<A> addNewResourceLike(V1APIResource item) {
+    return new V1APIResourceListFluentImpl.ResourcesNestedImpl(-1, item);
   }
 
-  public io.kubernetes.client.openapi.models.V1APIResourceListFluent.ResourcesNested<A>
-      setNewResourceLike(
-          java.lang.Integer index, io.kubernetes.client.openapi.models.V1APIResource item) {
-    return new io.kubernetes.client.openapi.models.V1APIResourceListFluentImpl.ResourcesNestedImpl(
-        index, item);
+  public V1APIResourceListFluent.ResourcesNested<A> setNewResourceLike(
+      Integer index, V1APIResource item) {
+    return new V1APIResourceListFluentImpl.ResourcesNestedImpl(index, item);
   }
 
-  public io.kubernetes.client.openapi.models.V1APIResourceListFluent.ResourcesNested<A>
-      editResource(java.lang.Integer index) {
+  public V1APIResourceListFluent.ResourcesNested<A> editResource(Integer index) {
     if (resources.size() <= index)
       throw new RuntimeException("Can't edit resources. Index exceeds size.");
     return setNewResourceLike(index, buildResource(index));
   }
 
-  public io.kubernetes.client.openapi.models.V1APIResourceListFluent.ResourcesNested<A>
-      editFirstResource() {
+  public V1APIResourceListFluent.ResourcesNested<A> editFirstResource() {
     if (resources.size() == 0)
       throw new RuntimeException("Can't edit first resources. The list is empty.");
     return setNewResourceLike(0, buildResource(0));
   }
 
-  public io.kubernetes.client.openapi.models.V1APIResourceListFluent.ResourcesNested<A>
-      editLastResource() {
+  public V1APIResourceListFluent.ResourcesNested<A> editLastResource() {
     int index = resources.size() - 1;
     if (index < 0) throw new RuntimeException("Can't edit last resources. The list is empty.");
     return setNewResourceLike(index, buildResource(index));
   }
 
-  public io.kubernetes.client.openapi.models.V1APIResourceListFluent.ResourcesNested<A>
-      editMatchingResource(
-          java.util.function.Predicate<io.kubernetes.client.openapi.models.V1APIResourceBuilder>
-              predicate) {
+  public V1APIResourceListFluent.ResourcesNested<A> editMatchingResource(
+      Predicate<V1APIResourceBuilder> predicate) {
     int index = -1;
     for (int i = 0; i < resources.size(); i++) {
       if (predicate.test(resources.get(i))) {
@@ -337,7 +289,7 @@ public class V1APIResourceListFluentImpl<
     return setNewResourceLike(index, buildResource(index));
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1APIResourceListFluentImpl that = (V1APIResourceListFluentImpl) o;
@@ -355,24 +307,44 @@ public class V1APIResourceListFluentImpl<
     return java.util.Objects.hash(apiVersion, groupVersion, kind, resources, super.hashCode());
   }
 
-  public class ResourcesNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1APIResourceFluentImpl<
-          io.kubernetes.client.openapi.models.V1APIResourceListFluent.ResourcesNested<N>>
-      implements io.kubernetes.client.openapi.models.V1APIResourceListFluent.ResourcesNested<N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    ResourcesNestedImpl(
-        java.lang.Integer index, io.kubernetes.client.openapi.models.V1APIResource item) {
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (apiVersion != null) {
+      sb.append("apiVersion:");
+      sb.append(apiVersion + ",");
+    }
+    if (groupVersion != null) {
+      sb.append("groupVersion:");
+      sb.append(groupVersion + ",");
+    }
+    if (kind != null) {
+      sb.append("kind:");
+      sb.append(kind + ",");
+    }
+    if (resources != null && !resources.isEmpty()) {
+      sb.append("resources:");
+      sb.append(resources);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class ResourcesNestedImpl<N>
+      extends V1APIResourceFluentImpl<V1APIResourceListFluent.ResourcesNested<N>>
+      implements V1APIResourceListFluent.ResourcesNested<N>, Nested<N> {
+    ResourcesNestedImpl(Integer index, V1APIResource item) {
       this.index = index;
-      this.builder = new io.kubernetes.client.openapi.models.V1APIResourceBuilder(this, item);
+      this.builder = new V1APIResourceBuilder(this, item);
     }
 
     ResourcesNestedImpl() {
       this.index = -1;
-      this.builder = new io.kubernetes.client.openapi.models.V1APIResourceBuilder(this);
+      this.builder = new V1APIResourceBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1APIResourceBuilder builder;
-    java.lang.Integer index;
+    V1APIResourceBuilder builder;
+    Integer index;
 
     public N and() {
       return (N) V1APIResourceListFluentImpl.this.setToResources(index, builder.build());

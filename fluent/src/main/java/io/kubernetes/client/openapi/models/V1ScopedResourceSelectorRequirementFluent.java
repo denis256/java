@@ -12,59 +12,54 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
+
 /** Generated */
 public interface V1ScopedResourceSelectorRequirementFluent<
-        A extends io.kubernetes.client.openapi.models.V1ScopedResourceSelectorRequirementFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public io.kubernetes.client.openapi.models.V1ScopedResourceSelectorRequirement.OperatorEnum
-      getOperator();
+        A extends V1ScopedResourceSelectorRequirementFluent<A>>
+    extends Fluent<A> {
+  public String getOperator();
 
-  public A withOperator(
-      io.kubernetes.client.openapi.models.V1ScopedResourceSelectorRequirement.OperatorEnum
-          operator);
+  public A withOperator(String operator);
 
-  public java.lang.Boolean hasOperator();
+  public Boolean hasOperator();
 
-  public io.kubernetes.client.openapi.models.V1ScopedResourceSelectorRequirement.ScopeNameEnum
-      getScopeName();
+  public String getScopeName();
 
-  public A withScopeName(
-      io.kubernetes.client.openapi.models.V1ScopedResourceSelectorRequirement.ScopeNameEnum
-          scopeName);
+  public A withScopeName(String scopeName);
 
-  public java.lang.Boolean hasScopeName();
+  public Boolean hasScopeName();
 
-  public A addToValues(java.lang.Integer index, java.lang.String item);
+  public A addToValues(Integer index, String item);
 
-  public A setToValues(java.lang.Integer index, java.lang.String item);
+  public A setToValues(Integer index, String item);
 
   public A addToValues(java.lang.String... items);
 
-  public A addAllToValues(java.util.Collection<java.lang.String> items);
+  public A addAllToValues(Collection<String> items);
 
   public A removeFromValues(java.lang.String... items);
 
-  public A removeAllFromValues(java.util.Collection<java.lang.String> items);
+  public A removeAllFromValues(Collection<String> items);
 
-  public java.util.List<java.lang.String> getValues();
+  public List<String> getValues();
 
-  public java.lang.String getValue(java.lang.Integer index);
+  public String getValue(Integer index);
 
-  public java.lang.String getFirstValue();
+  public String getFirstValue();
 
-  public java.lang.String getLastValue();
+  public String getLastValue();
 
-  public java.lang.String getMatchingValue(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public String getMatchingValue(Predicate<String> predicate);
 
-  public java.lang.Boolean hasMatchingValue(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public Boolean hasMatchingValue(Predicate<String> predicate);
 
-  public A withValues(java.util.List<java.lang.String> values);
+  public A withValues(List<String> values);
 
   public A withValues(java.lang.String... values);
 
-  public java.lang.Boolean hasValues();
-
-  public A addNewValue(java.lang.String original);
+  public Boolean hasValues();
 }

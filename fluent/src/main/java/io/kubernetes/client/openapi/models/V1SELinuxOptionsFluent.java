@@ -12,47 +12,31 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
-public interface V1SELinuxOptionsFluent<
-        A extends io.kubernetes.client.openapi.models.V1SELinuxOptionsFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getLevel();
+public interface V1SELinuxOptionsFluent<A extends V1SELinuxOptionsFluent<A>> extends Fluent<A> {
+  public String getLevel();
 
-  public A withLevel(java.lang.String level);
+  public A withLevel(String level);
 
-  public java.lang.Boolean hasLevel();
+  public Boolean hasLevel();
 
-  /** Method is deprecated. use withLevel instead. */
-  @java.lang.Deprecated
-  public A withNewLevel(java.lang.String original);
+  public String getRole();
 
-  public java.lang.String getRole();
+  public A withRole(String role);
 
-  public A withRole(java.lang.String role);
+  public Boolean hasRole();
 
-  public java.lang.Boolean hasRole();
+  public String getType();
 
-  /** Method is deprecated. use withRole instead. */
-  @java.lang.Deprecated
-  public A withNewRole(java.lang.String original);
+  public A withType(String type);
 
-  public java.lang.String getType();
+  public Boolean hasType();
 
-  public A withType(java.lang.String type);
+  public String getUser();
 
-  public java.lang.Boolean hasType();
+  public A withUser(String user);
 
-  /** Method is deprecated. use withType instead. */
-  @java.lang.Deprecated
-  public A withNewType(java.lang.String original);
-
-  public java.lang.String getUser();
-
-  public A withUser(java.lang.String user);
-
-  public java.lang.Boolean hasUser();
-
-  /** Method is deprecated. use withUser instead. */
-  @java.lang.Deprecated
-  public A withNewUser(java.lang.String original);
+  public Boolean hasUser();
 }

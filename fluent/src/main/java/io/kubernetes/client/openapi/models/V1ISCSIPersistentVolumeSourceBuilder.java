@@ -12,41 +12,38 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1ISCSIPersistentVolumeSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSource,
-        io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSourceBuilder> {
+    extends V1ISCSIPersistentVolumeSourceFluentImpl<V1ISCSIPersistentVolumeSourceBuilder>
+    implements VisitableBuilder<
+        V1ISCSIPersistentVolumeSource, V1ISCSIPersistentVolumeSourceBuilder> {
   public V1ISCSIPersistentVolumeSourceBuilder() {
     this(false);
   }
 
-  public V1ISCSIPersistentVolumeSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1ISCSIPersistentVolumeSourceBuilder(Boolean validationEnabled) {
     this(new V1ISCSIPersistentVolumeSource(), validationEnabled);
   }
 
-  public V1ISCSIPersistentVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSourceFluent<?> fluent) {
+  public V1ISCSIPersistentVolumeSourceBuilder(V1ISCSIPersistentVolumeSourceFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1ISCSIPersistentVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSourceFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1ISCSIPersistentVolumeSourceFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1ISCSIPersistentVolumeSource(), validationEnabled);
   }
 
   public V1ISCSIPersistentVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSourceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSource instance) {
+      V1ISCSIPersistentVolumeSourceFluent<?> fluent, V1ISCSIPersistentVolumeSource instance) {
     this(fluent, instance, false);
   }
 
   public V1ISCSIPersistentVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSourceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSource instance,
-      java.lang.Boolean validationEnabled) {
+      V1ISCSIPersistentVolumeSourceFluent<?> fluent,
+      V1ISCSIPersistentVolumeSource instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withChapAuthDiscovery(instance.getChapAuthDiscovery());
 
@@ -73,14 +70,12 @@ public class V1ISCSIPersistentVolumeSourceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1ISCSIPersistentVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSource instance) {
+  public V1ISCSIPersistentVolumeSourceBuilder(V1ISCSIPersistentVolumeSource instance) {
     this(instance, false);
   }
 
   public V1ISCSIPersistentVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSource instance,
-      java.lang.Boolean validationEnabled) {
+      V1ISCSIPersistentVolumeSource instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withChapAuthDiscovery(instance.getChapAuthDiscovery());
 
@@ -107,10 +102,10 @@ public class V1ISCSIPersistentVolumeSourceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSourceFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1ISCSIPersistentVolumeSourceFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1ISCSIPersistentVolumeSource build() {
+  public V1ISCSIPersistentVolumeSource build() {
     V1ISCSIPersistentVolumeSource buildable = new V1ISCSIPersistentVolumeSource();
     buildable.setChapAuthDiscovery(fluent.getChapAuthDiscovery());
     buildable.setChapAuthSession(fluent.getChapAuthSession());
@@ -124,24 +119,5 @@ public class V1ISCSIPersistentVolumeSourceBuilder
     buildable.setSecretRef(fluent.getSecretRef());
     buildable.setTargetPortal(fluent.getTargetPortal());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1ISCSIPersistentVolumeSourceBuilder that = (V1ISCSIPersistentVolumeSourceBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

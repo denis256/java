@@ -12,137 +12,113 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
+
 /** Generated */
-public interface V1RoleFluent<A extends io.kubernetes.client.openapi.models.V1RoleFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getApiVersion();
+public interface V1RoleFluent<A extends V1RoleFluent<A>> extends Fluent<A> {
+  public String getApiVersion();
 
-  public A withApiVersion(java.lang.String apiVersion);
+  public A withApiVersion(String apiVersion);
 
-  public java.lang.Boolean hasApiVersion();
+  public Boolean hasApiVersion();
 
-  /** Method is deprecated. use withApiVersion instead. */
-  @java.lang.Deprecated
-  public A withNewApiVersion(java.lang.String original);
+  public String getKind();
 
-  public java.lang.String getKind();
+  public A withKind(String kind);
 
-  public A withKind(java.lang.String kind);
-
-  public java.lang.Boolean hasKind();
-
-  /** Method is deprecated. use withKind instead. */
-  @java.lang.Deprecated
-  public A withNewKind(java.lang.String original);
+  public Boolean hasKind();
 
   /**
    * This method has been deprecated, please use method buildMetadata instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ObjectMeta getMetadata();
+  @Deprecated
+  public V1ObjectMeta getMetadata();
 
-  public io.kubernetes.client.openapi.models.V1ObjectMeta buildMetadata();
+  public V1ObjectMeta buildMetadata();
 
-  public A withMetadata(io.kubernetes.client.openapi.models.V1ObjectMeta metadata);
+  public A withMetadata(V1ObjectMeta metadata);
 
-  public java.lang.Boolean hasMetadata();
+  public Boolean hasMetadata();
 
-  public io.kubernetes.client.openapi.models.V1RoleFluent.MetadataNested<A> withNewMetadata();
+  public V1RoleFluent.MetadataNested<A> withNewMetadata();
 
-  public io.kubernetes.client.openapi.models.V1RoleFluent.MetadataNested<A> withNewMetadataLike(
-      io.kubernetes.client.openapi.models.V1ObjectMeta item);
+  public V1RoleFluent.MetadataNested<A> withNewMetadataLike(V1ObjectMeta item);
 
-  public io.kubernetes.client.openapi.models.V1RoleFluent.MetadataNested<A> editMetadata();
+  public V1RoleFluent.MetadataNested<A> editMetadata();
 
-  public io.kubernetes.client.openapi.models.V1RoleFluent.MetadataNested<A> editOrNewMetadata();
+  public V1RoleFluent.MetadataNested<A> editOrNewMetadata();
 
-  public io.kubernetes.client.openapi.models.V1RoleFluent.MetadataNested<A> editOrNewMetadataLike(
-      io.kubernetes.client.openapi.models.V1ObjectMeta item);
+  public V1RoleFluent.MetadataNested<A> editOrNewMetadataLike(V1ObjectMeta item);
 
-  public A addToRules(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1PolicyRule item);
+  public A addToRules(Integer index, V1PolicyRule item);
 
-  public A setToRules(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1PolicyRule item);
+  public A setToRules(Integer index, V1PolicyRule item);
 
   public A addToRules(io.kubernetes.client.openapi.models.V1PolicyRule... items);
 
-  public A addAllToRules(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1PolicyRule> items);
+  public A addAllToRules(Collection<V1PolicyRule> items);
 
   public A removeFromRules(io.kubernetes.client.openapi.models.V1PolicyRule... items);
 
-  public A removeAllFromRules(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1PolicyRule> items);
+  public A removeAllFromRules(Collection<V1PolicyRule> items);
 
-  public A removeMatchingFromRules(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1PolicyRuleBuilder>
-          predicate);
+  public A removeMatchingFromRules(Predicate<V1PolicyRuleBuilder> predicate);
 
   /**
    * This method has been deprecated, please use method buildRules instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V1PolicyRule> getRules();
+  @Deprecated
+  public List<V1PolicyRule> getRules();
 
-  public java.util.List<io.kubernetes.client.openapi.models.V1PolicyRule> buildRules();
+  public List<V1PolicyRule> buildRules();
 
-  public io.kubernetes.client.openapi.models.V1PolicyRule buildRule(java.lang.Integer index);
+  public V1PolicyRule buildRule(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1PolicyRule buildFirstRule();
+  public V1PolicyRule buildFirstRule();
 
-  public io.kubernetes.client.openapi.models.V1PolicyRule buildLastRule();
+  public V1PolicyRule buildLastRule();
 
-  public io.kubernetes.client.openapi.models.V1PolicyRule buildMatchingRule(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1PolicyRuleBuilder>
-          predicate);
+  public V1PolicyRule buildMatchingRule(Predicate<V1PolicyRuleBuilder> predicate);
 
-  public java.lang.Boolean hasMatchingRule(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1PolicyRuleBuilder>
-          predicate);
+  public Boolean hasMatchingRule(Predicate<V1PolicyRuleBuilder> predicate);
 
-  public A withRules(java.util.List<io.kubernetes.client.openapi.models.V1PolicyRule> rules);
+  public A withRules(List<V1PolicyRule> rules);
 
   public A withRules(io.kubernetes.client.openapi.models.V1PolicyRule... rules);
 
-  public java.lang.Boolean hasRules();
+  public Boolean hasRules();
 
-  public io.kubernetes.client.openapi.models.V1RoleFluent.RulesNested<A> addNewRule();
+  public V1RoleFluent.RulesNested<A> addNewRule();
 
-  public io.kubernetes.client.openapi.models.V1RoleFluent.RulesNested<A> addNewRuleLike(
-      io.kubernetes.client.openapi.models.V1PolicyRule item);
+  public V1RoleFluent.RulesNested<A> addNewRuleLike(V1PolicyRule item);
 
-  public io.kubernetes.client.openapi.models.V1RoleFluent.RulesNested<A> setNewRuleLike(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1PolicyRule item);
+  public V1RoleFluent.RulesNested<A> setNewRuleLike(Integer index, V1PolicyRule item);
 
-  public io.kubernetes.client.openapi.models.V1RoleFluent.RulesNested<A> editRule(
-      java.lang.Integer index);
+  public V1RoleFluent.RulesNested<A> editRule(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1RoleFluent.RulesNested<A> editFirstRule();
+  public V1RoleFluent.RulesNested<A> editFirstRule();
 
-  public io.kubernetes.client.openapi.models.V1RoleFluent.RulesNested<A> editLastRule();
+  public V1RoleFluent.RulesNested<A> editLastRule();
 
-  public io.kubernetes.client.openapi.models.V1RoleFluent.RulesNested<A> editMatchingRule(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1PolicyRuleBuilder>
-          predicate);
+  public V1RoleFluent.RulesNested<A> editMatchingRule(Predicate<V1PolicyRuleBuilder> predicate);
 
   public interface MetadataNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1ObjectMetaFluent<
-              io.kubernetes.client.openapi.models.V1RoleFluent.MetadataNested<N>> {
+      extends Nested<N>, V1ObjectMetaFluent<V1RoleFluent.MetadataNested<N>> {
     public N and();
 
     public N endMetadata();
   }
 
   public interface RulesNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1PolicyRuleFluent<
-              io.kubernetes.client.openapi.models.V1RoleFluent.RulesNested<N>> {
+      extends Nested<N>, V1PolicyRuleFluent<V1RoleFluent.RulesNested<N>> {
     public N and();
 
     public N endRule();

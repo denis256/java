@@ -1,5 +1,5 @@
 /*
-Copyright 2021 The Kubernetes Authors.
+Copyright 2022 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -25,7 +25,7 @@ import java.util.Objects;
 @ApiModel(description = "Endpoint represents a single logical \"backend\" implementing a service.")
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    date = "2021-12-10T19:11:23.904Z[Etc/UTC]")
+    date = "2022-09-15T17:00:37.921Z[Etc/UTC]")
 public class V1Endpoint {
   public static final String SERIALIZED_NAME_ADDRESSES = "addresses";
 
@@ -82,14 +82,15 @@ public class V1Endpoint {
    * addresses of this endpoint. The contents of this field are interpreted according to the
    * corresponding EndpointSlice addressType field. Consumers must handle different types of
    * addresses in the context of their own capabilities. This must contain at least one address but
-   * no more than 100.
+   * no more than 100. These are all assumed to be fungible and clients may choose to only use the
+   * first element. Refer to: https://issue.k8s.io/106267
    *
    * @return addresses
    */
   @ApiModelProperty(
       required = true,
       value =
-          "addresses of this endpoint. The contents of this field are interpreted according to the corresponding EndpointSlice addressType field. Consumers must handle different types of addresses in the context of their own capabilities. This must contain at least one address but no more than 100.")
+          "addresses of this endpoint. The contents of this field are interpreted according to the corresponding EndpointSlice addressType field. Consumers must handle different types of addresses in the context of their own capabilities. This must contain at least one address but no more than 100. These are all assumed to be fungible and clients may choose to only use the first element. Refer to: https://issue.k8s.io/106267")
   public List<String> getAddresses() {
     return addresses;
   }
@@ -209,15 +210,14 @@ public class V1Endpoint {
 
   /**
    * nodeName represents the name of the Node hosting this endpoint. This can be used to determine
-   * endpoints local to a Node. This field can be enabled with the EndpointSliceNodeName feature
-   * gate.
+   * endpoints local to a Node.
    *
    * @return nodeName
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "nodeName represents the name of the Node hosting this endpoint. This can be used to determine endpoints local to a Node. This field can be enabled with the EndpointSliceNodeName feature gate.")
+          "nodeName represents the name of the Node hosting this endpoint. This can be used to determine endpoints local to a Node.")
   public String getNodeName() {
     return nodeName;
   }

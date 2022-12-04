@@ -12,62 +12,50 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1SecretReferenceFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1SecretReferenceFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1SecretReferenceFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1SecretReferenceFluentImpl<A extends V1SecretReferenceFluent<A>> extends BaseFluent<A>
+    implements V1SecretReferenceFluent<A> {
   public V1SecretReferenceFluentImpl() {}
 
-  public V1SecretReferenceFluentImpl(
-      io.kubernetes.client.openapi.models.V1SecretReference instance) {
+  public V1SecretReferenceFluentImpl(V1SecretReference instance) {
     this.withName(instance.getName());
 
     this.withNamespace(instance.getNamespace());
   }
 
-  private java.lang.String name;
-  private java.lang.String namespace;
+  private String name;
+  private String namespace;
 
-  public java.lang.String getName() {
+  public String getName() {
     return this.name;
   }
 
-  public A withName(java.lang.String name) {
+  public A withName(String name) {
     this.name = name;
     return (A) this;
   }
 
-  public java.lang.Boolean hasName() {
+  public Boolean hasName() {
     return this.name != null;
   }
 
-  /** Method is deprecated. use withName instead. */
-  @java.lang.Deprecated
-  public A withNewName(java.lang.String original) {
-    return (A) withName(new String(original));
-  }
-
-  public java.lang.String getNamespace() {
+  public String getNamespace() {
     return this.namespace;
   }
 
-  public A withNamespace(java.lang.String namespace) {
+  public A withNamespace(String namespace) {
     this.namespace = namespace;
     return (A) this;
   }
 
-  public java.lang.Boolean hasNamespace() {
+  public Boolean hasNamespace() {
     return this.namespace != null;
   }
 
-  /** Method is deprecated. use withNamespace instead. */
-  @java.lang.Deprecated
-  public A withNewNamespace(java.lang.String original) {
-    return (A) withNamespace(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1SecretReferenceFluentImpl that = (V1SecretReferenceFluentImpl) o;
@@ -79,5 +67,20 @@ public class V1SecretReferenceFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(name, namespace, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (name != null) {
+      sb.append("name:");
+      sb.append(name + ",");
+    }
+    if (namespace != null) {
+      sb.append("namespace:");
+      sb.append(namespace);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

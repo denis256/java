@@ -12,40 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1NodeStatusBuilder
-    extends io.kubernetes.client.openapi.models.V1NodeStatusFluentImpl<
-        io.kubernetes.client.openapi.models.V1NodeStatusBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1NodeStatus,
-        io.kubernetes.client.openapi.models.V1NodeStatusBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1NodeStatusBuilder extends V1NodeStatusFluentImpl<V1NodeStatusBuilder>
+    implements VisitableBuilder<V1NodeStatus, V1NodeStatusBuilder> {
   public V1NodeStatusBuilder() {
     this(false);
   }
 
-  public V1NodeStatusBuilder(java.lang.Boolean validationEnabled) {
+  public V1NodeStatusBuilder(Boolean validationEnabled) {
     this(new V1NodeStatus(), validationEnabled);
   }
 
-  public V1NodeStatusBuilder(io.kubernetes.client.openapi.models.V1NodeStatusFluent<?> fluent) {
+  public V1NodeStatusBuilder(V1NodeStatusFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1NodeStatusBuilder(
-      io.kubernetes.client.openapi.models.V1NodeStatusFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1NodeStatusBuilder(V1NodeStatusFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1NodeStatus(), validationEnabled);
   }
 
-  public V1NodeStatusBuilder(
-      io.kubernetes.client.openapi.models.V1NodeStatusFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1NodeStatus instance) {
+  public V1NodeStatusBuilder(V1NodeStatusFluent<?> fluent, V1NodeStatus instance) {
     this(fluent, instance, false);
   }
 
   public V1NodeStatusBuilder(
-      io.kubernetes.client.openapi.models.V1NodeStatusFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1NodeStatus instance,
-      java.lang.Boolean validationEnabled) {
+      V1NodeStatusFluent<?> fluent, V1NodeStatus instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withAddresses(instance.getAddresses());
 
@@ -72,13 +64,11 @@ public class V1NodeStatusBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1NodeStatusBuilder(io.kubernetes.client.openapi.models.V1NodeStatus instance) {
+  public V1NodeStatusBuilder(V1NodeStatus instance) {
     this(instance, false);
   }
 
-  public V1NodeStatusBuilder(
-      io.kubernetes.client.openapi.models.V1NodeStatus instance,
-      java.lang.Boolean validationEnabled) {
+  public V1NodeStatusBuilder(V1NodeStatus instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withAddresses(instance.getAddresses());
 
@@ -105,10 +95,10 @@ public class V1NodeStatusBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1NodeStatusFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1NodeStatusFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1NodeStatus build() {
+  public V1NodeStatus build() {
     V1NodeStatus buildable = new V1NodeStatus();
     buildable.setAddresses(fluent.getAddresses());
     buildable.setAllocatable(fluent.getAllocatable());
@@ -122,24 +112,5 @@ public class V1NodeStatusBuilder
     buildable.setVolumesAttached(fluent.getVolumesAttached());
     buildable.setVolumesInUse(fluent.getVolumesInUse());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1NodeStatusBuilder that = (V1NodeStatusBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

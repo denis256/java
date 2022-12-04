@@ -12,40 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class EventsV1EventBuilder
-    extends io.kubernetes.client.openapi.models.EventsV1EventFluentImpl<
-        io.kubernetes.client.openapi.models.EventsV1EventBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.EventsV1Event,
-        io.kubernetes.client.openapi.models.EventsV1EventBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class EventsV1EventBuilder extends EventsV1EventFluentImpl<EventsV1EventBuilder>
+    implements VisitableBuilder<EventsV1Event, EventsV1EventBuilder> {
   public EventsV1EventBuilder() {
     this(false);
   }
 
-  public EventsV1EventBuilder(java.lang.Boolean validationEnabled) {
+  public EventsV1EventBuilder(Boolean validationEnabled) {
     this(new EventsV1Event(), validationEnabled);
   }
 
-  public EventsV1EventBuilder(io.kubernetes.client.openapi.models.EventsV1EventFluent<?> fluent) {
+  public EventsV1EventBuilder(EventsV1EventFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public EventsV1EventBuilder(
-      io.kubernetes.client.openapi.models.EventsV1EventFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public EventsV1EventBuilder(EventsV1EventFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new EventsV1Event(), validationEnabled);
   }
 
-  public EventsV1EventBuilder(
-      io.kubernetes.client.openapi.models.EventsV1EventFluent<?> fluent,
-      io.kubernetes.client.openapi.models.EventsV1Event instance) {
+  public EventsV1EventBuilder(EventsV1EventFluent<?> fluent, EventsV1Event instance) {
     this(fluent, instance, false);
   }
 
   public EventsV1EventBuilder(
-      io.kubernetes.client.openapi.models.EventsV1EventFluent<?> fluent,
-      io.kubernetes.client.openapi.models.EventsV1Event instance,
-      java.lang.Boolean validationEnabled) {
+      EventsV1EventFluent<?> fluent, EventsV1Event instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withAction(instance.getAction());
 
@@ -84,13 +76,11 @@ public class EventsV1EventBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public EventsV1EventBuilder(io.kubernetes.client.openapi.models.EventsV1Event instance) {
+  public EventsV1EventBuilder(EventsV1Event instance) {
     this(instance, false);
   }
 
-  public EventsV1EventBuilder(
-      io.kubernetes.client.openapi.models.EventsV1Event instance,
-      java.lang.Boolean validationEnabled) {
+  public EventsV1EventBuilder(EventsV1Event instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withAction(instance.getAction());
 
@@ -129,10 +119,10 @@ public class EventsV1EventBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.EventsV1EventFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  EventsV1EventFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.EventsV1Event build() {
+  public EventsV1Event build() {
     EventsV1Event buildable = new EventsV1Event();
     buildable.setAction(fluent.getAction());
     buildable.setApiVersion(fluent.getApiVersion());
@@ -152,24 +142,5 @@ public class EventsV1EventBuilder
     buildable.setSeries(fluent.getSeries());
     buildable.setType(fluent.getType());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    EventsV1EventBuilder that = (EventsV1EventBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

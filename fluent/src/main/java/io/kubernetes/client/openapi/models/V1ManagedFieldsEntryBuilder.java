@@ -12,41 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1ManagedFieldsEntryBuilder
-    extends io.kubernetes.client.openapi.models.V1ManagedFieldsEntryFluentImpl<
-        io.kubernetes.client.openapi.models.V1ManagedFieldsEntryBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1ManagedFieldsEntry,
-        io.kubernetes.client.openapi.models.V1ManagedFieldsEntryBuilder> {
+    extends V1ManagedFieldsEntryFluentImpl<V1ManagedFieldsEntryBuilder>
+    implements VisitableBuilder<V1ManagedFieldsEntry, V1ManagedFieldsEntryBuilder> {
   public V1ManagedFieldsEntryBuilder() {
     this(false);
   }
 
-  public V1ManagedFieldsEntryBuilder(java.lang.Boolean validationEnabled) {
+  public V1ManagedFieldsEntryBuilder(Boolean validationEnabled) {
     this(new V1ManagedFieldsEntry(), validationEnabled);
   }
 
-  public V1ManagedFieldsEntryBuilder(
-      io.kubernetes.client.openapi.models.V1ManagedFieldsEntryFluent<?> fluent) {
+  public V1ManagedFieldsEntryBuilder(V1ManagedFieldsEntryFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1ManagedFieldsEntryBuilder(
-      io.kubernetes.client.openapi.models.V1ManagedFieldsEntryFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1ManagedFieldsEntryFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1ManagedFieldsEntry(), validationEnabled);
   }
 
   public V1ManagedFieldsEntryBuilder(
-      io.kubernetes.client.openapi.models.V1ManagedFieldsEntryFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ManagedFieldsEntry instance) {
+      V1ManagedFieldsEntryFluent<?> fluent, V1ManagedFieldsEntry instance) {
     this(fluent, instance, false);
   }
 
   public V1ManagedFieldsEntryBuilder(
-      io.kubernetes.client.openapi.models.V1ManagedFieldsEntryFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ManagedFieldsEntry instance,
-      java.lang.Boolean validationEnabled) {
+      V1ManagedFieldsEntryFluent<?> fluent,
+      V1ManagedFieldsEntry instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withApiVersion(instance.getApiVersion());
 
@@ -65,14 +61,11 @@ public class V1ManagedFieldsEntryBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1ManagedFieldsEntryBuilder(
-      io.kubernetes.client.openapi.models.V1ManagedFieldsEntry instance) {
+  public V1ManagedFieldsEntryBuilder(V1ManagedFieldsEntry instance) {
     this(instance, false);
   }
 
-  public V1ManagedFieldsEntryBuilder(
-      io.kubernetes.client.openapi.models.V1ManagedFieldsEntry instance,
-      java.lang.Boolean validationEnabled) {
+  public V1ManagedFieldsEntryBuilder(V1ManagedFieldsEntry instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withApiVersion(instance.getApiVersion());
 
@@ -91,10 +84,10 @@ public class V1ManagedFieldsEntryBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1ManagedFieldsEntryFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1ManagedFieldsEntryFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1ManagedFieldsEntry build() {
+  public V1ManagedFieldsEntry build() {
     V1ManagedFieldsEntry buildable = new V1ManagedFieldsEntry();
     buildable.setApiVersion(fluent.getApiVersion());
     buildable.setFieldsType(fluent.getFieldsType());
@@ -104,24 +97,5 @@ public class V1ManagedFieldsEntryBuilder
     buildable.setSubresource(fluent.getSubresource());
     buildable.setTime(fluent.getTime());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1ManagedFieldsEntryBuilder that = (V1ManagedFieldsEntryBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

@@ -12,15 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+
 /** Generated */
-public class V1SelfSubjectAccessReviewFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1SelfSubjectAccessReviewFluentImpl<A extends V1SelfSubjectAccessReviewFluent<A>>
+    extends BaseFluent<A> implements V1SelfSubjectAccessReviewFluent<A> {
   public V1SelfSubjectAccessReviewFluentImpl() {}
 
-  public V1SelfSubjectAccessReviewFluentImpl(
-      io.kubernetes.client.openapi.models.V1SelfSubjectAccessReview instance) {
+  public V1SelfSubjectAccessReviewFluentImpl(V1SelfSubjectAccessReview instance) {
     this.withApiVersion(instance.getApiVersion());
 
     this.withKind(instance.getKind());
@@ -32,48 +33,36 @@ public class V1SelfSubjectAccessReviewFluentImpl<
     this.withStatus(instance.getStatus());
   }
 
-  private java.lang.String apiVersion;
-  private java.lang.String kind;
-  private io.kubernetes.client.openapi.models.V1ObjectMetaBuilder metadata;
-  private io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecBuilder spec;
-  private io.kubernetes.client.openapi.models.V1SubjectAccessReviewStatusBuilder status;
+  private String apiVersion;
+  private String kind;
+  private V1ObjectMetaBuilder metadata;
+  private V1SelfSubjectAccessReviewSpecBuilder spec;
+  private V1SubjectAccessReviewStatusBuilder status;
 
-  public java.lang.String getApiVersion() {
+  public String getApiVersion() {
     return this.apiVersion;
   }
 
-  public A withApiVersion(java.lang.String apiVersion) {
+  public A withApiVersion(String apiVersion) {
     this.apiVersion = apiVersion;
     return (A) this;
   }
 
-  public java.lang.Boolean hasApiVersion() {
+  public Boolean hasApiVersion() {
     return this.apiVersion != null;
   }
 
-  /** Method is deprecated. use withApiVersion instead. */
-  @java.lang.Deprecated
-  public A withNewApiVersion(java.lang.String original) {
-    return (A) withApiVersion(new String(original));
-  }
-
-  public java.lang.String getKind() {
+  public String getKind() {
     return this.kind;
   }
 
-  public A withKind(java.lang.String kind) {
+  public A withKind(String kind) {
     this.kind = kind;
     return (A) this;
   }
 
-  public java.lang.Boolean hasKind() {
+  public Boolean hasKind() {
     return this.kind != null;
-  }
-
-  /** Method is deprecated. use withKind instead. */
-  @java.lang.Deprecated
-  public A withNewKind(java.lang.String original) {
-    return (A) withKind(new String(original));
   }
 
   /**
@@ -81,55 +70,50 @@ public class V1SelfSubjectAccessReviewFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ObjectMeta getMetadata() {
+  @Deprecated
+  public V1ObjectMeta getMetadata() {
     return this.metadata != null ? this.metadata.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1ObjectMeta buildMetadata() {
+  public V1ObjectMeta buildMetadata() {
     return this.metadata != null ? this.metadata.build() : null;
   }
 
-  public A withMetadata(io.kubernetes.client.openapi.models.V1ObjectMeta metadata) {
+  public A withMetadata(V1ObjectMeta metadata) {
     _visitables.get("metadata").remove(this.metadata);
     if (metadata != null) {
-      this.metadata = new io.kubernetes.client.openapi.models.V1ObjectMetaBuilder(metadata);
+      this.metadata = new V1ObjectMetaBuilder(metadata);
       _visitables.get("metadata").add(this.metadata);
+    } else {
+      this.metadata = null;
+      _visitables.get("metadata").remove(this.metadata);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasMetadata() {
+  public Boolean hasMetadata() {
     return this.metadata != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent.MetadataNested<A>
-      withNewMetadata() {
-    return new io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluentImpl
-        .MetadataNestedImpl();
+  public V1SelfSubjectAccessReviewFluent.MetadataNested<A> withNewMetadata() {
+    return new V1SelfSubjectAccessReviewFluentImpl.MetadataNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent.MetadataNested<A>
-      withNewMetadataLike(io.kubernetes.client.openapi.models.V1ObjectMeta item) {
-    return new io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluentImpl
-        .MetadataNestedImpl(item);
+  public V1SelfSubjectAccessReviewFluent.MetadataNested<A> withNewMetadataLike(V1ObjectMeta item) {
+    return new V1SelfSubjectAccessReviewFluentImpl.MetadataNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent.MetadataNested<A>
-      editMetadata() {
+  public V1SelfSubjectAccessReviewFluent.MetadataNested<A> editMetadata() {
     return withNewMetadataLike(getMetadata());
   }
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent.MetadataNested<A>
-      editOrNewMetadata() {
+  public V1SelfSubjectAccessReviewFluent.MetadataNested<A> editOrNewMetadata() {
     return withNewMetadataLike(
-        getMetadata() != null
-            ? getMetadata()
-            : new io.kubernetes.client.openapi.models.V1ObjectMetaBuilder().build());
+        getMetadata() != null ? getMetadata() : new V1ObjectMetaBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent.MetadataNested<A>
-      editOrNewMetadataLike(io.kubernetes.client.openapi.models.V1ObjectMeta item) {
+  public V1SelfSubjectAccessReviewFluent.MetadataNested<A> editOrNewMetadataLike(
+      V1ObjectMeta item) {
     return withNewMetadataLike(getMetadata() != null ? getMetadata() : item);
   }
 
@@ -138,57 +122,51 @@ public class V1SelfSubjectAccessReviewFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpec getSpec() {
+  @Deprecated
+  public V1SelfSubjectAccessReviewSpec getSpec() {
     return this.spec != null ? this.spec.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpec buildSpec() {
+  public V1SelfSubjectAccessReviewSpec buildSpec() {
     return this.spec != null ? this.spec.build() : null;
   }
 
-  public A withSpec(io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpec spec) {
+  public A withSpec(V1SelfSubjectAccessReviewSpec spec) {
     _visitables.get("spec").remove(this.spec);
     if (spec != null) {
-      this.spec =
-          new io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecBuilder(spec);
+      this.spec = new V1SelfSubjectAccessReviewSpecBuilder(spec);
       _visitables.get("spec").add(this.spec);
+    } else {
+      this.spec = null;
+      _visitables.get("spec").remove(this.spec);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasSpec() {
+  public Boolean hasSpec() {
     return this.spec != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent.SpecNested<A>
-      withNewSpec() {
-    return new io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluentImpl
-        .SpecNestedImpl();
+  public V1SelfSubjectAccessReviewFluent.SpecNested<A> withNewSpec() {
+    return new V1SelfSubjectAccessReviewFluentImpl.SpecNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent.SpecNested<A>
-      withNewSpecLike(io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpec item) {
-    return new io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluentImpl
-        .SpecNestedImpl(item);
+  public V1SelfSubjectAccessReviewFluent.SpecNested<A> withNewSpecLike(
+      V1SelfSubjectAccessReviewSpec item) {
+    return new V1SelfSubjectAccessReviewFluentImpl.SpecNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent.SpecNested<A>
-      editSpec() {
+  public V1SelfSubjectAccessReviewFluent.SpecNested<A> editSpec() {
     return withNewSpecLike(getSpec());
   }
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent.SpecNested<A>
-      editOrNewSpec() {
+  public V1SelfSubjectAccessReviewFluent.SpecNested<A> editOrNewSpec() {
     return withNewSpecLike(
-        getSpec() != null
-            ? getSpec()
-            : new io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecBuilder()
-                .build());
+        getSpec() != null ? getSpec() : new V1SelfSubjectAccessReviewSpecBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent.SpecNested<A>
-      editOrNewSpecLike(io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpec item) {
+  public V1SelfSubjectAccessReviewFluent.SpecNested<A> editOrNewSpecLike(
+      V1SelfSubjectAccessReviewSpec item) {
     return withNewSpecLike(getSpec() != null ? getSpec() : item);
   }
 
@@ -197,60 +175,55 @@ public class V1SelfSubjectAccessReviewFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1SubjectAccessReviewStatus getStatus() {
+  @Deprecated
+  public V1SubjectAccessReviewStatus getStatus() {
     return this.status != null ? this.status.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1SubjectAccessReviewStatus buildStatus() {
+  public V1SubjectAccessReviewStatus buildStatus() {
     return this.status != null ? this.status.build() : null;
   }
 
-  public A withStatus(io.kubernetes.client.openapi.models.V1SubjectAccessReviewStatus status) {
+  public A withStatus(V1SubjectAccessReviewStatus status) {
     _visitables.get("status").remove(this.status);
     if (status != null) {
-      this.status =
-          new io.kubernetes.client.openapi.models.V1SubjectAccessReviewStatusBuilder(status);
+      this.status = new V1SubjectAccessReviewStatusBuilder(status);
       _visitables.get("status").add(this.status);
+    } else {
+      this.status = null;
+      _visitables.get("status").remove(this.status);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasStatus() {
+  public Boolean hasStatus() {
     return this.status != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent.StatusNested<A>
-      withNewStatus() {
-    return new io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluentImpl
-        .StatusNestedImpl();
+  public V1SelfSubjectAccessReviewFluent.StatusNested<A> withNewStatus() {
+    return new V1SelfSubjectAccessReviewFluentImpl.StatusNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent.StatusNested<A>
-      withNewStatusLike(io.kubernetes.client.openapi.models.V1SubjectAccessReviewStatus item) {
-    return new io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluentImpl
-        .StatusNestedImpl(item);
+  public V1SelfSubjectAccessReviewFluent.StatusNested<A> withNewStatusLike(
+      V1SubjectAccessReviewStatus item) {
+    return new V1SelfSubjectAccessReviewFluentImpl.StatusNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent.StatusNested<A>
-      editStatus() {
+  public V1SelfSubjectAccessReviewFluent.StatusNested<A> editStatus() {
     return withNewStatusLike(getStatus());
   }
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent.StatusNested<A>
-      editOrNewStatus() {
+  public V1SelfSubjectAccessReviewFluent.StatusNested<A> editOrNewStatus() {
     return withNewStatusLike(
-        getStatus() != null
-            ? getStatus()
-            : new io.kubernetes.client.openapi.models.V1SubjectAccessReviewStatusBuilder().build());
+        getStatus() != null ? getStatus() : new V1SubjectAccessReviewStatusBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent.StatusNested<A>
-      editOrNewStatusLike(io.kubernetes.client.openapi.models.V1SubjectAccessReviewStatus item) {
+  public V1SelfSubjectAccessReviewFluent.StatusNested<A> editOrNewStatusLike(
+      V1SubjectAccessReviewStatus item) {
     return withNewStatusLike(getStatus() != null ? getStatus() : item);
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1SelfSubjectAccessReviewFluentImpl that = (V1SelfSubjectAccessReviewFluentImpl) o;
@@ -267,21 +240,45 @@ public class V1SelfSubjectAccessReviewFluentImpl<
     return java.util.Objects.hash(apiVersion, kind, metadata, spec, status, super.hashCode());
   }
 
-  public class MetadataNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1ObjectMetaFluentImpl<
-          io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent.MetadataNested<N>>
-      implements io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent.MetadataNested<
-              N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    MetadataNestedImpl(io.kubernetes.client.openapi.models.V1ObjectMeta item) {
-      this.builder = new io.kubernetes.client.openapi.models.V1ObjectMetaBuilder(this, item);
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (apiVersion != null) {
+      sb.append("apiVersion:");
+      sb.append(apiVersion + ",");
+    }
+    if (kind != null) {
+      sb.append("kind:");
+      sb.append(kind + ",");
+    }
+    if (metadata != null) {
+      sb.append("metadata:");
+      sb.append(metadata + ",");
+    }
+    if (spec != null) {
+      sb.append("spec:");
+      sb.append(spec + ",");
+    }
+    if (status != null) {
+      sb.append("status:");
+      sb.append(status);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class MetadataNestedImpl<N>
+      extends V1ObjectMetaFluentImpl<V1SelfSubjectAccessReviewFluent.MetadataNested<N>>
+      implements V1SelfSubjectAccessReviewFluent.MetadataNested<N>, Nested<N> {
+    MetadataNestedImpl(V1ObjectMeta item) {
+      this.builder = new V1ObjectMetaBuilder(this, item);
     }
 
     MetadataNestedImpl() {
-      this.builder = new io.kubernetes.client.openapi.models.V1ObjectMetaBuilder(this);
+      this.builder = new V1ObjectMetaBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1ObjectMetaBuilder builder;
+    V1ObjectMetaBuilder builder;
 
     public N and() {
       return (N) V1SelfSubjectAccessReviewFluentImpl.this.withMetadata(builder.build());
@@ -292,22 +289,18 @@ public class V1SelfSubjectAccessReviewFluentImpl<
     }
   }
 
-  public class SpecNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluentImpl<
-          io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent.SpecNested<N>>
-      implements io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent.SpecNested<N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    SpecNestedImpl(io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpec item) {
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecBuilder(this, item);
+  class SpecNestedImpl<N>
+      extends V1SelfSubjectAccessReviewSpecFluentImpl<V1SelfSubjectAccessReviewFluent.SpecNested<N>>
+      implements V1SelfSubjectAccessReviewFluent.SpecNested<N>, Nested<N> {
+    SpecNestedImpl(V1SelfSubjectAccessReviewSpec item) {
+      this.builder = new V1SelfSubjectAccessReviewSpecBuilder(this, item);
     }
 
     SpecNestedImpl() {
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecBuilder(this);
+      this.builder = new V1SelfSubjectAccessReviewSpecBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecBuilder builder;
+    V1SelfSubjectAccessReviewSpecBuilder builder;
 
     public N and() {
       return (N) V1SelfSubjectAccessReviewFluentImpl.this.withSpec(builder.build());
@@ -318,23 +311,18 @@ public class V1SelfSubjectAccessReviewFluentImpl<
     }
   }
 
-  public class StatusNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1SubjectAccessReviewStatusFluentImpl<
-          io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent.StatusNested<N>>
-      implements io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewFluent.StatusNested<
-              N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    StatusNestedImpl(io.kubernetes.client.openapi.models.V1SubjectAccessReviewStatus item) {
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1SubjectAccessReviewStatusBuilder(this, item);
+  class StatusNestedImpl<N>
+      extends V1SubjectAccessReviewStatusFluentImpl<V1SelfSubjectAccessReviewFluent.StatusNested<N>>
+      implements V1SelfSubjectAccessReviewFluent.StatusNested<N>, Nested<N> {
+    StatusNestedImpl(V1SubjectAccessReviewStatus item) {
+      this.builder = new V1SubjectAccessReviewStatusBuilder(this, item);
     }
 
     StatusNestedImpl() {
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1SubjectAccessReviewStatusBuilder(this);
+      this.builder = new V1SubjectAccessReviewStatusBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1SubjectAccessReviewStatusBuilder builder;
+    V1SubjectAccessReviewStatusBuilder builder;
 
     public N and() {
       return (N) V1SelfSubjectAccessReviewFluentImpl.this.withStatus(builder.build());

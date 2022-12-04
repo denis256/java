@@ -12,47 +12,41 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Predicate;
 
 /** Generated */
-public class V1LoadBalancerStatusFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1LoadBalancerStatusFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1LoadBalancerStatusFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1LoadBalancerStatusFluentImpl<A extends V1LoadBalancerStatusFluent<A>>
+    extends BaseFluent<A> implements V1LoadBalancerStatusFluent<A> {
   public V1LoadBalancerStatusFluentImpl() {}
 
-  public V1LoadBalancerStatusFluentImpl(
-      io.kubernetes.client.openapi.models.V1LoadBalancerStatus instance) {
+  public V1LoadBalancerStatusFluentImpl(V1LoadBalancerStatus instance) {
     this.withIngress(instance.getIngress());
   }
 
-  private java.util.ArrayList<io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder>
-      ingress;
+  private ArrayList<V1LoadBalancerIngressBuilder> ingress;
 
-  public A addToIngress(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1LoadBalancerIngress item) {
+  public A addToIngress(Integer index, V1LoadBalancerIngress item) {
     if (this.ingress == null) {
-      this.ingress =
-          new java.util.ArrayList<
-              io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder>();
+      this.ingress = new ArrayList<V1LoadBalancerIngressBuilder>();
     }
-    io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder builder =
-        new io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder(item);
+    V1LoadBalancerIngressBuilder builder = new V1LoadBalancerIngressBuilder(item);
     _visitables.get("ingress").add(index >= 0 ? index : _visitables.get("ingress").size(), builder);
     this.ingress.add(index >= 0 ? index : ingress.size(), builder);
     return (A) this;
   }
 
-  public A setToIngress(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1LoadBalancerIngress item) {
+  public A setToIngress(Integer index, V1LoadBalancerIngress item) {
     if (this.ingress == null) {
-      this.ingress =
-          new java.util.ArrayList<
-              io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder>();
+      this.ingress = new ArrayList<V1LoadBalancerIngressBuilder>();
     }
-    io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder builder =
-        new io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder(item);
+    V1LoadBalancerIngressBuilder builder = new V1LoadBalancerIngressBuilder(item);
     if (index < 0 || index >= _visitables.get("ingress").size()) {
       _visitables.get("ingress").add(builder);
     } else {
@@ -68,29 +62,22 @@ public class V1LoadBalancerStatusFluentImpl<
 
   public A addToIngress(io.kubernetes.client.openapi.models.V1LoadBalancerIngress... items) {
     if (this.ingress == null) {
-      this.ingress =
-          new java.util.ArrayList<
-              io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder>();
+      this.ingress = new ArrayList<V1LoadBalancerIngressBuilder>();
     }
-    for (io.kubernetes.client.openapi.models.V1LoadBalancerIngress item : items) {
-      io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder builder =
-          new io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder(item);
+    for (V1LoadBalancerIngress item : items) {
+      V1LoadBalancerIngressBuilder builder = new V1LoadBalancerIngressBuilder(item);
       _visitables.get("ingress").add(builder);
       this.ingress.add(builder);
     }
     return (A) this;
   }
 
-  public A addAllToIngress(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1LoadBalancerIngress> items) {
+  public A addAllToIngress(Collection<V1LoadBalancerIngress> items) {
     if (this.ingress == null) {
-      this.ingress =
-          new java.util.ArrayList<
-              io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder>();
+      this.ingress = new ArrayList<V1LoadBalancerIngressBuilder>();
     }
-    for (io.kubernetes.client.openapi.models.V1LoadBalancerIngress item : items) {
-      io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder builder =
-          new io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder(item);
+    for (V1LoadBalancerIngress item : items) {
+      V1LoadBalancerIngressBuilder builder = new V1LoadBalancerIngressBuilder(item);
       _visitables.get("ingress").add(builder);
       this.ingress.add(builder);
     }
@@ -98,9 +85,8 @@ public class V1LoadBalancerStatusFluentImpl<
   }
 
   public A removeFromIngress(io.kubernetes.client.openapi.models.V1LoadBalancerIngress... items) {
-    for (io.kubernetes.client.openapi.models.V1LoadBalancerIngress item : items) {
-      io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder builder =
-          new io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder(item);
+    for (V1LoadBalancerIngress item : items) {
+      V1LoadBalancerIngressBuilder builder = new V1LoadBalancerIngressBuilder(item);
       _visitables.get("ingress").remove(builder);
       if (this.ingress != null) {
         this.ingress.remove(builder);
@@ -109,11 +95,9 @@ public class V1LoadBalancerStatusFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromIngress(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1LoadBalancerIngress> items) {
-    for (io.kubernetes.client.openapi.models.V1LoadBalancerIngress item : items) {
-      io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder builder =
-          new io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder(item);
+  public A removeAllFromIngress(Collection<V1LoadBalancerIngress> items) {
+    for (V1LoadBalancerIngress item : items) {
+      V1LoadBalancerIngressBuilder builder = new V1LoadBalancerIngressBuilder(item);
       _visitables.get("ingress").remove(builder);
       if (this.ingress != null) {
         this.ingress.remove(builder);
@@ -122,15 +106,12 @@ public class V1LoadBalancerStatusFluentImpl<
     return (A) this;
   }
 
-  public A removeMatchingFromIngress(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder>
-          predicate) {
+  public A removeMatchingFromIngress(Predicate<V1LoadBalancerIngressBuilder> predicate) {
     if (ingress == null) return (A) this;
-    final Iterator<io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder> each =
-        ingress.iterator();
+    final Iterator<V1LoadBalancerIngressBuilder> each = ingress.iterator();
     final List visitables = _visitables.get("ingress");
     while (each.hasNext()) {
-      io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder builder = each.next();
+      V1LoadBalancerIngressBuilder builder = each.next();
       if (predicate.test(builder)) {
         visitables.remove(builder);
         each.remove();
@@ -144,32 +125,30 @@ public class V1LoadBalancerStatusFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V1LoadBalancerIngress> getIngress() {
+  @Deprecated
+  public List<V1LoadBalancerIngress> getIngress() {
     return ingress != null ? build(ingress) : null;
   }
 
-  public java.util.List<io.kubernetes.client.openapi.models.V1LoadBalancerIngress> buildIngress() {
+  public List<V1LoadBalancerIngress> buildIngress() {
     return ingress != null ? build(ingress) : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1LoadBalancerIngress buildIngress(
-      java.lang.Integer index) {
+  public V1LoadBalancerIngress buildIngress(Integer index) {
     return this.ingress.get(index).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1LoadBalancerIngress buildFirstIngress() {
+  public V1LoadBalancerIngress buildFirstIngress() {
     return this.ingress.get(0).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1LoadBalancerIngress buildLastIngress() {
+  public V1LoadBalancerIngress buildLastIngress() {
     return this.ingress.get(ingress.size() - 1).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1LoadBalancerIngress buildMatchingIngress(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder>
-          predicate) {
-    for (io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder item : ingress) {
+  public V1LoadBalancerIngress buildMatchingIngress(
+      Predicate<V1LoadBalancerIngressBuilder> predicate) {
+    for (V1LoadBalancerIngressBuilder item : ingress) {
       if (predicate.test(item)) {
         return item.build();
       }
@@ -177,10 +156,8 @@ public class V1LoadBalancerStatusFluentImpl<
     return null;
   }
 
-  public java.lang.Boolean hasMatchingIngress(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder>
-          predicate) {
-    for (io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder item : ingress) {
+  public Boolean hasMatchingIngress(Predicate<V1LoadBalancerIngressBuilder> predicate) {
+    for (V1LoadBalancerIngressBuilder item : ingress) {
       if (predicate.test(item)) {
         return true;
       }
@@ -188,14 +165,13 @@ public class V1LoadBalancerStatusFluentImpl<
     return false;
   }
 
-  public A withIngress(
-      java.util.List<io.kubernetes.client.openapi.models.V1LoadBalancerIngress> ingress) {
+  public A withIngress(List<V1LoadBalancerIngress> ingress) {
     if (this.ingress != null) {
       _visitables.get("ingress").removeAll(this.ingress);
     }
     if (ingress != null) {
-      this.ingress = new java.util.ArrayList();
-      for (io.kubernetes.client.openapi.models.V1LoadBalancerIngress item : ingress) {
+      this.ingress = new ArrayList();
+      for (V1LoadBalancerIngress item : ingress) {
         this.addToIngress(item);
       }
     } else {
@@ -209,62 +185,50 @@ public class V1LoadBalancerStatusFluentImpl<
       this.ingress.clear();
     }
     if (ingress != null) {
-      for (io.kubernetes.client.openapi.models.V1LoadBalancerIngress item : ingress) {
+      for (V1LoadBalancerIngress item : ingress) {
         this.addToIngress(item);
       }
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasIngress() {
+  public Boolean hasIngress() {
     return ingress != null && !ingress.isEmpty();
   }
 
-  public io.kubernetes.client.openapi.models.V1LoadBalancerStatusFluent.IngressNested<A>
-      addNewIngress() {
-    return new io.kubernetes.client.openapi.models.V1LoadBalancerStatusFluentImpl
-        .IngressNestedImpl();
+  public V1LoadBalancerStatusFluent.IngressNested<A> addNewIngress() {
+    return new V1LoadBalancerStatusFluentImpl.IngressNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1LoadBalancerStatusFluent.IngressNested<A>
-      addNewIngressLike(io.kubernetes.client.openapi.models.V1LoadBalancerIngress item) {
-    return new io.kubernetes.client.openapi.models.V1LoadBalancerStatusFluentImpl.IngressNestedImpl(
-        -1, item);
+  public V1LoadBalancerStatusFluent.IngressNested<A> addNewIngressLike(V1LoadBalancerIngress item) {
+    return new V1LoadBalancerStatusFluentImpl.IngressNestedImpl(-1, item);
   }
 
-  public io.kubernetes.client.openapi.models.V1LoadBalancerStatusFluent.IngressNested<A>
-      setNewIngressLike(
-          java.lang.Integer index, io.kubernetes.client.openapi.models.V1LoadBalancerIngress item) {
-    return new io.kubernetes.client.openapi.models.V1LoadBalancerStatusFluentImpl.IngressNestedImpl(
-        index, item);
+  public V1LoadBalancerStatusFluent.IngressNested<A> setNewIngressLike(
+      Integer index, V1LoadBalancerIngress item) {
+    return new V1LoadBalancerStatusFluentImpl.IngressNestedImpl(index, item);
   }
 
-  public io.kubernetes.client.openapi.models.V1LoadBalancerStatusFluent.IngressNested<A>
-      editIngress(java.lang.Integer index) {
+  public V1LoadBalancerStatusFluent.IngressNested<A> editIngress(Integer index) {
     if (ingress.size() <= index)
       throw new RuntimeException("Can't edit ingress. Index exceeds size.");
     return setNewIngressLike(index, buildIngress(index));
   }
 
-  public io.kubernetes.client.openapi.models.V1LoadBalancerStatusFluent.IngressNested<A>
-      editFirstIngress() {
+  public V1LoadBalancerStatusFluent.IngressNested<A> editFirstIngress() {
     if (ingress.size() == 0)
       throw new RuntimeException("Can't edit first ingress. The list is empty.");
     return setNewIngressLike(0, buildIngress(0));
   }
 
-  public io.kubernetes.client.openapi.models.V1LoadBalancerStatusFluent.IngressNested<A>
-      editLastIngress() {
+  public V1LoadBalancerStatusFluent.IngressNested<A> editLastIngress() {
     int index = ingress.size() - 1;
     if (index < 0) throw new RuntimeException("Can't edit last ingress. The list is empty.");
     return setNewIngressLike(index, buildIngress(index));
   }
 
-  public io.kubernetes.client.openapi.models.V1LoadBalancerStatusFluent.IngressNested<A>
-      editMatchingIngress(
-          java.util.function.Predicate<
-                  io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder>
-              predicate) {
+  public V1LoadBalancerStatusFluent.IngressNested<A> editMatchingIngress(
+      Predicate<V1LoadBalancerIngressBuilder> predicate) {
     int index = -1;
     for (int i = 0; i < ingress.size(); i++) {
       if (predicate.test(ingress.get(i))) {
@@ -276,7 +240,7 @@ public class V1LoadBalancerStatusFluentImpl<
     return setNewIngressLike(index, buildIngress(index));
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1LoadBalancerStatusFluentImpl that = (V1LoadBalancerStatusFluentImpl) o;
@@ -288,25 +252,32 @@ public class V1LoadBalancerStatusFluentImpl<
     return java.util.Objects.hash(ingress, super.hashCode());
   }
 
-  public class IngressNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1LoadBalancerIngressFluentImpl<
-          io.kubernetes.client.openapi.models.V1LoadBalancerStatusFluent.IngressNested<N>>
-      implements io.kubernetes.client.openapi.models.V1LoadBalancerStatusFluent.IngressNested<N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    IngressNestedImpl(
-        java.lang.Integer index, io.kubernetes.client.openapi.models.V1LoadBalancerIngress item) {
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (ingress != null && !ingress.isEmpty()) {
+      sb.append("ingress:");
+      sb.append(ingress);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class IngressNestedImpl<N>
+      extends V1LoadBalancerIngressFluentImpl<V1LoadBalancerStatusFluent.IngressNested<N>>
+      implements V1LoadBalancerStatusFluent.IngressNested<N>, Nested<N> {
+    IngressNestedImpl(Integer index, V1LoadBalancerIngress item) {
       this.index = index;
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder(this, item);
+      this.builder = new V1LoadBalancerIngressBuilder(this, item);
     }
 
     IngressNestedImpl() {
       this.index = -1;
-      this.builder = new io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder(this);
+      this.builder = new V1LoadBalancerIngressBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1LoadBalancerIngressBuilder builder;
-    java.lang.Integer index;
+    V1LoadBalancerIngressBuilder builder;
+    Integer index;
 
     public N and() {
       return (N) V1LoadBalancerStatusFluentImpl.this.setToIngress(index, builder.build());

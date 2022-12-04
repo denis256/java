@@ -12,27 +12,19 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
-public interface V1ValidationRuleFluent<
-        A extends io.kubernetes.client.openapi.models.V1ValidationRuleFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getMessage();
+public interface V1ValidationRuleFluent<A extends V1ValidationRuleFluent<A>> extends Fluent<A> {
+  public String getMessage();
 
-  public A withMessage(java.lang.String message);
+  public A withMessage(String message);
 
-  public java.lang.Boolean hasMessage();
+  public Boolean hasMessage();
 
-  /** Method is deprecated. use withMessage instead. */
-  @java.lang.Deprecated
-  public A withNewMessage(java.lang.String original);
+  public String getRule();
 
-  public java.lang.String getRule();
+  public A withRule(String rule);
 
-  public A withRule(java.lang.String rule);
-
-  public java.lang.Boolean hasRule();
-
-  /** Method is deprecated. use withRule instead. */
-  @java.lang.Deprecated
-  public A withNewRule(java.lang.String original);
+  public Boolean hasRule();
 }

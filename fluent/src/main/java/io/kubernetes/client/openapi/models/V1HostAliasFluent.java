@@ -12,51 +12,46 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-/** Generated */
-public interface V1HostAliasFluent<
-        A extends io.kubernetes.client.openapi.models.V1HostAliasFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public A addToHostnames(java.lang.Integer index, java.lang.String item);
+import io.kubernetes.client.fluent.Fluent;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
 
-  public A setToHostnames(java.lang.Integer index, java.lang.String item);
+/** Generated */
+public interface V1HostAliasFluent<A extends V1HostAliasFluent<A>> extends Fluent<A> {
+  public A addToHostnames(Integer index, String item);
+
+  public A setToHostnames(Integer index, String item);
 
   public A addToHostnames(java.lang.String... items);
 
-  public A addAllToHostnames(java.util.Collection<java.lang.String> items);
+  public A addAllToHostnames(Collection<String> items);
 
   public A removeFromHostnames(java.lang.String... items);
 
-  public A removeAllFromHostnames(java.util.Collection<java.lang.String> items);
+  public A removeAllFromHostnames(Collection<String> items);
 
-  public java.util.List<java.lang.String> getHostnames();
+  public List<String> getHostnames();
 
-  public java.lang.String getHostname(java.lang.Integer index);
+  public String getHostname(Integer index);
 
-  public java.lang.String getFirstHostname();
+  public String getFirstHostname();
 
-  public java.lang.String getLastHostname();
+  public String getLastHostname();
 
-  public java.lang.String getMatchingHostname(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public String getMatchingHostname(Predicate<String> predicate);
 
-  public java.lang.Boolean hasMatchingHostname(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public Boolean hasMatchingHostname(Predicate<String> predicate);
 
-  public A withHostnames(java.util.List<java.lang.String> hostnames);
+  public A withHostnames(List<String> hostnames);
 
   public A withHostnames(java.lang.String... hostnames);
 
-  public java.lang.Boolean hasHostnames();
+  public Boolean hasHostnames();
 
-  public A addNewHostname(java.lang.String original);
+  public String getIp();
 
-  public java.lang.String getIp();
+  public A withIp(String ip);
 
-  public A withIp(java.lang.String ip);
-
-  public java.lang.Boolean hasIp();
-
-  /** Method is deprecated. use withIp instead. */
-  @java.lang.Deprecated
-  public A withNewIp(java.lang.String original);
+  public Boolean hasIp();
 }

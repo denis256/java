@@ -12,76 +12,72 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+
 /** Generated */
-public class V1JobTemplateSpecFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1JobTemplateSpecFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1JobTemplateSpecFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1JobTemplateSpecFluentImpl<A extends V1JobTemplateSpecFluent<A>> extends BaseFluent<A>
+    implements V1JobTemplateSpecFluent<A> {
   public V1JobTemplateSpecFluentImpl() {}
 
-  public V1JobTemplateSpecFluentImpl(
-      io.kubernetes.client.openapi.models.V1JobTemplateSpec instance) {
+  public V1JobTemplateSpecFluentImpl(V1JobTemplateSpec instance) {
     this.withMetadata(instance.getMetadata());
 
     this.withSpec(instance.getSpec());
   }
 
-  private io.kubernetes.client.openapi.models.V1ObjectMetaBuilder metadata;
-  private io.kubernetes.client.openapi.models.V1JobSpecBuilder spec;
+  private V1ObjectMetaBuilder metadata;
+  private V1JobSpecBuilder spec;
 
   /**
    * This method has been deprecated, please use method buildMetadata instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ObjectMeta getMetadata() {
+  @Deprecated
+  public V1ObjectMeta getMetadata() {
     return this.metadata != null ? this.metadata.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1ObjectMeta buildMetadata() {
+  public V1ObjectMeta buildMetadata() {
     return this.metadata != null ? this.metadata.build() : null;
   }
 
-  public A withMetadata(io.kubernetes.client.openapi.models.V1ObjectMeta metadata) {
+  public A withMetadata(V1ObjectMeta metadata) {
     _visitables.get("metadata").remove(this.metadata);
     if (metadata != null) {
-      this.metadata = new io.kubernetes.client.openapi.models.V1ObjectMetaBuilder(metadata);
+      this.metadata = new V1ObjectMetaBuilder(metadata);
       _visitables.get("metadata").add(this.metadata);
+    } else {
+      this.metadata = null;
+      _visitables.get("metadata").remove(this.metadata);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasMetadata() {
+  public Boolean hasMetadata() {
     return this.metadata != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1JobTemplateSpecFluent.MetadataNested<A>
-      withNewMetadata() {
-    return new io.kubernetes.client.openapi.models.V1JobTemplateSpecFluentImpl.MetadataNestedImpl();
+  public V1JobTemplateSpecFluent.MetadataNested<A> withNewMetadata() {
+    return new V1JobTemplateSpecFluentImpl.MetadataNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1JobTemplateSpecFluent.MetadataNested<A>
-      withNewMetadataLike(io.kubernetes.client.openapi.models.V1ObjectMeta item) {
-    return new io.kubernetes.client.openapi.models.V1JobTemplateSpecFluentImpl.MetadataNestedImpl(
-        item);
+  public V1JobTemplateSpecFluent.MetadataNested<A> withNewMetadataLike(V1ObjectMeta item) {
+    return new V1JobTemplateSpecFluentImpl.MetadataNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1JobTemplateSpecFluent.MetadataNested<A>
-      editMetadata() {
+  public V1JobTemplateSpecFluent.MetadataNested<A> editMetadata() {
     return withNewMetadataLike(getMetadata());
   }
 
-  public io.kubernetes.client.openapi.models.V1JobTemplateSpecFluent.MetadataNested<A>
-      editOrNewMetadata() {
+  public V1JobTemplateSpecFluent.MetadataNested<A> editOrNewMetadata() {
     return withNewMetadataLike(
-        getMetadata() != null
-            ? getMetadata()
-            : new io.kubernetes.client.openapi.models.V1ObjectMetaBuilder().build());
+        getMetadata() != null ? getMetadata() : new V1ObjectMetaBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1JobTemplateSpecFluent.MetadataNested<A>
-      editOrNewMetadataLike(io.kubernetes.client.openapi.models.V1ObjectMeta item) {
+  public V1JobTemplateSpecFluent.MetadataNested<A> editOrNewMetadataLike(V1ObjectMeta item) {
     return withNewMetadataLike(getMetadata() != null ? getMetadata() : item);
   }
 
@@ -90,54 +86,52 @@ public class V1JobTemplateSpecFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1JobSpec getSpec() {
+  @Deprecated
+  public V1JobSpec getSpec() {
     return this.spec != null ? this.spec.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1JobSpec buildSpec() {
+  public V1JobSpec buildSpec() {
     return this.spec != null ? this.spec.build() : null;
   }
 
-  public A withSpec(io.kubernetes.client.openapi.models.V1JobSpec spec) {
+  public A withSpec(V1JobSpec spec) {
     _visitables.get("spec").remove(this.spec);
     if (spec != null) {
-      this.spec = new io.kubernetes.client.openapi.models.V1JobSpecBuilder(spec);
+      this.spec = new V1JobSpecBuilder(spec);
       _visitables.get("spec").add(this.spec);
+    } else {
+      this.spec = null;
+      _visitables.get("spec").remove(this.spec);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasSpec() {
+  public Boolean hasSpec() {
     return this.spec != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1JobTemplateSpecFluent.SpecNested<A> withNewSpec() {
-    return new io.kubernetes.client.openapi.models.V1JobTemplateSpecFluentImpl.SpecNestedImpl();
+  public V1JobTemplateSpecFluent.SpecNested<A> withNewSpec() {
+    return new V1JobTemplateSpecFluentImpl.SpecNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1JobTemplateSpecFluent.SpecNested<A> withNewSpecLike(
-      io.kubernetes.client.openapi.models.V1JobSpec item) {
-    return new io.kubernetes.client.openapi.models.V1JobTemplateSpecFluentImpl.SpecNestedImpl(item);
+  public V1JobTemplateSpecFluent.SpecNested<A> withNewSpecLike(V1JobSpec item) {
+    return new V1JobTemplateSpecFluentImpl.SpecNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1JobTemplateSpecFluent.SpecNested<A> editSpec() {
+  public V1JobTemplateSpecFluent.SpecNested<A> editSpec() {
     return withNewSpecLike(getSpec());
   }
 
-  public io.kubernetes.client.openapi.models.V1JobTemplateSpecFluent.SpecNested<A> editOrNewSpec() {
-    return withNewSpecLike(
-        getSpec() != null
-            ? getSpec()
-            : new io.kubernetes.client.openapi.models.V1JobSpecBuilder().build());
+  public V1JobTemplateSpecFluent.SpecNested<A> editOrNewSpec() {
+    return withNewSpecLike(getSpec() != null ? getSpec() : new V1JobSpecBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1JobTemplateSpecFluent.SpecNested<A>
-      editOrNewSpecLike(io.kubernetes.client.openapi.models.V1JobSpec item) {
+  public V1JobTemplateSpecFluent.SpecNested<A> editOrNewSpecLike(V1JobSpec item) {
     return withNewSpecLike(getSpec() != null ? getSpec() : item);
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1JobTemplateSpecFluentImpl that = (V1JobTemplateSpecFluentImpl) o;
@@ -150,20 +144,33 @@ public class V1JobTemplateSpecFluentImpl<
     return java.util.Objects.hash(metadata, spec, super.hashCode());
   }
 
-  public class MetadataNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1ObjectMetaFluentImpl<
-          io.kubernetes.client.openapi.models.V1JobTemplateSpecFluent.MetadataNested<N>>
-      implements io.kubernetes.client.openapi.models.V1JobTemplateSpecFluent.MetadataNested<N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    MetadataNestedImpl(io.kubernetes.client.openapi.models.V1ObjectMeta item) {
-      this.builder = new io.kubernetes.client.openapi.models.V1ObjectMetaBuilder(this, item);
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (metadata != null) {
+      sb.append("metadata:");
+      sb.append(metadata + ",");
+    }
+    if (spec != null) {
+      sb.append("spec:");
+      sb.append(spec);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class MetadataNestedImpl<N>
+      extends V1ObjectMetaFluentImpl<V1JobTemplateSpecFluent.MetadataNested<N>>
+      implements V1JobTemplateSpecFluent.MetadataNested<N>, Nested<N> {
+    MetadataNestedImpl(V1ObjectMeta item) {
+      this.builder = new V1ObjectMetaBuilder(this, item);
     }
 
     MetadataNestedImpl() {
-      this.builder = new io.kubernetes.client.openapi.models.V1ObjectMetaBuilder(this);
+      this.builder = new V1ObjectMetaBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1ObjectMetaBuilder builder;
+    V1ObjectMetaBuilder builder;
 
     public N and() {
       return (N) V1JobTemplateSpecFluentImpl.this.withMetadata(builder.build());
@@ -174,20 +181,17 @@ public class V1JobTemplateSpecFluentImpl<
     }
   }
 
-  public class SpecNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1JobSpecFluentImpl<
-          io.kubernetes.client.openapi.models.V1JobTemplateSpecFluent.SpecNested<N>>
-      implements io.kubernetes.client.openapi.models.V1JobTemplateSpecFluent.SpecNested<N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    SpecNestedImpl(io.kubernetes.client.openapi.models.V1JobSpec item) {
-      this.builder = new io.kubernetes.client.openapi.models.V1JobSpecBuilder(this, item);
+  class SpecNestedImpl<N> extends V1JobSpecFluentImpl<V1JobTemplateSpecFluent.SpecNested<N>>
+      implements V1JobTemplateSpecFluent.SpecNested<N>, Nested<N> {
+    SpecNestedImpl(V1JobSpec item) {
+      this.builder = new V1JobSpecBuilder(this, item);
     }
 
     SpecNestedImpl() {
-      this.builder = new io.kubernetes.client.openapi.models.V1JobSpecBuilder(this);
+      this.builder = new V1JobSpecBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1JobSpecBuilder builder;
+    V1JobSpecBuilder builder;
 
     public N and() {
       return (N) V1JobTemplateSpecFluentImpl.this.withSpec(builder.build());

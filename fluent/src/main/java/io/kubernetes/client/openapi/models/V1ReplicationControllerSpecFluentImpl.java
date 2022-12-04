@@ -12,15 +12,18 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 /** Generated */
-public class V1ReplicationControllerSpecFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1ReplicationControllerSpecFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1ReplicationControllerSpecFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1ReplicationControllerSpecFluentImpl<A extends V1ReplicationControllerSpecFluent<A>>
+    extends BaseFluent<A> implements V1ReplicationControllerSpecFluent<A> {
   public V1ReplicationControllerSpecFluentImpl() {}
 
-  public V1ReplicationControllerSpecFluentImpl(
-      io.kubernetes.client.openapi.models.V1ReplicationControllerSpec instance) {
+  public V1ReplicationControllerSpecFluentImpl(V1ReplicationControllerSpec instance) {
     this.withMinReadySeconds(instance.getMinReadySeconds());
 
     this.withReplicas(instance.getReplicas());
@@ -30,40 +33,40 @@ public class V1ReplicationControllerSpecFluentImpl<
     this.withTemplate(instance.getTemplate());
   }
 
-  private java.lang.Integer minReadySeconds;
-  private java.lang.Integer replicas;
-  private java.util.Map<java.lang.String, java.lang.String> selector;
-  private io.kubernetes.client.openapi.models.V1PodTemplateSpecBuilder template;
+  private Integer minReadySeconds;
+  private Integer replicas;
+  private Map<String, String> selector;
+  private V1PodTemplateSpecBuilder template;
 
-  public java.lang.Integer getMinReadySeconds() {
+  public Integer getMinReadySeconds() {
     return this.minReadySeconds;
   }
 
-  public A withMinReadySeconds(java.lang.Integer minReadySeconds) {
+  public A withMinReadySeconds(Integer minReadySeconds) {
     this.minReadySeconds = minReadySeconds;
     return (A) this;
   }
 
-  public java.lang.Boolean hasMinReadySeconds() {
+  public Boolean hasMinReadySeconds() {
     return this.minReadySeconds != null;
   }
 
-  public java.lang.Integer getReplicas() {
+  public Integer getReplicas() {
     return this.replicas;
   }
 
-  public A withReplicas(java.lang.Integer replicas) {
+  public A withReplicas(Integer replicas) {
     this.replicas = replicas;
     return (A) this;
   }
 
-  public java.lang.Boolean hasReplicas() {
+  public Boolean hasReplicas() {
     return this.replicas != null;
   }
 
-  public A addToSelector(java.lang.String key, java.lang.String value) {
+  public A addToSelector(String key, String value) {
     if (this.selector == null && key != null && value != null) {
-      this.selector = new java.util.LinkedHashMap();
+      this.selector = new LinkedHashMap();
     }
     if (key != null && value != null) {
       this.selector.put(key, value);
@@ -71,9 +74,9 @@ public class V1ReplicationControllerSpecFluentImpl<
     return (A) this;
   }
 
-  public A addToSelector(java.util.Map<java.lang.String, java.lang.String> map) {
+  public A addToSelector(Map<String, String> map) {
     if (this.selector == null && map != null) {
-      this.selector = new java.util.LinkedHashMap();
+      this.selector = new LinkedHashMap();
     }
     if (map != null) {
       this.selector.putAll(map);
@@ -81,7 +84,7 @@ public class V1ReplicationControllerSpecFluentImpl<
     return (A) this;
   }
 
-  public A removeFromSelector(java.lang.String key) {
+  public A removeFromSelector(String key) {
     if (this.selector == null) {
       return (A) this;
     }
@@ -91,7 +94,7 @@ public class V1ReplicationControllerSpecFluentImpl<
     return (A) this;
   }
 
-  public A removeFromSelector(java.util.Map<java.lang.String, java.lang.String> map) {
+  public A removeFromSelector(Map<String, String> map) {
     if (this.selector == null) {
       return (A) this;
     }
@@ -105,20 +108,20 @@ public class V1ReplicationControllerSpecFluentImpl<
     return (A) this;
   }
 
-  public java.util.Map<java.lang.String, java.lang.String> getSelector() {
+  public Map<String, String> getSelector() {
     return this.selector;
   }
 
-  public <K, V> A withSelector(java.util.Map<java.lang.String, java.lang.String> selector) {
+  public <K, V> A withSelector(Map<String, String> selector) {
     if (selector == null) {
       this.selector = null;
     } else {
-      this.selector = new java.util.LinkedHashMap(selector);
+      this.selector = new LinkedHashMap(selector);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasSelector() {
+  public Boolean hasSelector() {
     return this.selector != null;
   }
 
@@ -127,59 +130,55 @@ public class V1ReplicationControllerSpecFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1PodTemplateSpec getTemplate() {
+  @Deprecated
+  public V1PodTemplateSpec getTemplate() {
     return this.template != null ? this.template.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1PodTemplateSpec buildTemplate() {
+  public V1PodTemplateSpec buildTemplate() {
     return this.template != null ? this.template.build() : null;
   }
 
-  public A withTemplate(io.kubernetes.client.openapi.models.V1PodTemplateSpec template) {
+  public A withTemplate(V1PodTemplateSpec template) {
     _visitables.get("template").remove(this.template);
     if (template != null) {
-      this.template = new io.kubernetes.client.openapi.models.V1PodTemplateSpecBuilder(template);
+      this.template = new V1PodTemplateSpecBuilder(template);
       _visitables.get("template").add(this.template);
+    } else {
+      this.template = null;
+      _visitables.get("template").remove(this.template);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasTemplate() {
+  public Boolean hasTemplate() {
     return this.template != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1ReplicationControllerSpecFluent.TemplateNested<A>
-      withNewTemplate() {
-    return new io.kubernetes.client.openapi.models.V1ReplicationControllerSpecFluentImpl
-        .TemplateNestedImpl();
+  public V1ReplicationControllerSpecFluent.TemplateNested<A> withNewTemplate() {
+    return new V1ReplicationControllerSpecFluentImpl.TemplateNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1ReplicationControllerSpecFluent.TemplateNested<A>
-      withNewTemplateLike(io.kubernetes.client.openapi.models.V1PodTemplateSpec item) {
-    return new io.kubernetes.client.openapi.models.V1ReplicationControllerSpecFluentImpl
-        .TemplateNestedImpl(item);
+  public V1ReplicationControllerSpecFluent.TemplateNested<A> withNewTemplateLike(
+      V1PodTemplateSpec item) {
+    return new V1ReplicationControllerSpecFluentImpl.TemplateNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1ReplicationControllerSpecFluent.TemplateNested<A>
-      editTemplate() {
+  public V1ReplicationControllerSpecFluent.TemplateNested<A> editTemplate() {
     return withNewTemplateLike(getTemplate());
   }
 
-  public io.kubernetes.client.openapi.models.V1ReplicationControllerSpecFluent.TemplateNested<A>
-      editOrNewTemplate() {
+  public V1ReplicationControllerSpecFluent.TemplateNested<A> editOrNewTemplate() {
     return withNewTemplateLike(
-        getTemplate() != null
-            ? getTemplate()
-            : new io.kubernetes.client.openapi.models.V1PodTemplateSpecBuilder().build());
+        getTemplate() != null ? getTemplate() : new V1PodTemplateSpecBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1ReplicationControllerSpecFluent.TemplateNested<A>
-      editOrNewTemplateLike(io.kubernetes.client.openapi.models.V1PodTemplateSpec item) {
+  public V1ReplicationControllerSpecFluent.TemplateNested<A> editOrNewTemplateLike(
+      V1PodTemplateSpec item) {
     return withNewTemplateLike(getTemplate() != null ? getTemplate() : item);
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1ReplicationControllerSpecFluentImpl that = (V1ReplicationControllerSpecFluentImpl) o;
@@ -196,22 +195,41 @@ public class V1ReplicationControllerSpecFluentImpl<
     return java.util.Objects.hash(minReadySeconds, replicas, selector, template, super.hashCode());
   }
 
-  public class TemplateNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1PodTemplateSpecFluentImpl<
-          io.kubernetes.client.openapi.models.V1ReplicationControllerSpecFluent.TemplateNested<N>>
-      implements io.kubernetes.client.openapi.models.V1ReplicationControllerSpecFluent
-                  .TemplateNested<
-              N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    TemplateNestedImpl(io.kubernetes.client.openapi.models.V1PodTemplateSpec item) {
-      this.builder = new io.kubernetes.client.openapi.models.V1PodTemplateSpecBuilder(this, item);
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (minReadySeconds != null) {
+      sb.append("minReadySeconds:");
+      sb.append(minReadySeconds + ",");
+    }
+    if (replicas != null) {
+      sb.append("replicas:");
+      sb.append(replicas + ",");
+    }
+    if (selector != null && !selector.isEmpty()) {
+      sb.append("selector:");
+      sb.append(selector + ",");
+    }
+    if (template != null) {
+      sb.append("template:");
+      sb.append(template);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class TemplateNestedImpl<N>
+      extends V1PodTemplateSpecFluentImpl<V1ReplicationControllerSpecFluent.TemplateNested<N>>
+      implements V1ReplicationControllerSpecFluent.TemplateNested<N>, Nested<N> {
+    TemplateNestedImpl(V1PodTemplateSpec item) {
+      this.builder = new V1PodTemplateSpecBuilder(this, item);
     }
 
     TemplateNestedImpl() {
-      this.builder = new io.kubernetes.client.openapi.models.V1PodTemplateSpecBuilder(this);
+      this.builder = new V1PodTemplateSpecBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1PodTemplateSpecBuilder builder;
+    V1PodTemplateSpecBuilder builder;
 
     public N and() {
       return (N) V1ReplicationControllerSpecFluentImpl.this.withTemplate(builder.build());

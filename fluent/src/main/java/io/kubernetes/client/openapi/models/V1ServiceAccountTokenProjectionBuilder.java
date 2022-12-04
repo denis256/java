@@ -12,41 +12,38 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1ServiceAccountTokenProjectionBuilder
-    extends io.kubernetes.client.openapi.models.V1ServiceAccountTokenProjectionFluentImpl<
-        io.kubernetes.client.openapi.models.V1ServiceAccountTokenProjectionBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1ServiceAccountTokenProjection,
-        io.kubernetes.client.openapi.models.V1ServiceAccountTokenProjectionBuilder> {
+    extends V1ServiceAccountTokenProjectionFluentImpl<V1ServiceAccountTokenProjectionBuilder>
+    implements VisitableBuilder<
+        V1ServiceAccountTokenProjection, V1ServiceAccountTokenProjectionBuilder> {
   public V1ServiceAccountTokenProjectionBuilder() {
     this(false);
   }
 
-  public V1ServiceAccountTokenProjectionBuilder(java.lang.Boolean validationEnabled) {
+  public V1ServiceAccountTokenProjectionBuilder(Boolean validationEnabled) {
     this(new V1ServiceAccountTokenProjection(), validationEnabled);
   }
 
-  public V1ServiceAccountTokenProjectionBuilder(
-      io.kubernetes.client.openapi.models.V1ServiceAccountTokenProjectionFluent<?> fluent) {
+  public V1ServiceAccountTokenProjectionBuilder(V1ServiceAccountTokenProjectionFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1ServiceAccountTokenProjectionBuilder(
-      io.kubernetes.client.openapi.models.V1ServiceAccountTokenProjectionFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1ServiceAccountTokenProjectionFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1ServiceAccountTokenProjection(), validationEnabled);
   }
 
   public V1ServiceAccountTokenProjectionBuilder(
-      io.kubernetes.client.openapi.models.V1ServiceAccountTokenProjectionFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ServiceAccountTokenProjection instance) {
+      V1ServiceAccountTokenProjectionFluent<?> fluent, V1ServiceAccountTokenProjection instance) {
     this(fluent, instance, false);
   }
 
   public V1ServiceAccountTokenProjectionBuilder(
-      io.kubernetes.client.openapi.models.V1ServiceAccountTokenProjectionFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ServiceAccountTokenProjection instance,
-      java.lang.Boolean validationEnabled) {
+      V1ServiceAccountTokenProjectionFluent<?> fluent,
+      V1ServiceAccountTokenProjection instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withAudience(instance.getAudience());
 
@@ -57,14 +54,12 @@ public class V1ServiceAccountTokenProjectionBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1ServiceAccountTokenProjectionBuilder(
-      io.kubernetes.client.openapi.models.V1ServiceAccountTokenProjection instance) {
+  public V1ServiceAccountTokenProjectionBuilder(V1ServiceAccountTokenProjection instance) {
     this(instance, false);
   }
 
   public V1ServiceAccountTokenProjectionBuilder(
-      io.kubernetes.client.openapi.models.V1ServiceAccountTokenProjection instance,
-      java.lang.Boolean validationEnabled) {
+      V1ServiceAccountTokenProjection instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withAudience(instance.getAudience());
 
@@ -75,33 +70,14 @@ public class V1ServiceAccountTokenProjectionBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1ServiceAccountTokenProjectionFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1ServiceAccountTokenProjectionFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1ServiceAccountTokenProjection build() {
+  public V1ServiceAccountTokenProjection build() {
     V1ServiceAccountTokenProjection buildable = new V1ServiceAccountTokenProjection();
     buildable.setAudience(fluent.getAudience());
     buildable.setExpirationSeconds(fluent.getExpirationSeconds());
     buildable.setPath(fluent.getPath());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1ServiceAccountTokenProjectionBuilder that = (V1ServiceAccountTokenProjectionBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

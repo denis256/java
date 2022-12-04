@@ -12,268 +12,237 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
+
 /** Generated */
-public interface V1PodSecurityContextFluent<
-        A extends io.kubernetes.client.openapi.models.V1PodSecurityContextFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.Long getFsGroup();
+public interface V1PodSecurityContextFluent<A extends V1PodSecurityContextFluent<A>>
+    extends Fluent<A> {
+  public Long getFsGroup();
 
-  public A withFsGroup(java.lang.Long fsGroup);
+  public A withFsGroup(Long fsGroup);
 
-  public java.lang.Boolean hasFsGroup();
+  public Boolean hasFsGroup();
 
-  public java.lang.String getFsGroupChangePolicy();
+  public String getFsGroupChangePolicy();
 
-  public A withFsGroupChangePolicy(java.lang.String fsGroupChangePolicy);
+  public A withFsGroupChangePolicy(String fsGroupChangePolicy);
 
-  public java.lang.Boolean hasFsGroupChangePolicy();
+  public Boolean hasFsGroupChangePolicy();
 
-  /** Method is deprecated. use withFsGroupChangePolicy instead. */
-  @java.lang.Deprecated
-  public A withNewFsGroupChangePolicy(java.lang.String original);
+  public Long getRunAsGroup();
 
-  public java.lang.Long getRunAsGroup();
+  public A withRunAsGroup(Long runAsGroup);
 
-  public A withRunAsGroup(java.lang.Long runAsGroup);
+  public Boolean hasRunAsGroup();
 
-  public java.lang.Boolean hasRunAsGroup();
+  public Boolean getRunAsNonRoot();
 
-  public java.lang.Boolean getRunAsNonRoot();
+  public A withRunAsNonRoot(Boolean runAsNonRoot);
 
-  public A withRunAsNonRoot(java.lang.Boolean runAsNonRoot);
+  public Boolean hasRunAsNonRoot();
 
-  public java.lang.Boolean hasRunAsNonRoot();
+  public Long getRunAsUser();
 
-  public java.lang.Long getRunAsUser();
+  public A withRunAsUser(Long runAsUser);
 
-  public A withRunAsUser(java.lang.Long runAsUser);
-
-  public java.lang.Boolean hasRunAsUser();
+  public Boolean hasRunAsUser();
 
   /**
    * This method has been deprecated, please use method buildSeLinuxOptions instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1SELinuxOptions getSeLinuxOptions();
+  @Deprecated
+  public V1SELinuxOptions getSeLinuxOptions();
 
-  public io.kubernetes.client.openapi.models.V1SELinuxOptions buildSeLinuxOptions();
+  public V1SELinuxOptions buildSeLinuxOptions();
 
-  public A withSeLinuxOptions(io.kubernetes.client.openapi.models.V1SELinuxOptions seLinuxOptions);
+  public A withSeLinuxOptions(V1SELinuxOptions seLinuxOptions);
 
-  public java.lang.Boolean hasSeLinuxOptions();
+  public Boolean hasSeLinuxOptions();
 
-  public io.kubernetes.client.openapi.models.V1PodSecurityContextFluent.SeLinuxOptionsNested<A>
-      withNewSeLinuxOptions();
+  public V1PodSecurityContextFluent.SeLinuxOptionsNested<A> withNewSeLinuxOptions();
 
-  public io.kubernetes.client.openapi.models.V1PodSecurityContextFluent.SeLinuxOptionsNested<A>
-      withNewSeLinuxOptionsLike(io.kubernetes.client.openapi.models.V1SELinuxOptions item);
+  public V1PodSecurityContextFluent.SeLinuxOptionsNested<A> withNewSeLinuxOptionsLike(
+      V1SELinuxOptions item);
 
-  public io.kubernetes.client.openapi.models.V1PodSecurityContextFluent.SeLinuxOptionsNested<A>
-      editSeLinuxOptions();
+  public V1PodSecurityContextFluent.SeLinuxOptionsNested<A> editSeLinuxOptions();
 
-  public io.kubernetes.client.openapi.models.V1PodSecurityContextFluent.SeLinuxOptionsNested<A>
-      editOrNewSeLinuxOptions();
+  public V1PodSecurityContextFluent.SeLinuxOptionsNested<A> editOrNewSeLinuxOptions();
 
-  public io.kubernetes.client.openapi.models.V1PodSecurityContextFluent.SeLinuxOptionsNested<A>
-      editOrNewSeLinuxOptionsLike(io.kubernetes.client.openapi.models.V1SELinuxOptions item);
+  public V1PodSecurityContextFluent.SeLinuxOptionsNested<A> editOrNewSeLinuxOptionsLike(
+      V1SELinuxOptions item);
 
   /**
    * This method has been deprecated, please use method buildSeccompProfile instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1SeccompProfile getSeccompProfile();
+  @Deprecated
+  public V1SeccompProfile getSeccompProfile();
 
-  public io.kubernetes.client.openapi.models.V1SeccompProfile buildSeccompProfile();
+  public V1SeccompProfile buildSeccompProfile();
 
-  public A withSeccompProfile(io.kubernetes.client.openapi.models.V1SeccompProfile seccompProfile);
+  public A withSeccompProfile(V1SeccompProfile seccompProfile);
 
-  public java.lang.Boolean hasSeccompProfile();
+  public Boolean hasSeccompProfile();
 
-  public io.kubernetes.client.openapi.models.V1PodSecurityContextFluent.SeccompProfileNested<A>
-      withNewSeccompProfile();
+  public V1PodSecurityContextFluent.SeccompProfileNested<A> withNewSeccompProfile();
 
-  public io.kubernetes.client.openapi.models.V1PodSecurityContextFluent.SeccompProfileNested<A>
-      withNewSeccompProfileLike(io.kubernetes.client.openapi.models.V1SeccompProfile item);
+  public V1PodSecurityContextFluent.SeccompProfileNested<A> withNewSeccompProfileLike(
+      V1SeccompProfile item);
 
-  public io.kubernetes.client.openapi.models.V1PodSecurityContextFluent.SeccompProfileNested<A>
-      editSeccompProfile();
+  public V1PodSecurityContextFluent.SeccompProfileNested<A> editSeccompProfile();
 
-  public io.kubernetes.client.openapi.models.V1PodSecurityContextFluent.SeccompProfileNested<A>
-      editOrNewSeccompProfile();
+  public V1PodSecurityContextFluent.SeccompProfileNested<A> editOrNewSeccompProfile();
 
-  public io.kubernetes.client.openapi.models.V1PodSecurityContextFluent.SeccompProfileNested<A>
-      editOrNewSeccompProfileLike(io.kubernetes.client.openapi.models.V1SeccompProfile item);
+  public V1PodSecurityContextFluent.SeccompProfileNested<A> editOrNewSeccompProfileLike(
+      V1SeccompProfile item);
 
-  public A addToSupplementalGroups(java.lang.Integer index, java.lang.Long item);
+  public A addToSupplementalGroups(Integer index, Long item);
 
-  public A setToSupplementalGroups(java.lang.Integer index, java.lang.Long item);
+  public A setToSupplementalGroups(Integer index, Long item);
 
   public A addToSupplementalGroups(java.lang.Long... items);
 
-  public A addAllToSupplementalGroups(java.util.Collection<java.lang.Long> items);
+  public A addAllToSupplementalGroups(Collection<Long> items);
 
   public A removeFromSupplementalGroups(java.lang.Long... items);
 
-  public A removeAllFromSupplementalGroups(java.util.Collection<java.lang.Long> items);
+  public A removeAllFromSupplementalGroups(Collection<Long> items);
 
-  public java.util.List<java.lang.Long> getSupplementalGroups();
+  public List<Long> getSupplementalGroups();
 
-  public java.lang.Long getSupplementalGroup(java.lang.Integer index);
+  public Long getSupplementalGroup(Integer index);
 
-  public java.lang.Long getFirstSupplementalGroup();
+  public Long getFirstSupplementalGroup();
 
-  public java.lang.Long getLastSupplementalGroup();
+  public Long getLastSupplementalGroup();
 
-  public java.lang.Long getMatchingSupplementalGroup(
-      java.util.function.Predicate<java.lang.Long> predicate);
+  public Long getMatchingSupplementalGroup(Predicate<Long> predicate);
 
-  public java.lang.Boolean hasMatchingSupplementalGroup(
-      java.util.function.Predicate<java.lang.Long> predicate);
+  public Boolean hasMatchingSupplementalGroup(Predicate<Long> predicate);
 
-  public A withSupplementalGroups(java.util.List<java.lang.Long> supplementalGroups);
+  public A withSupplementalGroups(List<Long> supplementalGroups);
 
   public A withSupplementalGroups(java.lang.Long... supplementalGroups);
 
-  public java.lang.Boolean hasSupplementalGroups();
+  public Boolean hasSupplementalGroups();
 
-  public A addToSysctls(java.lang.Integer index, io.kubernetes.client.openapi.models.V1Sysctl item);
+  public A addToSysctls(Integer index, V1Sysctl item);
 
-  public A setToSysctls(java.lang.Integer index, io.kubernetes.client.openapi.models.V1Sysctl item);
+  public A setToSysctls(Integer index, V1Sysctl item);
 
   public A addToSysctls(io.kubernetes.client.openapi.models.V1Sysctl... items);
 
-  public A addAllToSysctls(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1Sysctl> items);
+  public A addAllToSysctls(Collection<V1Sysctl> items);
 
   public A removeFromSysctls(io.kubernetes.client.openapi.models.V1Sysctl... items);
 
-  public A removeAllFromSysctls(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1Sysctl> items);
+  public A removeAllFromSysctls(Collection<V1Sysctl> items);
 
-  public A removeMatchingFromSysctls(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1SysctlBuilder> predicate);
+  public A removeMatchingFromSysctls(Predicate<V1SysctlBuilder> predicate);
 
   /**
    * This method has been deprecated, please use method buildSysctls instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V1Sysctl> getSysctls();
+  @Deprecated
+  public List<V1Sysctl> getSysctls();
 
-  public java.util.List<io.kubernetes.client.openapi.models.V1Sysctl> buildSysctls();
+  public List<V1Sysctl> buildSysctls();
 
-  public io.kubernetes.client.openapi.models.V1Sysctl buildSysctl(java.lang.Integer index);
+  public V1Sysctl buildSysctl(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1Sysctl buildFirstSysctl();
+  public V1Sysctl buildFirstSysctl();
 
-  public io.kubernetes.client.openapi.models.V1Sysctl buildLastSysctl();
+  public V1Sysctl buildLastSysctl();
 
-  public io.kubernetes.client.openapi.models.V1Sysctl buildMatchingSysctl(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1SysctlBuilder> predicate);
+  public V1Sysctl buildMatchingSysctl(Predicate<V1SysctlBuilder> predicate);
 
-  public java.lang.Boolean hasMatchingSysctl(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1SysctlBuilder> predicate);
+  public Boolean hasMatchingSysctl(Predicate<V1SysctlBuilder> predicate);
 
-  public A withSysctls(java.util.List<io.kubernetes.client.openapi.models.V1Sysctl> sysctls);
+  public A withSysctls(List<V1Sysctl> sysctls);
 
   public A withSysctls(io.kubernetes.client.openapi.models.V1Sysctl... sysctls);
 
-  public java.lang.Boolean hasSysctls();
+  public Boolean hasSysctls();
 
-  public io.kubernetes.client.openapi.models.V1PodSecurityContextFluent.SysctlsNested<A>
-      addNewSysctl();
+  public V1PodSecurityContextFluent.SysctlsNested<A> addNewSysctl();
 
-  public io.kubernetes.client.openapi.models.V1PodSecurityContextFluent.SysctlsNested<A>
-      addNewSysctlLike(io.kubernetes.client.openapi.models.V1Sysctl item);
+  public V1PodSecurityContextFluent.SysctlsNested<A> addNewSysctlLike(V1Sysctl item);
 
-  public io.kubernetes.client.openapi.models.V1PodSecurityContextFluent.SysctlsNested<A>
-      setNewSysctlLike(java.lang.Integer index, io.kubernetes.client.openapi.models.V1Sysctl item);
+  public V1PodSecurityContextFluent.SysctlsNested<A> setNewSysctlLike(Integer index, V1Sysctl item);
 
-  public io.kubernetes.client.openapi.models.V1PodSecurityContextFluent.SysctlsNested<A> editSysctl(
-      java.lang.Integer index);
+  public V1PodSecurityContextFluent.SysctlsNested<A> editSysctl(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1PodSecurityContextFluent.SysctlsNested<A>
-      editFirstSysctl();
+  public V1PodSecurityContextFluent.SysctlsNested<A> editFirstSysctl();
 
-  public io.kubernetes.client.openapi.models.V1PodSecurityContextFluent.SysctlsNested<A>
-      editLastSysctl();
+  public V1PodSecurityContextFluent.SysctlsNested<A> editLastSysctl();
 
-  public io.kubernetes.client.openapi.models.V1PodSecurityContextFluent.SysctlsNested<A>
-      editMatchingSysctl(
-          java.util.function.Predicate<io.kubernetes.client.openapi.models.V1SysctlBuilder>
-              predicate);
+  public V1PodSecurityContextFluent.SysctlsNested<A> editMatchingSysctl(
+      Predicate<V1SysctlBuilder> predicate);
 
   /**
    * This method has been deprecated, please use method buildWindowsOptions instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1WindowsSecurityContextOptions getWindowsOptions();
+  @Deprecated
+  public V1WindowsSecurityContextOptions getWindowsOptions();
 
-  public io.kubernetes.client.openapi.models.V1WindowsSecurityContextOptions buildWindowsOptions();
+  public V1WindowsSecurityContextOptions buildWindowsOptions();
 
-  public A withWindowsOptions(
-      io.kubernetes.client.openapi.models.V1WindowsSecurityContextOptions windowsOptions);
+  public A withWindowsOptions(V1WindowsSecurityContextOptions windowsOptions);
 
-  public java.lang.Boolean hasWindowsOptions();
+  public Boolean hasWindowsOptions();
 
-  public io.kubernetes.client.openapi.models.V1PodSecurityContextFluent.WindowsOptionsNested<A>
-      withNewWindowsOptions();
+  public V1PodSecurityContextFluent.WindowsOptionsNested<A> withNewWindowsOptions();
 
-  public io.kubernetes.client.openapi.models.V1PodSecurityContextFluent.WindowsOptionsNested<A>
-      withNewWindowsOptionsLike(
-          io.kubernetes.client.openapi.models.V1WindowsSecurityContextOptions item);
+  public V1PodSecurityContextFluent.WindowsOptionsNested<A> withNewWindowsOptionsLike(
+      V1WindowsSecurityContextOptions item);
 
-  public io.kubernetes.client.openapi.models.V1PodSecurityContextFluent.WindowsOptionsNested<A>
-      editWindowsOptions();
+  public V1PodSecurityContextFluent.WindowsOptionsNested<A> editWindowsOptions();
 
-  public io.kubernetes.client.openapi.models.V1PodSecurityContextFluent.WindowsOptionsNested<A>
-      editOrNewWindowsOptions();
+  public V1PodSecurityContextFluent.WindowsOptionsNested<A> editOrNewWindowsOptions();
 
-  public io.kubernetes.client.openapi.models.V1PodSecurityContextFluent.WindowsOptionsNested<A>
-      editOrNewWindowsOptionsLike(
-          io.kubernetes.client.openapi.models.V1WindowsSecurityContextOptions item);
+  public V1PodSecurityContextFluent.WindowsOptionsNested<A> editOrNewWindowsOptionsLike(
+      V1WindowsSecurityContextOptions item);
+
+  public A withRunAsNonRoot();
 
   public interface SeLinuxOptionsNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1SELinuxOptionsFluent<
-              io.kubernetes.client.openapi.models.V1PodSecurityContextFluent.SeLinuxOptionsNested<
-                  N>> {
+      extends Nested<N>,
+          V1SELinuxOptionsFluent<V1PodSecurityContextFluent.SeLinuxOptionsNested<N>> {
     public N and();
 
     public N endSeLinuxOptions();
   }
 
   public interface SeccompProfileNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1SeccompProfileFluent<
-              io.kubernetes.client.openapi.models.V1PodSecurityContextFluent.SeccompProfileNested<
-                  N>> {
+      extends Nested<N>,
+          V1SeccompProfileFluent<V1PodSecurityContextFluent.SeccompProfileNested<N>> {
     public N and();
 
     public N endSeccompProfile();
   }
 
   public interface SysctlsNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1SysctlFluent<
-              io.kubernetes.client.openapi.models.V1PodSecurityContextFluent.SysctlsNested<N>> {
+      extends Nested<N>, V1SysctlFluent<V1PodSecurityContextFluent.SysctlsNested<N>> {
     public N and();
 
     public N endSysctl();
   }
 
   public interface WindowsOptionsNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1WindowsSecurityContextOptionsFluent<
-              io.kubernetes.client.openapi.models.V1PodSecurityContextFluent.WindowsOptionsNested<
-                  N>> {
+      extends Nested<N>,
+          V1WindowsSecurityContextOptionsFluent<
+              V1PodSecurityContextFluent.WindowsOptionsNested<N>> {
     public N and();
 
     public N endWindowsOptions();

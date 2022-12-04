@@ -12,13 +12,15 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1ListMetaFluentImpl<A extends io.kubernetes.client.openapi.models.V1ListMetaFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1ListMetaFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1ListMetaFluentImpl<A extends V1ListMetaFluent<A>> extends BaseFluent<A>
+    implements V1ListMetaFluent<A> {
   public V1ListMetaFluentImpl() {}
 
-  public V1ListMetaFluentImpl(io.kubernetes.client.openapi.models.V1ListMeta instance) {
+  public V1ListMetaFluentImpl(V1ListMeta instance) {
     this.withContinue(instance.getContinue());
 
     this.withRemainingItemCount(instance.getRemainingItemCount());
@@ -28,82 +30,64 @@ public class V1ListMetaFluentImpl<A extends io.kubernetes.client.openapi.models.
     this.withSelfLink(instance.getSelfLink());
   }
 
-  private java.lang.String _continue;
-  private java.lang.Long remainingItemCount;
-  private java.lang.String resourceVersion;
-  private java.lang.String selfLink;
+  private String _continue;
+  private Long remainingItemCount;
+  private String resourceVersion;
+  private String selfLink;
 
-  public java.lang.String getContinue() {
+  public String getContinue() {
     return this._continue;
   }
 
-  public A withContinue(java.lang.String _continue) {
+  public A withContinue(String _continue) {
     this._continue = _continue;
     return (A) this;
   }
 
-  public java.lang.Boolean hasContinue() {
+  public Boolean hasContinue() {
     return this._continue != null;
   }
 
-  /** Method is deprecated. use withContinue instead. */
-  @java.lang.Deprecated
-  public A withNewContinue(java.lang.String original) {
-    return (A) withContinue(new String(original));
-  }
-
-  public java.lang.Long getRemainingItemCount() {
+  public Long getRemainingItemCount() {
     return this.remainingItemCount;
   }
 
-  public A withRemainingItemCount(java.lang.Long remainingItemCount) {
+  public A withRemainingItemCount(Long remainingItemCount) {
     this.remainingItemCount = remainingItemCount;
     return (A) this;
   }
 
-  public java.lang.Boolean hasRemainingItemCount() {
+  public Boolean hasRemainingItemCount() {
     return this.remainingItemCount != null;
   }
 
-  public java.lang.String getResourceVersion() {
+  public String getResourceVersion() {
     return this.resourceVersion;
   }
 
-  public A withResourceVersion(java.lang.String resourceVersion) {
+  public A withResourceVersion(String resourceVersion) {
     this.resourceVersion = resourceVersion;
     return (A) this;
   }
 
-  public java.lang.Boolean hasResourceVersion() {
+  public Boolean hasResourceVersion() {
     return this.resourceVersion != null;
   }
 
-  /** Method is deprecated. use withResourceVersion instead. */
-  @java.lang.Deprecated
-  public A withNewResourceVersion(java.lang.String original) {
-    return (A) withResourceVersion(new String(original));
-  }
-
-  public java.lang.String getSelfLink() {
+  public String getSelfLink() {
     return this.selfLink;
   }
 
-  public A withSelfLink(java.lang.String selfLink) {
+  public A withSelfLink(String selfLink) {
     this.selfLink = selfLink;
     return (A) this;
   }
 
-  public java.lang.Boolean hasSelfLink() {
+  public Boolean hasSelfLink() {
     return this.selfLink != null;
   }
 
-  /** Method is deprecated. use withSelfLink instead. */
-  @java.lang.Deprecated
-  public A withNewSelfLink(java.lang.String original) {
-    return (A) withSelfLink(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1ListMetaFluentImpl that = (V1ListMetaFluentImpl) o;
@@ -122,5 +106,28 @@ public class V1ListMetaFluentImpl<A extends io.kubernetes.client.openapi.models.
   public int hashCode() {
     return java.util.Objects.hash(
         _continue, remainingItemCount, resourceVersion, selfLink, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (_continue != null) {
+      sb.append("_continue:");
+      sb.append(_continue + ",");
+    }
+    if (remainingItemCount != null) {
+      sb.append("remainingItemCount:");
+      sb.append(remainingItemCount + ",");
+    }
+    if (resourceVersion != null) {
+      sb.append("resourceVersion:");
+      sb.append(resourceVersion + ",");
+    }
+    if (selfLink != null) {
+      sb.append("selfLink:");
+      sb.append(selfLink);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

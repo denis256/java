@@ -12,40 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1PolicyRuleBuilder
-    extends io.kubernetes.client.openapi.models.V1PolicyRuleFluentImpl<
-        io.kubernetes.client.openapi.models.V1PolicyRuleBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1PolicyRule,
-        io.kubernetes.client.openapi.models.V1PolicyRuleBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1PolicyRuleBuilder extends V1PolicyRuleFluentImpl<V1PolicyRuleBuilder>
+    implements VisitableBuilder<V1PolicyRule, V1PolicyRuleBuilder> {
   public V1PolicyRuleBuilder() {
     this(false);
   }
 
-  public V1PolicyRuleBuilder(java.lang.Boolean validationEnabled) {
+  public V1PolicyRuleBuilder(Boolean validationEnabled) {
     this(new V1PolicyRule(), validationEnabled);
   }
 
-  public V1PolicyRuleBuilder(io.kubernetes.client.openapi.models.V1PolicyRuleFluent<?> fluent) {
+  public V1PolicyRuleBuilder(V1PolicyRuleFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1PolicyRuleBuilder(
-      io.kubernetes.client.openapi.models.V1PolicyRuleFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1PolicyRuleBuilder(V1PolicyRuleFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1PolicyRule(), validationEnabled);
   }
 
-  public V1PolicyRuleBuilder(
-      io.kubernetes.client.openapi.models.V1PolicyRuleFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1PolicyRule instance) {
+  public V1PolicyRuleBuilder(V1PolicyRuleFluent<?> fluent, V1PolicyRule instance) {
     this(fluent, instance, false);
   }
 
   public V1PolicyRuleBuilder(
-      io.kubernetes.client.openapi.models.V1PolicyRuleFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1PolicyRule instance,
-      java.lang.Boolean validationEnabled) {
+      V1PolicyRuleFluent<?> fluent, V1PolicyRule instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withApiGroups(instance.getApiGroups());
 
@@ -60,13 +52,11 @@ public class V1PolicyRuleBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1PolicyRuleBuilder(io.kubernetes.client.openapi.models.V1PolicyRule instance) {
+  public V1PolicyRuleBuilder(V1PolicyRule instance) {
     this(instance, false);
   }
 
-  public V1PolicyRuleBuilder(
-      io.kubernetes.client.openapi.models.V1PolicyRule instance,
-      java.lang.Boolean validationEnabled) {
+  public V1PolicyRuleBuilder(V1PolicyRule instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withApiGroups(instance.getApiGroups());
 
@@ -81,10 +71,10 @@ public class V1PolicyRuleBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1PolicyRuleFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1PolicyRuleFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1PolicyRule build() {
+  public V1PolicyRule build() {
     V1PolicyRule buildable = new V1PolicyRule();
     buildable.setApiGroups(fluent.getApiGroups());
     buildable.setNonResourceURLs(fluent.getNonResourceURLs());
@@ -92,24 +82,5 @@ public class V1PolicyRuleBuilder
     buildable.setResources(fluent.getResources());
     buildable.setVerbs(fluent.getVerbs());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1PolicyRuleBuilder that = (V1PolicyRuleBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

@@ -12,14 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+
 /** Generated */
-public class V1ContainerStateFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1ContainerStateFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1ContainerStateFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1ContainerStateFluentImpl<A extends V1ContainerStateFluent<A>> extends BaseFluent<A>
+    implements V1ContainerStateFluent<A> {
   public V1ContainerStateFluentImpl() {}
 
-  public V1ContainerStateFluentImpl(io.kubernetes.client.openapi.models.V1ContainerState instance) {
+  public V1ContainerStateFluentImpl(V1ContainerState instance) {
     this.withRunning(instance.getRunning());
 
     this.withTerminated(instance.getTerminated());
@@ -27,63 +29,59 @@ public class V1ContainerStateFluentImpl<
     this.withWaiting(instance.getWaiting());
   }
 
-  private io.kubernetes.client.openapi.models.V1ContainerStateRunningBuilder running;
-  private io.kubernetes.client.openapi.models.V1ContainerStateTerminatedBuilder terminated;
-  private io.kubernetes.client.openapi.models.V1ContainerStateWaitingBuilder waiting;
+  private V1ContainerStateRunningBuilder running;
+  private V1ContainerStateTerminatedBuilder terminated;
+  private V1ContainerStateWaitingBuilder waiting;
 
   /**
    * This method has been deprecated, please use method buildRunning instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ContainerStateRunning getRunning() {
+  @Deprecated
+  public V1ContainerStateRunning getRunning() {
     return this.running != null ? this.running.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1ContainerStateRunning buildRunning() {
+  public V1ContainerStateRunning buildRunning() {
     return this.running != null ? this.running.build() : null;
   }
 
-  public A withRunning(io.kubernetes.client.openapi.models.V1ContainerStateRunning running) {
+  public A withRunning(V1ContainerStateRunning running) {
     _visitables.get("running").remove(this.running);
     if (running != null) {
-      this.running =
-          new io.kubernetes.client.openapi.models.V1ContainerStateRunningBuilder(running);
+      this.running = new V1ContainerStateRunningBuilder(running);
       _visitables.get("running").add(this.running);
+    } else {
+      this.running = null;
+      _visitables.get("running").remove(this.running);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasRunning() {
+  public Boolean hasRunning() {
     return this.running != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1ContainerStateFluent.RunningNested<A>
-      withNewRunning() {
-    return new io.kubernetes.client.openapi.models.V1ContainerStateFluentImpl.RunningNestedImpl();
+  public V1ContainerStateFluent.RunningNested<A> withNewRunning() {
+    return new V1ContainerStateFluentImpl.RunningNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1ContainerStateFluent.RunningNested<A>
-      withNewRunningLike(io.kubernetes.client.openapi.models.V1ContainerStateRunning item) {
-    return new io.kubernetes.client.openapi.models.V1ContainerStateFluentImpl.RunningNestedImpl(
-        item);
+  public V1ContainerStateFluent.RunningNested<A> withNewRunningLike(V1ContainerStateRunning item) {
+    return new V1ContainerStateFluentImpl.RunningNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1ContainerStateFluent.RunningNested<A> editRunning() {
+  public V1ContainerStateFluent.RunningNested<A> editRunning() {
     return withNewRunningLike(getRunning());
   }
 
-  public io.kubernetes.client.openapi.models.V1ContainerStateFluent.RunningNested<A>
-      editOrNewRunning() {
+  public V1ContainerStateFluent.RunningNested<A> editOrNewRunning() {
     return withNewRunningLike(
-        getRunning() != null
-            ? getRunning()
-            : new io.kubernetes.client.openapi.models.V1ContainerStateRunningBuilder().build());
+        getRunning() != null ? getRunning() : new V1ContainerStateRunningBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1ContainerStateFluent.RunningNested<A>
-      editOrNewRunningLike(io.kubernetes.client.openapi.models.V1ContainerStateRunning item) {
+  public V1ContainerStateFluent.RunningNested<A> editOrNewRunningLike(
+      V1ContainerStateRunning item) {
     return withNewRunningLike(getRunning() != null ? getRunning() : item);
   }
 
@@ -92,57 +90,53 @@ public class V1ContainerStateFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ContainerStateTerminated getTerminated() {
+  @Deprecated
+  public V1ContainerStateTerminated getTerminated() {
     return this.terminated != null ? this.terminated.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1ContainerStateTerminated buildTerminated() {
+  public V1ContainerStateTerminated buildTerminated() {
     return this.terminated != null ? this.terminated.build() : null;
   }
 
-  public A withTerminated(
-      io.kubernetes.client.openapi.models.V1ContainerStateTerminated terminated) {
+  public A withTerminated(V1ContainerStateTerminated terminated) {
     _visitables.get("terminated").remove(this.terminated);
     if (terminated != null) {
-      this.terminated =
-          new io.kubernetes.client.openapi.models.V1ContainerStateTerminatedBuilder(terminated);
+      this.terminated = new V1ContainerStateTerminatedBuilder(terminated);
       _visitables.get("terminated").add(this.terminated);
+    } else {
+      this.terminated = null;
+      _visitables.get("terminated").remove(this.terminated);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasTerminated() {
+  public Boolean hasTerminated() {
     return this.terminated != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1ContainerStateFluent.TerminatedNested<A>
-      withNewTerminated() {
-    return new io.kubernetes.client.openapi.models.V1ContainerStateFluentImpl
-        .TerminatedNestedImpl();
+  public V1ContainerStateFluent.TerminatedNested<A> withNewTerminated() {
+    return new V1ContainerStateFluentImpl.TerminatedNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1ContainerStateFluent.TerminatedNested<A>
-      withNewTerminatedLike(io.kubernetes.client.openapi.models.V1ContainerStateTerminated item) {
-    return new io.kubernetes.client.openapi.models.V1ContainerStateFluentImpl.TerminatedNestedImpl(
-        item);
+  public V1ContainerStateFluent.TerminatedNested<A> withNewTerminatedLike(
+      V1ContainerStateTerminated item) {
+    return new V1ContainerStateFluentImpl.TerminatedNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1ContainerStateFluent.TerminatedNested<A>
-      editTerminated() {
+  public V1ContainerStateFluent.TerminatedNested<A> editTerminated() {
     return withNewTerminatedLike(getTerminated());
   }
 
-  public io.kubernetes.client.openapi.models.V1ContainerStateFluent.TerminatedNested<A>
-      editOrNewTerminated() {
+  public V1ContainerStateFluent.TerminatedNested<A> editOrNewTerminated() {
     return withNewTerminatedLike(
         getTerminated() != null
             ? getTerminated()
-            : new io.kubernetes.client.openapi.models.V1ContainerStateTerminatedBuilder().build());
+            : new V1ContainerStateTerminatedBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1ContainerStateFluent.TerminatedNested<A>
-      editOrNewTerminatedLike(io.kubernetes.client.openapi.models.V1ContainerStateTerminated item) {
+  public V1ContainerStateFluent.TerminatedNested<A> editOrNewTerminatedLike(
+      V1ContainerStateTerminated item) {
     return withNewTerminatedLike(getTerminated() != null ? getTerminated() : item);
   }
 
@@ -151,58 +145,54 @@ public class V1ContainerStateFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ContainerStateWaiting getWaiting() {
+  @Deprecated
+  public V1ContainerStateWaiting getWaiting() {
     return this.waiting != null ? this.waiting.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1ContainerStateWaiting buildWaiting() {
+  public V1ContainerStateWaiting buildWaiting() {
     return this.waiting != null ? this.waiting.build() : null;
   }
 
-  public A withWaiting(io.kubernetes.client.openapi.models.V1ContainerStateWaiting waiting) {
+  public A withWaiting(V1ContainerStateWaiting waiting) {
     _visitables.get("waiting").remove(this.waiting);
     if (waiting != null) {
-      this.waiting =
-          new io.kubernetes.client.openapi.models.V1ContainerStateWaitingBuilder(waiting);
+      this.waiting = new V1ContainerStateWaitingBuilder(waiting);
       _visitables.get("waiting").add(this.waiting);
+    } else {
+      this.waiting = null;
+      _visitables.get("waiting").remove(this.waiting);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasWaiting() {
+  public Boolean hasWaiting() {
     return this.waiting != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1ContainerStateFluent.WaitingNested<A>
-      withNewWaiting() {
-    return new io.kubernetes.client.openapi.models.V1ContainerStateFluentImpl.WaitingNestedImpl();
+  public V1ContainerStateFluent.WaitingNested<A> withNewWaiting() {
+    return new V1ContainerStateFluentImpl.WaitingNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1ContainerStateFluent.WaitingNested<A>
-      withNewWaitingLike(io.kubernetes.client.openapi.models.V1ContainerStateWaiting item) {
-    return new io.kubernetes.client.openapi.models.V1ContainerStateFluentImpl.WaitingNestedImpl(
-        item);
+  public V1ContainerStateFluent.WaitingNested<A> withNewWaitingLike(V1ContainerStateWaiting item) {
+    return new V1ContainerStateFluentImpl.WaitingNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1ContainerStateFluent.WaitingNested<A> editWaiting() {
+  public V1ContainerStateFluent.WaitingNested<A> editWaiting() {
     return withNewWaitingLike(getWaiting());
   }
 
-  public io.kubernetes.client.openapi.models.V1ContainerStateFluent.WaitingNested<A>
-      editOrNewWaiting() {
+  public V1ContainerStateFluent.WaitingNested<A> editOrNewWaiting() {
     return withNewWaitingLike(
-        getWaiting() != null
-            ? getWaiting()
-            : new io.kubernetes.client.openapi.models.V1ContainerStateWaitingBuilder().build());
+        getWaiting() != null ? getWaiting() : new V1ContainerStateWaitingBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1ContainerStateFluent.WaitingNested<A>
-      editOrNewWaitingLike(io.kubernetes.client.openapi.models.V1ContainerStateWaiting item) {
+  public V1ContainerStateFluent.WaitingNested<A> editOrNewWaitingLike(
+      V1ContainerStateWaiting item) {
     return withNewWaitingLike(getWaiting() != null ? getWaiting() : item);
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1ContainerStateFluentImpl that = (V1ContainerStateFluentImpl) o;
@@ -217,21 +207,37 @@ public class V1ContainerStateFluentImpl<
     return java.util.Objects.hash(running, terminated, waiting, super.hashCode());
   }
 
-  public class RunningNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1ContainerStateRunningFluentImpl<
-          io.kubernetes.client.openapi.models.V1ContainerStateFluent.RunningNested<N>>
-      implements io.kubernetes.client.openapi.models.V1ContainerStateFluent.RunningNested<N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    RunningNestedImpl(io.kubernetes.client.openapi.models.V1ContainerStateRunning item) {
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1ContainerStateRunningBuilder(this, item);
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (running != null) {
+      sb.append("running:");
+      sb.append(running + ",");
+    }
+    if (terminated != null) {
+      sb.append("terminated:");
+      sb.append(terminated + ",");
+    }
+    if (waiting != null) {
+      sb.append("waiting:");
+      sb.append(waiting);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class RunningNestedImpl<N>
+      extends V1ContainerStateRunningFluentImpl<V1ContainerStateFluent.RunningNested<N>>
+      implements V1ContainerStateFluent.RunningNested<N>, Nested<N> {
+    RunningNestedImpl(V1ContainerStateRunning item) {
+      this.builder = new V1ContainerStateRunningBuilder(this, item);
     }
 
     RunningNestedImpl() {
-      this.builder = new io.kubernetes.client.openapi.models.V1ContainerStateRunningBuilder(this);
+      this.builder = new V1ContainerStateRunningBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1ContainerStateRunningBuilder builder;
+    V1ContainerStateRunningBuilder builder;
 
     public N and() {
       return (N) V1ContainerStateFluentImpl.this.withRunning(builder.build());
@@ -242,22 +248,18 @@ public class V1ContainerStateFluentImpl<
     }
   }
 
-  public class TerminatedNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1ContainerStateTerminatedFluentImpl<
-          io.kubernetes.client.openapi.models.V1ContainerStateFluent.TerminatedNested<N>>
-      implements io.kubernetes.client.openapi.models.V1ContainerStateFluent.TerminatedNested<N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    TerminatedNestedImpl(io.kubernetes.client.openapi.models.V1ContainerStateTerminated item) {
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1ContainerStateTerminatedBuilder(this, item);
+  class TerminatedNestedImpl<N>
+      extends V1ContainerStateTerminatedFluentImpl<V1ContainerStateFluent.TerminatedNested<N>>
+      implements V1ContainerStateFluent.TerminatedNested<N>, Nested<N> {
+    TerminatedNestedImpl(V1ContainerStateTerminated item) {
+      this.builder = new V1ContainerStateTerminatedBuilder(this, item);
     }
 
     TerminatedNestedImpl() {
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1ContainerStateTerminatedBuilder(this);
+      this.builder = new V1ContainerStateTerminatedBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1ContainerStateTerminatedBuilder builder;
+    V1ContainerStateTerminatedBuilder builder;
 
     public N and() {
       return (N) V1ContainerStateFluentImpl.this.withTerminated(builder.build());
@@ -268,21 +270,18 @@ public class V1ContainerStateFluentImpl<
     }
   }
 
-  public class WaitingNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1ContainerStateWaitingFluentImpl<
-          io.kubernetes.client.openapi.models.V1ContainerStateFluent.WaitingNested<N>>
-      implements io.kubernetes.client.openapi.models.V1ContainerStateFluent.WaitingNested<N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    WaitingNestedImpl(io.kubernetes.client.openapi.models.V1ContainerStateWaiting item) {
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1ContainerStateWaitingBuilder(this, item);
+  class WaitingNestedImpl<N>
+      extends V1ContainerStateWaitingFluentImpl<V1ContainerStateFluent.WaitingNested<N>>
+      implements V1ContainerStateFluent.WaitingNested<N>, Nested<N> {
+    WaitingNestedImpl(V1ContainerStateWaiting item) {
+      this.builder = new V1ContainerStateWaitingBuilder(this, item);
     }
 
     WaitingNestedImpl() {
-      this.builder = new io.kubernetes.client.openapi.models.V1ContainerStateWaitingBuilder(this);
+      this.builder = new V1ContainerStateWaitingBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1ContainerStateWaitingBuilder builder;
+    V1ContainerStateWaitingBuilder builder;
 
     public N and() {
       return (N) V1ContainerStateFluentImpl.this.withWaiting(builder.build());

@@ -12,14 +12,15 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1SELinuxOptionsFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1SELinuxOptionsFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1SELinuxOptionsFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1SELinuxOptionsFluentImpl<A extends V1SELinuxOptionsFluent<A>> extends BaseFluent<A>
+    implements V1SELinuxOptionsFluent<A> {
   public V1SELinuxOptionsFluentImpl() {}
 
-  public V1SELinuxOptionsFluentImpl(io.kubernetes.client.openapi.models.V1SELinuxOptions instance) {
+  public V1SELinuxOptionsFluentImpl(V1SELinuxOptions instance) {
     this.withLevel(instance.getLevel());
 
     this.withRole(instance.getRole());
@@ -29,88 +30,64 @@ public class V1SELinuxOptionsFluentImpl<
     this.withUser(instance.getUser());
   }
 
-  private java.lang.String level;
-  private java.lang.String role;
-  private java.lang.String type;
-  private java.lang.String user;
+  private String level;
+  private String role;
+  private String type;
+  private String user;
 
-  public java.lang.String getLevel() {
+  public String getLevel() {
     return this.level;
   }
 
-  public A withLevel(java.lang.String level) {
+  public A withLevel(String level) {
     this.level = level;
     return (A) this;
   }
 
-  public java.lang.Boolean hasLevel() {
+  public Boolean hasLevel() {
     return this.level != null;
   }
 
-  /** Method is deprecated. use withLevel instead. */
-  @java.lang.Deprecated
-  public A withNewLevel(java.lang.String original) {
-    return (A) withLevel(new String(original));
-  }
-
-  public java.lang.String getRole() {
+  public String getRole() {
     return this.role;
   }
 
-  public A withRole(java.lang.String role) {
+  public A withRole(String role) {
     this.role = role;
     return (A) this;
   }
 
-  public java.lang.Boolean hasRole() {
+  public Boolean hasRole() {
     return this.role != null;
   }
 
-  /** Method is deprecated. use withRole instead. */
-  @java.lang.Deprecated
-  public A withNewRole(java.lang.String original) {
-    return (A) withRole(new String(original));
-  }
-
-  public java.lang.String getType() {
+  public String getType() {
     return this.type;
   }
 
-  public A withType(java.lang.String type) {
+  public A withType(String type) {
     this.type = type;
     return (A) this;
   }
 
-  public java.lang.Boolean hasType() {
+  public Boolean hasType() {
     return this.type != null;
   }
 
-  /** Method is deprecated. use withType instead. */
-  @java.lang.Deprecated
-  public A withNewType(java.lang.String original) {
-    return (A) withType(new String(original));
-  }
-
-  public java.lang.String getUser() {
+  public String getUser() {
     return this.user;
   }
 
-  public A withUser(java.lang.String user) {
+  public A withUser(String user) {
     this.user = user;
     return (A) this;
   }
 
-  public java.lang.Boolean hasUser() {
+  public Boolean hasUser() {
     return this.user != null;
   }
 
-  /** Method is deprecated. use withUser instead. */
-  @java.lang.Deprecated
-  public A withNewUser(java.lang.String original) {
-    return (A) withUser(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1SELinuxOptionsFluentImpl that = (V1SELinuxOptionsFluentImpl) o;
@@ -123,5 +100,28 @@ public class V1SELinuxOptionsFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(level, role, type, user, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (level != null) {
+      sb.append("level:");
+      sb.append(level + ",");
+    }
+    if (role != null) {
+      sb.append("role:");
+      sb.append(role + ",");
+    }
+    if (type != null) {
+      sb.append("type:");
+      sb.append(type + ",");
+    }
+    if (user != null) {
+      sb.append("user:");
+      sb.append(user);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

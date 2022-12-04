@@ -12,41 +12,34 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1NodeSelectorTermBuilder
-    extends io.kubernetes.client.openapi.models.V1NodeSelectorTermFluentImpl<
-        io.kubernetes.client.openapi.models.V1NodeSelectorTermBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1NodeSelectorTerm,
-        io.kubernetes.client.openapi.models.V1NodeSelectorTermBuilder> {
+    extends V1NodeSelectorTermFluentImpl<V1NodeSelectorTermBuilder>
+    implements VisitableBuilder<V1NodeSelectorTerm, V1NodeSelectorTermBuilder> {
   public V1NodeSelectorTermBuilder() {
     this(false);
   }
 
-  public V1NodeSelectorTermBuilder(java.lang.Boolean validationEnabled) {
+  public V1NodeSelectorTermBuilder(Boolean validationEnabled) {
     this(new V1NodeSelectorTerm(), validationEnabled);
   }
 
-  public V1NodeSelectorTermBuilder(
-      io.kubernetes.client.openapi.models.V1NodeSelectorTermFluent<?> fluent) {
+  public V1NodeSelectorTermBuilder(V1NodeSelectorTermFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1NodeSelectorTermBuilder(
-      io.kubernetes.client.openapi.models.V1NodeSelectorTermFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1NodeSelectorTermBuilder(V1NodeSelectorTermFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1NodeSelectorTerm(), validationEnabled);
   }
 
   public V1NodeSelectorTermBuilder(
-      io.kubernetes.client.openapi.models.V1NodeSelectorTermFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1NodeSelectorTerm instance) {
+      V1NodeSelectorTermFluent<?> fluent, V1NodeSelectorTerm instance) {
     this(fluent, instance, false);
   }
 
   public V1NodeSelectorTermBuilder(
-      io.kubernetes.client.openapi.models.V1NodeSelectorTermFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1NodeSelectorTerm instance,
-      java.lang.Boolean validationEnabled) {
+      V1NodeSelectorTermFluent<?> fluent, V1NodeSelectorTerm instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withMatchExpressions(instance.getMatchExpressions());
 
@@ -55,14 +48,11 @@ public class V1NodeSelectorTermBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1NodeSelectorTermBuilder(
-      io.kubernetes.client.openapi.models.V1NodeSelectorTerm instance) {
+  public V1NodeSelectorTermBuilder(V1NodeSelectorTerm instance) {
     this(instance, false);
   }
 
-  public V1NodeSelectorTermBuilder(
-      io.kubernetes.client.openapi.models.V1NodeSelectorTerm instance,
-      java.lang.Boolean validationEnabled) {
+  public V1NodeSelectorTermBuilder(V1NodeSelectorTerm instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withMatchExpressions(instance.getMatchExpressions());
 
@@ -71,32 +61,13 @@ public class V1NodeSelectorTermBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1NodeSelectorTermFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1NodeSelectorTermFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1NodeSelectorTerm build() {
+  public V1NodeSelectorTerm build() {
     V1NodeSelectorTerm buildable = new V1NodeSelectorTerm();
     buildable.setMatchExpressions(fluent.getMatchExpressions());
     buildable.setMatchFields(fluent.getMatchFields());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1NodeSelectorTermBuilder that = (V1NodeSelectorTermBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

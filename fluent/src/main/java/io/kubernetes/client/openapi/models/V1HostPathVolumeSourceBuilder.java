@@ -12,41 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1HostPathVolumeSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1HostPathVolumeSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1HostPathVolumeSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1HostPathVolumeSource,
-        io.kubernetes.client.openapi.models.V1HostPathVolumeSourceBuilder> {
+    extends V1HostPathVolumeSourceFluentImpl<V1HostPathVolumeSourceBuilder>
+    implements VisitableBuilder<V1HostPathVolumeSource, V1HostPathVolumeSourceBuilder> {
   public V1HostPathVolumeSourceBuilder() {
     this(false);
   }
 
-  public V1HostPathVolumeSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1HostPathVolumeSourceBuilder(Boolean validationEnabled) {
     this(new V1HostPathVolumeSource(), validationEnabled);
   }
 
-  public V1HostPathVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1HostPathVolumeSourceFluent<?> fluent) {
+  public V1HostPathVolumeSourceBuilder(V1HostPathVolumeSourceFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1HostPathVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1HostPathVolumeSourceFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1HostPathVolumeSourceFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1HostPathVolumeSource(), validationEnabled);
   }
 
   public V1HostPathVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1HostPathVolumeSourceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1HostPathVolumeSource instance) {
+      V1HostPathVolumeSourceFluent<?> fluent, V1HostPathVolumeSource instance) {
     this(fluent, instance, false);
   }
 
   public V1HostPathVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1HostPathVolumeSourceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1HostPathVolumeSource instance,
-      java.lang.Boolean validationEnabled) {
+      V1HostPathVolumeSourceFluent<?> fluent,
+      V1HostPathVolumeSource instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withPath(instance.getPath());
 
@@ -55,14 +51,11 @@ public class V1HostPathVolumeSourceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1HostPathVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1HostPathVolumeSource instance) {
+  public V1HostPathVolumeSourceBuilder(V1HostPathVolumeSource instance) {
     this(instance, false);
   }
 
-  public V1HostPathVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1HostPathVolumeSource instance,
-      java.lang.Boolean validationEnabled) {
+  public V1HostPathVolumeSourceBuilder(V1HostPathVolumeSource instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withPath(instance.getPath());
 
@@ -71,32 +64,13 @@ public class V1HostPathVolumeSourceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1HostPathVolumeSourceFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1HostPathVolumeSourceFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1HostPathVolumeSource build() {
+  public V1HostPathVolumeSource build() {
     V1HostPathVolumeSource buildable = new V1HostPathVolumeSource();
     buildable.setPath(fluent.getPath());
     buildable.setType(fluent.getType());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1HostPathVolumeSourceBuilder that = (V1HostPathVolumeSourceBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

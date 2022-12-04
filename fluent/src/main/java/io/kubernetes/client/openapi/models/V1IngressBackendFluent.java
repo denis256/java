@@ -12,81 +12,72 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+
 /** Generated */
-public interface V1IngressBackendFluent<
-        A extends io.kubernetes.client.openapi.models.V1IngressBackendFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
+public interface V1IngressBackendFluent<A extends V1IngressBackendFluent<A>> extends Fluent<A> {
 
   /**
    * This method has been deprecated, please use method buildResource instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1TypedLocalObjectReference getResource();
+  @Deprecated
+  public V1TypedLocalObjectReference getResource();
 
-  public io.kubernetes.client.openapi.models.V1TypedLocalObjectReference buildResource();
+  public V1TypedLocalObjectReference buildResource();
 
-  public A withResource(io.kubernetes.client.openapi.models.V1TypedLocalObjectReference resource);
+  public A withResource(V1TypedLocalObjectReference resource);
 
-  public java.lang.Boolean hasResource();
+  public Boolean hasResource();
 
-  public io.kubernetes.client.openapi.models.V1IngressBackendFluent.ResourceNested<A>
-      withNewResource();
+  public V1IngressBackendFluent.ResourceNested<A> withNewResource();
 
-  public io.kubernetes.client.openapi.models.V1IngressBackendFluent.ResourceNested<A>
-      withNewResourceLike(io.kubernetes.client.openapi.models.V1TypedLocalObjectReference item);
+  public V1IngressBackendFluent.ResourceNested<A> withNewResourceLike(
+      V1TypedLocalObjectReference item);
 
-  public io.kubernetes.client.openapi.models.V1IngressBackendFluent.ResourceNested<A>
-      editResource();
+  public V1IngressBackendFluent.ResourceNested<A> editResource();
 
-  public io.kubernetes.client.openapi.models.V1IngressBackendFluent.ResourceNested<A>
-      editOrNewResource();
+  public V1IngressBackendFluent.ResourceNested<A> editOrNewResource();
 
-  public io.kubernetes.client.openapi.models.V1IngressBackendFluent.ResourceNested<A>
-      editOrNewResourceLike(io.kubernetes.client.openapi.models.V1TypedLocalObjectReference item);
+  public V1IngressBackendFluent.ResourceNested<A> editOrNewResourceLike(
+      V1TypedLocalObjectReference item);
 
   /**
    * This method has been deprecated, please use method buildService instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1IngressServiceBackend getService();
+  @Deprecated
+  public V1IngressServiceBackend getService();
 
-  public io.kubernetes.client.openapi.models.V1IngressServiceBackend buildService();
+  public V1IngressServiceBackend buildService();
 
-  public A withService(io.kubernetes.client.openapi.models.V1IngressServiceBackend service);
+  public A withService(V1IngressServiceBackend service);
 
-  public java.lang.Boolean hasService();
+  public Boolean hasService();
 
-  public io.kubernetes.client.openapi.models.V1IngressBackendFluent.ServiceNested<A>
-      withNewService();
+  public V1IngressBackendFluent.ServiceNested<A> withNewService();
 
-  public io.kubernetes.client.openapi.models.V1IngressBackendFluent.ServiceNested<A>
-      withNewServiceLike(io.kubernetes.client.openapi.models.V1IngressServiceBackend item);
+  public V1IngressBackendFluent.ServiceNested<A> withNewServiceLike(V1IngressServiceBackend item);
 
-  public io.kubernetes.client.openapi.models.V1IngressBackendFluent.ServiceNested<A> editService();
+  public V1IngressBackendFluent.ServiceNested<A> editService();
 
-  public io.kubernetes.client.openapi.models.V1IngressBackendFluent.ServiceNested<A>
-      editOrNewService();
+  public V1IngressBackendFluent.ServiceNested<A> editOrNewService();
 
-  public io.kubernetes.client.openapi.models.V1IngressBackendFluent.ServiceNested<A>
-      editOrNewServiceLike(io.kubernetes.client.openapi.models.V1IngressServiceBackend item);
+  public V1IngressBackendFluent.ServiceNested<A> editOrNewServiceLike(V1IngressServiceBackend item);
 
   public interface ResourceNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1TypedLocalObjectReferenceFluent<
-              io.kubernetes.client.openapi.models.V1IngressBackendFluent.ResourceNested<N>> {
+      extends Nested<N>,
+          V1TypedLocalObjectReferenceFluent<V1IngressBackendFluent.ResourceNested<N>> {
     public N and();
 
     public N endResource();
   }
 
   public interface ServiceNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1IngressServiceBackendFluent<
-              io.kubernetes.client.openapi.models.V1IngressBackendFluent.ServiceNested<N>> {
+      extends Nested<N>, V1IngressServiceBackendFluent<V1IngressBackendFluent.ServiceNested<N>> {
     public N and();
 
     public N endService();

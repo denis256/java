@@ -12,503 +12,388 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-/** Generated */
-public interface V1PodStatusFluent<
-        A extends io.kubernetes.client.openapi.models.V1PodStatusFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public A addToConditions(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1PodCondition item);
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+import java.time.OffsetDateTime;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
 
-  public A setToConditions(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1PodCondition item);
+/** Generated */
+public interface V1PodStatusFluent<A extends V1PodStatusFluent<A>> extends Fluent<A> {
+  public A addToConditions(Integer index, V1PodCondition item);
+
+  public A setToConditions(Integer index, V1PodCondition item);
 
   public A addToConditions(io.kubernetes.client.openapi.models.V1PodCondition... items);
 
-  public A addAllToConditions(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1PodCondition> items);
+  public A addAllToConditions(Collection<V1PodCondition> items);
 
   public A removeFromConditions(io.kubernetes.client.openapi.models.V1PodCondition... items);
 
-  public A removeAllFromConditions(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1PodCondition> items);
+  public A removeAllFromConditions(Collection<V1PodCondition> items);
 
-  public A removeMatchingFromConditions(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1PodConditionBuilder>
-          predicate);
+  public A removeMatchingFromConditions(Predicate<V1PodConditionBuilder> predicate);
 
   /**
    * This method has been deprecated, please use method buildConditions instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V1PodCondition> getConditions();
+  @Deprecated
+  public List<V1PodCondition> getConditions();
 
-  public java.util.List<io.kubernetes.client.openapi.models.V1PodCondition> buildConditions();
+  public List<V1PodCondition> buildConditions();
 
-  public io.kubernetes.client.openapi.models.V1PodCondition buildCondition(java.lang.Integer index);
+  public V1PodCondition buildCondition(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1PodCondition buildFirstCondition();
+  public V1PodCondition buildFirstCondition();
 
-  public io.kubernetes.client.openapi.models.V1PodCondition buildLastCondition();
+  public V1PodCondition buildLastCondition();
 
-  public io.kubernetes.client.openapi.models.V1PodCondition buildMatchingCondition(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1PodConditionBuilder>
-          predicate);
+  public V1PodCondition buildMatchingCondition(Predicate<V1PodConditionBuilder> predicate);
 
-  public java.lang.Boolean hasMatchingCondition(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1PodConditionBuilder>
-          predicate);
+  public Boolean hasMatchingCondition(Predicate<V1PodConditionBuilder> predicate);
 
-  public A withConditions(
-      java.util.List<io.kubernetes.client.openapi.models.V1PodCondition> conditions);
+  public A withConditions(List<V1PodCondition> conditions);
 
   public A withConditions(io.kubernetes.client.openapi.models.V1PodCondition... conditions);
 
-  public java.lang.Boolean hasConditions();
+  public Boolean hasConditions();
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.ConditionsNested<A>
-      addNewCondition();
+  public V1PodStatusFluent.ConditionsNested<A> addNewCondition();
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.ConditionsNested<A>
-      addNewConditionLike(io.kubernetes.client.openapi.models.V1PodCondition item);
+  public V1PodStatusFluent.ConditionsNested<A> addNewConditionLike(V1PodCondition item);
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.ConditionsNested<A>
-      setNewConditionLike(
-          java.lang.Integer index, io.kubernetes.client.openapi.models.V1PodCondition item);
+  public V1PodStatusFluent.ConditionsNested<A> setNewConditionLike(
+      Integer index, V1PodCondition item);
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.ConditionsNested<A> editCondition(
-      java.lang.Integer index);
+  public V1PodStatusFluent.ConditionsNested<A> editCondition(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.ConditionsNested<A>
-      editFirstCondition();
+  public V1PodStatusFluent.ConditionsNested<A> editFirstCondition();
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.ConditionsNested<A>
-      editLastCondition();
+  public V1PodStatusFluent.ConditionsNested<A> editLastCondition();
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.ConditionsNested<A>
-      editMatchingCondition(
-          java.util.function.Predicate<io.kubernetes.client.openapi.models.V1PodConditionBuilder>
-              predicate);
+  public V1PodStatusFluent.ConditionsNested<A> editMatchingCondition(
+      Predicate<V1PodConditionBuilder> predicate);
 
-  public A addToContainerStatuses(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1ContainerStatus item);
+  public A addToContainerStatuses(Integer index, V1ContainerStatus item);
 
-  public A setToContainerStatuses(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1ContainerStatus item);
+  public A setToContainerStatuses(Integer index, V1ContainerStatus item);
 
   public A addToContainerStatuses(io.kubernetes.client.openapi.models.V1ContainerStatus... items);
 
-  public A addAllToContainerStatuses(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1ContainerStatus> items);
+  public A addAllToContainerStatuses(Collection<V1ContainerStatus> items);
 
   public A removeFromContainerStatuses(
       io.kubernetes.client.openapi.models.V1ContainerStatus... items);
 
-  public A removeAllFromContainerStatuses(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1ContainerStatus> items);
+  public A removeAllFromContainerStatuses(Collection<V1ContainerStatus> items);
 
-  public A removeMatchingFromContainerStatuses(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1ContainerStatusBuilder>
-          predicate);
+  public A removeMatchingFromContainerStatuses(Predicate<V1ContainerStatusBuilder> predicate);
 
   /**
    * This method has been deprecated, please use method buildContainerStatuses instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V1ContainerStatus>
-      getContainerStatuses();
+  @Deprecated
+  public List<V1ContainerStatus> getContainerStatuses();
 
-  public java.util.List<io.kubernetes.client.openapi.models.V1ContainerStatus>
-      buildContainerStatuses();
+  public List<V1ContainerStatus> buildContainerStatuses();
 
-  public io.kubernetes.client.openapi.models.V1ContainerStatus buildContainerStatus(
-      java.lang.Integer index);
+  public V1ContainerStatus buildContainerStatus(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1ContainerStatus buildFirstContainerStatus();
+  public V1ContainerStatus buildFirstContainerStatus();
 
-  public io.kubernetes.client.openapi.models.V1ContainerStatus buildLastContainerStatus();
+  public V1ContainerStatus buildLastContainerStatus();
 
-  public io.kubernetes.client.openapi.models.V1ContainerStatus buildMatchingContainerStatus(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1ContainerStatusBuilder>
-          predicate);
+  public V1ContainerStatus buildMatchingContainerStatus(
+      Predicate<V1ContainerStatusBuilder> predicate);
 
-  public java.lang.Boolean hasMatchingContainerStatus(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1ContainerStatusBuilder>
-          predicate);
+  public Boolean hasMatchingContainerStatus(Predicate<V1ContainerStatusBuilder> predicate);
 
-  public A withContainerStatuses(
-      java.util.List<io.kubernetes.client.openapi.models.V1ContainerStatus> containerStatuses);
+  public A withContainerStatuses(List<V1ContainerStatus> containerStatuses);
 
   public A withContainerStatuses(
       io.kubernetes.client.openapi.models.V1ContainerStatus... containerStatuses);
 
-  public java.lang.Boolean hasContainerStatuses();
+  public Boolean hasContainerStatuses();
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.ContainerStatusesNested<A>
-      addNewContainerStatus();
+  public V1PodStatusFluent.ContainerStatusesNested<A> addNewContainerStatus();
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.ContainerStatusesNested<A>
-      addNewContainerStatusLike(io.kubernetes.client.openapi.models.V1ContainerStatus item);
+  public V1PodStatusFluent.ContainerStatusesNested<A> addNewContainerStatusLike(
+      V1ContainerStatus item);
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.ContainerStatusesNested<A>
-      setNewContainerStatusLike(
-          java.lang.Integer index, io.kubernetes.client.openapi.models.V1ContainerStatus item);
+  public V1PodStatusFluent.ContainerStatusesNested<A> setNewContainerStatusLike(
+      Integer index, V1ContainerStatus item);
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.ContainerStatusesNested<A>
-      editContainerStatus(java.lang.Integer index);
+  public V1PodStatusFluent.ContainerStatusesNested<A> editContainerStatus(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.ContainerStatusesNested<A>
-      editFirstContainerStatus();
+  public V1PodStatusFluent.ContainerStatusesNested<A> editFirstContainerStatus();
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.ContainerStatusesNested<A>
-      editLastContainerStatus();
+  public V1PodStatusFluent.ContainerStatusesNested<A> editLastContainerStatus();
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.ContainerStatusesNested<A>
-      editMatchingContainerStatus(
-          java.util.function.Predicate<io.kubernetes.client.openapi.models.V1ContainerStatusBuilder>
-              predicate);
+  public V1PodStatusFluent.ContainerStatusesNested<A> editMatchingContainerStatus(
+      Predicate<V1ContainerStatusBuilder> predicate);
 
-  public A addToEphemeralContainerStatuses(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1ContainerStatus item);
+  public A addToEphemeralContainerStatuses(Integer index, V1ContainerStatus item);
 
-  public A setToEphemeralContainerStatuses(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1ContainerStatus item);
+  public A setToEphemeralContainerStatuses(Integer index, V1ContainerStatus item);
 
   public A addToEphemeralContainerStatuses(
       io.kubernetes.client.openapi.models.V1ContainerStatus... items);
 
-  public A addAllToEphemeralContainerStatuses(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1ContainerStatus> items);
+  public A addAllToEphemeralContainerStatuses(Collection<V1ContainerStatus> items);
 
   public A removeFromEphemeralContainerStatuses(
       io.kubernetes.client.openapi.models.V1ContainerStatus... items);
 
-  public A removeAllFromEphemeralContainerStatuses(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1ContainerStatus> items);
+  public A removeAllFromEphemeralContainerStatuses(Collection<V1ContainerStatus> items);
 
   public A removeMatchingFromEphemeralContainerStatuses(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1ContainerStatusBuilder>
-          predicate);
+      Predicate<V1ContainerStatusBuilder> predicate);
 
   /**
    * This method has been deprecated, please use method buildEphemeralContainerStatuses instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V1ContainerStatus>
-      getEphemeralContainerStatuses();
+  @Deprecated
+  public List<V1ContainerStatus> getEphemeralContainerStatuses();
 
-  public java.util.List<io.kubernetes.client.openapi.models.V1ContainerStatus>
-      buildEphemeralContainerStatuses();
+  public List<V1ContainerStatus> buildEphemeralContainerStatuses();
 
-  public io.kubernetes.client.openapi.models.V1ContainerStatus buildEphemeralContainerStatus(
-      java.lang.Integer index);
+  public V1ContainerStatus buildEphemeralContainerStatus(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1ContainerStatus buildFirstEphemeralContainerStatus();
+  public V1ContainerStatus buildFirstEphemeralContainerStatus();
 
-  public io.kubernetes.client.openapi.models.V1ContainerStatus buildLastEphemeralContainerStatus();
+  public V1ContainerStatus buildLastEphemeralContainerStatus();
 
-  public io.kubernetes.client.openapi.models.V1ContainerStatus
-      buildMatchingEphemeralContainerStatus(
-          java.util.function.Predicate<io.kubernetes.client.openapi.models.V1ContainerStatusBuilder>
-              predicate);
+  public V1ContainerStatus buildMatchingEphemeralContainerStatus(
+      Predicate<V1ContainerStatusBuilder> predicate);
 
-  public java.lang.Boolean hasMatchingEphemeralContainerStatus(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1ContainerStatusBuilder>
-          predicate);
+  public Boolean hasMatchingEphemeralContainerStatus(Predicate<V1ContainerStatusBuilder> predicate);
 
-  public A withEphemeralContainerStatuses(
-      java.util.List<io.kubernetes.client.openapi.models.V1ContainerStatus>
-          ephemeralContainerStatuses);
+  public A withEphemeralContainerStatuses(List<V1ContainerStatus> ephemeralContainerStatuses);
 
   public A withEphemeralContainerStatuses(
       io.kubernetes.client.openapi.models.V1ContainerStatus... ephemeralContainerStatuses);
 
-  public java.lang.Boolean hasEphemeralContainerStatuses();
+  public Boolean hasEphemeralContainerStatuses();
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.EphemeralContainerStatusesNested<A>
-      addNewEphemeralContainerStatus();
+  public V1PodStatusFluent.EphemeralContainerStatusesNested<A> addNewEphemeralContainerStatus();
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.EphemeralContainerStatusesNested<A>
-      addNewEphemeralContainerStatusLike(
-          io.kubernetes.client.openapi.models.V1ContainerStatus item);
+  public V1PodStatusFluent.EphemeralContainerStatusesNested<A> addNewEphemeralContainerStatusLike(
+      V1ContainerStatus item);
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.EphemeralContainerStatusesNested<A>
-      setNewEphemeralContainerStatusLike(
-          java.lang.Integer index, io.kubernetes.client.openapi.models.V1ContainerStatus item);
+  public V1PodStatusFluent.EphemeralContainerStatusesNested<A> setNewEphemeralContainerStatusLike(
+      Integer index, V1ContainerStatus item);
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.EphemeralContainerStatusesNested<A>
-      editEphemeralContainerStatus(java.lang.Integer index);
+  public V1PodStatusFluent.EphemeralContainerStatusesNested<A> editEphemeralContainerStatus(
+      Integer index);
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.EphemeralContainerStatusesNested<A>
-      editFirstEphemeralContainerStatus();
+  public V1PodStatusFluent.EphemeralContainerStatusesNested<A> editFirstEphemeralContainerStatus();
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.EphemeralContainerStatusesNested<A>
-      editLastEphemeralContainerStatus();
+  public V1PodStatusFluent.EphemeralContainerStatusesNested<A> editLastEphemeralContainerStatus();
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.EphemeralContainerStatusesNested<A>
-      editMatchingEphemeralContainerStatus(
-          java.util.function.Predicate<io.kubernetes.client.openapi.models.V1ContainerStatusBuilder>
-              predicate);
+  public V1PodStatusFluent.EphemeralContainerStatusesNested<A> editMatchingEphemeralContainerStatus(
+      Predicate<V1ContainerStatusBuilder> predicate);
 
-  public java.lang.String getHostIP();
+  public String getHostIP();
 
-  public A withHostIP(java.lang.String hostIP);
+  public A withHostIP(String hostIP);
 
-  public java.lang.Boolean hasHostIP();
+  public Boolean hasHostIP();
 
-  /** Method is deprecated. use withHostIP instead. */
-  @java.lang.Deprecated
-  public A withNewHostIP(java.lang.String original);
+  public A addToInitContainerStatuses(Integer index, V1ContainerStatus item);
 
-  public A addToInitContainerStatuses(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1ContainerStatus item);
-
-  public A setToInitContainerStatuses(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1ContainerStatus item);
+  public A setToInitContainerStatuses(Integer index, V1ContainerStatus item);
 
   public A addToInitContainerStatuses(
       io.kubernetes.client.openapi.models.V1ContainerStatus... items);
 
-  public A addAllToInitContainerStatuses(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1ContainerStatus> items);
+  public A addAllToInitContainerStatuses(Collection<V1ContainerStatus> items);
 
   public A removeFromInitContainerStatuses(
       io.kubernetes.client.openapi.models.V1ContainerStatus... items);
 
-  public A removeAllFromInitContainerStatuses(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1ContainerStatus> items);
+  public A removeAllFromInitContainerStatuses(Collection<V1ContainerStatus> items);
 
-  public A removeMatchingFromInitContainerStatuses(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1ContainerStatusBuilder>
-          predicate);
+  public A removeMatchingFromInitContainerStatuses(Predicate<V1ContainerStatusBuilder> predicate);
 
   /**
    * This method has been deprecated, please use method buildInitContainerStatuses instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V1ContainerStatus>
-      getInitContainerStatuses();
+  @Deprecated
+  public List<V1ContainerStatus> getInitContainerStatuses();
 
-  public java.util.List<io.kubernetes.client.openapi.models.V1ContainerStatus>
-      buildInitContainerStatuses();
+  public List<V1ContainerStatus> buildInitContainerStatuses();
 
-  public io.kubernetes.client.openapi.models.V1ContainerStatus buildInitContainerStatus(
-      java.lang.Integer index);
+  public V1ContainerStatus buildInitContainerStatus(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1ContainerStatus buildFirstInitContainerStatus();
+  public V1ContainerStatus buildFirstInitContainerStatus();
 
-  public io.kubernetes.client.openapi.models.V1ContainerStatus buildLastInitContainerStatus();
+  public V1ContainerStatus buildLastInitContainerStatus();
 
-  public io.kubernetes.client.openapi.models.V1ContainerStatus buildMatchingInitContainerStatus(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1ContainerStatusBuilder>
-          predicate);
+  public V1ContainerStatus buildMatchingInitContainerStatus(
+      Predicate<V1ContainerStatusBuilder> predicate);
 
-  public java.lang.Boolean hasMatchingInitContainerStatus(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1ContainerStatusBuilder>
-          predicate);
+  public Boolean hasMatchingInitContainerStatus(Predicate<V1ContainerStatusBuilder> predicate);
 
-  public A withInitContainerStatuses(
-      java.util.List<io.kubernetes.client.openapi.models.V1ContainerStatus> initContainerStatuses);
+  public A withInitContainerStatuses(List<V1ContainerStatus> initContainerStatuses);
 
   public A withInitContainerStatuses(
       io.kubernetes.client.openapi.models.V1ContainerStatus... initContainerStatuses);
 
-  public java.lang.Boolean hasInitContainerStatuses();
+  public Boolean hasInitContainerStatuses();
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.InitContainerStatusesNested<A>
-      addNewInitContainerStatus();
+  public V1PodStatusFluent.InitContainerStatusesNested<A> addNewInitContainerStatus();
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.InitContainerStatusesNested<A>
-      addNewInitContainerStatusLike(io.kubernetes.client.openapi.models.V1ContainerStatus item);
+  public V1PodStatusFluent.InitContainerStatusesNested<A> addNewInitContainerStatusLike(
+      V1ContainerStatus item);
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.InitContainerStatusesNested<A>
-      setNewInitContainerStatusLike(
-          java.lang.Integer index, io.kubernetes.client.openapi.models.V1ContainerStatus item);
+  public V1PodStatusFluent.InitContainerStatusesNested<A> setNewInitContainerStatusLike(
+      Integer index, V1ContainerStatus item);
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.InitContainerStatusesNested<A>
-      editInitContainerStatus(java.lang.Integer index);
+  public V1PodStatusFluent.InitContainerStatusesNested<A> editInitContainerStatus(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.InitContainerStatusesNested<A>
-      editFirstInitContainerStatus();
+  public V1PodStatusFluent.InitContainerStatusesNested<A> editFirstInitContainerStatus();
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.InitContainerStatusesNested<A>
-      editLastInitContainerStatus();
+  public V1PodStatusFluent.InitContainerStatusesNested<A> editLastInitContainerStatus();
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.InitContainerStatusesNested<A>
-      editMatchingInitContainerStatus(
-          java.util.function.Predicate<io.kubernetes.client.openapi.models.V1ContainerStatusBuilder>
-              predicate);
+  public V1PodStatusFluent.InitContainerStatusesNested<A> editMatchingInitContainerStatus(
+      Predicate<V1ContainerStatusBuilder> predicate);
 
-  public java.lang.String getMessage();
+  public String getMessage();
 
-  public A withMessage(java.lang.String message);
+  public A withMessage(String message);
 
-  public java.lang.Boolean hasMessage();
+  public Boolean hasMessage();
 
-  /** Method is deprecated. use withMessage instead. */
-  @java.lang.Deprecated
-  public A withNewMessage(java.lang.String original);
+  public String getNominatedNodeName();
 
-  public java.lang.String getNominatedNodeName();
+  public A withNominatedNodeName(String nominatedNodeName);
 
-  public A withNominatedNodeName(java.lang.String nominatedNodeName);
+  public Boolean hasNominatedNodeName();
 
-  public java.lang.Boolean hasNominatedNodeName();
+  public String getPhase();
 
-  /** Method is deprecated. use withNominatedNodeName instead. */
-  @java.lang.Deprecated
-  public A withNewNominatedNodeName(java.lang.String original);
+  public A withPhase(String phase);
 
-  public io.kubernetes.client.openapi.models.V1PodStatus.PhaseEnum getPhase();
+  public Boolean hasPhase();
 
-  public A withPhase(io.kubernetes.client.openapi.models.V1PodStatus.PhaseEnum phase);
+  public String getPodIP();
 
-  public java.lang.Boolean hasPhase();
+  public A withPodIP(String podIP);
 
-  public java.lang.String getPodIP();
+  public Boolean hasPodIP();
 
-  public A withPodIP(java.lang.String podIP);
+  public A addToPodIPs(Integer index, V1PodIP item);
 
-  public java.lang.Boolean hasPodIP();
-
-  /** Method is deprecated. use withPodIP instead. */
-  @java.lang.Deprecated
-  public A withNewPodIP(java.lang.String original);
-
-  public A addToPodIPs(java.lang.Integer index, io.kubernetes.client.openapi.models.V1PodIP item);
-
-  public A setToPodIPs(java.lang.Integer index, io.kubernetes.client.openapi.models.V1PodIP item);
+  public A setToPodIPs(Integer index, V1PodIP item);
 
   public A addToPodIPs(io.kubernetes.client.openapi.models.V1PodIP... items);
 
-  public A addAllToPodIPs(java.util.Collection<io.kubernetes.client.openapi.models.V1PodIP> items);
+  public A addAllToPodIPs(Collection<V1PodIP> items);
 
   public A removeFromPodIPs(io.kubernetes.client.openapi.models.V1PodIP... items);
 
-  public A removeAllFromPodIPs(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1PodIP> items);
+  public A removeAllFromPodIPs(Collection<V1PodIP> items);
 
-  public A removeMatchingFromPodIPs(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1PodIPBuilder> predicate);
+  public A removeMatchingFromPodIPs(Predicate<V1PodIPBuilder> predicate);
 
   /**
    * This method has been deprecated, please use method buildPodIPs instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V1PodIP> getPodIPs();
+  @Deprecated
+  public List<V1PodIP> getPodIPs();
 
-  public java.util.List<io.kubernetes.client.openapi.models.V1PodIP> buildPodIPs();
+  public List<V1PodIP> buildPodIPs();
 
-  public io.kubernetes.client.openapi.models.V1PodIP buildPodIP(java.lang.Integer index);
+  public V1PodIP buildPodIP(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1PodIP buildFirstPodIP();
+  public V1PodIP buildFirstPodIP();
 
-  public io.kubernetes.client.openapi.models.V1PodIP buildLastPodIP();
+  public V1PodIP buildLastPodIP();
 
-  public io.kubernetes.client.openapi.models.V1PodIP buildMatchingPodIP(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1PodIPBuilder> predicate);
+  public V1PodIP buildMatchingPodIP(Predicate<V1PodIPBuilder> predicate);
 
-  public java.lang.Boolean hasMatchingPodIP(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1PodIPBuilder> predicate);
+  public Boolean hasMatchingPodIP(Predicate<V1PodIPBuilder> predicate);
 
-  public A withPodIPs(java.util.List<io.kubernetes.client.openapi.models.V1PodIP> podIPs);
+  public A withPodIPs(List<V1PodIP> podIPs);
 
   public A withPodIPs(io.kubernetes.client.openapi.models.V1PodIP... podIPs);
 
-  public java.lang.Boolean hasPodIPs();
+  public Boolean hasPodIPs();
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.PodIPsNested<A> addNewPodIP();
+  public V1PodStatusFluent.PodIPsNested<A> addNewPodIP();
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.PodIPsNested<A> addNewPodIPLike(
-      io.kubernetes.client.openapi.models.V1PodIP item);
+  public V1PodStatusFluent.PodIPsNested<A> addNewPodIPLike(V1PodIP item);
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.PodIPsNested<A> setNewPodIPLike(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1PodIP item);
+  public V1PodStatusFluent.PodIPsNested<A> setNewPodIPLike(Integer index, V1PodIP item);
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.PodIPsNested<A> editPodIP(
-      java.lang.Integer index);
+  public V1PodStatusFluent.PodIPsNested<A> editPodIP(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.PodIPsNested<A> editFirstPodIP();
+  public V1PodStatusFluent.PodIPsNested<A> editFirstPodIP();
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.PodIPsNested<A> editLastPodIP();
+  public V1PodStatusFluent.PodIPsNested<A> editLastPodIP();
 
-  public io.kubernetes.client.openapi.models.V1PodStatusFluent.PodIPsNested<A> editMatchingPodIP(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1PodIPBuilder> predicate);
+  public V1PodStatusFluent.PodIPsNested<A> editMatchingPodIP(Predicate<V1PodIPBuilder> predicate);
 
-  public io.kubernetes.client.openapi.models.V1PodStatus.QosClassEnum getQosClass();
+  public String getQosClass();
 
-  public A withQosClass(io.kubernetes.client.openapi.models.V1PodStatus.QosClassEnum qosClass);
+  public A withQosClass(String qosClass);
 
-  public java.lang.Boolean hasQosClass();
+  public Boolean hasQosClass();
 
-  public java.lang.String getReason();
+  public String getReason();
 
-  public A withReason(java.lang.String reason);
+  public A withReason(String reason);
 
-  public java.lang.Boolean hasReason();
+  public Boolean hasReason();
 
-  /** Method is deprecated. use withReason instead. */
-  @java.lang.Deprecated
-  public A withNewReason(java.lang.String original);
+  public OffsetDateTime getStartTime();
 
-  public java.time.OffsetDateTime getStartTime();
+  public A withStartTime(OffsetDateTime startTime);
 
-  public A withStartTime(java.time.OffsetDateTime startTime);
-
-  public java.lang.Boolean hasStartTime();
+  public Boolean hasStartTime();
 
   public interface ConditionsNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1PodConditionFluent<
-              io.kubernetes.client.openapi.models.V1PodStatusFluent.ConditionsNested<N>> {
+      extends Nested<N>, V1PodConditionFluent<V1PodStatusFluent.ConditionsNested<N>> {
     public N and();
 
     public N endCondition();
   }
 
   public interface ContainerStatusesNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1ContainerStatusFluent<
-              io.kubernetes.client.openapi.models.V1PodStatusFluent.ContainerStatusesNested<N>> {
+      extends Nested<N>, V1ContainerStatusFluent<V1PodStatusFluent.ContainerStatusesNested<N>> {
     public N and();
 
     public N endContainerStatus();
   }
 
   public interface EphemeralContainerStatusesNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1ContainerStatusFluent<
-              io.kubernetes.client.openapi.models.V1PodStatusFluent
-                      .EphemeralContainerStatusesNested<
-                  N>> {
+      extends Nested<N>,
+          V1ContainerStatusFluent<V1PodStatusFluent.EphemeralContainerStatusesNested<N>> {
     public N and();
 
     public N endEphemeralContainerStatus();
   }
 
   public interface InitContainerStatusesNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1ContainerStatusFluent<
-              io.kubernetes.client.openapi.models.V1PodStatusFluent.InitContainerStatusesNested<
-                  N>> {
+      extends Nested<N>, V1ContainerStatusFluent<V1PodStatusFluent.InitContainerStatusesNested<N>> {
     public N and();
 
     public N endInitContainerStatus();
   }
 
   public interface PodIPsNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1PodIPFluent<
-              io.kubernetes.client.openapi.models.V1PodStatusFluent.PodIPsNested<N>> {
+      extends Nested<N>, V1PodIPFluent<V1PodStatusFluent.PodIPsNested<N>> {
     public N and();
 
     public N endPodIP();

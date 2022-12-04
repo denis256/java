@@ -12,41 +12,38 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1CertificateSigningRequestSpecBuilder
-    extends io.kubernetes.client.openapi.models.V1CertificateSigningRequestSpecFluentImpl<
-        io.kubernetes.client.openapi.models.V1CertificateSigningRequestSpecBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1CertificateSigningRequestSpec,
-        io.kubernetes.client.openapi.models.V1CertificateSigningRequestSpecBuilder> {
+    extends V1CertificateSigningRequestSpecFluentImpl<V1CertificateSigningRequestSpecBuilder>
+    implements VisitableBuilder<
+        V1CertificateSigningRequestSpec, V1CertificateSigningRequestSpecBuilder> {
   public V1CertificateSigningRequestSpecBuilder() {
     this(false);
   }
 
-  public V1CertificateSigningRequestSpecBuilder(java.lang.Boolean validationEnabled) {
+  public V1CertificateSigningRequestSpecBuilder(Boolean validationEnabled) {
     this(new V1CertificateSigningRequestSpec(), validationEnabled);
   }
 
-  public V1CertificateSigningRequestSpecBuilder(
-      io.kubernetes.client.openapi.models.V1CertificateSigningRequestSpecFluent<?> fluent) {
+  public V1CertificateSigningRequestSpecBuilder(V1CertificateSigningRequestSpecFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1CertificateSigningRequestSpecBuilder(
-      io.kubernetes.client.openapi.models.V1CertificateSigningRequestSpecFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1CertificateSigningRequestSpecFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1CertificateSigningRequestSpec(), validationEnabled);
   }
 
   public V1CertificateSigningRequestSpecBuilder(
-      io.kubernetes.client.openapi.models.V1CertificateSigningRequestSpecFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1CertificateSigningRequestSpec instance) {
+      V1CertificateSigningRequestSpecFluent<?> fluent, V1CertificateSigningRequestSpec instance) {
     this(fluent, instance, false);
   }
 
   public V1CertificateSigningRequestSpecBuilder(
-      io.kubernetes.client.openapi.models.V1CertificateSigningRequestSpecFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1CertificateSigningRequestSpec instance,
-      java.lang.Boolean validationEnabled) {
+      V1CertificateSigningRequestSpecFluent<?> fluent,
+      V1CertificateSigningRequestSpec instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withExpirationSeconds(instance.getExpirationSeconds());
 
@@ -67,14 +64,12 @@ public class V1CertificateSigningRequestSpecBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1CertificateSigningRequestSpecBuilder(
-      io.kubernetes.client.openapi.models.V1CertificateSigningRequestSpec instance) {
+  public V1CertificateSigningRequestSpecBuilder(V1CertificateSigningRequestSpec instance) {
     this(instance, false);
   }
 
   public V1CertificateSigningRequestSpecBuilder(
-      io.kubernetes.client.openapi.models.V1CertificateSigningRequestSpec instance,
-      java.lang.Boolean validationEnabled) {
+      V1CertificateSigningRequestSpec instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withExpirationSeconds(instance.getExpirationSeconds());
 
@@ -95,10 +90,10 @@ public class V1CertificateSigningRequestSpecBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1CertificateSigningRequestSpecFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1CertificateSigningRequestSpecFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1CertificateSigningRequestSpec build() {
+  public V1CertificateSigningRequestSpec build() {
     V1CertificateSigningRequestSpec buildable = new V1CertificateSigningRequestSpec();
     buildable.setExpirationSeconds(fluent.getExpirationSeconds());
     buildable.setExtra(fluent.getExtra());
@@ -109,24 +104,5 @@ public class V1CertificateSigningRequestSpecBuilder
     buildable.setUsages(fluent.getUsages());
     buildable.setUsername(fluent.getUsername());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1CertificateSigningRequestSpecBuilder that = (V1CertificateSigningRequestSpecBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

@@ -1,5 +1,5 @@
 /*
-Copyright 2021 The Kubernetes Authors.
+Copyright 2022 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -23,7 +23,7 @@ import java.util.Objects;
 @ApiModel(description = "StatefulSetStatus represents the current state of a StatefulSet.")
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    date = "2021-12-10T19:11:23.904Z[Etc/UTC]")
+    date = "2022-09-15T17:00:37.921Z[Etc/UTC]")
 public class V1StatefulSetStatus {
   public static final String SERIALIZED_NAME_AVAILABLE_REPLICAS = "availableReplicas";
 
@@ -83,15 +83,14 @@ public class V1StatefulSetStatus {
 
   /**
    * Total number of available pods (ready for at least minReadySeconds) targeted by this
-   * statefulset. This is a beta field and enabled/disabled by StatefulSetMinReadySeconds feature
-   * gate.
+   * statefulset.
    *
    * @return availableReplicas
    */
+  @javax.annotation.Nullable
   @ApiModelProperty(
-      required = true,
       value =
-          "Total number of available pods (ready for at least minReadySeconds) targeted by this statefulset. This is a beta field and enabled/disabled by StatefulSetMinReadySeconds feature gate.")
+          "Total number of available pods (ready for at least minReadySeconds) targeted by this statefulset.")
   public Integer getAvailableReplicas() {
     return availableReplicas;
   }

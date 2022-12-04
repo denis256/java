@@ -12,65 +12,54 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+
 /** Generated */
 public interface V2ContainerResourceMetricSourceFluent<
-        A extends io.kubernetes.client.openapi.models.V2ContainerResourceMetricSourceFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getContainer();
+        A extends V2ContainerResourceMetricSourceFluent<A>>
+    extends Fluent<A> {
+  public String getContainer();
 
-  public A withContainer(java.lang.String container);
+  public A withContainer(String container);
 
-  public java.lang.Boolean hasContainer();
+  public Boolean hasContainer();
 
-  /** Method is deprecated. use withContainer instead. */
-  @java.lang.Deprecated
-  public A withNewContainer(java.lang.String original);
+  public String getName();
 
-  public java.lang.String getName();
+  public A withName(String name);
 
-  public A withName(java.lang.String name);
-
-  public java.lang.Boolean hasName();
-
-  /** Method is deprecated. use withName instead. */
-  @java.lang.Deprecated
-  public A withNewName(java.lang.String original);
+  public Boolean hasName();
 
   /**
    * This method has been deprecated, please use method buildTarget instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V2MetricTarget getTarget();
+  @Deprecated
+  public V2MetricTarget getTarget();
 
-  public io.kubernetes.client.openapi.models.V2MetricTarget buildTarget();
+  public V2MetricTarget buildTarget();
 
-  public A withTarget(io.kubernetes.client.openapi.models.V2MetricTarget target);
+  public A withTarget(V2MetricTarget target);
 
-  public java.lang.Boolean hasTarget();
+  public Boolean hasTarget();
 
-  public io.kubernetes.client.openapi.models.V2ContainerResourceMetricSourceFluent.TargetNested<A>
-      withNewTarget();
+  public V2ContainerResourceMetricSourceFluent.TargetNested<A> withNewTarget();
 
-  public io.kubernetes.client.openapi.models.V2ContainerResourceMetricSourceFluent.TargetNested<A>
-      withNewTargetLike(io.kubernetes.client.openapi.models.V2MetricTarget item);
+  public V2ContainerResourceMetricSourceFluent.TargetNested<A> withNewTargetLike(
+      V2MetricTarget item);
 
-  public io.kubernetes.client.openapi.models.V2ContainerResourceMetricSourceFluent.TargetNested<A>
-      editTarget();
+  public V2ContainerResourceMetricSourceFluent.TargetNested<A> editTarget();
 
-  public io.kubernetes.client.openapi.models.V2ContainerResourceMetricSourceFluent.TargetNested<A>
-      editOrNewTarget();
+  public V2ContainerResourceMetricSourceFluent.TargetNested<A> editOrNewTarget();
 
-  public io.kubernetes.client.openapi.models.V2ContainerResourceMetricSourceFluent.TargetNested<A>
-      editOrNewTargetLike(io.kubernetes.client.openapi.models.V2MetricTarget item);
+  public V2ContainerResourceMetricSourceFluent.TargetNested<A> editOrNewTargetLike(
+      V2MetricTarget item);
 
   public interface TargetNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V2MetricTargetFluent<
-              io.kubernetes.client.openapi.models.V2ContainerResourceMetricSourceFluent
-                      .TargetNested<
-                  N>> {
+      extends Nested<N>,
+          V2MetricTargetFluent<V2ContainerResourceMetricSourceFluent.TargetNested<N>> {
     public N and();
 
     public N endTarget();

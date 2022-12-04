@@ -12,15 +12,15 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1QuobyteVolumeSourceFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1QuobyteVolumeSourceFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1QuobyteVolumeSourceFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1QuobyteVolumeSourceFluentImpl<A extends V1QuobyteVolumeSourceFluent<A>>
+    extends BaseFluent<A> implements V1QuobyteVolumeSourceFluent<A> {
   public V1QuobyteVolumeSourceFluentImpl() {}
 
-  public V1QuobyteVolumeSourceFluentImpl(
-      io.kubernetes.client.openapi.models.V1QuobyteVolumeSource instance) {
+  public V1QuobyteVolumeSourceFluentImpl(V1QuobyteVolumeSource instance) {
     this.withGroup(instance.getGroup());
 
     this.withReadOnly(instance.getReadOnly());
@@ -34,122 +34,92 @@ public class V1QuobyteVolumeSourceFluentImpl<
     this.withVolume(instance.getVolume());
   }
 
-  private java.lang.String group;
-  private java.lang.Boolean readOnly;
-  private java.lang.String registry;
-  private java.lang.String tenant;
-  private java.lang.String user;
-  private java.lang.String volume;
+  private String group;
+  private Boolean readOnly;
+  private String registry;
+  private String tenant;
+  private String user;
+  private String volume;
 
-  public java.lang.String getGroup() {
+  public String getGroup() {
     return this.group;
   }
 
-  public A withGroup(java.lang.String group) {
+  public A withGroup(String group) {
     this.group = group;
     return (A) this;
   }
 
-  public java.lang.Boolean hasGroup() {
+  public Boolean hasGroup() {
     return this.group != null;
   }
 
-  /** Method is deprecated. use withGroup instead. */
-  @java.lang.Deprecated
-  public A withNewGroup(java.lang.String original) {
-    return (A) withGroup(new String(original));
-  }
-
-  public java.lang.Boolean getReadOnly() {
+  public Boolean getReadOnly() {
     return this.readOnly;
   }
 
-  public A withReadOnly(java.lang.Boolean readOnly) {
+  public A withReadOnly(Boolean readOnly) {
     this.readOnly = readOnly;
     return (A) this;
   }
 
-  public java.lang.Boolean hasReadOnly() {
+  public Boolean hasReadOnly() {
     return this.readOnly != null;
   }
 
-  public java.lang.String getRegistry() {
+  public String getRegistry() {
     return this.registry;
   }
 
-  public A withRegistry(java.lang.String registry) {
+  public A withRegistry(String registry) {
     this.registry = registry;
     return (A) this;
   }
 
-  public java.lang.Boolean hasRegistry() {
+  public Boolean hasRegistry() {
     return this.registry != null;
   }
 
-  /** Method is deprecated. use withRegistry instead. */
-  @java.lang.Deprecated
-  public A withNewRegistry(java.lang.String original) {
-    return (A) withRegistry(new String(original));
-  }
-
-  public java.lang.String getTenant() {
+  public String getTenant() {
     return this.tenant;
   }
 
-  public A withTenant(java.lang.String tenant) {
+  public A withTenant(String tenant) {
     this.tenant = tenant;
     return (A) this;
   }
 
-  public java.lang.Boolean hasTenant() {
+  public Boolean hasTenant() {
     return this.tenant != null;
   }
 
-  /** Method is deprecated. use withTenant instead. */
-  @java.lang.Deprecated
-  public A withNewTenant(java.lang.String original) {
-    return (A) withTenant(new String(original));
-  }
-
-  public java.lang.String getUser() {
+  public String getUser() {
     return this.user;
   }
 
-  public A withUser(java.lang.String user) {
+  public A withUser(String user) {
     this.user = user;
     return (A) this;
   }
 
-  public java.lang.Boolean hasUser() {
+  public Boolean hasUser() {
     return this.user != null;
   }
 
-  /** Method is deprecated. use withUser instead. */
-  @java.lang.Deprecated
-  public A withNewUser(java.lang.String original) {
-    return (A) withUser(new String(original));
-  }
-
-  public java.lang.String getVolume() {
+  public String getVolume() {
     return this.volume;
   }
 
-  public A withVolume(java.lang.String volume) {
+  public A withVolume(String volume) {
     this.volume = volume;
     return (A) this;
   }
 
-  public java.lang.Boolean hasVolume() {
+  public Boolean hasVolume() {
     return this.volume != null;
   }
 
-  /** Method is deprecated. use withVolume instead. */
-  @java.lang.Deprecated
-  public A withNewVolume(java.lang.String original) {
-    return (A) withVolume(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1QuobyteVolumeSourceFluentImpl that = (V1QuobyteVolumeSourceFluentImpl) o;
@@ -165,5 +135,40 @@ public class V1QuobyteVolumeSourceFluentImpl<
   public int hashCode() {
     return java.util.Objects.hash(
         group, readOnly, registry, tenant, user, volume, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (group != null) {
+      sb.append("group:");
+      sb.append(group + ",");
+    }
+    if (readOnly != null) {
+      sb.append("readOnly:");
+      sb.append(readOnly + ",");
+    }
+    if (registry != null) {
+      sb.append("registry:");
+      sb.append(registry + ",");
+    }
+    if (tenant != null) {
+      sb.append("tenant:");
+      sb.append(tenant + ",");
+    }
+    if (user != null) {
+      sb.append("user:");
+      sb.append(user + ",");
+    }
+    if (volume != null) {
+      sb.append("volume:");
+      sb.append(volume);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  public A withReadOnly() {
+    return withReadOnly(true);
   }
 }

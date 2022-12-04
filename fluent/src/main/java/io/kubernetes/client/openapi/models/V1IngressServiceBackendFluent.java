@@ -12,52 +12,44 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+
 /** Generated */
-public interface V1IngressServiceBackendFluent<
-        A extends io.kubernetes.client.openapi.models.V1IngressServiceBackendFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getName();
+public interface V1IngressServiceBackendFluent<A extends V1IngressServiceBackendFluent<A>>
+    extends Fluent<A> {
+  public String getName();
 
-  public A withName(java.lang.String name);
+  public A withName(String name);
 
-  public java.lang.Boolean hasName();
-
-  /** Method is deprecated. use withName instead. */
-  @java.lang.Deprecated
-  public A withNewName(java.lang.String original);
+  public Boolean hasName();
 
   /**
    * This method has been deprecated, please use method buildPort instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ServiceBackendPort getPort();
+  @Deprecated
+  public V1ServiceBackendPort getPort();
 
-  public io.kubernetes.client.openapi.models.V1ServiceBackendPort buildPort();
+  public V1ServiceBackendPort buildPort();
 
-  public A withPort(io.kubernetes.client.openapi.models.V1ServiceBackendPort port);
+  public A withPort(V1ServiceBackendPort port);
 
-  public java.lang.Boolean hasPort();
+  public Boolean hasPort();
 
-  public io.kubernetes.client.openapi.models.V1IngressServiceBackendFluent.PortNested<A>
-      withNewPort();
+  public V1IngressServiceBackendFluent.PortNested<A> withNewPort();
 
-  public io.kubernetes.client.openapi.models.V1IngressServiceBackendFluent.PortNested<A>
-      withNewPortLike(io.kubernetes.client.openapi.models.V1ServiceBackendPort item);
+  public V1IngressServiceBackendFluent.PortNested<A> withNewPortLike(V1ServiceBackendPort item);
 
-  public io.kubernetes.client.openapi.models.V1IngressServiceBackendFluent.PortNested<A> editPort();
+  public V1IngressServiceBackendFluent.PortNested<A> editPort();
 
-  public io.kubernetes.client.openapi.models.V1IngressServiceBackendFluent.PortNested<A>
-      editOrNewPort();
+  public V1IngressServiceBackendFluent.PortNested<A> editOrNewPort();
 
-  public io.kubernetes.client.openapi.models.V1IngressServiceBackendFluent.PortNested<A>
-      editOrNewPortLike(io.kubernetes.client.openapi.models.V1ServiceBackendPort item);
+  public V1IngressServiceBackendFluent.PortNested<A> editOrNewPortLike(V1ServiceBackendPort item);
 
   public interface PortNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1ServiceBackendPortFluent<
-              io.kubernetes.client.openapi.models.V1IngressServiceBackendFluent.PortNested<N>> {
+      extends Nested<N>, V1ServiceBackendPortFluent<V1IngressServiceBackendFluent.PortNested<N>> {
     public N and();
 
     public N endPort();

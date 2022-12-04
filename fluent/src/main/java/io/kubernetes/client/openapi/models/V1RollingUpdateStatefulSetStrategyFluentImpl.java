@@ -12,44 +12,88 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.custom.IntOrString;
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
+@SuppressWarnings(value = "unchecked")
 public class V1RollingUpdateStatefulSetStrategyFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1RollingUpdateStatefulSetStrategyFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1RollingUpdateStatefulSetStrategyFluent<A> {
+        A extends V1RollingUpdateStatefulSetStrategyFluent<A>>
+    extends BaseFluent<A> implements V1RollingUpdateStatefulSetStrategyFluent<A> {
   public V1RollingUpdateStatefulSetStrategyFluentImpl() {}
 
-  public V1RollingUpdateStatefulSetStrategyFluentImpl(
-      io.kubernetes.client.openapi.models.V1RollingUpdateStatefulSetStrategy instance) {
+  public V1RollingUpdateStatefulSetStrategyFluentImpl(V1RollingUpdateStatefulSetStrategy instance) {
+    this.withMaxUnavailable(instance.getMaxUnavailable());
+
     this.withPartition(instance.getPartition());
   }
 
-  private java.lang.Integer partition;
+  private IntOrString maxUnavailable;
+  private Integer partition;
 
-  public java.lang.Integer getPartition() {
+  public IntOrString getMaxUnavailable() {
+    return this.maxUnavailable;
+  }
+
+  public A withMaxUnavailable(IntOrString maxUnavailable) {
+    this.maxUnavailable = maxUnavailable;
+    return (A) this;
+  }
+
+  public Boolean hasMaxUnavailable() {
+    return this.maxUnavailable != null;
+  }
+
+  public A withNewMaxUnavailable(int value) {
+    return (A) withMaxUnavailable(new IntOrString(value));
+  }
+
+  public A withNewMaxUnavailable(String value) {
+    return (A) withMaxUnavailable(new IntOrString(value));
+  }
+
+  public Integer getPartition() {
     return this.partition;
   }
 
-  public A withPartition(java.lang.Integer partition) {
+  public A withPartition(Integer partition) {
     this.partition = partition;
     return (A) this;
   }
 
-  public java.lang.Boolean hasPartition() {
+  public Boolean hasPartition() {
     return this.partition != null;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1RollingUpdateStatefulSetStrategyFluentImpl that =
         (V1RollingUpdateStatefulSetStrategyFluentImpl) o;
+    if (maxUnavailable != null
+        ? !maxUnavailable.equals(that.maxUnavailable)
+        : that.maxUnavailable != null) return false;
     if (partition != null ? !partition.equals(that.partition) : that.partition != null)
       return false;
     return true;
   }
 
   public int hashCode() {
-    return java.util.Objects.hash(partition, super.hashCode());
+    return java.util.Objects.hash(maxUnavailable, partition, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (maxUnavailable != null) {
+      sb.append("maxUnavailable:");
+      sb.append(maxUnavailable + ",");
+    }
+    if (partition != null) {
+      sb.append("partition:");
+      sb.append(partition);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

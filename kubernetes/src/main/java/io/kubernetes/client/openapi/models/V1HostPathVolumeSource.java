@@ -1,5 +1,5 @@
 /*
-Copyright 2021 The Kubernetes Authors.
+Copyright 2022 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -26,7 +26,7 @@ import java.util.Objects;
         "Represents a host path mapped into a pod. Host path volumes do not support ownership management or SELinux relabeling.")
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    date = "2021-12-10T19:11:23.904Z[Etc/UTC]")
+    date = "2022-09-15T17:00:37.921Z[Etc/UTC]")
 public class V1HostPathVolumeSource {
   public static final String SERIALIZED_NAME_PATH = "path";
 
@@ -45,7 +45,7 @@ public class V1HostPathVolumeSource {
   }
 
   /**
-   * Path of the directory on the host. If the path is a symlink, it will follow the link to the
+   * path of the directory on the host. If the path is a symlink, it will follow the link to the
    * real path. More info: https://kubernetes.io/docs/concepts/storage/volumes#hostpath
    *
    * @return path
@@ -53,7 +53,7 @@ public class V1HostPathVolumeSource {
   @ApiModelProperty(
       required = true,
       value =
-          "Path of the directory on the host. If the path is a symlink, it will follow the link to the real path. More info: https://kubernetes.io/docs/concepts/storage/volumes#hostpath")
+          "path of the directory on the host. If the path is a symlink, it will follow the link to the real path. More info: https://kubernetes.io/docs/concepts/storage/volumes#hostpath")
   public String getPath() {
     return path;
   }
@@ -69,7 +69,7 @@ public class V1HostPathVolumeSource {
   }
 
   /**
-   * Type for HostPath Volume Defaults to \&quot;\&quot; More info:
+   * type for HostPath Volume Defaults to \&quot;\&quot; More info:
    * https://kubernetes.io/docs/concepts/storage/volumes#hostpath
    *
    * @return type
@@ -77,7 +77,7 @@ public class V1HostPathVolumeSource {
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "Type for HostPath Volume Defaults to \"\" More info: https://kubernetes.io/docs/concepts/storage/volumes#hostpath")
+          "type for HostPath Volume Defaults to \"\" More info: https://kubernetes.io/docs/concepts/storage/volumes#hostpath")
   public String getType() {
     return type;
   }

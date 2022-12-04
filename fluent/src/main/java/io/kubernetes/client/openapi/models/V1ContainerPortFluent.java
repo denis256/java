@@ -12,45 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
-public interface V1ContainerPortFluent<
-        A extends io.kubernetes.client.openapi.models.V1ContainerPortFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.Integer getContainerPort();
+public interface V1ContainerPortFluent<A extends V1ContainerPortFluent<A>> extends Fluent<A> {
+  public Integer getContainerPort();
 
-  public A withContainerPort(java.lang.Integer containerPort);
+  public A withContainerPort(Integer containerPort);
 
-  public java.lang.Boolean hasContainerPort();
+  public Boolean hasContainerPort();
 
-  public java.lang.String getHostIP();
+  public String getHostIP();
 
-  public A withHostIP(java.lang.String hostIP);
+  public A withHostIP(String hostIP);
 
-  public java.lang.Boolean hasHostIP();
+  public Boolean hasHostIP();
 
-  /** Method is deprecated. use withHostIP instead. */
-  @java.lang.Deprecated
-  public A withNewHostIP(java.lang.String original);
+  public Integer getHostPort();
 
-  public java.lang.Integer getHostPort();
+  public A withHostPort(Integer hostPort);
 
-  public A withHostPort(java.lang.Integer hostPort);
+  public Boolean hasHostPort();
 
-  public java.lang.Boolean hasHostPort();
+  public String getName();
 
-  public java.lang.String getName();
+  public A withName(String name);
 
-  public A withName(java.lang.String name);
+  public Boolean hasName();
 
-  public java.lang.Boolean hasName();
+  public String getProtocol();
 
-  /** Method is deprecated. use withName instead. */
-  @java.lang.Deprecated
-  public A withNewName(java.lang.String original);
+  public A withProtocol(String protocol);
 
-  public io.kubernetes.client.openapi.models.V1ContainerPort.ProtocolEnum getProtocol();
-
-  public A withProtocol(io.kubernetes.client.openapi.models.V1ContainerPort.ProtocolEnum protocol);
-
-  public java.lang.Boolean hasProtocol();
+  public Boolean hasProtocol();
 }

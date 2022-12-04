@@ -12,40 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1ContainerBuilder
-    extends io.kubernetes.client.openapi.models.V1ContainerFluentImpl<
-        io.kubernetes.client.openapi.models.V1ContainerBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1Container,
-        io.kubernetes.client.openapi.models.V1ContainerBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1ContainerBuilder extends V1ContainerFluentImpl<V1ContainerBuilder>
+    implements VisitableBuilder<V1Container, V1ContainerBuilder> {
   public V1ContainerBuilder() {
     this(false);
   }
 
-  public V1ContainerBuilder(java.lang.Boolean validationEnabled) {
+  public V1ContainerBuilder(Boolean validationEnabled) {
     this(new V1Container(), validationEnabled);
   }
 
-  public V1ContainerBuilder(io.kubernetes.client.openapi.models.V1ContainerFluent<?> fluent) {
+  public V1ContainerBuilder(V1ContainerFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1ContainerBuilder(
-      io.kubernetes.client.openapi.models.V1ContainerFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1ContainerBuilder(V1ContainerFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1Container(), validationEnabled);
   }
 
-  public V1ContainerBuilder(
-      io.kubernetes.client.openapi.models.V1ContainerFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1Container instance) {
+  public V1ContainerBuilder(V1ContainerFluent<?> fluent, V1Container instance) {
     this(fluent, instance, false);
   }
 
   public V1ContainerBuilder(
-      io.kubernetes.client.openapi.models.V1ContainerFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1Container instance,
-      java.lang.Boolean validationEnabled) {
+      V1ContainerFluent<?> fluent, V1Container instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withArgs(instance.getArgs());
 
@@ -94,13 +86,11 @@ public class V1ContainerBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1ContainerBuilder(io.kubernetes.client.openapi.models.V1Container instance) {
+  public V1ContainerBuilder(V1Container instance) {
     this(instance, false);
   }
 
-  public V1ContainerBuilder(
-      io.kubernetes.client.openapi.models.V1Container instance,
-      java.lang.Boolean validationEnabled) {
+  public V1ContainerBuilder(V1Container instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withArgs(instance.getArgs());
 
@@ -149,10 +139,10 @@ public class V1ContainerBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1ContainerFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1ContainerFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1Container build() {
+  public V1Container build() {
     V1Container buildable = new V1Container();
     buildable.setArgs(fluent.getArgs());
     buildable.setCommand(fluent.getCommand());
@@ -177,24 +167,5 @@ public class V1ContainerBuilder
     buildable.setVolumeMounts(fluent.getVolumeMounts());
     buildable.setWorkingDir(fluent.getWorkingDir());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1ContainerBuilder that = (V1ContainerBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

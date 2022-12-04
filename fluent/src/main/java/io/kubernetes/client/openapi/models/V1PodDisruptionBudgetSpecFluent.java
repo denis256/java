@@ -12,64 +12,61 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.custom.IntOrString;
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+
 /** Generated */
-public interface V1PodDisruptionBudgetSpecFluent<
-        A extends io.kubernetes.client.openapi.models.V1PodDisruptionBudgetSpecFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public io.kubernetes.client.custom.IntOrString getMaxUnavailable();
+public interface V1PodDisruptionBudgetSpecFluent<A extends V1PodDisruptionBudgetSpecFluent<A>>
+    extends Fluent<A> {
+  public IntOrString getMaxUnavailable();
 
-  public A withMaxUnavailable(io.kubernetes.client.custom.IntOrString maxUnavailable);
+  public A withMaxUnavailable(IntOrString maxUnavailable);
 
-  public java.lang.Boolean hasMaxUnavailable();
+  public Boolean hasMaxUnavailable();
 
   public A withNewMaxUnavailable(int value);
 
-  public A withNewMaxUnavailable(java.lang.String value);
+  public A withNewMaxUnavailable(String value);
 
-  public io.kubernetes.client.custom.IntOrString getMinAvailable();
+  public IntOrString getMinAvailable();
 
-  public A withMinAvailable(io.kubernetes.client.custom.IntOrString minAvailable);
+  public A withMinAvailable(IntOrString minAvailable);
 
-  public java.lang.Boolean hasMinAvailable();
+  public Boolean hasMinAvailable();
 
   public A withNewMinAvailable(int value);
 
-  public A withNewMinAvailable(java.lang.String value);
+  public A withNewMinAvailable(String value);
 
   /**
    * This method has been deprecated, please use method buildSelector instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1LabelSelector getSelector();
+  @Deprecated
+  public V1LabelSelector getSelector();
 
-  public io.kubernetes.client.openapi.models.V1LabelSelector buildSelector();
+  public V1LabelSelector buildSelector();
 
-  public A withSelector(io.kubernetes.client.openapi.models.V1LabelSelector selector);
+  public A withSelector(V1LabelSelector selector);
 
-  public java.lang.Boolean hasSelector();
+  public Boolean hasSelector();
 
-  public io.kubernetes.client.openapi.models.V1PodDisruptionBudgetSpecFluent.SelectorNested<A>
-      withNewSelector();
+  public V1PodDisruptionBudgetSpecFluent.SelectorNested<A> withNewSelector();
 
-  public io.kubernetes.client.openapi.models.V1PodDisruptionBudgetSpecFluent.SelectorNested<A>
-      withNewSelectorLike(io.kubernetes.client.openapi.models.V1LabelSelector item);
+  public V1PodDisruptionBudgetSpecFluent.SelectorNested<A> withNewSelectorLike(
+      V1LabelSelector item);
 
-  public io.kubernetes.client.openapi.models.V1PodDisruptionBudgetSpecFluent.SelectorNested<A>
-      editSelector();
+  public V1PodDisruptionBudgetSpecFluent.SelectorNested<A> editSelector();
 
-  public io.kubernetes.client.openapi.models.V1PodDisruptionBudgetSpecFluent.SelectorNested<A>
-      editOrNewSelector();
+  public V1PodDisruptionBudgetSpecFluent.SelectorNested<A> editOrNewSelector();
 
-  public io.kubernetes.client.openapi.models.V1PodDisruptionBudgetSpecFluent.SelectorNested<A>
-      editOrNewSelectorLike(io.kubernetes.client.openapi.models.V1LabelSelector item);
+  public V1PodDisruptionBudgetSpecFluent.SelectorNested<A> editOrNewSelectorLike(
+      V1LabelSelector item);
 
   public interface SelectorNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1LabelSelectorFluent<
-              io.kubernetes.client.openapi.models.V1PodDisruptionBudgetSpecFluent.SelectorNested<
-                  N>> {
+      extends Nested<N>, V1LabelSelectorFluent<V1PodDisruptionBudgetSpecFluent.SelectorNested<N>> {
     public N and();
 
     public N endSelector();

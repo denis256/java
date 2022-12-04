@@ -12,97 +12,93 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+
 /** Generated */
-public class V1DeploymentStrategyFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1DeploymentStrategyFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1DeploymentStrategyFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1DeploymentStrategyFluentImpl<A extends V1DeploymentStrategyFluent<A>>
+    extends BaseFluent<A> implements V1DeploymentStrategyFluent<A> {
   public V1DeploymentStrategyFluentImpl() {}
 
-  public V1DeploymentStrategyFluentImpl(
-      io.kubernetes.client.openapi.models.V1DeploymentStrategy instance) {
+  public V1DeploymentStrategyFluentImpl(V1DeploymentStrategy instance) {
     this.withRollingUpdate(instance.getRollingUpdate());
 
     this.withType(instance.getType());
   }
 
-  private io.kubernetes.client.openapi.models.V1RollingUpdateDeploymentBuilder rollingUpdate;
-  private io.kubernetes.client.openapi.models.V1DeploymentStrategy.TypeEnum type;
+  private V1RollingUpdateDeploymentBuilder rollingUpdate;
+  private String type;
 
   /**
    * This method has been deprecated, please use method buildRollingUpdate instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1RollingUpdateDeployment getRollingUpdate() {
+  @Deprecated
+  public V1RollingUpdateDeployment getRollingUpdate() {
     return this.rollingUpdate != null ? this.rollingUpdate.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1RollingUpdateDeployment buildRollingUpdate() {
+  public V1RollingUpdateDeployment buildRollingUpdate() {
     return this.rollingUpdate != null ? this.rollingUpdate.build() : null;
   }
 
-  public A withRollingUpdate(
-      io.kubernetes.client.openapi.models.V1RollingUpdateDeployment rollingUpdate) {
+  public A withRollingUpdate(V1RollingUpdateDeployment rollingUpdate) {
     _visitables.get("rollingUpdate").remove(this.rollingUpdate);
     if (rollingUpdate != null) {
-      this.rollingUpdate =
-          new io.kubernetes.client.openapi.models.V1RollingUpdateDeploymentBuilder(rollingUpdate);
+      this.rollingUpdate = new V1RollingUpdateDeploymentBuilder(rollingUpdate);
       _visitables.get("rollingUpdate").add(this.rollingUpdate);
+    } else {
+      this.rollingUpdate = null;
+      _visitables.get("rollingUpdate").remove(this.rollingUpdate);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasRollingUpdate() {
+  public Boolean hasRollingUpdate() {
     return this.rollingUpdate != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1DeploymentStrategyFluent.RollingUpdateNested<A>
-      withNewRollingUpdate() {
-    return new io.kubernetes.client.openapi.models.V1DeploymentStrategyFluentImpl
-        .RollingUpdateNestedImpl();
+  public V1DeploymentStrategyFluent.RollingUpdateNested<A> withNewRollingUpdate() {
+    return new V1DeploymentStrategyFluentImpl.RollingUpdateNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1DeploymentStrategyFluent.RollingUpdateNested<A>
-      withNewRollingUpdateLike(io.kubernetes.client.openapi.models.V1RollingUpdateDeployment item) {
-    return new io.kubernetes.client.openapi.models.V1DeploymentStrategyFluentImpl
-        .RollingUpdateNestedImpl(item);
+  public V1DeploymentStrategyFluent.RollingUpdateNested<A> withNewRollingUpdateLike(
+      V1RollingUpdateDeployment item) {
+    return new V1DeploymentStrategyFluentImpl.RollingUpdateNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1DeploymentStrategyFluent.RollingUpdateNested<A>
-      editRollingUpdate() {
+  public V1DeploymentStrategyFluent.RollingUpdateNested<A> editRollingUpdate() {
     return withNewRollingUpdateLike(getRollingUpdate());
   }
 
-  public io.kubernetes.client.openapi.models.V1DeploymentStrategyFluent.RollingUpdateNested<A>
-      editOrNewRollingUpdate() {
+  public V1DeploymentStrategyFluent.RollingUpdateNested<A> editOrNewRollingUpdate() {
     return withNewRollingUpdateLike(
         getRollingUpdate() != null
             ? getRollingUpdate()
-            : new io.kubernetes.client.openapi.models.V1RollingUpdateDeploymentBuilder().build());
+            : new V1RollingUpdateDeploymentBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1DeploymentStrategyFluent.RollingUpdateNested<A>
-      editOrNewRollingUpdateLike(
-          io.kubernetes.client.openapi.models.V1RollingUpdateDeployment item) {
+  public V1DeploymentStrategyFluent.RollingUpdateNested<A> editOrNewRollingUpdateLike(
+      V1RollingUpdateDeployment item) {
     return withNewRollingUpdateLike(getRollingUpdate() != null ? getRollingUpdate() : item);
   }
 
-  public io.kubernetes.client.openapi.models.V1DeploymentStrategy.TypeEnum getType() {
+  public String getType() {
     return this.type;
   }
 
-  public A withType(io.kubernetes.client.openapi.models.V1DeploymentStrategy.TypeEnum type) {
+  public A withType(String type) {
     this.type = type;
     return (A) this;
   }
 
-  public java.lang.Boolean hasType() {
+  public Boolean hasType() {
     return this.type != null;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1DeploymentStrategyFluentImpl that = (V1DeploymentStrategyFluentImpl) o;
@@ -117,22 +113,33 @@ public class V1DeploymentStrategyFluentImpl<
     return java.util.Objects.hash(rollingUpdate, type, super.hashCode());
   }
 
-  public class RollingUpdateNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1RollingUpdateDeploymentFluentImpl<
-          io.kubernetes.client.openapi.models.V1DeploymentStrategyFluent.RollingUpdateNested<N>>
-      implements io.kubernetes.client.openapi.models.V1DeploymentStrategyFluent.RollingUpdateNested<
-              N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    RollingUpdateNestedImpl(io.kubernetes.client.openapi.models.V1RollingUpdateDeployment item) {
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1RollingUpdateDeploymentBuilder(this, item);
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (rollingUpdate != null) {
+      sb.append("rollingUpdate:");
+      sb.append(rollingUpdate + ",");
+    }
+    if (type != null) {
+      sb.append("type:");
+      sb.append(type);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class RollingUpdateNestedImpl<N>
+      extends V1RollingUpdateDeploymentFluentImpl<V1DeploymentStrategyFluent.RollingUpdateNested<N>>
+      implements V1DeploymentStrategyFluent.RollingUpdateNested<N>, Nested<N> {
+    RollingUpdateNestedImpl(V1RollingUpdateDeployment item) {
+      this.builder = new V1RollingUpdateDeploymentBuilder(this, item);
     }
 
     RollingUpdateNestedImpl() {
-      this.builder = new io.kubernetes.client.openapi.models.V1RollingUpdateDeploymentBuilder(this);
+      this.builder = new V1RollingUpdateDeploymentBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1RollingUpdateDeploymentBuilder builder;
+    V1RollingUpdateDeploymentBuilder builder;
 
     public N and() {
       return (N) V1DeploymentStrategyFluentImpl.this.withRollingUpdate(builder.build());

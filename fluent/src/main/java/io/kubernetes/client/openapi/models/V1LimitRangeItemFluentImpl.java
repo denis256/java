@@ -12,14 +12,18 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.custom.Quantity;
+import io.kubernetes.client.fluent.BaseFluent;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 /** Generated */
-public class V1LimitRangeItemFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1LimitRangeItemFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1LimitRangeItemFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1LimitRangeItemFluentImpl<A extends V1LimitRangeItemFluent<A>> extends BaseFluent<A>
+    implements V1LimitRangeItemFluent<A> {
   public V1LimitRangeItemFluentImpl() {}
 
-  public V1LimitRangeItemFluentImpl(io.kubernetes.client.openapi.models.V1LimitRangeItem instance) {
+  public V1LimitRangeItemFluentImpl(V1LimitRangeItem instance) {
     this.withDefault(instance.getDefault());
 
     this.withDefaultRequest(instance.getDefaultRequest());
@@ -33,17 +37,16 @@ public class V1LimitRangeItemFluentImpl<
     this.withType(instance.getType());
   }
 
-  private java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> _default;
-  private java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> defaultRequest;
-  private java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> max;
-  private java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity>
-      maxLimitRequestRatio;
-  private java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> min;
-  private io.kubernetes.client.openapi.models.V1LimitRangeItem.TypeEnum type;
+  private Map<String, Quantity> _default;
+  private Map<String, Quantity> defaultRequest;
+  private Map<String, Quantity> max;
+  private Map<String, Quantity> maxLimitRequestRatio;
+  private Map<String, Quantity> min;
+  private String type;
 
-  public A addToDefault(java.lang.String key, io.kubernetes.client.custom.Quantity value) {
+  public A addToDefault(String key, Quantity value) {
     if (this._default == null && key != null && value != null) {
-      this._default = new java.util.LinkedHashMap();
+      this._default = new LinkedHashMap();
     }
     if (key != null && value != null) {
       this._default.put(key, value);
@@ -51,9 +54,9 @@ public class V1LimitRangeItemFluentImpl<
     return (A) this;
   }
 
-  public A addToDefault(java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> map) {
+  public A addToDefault(Map<String, Quantity> map) {
     if (this._default == null && map != null) {
-      this._default = new java.util.LinkedHashMap();
+      this._default = new LinkedHashMap();
     }
     if (map != null) {
       this._default.putAll(map);
@@ -61,7 +64,7 @@ public class V1LimitRangeItemFluentImpl<
     return (A) this;
   }
 
-  public A removeFromDefault(java.lang.String key) {
+  public A removeFromDefault(String key) {
     if (this._default == null) {
       return (A) this;
     }
@@ -71,8 +74,7 @@ public class V1LimitRangeItemFluentImpl<
     return (A) this;
   }
 
-  public A removeFromDefault(
-      java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> map) {
+  public A removeFromDefault(Map<String, Quantity> map) {
     if (this._default == null) {
       return (A) this;
     }
@@ -86,27 +88,26 @@ public class V1LimitRangeItemFluentImpl<
     return (A) this;
   }
 
-  public java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> getDefault() {
+  public Map<String, Quantity> getDefault() {
     return this._default;
   }
 
-  public <K, V> A withDefault(
-      java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> _default) {
+  public <K, V> A withDefault(Map<String, Quantity> _default) {
     if (_default == null) {
       this._default = null;
     } else {
-      this._default = new java.util.LinkedHashMap(_default);
+      this._default = new LinkedHashMap(_default);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasDefault() {
+  public Boolean hasDefault() {
     return this._default != null;
   }
 
-  public A addToDefaultRequest(java.lang.String key, io.kubernetes.client.custom.Quantity value) {
+  public A addToDefaultRequest(String key, Quantity value) {
     if (this.defaultRequest == null && key != null && value != null) {
-      this.defaultRequest = new java.util.LinkedHashMap();
+      this.defaultRequest = new LinkedHashMap();
     }
     if (key != null && value != null) {
       this.defaultRequest.put(key, value);
@@ -114,10 +115,9 @@ public class V1LimitRangeItemFluentImpl<
     return (A) this;
   }
 
-  public A addToDefaultRequest(
-      java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> map) {
+  public A addToDefaultRequest(Map<String, Quantity> map) {
     if (this.defaultRequest == null && map != null) {
-      this.defaultRequest = new java.util.LinkedHashMap();
+      this.defaultRequest = new LinkedHashMap();
     }
     if (map != null) {
       this.defaultRequest.putAll(map);
@@ -125,7 +125,7 @@ public class V1LimitRangeItemFluentImpl<
     return (A) this;
   }
 
-  public A removeFromDefaultRequest(java.lang.String key) {
+  public A removeFromDefaultRequest(String key) {
     if (this.defaultRequest == null) {
       return (A) this;
     }
@@ -135,8 +135,7 @@ public class V1LimitRangeItemFluentImpl<
     return (A) this;
   }
 
-  public A removeFromDefaultRequest(
-      java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> map) {
+  public A removeFromDefaultRequest(Map<String, Quantity> map) {
     if (this.defaultRequest == null) {
       return (A) this;
     }
@@ -150,27 +149,26 @@ public class V1LimitRangeItemFluentImpl<
     return (A) this;
   }
 
-  public java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> getDefaultRequest() {
+  public Map<String, Quantity> getDefaultRequest() {
     return this.defaultRequest;
   }
 
-  public <K, V> A withDefaultRequest(
-      java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> defaultRequest) {
+  public <K, V> A withDefaultRequest(Map<String, Quantity> defaultRequest) {
     if (defaultRequest == null) {
       this.defaultRequest = null;
     } else {
-      this.defaultRequest = new java.util.LinkedHashMap(defaultRequest);
+      this.defaultRequest = new LinkedHashMap(defaultRequest);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasDefaultRequest() {
+  public Boolean hasDefaultRequest() {
     return this.defaultRequest != null;
   }
 
-  public A addToMax(java.lang.String key, io.kubernetes.client.custom.Quantity value) {
+  public A addToMax(String key, Quantity value) {
     if (this.max == null && key != null && value != null) {
-      this.max = new java.util.LinkedHashMap();
+      this.max = new LinkedHashMap();
     }
     if (key != null && value != null) {
       this.max.put(key, value);
@@ -178,9 +176,9 @@ public class V1LimitRangeItemFluentImpl<
     return (A) this;
   }
 
-  public A addToMax(java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> map) {
+  public A addToMax(Map<String, Quantity> map) {
     if (this.max == null && map != null) {
-      this.max = new java.util.LinkedHashMap();
+      this.max = new LinkedHashMap();
     }
     if (map != null) {
       this.max.putAll(map);
@@ -188,7 +186,7 @@ public class V1LimitRangeItemFluentImpl<
     return (A) this;
   }
 
-  public A removeFromMax(java.lang.String key) {
+  public A removeFromMax(String key) {
     if (this.max == null) {
       return (A) this;
     }
@@ -198,8 +196,7 @@ public class V1LimitRangeItemFluentImpl<
     return (A) this;
   }
 
-  public A removeFromMax(
-      java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> map) {
+  public A removeFromMax(Map<String, Quantity> map) {
     if (this.max == null) {
       return (A) this;
     }
@@ -213,28 +210,26 @@ public class V1LimitRangeItemFluentImpl<
     return (A) this;
   }
 
-  public java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> getMax() {
+  public Map<String, Quantity> getMax() {
     return this.max;
   }
 
-  public <K, V> A withMax(
-      java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> max) {
+  public <K, V> A withMax(Map<String, Quantity> max) {
     if (max == null) {
       this.max = null;
     } else {
-      this.max = new java.util.LinkedHashMap(max);
+      this.max = new LinkedHashMap(max);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasMax() {
+  public Boolean hasMax() {
     return this.max != null;
   }
 
-  public A addToMaxLimitRequestRatio(
-      java.lang.String key, io.kubernetes.client.custom.Quantity value) {
+  public A addToMaxLimitRequestRatio(String key, Quantity value) {
     if (this.maxLimitRequestRatio == null && key != null && value != null) {
-      this.maxLimitRequestRatio = new java.util.LinkedHashMap();
+      this.maxLimitRequestRatio = new LinkedHashMap();
     }
     if (key != null && value != null) {
       this.maxLimitRequestRatio.put(key, value);
@@ -242,10 +237,9 @@ public class V1LimitRangeItemFluentImpl<
     return (A) this;
   }
 
-  public A addToMaxLimitRequestRatio(
-      java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> map) {
+  public A addToMaxLimitRequestRatio(Map<String, Quantity> map) {
     if (this.maxLimitRequestRatio == null && map != null) {
-      this.maxLimitRequestRatio = new java.util.LinkedHashMap();
+      this.maxLimitRequestRatio = new LinkedHashMap();
     }
     if (map != null) {
       this.maxLimitRequestRatio.putAll(map);
@@ -253,7 +247,7 @@ public class V1LimitRangeItemFluentImpl<
     return (A) this;
   }
 
-  public A removeFromMaxLimitRequestRatio(java.lang.String key) {
+  public A removeFromMaxLimitRequestRatio(String key) {
     if (this.maxLimitRequestRatio == null) {
       return (A) this;
     }
@@ -263,8 +257,7 @@ public class V1LimitRangeItemFluentImpl<
     return (A) this;
   }
 
-  public A removeFromMaxLimitRequestRatio(
-      java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> map) {
+  public A removeFromMaxLimitRequestRatio(Map<String, Quantity> map) {
     if (this.maxLimitRequestRatio == null) {
       return (A) this;
     }
@@ -278,28 +271,26 @@ public class V1LimitRangeItemFluentImpl<
     return (A) this;
   }
 
-  public java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity>
-      getMaxLimitRequestRatio() {
+  public Map<String, Quantity> getMaxLimitRequestRatio() {
     return this.maxLimitRequestRatio;
   }
 
-  public <K, V> A withMaxLimitRequestRatio(
-      java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> maxLimitRequestRatio) {
+  public <K, V> A withMaxLimitRequestRatio(Map<String, Quantity> maxLimitRequestRatio) {
     if (maxLimitRequestRatio == null) {
       this.maxLimitRequestRatio = null;
     } else {
-      this.maxLimitRequestRatio = new java.util.LinkedHashMap(maxLimitRequestRatio);
+      this.maxLimitRequestRatio = new LinkedHashMap(maxLimitRequestRatio);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasMaxLimitRequestRatio() {
+  public Boolean hasMaxLimitRequestRatio() {
     return this.maxLimitRequestRatio != null;
   }
 
-  public A addToMin(java.lang.String key, io.kubernetes.client.custom.Quantity value) {
+  public A addToMin(String key, Quantity value) {
     if (this.min == null && key != null && value != null) {
-      this.min = new java.util.LinkedHashMap();
+      this.min = new LinkedHashMap();
     }
     if (key != null && value != null) {
       this.min.put(key, value);
@@ -307,9 +298,9 @@ public class V1LimitRangeItemFluentImpl<
     return (A) this;
   }
 
-  public A addToMin(java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> map) {
+  public A addToMin(Map<String, Quantity> map) {
     if (this.min == null && map != null) {
-      this.min = new java.util.LinkedHashMap();
+      this.min = new LinkedHashMap();
     }
     if (map != null) {
       this.min.putAll(map);
@@ -317,7 +308,7 @@ public class V1LimitRangeItemFluentImpl<
     return (A) this;
   }
 
-  public A removeFromMin(java.lang.String key) {
+  public A removeFromMin(String key) {
     if (this.min == null) {
       return (A) this;
     }
@@ -327,8 +318,7 @@ public class V1LimitRangeItemFluentImpl<
     return (A) this;
   }
 
-  public A removeFromMin(
-      java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> map) {
+  public A removeFromMin(Map<String, Quantity> map) {
     if (this.min == null) {
       return (A) this;
     }
@@ -342,38 +332,37 @@ public class V1LimitRangeItemFluentImpl<
     return (A) this;
   }
 
-  public java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> getMin() {
+  public Map<String, Quantity> getMin() {
     return this.min;
   }
 
-  public <K, V> A withMin(
-      java.util.Map<java.lang.String, io.kubernetes.client.custom.Quantity> min) {
+  public <K, V> A withMin(Map<String, Quantity> min) {
     if (min == null) {
       this.min = null;
     } else {
-      this.min = new java.util.LinkedHashMap(min);
+      this.min = new LinkedHashMap(min);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasMin() {
+  public Boolean hasMin() {
     return this.min != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1LimitRangeItem.TypeEnum getType() {
+  public String getType() {
     return this.type;
   }
 
-  public A withType(io.kubernetes.client.openapi.models.V1LimitRangeItem.TypeEnum type) {
+  public A withType(String type) {
     this.type = type;
     return (A) this;
   }
 
-  public java.lang.Boolean hasType() {
+  public Boolean hasType() {
     return this.type != null;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1LimitRangeItemFluentImpl that = (V1LimitRangeItemFluentImpl) o;
@@ -393,5 +382,36 @@ public class V1LimitRangeItemFluentImpl<
   public int hashCode() {
     return java.util.Objects.hash(
         _default, defaultRequest, max, maxLimitRequestRatio, min, type, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (_default != null && !_default.isEmpty()) {
+      sb.append("_default:");
+      sb.append(_default + ",");
+    }
+    if (defaultRequest != null && !defaultRequest.isEmpty()) {
+      sb.append("defaultRequest:");
+      sb.append(defaultRequest + ",");
+    }
+    if (max != null && !max.isEmpty()) {
+      sb.append("max:");
+      sb.append(max + ",");
+    }
+    if (maxLimitRequestRatio != null && !maxLimitRequestRatio.isEmpty()) {
+      sb.append("maxLimitRequestRatio:");
+      sb.append(maxLimitRequestRatio + ",");
+    }
+    if (min != null && !min.isEmpty()) {
+      sb.append("min:");
+      sb.append(min + ",");
+    }
+    if (type != null) {
+      sb.append("type:");
+      sb.append(type);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

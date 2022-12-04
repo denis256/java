@@ -12,44 +12,40 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+
 /** Generated */
-public interface V1SessionAffinityConfigFluent<
-        A extends io.kubernetes.client.openapi.models.V1SessionAffinityConfigFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
+public interface V1SessionAffinityConfigFluent<A extends V1SessionAffinityConfigFluent<A>>
+    extends Fluent<A> {
 
   /**
    * This method has been deprecated, please use method buildClientIP instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ClientIPConfig getClientIP();
+  @Deprecated
+  public V1ClientIPConfig getClientIP();
 
-  public io.kubernetes.client.openapi.models.V1ClientIPConfig buildClientIP();
+  public V1ClientIPConfig buildClientIP();
 
-  public A withClientIP(io.kubernetes.client.openapi.models.V1ClientIPConfig clientIP);
+  public A withClientIP(V1ClientIPConfig clientIP);
 
-  public java.lang.Boolean hasClientIP();
+  public Boolean hasClientIP();
 
-  public io.kubernetes.client.openapi.models.V1SessionAffinityConfigFluent.ClientIPNested<A>
-      withNewClientIP();
+  public V1SessionAffinityConfigFluent.ClientIPNested<A> withNewClientIP();
 
-  public io.kubernetes.client.openapi.models.V1SessionAffinityConfigFluent.ClientIPNested<A>
-      withNewClientIPLike(io.kubernetes.client.openapi.models.V1ClientIPConfig item);
+  public V1SessionAffinityConfigFluent.ClientIPNested<A> withNewClientIPLike(V1ClientIPConfig item);
 
-  public io.kubernetes.client.openapi.models.V1SessionAffinityConfigFluent.ClientIPNested<A>
-      editClientIP();
+  public V1SessionAffinityConfigFluent.ClientIPNested<A> editClientIP();
 
-  public io.kubernetes.client.openapi.models.V1SessionAffinityConfigFluent.ClientIPNested<A>
-      editOrNewClientIP();
+  public V1SessionAffinityConfigFluent.ClientIPNested<A> editOrNewClientIP();
 
-  public io.kubernetes.client.openapi.models.V1SessionAffinityConfigFluent.ClientIPNested<A>
-      editOrNewClientIPLike(io.kubernetes.client.openapi.models.V1ClientIPConfig item);
+  public V1SessionAffinityConfigFluent.ClientIPNested<A> editOrNewClientIPLike(
+      V1ClientIPConfig item);
 
   public interface ClientIPNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1ClientIPConfigFluent<
-              io.kubernetes.client.openapi.models.V1SessionAffinityConfigFluent.ClientIPNested<N>> {
+      extends Nested<N>, V1ClientIPConfigFluent<V1SessionAffinityConfigFluent.ClientIPNested<N>> {
     public N and();
 
     public N endClientIP();

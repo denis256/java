@@ -12,41 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V2beta2HPAScalingRulesBuilder
-    extends io.kubernetes.client.openapi.models.V2beta2HPAScalingRulesFluentImpl<
-        io.kubernetes.client.openapi.models.V2beta2HPAScalingRulesBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V2beta2HPAScalingRules,
-        io.kubernetes.client.openapi.models.V2beta2HPAScalingRulesBuilder> {
+    extends V2beta2HPAScalingRulesFluentImpl<V2beta2HPAScalingRulesBuilder>
+    implements VisitableBuilder<V2beta2HPAScalingRules, V2beta2HPAScalingRulesBuilder> {
   public V2beta2HPAScalingRulesBuilder() {
     this(false);
   }
 
-  public V2beta2HPAScalingRulesBuilder(java.lang.Boolean validationEnabled) {
+  public V2beta2HPAScalingRulesBuilder(Boolean validationEnabled) {
     this(new V2beta2HPAScalingRules(), validationEnabled);
   }
 
-  public V2beta2HPAScalingRulesBuilder(
-      io.kubernetes.client.openapi.models.V2beta2HPAScalingRulesFluent<?> fluent) {
+  public V2beta2HPAScalingRulesBuilder(V2beta2HPAScalingRulesFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V2beta2HPAScalingRulesBuilder(
-      io.kubernetes.client.openapi.models.V2beta2HPAScalingRulesFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V2beta2HPAScalingRulesFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V2beta2HPAScalingRules(), validationEnabled);
   }
 
   public V2beta2HPAScalingRulesBuilder(
-      io.kubernetes.client.openapi.models.V2beta2HPAScalingRulesFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V2beta2HPAScalingRules instance) {
+      V2beta2HPAScalingRulesFluent<?> fluent, V2beta2HPAScalingRules instance) {
     this(fluent, instance, false);
   }
 
   public V2beta2HPAScalingRulesBuilder(
-      io.kubernetes.client.openapi.models.V2beta2HPAScalingRulesFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V2beta2HPAScalingRules instance,
-      java.lang.Boolean validationEnabled) {
+      V2beta2HPAScalingRulesFluent<?> fluent,
+      V2beta2HPAScalingRules instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withPolicies(instance.getPolicies());
 
@@ -57,14 +53,11 @@ public class V2beta2HPAScalingRulesBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V2beta2HPAScalingRulesBuilder(
-      io.kubernetes.client.openapi.models.V2beta2HPAScalingRules instance) {
+  public V2beta2HPAScalingRulesBuilder(V2beta2HPAScalingRules instance) {
     this(instance, false);
   }
 
-  public V2beta2HPAScalingRulesBuilder(
-      io.kubernetes.client.openapi.models.V2beta2HPAScalingRules instance,
-      java.lang.Boolean validationEnabled) {
+  public V2beta2HPAScalingRulesBuilder(V2beta2HPAScalingRules instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withPolicies(instance.getPolicies());
 
@@ -75,33 +68,14 @@ public class V2beta2HPAScalingRulesBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V2beta2HPAScalingRulesFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V2beta2HPAScalingRulesFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V2beta2HPAScalingRules build() {
+  public V2beta2HPAScalingRules build() {
     V2beta2HPAScalingRules buildable = new V2beta2HPAScalingRules();
     buildable.setPolicies(fluent.getPolicies());
     buildable.setSelectPolicy(fluent.getSelectPolicy());
     buildable.setStabilizationWindowSeconds(fluent.getStabilizationWindowSeconds());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V2beta2HPAScalingRulesBuilder that = (V2beta2HPAScalingRulesBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

@@ -12,41 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1StatefulSetUpdateStrategyBuilder
-    extends io.kubernetes.client.openapi.models.V1StatefulSetUpdateStrategyFluentImpl<
-        io.kubernetes.client.openapi.models.V1StatefulSetUpdateStrategyBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1StatefulSetUpdateStrategy,
-        io.kubernetes.client.openapi.models.V1StatefulSetUpdateStrategyBuilder> {
+    extends V1StatefulSetUpdateStrategyFluentImpl<V1StatefulSetUpdateStrategyBuilder>
+    implements VisitableBuilder<V1StatefulSetUpdateStrategy, V1StatefulSetUpdateStrategyBuilder> {
   public V1StatefulSetUpdateStrategyBuilder() {
     this(false);
   }
 
-  public V1StatefulSetUpdateStrategyBuilder(java.lang.Boolean validationEnabled) {
+  public V1StatefulSetUpdateStrategyBuilder(Boolean validationEnabled) {
     this(new V1StatefulSetUpdateStrategy(), validationEnabled);
   }
 
-  public V1StatefulSetUpdateStrategyBuilder(
-      io.kubernetes.client.openapi.models.V1StatefulSetUpdateStrategyFluent<?> fluent) {
+  public V1StatefulSetUpdateStrategyBuilder(V1StatefulSetUpdateStrategyFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1StatefulSetUpdateStrategyBuilder(
-      io.kubernetes.client.openapi.models.V1StatefulSetUpdateStrategyFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1StatefulSetUpdateStrategyFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1StatefulSetUpdateStrategy(), validationEnabled);
   }
 
   public V1StatefulSetUpdateStrategyBuilder(
-      io.kubernetes.client.openapi.models.V1StatefulSetUpdateStrategyFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1StatefulSetUpdateStrategy instance) {
+      V1StatefulSetUpdateStrategyFluent<?> fluent, V1StatefulSetUpdateStrategy instance) {
     this(fluent, instance, false);
   }
 
   public V1StatefulSetUpdateStrategyBuilder(
-      io.kubernetes.client.openapi.models.V1StatefulSetUpdateStrategyFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1StatefulSetUpdateStrategy instance,
-      java.lang.Boolean validationEnabled) {
+      V1StatefulSetUpdateStrategyFluent<?> fluent,
+      V1StatefulSetUpdateStrategy instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withRollingUpdate(instance.getRollingUpdate());
 
@@ -55,14 +51,12 @@ public class V1StatefulSetUpdateStrategyBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1StatefulSetUpdateStrategyBuilder(
-      io.kubernetes.client.openapi.models.V1StatefulSetUpdateStrategy instance) {
+  public V1StatefulSetUpdateStrategyBuilder(V1StatefulSetUpdateStrategy instance) {
     this(instance, false);
   }
 
   public V1StatefulSetUpdateStrategyBuilder(
-      io.kubernetes.client.openapi.models.V1StatefulSetUpdateStrategy instance,
-      java.lang.Boolean validationEnabled) {
+      V1StatefulSetUpdateStrategy instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withRollingUpdate(instance.getRollingUpdate());
 
@@ -71,32 +65,13 @@ public class V1StatefulSetUpdateStrategyBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1StatefulSetUpdateStrategyFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1StatefulSetUpdateStrategyFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1StatefulSetUpdateStrategy build() {
+  public V1StatefulSetUpdateStrategy build() {
     V1StatefulSetUpdateStrategy buildable = new V1StatefulSetUpdateStrategy();
     buildable.setRollingUpdate(fluent.getRollingUpdate());
     buildable.setType(fluent.getType());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1StatefulSetUpdateStrategyBuilder that = (V1StatefulSetUpdateStrategyBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

@@ -12,41 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1EndpointAddressBuilder
-    extends io.kubernetes.client.openapi.models.V1EndpointAddressFluentImpl<
-        io.kubernetes.client.openapi.models.V1EndpointAddressBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1EndpointAddress,
-        io.kubernetes.client.openapi.models.V1EndpointAddressBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1EndpointAddressBuilder extends V1EndpointAddressFluentImpl<V1EndpointAddressBuilder>
+    implements VisitableBuilder<V1EndpointAddress, V1EndpointAddressBuilder> {
   public V1EndpointAddressBuilder() {
     this(false);
   }
 
-  public V1EndpointAddressBuilder(java.lang.Boolean validationEnabled) {
+  public V1EndpointAddressBuilder(Boolean validationEnabled) {
     this(new V1EndpointAddress(), validationEnabled);
   }
 
-  public V1EndpointAddressBuilder(
-      io.kubernetes.client.openapi.models.V1EndpointAddressFluent<?> fluent) {
+  public V1EndpointAddressBuilder(V1EndpointAddressFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1EndpointAddressBuilder(
-      io.kubernetes.client.openapi.models.V1EndpointAddressFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1EndpointAddressBuilder(V1EndpointAddressFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1EndpointAddress(), validationEnabled);
   }
 
-  public V1EndpointAddressBuilder(
-      io.kubernetes.client.openapi.models.V1EndpointAddressFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1EndpointAddress instance) {
+  public V1EndpointAddressBuilder(V1EndpointAddressFluent<?> fluent, V1EndpointAddress instance) {
     this(fluent, instance, false);
   }
 
   public V1EndpointAddressBuilder(
-      io.kubernetes.client.openapi.models.V1EndpointAddressFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1EndpointAddress instance,
-      java.lang.Boolean validationEnabled) {
+      V1EndpointAddressFluent<?> fluent, V1EndpointAddress instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withHostname(instance.getHostname());
 
@@ -59,13 +50,11 @@ public class V1EndpointAddressBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1EndpointAddressBuilder(io.kubernetes.client.openapi.models.V1EndpointAddress instance) {
+  public V1EndpointAddressBuilder(V1EndpointAddress instance) {
     this(instance, false);
   }
 
-  public V1EndpointAddressBuilder(
-      io.kubernetes.client.openapi.models.V1EndpointAddress instance,
-      java.lang.Boolean validationEnabled) {
+  public V1EndpointAddressBuilder(V1EndpointAddress instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withHostname(instance.getHostname());
 
@@ -78,34 +67,15 @@ public class V1EndpointAddressBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1EndpointAddressFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1EndpointAddressFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1EndpointAddress build() {
+  public V1EndpointAddress build() {
     V1EndpointAddress buildable = new V1EndpointAddress();
     buildable.setHostname(fluent.getHostname());
     buildable.setIp(fluent.getIp());
     buildable.setNodeName(fluent.getNodeName());
     buildable.setTargetRef(fluent.getTargetRef());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1EndpointAddressBuilder that = (V1EndpointAddressBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

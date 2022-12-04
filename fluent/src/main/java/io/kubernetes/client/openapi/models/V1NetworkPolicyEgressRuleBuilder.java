@@ -12,41 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1NetworkPolicyEgressRuleBuilder
-    extends io.kubernetes.client.openapi.models.V1NetworkPolicyEgressRuleFluentImpl<
-        io.kubernetes.client.openapi.models.V1NetworkPolicyEgressRuleBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1NetworkPolicyEgressRule,
-        io.kubernetes.client.openapi.models.V1NetworkPolicyEgressRuleBuilder> {
+    extends V1NetworkPolicyEgressRuleFluentImpl<V1NetworkPolicyEgressRuleBuilder>
+    implements VisitableBuilder<V1NetworkPolicyEgressRule, V1NetworkPolicyEgressRuleBuilder> {
   public V1NetworkPolicyEgressRuleBuilder() {
     this(false);
   }
 
-  public V1NetworkPolicyEgressRuleBuilder(java.lang.Boolean validationEnabled) {
+  public V1NetworkPolicyEgressRuleBuilder(Boolean validationEnabled) {
     this(new V1NetworkPolicyEgressRule(), validationEnabled);
   }
 
-  public V1NetworkPolicyEgressRuleBuilder(
-      io.kubernetes.client.openapi.models.V1NetworkPolicyEgressRuleFluent<?> fluent) {
+  public V1NetworkPolicyEgressRuleBuilder(V1NetworkPolicyEgressRuleFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1NetworkPolicyEgressRuleBuilder(
-      io.kubernetes.client.openapi.models.V1NetworkPolicyEgressRuleFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1NetworkPolicyEgressRuleFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1NetworkPolicyEgressRule(), validationEnabled);
   }
 
   public V1NetworkPolicyEgressRuleBuilder(
-      io.kubernetes.client.openapi.models.V1NetworkPolicyEgressRuleFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1NetworkPolicyEgressRule instance) {
+      V1NetworkPolicyEgressRuleFluent<?> fluent, V1NetworkPolicyEgressRule instance) {
     this(fluent, instance, false);
   }
 
   public V1NetworkPolicyEgressRuleBuilder(
-      io.kubernetes.client.openapi.models.V1NetworkPolicyEgressRuleFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1NetworkPolicyEgressRule instance,
-      java.lang.Boolean validationEnabled) {
+      V1NetworkPolicyEgressRuleFluent<?> fluent,
+      V1NetworkPolicyEgressRule instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withPorts(instance.getPorts());
 
@@ -55,14 +51,12 @@ public class V1NetworkPolicyEgressRuleBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1NetworkPolicyEgressRuleBuilder(
-      io.kubernetes.client.openapi.models.V1NetworkPolicyEgressRule instance) {
+  public V1NetworkPolicyEgressRuleBuilder(V1NetworkPolicyEgressRule instance) {
     this(instance, false);
   }
 
   public V1NetworkPolicyEgressRuleBuilder(
-      io.kubernetes.client.openapi.models.V1NetworkPolicyEgressRule instance,
-      java.lang.Boolean validationEnabled) {
+      V1NetworkPolicyEgressRule instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withPorts(instance.getPorts());
 
@@ -71,32 +65,13 @@ public class V1NetworkPolicyEgressRuleBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1NetworkPolicyEgressRuleFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1NetworkPolicyEgressRuleFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1NetworkPolicyEgressRule build() {
+  public V1NetworkPolicyEgressRule build() {
     V1NetworkPolicyEgressRule buildable = new V1NetworkPolicyEgressRule();
     buildable.setPorts(fluent.getPorts());
     buildable.setTo(fluent.getTo());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1NetworkPolicyEgressRuleBuilder that = (V1NetworkPolicyEgressRuleBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

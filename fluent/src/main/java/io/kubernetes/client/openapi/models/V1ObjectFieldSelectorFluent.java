@@ -12,27 +12,20 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
-public interface V1ObjectFieldSelectorFluent<
-        A extends io.kubernetes.client.openapi.models.V1ObjectFieldSelectorFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getApiVersion();
+public interface V1ObjectFieldSelectorFluent<A extends V1ObjectFieldSelectorFluent<A>>
+    extends Fluent<A> {
+  public String getApiVersion();
 
-  public A withApiVersion(java.lang.String apiVersion);
+  public A withApiVersion(String apiVersion);
 
-  public java.lang.Boolean hasApiVersion();
+  public Boolean hasApiVersion();
 
-  /** Method is deprecated. use withApiVersion instead. */
-  @java.lang.Deprecated
-  public A withNewApiVersion(java.lang.String original);
+  public String getFieldPath();
 
-  public java.lang.String getFieldPath();
+  public A withFieldPath(String fieldPath);
 
-  public A withFieldPath(java.lang.String fieldPath);
-
-  public java.lang.Boolean hasFieldPath();
-
-  /** Method is deprecated. use withFieldPath instead. */
-  @java.lang.Deprecated
-  public A withNewFieldPath(java.lang.String original);
+  public Boolean hasFieldPath();
 }

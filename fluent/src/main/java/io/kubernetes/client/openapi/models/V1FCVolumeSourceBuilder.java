@@ -12,41 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1FCVolumeSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1FCVolumeSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1FCVolumeSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1FCVolumeSource,
-        io.kubernetes.client.openapi.models.V1FCVolumeSourceBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1FCVolumeSourceBuilder extends V1FCVolumeSourceFluentImpl<V1FCVolumeSourceBuilder>
+    implements VisitableBuilder<V1FCVolumeSource, V1FCVolumeSourceBuilder> {
   public V1FCVolumeSourceBuilder() {
     this(false);
   }
 
-  public V1FCVolumeSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1FCVolumeSourceBuilder(Boolean validationEnabled) {
     this(new V1FCVolumeSource(), validationEnabled);
   }
 
-  public V1FCVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1FCVolumeSourceFluent<?> fluent) {
+  public V1FCVolumeSourceBuilder(V1FCVolumeSourceFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1FCVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1FCVolumeSourceFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1FCVolumeSourceBuilder(V1FCVolumeSourceFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1FCVolumeSource(), validationEnabled);
   }
 
-  public V1FCVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1FCVolumeSourceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1FCVolumeSource instance) {
+  public V1FCVolumeSourceBuilder(V1FCVolumeSourceFluent<?> fluent, V1FCVolumeSource instance) {
     this(fluent, instance, false);
   }
 
   public V1FCVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1FCVolumeSourceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1FCVolumeSource instance,
-      java.lang.Boolean validationEnabled) {
+      V1FCVolumeSourceFluent<?> fluent, V1FCVolumeSource instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withFsType(instance.getFsType());
 
@@ -61,13 +52,11 @@ public class V1FCVolumeSourceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1FCVolumeSourceBuilder(io.kubernetes.client.openapi.models.V1FCVolumeSource instance) {
+  public V1FCVolumeSourceBuilder(V1FCVolumeSource instance) {
     this(instance, false);
   }
 
-  public V1FCVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1FCVolumeSource instance,
-      java.lang.Boolean validationEnabled) {
+  public V1FCVolumeSourceBuilder(V1FCVolumeSource instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withFsType(instance.getFsType());
 
@@ -82,10 +71,10 @@ public class V1FCVolumeSourceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1FCVolumeSourceFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1FCVolumeSourceFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1FCVolumeSource build() {
+  public V1FCVolumeSource build() {
     V1FCVolumeSource buildable = new V1FCVolumeSource();
     buildable.setFsType(fluent.getFsType());
     buildable.setLun(fluent.getLun());
@@ -93,24 +82,5 @@ public class V1FCVolumeSourceBuilder
     buildable.setTargetWWNs(fluent.getTargetWWNs());
     buildable.setWwids(fluent.getWwids());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1FCVolumeSourceBuilder that = (V1FCVolumeSourceBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

@@ -12,43 +12,35 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
 public interface V1GlusterfsPersistentVolumeSourceFluent<
-        A extends io.kubernetes.client.openapi.models.V1GlusterfsPersistentVolumeSourceFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getEndpoints();
+        A extends V1GlusterfsPersistentVolumeSourceFluent<A>>
+    extends Fluent<A> {
+  public String getEndpoints();
 
-  public A withEndpoints(java.lang.String endpoints);
+  public A withEndpoints(String endpoints);
 
-  public java.lang.Boolean hasEndpoints();
+  public Boolean hasEndpoints();
 
-  /** Method is deprecated. use withEndpoints instead. */
-  @java.lang.Deprecated
-  public A withNewEndpoints(java.lang.String original);
+  public String getEndpointsNamespace();
 
-  public java.lang.String getEndpointsNamespace();
+  public A withEndpointsNamespace(String endpointsNamespace);
 
-  public A withEndpointsNamespace(java.lang.String endpointsNamespace);
+  public Boolean hasEndpointsNamespace();
 
-  public java.lang.Boolean hasEndpointsNamespace();
+  public String getPath();
 
-  /** Method is deprecated. use withEndpointsNamespace instead. */
-  @java.lang.Deprecated
-  public A withNewEndpointsNamespace(java.lang.String original);
+  public A withPath(String path);
 
-  public java.lang.String getPath();
+  public Boolean hasPath();
 
-  public A withPath(java.lang.String path);
+  public Boolean getReadOnly();
 
-  public java.lang.Boolean hasPath();
+  public A withReadOnly(Boolean readOnly);
 
-  /** Method is deprecated. use withPath instead. */
-  @java.lang.Deprecated
-  public A withNewPath(java.lang.String original);
+  public Boolean hasReadOnly();
 
-  public java.lang.Boolean getReadOnly();
-
-  public A withReadOnly(java.lang.Boolean readOnly);
-
-  public java.lang.Boolean hasReadOnly();
+  public A withReadOnly();
 }

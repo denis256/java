@@ -12,40 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1TokenReviewBuilder
-    extends io.kubernetes.client.openapi.models.V1TokenReviewFluentImpl<
-        io.kubernetes.client.openapi.models.V1TokenReviewBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1TokenReview,
-        io.kubernetes.client.openapi.models.V1TokenReviewBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1TokenReviewBuilder extends V1TokenReviewFluentImpl<V1TokenReviewBuilder>
+    implements VisitableBuilder<V1TokenReview, V1TokenReviewBuilder> {
   public V1TokenReviewBuilder() {
     this(false);
   }
 
-  public V1TokenReviewBuilder(java.lang.Boolean validationEnabled) {
+  public V1TokenReviewBuilder(Boolean validationEnabled) {
     this(new V1TokenReview(), validationEnabled);
   }
 
-  public V1TokenReviewBuilder(io.kubernetes.client.openapi.models.V1TokenReviewFluent<?> fluent) {
+  public V1TokenReviewBuilder(V1TokenReviewFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1TokenReviewBuilder(
-      io.kubernetes.client.openapi.models.V1TokenReviewFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1TokenReviewBuilder(V1TokenReviewFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1TokenReview(), validationEnabled);
   }
 
-  public V1TokenReviewBuilder(
-      io.kubernetes.client.openapi.models.V1TokenReviewFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1TokenReview instance) {
+  public V1TokenReviewBuilder(V1TokenReviewFluent<?> fluent, V1TokenReview instance) {
     this(fluent, instance, false);
   }
 
   public V1TokenReviewBuilder(
-      io.kubernetes.client.openapi.models.V1TokenReviewFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1TokenReview instance,
-      java.lang.Boolean validationEnabled) {
+      V1TokenReviewFluent<?> fluent, V1TokenReview instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withApiVersion(instance.getApiVersion());
 
@@ -60,13 +52,11 @@ public class V1TokenReviewBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1TokenReviewBuilder(io.kubernetes.client.openapi.models.V1TokenReview instance) {
+  public V1TokenReviewBuilder(V1TokenReview instance) {
     this(instance, false);
   }
 
-  public V1TokenReviewBuilder(
-      io.kubernetes.client.openapi.models.V1TokenReview instance,
-      java.lang.Boolean validationEnabled) {
+  public V1TokenReviewBuilder(V1TokenReview instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withApiVersion(instance.getApiVersion());
 
@@ -81,10 +71,10 @@ public class V1TokenReviewBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1TokenReviewFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1TokenReviewFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1TokenReview build() {
+  public V1TokenReview build() {
     V1TokenReview buildable = new V1TokenReview();
     buildable.setApiVersion(fluent.getApiVersion());
     buildable.setKind(fluent.getKind());
@@ -92,24 +82,5 @@ public class V1TokenReviewBuilder
     buildable.setSpec(fluent.getSpec());
     buildable.setStatus(fluent.getStatus());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1TokenReviewBuilder that = (V1TokenReviewBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

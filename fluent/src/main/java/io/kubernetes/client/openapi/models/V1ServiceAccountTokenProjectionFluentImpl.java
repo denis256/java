@@ -12,15 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
+@SuppressWarnings(value = "unchecked")
 public class V1ServiceAccountTokenProjectionFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1ServiceAccountTokenProjectionFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1ServiceAccountTokenProjectionFluent<A> {
+        A extends V1ServiceAccountTokenProjectionFluent<A>>
+    extends BaseFluent<A> implements V1ServiceAccountTokenProjectionFluent<A> {
   public V1ServiceAccountTokenProjectionFluentImpl() {}
 
-  public V1ServiceAccountTokenProjectionFluentImpl(
-      io.kubernetes.client.openapi.models.V1ServiceAccountTokenProjection instance) {
+  public V1ServiceAccountTokenProjectionFluentImpl(V1ServiceAccountTokenProjection instance) {
     this.withAudience(instance.getAudience());
 
     this.withExpirationSeconds(instance.getExpirationSeconds());
@@ -28,62 +29,50 @@ public class V1ServiceAccountTokenProjectionFluentImpl<
     this.withPath(instance.getPath());
   }
 
-  private java.lang.String audience;
-  private java.lang.Long expirationSeconds;
-  private java.lang.String path;
+  private String audience;
+  private Long expirationSeconds;
+  private String path;
 
-  public java.lang.String getAudience() {
+  public String getAudience() {
     return this.audience;
   }
 
-  public A withAudience(java.lang.String audience) {
+  public A withAudience(String audience) {
     this.audience = audience;
     return (A) this;
   }
 
-  public java.lang.Boolean hasAudience() {
+  public Boolean hasAudience() {
     return this.audience != null;
   }
 
-  /** Method is deprecated. use withAudience instead. */
-  @java.lang.Deprecated
-  public A withNewAudience(java.lang.String original) {
-    return (A) withAudience(new String(original));
-  }
-
-  public java.lang.Long getExpirationSeconds() {
+  public Long getExpirationSeconds() {
     return this.expirationSeconds;
   }
 
-  public A withExpirationSeconds(java.lang.Long expirationSeconds) {
+  public A withExpirationSeconds(Long expirationSeconds) {
     this.expirationSeconds = expirationSeconds;
     return (A) this;
   }
 
-  public java.lang.Boolean hasExpirationSeconds() {
+  public Boolean hasExpirationSeconds() {
     return this.expirationSeconds != null;
   }
 
-  public java.lang.String getPath() {
+  public String getPath() {
     return this.path;
   }
 
-  public A withPath(java.lang.String path) {
+  public A withPath(String path) {
     this.path = path;
     return (A) this;
   }
 
-  public java.lang.Boolean hasPath() {
+  public Boolean hasPath() {
     return this.path != null;
   }
 
-  /** Method is deprecated. use withPath instead. */
-  @java.lang.Deprecated
-  public A withNewPath(java.lang.String original) {
-    return (A) withPath(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1ServiceAccountTokenProjectionFluentImpl that = (V1ServiceAccountTokenProjectionFluentImpl) o;
@@ -97,5 +86,24 @@ public class V1ServiceAccountTokenProjectionFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(audience, expirationSeconds, path, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (audience != null) {
+      sb.append("audience:");
+      sb.append(audience + ",");
+    }
+    if (expirationSeconds != null) {
+      sb.append("expirationSeconds:");
+      sb.append(expirationSeconds + ",");
+    }
+    if (path != null) {
+      sb.append("path:");
+      sb.append(path);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

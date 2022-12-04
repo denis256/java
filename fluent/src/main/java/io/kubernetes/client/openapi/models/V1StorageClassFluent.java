@@ -12,240 +12,192 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Predicate;
+
 /** Generated */
-public interface V1StorageClassFluent<
-        A extends io.kubernetes.client.openapi.models.V1StorageClassFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.Boolean getAllowVolumeExpansion();
+public interface V1StorageClassFluent<A extends V1StorageClassFluent<A>> extends Fluent<A> {
+  public Boolean getAllowVolumeExpansion();
 
-  public A withAllowVolumeExpansion(java.lang.Boolean allowVolumeExpansion);
+  public A withAllowVolumeExpansion(Boolean allowVolumeExpansion);
 
-  public java.lang.Boolean hasAllowVolumeExpansion();
+  public Boolean hasAllowVolumeExpansion();
 
-  public A addToAllowedTopologies(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1TopologySelectorTerm item);
+  public A addToAllowedTopologies(Integer index, V1TopologySelectorTerm item);
 
-  public A setToAllowedTopologies(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1TopologySelectorTerm item);
+  public A setToAllowedTopologies(Integer index, V1TopologySelectorTerm item);
 
   public A addToAllowedTopologies(
       io.kubernetes.client.openapi.models.V1TopologySelectorTerm... items);
 
-  public A addAllToAllowedTopologies(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1TopologySelectorTerm> items);
+  public A addAllToAllowedTopologies(Collection<V1TopologySelectorTerm> items);
 
   public A removeFromAllowedTopologies(
       io.kubernetes.client.openapi.models.V1TopologySelectorTerm... items);
 
-  public A removeAllFromAllowedTopologies(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1TopologySelectorTerm> items);
+  public A removeAllFromAllowedTopologies(Collection<V1TopologySelectorTerm> items);
 
-  public A removeMatchingFromAllowedTopologies(
-      java.util.function.Predicate<
-              io.kubernetes.client.openapi.models.V1TopologySelectorTermBuilder>
-          predicate);
+  public A removeMatchingFromAllowedTopologies(Predicate<V1TopologySelectorTermBuilder> predicate);
 
   /**
    * This method has been deprecated, please use method buildAllowedTopologies instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V1TopologySelectorTerm>
-      getAllowedTopologies();
+  @Deprecated
+  public List<V1TopologySelectorTerm> getAllowedTopologies();
 
-  public java.util.List<io.kubernetes.client.openapi.models.V1TopologySelectorTerm>
-      buildAllowedTopologies();
+  public List<V1TopologySelectorTerm> buildAllowedTopologies();
 
-  public io.kubernetes.client.openapi.models.V1TopologySelectorTerm buildAllowedTopology(
-      java.lang.Integer index);
+  public V1TopologySelectorTerm buildAllowedTopology(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1TopologySelectorTerm buildFirstAllowedTopology();
+  public V1TopologySelectorTerm buildFirstAllowedTopology();
 
-  public io.kubernetes.client.openapi.models.V1TopologySelectorTerm buildLastAllowedTopology();
+  public V1TopologySelectorTerm buildLastAllowedTopology();
 
-  public io.kubernetes.client.openapi.models.V1TopologySelectorTerm buildMatchingAllowedTopology(
-      java.util.function.Predicate<
-              io.kubernetes.client.openapi.models.V1TopologySelectorTermBuilder>
-          predicate);
+  public V1TopologySelectorTerm buildMatchingAllowedTopology(
+      Predicate<V1TopologySelectorTermBuilder> predicate);
 
-  public java.lang.Boolean hasMatchingAllowedTopology(
-      java.util.function.Predicate<
-              io.kubernetes.client.openapi.models.V1TopologySelectorTermBuilder>
-          predicate);
+  public Boolean hasMatchingAllowedTopology(Predicate<V1TopologySelectorTermBuilder> predicate);
 
-  public A withAllowedTopologies(
-      java.util.List<io.kubernetes.client.openapi.models.V1TopologySelectorTerm> allowedTopologies);
+  public A withAllowedTopologies(List<V1TopologySelectorTerm> allowedTopologies);
 
   public A withAllowedTopologies(
       io.kubernetes.client.openapi.models.V1TopologySelectorTerm... allowedTopologies);
 
-  public java.lang.Boolean hasAllowedTopologies();
+  public Boolean hasAllowedTopologies();
 
-  public io.kubernetes.client.openapi.models.V1StorageClassFluent.AllowedTopologiesNested<A>
-      addNewAllowedTopology();
+  public V1StorageClassFluent.AllowedTopologiesNested<A> addNewAllowedTopology();
 
-  public io.kubernetes.client.openapi.models.V1StorageClassFluent.AllowedTopologiesNested<A>
-      addNewAllowedTopologyLike(io.kubernetes.client.openapi.models.V1TopologySelectorTerm item);
+  public V1StorageClassFluent.AllowedTopologiesNested<A> addNewAllowedTopologyLike(
+      V1TopologySelectorTerm item);
 
-  public io.kubernetes.client.openapi.models.V1StorageClassFluent.AllowedTopologiesNested<A>
-      setNewAllowedTopologyLike(
-          java.lang.Integer index, io.kubernetes.client.openapi.models.V1TopologySelectorTerm item);
+  public V1StorageClassFluent.AllowedTopologiesNested<A> setNewAllowedTopologyLike(
+      Integer index, V1TopologySelectorTerm item);
 
-  public io.kubernetes.client.openapi.models.V1StorageClassFluent.AllowedTopologiesNested<A>
-      editAllowedTopology(java.lang.Integer index);
+  public V1StorageClassFluent.AllowedTopologiesNested<A> editAllowedTopology(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1StorageClassFluent.AllowedTopologiesNested<A>
-      editFirstAllowedTopology();
+  public V1StorageClassFluent.AllowedTopologiesNested<A> editFirstAllowedTopology();
 
-  public io.kubernetes.client.openapi.models.V1StorageClassFluent.AllowedTopologiesNested<A>
-      editLastAllowedTopology();
+  public V1StorageClassFluent.AllowedTopologiesNested<A> editLastAllowedTopology();
 
-  public io.kubernetes.client.openapi.models.V1StorageClassFluent.AllowedTopologiesNested<A>
-      editMatchingAllowedTopology(
-          java.util.function.Predicate<
-                  io.kubernetes.client.openapi.models.V1TopologySelectorTermBuilder>
-              predicate);
+  public V1StorageClassFluent.AllowedTopologiesNested<A> editMatchingAllowedTopology(
+      Predicate<V1TopologySelectorTermBuilder> predicate);
 
-  public java.lang.String getApiVersion();
+  public String getApiVersion();
 
-  public A withApiVersion(java.lang.String apiVersion);
+  public A withApiVersion(String apiVersion);
 
-  public java.lang.Boolean hasApiVersion();
+  public Boolean hasApiVersion();
 
-  /** Method is deprecated. use withApiVersion instead. */
-  @java.lang.Deprecated
-  public A withNewApiVersion(java.lang.String original);
+  public String getKind();
 
-  public java.lang.String getKind();
+  public A withKind(String kind);
 
-  public A withKind(java.lang.String kind);
-
-  public java.lang.Boolean hasKind();
-
-  /** Method is deprecated. use withKind instead. */
-  @java.lang.Deprecated
-  public A withNewKind(java.lang.String original);
+  public Boolean hasKind();
 
   /**
    * This method has been deprecated, please use method buildMetadata instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ObjectMeta getMetadata();
+  @Deprecated
+  public V1ObjectMeta getMetadata();
 
-  public io.kubernetes.client.openapi.models.V1ObjectMeta buildMetadata();
+  public V1ObjectMeta buildMetadata();
 
-  public A withMetadata(io.kubernetes.client.openapi.models.V1ObjectMeta metadata);
+  public A withMetadata(V1ObjectMeta metadata);
 
-  public java.lang.Boolean hasMetadata();
+  public Boolean hasMetadata();
 
-  public io.kubernetes.client.openapi.models.V1StorageClassFluent.MetadataNested<A>
-      withNewMetadata();
+  public V1StorageClassFluent.MetadataNested<A> withNewMetadata();
 
-  public io.kubernetes.client.openapi.models.V1StorageClassFluent.MetadataNested<A>
-      withNewMetadataLike(io.kubernetes.client.openapi.models.V1ObjectMeta item);
+  public V1StorageClassFluent.MetadataNested<A> withNewMetadataLike(V1ObjectMeta item);
 
-  public io.kubernetes.client.openapi.models.V1StorageClassFluent.MetadataNested<A> editMetadata();
+  public V1StorageClassFluent.MetadataNested<A> editMetadata();
 
-  public io.kubernetes.client.openapi.models.V1StorageClassFluent.MetadataNested<A>
-      editOrNewMetadata();
+  public V1StorageClassFluent.MetadataNested<A> editOrNewMetadata();
 
-  public io.kubernetes.client.openapi.models.V1StorageClassFluent.MetadataNested<A>
-      editOrNewMetadataLike(io.kubernetes.client.openapi.models.V1ObjectMeta item);
+  public V1StorageClassFluent.MetadataNested<A> editOrNewMetadataLike(V1ObjectMeta item);
 
-  public A addToMountOptions(java.lang.Integer index, java.lang.String item);
+  public A addToMountOptions(Integer index, String item);
 
-  public A setToMountOptions(java.lang.Integer index, java.lang.String item);
+  public A setToMountOptions(Integer index, String item);
 
   public A addToMountOptions(java.lang.String... items);
 
-  public A addAllToMountOptions(java.util.Collection<java.lang.String> items);
+  public A addAllToMountOptions(Collection<String> items);
 
   public A removeFromMountOptions(java.lang.String... items);
 
-  public A removeAllFromMountOptions(java.util.Collection<java.lang.String> items);
+  public A removeAllFromMountOptions(Collection<String> items);
 
-  public java.util.List<java.lang.String> getMountOptions();
+  public List<String> getMountOptions();
 
-  public java.lang.String getMountOption(java.lang.Integer index);
+  public String getMountOption(Integer index);
 
-  public java.lang.String getFirstMountOption();
+  public String getFirstMountOption();
 
-  public java.lang.String getLastMountOption();
+  public String getLastMountOption();
 
-  public java.lang.String getMatchingMountOption(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public String getMatchingMountOption(Predicate<String> predicate);
 
-  public java.lang.Boolean hasMatchingMountOption(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public Boolean hasMatchingMountOption(Predicate<String> predicate);
 
-  public A withMountOptions(java.util.List<java.lang.String> mountOptions);
+  public A withMountOptions(List<String> mountOptions);
 
   public A withMountOptions(java.lang.String... mountOptions);
 
-  public java.lang.Boolean hasMountOptions();
+  public Boolean hasMountOptions();
 
-  public A addNewMountOption(java.lang.String original);
+  public A addToParameters(String key, String value);
 
-  public A addToParameters(java.lang.String key, java.lang.String value);
+  public A addToParameters(Map<String, String> map);
 
-  public A addToParameters(java.util.Map<java.lang.String, java.lang.String> map);
+  public A removeFromParameters(String key);
 
-  public A removeFromParameters(java.lang.String key);
+  public A removeFromParameters(Map<String, String> map);
 
-  public A removeFromParameters(java.util.Map<java.lang.String, java.lang.String> map);
+  public Map<String, String> getParameters();
 
-  public java.util.Map<java.lang.String, java.lang.String> getParameters();
+  public <K, V> A withParameters(Map<String, String> parameters);
 
-  public <K, V> A withParameters(java.util.Map<java.lang.String, java.lang.String> parameters);
+  public Boolean hasParameters();
 
-  public java.lang.Boolean hasParameters();
+  public String getProvisioner();
 
-  public java.lang.String getProvisioner();
+  public A withProvisioner(String provisioner);
 
-  public A withProvisioner(java.lang.String provisioner);
+  public Boolean hasProvisioner();
 
-  public java.lang.Boolean hasProvisioner();
+  public String getReclaimPolicy();
 
-  /** Method is deprecated. use withProvisioner instead. */
-  @java.lang.Deprecated
-  public A withNewProvisioner(java.lang.String original);
+  public A withReclaimPolicy(String reclaimPolicy);
 
-  public java.lang.String getReclaimPolicy();
+  public Boolean hasReclaimPolicy();
 
-  public A withReclaimPolicy(java.lang.String reclaimPolicy);
+  public String getVolumeBindingMode();
 
-  public java.lang.Boolean hasReclaimPolicy();
+  public A withVolumeBindingMode(String volumeBindingMode);
 
-  /** Method is deprecated. use withReclaimPolicy instead. */
-  @java.lang.Deprecated
-  public A withNewReclaimPolicy(java.lang.String original);
+  public Boolean hasVolumeBindingMode();
 
-  public java.lang.String getVolumeBindingMode();
-
-  public A withVolumeBindingMode(java.lang.String volumeBindingMode);
-
-  public java.lang.Boolean hasVolumeBindingMode();
-
-  /** Method is deprecated. use withVolumeBindingMode instead. */
-  @java.lang.Deprecated
-  public A withNewVolumeBindingMode(java.lang.String original);
+  public A withAllowVolumeExpansion();
 
   public interface AllowedTopologiesNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1TopologySelectorTermFluent<
-              io.kubernetes.client.openapi.models.V1StorageClassFluent.AllowedTopologiesNested<N>> {
+      extends Nested<N>,
+          V1TopologySelectorTermFluent<V1StorageClassFluent.AllowedTopologiesNested<N>> {
     public N and();
 
     public N endAllowedTopology();
   }
 
   public interface MetadataNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1ObjectMetaFluent<
-              io.kubernetes.client.openapi.models.V1StorageClassFluent.MetadataNested<N>> {
+      extends Nested<N>, V1ObjectMetaFluent<V1StorageClassFluent.MetadataNested<N>> {
     public N and();
 
     public N endMetadata();

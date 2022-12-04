@@ -12,156 +12,121 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
+
 /** Generated */
 public interface V2HorizontalPodAutoscalerListFluent<
-        A extends io.kubernetes.client.openapi.models.V2HorizontalPodAutoscalerListFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getApiVersion();
+        A extends V2HorizontalPodAutoscalerListFluent<A>>
+    extends Fluent<A> {
+  public String getApiVersion();
 
-  public A withApiVersion(java.lang.String apiVersion);
+  public A withApiVersion(String apiVersion);
 
-  public java.lang.Boolean hasApiVersion();
+  public Boolean hasApiVersion();
 
-  /** Method is deprecated. use withApiVersion instead. */
-  @java.lang.Deprecated
-  public A withNewApiVersion(java.lang.String original);
+  public A addToItems(Integer index, V2HorizontalPodAutoscaler item);
 
-  public A addToItems(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V2HorizontalPodAutoscaler item);
-
-  public A setToItems(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V2HorizontalPodAutoscaler item);
+  public A setToItems(Integer index, V2HorizontalPodAutoscaler item);
 
   public A addToItems(io.kubernetes.client.openapi.models.V2HorizontalPodAutoscaler... items);
 
-  public A addAllToItems(
-      java.util.Collection<io.kubernetes.client.openapi.models.V2HorizontalPodAutoscaler> items);
+  public A addAllToItems(Collection<V2HorizontalPodAutoscaler> items);
 
   public A removeFromItems(io.kubernetes.client.openapi.models.V2HorizontalPodAutoscaler... items);
 
-  public A removeAllFromItems(
-      java.util.Collection<io.kubernetes.client.openapi.models.V2HorizontalPodAutoscaler> items);
+  public A removeAllFromItems(Collection<V2HorizontalPodAutoscaler> items);
 
-  public A removeMatchingFromItems(
-      java.util.function.Predicate<
-              io.kubernetes.client.openapi.models.V2HorizontalPodAutoscalerBuilder>
-          predicate);
+  public A removeMatchingFromItems(Predicate<V2HorizontalPodAutoscalerBuilder> predicate);
 
   /**
    * This method has been deprecated, please use method buildItems instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V2HorizontalPodAutoscaler> getItems();
+  @Deprecated
+  public List<V2HorizontalPodAutoscaler> getItems();
 
-  public java.util.List<io.kubernetes.client.openapi.models.V2HorizontalPodAutoscaler> buildItems();
+  public List<V2HorizontalPodAutoscaler> buildItems();
 
-  public io.kubernetes.client.openapi.models.V2HorizontalPodAutoscaler buildItem(
-      java.lang.Integer index);
+  public V2HorizontalPodAutoscaler buildItem(Integer index);
 
-  public io.kubernetes.client.openapi.models.V2HorizontalPodAutoscaler buildFirstItem();
+  public V2HorizontalPodAutoscaler buildFirstItem();
 
-  public io.kubernetes.client.openapi.models.V2HorizontalPodAutoscaler buildLastItem();
+  public V2HorizontalPodAutoscaler buildLastItem();
 
-  public io.kubernetes.client.openapi.models.V2HorizontalPodAutoscaler buildMatchingItem(
-      java.util.function.Predicate<
-              io.kubernetes.client.openapi.models.V2HorizontalPodAutoscalerBuilder>
-          predicate);
+  public V2HorizontalPodAutoscaler buildMatchingItem(
+      Predicate<V2HorizontalPodAutoscalerBuilder> predicate);
 
-  public java.lang.Boolean hasMatchingItem(
-      java.util.function.Predicate<
-              io.kubernetes.client.openapi.models.V2HorizontalPodAutoscalerBuilder>
-          predicate);
+  public Boolean hasMatchingItem(Predicate<V2HorizontalPodAutoscalerBuilder> predicate);
 
-  public A withItems(
-      java.util.List<io.kubernetes.client.openapi.models.V2HorizontalPodAutoscaler> items);
+  public A withItems(List<V2HorizontalPodAutoscaler> items);
 
   public A withItems(io.kubernetes.client.openapi.models.V2HorizontalPodAutoscaler... items);
 
-  public java.lang.Boolean hasItems();
+  public Boolean hasItems();
 
-  public io.kubernetes.client.openapi.models.V2HorizontalPodAutoscalerListFluent.ItemsNested<A>
-      addNewItem();
+  public V2HorizontalPodAutoscalerListFluent.ItemsNested<A> addNewItem();
 
-  public io.kubernetes.client.openapi.models.V2HorizontalPodAutoscalerListFluent.ItemsNested<A>
-      addNewItemLike(io.kubernetes.client.openapi.models.V2HorizontalPodAutoscaler item);
+  public V2HorizontalPodAutoscalerListFluent.ItemsNested<A> addNewItemLike(
+      V2HorizontalPodAutoscaler item);
 
-  public io.kubernetes.client.openapi.models.V2HorizontalPodAutoscalerListFluent.ItemsNested<A>
-      setNewItemLike(
-          java.lang.Integer index,
-          io.kubernetes.client.openapi.models.V2HorizontalPodAutoscaler item);
+  public V2HorizontalPodAutoscalerListFluent.ItemsNested<A> setNewItemLike(
+      Integer index, V2HorizontalPodAutoscaler item);
 
-  public io.kubernetes.client.openapi.models.V2HorizontalPodAutoscalerListFluent.ItemsNested<A>
-      editItem(java.lang.Integer index);
+  public V2HorizontalPodAutoscalerListFluent.ItemsNested<A> editItem(Integer index);
 
-  public io.kubernetes.client.openapi.models.V2HorizontalPodAutoscalerListFluent.ItemsNested<A>
-      editFirstItem();
+  public V2HorizontalPodAutoscalerListFluent.ItemsNested<A> editFirstItem();
 
-  public io.kubernetes.client.openapi.models.V2HorizontalPodAutoscalerListFluent.ItemsNested<A>
-      editLastItem();
+  public V2HorizontalPodAutoscalerListFluent.ItemsNested<A> editLastItem();
 
-  public io.kubernetes.client.openapi.models.V2HorizontalPodAutoscalerListFluent.ItemsNested<A>
-      editMatchingItem(
-          java.util.function.Predicate<
-                  io.kubernetes.client.openapi.models.V2HorizontalPodAutoscalerBuilder>
-              predicate);
+  public V2HorizontalPodAutoscalerListFluent.ItemsNested<A> editMatchingItem(
+      Predicate<V2HorizontalPodAutoscalerBuilder> predicate);
 
-  public java.lang.String getKind();
+  public String getKind();
 
-  public A withKind(java.lang.String kind);
+  public A withKind(String kind);
 
-  public java.lang.Boolean hasKind();
-
-  /** Method is deprecated. use withKind instead. */
-  @java.lang.Deprecated
-  public A withNewKind(java.lang.String original);
+  public Boolean hasKind();
 
   /**
    * This method has been deprecated, please use method buildMetadata instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ListMeta getMetadata();
+  @Deprecated
+  public V1ListMeta getMetadata();
 
-  public io.kubernetes.client.openapi.models.V1ListMeta buildMetadata();
+  public V1ListMeta buildMetadata();
 
-  public A withMetadata(io.kubernetes.client.openapi.models.V1ListMeta metadata);
+  public A withMetadata(V1ListMeta metadata);
 
-  public java.lang.Boolean hasMetadata();
+  public Boolean hasMetadata();
 
-  public io.kubernetes.client.openapi.models.V2HorizontalPodAutoscalerListFluent.MetadataNested<A>
-      withNewMetadata();
+  public V2HorizontalPodAutoscalerListFluent.MetadataNested<A> withNewMetadata();
 
-  public io.kubernetes.client.openapi.models.V2HorizontalPodAutoscalerListFluent.MetadataNested<A>
-      withNewMetadataLike(io.kubernetes.client.openapi.models.V1ListMeta item);
+  public V2HorizontalPodAutoscalerListFluent.MetadataNested<A> withNewMetadataLike(V1ListMeta item);
 
-  public io.kubernetes.client.openapi.models.V2HorizontalPodAutoscalerListFluent.MetadataNested<A>
-      editMetadata();
+  public V2HorizontalPodAutoscalerListFluent.MetadataNested<A> editMetadata();
 
-  public io.kubernetes.client.openapi.models.V2HorizontalPodAutoscalerListFluent.MetadataNested<A>
-      editOrNewMetadata();
+  public V2HorizontalPodAutoscalerListFluent.MetadataNested<A> editOrNewMetadata();
 
-  public io.kubernetes.client.openapi.models.V2HorizontalPodAutoscalerListFluent.MetadataNested<A>
-      editOrNewMetadataLike(io.kubernetes.client.openapi.models.V1ListMeta item);
+  public V2HorizontalPodAutoscalerListFluent.MetadataNested<A> editOrNewMetadataLike(
+      V1ListMeta item);
 
   public interface ItemsNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V2HorizontalPodAutoscalerFluent<
-              io.kubernetes.client.openapi.models.V2HorizontalPodAutoscalerListFluent.ItemsNested<
-                  N>> {
+      extends Nested<N>,
+          V2HorizontalPodAutoscalerFluent<V2HorizontalPodAutoscalerListFluent.ItemsNested<N>> {
     public N and();
 
     public N endItem();
   }
 
   public interface MetadataNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1ListMetaFluent<
-              io.kubernetes.client.openapi.models.V2HorizontalPodAutoscalerListFluent
-                      .MetadataNested<
-                  N>> {
+      extends Nested<N>, V1ListMetaFluent<V2HorizontalPodAutoscalerListFluent.MetadataNested<N>> {
     public N and();
 
     public N endMetadata();

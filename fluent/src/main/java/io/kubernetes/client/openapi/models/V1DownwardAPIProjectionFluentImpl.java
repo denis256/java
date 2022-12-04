@@ -12,47 +12,41 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Predicate;
 
 /** Generated */
-public class V1DownwardAPIProjectionFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1DownwardAPIProjectionFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1DownwardAPIProjectionFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1DownwardAPIProjectionFluentImpl<A extends V1DownwardAPIProjectionFluent<A>>
+    extends BaseFluent<A> implements V1DownwardAPIProjectionFluent<A> {
   public V1DownwardAPIProjectionFluentImpl() {}
 
-  public V1DownwardAPIProjectionFluentImpl(
-      io.kubernetes.client.openapi.models.V1DownwardAPIProjection instance) {
+  public V1DownwardAPIProjectionFluentImpl(V1DownwardAPIProjection instance) {
     this.withItems(instance.getItems());
   }
 
-  private java.util.ArrayList<io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder>
-      items;
+  private ArrayList<V1DownwardAPIVolumeFileBuilder> items;
 
-  public A addToItems(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFile item) {
+  public A addToItems(Integer index, V1DownwardAPIVolumeFile item) {
     if (this.items == null) {
-      this.items =
-          new java.util.ArrayList<
-              io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder>();
+      this.items = new ArrayList<V1DownwardAPIVolumeFileBuilder>();
     }
-    io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder builder =
-        new io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder(item);
+    V1DownwardAPIVolumeFileBuilder builder = new V1DownwardAPIVolumeFileBuilder(item);
     _visitables.get("items").add(index >= 0 ? index : _visitables.get("items").size(), builder);
     this.items.add(index >= 0 ? index : items.size(), builder);
     return (A) this;
   }
 
-  public A setToItems(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFile item) {
+  public A setToItems(Integer index, V1DownwardAPIVolumeFile item) {
     if (this.items == null) {
-      this.items =
-          new java.util.ArrayList<
-              io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder>();
+      this.items = new ArrayList<V1DownwardAPIVolumeFileBuilder>();
     }
-    io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder builder =
-        new io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder(item);
+    V1DownwardAPIVolumeFileBuilder builder = new V1DownwardAPIVolumeFileBuilder(item);
     if (index < 0 || index >= _visitables.get("items").size()) {
       _visitables.get("items").add(builder);
     } else {
@@ -68,29 +62,22 @@ public class V1DownwardAPIProjectionFluentImpl<
 
   public A addToItems(io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFile... items) {
     if (this.items == null) {
-      this.items =
-          new java.util.ArrayList<
-              io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder>();
+      this.items = new ArrayList<V1DownwardAPIVolumeFileBuilder>();
     }
-    for (io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFile item : items) {
-      io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder builder =
-          new io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder(item);
+    for (V1DownwardAPIVolumeFile item : items) {
+      V1DownwardAPIVolumeFileBuilder builder = new V1DownwardAPIVolumeFileBuilder(item);
       _visitables.get("items").add(builder);
       this.items.add(builder);
     }
     return (A) this;
   }
 
-  public A addAllToItems(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFile> items) {
+  public A addAllToItems(Collection<V1DownwardAPIVolumeFile> items) {
     if (this.items == null) {
-      this.items =
-          new java.util.ArrayList<
-              io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder>();
+      this.items = new ArrayList<V1DownwardAPIVolumeFileBuilder>();
     }
-    for (io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFile item : items) {
-      io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder builder =
-          new io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder(item);
+    for (V1DownwardAPIVolumeFile item : items) {
+      V1DownwardAPIVolumeFileBuilder builder = new V1DownwardAPIVolumeFileBuilder(item);
       _visitables.get("items").add(builder);
       this.items.add(builder);
     }
@@ -98,9 +85,8 @@ public class V1DownwardAPIProjectionFluentImpl<
   }
 
   public A removeFromItems(io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFile... items) {
-    for (io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFile item : items) {
-      io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder builder =
-          new io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder(item);
+    for (V1DownwardAPIVolumeFile item : items) {
+      V1DownwardAPIVolumeFileBuilder builder = new V1DownwardAPIVolumeFileBuilder(item);
       _visitables.get("items").remove(builder);
       if (this.items != null) {
         this.items.remove(builder);
@@ -109,11 +95,9 @@ public class V1DownwardAPIProjectionFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromItems(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFile> items) {
-    for (io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFile item : items) {
-      io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder builder =
-          new io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder(item);
+  public A removeAllFromItems(Collection<V1DownwardAPIVolumeFile> items) {
+    for (V1DownwardAPIVolumeFile item : items) {
+      V1DownwardAPIVolumeFileBuilder builder = new V1DownwardAPIVolumeFileBuilder(item);
       _visitables.get("items").remove(builder);
       if (this.items != null) {
         this.items.remove(builder);
@@ -122,16 +106,12 @@ public class V1DownwardAPIProjectionFluentImpl<
     return (A) this;
   }
 
-  public A removeMatchingFromItems(
-      java.util.function.Predicate<
-              io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder>
-          predicate) {
+  public A removeMatchingFromItems(Predicate<V1DownwardAPIVolumeFileBuilder> predicate) {
     if (items == null) return (A) this;
-    final Iterator<io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder> each =
-        items.iterator();
+    final Iterator<V1DownwardAPIVolumeFileBuilder> each = items.iterator();
     final List visitables = _visitables.get("items");
     while (each.hasNext()) {
-      io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder builder = each.next();
+      V1DownwardAPIVolumeFileBuilder builder = each.next();
       if (predicate.test(builder)) {
         visitables.remove(builder);
         each.remove();
@@ -145,33 +125,30 @@ public class V1DownwardAPIProjectionFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFile> getItems() {
+  @Deprecated
+  public List<V1DownwardAPIVolumeFile> getItems() {
     return items != null ? build(items) : null;
   }
 
-  public java.util.List<io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFile> buildItems() {
+  public List<V1DownwardAPIVolumeFile> buildItems() {
     return items != null ? build(items) : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFile buildItem(
-      java.lang.Integer index) {
+  public V1DownwardAPIVolumeFile buildItem(Integer index) {
     return this.items.get(index).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFile buildFirstItem() {
+  public V1DownwardAPIVolumeFile buildFirstItem() {
     return this.items.get(0).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFile buildLastItem() {
+  public V1DownwardAPIVolumeFile buildLastItem() {
     return this.items.get(items.size() - 1).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFile buildMatchingItem(
-      java.util.function.Predicate<
-              io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder>
-          predicate) {
-    for (io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder item : items) {
+  public V1DownwardAPIVolumeFile buildMatchingItem(
+      Predicate<V1DownwardAPIVolumeFileBuilder> predicate) {
+    for (V1DownwardAPIVolumeFileBuilder item : items) {
       if (predicate.test(item)) {
         return item.build();
       }
@@ -179,11 +156,8 @@ public class V1DownwardAPIProjectionFluentImpl<
     return null;
   }
 
-  public java.lang.Boolean hasMatchingItem(
-      java.util.function.Predicate<
-              io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder>
-          predicate) {
-    for (io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder item : items) {
+  public Boolean hasMatchingItem(Predicate<V1DownwardAPIVolumeFileBuilder> predicate) {
+    for (V1DownwardAPIVolumeFileBuilder item : items) {
       if (predicate.test(item)) {
         return true;
       }
@@ -191,14 +165,13 @@ public class V1DownwardAPIProjectionFluentImpl<
     return false;
   }
 
-  public A withItems(
-      java.util.List<io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFile> items) {
+  public A withItems(List<V1DownwardAPIVolumeFile> items) {
     if (this.items != null) {
       _visitables.get("items").removeAll(this.items);
     }
     if (items != null) {
-      this.items = new java.util.ArrayList();
-      for (io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFile item : items) {
+      this.items = new ArrayList();
+      for (V1DownwardAPIVolumeFile item : items) {
         this.addToItems(item);
       }
     } else {
@@ -212,61 +185,48 @@ public class V1DownwardAPIProjectionFluentImpl<
       this.items.clear();
     }
     if (items != null) {
-      for (io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFile item : items) {
+      for (V1DownwardAPIVolumeFile item : items) {
         this.addToItems(item);
       }
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasItems() {
+  public Boolean hasItems() {
     return items != null && !items.isEmpty();
   }
 
-  public io.kubernetes.client.openapi.models.V1DownwardAPIProjectionFluent.ItemsNested<A>
-      addNewItem() {
-    return new io.kubernetes.client.openapi.models.V1DownwardAPIProjectionFluentImpl
-        .ItemsNestedImpl();
+  public V1DownwardAPIProjectionFluent.ItemsNested<A> addNewItem() {
+    return new V1DownwardAPIProjectionFluentImpl.ItemsNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1DownwardAPIProjectionFluent.ItemsNested<A>
-      addNewItemLike(io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFile item) {
-    return new io.kubernetes.client.openapi.models.V1DownwardAPIProjectionFluentImpl
-        .ItemsNestedImpl(-1, item);
+  public V1DownwardAPIProjectionFluent.ItemsNested<A> addNewItemLike(V1DownwardAPIVolumeFile item) {
+    return new V1DownwardAPIProjectionFluentImpl.ItemsNestedImpl(-1, item);
   }
 
-  public io.kubernetes.client.openapi.models.V1DownwardAPIProjectionFluent.ItemsNested<A>
-      setNewItemLike(
-          java.lang.Integer index,
-          io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFile item) {
-    return new io.kubernetes.client.openapi.models.V1DownwardAPIProjectionFluentImpl
-        .ItemsNestedImpl(index, item);
+  public V1DownwardAPIProjectionFluent.ItemsNested<A> setNewItemLike(
+      Integer index, V1DownwardAPIVolumeFile item) {
+    return new V1DownwardAPIProjectionFluentImpl.ItemsNestedImpl(index, item);
   }
 
-  public io.kubernetes.client.openapi.models.V1DownwardAPIProjectionFluent.ItemsNested<A> editItem(
-      java.lang.Integer index) {
+  public V1DownwardAPIProjectionFluent.ItemsNested<A> editItem(Integer index) {
     if (items.size() <= index) throw new RuntimeException("Can't edit items. Index exceeds size.");
     return setNewItemLike(index, buildItem(index));
   }
 
-  public io.kubernetes.client.openapi.models.V1DownwardAPIProjectionFluent.ItemsNested<A>
-      editFirstItem() {
+  public V1DownwardAPIProjectionFluent.ItemsNested<A> editFirstItem() {
     if (items.size() == 0) throw new RuntimeException("Can't edit first items. The list is empty.");
     return setNewItemLike(0, buildItem(0));
   }
 
-  public io.kubernetes.client.openapi.models.V1DownwardAPIProjectionFluent.ItemsNested<A>
-      editLastItem() {
+  public V1DownwardAPIProjectionFluent.ItemsNested<A> editLastItem() {
     int index = items.size() - 1;
     if (index < 0) throw new RuntimeException("Can't edit last items. The list is empty.");
     return setNewItemLike(index, buildItem(index));
   }
 
-  public io.kubernetes.client.openapi.models.V1DownwardAPIProjectionFluent.ItemsNested<A>
-      editMatchingItem(
-          java.util.function.Predicate<
-                  io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder>
-              predicate) {
+  public V1DownwardAPIProjectionFluent.ItemsNested<A> editMatchingItem(
+      Predicate<V1DownwardAPIVolumeFileBuilder> predicate) {
     int index = -1;
     for (int i = 0; i < items.size(); i++) {
       if (predicate.test(items.get(i))) {
@@ -278,7 +238,7 @@ public class V1DownwardAPIProjectionFluentImpl<
     return setNewItemLike(index, buildItem(index));
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1DownwardAPIProjectionFluentImpl that = (V1DownwardAPIProjectionFluentImpl) o;
@@ -290,25 +250,32 @@ public class V1DownwardAPIProjectionFluentImpl<
     return java.util.Objects.hash(items, super.hashCode());
   }
 
-  public class ItemsNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileFluentImpl<
-          io.kubernetes.client.openapi.models.V1DownwardAPIProjectionFluent.ItemsNested<N>>
-      implements io.kubernetes.client.openapi.models.V1DownwardAPIProjectionFluent.ItemsNested<N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    ItemsNestedImpl(
-        java.lang.Integer index, io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFile item) {
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (items != null && !items.isEmpty()) {
+      sb.append("items:");
+      sb.append(items);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class ItemsNestedImpl<N>
+      extends V1DownwardAPIVolumeFileFluentImpl<V1DownwardAPIProjectionFluent.ItemsNested<N>>
+      implements V1DownwardAPIProjectionFluent.ItemsNested<N>, Nested<N> {
+    ItemsNestedImpl(Integer index, V1DownwardAPIVolumeFile item) {
       this.index = index;
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder(this, item);
+      this.builder = new V1DownwardAPIVolumeFileBuilder(this, item);
     }
 
     ItemsNestedImpl() {
       this.index = -1;
-      this.builder = new io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder(this);
+      this.builder = new V1DownwardAPIVolumeFileBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1DownwardAPIVolumeFileBuilder builder;
-    java.lang.Integer index;
+    V1DownwardAPIVolumeFileBuilder builder;
+    Integer index;
 
     public N and() {
       return (N) V1DownwardAPIProjectionFluentImpl.this.setToItems(index, builder.build());

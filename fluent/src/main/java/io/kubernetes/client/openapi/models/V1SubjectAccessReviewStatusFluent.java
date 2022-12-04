@@ -12,39 +12,36 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
-public interface V1SubjectAccessReviewStatusFluent<
-        A extends io.kubernetes.client.openapi.models.V1SubjectAccessReviewStatusFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.Boolean getAllowed();
+public interface V1SubjectAccessReviewStatusFluent<A extends V1SubjectAccessReviewStatusFluent<A>>
+    extends Fluent<A> {
+  public Boolean getAllowed();
 
-  public A withAllowed(java.lang.Boolean allowed);
+  public A withAllowed(Boolean allowed);
 
-  public java.lang.Boolean hasAllowed();
+  public Boolean hasAllowed();
 
-  public java.lang.Boolean getDenied();
+  public Boolean getDenied();
 
-  public A withDenied(java.lang.Boolean denied);
+  public A withDenied(Boolean denied);
 
-  public java.lang.Boolean hasDenied();
+  public Boolean hasDenied();
 
-  public java.lang.String getEvaluationError();
+  public String getEvaluationError();
 
-  public A withEvaluationError(java.lang.String evaluationError);
+  public A withEvaluationError(String evaluationError);
 
-  public java.lang.Boolean hasEvaluationError();
+  public Boolean hasEvaluationError();
 
-  /** Method is deprecated. use withEvaluationError instead. */
-  @java.lang.Deprecated
-  public A withNewEvaluationError(java.lang.String original);
+  public String getReason();
 
-  public java.lang.String getReason();
+  public A withReason(String reason);
 
-  public A withReason(java.lang.String reason);
+  public Boolean hasReason();
 
-  public java.lang.Boolean hasReason();
+  public A withAllowed();
 
-  /** Method is deprecated. use withReason instead. */
-  @java.lang.Deprecated
-  public A withNewReason(java.lang.String original);
+  public A withDenied();
 }

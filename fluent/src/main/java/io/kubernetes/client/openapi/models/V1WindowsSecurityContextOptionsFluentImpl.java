@@ -12,15 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
+@SuppressWarnings(value = "unchecked")
 public class V1WindowsSecurityContextOptionsFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1WindowsSecurityContextOptionsFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1WindowsSecurityContextOptionsFluent<A> {
+        A extends V1WindowsSecurityContextOptionsFluent<A>>
+    extends BaseFluent<A> implements V1WindowsSecurityContextOptionsFluent<A> {
   public V1WindowsSecurityContextOptionsFluentImpl() {}
 
-  public V1WindowsSecurityContextOptionsFluentImpl(
-      io.kubernetes.client.openapi.models.V1WindowsSecurityContextOptions instance) {
+  public V1WindowsSecurityContextOptionsFluentImpl(V1WindowsSecurityContextOptions instance) {
     this.withGmsaCredentialSpec(instance.getGmsaCredentialSpec());
 
     this.withGmsaCredentialSpecName(instance.getGmsaCredentialSpecName());
@@ -30,82 +31,64 @@ public class V1WindowsSecurityContextOptionsFluentImpl<
     this.withRunAsUserName(instance.getRunAsUserName());
   }
 
-  private java.lang.String gmsaCredentialSpec;
-  private java.lang.String gmsaCredentialSpecName;
-  private java.lang.Boolean hostProcess;
-  private java.lang.String runAsUserName;
+  private String gmsaCredentialSpec;
+  private String gmsaCredentialSpecName;
+  private Boolean hostProcess;
+  private String runAsUserName;
 
-  public java.lang.String getGmsaCredentialSpec() {
+  public String getGmsaCredentialSpec() {
     return this.gmsaCredentialSpec;
   }
 
-  public A withGmsaCredentialSpec(java.lang.String gmsaCredentialSpec) {
+  public A withGmsaCredentialSpec(String gmsaCredentialSpec) {
     this.gmsaCredentialSpec = gmsaCredentialSpec;
     return (A) this;
   }
 
-  public java.lang.Boolean hasGmsaCredentialSpec() {
+  public Boolean hasGmsaCredentialSpec() {
     return this.gmsaCredentialSpec != null;
   }
 
-  /** Method is deprecated. use withGmsaCredentialSpec instead. */
-  @java.lang.Deprecated
-  public A withNewGmsaCredentialSpec(java.lang.String original) {
-    return (A) withGmsaCredentialSpec(new String(original));
-  }
-
-  public java.lang.String getGmsaCredentialSpecName() {
+  public String getGmsaCredentialSpecName() {
     return this.gmsaCredentialSpecName;
   }
 
-  public A withGmsaCredentialSpecName(java.lang.String gmsaCredentialSpecName) {
+  public A withGmsaCredentialSpecName(String gmsaCredentialSpecName) {
     this.gmsaCredentialSpecName = gmsaCredentialSpecName;
     return (A) this;
   }
 
-  public java.lang.Boolean hasGmsaCredentialSpecName() {
+  public Boolean hasGmsaCredentialSpecName() {
     return this.gmsaCredentialSpecName != null;
   }
 
-  /** Method is deprecated. use withGmsaCredentialSpecName instead. */
-  @java.lang.Deprecated
-  public A withNewGmsaCredentialSpecName(java.lang.String original) {
-    return (A) withGmsaCredentialSpecName(new String(original));
-  }
-
-  public java.lang.Boolean getHostProcess() {
+  public Boolean getHostProcess() {
     return this.hostProcess;
   }
 
-  public A withHostProcess(java.lang.Boolean hostProcess) {
+  public A withHostProcess(Boolean hostProcess) {
     this.hostProcess = hostProcess;
     return (A) this;
   }
 
-  public java.lang.Boolean hasHostProcess() {
+  public Boolean hasHostProcess() {
     return this.hostProcess != null;
   }
 
-  public java.lang.String getRunAsUserName() {
+  public String getRunAsUserName() {
     return this.runAsUserName;
   }
 
-  public A withRunAsUserName(java.lang.String runAsUserName) {
+  public A withRunAsUserName(String runAsUserName) {
     this.runAsUserName = runAsUserName;
     return (A) this;
   }
 
-  public java.lang.Boolean hasRunAsUserName() {
+  public Boolean hasRunAsUserName() {
     return this.runAsUserName != null;
   }
 
-  /** Method is deprecated. use withRunAsUserName instead. */
-  @java.lang.Deprecated
-  public A withNewRunAsUserName(java.lang.String original) {
-    return (A) withRunAsUserName(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1WindowsSecurityContextOptionsFluentImpl that = (V1WindowsSecurityContextOptionsFluentImpl) o;
@@ -126,5 +109,32 @@ public class V1WindowsSecurityContextOptionsFluentImpl<
   public int hashCode() {
     return java.util.Objects.hash(
         gmsaCredentialSpec, gmsaCredentialSpecName, hostProcess, runAsUserName, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (gmsaCredentialSpec != null) {
+      sb.append("gmsaCredentialSpec:");
+      sb.append(gmsaCredentialSpec + ",");
+    }
+    if (gmsaCredentialSpecName != null) {
+      sb.append("gmsaCredentialSpecName:");
+      sb.append(gmsaCredentialSpecName + ",");
+    }
+    if (hostProcess != null) {
+      sb.append("hostProcess:");
+      sb.append(hostProcess + ",");
+    }
+    if (runAsUserName != null) {
+      sb.append("runAsUserName:");
+      sb.append(runAsUserName);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  public A withHostProcess() {
+    return withHostProcess(true);
   }
 }

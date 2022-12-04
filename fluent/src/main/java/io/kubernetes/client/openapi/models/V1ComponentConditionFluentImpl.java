@@ -12,15 +12,15 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1ComponentConditionFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1ComponentConditionFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1ComponentConditionFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1ComponentConditionFluentImpl<A extends V1ComponentConditionFluent<A>>
+    extends BaseFluent<A> implements V1ComponentConditionFluent<A> {
   public V1ComponentConditionFluentImpl() {}
 
-  public V1ComponentConditionFluentImpl(
-      io.kubernetes.client.openapi.models.V1ComponentCondition instance) {
+  public V1ComponentConditionFluentImpl(V1ComponentCondition instance) {
     this.withError(instance.getError());
 
     this.withMessage(instance.getMessage());
@@ -30,88 +30,64 @@ public class V1ComponentConditionFluentImpl<
     this.withType(instance.getType());
   }
 
-  private java.lang.String error;
-  private java.lang.String message;
-  private java.lang.String status;
-  private java.lang.String type;
+  private String error;
+  private String message;
+  private String status;
+  private String type;
 
-  public java.lang.String getError() {
+  public String getError() {
     return this.error;
   }
 
-  public A withError(java.lang.String error) {
+  public A withError(String error) {
     this.error = error;
     return (A) this;
   }
 
-  public java.lang.Boolean hasError() {
+  public Boolean hasError() {
     return this.error != null;
   }
 
-  /** Method is deprecated. use withError instead. */
-  @java.lang.Deprecated
-  public A withNewError(java.lang.String original) {
-    return (A) withError(new String(original));
-  }
-
-  public java.lang.String getMessage() {
+  public String getMessage() {
     return this.message;
   }
 
-  public A withMessage(java.lang.String message) {
+  public A withMessage(String message) {
     this.message = message;
     return (A) this;
   }
 
-  public java.lang.Boolean hasMessage() {
+  public Boolean hasMessage() {
     return this.message != null;
   }
 
-  /** Method is deprecated. use withMessage instead. */
-  @java.lang.Deprecated
-  public A withNewMessage(java.lang.String original) {
-    return (A) withMessage(new String(original));
-  }
-
-  public java.lang.String getStatus() {
+  public String getStatus() {
     return this.status;
   }
 
-  public A withStatus(java.lang.String status) {
+  public A withStatus(String status) {
     this.status = status;
     return (A) this;
   }
 
-  public java.lang.Boolean hasStatus() {
+  public Boolean hasStatus() {
     return this.status != null;
   }
 
-  /** Method is deprecated. use withStatus instead. */
-  @java.lang.Deprecated
-  public A withNewStatus(java.lang.String original) {
-    return (A) withStatus(new String(original));
-  }
-
-  public java.lang.String getType() {
+  public String getType() {
     return this.type;
   }
 
-  public A withType(java.lang.String type) {
+  public A withType(String type) {
     this.type = type;
     return (A) this;
   }
 
-  public java.lang.Boolean hasType() {
+  public Boolean hasType() {
     return this.type != null;
   }
 
-  /** Method is deprecated. use withType instead. */
-  @java.lang.Deprecated
-  public A withNewType(java.lang.String original) {
-    return (A) withType(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1ComponentConditionFluentImpl that = (V1ComponentConditionFluentImpl) o;
@@ -124,5 +100,28 @@ public class V1ComponentConditionFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(error, message, status, type, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (error != null) {
+      sb.append("error:");
+      sb.append(error + ",");
+    }
+    if (message != null) {
+      sb.append("message:");
+      sb.append(message + ",");
+    }
+    if (status != null) {
+      sb.append("status:");
+      sb.append(status + ",");
+    }
+    if (type != null) {
+      sb.append("type:");
+      sb.append(type);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

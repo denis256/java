@@ -12,35 +12,36 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+
 /** Generated */
+@SuppressWarnings(value = "unchecked")
 public class V1beta2LimitedPriorityLevelConfigurationFluentImpl<
-        A extends
-            io.kubernetes.client.openapi.models.V1beta2LimitedPriorityLevelConfigurationFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1beta2LimitedPriorityLevelConfigurationFluent<
-        A> {
+        A extends V1beta2LimitedPriorityLevelConfigurationFluent<A>>
+    extends BaseFluent<A> implements V1beta2LimitedPriorityLevelConfigurationFluent<A> {
   public V1beta2LimitedPriorityLevelConfigurationFluentImpl() {}
 
   public V1beta2LimitedPriorityLevelConfigurationFluentImpl(
-      io.kubernetes.client.openapi.models.V1beta2LimitedPriorityLevelConfiguration instance) {
+      V1beta2LimitedPriorityLevelConfiguration instance) {
     this.withAssuredConcurrencyShares(instance.getAssuredConcurrencyShares());
 
     this.withLimitResponse(instance.getLimitResponse());
   }
 
-  private java.lang.Integer assuredConcurrencyShares;
-  private io.kubernetes.client.openapi.models.V1beta2LimitResponseBuilder limitResponse;
+  private Integer assuredConcurrencyShares;
+  private V1beta2LimitResponseBuilder limitResponse;
 
-  public java.lang.Integer getAssuredConcurrencyShares() {
+  public Integer getAssuredConcurrencyShares() {
     return this.assuredConcurrencyShares;
   }
 
-  public A withAssuredConcurrencyShares(java.lang.Integer assuredConcurrencyShares) {
+  public A withAssuredConcurrencyShares(Integer assuredConcurrencyShares) {
     this.assuredConcurrencyShares = assuredConcurrencyShares;
     return (A) this;
   }
 
-  public java.lang.Boolean hasAssuredConcurrencyShares() {
+  public Boolean hasAssuredConcurrencyShares() {
     return this.assuredConcurrencyShares != null;
   }
 
@@ -49,71 +50,59 @@ public class V1beta2LimitedPriorityLevelConfigurationFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1beta2LimitResponse getLimitResponse() {
+  @Deprecated
+  public V1beta2LimitResponse getLimitResponse() {
     return this.limitResponse != null ? this.limitResponse.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1beta2LimitResponse buildLimitResponse() {
+  public V1beta2LimitResponse buildLimitResponse() {
     return this.limitResponse != null ? this.limitResponse.build() : null;
   }
 
-  public A withLimitResponse(
-      io.kubernetes.client.openapi.models.V1beta2LimitResponse limitResponse) {
+  public A withLimitResponse(V1beta2LimitResponse limitResponse) {
     _visitables.get("limitResponse").remove(this.limitResponse);
     if (limitResponse != null) {
-      this.limitResponse =
-          new io.kubernetes.client.openapi.models.V1beta2LimitResponseBuilder(limitResponse);
+      this.limitResponse = new V1beta2LimitResponseBuilder(limitResponse);
       _visitables.get("limitResponse").add(this.limitResponse);
+    } else {
+      this.limitResponse = null;
+      _visitables.get("limitResponse").remove(this.limitResponse);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasLimitResponse() {
+  public Boolean hasLimitResponse() {
     return this.limitResponse != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1beta2LimitedPriorityLevelConfigurationFluent
-              .LimitResponseNested<
-          A>
+  public V1beta2LimitedPriorityLevelConfigurationFluent.LimitResponseNested<A>
       withNewLimitResponse() {
-    return new io.kubernetes.client.openapi.models
-        .V1beta2LimitedPriorityLevelConfigurationFluentImpl.LimitResponseNestedImpl();
+    return new V1beta2LimitedPriorityLevelConfigurationFluentImpl.LimitResponseNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1beta2LimitedPriorityLevelConfigurationFluent
-              .LimitResponseNested<
-          A>
-      withNewLimitResponseLike(io.kubernetes.client.openapi.models.V1beta2LimitResponse item) {
-    return new io.kubernetes.client.openapi.models
-        .V1beta2LimitedPriorityLevelConfigurationFluentImpl.LimitResponseNestedImpl(item);
+  public V1beta2LimitedPriorityLevelConfigurationFluent.LimitResponseNested<A>
+      withNewLimitResponseLike(V1beta2LimitResponse item) {
+    return new V1beta2LimitedPriorityLevelConfigurationFluentImpl.LimitResponseNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1beta2LimitedPriorityLevelConfigurationFluent
-              .LimitResponseNested<
-          A>
-      editLimitResponse() {
+  public V1beta2LimitedPriorityLevelConfigurationFluent.LimitResponseNested<A> editLimitResponse() {
     return withNewLimitResponseLike(getLimitResponse());
   }
 
-  public io.kubernetes.client.openapi.models.V1beta2LimitedPriorityLevelConfigurationFluent
-              .LimitResponseNested<
-          A>
+  public V1beta2LimitedPriorityLevelConfigurationFluent.LimitResponseNested<A>
       editOrNewLimitResponse() {
     return withNewLimitResponseLike(
         getLimitResponse() != null
             ? getLimitResponse()
-            : new io.kubernetes.client.openapi.models.V1beta2LimitResponseBuilder().build());
+            : new V1beta2LimitResponseBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1beta2LimitedPriorityLevelConfigurationFluent
-              .LimitResponseNested<
-          A>
-      editOrNewLimitResponseLike(io.kubernetes.client.openapi.models.V1beta2LimitResponse item) {
+  public V1beta2LimitedPriorityLevelConfigurationFluent.LimitResponseNested<A>
+      editOrNewLimitResponseLike(V1beta2LimitResponse item) {
     return withNewLimitResponseLike(getLimitResponse() != null ? getLimitResponse() : item);
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1beta2LimitedPriorityLevelConfigurationFluentImpl that =
@@ -131,25 +120,34 @@ public class V1beta2LimitedPriorityLevelConfigurationFluentImpl<
     return java.util.Objects.hash(assuredConcurrencyShares, limitResponse, super.hashCode());
   }
 
-  public class LimitResponseNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1beta2LimitResponseFluentImpl<
-          io.kubernetes.client.openapi.models.V1beta2LimitedPriorityLevelConfigurationFluent
-                  .LimitResponseNested<
-              N>>
-      implements io.kubernetes.client.openapi.models.V1beta2LimitedPriorityLevelConfigurationFluent
-                  .LimitResponseNested<
-              N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    LimitResponseNestedImpl(io.kubernetes.client.openapi.models.V1beta2LimitResponse item) {
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1beta2LimitResponseBuilder(this, item);
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (assuredConcurrencyShares != null) {
+      sb.append("assuredConcurrencyShares:");
+      sb.append(assuredConcurrencyShares + ",");
+    }
+    if (limitResponse != null) {
+      sb.append("limitResponse:");
+      sb.append(limitResponse);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class LimitResponseNestedImpl<N>
+      extends V1beta2LimitResponseFluentImpl<
+          V1beta2LimitedPriorityLevelConfigurationFluent.LimitResponseNested<N>>
+      implements V1beta2LimitedPriorityLevelConfigurationFluent.LimitResponseNested<N>, Nested<N> {
+    LimitResponseNestedImpl(V1beta2LimitResponse item) {
+      this.builder = new V1beta2LimitResponseBuilder(this, item);
     }
 
     LimitResponseNestedImpl() {
-      this.builder = new io.kubernetes.client.openapi.models.V1beta2LimitResponseBuilder(this);
+      this.builder = new V1beta2LimitResponseBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1beta2LimitResponseBuilder builder;
+    V1beta2LimitResponseBuilder builder;
 
     public N and() {
       return (N)

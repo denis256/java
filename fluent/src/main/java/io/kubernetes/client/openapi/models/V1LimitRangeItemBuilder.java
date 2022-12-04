@@ -12,41 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1LimitRangeItemBuilder
-    extends io.kubernetes.client.openapi.models.V1LimitRangeItemFluentImpl<
-        io.kubernetes.client.openapi.models.V1LimitRangeItemBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1LimitRangeItem,
-        io.kubernetes.client.openapi.models.V1LimitRangeItemBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1LimitRangeItemBuilder extends V1LimitRangeItemFluentImpl<V1LimitRangeItemBuilder>
+    implements VisitableBuilder<V1LimitRangeItem, V1LimitRangeItemBuilder> {
   public V1LimitRangeItemBuilder() {
     this(false);
   }
 
-  public V1LimitRangeItemBuilder(java.lang.Boolean validationEnabled) {
+  public V1LimitRangeItemBuilder(Boolean validationEnabled) {
     this(new V1LimitRangeItem(), validationEnabled);
   }
 
-  public V1LimitRangeItemBuilder(
-      io.kubernetes.client.openapi.models.V1LimitRangeItemFluent<?> fluent) {
+  public V1LimitRangeItemBuilder(V1LimitRangeItemFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1LimitRangeItemBuilder(
-      io.kubernetes.client.openapi.models.V1LimitRangeItemFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1LimitRangeItemBuilder(V1LimitRangeItemFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1LimitRangeItem(), validationEnabled);
   }
 
-  public V1LimitRangeItemBuilder(
-      io.kubernetes.client.openapi.models.V1LimitRangeItemFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1LimitRangeItem instance) {
+  public V1LimitRangeItemBuilder(V1LimitRangeItemFluent<?> fluent, V1LimitRangeItem instance) {
     this(fluent, instance, false);
   }
 
   public V1LimitRangeItemBuilder(
-      io.kubernetes.client.openapi.models.V1LimitRangeItemFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1LimitRangeItem instance,
-      java.lang.Boolean validationEnabled) {
+      V1LimitRangeItemFluent<?> fluent, V1LimitRangeItem instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withDefault(instance.getDefault());
 
@@ -63,13 +54,11 @@ public class V1LimitRangeItemBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1LimitRangeItemBuilder(io.kubernetes.client.openapi.models.V1LimitRangeItem instance) {
+  public V1LimitRangeItemBuilder(V1LimitRangeItem instance) {
     this(instance, false);
   }
 
-  public V1LimitRangeItemBuilder(
-      io.kubernetes.client.openapi.models.V1LimitRangeItem instance,
-      java.lang.Boolean validationEnabled) {
+  public V1LimitRangeItemBuilder(V1LimitRangeItem instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withDefault(instance.getDefault());
 
@@ -86,10 +75,10 @@ public class V1LimitRangeItemBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1LimitRangeItemFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1LimitRangeItemFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1LimitRangeItem build() {
+  public V1LimitRangeItem build() {
     V1LimitRangeItem buildable = new V1LimitRangeItem();
     buildable.setDefault(fluent.getDefault());
     buildable.setDefaultRequest(fluent.getDefaultRequest());
@@ -98,24 +87,5 @@ public class V1LimitRangeItemBuilder
     buildable.setMin(fluent.getMin());
     buildable.setType(fluent.getType());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1LimitRangeItemBuilder that = (V1LimitRangeItemBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

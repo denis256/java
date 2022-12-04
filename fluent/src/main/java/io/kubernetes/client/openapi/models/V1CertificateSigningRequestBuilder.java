@@ -12,41 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1CertificateSigningRequestBuilder
-    extends io.kubernetes.client.openapi.models.V1CertificateSigningRequestFluentImpl<
-        io.kubernetes.client.openapi.models.V1CertificateSigningRequestBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1CertificateSigningRequest,
-        io.kubernetes.client.openapi.models.V1CertificateSigningRequestBuilder> {
+    extends V1CertificateSigningRequestFluentImpl<V1CertificateSigningRequestBuilder>
+    implements VisitableBuilder<V1CertificateSigningRequest, V1CertificateSigningRequestBuilder> {
   public V1CertificateSigningRequestBuilder() {
     this(false);
   }
 
-  public V1CertificateSigningRequestBuilder(java.lang.Boolean validationEnabled) {
+  public V1CertificateSigningRequestBuilder(Boolean validationEnabled) {
     this(new V1CertificateSigningRequest(), validationEnabled);
   }
 
-  public V1CertificateSigningRequestBuilder(
-      io.kubernetes.client.openapi.models.V1CertificateSigningRequestFluent<?> fluent) {
+  public V1CertificateSigningRequestBuilder(V1CertificateSigningRequestFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1CertificateSigningRequestBuilder(
-      io.kubernetes.client.openapi.models.V1CertificateSigningRequestFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1CertificateSigningRequestFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1CertificateSigningRequest(), validationEnabled);
   }
 
   public V1CertificateSigningRequestBuilder(
-      io.kubernetes.client.openapi.models.V1CertificateSigningRequestFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1CertificateSigningRequest instance) {
+      V1CertificateSigningRequestFluent<?> fluent, V1CertificateSigningRequest instance) {
     this(fluent, instance, false);
   }
 
   public V1CertificateSigningRequestBuilder(
-      io.kubernetes.client.openapi.models.V1CertificateSigningRequestFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1CertificateSigningRequest instance,
-      java.lang.Boolean validationEnabled) {
+      V1CertificateSigningRequestFluent<?> fluent,
+      V1CertificateSigningRequest instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withApiVersion(instance.getApiVersion());
 
@@ -61,14 +57,12 @@ public class V1CertificateSigningRequestBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1CertificateSigningRequestBuilder(
-      io.kubernetes.client.openapi.models.V1CertificateSigningRequest instance) {
+  public V1CertificateSigningRequestBuilder(V1CertificateSigningRequest instance) {
     this(instance, false);
   }
 
   public V1CertificateSigningRequestBuilder(
-      io.kubernetes.client.openapi.models.V1CertificateSigningRequest instance,
-      java.lang.Boolean validationEnabled) {
+      V1CertificateSigningRequest instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withApiVersion(instance.getApiVersion());
 
@@ -83,10 +77,10 @@ public class V1CertificateSigningRequestBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1CertificateSigningRequestFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1CertificateSigningRequestFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1CertificateSigningRequest build() {
+  public V1CertificateSigningRequest build() {
     V1CertificateSigningRequest buildable = new V1CertificateSigningRequest();
     buildable.setApiVersion(fluent.getApiVersion());
     buildable.setKind(fluent.getKind());
@@ -94,24 +88,5 @@ public class V1CertificateSigningRequestBuilder
     buildable.setSpec(fluent.getSpec());
     buildable.setStatus(fluent.getStatus());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1CertificateSigningRequestBuilder that = (V1CertificateSigningRequestBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

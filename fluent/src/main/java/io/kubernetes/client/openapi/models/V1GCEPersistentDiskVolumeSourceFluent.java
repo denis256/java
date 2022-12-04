@@ -12,39 +12,35 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
 public interface V1GCEPersistentDiskVolumeSourceFluent<
-        A extends io.kubernetes.client.openapi.models.V1GCEPersistentDiskVolumeSourceFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getFsType();
+        A extends V1GCEPersistentDiskVolumeSourceFluent<A>>
+    extends Fluent<A> {
+  public String getFsType();
 
-  public A withFsType(java.lang.String fsType);
+  public A withFsType(String fsType);
 
-  public java.lang.Boolean hasFsType();
+  public Boolean hasFsType();
 
-  /** Method is deprecated. use withFsType instead. */
-  @java.lang.Deprecated
-  public A withNewFsType(java.lang.String original);
+  public Integer getPartition();
 
-  public java.lang.Integer getPartition();
+  public A withPartition(Integer partition);
 
-  public A withPartition(java.lang.Integer partition);
+  public Boolean hasPartition();
 
-  public java.lang.Boolean hasPartition();
+  public String getPdName();
 
-  public java.lang.String getPdName();
+  public A withPdName(String pdName);
 
-  public A withPdName(java.lang.String pdName);
+  public Boolean hasPdName();
 
-  public java.lang.Boolean hasPdName();
+  public Boolean getReadOnly();
 
-  /** Method is deprecated. use withPdName instead. */
-  @java.lang.Deprecated
-  public A withNewPdName(java.lang.String original);
+  public A withReadOnly(Boolean readOnly);
 
-  public java.lang.Boolean getReadOnly();
+  public Boolean hasReadOnly();
 
-  public A withReadOnly(java.lang.Boolean readOnly);
-
-  public java.lang.Boolean hasReadOnly();
+  public A withReadOnly();
 }

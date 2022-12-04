@@ -12,30 +12,35 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
+
 /** Generated */
-public class V1ExecActionFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1ExecActionFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1ExecActionFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1ExecActionFluentImpl<A extends V1ExecActionFluent<A>> extends BaseFluent<A>
+    implements V1ExecActionFluent<A> {
   public V1ExecActionFluentImpl() {}
 
-  public V1ExecActionFluentImpl(io.kubernetes.client.openapi.models.V1ExecAction instance) {
+  public V1ExecActionFluentImpl(V1ExecAction instance) {
     this.withCommand(instance.getCommand());
   }
 
-  private java.util.List<java.lang.String> command;
+  private List<String> command;
 
-  public A addToCommand(java.lang.Integer index, java.lang.String item) {
+  public A addToCommand(Integer index, String item) {
     if (this.command == null) {
-      this.command = new java.util.ArrayList<java.lang.String>();
+      this.command = new ArrayList<String>();
     }
     this.command.add(index, item);
     return (A) this;
   }
 
-  public A setToCommand(java.lang.Integer index, java.lang.String item) {
+  public A setToCommand(Integer index, String item) {
     if (this.command == null) {
-      this.command = new java.util.ArrayList<java.lang.String>();
+      this.command = new ArrayList<String>();
     }
     this.command.set(index, item);
     return (A) this;
@@ -43,26 +48,26 @@ public class V1ExecActionFluentImpl<
 
   public A addToCommand(java.lang.String... items) {
     if (this.command == null) {
-      this.command = new java.util.ArrayList<java.lang.String>();
+      this.command = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.command.add(item);
     }
     return (A) this;
   }
 
-  public A addAllToCommand(java.util.Collection<java.lang.String> items) {
+  public A addAllToCommand(Collection<String> items) {
     if (this.command == null) {
-      this.command = new java.util.ArrayList<java.lang.String>();
+      this.command = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.command.add(item);
     }
     return (A) this;
   }
 
   public A removeFromCommand(java.lang.String... items) {
-    for (java.lang.String item : items) {
+    for (String item : items) {
       if (this.command != null) {
         this.command.remove(item);
       }
@@ -70,8 +75,8 @@ public class V1ExecActionFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromCommand(java.util.Collection<java.lang.String> items) {
-    for (java.lang.String item : items) {
+  public A removeAllFromCommand(Collection<String> items) {
+    for (String item : items) {
       if (this.command != null) {
         this.command.remove(item);
       }
@@ -79,25 +84,24 @@ public class V1ExecActionFluentImpl<
     return (A) this;
   }
 
-  public java.util.List<java.lang.String> getCommand() {
+  public List<String> getCommand() {
     return this.command;
   }
 
-  public java.lang.String getCommand(java.lang.Integer index) {
+  public String getCommand(Integer index) {
     return this.command.get(index);
   }
 
-  public java.lang.String getFirstCommand() {
+  public String getFirstCommand() {
     return this.command.get(0);
   }
 
-  public java.lang.String getLastCommand() {
+  public String getLastCommand() {
     return this.command.get(command.size() - 1);
   }
 
-  public java.lang.String getMatchingCommand(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : command) {
+  public String getMatchingCommand(Predicate<String> predicate) {
+    for (String item : command) {
       if (predicate.test(item)) {
         return item;
       }
@@ -105,9 +109,8 @@ public class V1ExecActionFluentImpl<
     return null;
   }
 
-  public java.lang.Boolean hasMatchingCommand(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : command) {
+  public Boolean hasMatchingCommand(Predicate<String> predicate) {
+    for (String item : command) {
       if (predicate.test(item)) {
         return true;
       }
@@ -115,10 +118,10 @@ public class V1ExecActionFluentImpl<
     return false;
   }
 
-  public A withCommand(java.util.List<java.lang.String> command) {
+  public A withCommand(List<String> command) {
     if (command != null) {
-      this.command = new java.util.ArrayList();
-      for (java.lang.String item : command) {
+      this.command = new ArrayList();
+      for (String item : command) {
         this.addToCommand(item);
       }
     } else {
@@ -132,22 +135,18 @@ public class V1ExecActionFluentImpl<
       this.command.clear();
     }
     if (command != null) {
-      for (java.lang.String item : command) {
+      for (String item : command) {
         this.addToCommand(item);
       }
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasCommand() {
+  public Boolean hasCommand() {
     return command != null && !command.isEmpty();
   }
 
-  public A addNewCommand(java.lang.String original) {
-    return (A) addToCommand(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1ExecActionFluentImpl that = (V1ExecActionFluentImpl) o;
@@ -157,5 +156,16 @@ public class V1ExecActionFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(command, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (command != null && !command.isEmpty()) {
+      sb.append("command:");
+      sb.append(command);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

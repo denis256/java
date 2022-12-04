@@ -12,41 +12,41 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V2beta2HorizontalPodAutoscalerStatusBuilder
-    extends io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatusFluentImpl<
-        io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatusBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatus,
-        io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatusBuilder> {
+    extends V2beta2HorizontalPodAutoscalerStatusFluentImpl<
+        V2beta2HorizontalPodAutoscalerStatusBuilder>
+    implements VisitableBuilder<
+        V2beta2HorizontalPodAutoscalerStatus, V2beta2HorizontalPodAutoscalerStatusBuilder> {
   public V2beta2HorizontalPodAutoscalerStatusBuilder() {
     this(false);
   }
 
-  public V2beta2HorizontalPodAutoscalerStatusBuilder(java.lang.Boolean validationEnabled) {
+  public V2beta2HorizontalPodAutoscalerStatusBuilder(Boolean validationEnabled) {
     this(new V2beta2HorizontalPodAutoscalerStatus(), validationEnabled);
   }
 
   public V2beta2HorizontalPodAutoscalerStatusBuilder(
-      io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatusFluent<?> fluent) {
+      V2beta2HorizontalPodAutoscalerStatusFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V2beta2HorizontalPodAutoscalerStatusBuilder(
-      io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatusFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V2beta2HorizontalPodAutoscalerStatusFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V2beta2HorizontalPodAutoscalerStatus(), validationEnabled);
   }
 
   public V2beta2HorizontalPodAutoscalerStatusBuilder(
-      io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatusFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatus instance) {
+      V2beta2HorizontalPodAutoscalerStatusFluent<?> fluent,
+      V2beta2HorizontalPodAutoscalerStatus instance) {
     this(fluent, instance, false);
   }
 
   public V2beta2HorizontalPodAutoscalerStatusBuilder(
-      io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatusFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatus instance,
-      java.lang.Boolean validationEnabled) {
+      V2beta2HorizontalPodAutoscalerStatusFluent<?> fluent,
+      V2beta2HorizontalPodAutoscalerStatus instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withConditions(instance.getConditions());
 
@@ -64,13 +64,12 @@ public class V2beta2HorizontalPodAutoscalerStatusBuilder
   }
 
   public V2beta2HorizontalPodAutoscalerStatusBuilder(
-      io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatus instance) {
+      V2beta2HorizontalPodAutoscalerStatus instance) {
     this(instance, false);
   }
 
   public V2beta2HorizontalPodAutoscalerStatusBuilder(
-      io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatus instance,
-      java.lang.Boolean validationEnabled) {
+      V2beta2HorizontalPodAutoscalerStatus instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withConditions(instance.getConditions());
 
@@ -87,10 +86,10 @@ public class V2beta2HorizontalPodAutoscalerStatusBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatusFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V2beta2HorizontalPodAutoscalerStatusFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V2beta2HorizontalPodAutoscalerStatus build() {
+  public V2beta2HorizontalPodAutoscalerStatus build() {
     V2beta2HorizontalPodAutoscalerStatus buildable = new V2beta2HorizontalPodAutoscalerStatus();
     buildable.setConditions(fluent.getConditions());
     buildable.setCurrentMetrics(fluent.getCurrentMetrics());
@@ -99,25 +98,5 @@ public class V2beta2HorizontalPodAutoscalerStatusBuilder
     buildable.setLastScaleTime(fluent.getLastScaleTime());
     buildable.setObservedGeneration(fluent.getObservedGeneration());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V2beta2HorizontalPodAutoscalerStatusBuilder that =
-        (V2beta2HorizontalPodAutoscalerStatusBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

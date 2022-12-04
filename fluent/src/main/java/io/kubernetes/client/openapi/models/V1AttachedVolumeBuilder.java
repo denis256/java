@@ -12,41 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1AttachedVolumeBuilder
-    extends io.kubernetes.client.openapi.models.V1AttachedVolumeFluentImpl<
-        io.kubernetes.client.openapi.models.V1AttachedVolumeBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1AttachedVolume,
-        io.kubernetes.client.openapi.models.V1AttachedVolumeBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1AttachedVolumeBuilder extends V1AttachedVolumeFluentImpl<V1AttachedVolumeBuilder>
+    implements VisitableBuilder<V1AttachedVolume, V1AttachedVolumeBuilder> {
   public V1AttachedVolumeBuilder() {
     this(false);
   }
 
-  public V1AttachedVolumeBuilder(java.lang.Boolean validationEnabled) {
+  public V1AttachedVolumeBuilder(Boolean validationEnabled) {
     this(new V1AttachedVolume(), validationEnabled);
   }
 
-  public V1AttachedVolumeBuilder(
-      io.kubernetes.client.openapi.models.V1AttachedVolumeFluent<?> fluent) {
+  public V1AttachedVolumeBuilder(V1AttachedVolumeFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1AttachedVolumeBuilder(
-      io.kubernetes.client.openapi.models.V1AttachedVolumeFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1AttachedVolumeBuilder(V1AttachedVolumeFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1AttachedVolume(), validationEnabled);
   }
 
-  public V1AttachedVolumeBuilder(
-      io.kubernetes.client.openapi.models.V1AttachedVolumeFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1AttachedVolume instance) {
+  public V1AttachedVolumeBuilder(V1AttachedVolumeFluent<?> fluent, V1AttachedVolume instance) {
     this(fluent, instance, false);
   }
 
   public V1AttachedVolumeBuilder(
-      io.kubernetes.client.openapi.models.V1AttachedVolumeFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1AttachedVolume instance,
-      java.lang.Boolean validationEnabled) {
+      V1AttachedVolumeFluent<?> fluent, V1AttachedVolume instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withDevicePath(instance.getDevicePath());
 
@@ -55,13 +46,11 @@ public class V1AttachedVolumeBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1AttachedVolumeBuilder(io.kubernetes.client.openapi.models.V1AttachedVolume instance) {
+  public V1AttachedVolumeBuilder(V1AttachedVolume instance) {
     this(instance, false);
   }
 
-  public V1AttachedVolumeBuilder(
-      io.kubernetes.client.openapi.models.V1AttachedVolume instance,
-      java.lang.Boolean validationEnabled) {
+  public V1AttachedVolumeBuilder(V1AttachedVolume instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withDevicePath(instance.getDevicePath());
 
@@ -70,32 +59,13 @@ public class V1AttachedVolumeBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1AttachedVolumeFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1AttachedVolumeFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1AttachedVolume build() {
+  public V1AttachedVolume build() {
     V1AttachedVolume buildable = new V1AttachedVolume();
     buildable.setDevicePath(fluent.getDevicePath());
     buildable.setName(fluent.getName());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1AttachedVolumeBuilder that = (V1AttachedVolumeBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

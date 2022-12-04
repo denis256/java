@@ -12,41 +12,38 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1CustomResourceDefinitionSpecBuilder
-    extends io.kubernetes.client.openapi.models.V1CustomResourceDefinitionSpecFluentImpl<
-        io.kubernetes.client.openapi.models.V1CustomResourceDefinitionSpecBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1CustomResourceDefinitionSpec,
-        io.kubernetes.client.openapi.models.V1CustomResourceDefinitionSpecBuilder> {
+    extends V1CustomResourceDefinitionSpecFluentImpl<V1CustomResourceDefinitionSpecBuilder>
+    implements VisitableBuilder<
+        V1CustomResourceDefinitionSpec, V1CustomResourceDefinitionSpecBuilder> {
   public V1CustomResourceDefinitionSpecBuilder() {
     this(false);
   }
 
-  public V1CustomResourceDefinitionSpecBuilder(java.lang.Boolean validationEnabled) {
+  public V1CustomResourceDefinitionSpecBuilder(Boolean validationEnabled) {
     this(new V1CustomResourceDefinitionSpec(), validationEnabled);
   }
 
-  public V1CustomResourceDefinitionSpecBuilder(
-      io.kubernetes.client.openapi.models.V1CustomResourceDefinitionSpecFluent<?> fluent) {
+  public V1CustomResourceDefinitionSpecBuilder(V1CustomResourceDefinitionSpecFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1CustomResourceDefinitionSpecBuilder(
-      io.kubernetes.client.openapi.models.V1CustomResourceDefinitionSpecFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1CustomResourceDefinitionSpecFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1CustomResourceDefinitionSpec(), validationEnabled);
   }
 
   public V1CustomResourceDefinitionSpecBuilder(
-      io.kubernetes.client.openapi.models.V1CustomResourceDefinitionSpecFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1CustomResourceDefinitionSpec instance) {
+      V1CustomResourceDefinitionSpecFluent<?> fluent, V1CustomResourceDefinitionSpec instance) {
     this(fluent, instance, false);
   }
 
   public V1CustomResourceDefinitionSpecBuilder(
-      io.kubernetes.client.openapi.models.V1CustomResourceDefinitionSpecFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1CustomResourceDefinitionSpec instance,
-      java.lang.Boolean validationEnabled) {
+      V1CustomResourceDefinitionSpecFluent<?> fluent,
+      V1CustomResourceDefinitionSpec instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withConversion(instance.getConversion());
 
@@ -63,14 +60,12 @@ public class V1CustomResourceDefinitionSpecBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1CustomResourceDefinitionSpecBuilder(
-      io.kubernetes.client.openapi.models.V1CustomResourceDefinitionSpec instance) {
+  public V1CustomResourceDefinitionSpecBuilder(V1CustomResourceDefinitionSpec instance) {
     this(instance, false);
   }
 
   public V1CustomResourceDefinitionSpecBuilder(
-      io.kubernetes.client.openapi.models.V1CustomResourceDefinitionSpec instance,
-      java.lang.Boolean validationEnabled) {
+      V1CustomResourceDefinitionSpec instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withConversion(instance.getConversion());
 
@@ -87,10 +82,10 @@ public class V1CustomResourceDefinitionSpecBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1CustomResourceDefinitionSpecFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1CustomResourceDefinitionSpecFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1CustomResourceDefinitionSpec build() {
+  public V1CustomResourceDefinitionSpec build() {
     V1CustomResourceDefinitionSpec buildable = new V1CustomResourceDefinitionSpec();
     buildable.setConversion(fluent.getConversion());
     buildable.setGroup(fluent.getGroup());
@@ -99,24 +94,5 @@ public class V1CustomResourceDefinitionSpecBuilder
     buildable.setScope(fluent.getScope());
     buildable.setVersions(fluent.getVersions());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1CustomResourceDefinitionSpecBuilder that = (V1CustomResourceDefinitionSpecBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

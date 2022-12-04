@@ -12,19 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import java.time.OffsetDateTime;
+
 /** Generated */
-public interface EventsV1EventSeriesFluent<
-        A extends io.kubernetes.client.openapi.models.EventsV1EventSeriesFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.Integer getCount();
+public interface EventsV1EventSeriesFluent<A extends EventsV1EventSeriesFluent<A>>
+    extends Fluent<A> {
+  public Integer getCount();
 
-  public A withCount(java.lang.Integer count);
+  public A withCount(Integer count);
 
-  public java.lang.Boolean hasCount();
+  public Boolean hasCount();
 
-  public java.time.OffsetDateTime getLastObservedTime();
+  public OffsetDateTime getLastObservedTime();
 
-  public A withLastObservedTime(java.time.OffsetDateTime lastObservedTime);
+  public A withLastObservedTime(OffsetDateTime lastObservedTime);
 
-  public java.lang.Boolean hasLastObservedTime();
+  public Boolean hasLastObservedTime();
 }

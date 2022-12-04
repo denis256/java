@@ -12,41 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1EndpointSubsetBuilder
-    extends io.kubernetes.client.openapi.models.V1EndpointSubsetFluentImpl<
-        io.kubernetes.client.openapi.models.V1EndpointSubsetBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1EndpointSubset,
-        io.kubernetes.client.openapi.models.V1EndpointSubsetBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1EndpointSubsetBuilder extends V1EndpointSubsetFluentImpl<V1EndpointSubsetBuilder>
+    implements VisitableBuilder<V1EndpointSubset, V1EndpointSubsetBuilder> {
   public V1EndpointSubsetBuilder() {
     this(false);
   }
 
-  public V1EndpointSubsetBuilder(java.lang.Boolean validationEnabled) {
+  public V1EndpointSubsetBuilder(Boolean validationEnabled) {
     this(new V1EndpointSubset(), validationEnabled);
   }
 
-  public V1EndpointSubsetBuilder(
-      io.kubernetes.client.openapi.models.V1EndpointSubsetFluent<?> fluent) {
+  public V1EndpointSubsetBuilder(V1EndpointSubsetFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1EndpointSubsetBuilder(
-      io.kubernetes.client.openapi.models.V1EndpointSubsetFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1EndpointSubsetBuilder(V1EndpointSubsetFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1EndpointSubset(), validationEnabled);
   }
 
-  public V1EndpointSubsetBuilder(
-      io.kubernetes.client.openapi.models.V1EndpointSubsetFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1EndpointSubset instance) {
+  public V1EndpointSubsetBuilder(V1EndpointSubsetFluent<?> fluent, V1EndpointSubset instance) {
     this(fluent, instance, false);
   }
 
   public V1EndpointSubsetBuilder(
-      io.kubernetes.client.openapi.models.V1EndpointSubsetFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1EndpointSubset instance,
-      java.lang.Boolean validationEnabled) {
+      V1EndpointSubsetFluent<?> fluent, V1EndpointSubset instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withAddresses(instance.getAddresses());
 
@@ -57,13 +48,11 @@ public class V1EndpointSubsetBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1EndpointSubsetBuilder(io.kubernetes.client.openapi.models.V1EndpointSubset instance) {
+  public V1EndpointSubsetBuilder(V1EndpointSubset instance) {
     this(instance, false);
   }
 
-  public V1EndpointSubsetBuilder(
-      io.kubernetes.client.openapi.models.V1EndpointSubset instance,
-      java.lang.Boolean validationEnabled) {
+  public V1EndpointSubsetBuilder(V1EndpointSubset instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withAddresses(instance.getAddresses());
 
@@ -74,33 +63,14 @@ public class V1EndpointSubsetBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1EndpointSubsetFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1EndpointSubsetFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1EndpointSubset build() {
+  public V1EndpointSubset build() {
     V1EndpointSubset buildable = new V1EndpointSubset();
     buildable.setAddresses(fluent.getAddresses());
     buildable.setNotReadyAddresses(fluent.getNotReadyAddresses());
     buildable.setPorts(fluent.getPorts());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1EndpointSubsetBuilder that = (V1EndpointSubsetBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

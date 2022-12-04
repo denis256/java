@@ -12,62 +12,50 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1NonResourceAttributesFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1NonResourceAttributesFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1NonResourceAttributesFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1NonResourceAttributesFluentImpl<A extends V1NonResourceAttributesFluent<A>>
+    extends BaseFluent<A> implements V1NonResourceAttributesFluent<A> {
   public V1NonResourceAttributesFluentImpl() {}
 
-  public V1NonResourceAttributesFluentImpl(
-      io.kubernetes.client.openapi.models.V1NonResourceAttributes instance) {
+  public V1NonResourceAttributesFluentImpl(V1NonResourceAttributes instance) {
     this.withPath(instance.getPath());
 
     this.withVerb(instance.getVerb());
   }
 
-  private java.lang.String path;
-  private java.lang.String verb;
+  private String path;
+  private String verb;
 
-  public java.lang.String getPath() {
+  public String getPath() {
     return this.path;
   }
 
-  public A withPath(java.lang.String path) {
+  public A withPath(String path) {
     this.path = path;
     return (A) this;
   }
 
-  public java.lang.Boolean hasPath() {
+  public Boolean hasPath() {
     return this.path != null;
   }
 
-  /** Method is deprecated. use withPath instead. */
-  @java.lang.Deprecated
-  public A withNewPath(java.lang.String original) {
-    return (A) withPath(new String(original));
-  }
-
-  public java.lang.String getVerb() {
+  public String getVerb() {
     return this.verb;
   }
 
-  public A withVerb(java.lang.String verb) {
+  public A withVerb(String verb) {
     this.verb = verb;
     return (A) this;
   }
 
-  public java.lang.Boolean hasVerb() {
+  public Boolean hasVerb() {
     return this.verb != null;
   }
 
-  /** Method is deprecated. use withVerb instead. */
-  @java.lang.Deprecated
-  public A withNewVerb(java.lang.String original) {
-    return (A) withVerb(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1NonResourceAttributesFluentImpl that = (V1NonResourceAttributesFluentImpl) o;
@@ -78,5 +66,20 @@ public class V1NonResourceAttributesFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(path, verb, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (path != null) {
+      sb.append("path:");
+      sb.append(path + ",");
+    }
+    if (verb != null) {
+      sb.append("verb:");
+      sb.append(verb);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

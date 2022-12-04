@@ -12,125 +12,101 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.custom.IntOrString;
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
+
 /** Generated */
-public interface V1HTTPGetActionFluent<
-        A extends io.kubernetes.client.openapi.models.V1HTTPGetActionFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getHost();
+public interface V1HTTPGetActionFluent<A extends V1HTTPGetActionFluent<A>> extends Fluent<A> {
+  public String getHost();
 
-  public A withHost(java.lang.String host);
+  public A withHost(String host);
 
-  public java.lang.Boolean hasHost();
+  public Boolean hasHost();
 
-  /** Method is deprecated. use withHost instead. */
-  @java.lang.Deprecated
-  public A withNewHost(java.lang.String original);
+  public A addToHttpHeaders(Integer index, V1HTTPHeader item);
 
-  public A addToHttpHeaders(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1HTTPHeader item);
-
-  public A setToHttpHeaders(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1HTTPHeader item);
+  public A setToHttpHeaders(Integer index, V1HTTPHeader item);
 
   public A addToHttpHeaders(io.kubernetes.client.openapi.models.V1HTTPHeader... items);
 
-  public A addAllToHttpHeaders(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1HTTPHeader> items);
+  public A addAllToHttpHeaders(Collection<V1HTTPHeader> items);
 
   public A removeFromHttpHeaders(io.kubernetes.client.openapi.models.V1HTTPHeader... items);
 
-  public A removeAllFromHttpHeaders(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1HTTPHeader> items);
+  public A removeAllFromHttpHeaders(Collection<V1HTTPHeader> items);
 
-  public A removeMatchingFromHttpHeaders(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1HTTPHeaderBuilder>
-          predicate);
+  public A removeMatchingFromHttpHeaders(Predicate<V1HTTPHeaderBuilder> predicate);
 
   /**
    * This method has been deprecated, please use method buildHttpHeaders instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V1HTTPHeader> getHttpHeaders();
+  @Deprecated
+  public List<V1HTTPHeader> getHttpHeaders();
 
-  public java.util.List<io.kubernetes.client.openapi.models.V1HTTPHeader> buildHttpHeaders();
+  public List<V1HTTPHeader> buildHttpHeaders();
 
-  public io.kubernetes.client.openapi.models.V1HTTPHeader buildHttpHeader(java.lang.Integer index);
+  public V1HTTPHeader buildHttpHeader(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1HTTPHeader buildFirstHttpHeader();
+  public V1HTTPHeader buildFirstHttpHeader();
 
-  public io.kubernetes.client.openapi.models.V1HTTPHeader buildLastHttpHeader();
+  public V1HTTPHeader buildLastHttpHeader();
 
-  public io.kubernetes.client.openapi.models.V1HTTPHeader buildMatchingHttpHeader(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1HTTPHeaderBuilder>
-          predicate);
+  public V1HTTPHeader buildMatchingHttpHeader(Predicate<V1HTTPHeaderBuilder> predicate);
 
-  public java.lang.Boolean hasMatchingHttpHeader(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1HTTPHeaderBuilder>
-          predicate);
+  public Boolean hasMatchingHttpHeader(Predicate<V1HTTPHeaderBuilder> predicate);
 
-  public A withHttpHeaders(
-      java.util.List<io.kubernetes.client.openapi.models.V1HTTPHeader> httpHeaders);
+  public A withHttpHeaders(List<V1HTTPHeader> httpHeaders);
 
   public A withHttpHeaders(io.kubernetes.client.openapi.models.V1HTTPHeader... httpHeaders);
 
-  public java.lang.Boolean hasHttpHeaders();
+  public Boolean hasHttpHeaders();
 
-  public io.kubernetes.client.openapi.models.V1HTTPGetActionFluent.HttpHeadersNested<A>
-      addNewHttpHeader();
+  public V1HTTPGetActionFluent.HttpHeadersNested<A> addNewHttpHeader();
 
-  public io.kubernetes.client.openapi.models.V1HTTPGetActionFluent.HttpHeadersNested<A>
-      addNewHttpHeaderLike(io.kubernetes.client.openapi.models.V1HTTPHeader item);
+  public V1HTTPGetActionFluent.HttpHeadersNested<A> addNewHttpHeaderLike(V1HTTPHeader item);
 
-  public io.kubernetes.client.openapi.models.V1HTTPGetActionFluent.HttpHeadersNested<A>
-      setNewHttpHeaderLike(
-          java.lang.Integer index, io.kubernetes.client.openapi.models.V1HTTPHeader item);
+  public V1HTTPGetActionFluent.HttpHeadersNested<A> setNewHttpHeaderLike(
+      Integer index, V1HTTPHeader item);
 
-  public io.kubernetes.client.openapi.models.V1HTTPGetActionFluent.HttpHeadersNested<A>
-      editHttpHeader(java.lang.Integer index);
+  public V1HTTPGetActionFluent.HttpHeadersNested<A> editHttpHeader(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1HTTPGetActionFluent.HttpHeadersNested<A>
-      editFirstHttpHeader();
+  public V1HTTPGetActionFluent.HttpHeadersNested<A> editFirstHttpHeader();
 
-  public io.kubernetes.client.openapi.models.V1HTTPGetActionFluent.HttpHeadersNested<A>
-      editLastHttpHeader();
+  public V1HTTPGetActionFluent.HttpHeadersNested<A> editLastHttpHeader();
 
-  public io.kubernetes.client.openapi.models.V1HTTPGetActionFluent.HttpHeadersNested<A>
-      editMatchingHttpHeader(
-          java.util.function.Predicate<io.kubernetes.client.openapi.models.V1HTTPHeaderBuilder>
-              predicate);
+  public V1HTTPGetActionFluent.HttpHeadersNested<A> editMatchingHttpHeader(
+      Predicate<V1HTTPHeaderBuilder> predicate);
 
-  public java.lang.String getPath();
+  public String getPath();
 
-  public A withPath(java.lang.String path);
+  public A withPath(String path);
 
-  public java.lang.Boolean hasPath();
+  public Boolean hasPath();
 
-  /** Method is deprecated. use withPath instead. */
-  @java.lang.Deprecated
-  public A withNewPath(java.lang.String original);
+  public IntOrString getPort();
 
-  public io.kubernetes.client.custom.IntOrString getPort();
+  public A withPort(IntOrString port);
 
-  public A withPort(io.kubernetes.client.custom.IntOrString port);
-
-  public java.lang.Boolean hasPort();
+  public Boolean hasPort();
 
   public A withNewPort(int value);
 
-  public A withNewPort(java.lang.String value);
+  public A withNewPort(String value);
 
-  public io.kubernetes.client.openapi.models.V1HTTPGetAction.SchemeEnum getScheme();
+  public String getScheme();
 
-  public A withScheme(io.kubernetes.client.openapi.models.V1HTTPGetAction.SchemeEnum scheme);
+  public A withScheme(String scheme);
 
-  public java.lang.Boolean hasScheme();
+  public Boolean hasScheme();
 
   public interface HttpHeadersNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1HTTPHeaderFluent<
-              io.kubernetes.client.openapi.models.V1HTTPGetActionFluent.HttpHeadersNested<N>> {
+      extends Nested<N>, V1HTTPHeaderFluent<V1HTTPGetActionFluent.HttpHeadersNested<N>> {
     public N and();
 
     public N endHttpHeader();

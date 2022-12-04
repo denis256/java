@@ -12,14 +12,15 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1ContainerPortFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1ContainerPortFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1ContainerPortFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1ContainerPortFluentImpl<A extends V1ContainerPortFluent<A>> extends BaseFluent<A>
+    implements V1ContainerPortFluent<A> {
   public V1ContainerPortFluentImpl() {}
 
-  public V1ContainerPortFluentImpl(io.kubernetes.client.openapi.models.V1ContainerPort instance) {
+  public V1ContainerPortFluentImpl(V1ContainerPort instance) {
     this.withContainerPort(instance.getContainerPort());
 
     this.withHostIP(instance.getHostIP());
@@ -31,90 +32,78 @@ public class V1ContainerPortFluentImpl<
     this.withProtocol(instance.getProtocol());
   }
 
-  private java.lang.Integer containerPort;
-  private java.lang.String hostIP;
-  private java.lang.Integer hostPort;
-  private java.lang.String name;
-  private io.kubernetes.client.openapi.models.V1ContainerPort.ProtocolEnum protocol;
+  private Integer containerPort;
+  private String hostIP;
+  private Integer hostPort;
+  private String name;
+  private String protocol;
 
-  public java.lang.Integer getContainerPort() {
+  public Integer getContainerPort() {
     return this.containerPort;
   }
 
-  public A withContainerPort(java.lang.Integer containerPort) {
+  public A withContainerPort(Integer containerPort) {
     this.containerPort = containerPort;
     return (A) this;
   }
 
-  public java.lang.Boolean hasContainerPort() {
+  public Boolean hasContainerPort() {
     return this.containerPort != null;
   }
 
-  public java.lang.String getHostIP() {
+  public String getHostIP() {
     return this.hostIP;
   }
 
-  public A withHostIP(java.lang.String hostIP) {
+  public A withHostIP(String hostIP) {
     this.hostIP = hostIP;
     return (A) this;
   }
 
-  public java.lang.Boolean hasHostIP() {
+  public Boolean hasHostIP() {
     return this.hostIP != null;
   }
 
-  /** Method is deprecated. use withHostIP instead. */
-  @java.lang.Deprecated
-  public A withNewHostIP(java.lang.String original) {
-    return (A) withHostIP(new String(original));
-  }
-
-  public java.lang.Integer getHostPort() {
+  public Integer getHostPort() {
     return this.hostPort;
   }
 
-  public A withHostPort(java.lang.Integer hostPort) {
+  public A withHostPort(Integer hostPort) {
     this.hostPort = hostPort;
     return (A) this;
   }
 
-  public java.lang.Boolean hasHostPort() {
+  public Boolean hasHostPort() {
     return this.hostPort != null;
   }
 
-  public java.lang.String getName() {
+  public String getName() {
     return this.name;
   }
 
-  public A withName(java.lang.String name) {
+  public A withName(String name) {
     this.name = name;
     return (A) this;
   }
 
-  public java.lang.Boolean hasName() {
+  public Boolean hasName() {
     return this.name != null;
   }
 
-  /** Method is deprecated. use withName instead. */
-  @java.lang.Deprecated
-  public A withNewName(java.lang.String original) {
-    return (A) withName(new String(original));
-  }
-
-  public io.kubernetes.client.openapi.models.V1ContainerPort.ProtocolEnum getProtocol() {
+  public String getProtocol() {
     return this.protocol;
   }
 
-  public A withProtocol(io.kubernetes.client.openapi.models.V1ContainerPort.ProtocolEnum protocol) {
+  public A withProtocol(String protocol) {
     this.protocol = protocol;
     return (A) this;
   }
 
-  public java.lang.Boolean hasProtocol() {
+  public Boolean hasProtocol() {
     return this.protocol != null;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1ContainerPortFluentImpl that = (V1ContainerPortFluentImpl) o;
@@ -131,5 +120,32 @@ public class V1ContainerPortFluentImpl<
   public int hashCode() {
     return java.util.Objects.hash(
         containerPort, hostIP, hostPort, name, protocol, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (containerPort != null) {
+      sb.append("containerPort:");
+      sb.append(containerPort + ",");
+    }
+    if (hostIP != null) {
+      sb.append("hostIP:");
+      sb.append(hostIP + ",");
+    }
+    if (hostPort != null) {
+      sb.append("hostPort:");
+      sb.append(hostPort + ",");
+    }
+    if (name != null) {
+      sb.append("name:");
+      sb.append(name + ",");
+    }
+    if (protocol != null) {
+      sb.append("protocol:");
+      sb.append(protocol);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

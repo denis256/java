@@ -12,13 +12,14 @@ limitations under the License.
 */
 package io.kubernetes.client.fluent;
 
-@java.lang.FunctionalInterface
-public interface Visitable<T> {
-  T accept(io.kubernetes.client.fluent.Visitor... visitor);
+import java.util.Collections;
+import java.util.List;
+import java.util.Map.Entry;
 
-  default <V> T accept(java.lang.Class<V> type, io.kubernetes.client.fluent.Visitor<V> visitor) {
+public interface Visitable<T> {
+  default <V> T accept(Class<V> type, Visitor<V> visitor) {
     return accept(
-        new TypedVisitor<V>() {
+        new Visitor<V>() {
           @Override
           public Class<V> getType() {
             return type;
@@ -29,5 +30,35 @@ public interface Visitable<T> {
             visitor.visit(element);
           }
         });
+  }
+
+  default T accept(io.kubernetes.client.fluent.Visitor... visitors) {
+    for (Visitor visitor : visitors) {
+      if (visitor.canVisit(Collections.emptyList(), this)) {
+        visitor.visit(this);
+      }
+    }
+    return getTarget(this);
+  }
+
+  default T accept(
+      List<Entry<String, Object>> path, io.kubernetes.client.fluent.Visitor... visitors) {
+    return accept(path, "", visitors);
+  }
+
+  default T accept(
+      List<Entry<String, Object>> path,
+      String currentKey,
+      io.kubernetes.client.fluent.Visitor... visitors) {
+    for (Visitor visitor : visitors) {
+      if (visitor.canVisit(path, this)) {
+        visitor.visit(path, this);
+      }
+    }
+    return getTarget(this);
+  }
+
+  default T getTarget(Visitable<T> visitable) {
+    return (T) visitable;
   }
 }

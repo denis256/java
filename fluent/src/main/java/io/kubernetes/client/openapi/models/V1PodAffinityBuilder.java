@@ -12,40 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1PodAffinityBuilder
-    extends io.kubernetes.client.openapi.models.V1PodAffinityFluentImpl<
-        io.kubernetes.client.openapi.models.V1PodAffinityBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1PodAffinity,
-        io.kubernetes.client.openapi.models.V1PodAffinityBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1PodAffinityBuilder extends V1PodAffinityFluentImpl<V1PodAffinityBuilder>
+    implements VisitableBuilder<V1PodAffinity, V1PodAffinityBuilder> {
   public V1PodAffinityBuilder() {
     this(false);
   }
 
-  public V1PodAffinityBuilder(java.lang.Boolean validationEnabled) {
+  public V1PodAffinityBuilder(Boolean validationEnabled) {
     this(new V1PodAffinity(), validationEnabled);
   }
 
-  public V1PodAffinityBuilder(io.kubernetes.client.openapi.models.V1PodAffinityFluent<?> fluent) {
+  public V1PodAffinityBuilder(V1PodAffinityFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1PodAffinityBuilder(
-      io.kubernetes.client.openapi.models.V1PodAffinityFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1PodAffinityBuilder(V1PodAffinityFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1PodAffinity(), validationEnabled);
   }
 
-  public V1PodAffinityBuilder(
-      io.kubernetes.client.openapi.models.V1PodAffinityFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1PodAffinity instance) {
+  public V1PodAffinityBuilder(V1PodAffinityFluent<?> fluent, V1PodAffinity instance) {
     this(fluent, instance, false);
   }
 
   public V1PodAffinityBuilder(
-      io.kubernetes.client.openapi.models.V1PodAffinityFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1PodAffinity instance,
-      java.lang.Boolean validationEnabled) {
+      V1PodAffinityFluent<?> fluent, V1PodAffinity instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withPreferredDuringSchedulingIgnoredDuringExecution(
         instance.getPreferredDuringSchedulingIgnoredDuringExecution());
@@ -56,13 +48,11 @@ public class V1PodAffinityBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1PodAffinityBuilder(io.kubernetes.client.openapi.models.V1PodAffinity instance) {
+  public V1PodAffinityBuilder(V1PodAffinity instance) {
     this(instance, false);
   }
 
-  public V1PodAffinityBuilder(
-      io.kubernetes.client.openapi.models.V1PodAffinity instance,
-      java.lang.Boolean validationEnabled) {
+  public V1PodAffinityBuilder(V1PodAffinity instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withPreferredDuringSchedulingIgnoredDuringExecution(
         instance.getPreferredDuringSchedulingIgnoredDuringExecution());
@@ -73,34 +63,15 @@ public class V1PodAffinityBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1PodAffinityFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1PodAffinityFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1PodAffinity build() {
+  public V1PodAffinity build() {
     V1PodAffinity buildable = new V1PodAffinity();
     buildable.setPreferredDuringSchedulingIgnoredDuringExecution(
         fluent.getPreferredDuringSchedulingIgnoredDuringExecution());
     buildable.setRequiredDuringSchedulingIgnoredDuringExecution(
         fluent.getRequiredDuringSchedulingIgnoredDuringExecution());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1PodAffinityBuilder that = (V1PodAffinityBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

@@ -12,15 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
+@SuppressWarnings(value = "unchecked")
 public class V1GlusterfsPersistentVolumeSourceFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1GlusterfsPersistentVolumeSourceFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1GlusterfsPersistentVolumeSourceFluent<A> {
+        A extends V1GlusterfsPersistentVolumeSourceFluent<A>>
+    extends BaseFluent<A> implements V1GlusterfsPersistentVolumeSourceFluent<A> {
   public V1GlusterfsPersistentVolumeSourceFluentImpl() {}
 
-  public V1GlusterfsPersistentVolumeSourceFluentImpl(
-      io.kubernetes.client.openapi.models.V1GlusterfsPersistentVolumeSource instance) {
+  public V1GlusterfsPersistentVolumeSourceFluentImpl(V1GlusterfsPersistentVolumeSource instance) {
     this.withEndpoints(instance.getEndpoints());
 
     this.withEndpointsNamespace(instance.getEndpointsNamespace());
@@ -30,82 +31,64 @@ public class V1GlusterfsPersistentVolumeSourceFluentImpl<
     this.withReadOnly(instance.getReadOnly());
   }
 
-  private java.lang.String endpoints;
-  private java.lang.String endpointsNamespace;
-  private java.lang.String path;
-  private java.lang.Boolean readOnly;
+  private String endpoints;
+  private String endpointsNamespace;
+  private String path;
+  private Boolean readOnly;
 
-  public java.lang.String getEndpoints() {
+  public String getEndpoints() {
     return this.endpoints;
   }
 
-  public A withEndpoints(java.lang.String endpoints) {
+  public A withEndpoints(String endpoints) {
     this.endpoints = endpoints;
     return (A) this;
   }
 
-  public java.lang.Boolean hasEndpoints() {
+  public Boolean hasEndpoints() {
     return this.endpoints != null;
   }
 
-  /** Method is deprecated. use withEndpoints instead. */
-  @java.lang.Deprecated
-  public A withNewEndpoints(java.lang.String original) {
-    return (A) withEndpoints(new String(original));
-  }
-
-  public java.lang.String getEndpointsNamespace() {
+  public String getEndpointsNamespace() {
     return this.endpointsNamespace;
   }
 
-  public A withEndpointsNamespace(java.lang.String endpointsNamespace) {
+  public A withEndpointsNamespace(String endpointsNamespace) {
     this.endpointsNamespace = endpointsNamespace;
     return (A) this;
   }
 
-  public java.lang.Boolean hasEndpointsNamespace() {
+  public Boolean hasEndpointsNamespace() {
     return this.endpointsNamespace != null;
   }
 
-  /** Method is deprecated. use withEndpointsNamespace instead. */
-  @java.lang.Deprecated
-  public A withNewEndpointsNamespace(java.lang.String original) {
-    return (A) withEndpointsNamespace(new String(original));
-  }
-
-  public java.lang.String getPath() {
+  public String getPath() {
     return this.path;
   }
 
-  public A withPath(java.lang.String path) {
+  public A withPath(String path) {
     this.path = path;
     return (A) this;
   }
 
-  public java.lang.Boolean hasPath() {
+  public Boolean hasPath() {
     return this.path != null;
   }
 
-  /** Method is deprecated. use withPath instead. */
-  @java.lang.Deprecated
-  public A withNewPath(java.lang.String original) {
-    return (A) withPath(new String(original));
-  }
-
-  public java.lang.Boolean getReadOnly() {
+  public Boolean getReadOnly() {
     return this.readOnly;
   }
 
-  public A withReadOnly(java.lang.Boolean readOnly) {
+  public A withReadOnly(Boolean readOnly) {
     this.readOnly = readOnly;
     return (A) this;
   }
 
-  public java.lang.Boolean hasReadOnly() {
+  public Boolean hasReadOnly() {
     return this.readOnly != null;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1GlusterfsPersistentVolumeSourceFluentImpl that =
@@ -122,5 +105,32 @@ public class V1GlusterfsPersistentVolumeSourceFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(endpoints, endpointsNamespace, path, readOnly, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (endpoints != null) {
+      sb.append("endpoints:");
+      sb.append(endpoints + ",");
+    }
+    if (endpointsNamespace != null) {
+      sb.append("endpointsNamespace:");
+      sb.append(endpointsNamespace + ",");
+    }
+    if (path != null) {
+      sb.append("path:");
+      sb.append(path + ",");
+    }
+    if (readOnly != null) {
+      sb.append("readOnly:");
+      sb.append(readOnly);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  public A withReadOnly() {
+    return withReadOnly(true);
   }
 }

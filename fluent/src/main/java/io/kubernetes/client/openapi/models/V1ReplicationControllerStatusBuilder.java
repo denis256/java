@@ -12,41 +12,38 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1ReplicationControllerStatusBuilder
-    extends io.kubernetes.client.openapi.models.V1ReplicationControllerStatusFluentImpl<
-        io.kubernetes.client.openapi.models.V1ReplicationControllerStatusBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1ReplicationControllerStatus,
-        io.kubernetes.client.openapi.models.V1ReplicationControllerStatusBuilder> {
+    extends V1ReplicationControllerStatusFluentImpl<V1ReplicationControllerStatusBuilder>
+    implements VisitableBuilder<
+        V1ReplicationControllerStatus, V1ReplicationControllerStatusBuilder> {
   public V1ReplicationControllerStatusBuilder() {
     this(false);
   }
 
-  public V1ReplicationControllerStatusBuilder(java.lang.Boolean validationEnabled) {
+  public V1ReplicationControllerStatusBuilder(Boolean validationEnabled) {
     this(new V1ReplicationControllerStatus(), validationEnabled);
   }
 
-  public V1ReplicationControllerStatusBuilder(
-      io.kubernetes.client.openapi.models.V1ReplicationControllerStatusFluent<?> fluent) {
+  public V1ReplicationControllerStatusBuilder(V1ReplicationControllerStatusFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1ReplicationControllerStatusBuilder(
-      io.kubernetes.client.openapi.models.V1ReplicationControllerStatusFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1ReplicationControllerStatusFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1ReplicationControllerStatus(), validationEnabled);
   }
 
   public V1ReplicationControllerStatusBuilder(
-      io.kubernetes.client.openapi.models.V1ReplicationControllerStatusFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ReplicationControllerStatus instance) {
+      V1ReplicationControllerStatusFluent<?> fluent, V1ReplicationControllerStatus instance) {
     this(fluent, instance, false);
   }
 
   public V1ReplicationControllerStatusBuilder(
-      io.kubernetes.client.openapi.models.V1ReplicationControllerStatusFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ReplicationControllerStatus instance,
-      java.lang.Boolean validationEnabled) {
+      V1ReplicationControllerStatusFluent<?> fluent,
+      V1ReplicationControllerStatus instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withAvailableReplicas(instance.getAvailableReplicas());
 
@@ -63,14 +60,12 @@ public class V1ReplicationControllerStatusBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1ReplicationControllerStatusBuilder(
-      io.kubernetes.client.openapi.models.V1ReplicationControllerStatus instance) {
+  public V1ReplicationControllerStatusBuilder(V1ReplicationControllerStatus instance) {
     this(instance, false);
   }
 
   public V1ReplicationControllerStatusBuilder(
-      io.kubernetes.client.openapi.models.V1ReplicationControllerStatus instance,
-      java.lang.Boolean validationEnabled) {
+      V1ReplicationControllerStatus instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withAvailableReplicas(instance.getAvailableReplicas());
 
@@ -87,10 +82,10 @@ public class V1ReplicationControllerStatusBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1ReplicationControllerStatusFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1ReplicationControllerStatusFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1ReplicationControllerStatus build() {
+  public V1ReplicationControllerStatus build() {
     V1ReplicationControllerStatus buildable = new V1ReplicationControllerStatus();
     buildable.setAvailableReplicas(fluent.getAvailableReplicas());
     buildable.setConditions(fluent.getConditions());
@@ -99,24 +94,5 @@ public class V1ReplicationControllerStatusBuilder
     buildable.setReadyReplicas(fluent.getReadyReplicas());
     buildable.setReplicas(fluent.getReplicas());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1ReplicationControllerStatusBuilder that = (V1ReplicationControllerStatusBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

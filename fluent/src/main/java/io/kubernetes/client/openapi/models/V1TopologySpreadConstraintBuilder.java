@@ -12,45 +12,49 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1TopologySpreadConstraintBuilder
-    extends io.kubernetes.client.openapi.models.V1TopologySpreadConstraintFluentImpl<
-        io.kubernetes.client.openapi.models.V1TopologySpreadConstraintBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1TopologySpreadConstraint,
-        io.kubernetes.client.openapi.models.V1TopologySpreadConstraintBuilder> {
+    extends V1TopologySpreadConstraintFluentImpl<V1TopologySpreadConstraintBuilder>
+    implements VisitableBuilder<V1TopologySpreadConstraint, V1TopologySpreadConstraintBuilder> {
   public V1TopologySpreadConstraintBuilder() {
     this(false);
   }
 
-  public V1TopologySpreadConstraintBuilder(java.lang.Boolean validationEnabled) {
+  public V1TopologySpreadConstraintBuilder(Boolean validationEnabled) {
     this(new V1TopologySpreadConstraint(), validationEnabled);
   }
 
-  public V1TopologySpreadConstraintBuilder(
-      io.kubernetes.client.openapi.models.V1TopologySpreadConstraintFluent<?> fluent) {
+  public V1TopologySpreadConstraintBuilder(V1TopologySpreadConstraintFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1TopologySpreadConstraintBuilder(
-      io.kubernetes.client.openapi.models.V1TopologySpreadConstraintFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1TopologySpreadConstraintFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1TopologySpreadConstraint(), validationEnabled);
   }
 
   public V1TopologySpreadConstraintBuilder(
-      io.kubernetes.client.openapi.models.V1TopologySpreadConstraintFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1TopologySpreadConstraint instance) {
+      V1TopologySpreadConstraintFluent<?> fluent, V1TopologySpreadConstraint instance) {
     this(fluent, instance, false);
   }
 
   public V1TopologySpreadConstraintBuilder(
-      io.kubernetes.client.openapi.models.V1TopologySpreadConstraintFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1TopologySpreadConstraint instance,
-      java.lang.Boolean validationEnabled) {
+      V1TopologySpreadConstraintFluent<?> fluent,
+      V1TopologySpreadConstraint instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withLabelSelector(instance.getLabelSelector());
 
+    fluent.withMatchLabelKeys(instance.getMatchLabelKeys());
+
     fluent.withMaxSkew(instance.getMaxSkew());
+
+    fluent.withMinDomains(instance.getMinDomains());
+
+    fluent.withNodeAffinityPolicy(instance.getNodeAffinityPolicy());
+
+    fluent.withNodeTaintsPolicy(instance.getNodeTaintsPolicy());
 
     fluent.withTopologyKey(instance.getTopologyKey());
 
@@ -59,18 +63,24 @@ public class V1TopologySpreadConstraintBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1TopologySpreadConstraintBuilder(
-      io.kubernetes.client.openapi.models.V1TopologySpreadConstraint instance) {
+  public V1TopologySpreadConstraintBuilder(V1TopologySpreadConstraint instance) {
     this(instance, false);
   }
 
   public V1TopologySpreadConstraintBuilder(
-      io.kubernetes.client.openapi.models.V1TopologySpreadConstraint instance,
-      java.lang.Boolean validationEnabled) {
+      V1TopologySpreadConstraint instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withLabelSelector(instance.getLabelSelector());
 
+    this.withMatchLabelKeys(instance.getMatchLabelKeys());
+
     this.withMaxSkew(instance.getMaxSkew());
+
+    this.withMinDomains(instance.getMinDomains());
+
+    this.withNodeAffinityPolicy(instance.getNodeAffinityPolicy());
+
+    this.withNodeTaintsPolicy(instance.getNodeTaintsPolicy());
 
     this.withTopologyKey(instance.getTopologyKey());
 
@@ -79,34 +89,19 @@ public class V1TopologySpreadConstraintBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1TopologySpreadConstraintFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1TopologySpreadConstraintFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1TopologySpreadConstraint build() {
+  public V1TopologySpreadConstraint build() {
     V1TopologySpreadConstraint buildable = new V1TopologySpreadConstraint();
     buildable.setLabelSelector(fluent.getLabelSelector());
+    buildable.setMatchLabelKeys(fluent.getMatchLabelKeys());
     buildable.setMaxSkew(fluent.getMaxSkew());
+    buildable.setMinDomains(fluent.getMinDomains());
+    buildable.setNodeAffinityPolicy(fluent.getNodeAffinityPolicy());
+    buildable.setNodeTaintsPolicy(fluent.getNodeTaintsPolicy());
     buildable.setTopologyKey(fluent.getTopologyKey());
     buildable.setWhenUnsatisfiable(fluent.getWhenUnsatisfiable());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1TopologySpreadConstraintBuilder that = (V1TopologySpreadConstraintBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

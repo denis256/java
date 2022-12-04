@@ -12,32 +12,34 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
+
 /** Generated */
-public interface V1NodeAffinityFluent<
-        A extends io.kubernetes.client.openapi.models.V1NodeAffinityFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
+public interface V1NodeAffinityFluent<A extends V1NodeAffinityFluent<A>> extends Fluent<A> {
   public A addToPreferredDuringSchedulingIgnoredDuringExecution(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1PreferredSchedulingTerm item);
+      Integer index, V1PreferredSchedulingTerm item);
 
   public A setToPreferredDuringSchedulingIgnoredDuringExecution(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1PreferredSchedulingTerm item);
+      Integer index, V1PreferredSchedulingTerm item);
 
   public A addToPreferredDuringSchedulingIgnoredDuringExecution(
       io.kubernetes.client.openapi.models.V1PreferredSchedulingTerm... items);
 
   public A addAllToPreferredDuringSchedulingIgnoredDuringExecution(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1PreferredSchedulingTerm> items);
+      Collection<V1PreferredSchedulingTerm> items);
 
   public A removeFromPreferredDuringSchedulingIgnoredDuringExecution(
       io.kubernetes.client.openapi.models.V1PreferredSchedulingTerm... items);
 
   public A removeAllFromPreferredDuringSchedulingIgnoredDuringExecution(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1PreferredSchedulingTerm> items);
+      Collection<V1PreferredSchedulingTerm> items);
 
   public A removeMatchingFromPreferredDuringSchedulingIgnoredDuringExecution(
-      java.util.function.Predicate<
-              io.kubernetes.client.openapi.models.V1PreferredSchedulingTermBuilder>
-          predicate);
+      Predicate<V1PreferredSchedulingTermBuilder> predicate);
 
   /**
    * This method has been deprecated, please use method
@@ -45,83 +47,55 @@ public interface V1NodeAffinityFluent<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V1PreferredSchedulingTerm>
-      getPreferredDuringSchedulingIgnoredDuringExecution();
+  @Deprecated
+  public List<V1PreferredSchedulingTerm> getPreferredDuringSchedulingIgnoredDuringExecution();
 
-  public java.util.List<io.kubernetes.client.openapi.models.V1PreferredSchedulingTerm>
-      buildPreferredDuringSchedulingIgnoredDuringExecution();
+  public List<V1PreferredSchedulingTerm> buildPreferredDuringSchedulingIgnoredDuringExecution();
 
-  public io.kubernetes.client.openapi.models.V1PreferredSchedulingTerm
-      buildPreferredDuringSchedulingIgnoredDuringExecution(java.lang.Integer index);
+  public V1PreferredSchedulingTerm buildPreferredDuringSchedulingIgnoredDuringExecution(
+      Integer index);
 
-  public io.kubernetes.client.openapi.models.V1PreferredSchedulingTerm
-      buildFirstPreferredDuringSchedulingIgnoredDuringExecution();
+  public V1PreferredSchedulingTerm buildFirstPreferredDuringSchedulingIgnoredDuringExecution();
 
-  public io.kubernetes.client.openapi.models.V1PreferredSchedulingTerm
-      buildLastPreferredDuringSchedulingIgnoredDuringExecution();
+  public V1PreferredSchedulingTerm buildLastPreferredDuringSchedulingIgnoredDuringExecution();
 
-  public io.kubernetes.client.openapi.models.V1PreferredSchedulingTerm
-      buildMatchingPreferredDuringSchedulingIgnoredDuringExecution(
-          java.util.function.Predicate<
-                  io.kubernetes.client.openapi.models.V1PreferredSchedulingTermBuilder>
-              predicate);
+  public V1PreferredSchedulingTerm buildMatchingPreferredDuringSchedulingIgnoredDuringExecution(
+      Predicate<V1PreferredSchedulingTermBuilder> predicate);
 
-  public java.lang.Boolean hasMatchingPreferredDuringSchedulingIgnoredDuringExecution(
-      java.util.function.Predicate<
-              io.kubernetes.client.openapi.models.V1PreferredSchedulingTermBuilder>
-          predicate);
+  public Boolean hasMatchingPreferredDuringSchedulingIgnoredDuringExecution(
+      Predicate<V1PreferredSchedulingTermBuilder> predicate);
 
   public A withPreferredDuringSchedulingIgnoredDuringExecution(
-      java.util.List<io.kubernetes.client.openapi.models.V1PreferredSchedulingTerm>
-          preferredDuringSchedulingIgnoredDuringExecution);
+      List<V1PreferredSchedulingTerm> preferredDuringSchedulingIgnoredDuringExecution);
 
   public A withPreferredDuringSchedulingIgnoredDuringExecution(
       io.kubernetes.client.openapi.models.V1PreferredSchedulingTerm...
           preferredDuringSchedulingIgnoredDuringExecution);
 
-  public java.lang.Boolean hasPreferredDuringSchedulingIgnoredDuringExecution();
+  public Boolean hasPreferredDuringSchedulingIgnoredDuringExecution();
 
-  public io.kubernetes.client.openapi.models.V1NodeAffinityFluent
-              .PreferredDuringSchedulingIgnoredDuringExecutionNested<
-          A>
+  public V1NodeAffinityFluent.PreferredDuringSchedulingIgnoredDuringExecutionNested<A>
       addNewPreferredDuringSchedulingIgnoredDuringExecution();
 
-  public io.kubernetes.client.openapi.models.V1NodeAffinityFluent
-              .PreferredDuringSchedulingIgnoredDuringExecutionNested<
-          A>
-      addNewPreferredDuringSchedulingIgnoredDuringExecutionLike(
-          io.kubernetes.client.openapi.models.V1PreferredSchedulingTerm item);
+  public V1NodeAffinityFluent.PreferredDuringSchedulingIgnoredDuringExecutionNested<A>
+      addNewPreferredDuringSchedulingIgnoredDuringExecutionLike(V1PreferredSchedulingTerm item);
 
-  public io.kubernetes.client.openapi.models.V1NodeAffinityFluent
-              .PreferredDuringSchedulingIgnoredDuringExecutionNested<
-          A>
+  public V1NodeAffinityFluent.PreferredDuringSchedulingIgnoredDuringExecutionNested<A>
       setNewPreferredDuringSchedulingIgnoredDuringExecutionLike(
-          java.lang.Integer index,
-          io.kubernetes.client.openapi.models.V1PreferredSchedulingTerm item);
+          Integer index, V1PreferredSchedulingTerm item);
 
-  public io.kubernetes.client.openapi.models.V1NodeAffinityFluent
-              .PreferredDuringSchedulingIgnoredDuringExecutionNested<
-          A>
-      editPreferredDuringSchedulingIgnoredDuringExecution(java.lang.Integer index);
+  public V1NodeAffinityFluent.PreferredDuringSchedulingIgnoredDuringExecutionNested<A>
+      editPreferredDuringSchedulingIgnoredDuringExecution(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1NodeAffinityFluent
-              .PreferredDuringSchedulingIgnoredDuringExecutionNested<
-          A>
+  public V1NodeAffinityFluent.PreferredDuringSchedulingIgnoredDuringExecutionNested<A>
       editFirstPreferredDuringSchedulingIgnoredDuringExecution();
 
-  public io.kubernetes.client.openapi.models.V1NodeAffinityFluent
-              .PreferredDuringSchedulingIgnoredDuringExecutionNested<
-          A>
+  public V1NodeAffinityFluent.PreferredDuringSchedulingIgnoredDuringExecutionNested<A>
       editLastPreferredDuringSchedulingIgnoredDuringExecution();
 
-  public io.kubernetes.client.openapi.models.V1NodeAffinityFluent
-              .PreferredDuringSchedulingIgnoredDuringExecutionNested<
-          A>
+  public V1NodeAffinityFluent.PreferredDuringSchedulingIgnoredDuringExecutionNested<A>
       editMatchingPreferredDuringSchedulingIgnoredDuringExecution(
-          java.util.function.Predicate<
-                  io.kubernetes.client.openapi.models.V1PreferredSchedulingTermBuilder>
-              predicate);
+          Predicate<V1PreferredSchedulingTermBuilder> predicate);
 
   /**
    * This method has been deprecated, please use method
@@ -129,63 +103,44 @@ public interface V1NodeAffinityFluent<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1NodeSelector
-      getRequiredDuringSchedulingIgnoredDuringExecution();
+  @Deprecated
+  public V1NodeSelector getRequiredDuringSchedulingIgnoredDuringExecution();
 
-  public io.kubernetes.client.openapi.models.V1NodeSelector
-      buildRequiredDuringSchedulingIgnoredDuringExecution();
+  public V1NodeSelector buildRequiredDuringSchedulingIgnoredDuringExecution();
 
   public A withRequiredDuringSchedulingIgnoredDuringExecution(
-      io.kubernetes.client.openapi.models.V1NodeSelector
-          requiredDuringSchedulingIgnoredDuringExecution);
+      V1NodeSelector requiredDuringSchedulingIgnoredDuringExecution);
 
-  public java.lang.Boolean hasRequiredDuringSchedulingIgnoredDuringExecution();
+  public Boolean hasRequiredDuringSchedulingIgnoredDuringExecution();
 
-  public io.kubernetes.client.openapi.models.V1NodeAffinityFluent
-              .RequiredDuringSchedulingIgnoredDuringExecutionNested<
-          A>
+  public V1NodeAffinityFluent.RequiredDuringSchedulingIgnoredDuringExecutionNested<A>
       withNewRequiredDuringSchedulingIgnoredDuringExecution();
 
-  public io.kubernetes.client.openapi.models.V1NodeAffinityFluent
-              .RequiredDuringSchedulingIgnoredDuringExecutionNested<
-          A>
-      withNewRequiredDuringSchedulingIgnoredDuringExecutionLike(
-          io.kubernetes.client.openapi.models.V1NodeSelector item);
+  public V1NodeAffinityFluent.RequiredDuringSchedulingIgnoredDuringExecutionNested<A>
+      withNewRequiredDuringSchedulingIgnoredDuringExecutionLike(V1NodeSelector item);
 
-  public io.kubernetes.client.openapi.models.V1NodeAffinityFluent
-              .RequiredDuringSchedulingIgnoredDuringExecutionNested<
-          A>
+  public V1NodeAffinityFluent.RequiredDuringSchedulingIgnoredDuringExecutionNested<A>
       editRequiredDuringSchedulingIgnoredDuringExecution();
 
-  public io.kubernetes.client.openapi.models.V1NodeAffinityFluent
-              .RequiredDuringSchedulingIgnoredDuringExecutionNested<
-          A>
+  public V1NodeAffinityFluent.RequiredDuringSchedulingIgnoredDuringExecutionNested<A>
       editOrNewRequiredDuringSchedulingIgnoredDuringExecution();
 
-  public io.kubernetes.client.openapi.models.V1NodeAffinityFluent
-              .RequiredDuringSchedulingIgnoredDuringExecutionNested<
-          A>
-      editOrNewRequiredDuringSchedulingIgnoredDuringExecutionLike(
-          io.kubernetes.client.openapi.models.V1NodeSelector item);
+  public V1NodeAffinityFluent.RequiredDuringSchedulingIgnoredDuringExecutionNested<A>
+      editOrNewRequiredDuringSchedulingIgnoredDuringExecutionLike(V1NodeSelector item);
 
   public interface PreferredDuringSchedulingIgnoredDuringExecutionNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1PreferredSchedulingTermFluent<
-              io.kubernetes.client.openapi.models.V1NodeAffinityFluent
-                      .PreferredDuringSchedulingIgnoredDuringExecutionNested<
-                  N>> {
+      extends Nested<N>,
+          V1PreferredSchedulingTermFluent<
+              V1NodeAffinityFluent.PreferredDuringSchedulingIgnoredDuringExecutionNested<N>> {
     public N and();
 
     public N endPreferredDuringSchedulingIgnoredDuringExecution();
   }
 
   public interface RequiredDuringSchedulingIgnoredDuringExecutionNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1NodeSelectorFluent<
-              io.kubernetes.client.openapi.models.V1NodeAffinityFluent
-                      .RequiredDuringSchedulingIgnoredDuringExecutionNested<
-                  N>> {
+      extends Nested<N>,
+          V1NodeSelectorFluent<
+              V1NodeAffinityFluent.RequiredDuringSchedulingIgnoredDuringExecutionNested<N>> {
     public N and();
 
     public N endRequiredDuringSchedulingIgnoredDuringExecution();

@@ -12,92 +12,80 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+
 /** Generated */
+@SuppressWarnings(value = "unchecked")
 public class V1SelfSubjectAccessReviewSpecFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent<A> {
+        A extends V1SelfSubjectAccessReviewSpecFluent<A>>
+    extends BaseFluent<A> implements V1SelfSubjectAccessReviewSpecFluent<A> {
   public V1SelfSubjectAccessReviewSpecFluentImpl() {}
 
-  public V1SelfSubjectAccessReviewSpecFluentImpl(
-      io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpec instance) {
+  public V1SelfSubjectAccessReviewSpecFluentImpl(V1SelfSubjectAccessReviewSpec instance) {
     this.withNonResourceAttributes(instance.getNonResourceAttributes());
 
     this.withResourceAttributes(instance.getResourceAttributes());
   }
 
-  private io.kubernetes.client.openapi.models.V1NonResourceAttributesBuilder nonResourceAttributes;
-  private io.kubernetes.client.openapi.models.V1ResourceAttributesBuilder resourceAttributes;
+  private V1NonResourceAttributesBuilder nonResourceAttributes;
+  private V1ResourceAttributesBuilder resourceAttributes;
 
   /**
    * This method has been deprecated, please use method buildNonResourceAttributes instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1NonResourceAttributes getNonResourceAttributes() {
+  @Deprecated
+  public V1NonResourceAttributes getNonResourceAttributes() {
     return this.nonResourceAttributes != null ? this.nonResourceAttributes.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1NonResourceAttributes buildNonResourceAttributes() {
+  public V1NonResourceAttributes buildNonResourceAttributes() {
     return this.nonResourceAttributes != null ? this.nonResourceAttributes.build() : null;
   }
 
-  public A withNonResourceAttributes(
-      io.kubernetes.client.openapi.models.V1NonResourceAttributes nonResourceAttributes) {
+  public A withNonResourceAttributes(V1NonResourceAttributes nonResourceAttributes) {
     _visitables.get("nonResourceAttributes").remove(this.nonResourceAttributes);
     if (nonResourceAttributes != null) {
-      this.nonResourceAttributes =
-          new io.kubernetes.client.openapi.models.V1NonResourceAttributesBuilder(
-              nonResourceAttributes);
+      this.nonResourceAttributes = new V1NonResourceAttributesBuilder(nonResourceAttributes);
       _visitables.get("nonResourceAttributes").add(this.nonResourceAttributes);
+    } else {
+      this.nonResourceAttributes = null;
+      _visitables.get("nonResourceAttributes").remove(this.nonResourceAttributes);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasNonResourceAttributes() {
+  public Boolean hasNonResourceAttributes() {
     return this.nonResourceAttributes != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent
-              .NonResourceAttributesNested<
-          A>
+  public V1SelfSubjectAccessReviewSpecFluent.NonResourceAttributesNested<A>
       withNewNonResourceAttributes() {
-    return new io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluentImpl
-        .NonResourceAttributesNestedImpl();
+    return new V1SelfSubjectAccessReviewSpecFluentImpl.NonResourceAttributesNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent
-              .NonResourceAttributesNested<
-          A>
-      withNewNonResourceAttributesLike(
-          io.kubernetes.client.openapi.models.V1NonResourceAttributes item) {
-    return new io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluentImpl
-        .NonResourceAttributesNestedImpl(item);
+  public V1SelfSubjectAccessReviewSpecFluent.NonResourceAttributesNested<A>
+      withNewNonResourceAttributesLike(V1NonResourceAttributes item) {
+    return new V1SelfSubjectAccessReviewSpecFluentImpl.NonResourceAttributesNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent
-              .NonResourceAttributesNested<
-          A>
+  public V1SelfSubjectAccessReviewSpecFluent.NonResourceAttributesNested<A>
       editNonResourceAttributes() {
     return withNewNonResourceAttributesLike(getNonResourceAttributes());
   }
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent
-              .NonResourceAttributesNested<
-          A>
+  public V1SelfSubjectAccessReviewSpecFluent.NonResourceAttributesNested<A>
       editOrNewNonResourceAttributes() {
     return withNewNonResourceAttributesLike(
         getNonResourceAttributes() != null
             ? getNonResourceAttributes()
-            : new io.kubernetes.client.openapi.models.V1NonResourceAttributesBuilder().build());
+            : new V1NonResourceAttributesBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent
-              .NonResourceAttributesNested<
-          A>
-      editOrNewNonResourceAttributesLike(
-          io.kubernetes.client.openapi.models.V1NonResourceAttributes item) {
+  public V1SelfSubjectAccessReviewSpecFluent.NonResourceAttributesNested<A>
+      editOrNewNonResourceAttributesLike(V1NonResourceAttributes item) {
     return withNewNonResourceAttributesLike(
         getNonResourceAttributes() != null ? getNonResourceAttributes() : item);
   }
@@ -107,73 +95,60 @@ public class V1SelfSubjectAccessReviewSpecFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ResourceAttributes getResourceAttributes() {
+  @Deprecated
+  public V1ResourceAttributes getResourceAttributes() {
     return this.resourceAttributes != null ? this.resourceAttributes.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1ResourceAttributes buildResourceAttributes() {
+  public V1ResourceAttributes buildResourceAttributes() {
     return this.resourceAttributes != null ? this.resourceAttributes.build() : null;
   }
 
-  public A withResourceAttributes(
-      io.kubernetes.client.openapi.models.V1ResourceAttributes resourceAttributes) {
+  public A withResourceAttributes(V1ResourceAttributes resourceAttributes) {
     _visitables.get("resourceAttributes").remove(this.resourceAttributes);
     if (resourceAttributes != null) {
-      this.resourceAttributes =
-          new io.kubernetes.client.openapi.models.V1ResourceAttributesBuilder(resourceAttributes);
+      this.resourceAttributes = new V1ResourceAttributesBuilder(resourceAttributes);
       _visitables.get("resourceAttributes").add(this.resourceAttributes);
+    } else {
+      this.resourceAttributes = null;
+      _visitables.get("resourceAttributes").remove(this.resourceAttributes);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasResourceAttributes() {
+  public Boolean hasResourceAttributes() {
     return this.resourceAttributes != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent
-              .ResourceAttributesNested<
-          A>
+  public V1SelfSubjectAccessReviewSpecFluent.ResourceAttributesNested<A>
       withNewResourceAttributes() {
-    return new io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluentImpl
-        .ResourceAttributesNestedImpl();
+    return new V1SelfSubjectAccessReviewSpecFluentImpl.ResourceAttributesNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent
-              .ResourceAttributesNested<
-          A>
-      withNewResourceAttributesLike(io.kubernetes.client.openapi.models.V1ResourceAttributes item) {
-    return new io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluentImpl
-        .ResourceAttributesNestedImpl(item);
+  public V1SelfSubjectAccessReviewSpecFluent.ResourceAttributesNested<A>
+      withNewResourceAttributesLike(V1ResourceAttributes item) {
+    return new V1SelfSubjectAccessReviewSpecFluentImpl.ResourceAttributesNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent
-              .ResourceAttributesNested<
-          A>
-      editResourceAttributes() {
+  public V1SelfSubjectAccessReviewSpecFluent.ResourceAttributesNested<A> editResourceAttributes() {
     return withNewResourceAttributesLike(getResourceAttributes());
   }
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent
-              .ResourceAttributesNested<
-          A>
+  public V1SelfSubjectAccessReviewSpecFluent.ResourceAttributesNested<A>
       editOrNewResourceAttributes() {
     return withNewResourceAttributesLike(
         getResourceAttributes() != null
             ? getResourceAttributes()
-            : new io.kubernetes.client.openapi.models.V1ResourceAttributesBuilder().build());
+            : new V1ResourceAttributesBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent
-              .ResourceAttributesNested<
-          A>
-      editOrNewResourceAttributesLike(
-          io.kubernetes.client.openapi.models.V1ResourceAttributes item) {
+  public V1SelfSubjectAccessReviewSpecFluent.ResourceAttributesNested<A>
+      editOrNewResourceAttributesLike(V1ResourceAttributes item) {
     return withNewResourceAttributesLike(
         getResourceAttributes() != null ? getResourceAttributes() : item);
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1SelfSubjectAccessReviewSpecFluentImpl that = (V1SelfSubjectAccessReviewSpecFluentImpl) o;
@@ -190,26 +165,34 @@ public class V1SelfSubjectAccessReviewSpecFluentImpl<
     return java.util.Objects.hash(nonResourceAttributes, resourceAttributes, super.hashCode());
   }
 
-  public class NonResourceAttributesNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1NonResourceAttributesFluentImpl<
-          io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent
-                  .NonResourceAttributesNested<
-              N>>
-      implements io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent
-                  .NonResourceAttributesNested<
-              N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    NonResourceAttributesNestedImpl(
-        io.kubernetes.client.openapi.models.V1NonResourceAttributes item) {
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1NonResourceAttributesBuilder(this, item);
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (nonResourceAttributes != null) {
+      sb.append("nonResourceAttributes:");
+      sb.append(nonResourceAttributes + ",");
+    }
+    if (resourceAttributes != null) {
+      sb.append("resourceAttributes:");
+      sb.append(resourceAttributes);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class NonResourceAttributesNestedImpl<N>
+      extends V1NonResourceAttributesFluentImpl<
+          V1SelfSubjectAccessReviewSpecFluent.NonResourceAttributesNested<N>>
+      implements V1SelfSubjectAccessReviewSpecFluent.NonResourceAttributesNested<N>, Nested<N> {
+    NonResourceAttributesNestedImpl(V1NonResourceAttributes item) {
+      this.builder = new V1NonResourceAttributesBuilder(this, item);
     }
 
     NonResourceAttributesNestedImpl() {
-      this.builder = new io.kubernetes.client.openapi.models.V1NonResourceAttributesBuilder(this);
+      this.builder = new V1NonResourceAttributesBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1NonResourceAttributesBuilder builder;
+    V1NonResourceAttributesBuilder builder;
 
     public N and() {
       return (N)
@@ -221,25 +204,19 @@ public class V1SelfSubjectAccessReviewSpecFluentImpl<
     }
   }
 
-  public class ResourceAttributesNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1ResourceAttributesFluentImpl<
-          io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent
-                  .ResourceAttributesNested<
-              N>>
-      implements io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent
-                  .ResourceAttributesNested<
-              N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    ResourceAttributesNestedImpl(io.kubernetes.client.openapi.models.V1ResourceAttributes item) {
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1ResourceAttributesBuilder(this, item);
+  class ResourceAttributesNestedImpl<N>
+      extends V1ResourceAttributesFluentImpl<
+          V1SelfSubjectAccessReviewSpecFluent.ResourceAttributesNested<N>>
+      implements V1SelfSubjectAccessReviewSpecFluent.ResourceAttributesNested<N>, Nested<N> {
+    ResourceAttributesNestedImpl(V1ResourceAttributes item) {
+      this.builder = new V1ResourceAttributesBuilder(this, item);
     }
 
     ResourceAttributesNestedImpl() {
-      this.builder = new io.kubernetes.client.openapi.models.V1ResourceAttributesBuilder(this);
+      this.builder = new V1ResourceAttributesBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1ResourceAttributesBuilder builder;
+    V1ResourceAttributesBuilder builder;
 
     public N and() {
       return (N)

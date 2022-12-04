@@ -12,41 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1IngressBackendBuilder
-    extends io.kubernetes.client.openapi.models.V1IngressBackendFluentImpl<
-        io.kubernetes.client.openapi.models.V1IngressBackendBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1IngressBackend,
-        io.kubernetes.client.openapi.models.V1IngressBackendBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1IngressBackendBuilder extends V1IngressBackendFluentImpl<V1IngressBackendBuilder>
+    implements VisitableBuilder<V1IngressBackend, V1IngressBackendBuilder> {
   public V1IngressBackendBuilder() {
     this(false);
   }
 
-  public V1IngressBackendBuilder(java.lang.Boolean validationEnabled) {
+  public V1IngressBackendBuilder(Boolean validationEnabled) {
     this(new V1IngressBackend(), validationEnabled);
   }
 
-  public V1IngressBackendBuilder(
-      io.kubernetes.client.openapi.models.V1IngressBackendFluent<?> fluent) {
+  public V1IngressBackendBuilder(V1IngressBackendFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1IngressBackendBuilder(
-      io.kubernetes.client.openapi.models.V1IngressBackendFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1IngressBackendBuilder(V1IngressBackendFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1IngressBackend(), validationEnabled);
   }
 
-  public V1IngressBackendBuilder(
-      io.kubernetes.client.openapi.models.V1IngressBackendFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1IngressBackend instance) {
+  public V1IngressBackendBuilder(V1IngressBackendFluent<?> fluent, V1IngressBackend instance) {
     this(fluent, instance, false);
   }
 
   public V1IngressBackendBuilder(
-      io.kubernetes.client.openapi.models.V1IngressBackendFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1IngressBackend instance,
-      java.lang.Boolean validationEnabled) {
+      V1IngressBackendFluent<?> fluent, V1IngressBackend instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withResource(instance.getResource());
 
@@ -55,13 +46,11 @@ public class V1IngressBackendBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1IngressBackendBuilder(io.kubernetes.client.openapi.models.V1IngressBackend instance) {
+  public V1IngressBackendBuilder(V1IngressBackend instance) {
     this(instance, false);
   }
 
-  public V1IngressBackendBuilder(
-      io.kubernetes.client.openapi.models.V1IngressBackend instance,
-      java.lang.Boolean validationEnabled) {
+  public V1IngressBackendBuilder(V1IngressBackend instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withResource(instance.getResource());
 
@@ -70,32 +59,13 @@ public class V1IngressBackendBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1IngressBackendFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1IngressBackendFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1IngressBackend build() {
+  public V1IngressBackend build() {
     V1IngressBackend buildable = new V1IngressBackend();
     buildable.setResource(fluent.getResource());
     buildable.setService(fluent.getService());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1IngressBackendBuilder that = (V1IngressBackendBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

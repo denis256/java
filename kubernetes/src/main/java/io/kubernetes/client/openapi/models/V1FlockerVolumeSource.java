@@ -1,5 +1,5 @@
 /*
-Copyright 2021 The Kubernetes Authors.
+Copyright 2022 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -27,7 +27,7 @@ import java.util.Objects;
         "Represents a Flocker volume mounted by the Flocker agent. One and only one of datasetName and datasetUUID should be set. Flocker volumes do not support ownership management or SELinux relabeling.")
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    date = "2021-12-10T19:11:23.904Z[Etc/UTC]")
+    date = "2022-09-15T17:00:37.921Z[Etc/UTC]")
 public class V1FlockerVolumeSource {
   public static final String SERIALIZED_NAME_DATASET_NAME = "datasetName";
 
@@ -46,15 +46,15 @@ public class V1FlockerVolumeSource {
   }
 
   /**
-   * Name of the dataset stored as metadata -&gt; name on the dataset for Flocker should be
-   * considered as deprecated
+   * datasetName is Name of the dataset stored as metadata -&gt; name on the dataset for Flocker
+   * should be considered as deprecated
    *
    * @return datasetName
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "Name of the dataset stored as metadata -> name on the dataset for Flocker should be considered as deprecated")
+          "datasetName is Name of the dataset stored as metadata -> name on the dataset for Flocker should be considered as deprecated")
   public String getDatasetName() {
     return datasetName;
   }
@@ -70,12 +70,14 @@ public class V1FlockerVolumeSource {
   }
 
   /**
-   * UUID of the dataset. This is unique identifier of a Flocker dataset
+   * datasetUUID is the UUID of the dataset. This is unique identifier of a Flocker dataset
    *
    * @return datasetUUID
    */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "UUID of the dataset. This is unique identifier of a Flocker dataset")
+  @ApiModelProperty(
+      value =
+          "datasetUUID is the UUID of the dataset. This is unique identifier of a Flocker dataset")
   public String getDatasetUUID() {
     return datasetUUID;
   }

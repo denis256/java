@@ -12,14 +12,20 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
+
 /** Generated */
-public class V1CSINodeDriverFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1CSINodeDriverFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1CSINodeDriverFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1CSINodeDriverFluentImpl<A extends V1CSINodeDriverFluent<A>> extends BaseFluent<A>
+    implements V1CSINodeDriverFluent<A> {
   public V1CSINodeDriverFluentImpl() {}
 
-  public V1CSINodeDriverFluentImpl(io.kubernetes.client.openapi.models.V1CSINodeDriver instance) {
+  public V1CSINodeDriverFluentImpl(V1CSINodeDriver instance) {
     this.withAllocatable(instance.getAllocatable());
 
     this.withName(instance.getName());
@@ -29,118 +35,101 @@ public class V1CSINodeDriverFluentImpl<
     this.withTopologyKeys(instance.getTopologyKeys());
   }
 
-  private io.kubernetes.client.openapi.models.V1VolumeNodeResourcesBuilder allocatable;
-  private java.lang.String name;
-  private java.lang.String nodeID;
-  private java.util.List<java.lang.String> topologyKeys;
+  private V1VolumeNodeResourcesBuilder allocatable;
+  private String name;
+  private String nodeID;
+  private List<String> topologyKeys;
 
   /**
    * This method has been deprecated, please use method buildAllocatable instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1VolumeNodeResources getAllocatable() {
+  @Deprecated
+  public V1VolumeNodeResources getAllocatable() {
     return this.allocatable != null ? this.allocatable.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1VolumeNodeResources buildAllocatable() {
+  public V1VolumeNodeResources buildAllocatable() {
     return this.allocatable != null ? this.allocatable.build() : null;
   }
 
-  public A withAllocatable(io.kubernetes.client.openapi.models.V1VolumeNodeResources allocatable) {
+  public A withAllocatable(V1VolumeNodeResources allocatable) {
     _visitables.get("allocatable").remove(this.allocatable);
     if (allocatable != null) {
-      this.allocatable =
-          new io.kubernetes.client.openapi.models.V1VolumeNodeResourcesBuilder(allocatable);
+      this.allocatable = new V1VolumeNodeResourcesBuilder(allocatable);
       _visitables.get("allocatable").add(this.allocatable);
+    } else {
+      this.allocatable = null;
+      _visitables.get("allocatable").remove(this.allocatable);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasAllocatable() {
+  public Boolean hasAllocatable() {
     return this.allocatable != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1CSINodeDriverFluent.AllocatableNested<A>
-      withNewAllocatable() {
-    return new io.kubernetes.client.openapi.models.V1CSINodeDriverFluentImpl
-        .AllocatableNestedImpl();
+  public V1CSINodeDriverFluent.AllocatableNested<A> withNewAllocatable() {
+    return new V1CSINodeDriverFluentImpl.AllocatableNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1CSINodeDriverFluent.AllocatableNested<A>
-      withNewAllocatableLike(io.kubernetes.client.openapi.models.V1VolumeNodeResources item) {
-    return new io.kubernetes.client.openapi.models.V1CSINodeDriverFluentImpl.AllocatableNestedImpl(
-        item);
+  public V1CSINodeDriverFluent.AllocatableNested<A> withNewAllocatableLike(
+      V1VolumeNodeResources item) {
+    return new V1CSINodeDriverFluentImpl.AllocatableNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1CSINodeDriverFluent.AllocatableNested<A>
-      editAllocatable() {
+  public V1CSINodeDriverFluent.AllocatableNested<A> editAllocatable() {
     return withNewAllocatableLike(getAllocatable());
   }
 
-  public io.kubernetes.client.openapi.models.V1CSINodeDriverFluent.AllocatableNested<A>
-      editOrNewAllocatable() {
+  public V1CSINodeDriverFluent.AllocatableNested<A> editOrNewAllocatable() {
     return withNewAllocatableLike(
-        getAllocatable() != null
-            ? getAllocatable()
-            : new io.kubernetes.client.openapi.models.V1VolumeNodeResourcesBuilder().build());
+        getAllocatable() != null ? getAllocatable() : new V1VolumeNodeResourcesBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1CSINodeDriverFluent.AllocatableNested<A>
-      editOrNewAllocatableLike(io.kubernetes.client.openapi.models.V1VolumeNodeResources item) {
+  public V1CSINodeDriverFluent.AllocatableNested<A> editOrNewAllocatableLike(
+      V1VolumeNodeResources item) {
     return withNewAllocatableLike(getAllocatable() != null ? getAllocatable() : item);
   }
 
-  public java.lang.String getName() {
+  public String getName() {
     return this.name;
   }
 
-  public A withName(java.lang.String name) {
+  public A withName(String name) {
     this.name = name;
     return (A) this;
   }
 
-  public java.lang.Boolean hasName() {
+  public Boolean hasName() {
     return this.name != null;
   }
 
-  /** Method is deprecated. use withName instead. */
-  @java.lang.Deprecated
-  public A withNewName(java.lang.String original) {
-    return (A) withName(new String(original));
-  }
-
-  public java.lang.String getNodeID() {
+  public String getNodeID() {
     return this.nodeID;
   }
 
-  public A withNodeID(java.lang.String nodeID) {
+  public A withNodeID(String nodeID) {
     this.nodeID = nodeID;
     return (A) this;
   }
 
-  public java.lang.Boolean hasNodeID() {
+  public Boolean hasNodeID() {
     return this.nodeID != null;
   }
 
-  /** Method is deprecated. use withNodeID instead. */
-  @java.lang.Deprecated
-  public A withNewNodeID(java.lang.String original) {
-    return (A) withNodeID(new String(original));
-  }
-
-  public A addToTopologyKeys(java.lang.Integer index, java.lang.String item) {
+  public A addToTopologyKeys(Integer index, String item) {
     if (this.topologyKeys == null) {
-      this.topologyKeys = new java.util.ArrayList<java.lang.String>();
+      this.topologyKeys = new ArrayList<String>();
     }
     this.topologyKeys.add(index, item);
     return (A) this;
   }
 
-  public A setToTopologyKeys(java.lang.Integer index, java.lang.String item) {
+  public A setToTopologyKeys(Integer index, String item) {
     if (this.topologyKeys == null) {
-      this.topologyKeys = new java.util.ArrayList<java.lang.String>();
+      this.topologyKeys = new ArrayList<String>();
     }
     this.topologyKeys.set(index, item);
     return (A) this;
@@ -148,26 +137,26 @@ public class V1CSINodeDriverFluentImpl<
 
   public A addToTopologyKeys(java.lang.String... items) {
     if (this.topologyKeys == null) {
-      this.topologyKeys = new java.util.ArrayList<java.lang.String>();
+      this.topologyKeys = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.topologyKeys.add(item);
     }
     return (A) this;
   }
 
-  public A addAllToTopologyKeys(java.util.Collection<java.lang.String> items) {
+  public A addAllToTopologyKeys(Collection<String> items) {
     if (this.topologyKeys == null) {
-      this.topologyKeys = new java.util.ArrayList<java.lang.String>();
+      this.topologyKeys = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.topologyKeys.add(item);
     }
     return (A) this;
   }
 
   public A removeFromTopologyKeys(java.lang.String... items) {
-    for (java.lang.String item : items) {
+    for (String item : items) {
       if (this.topologyKeys != null) {
         this.topologyKeys.remove(item);
       }
@@ -175,8 +164,8 @@ public class V1CSINodeDriverFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromTopologyKeys(java.util.Collection<java.lang.String> items) {
-    for (java.lang.String item : items) {
+  public A removeAllFromTopologyKeys(Collection<String> items) {
+    for (String item : items) {
       if (this.topologyKeys != null) {
         this.topologyKeys.remove(item);
       }
@@ -184,25 +173,24 @@ public class V1CSINodeDriverFluentImpl<
     return (A) this;
   }
 
-  public java.util.List<java.lang.String> getTopologyKeys() {
+  public List<String> getTopologyKeys() {
     return this.topologyKeys;
   }
 
-  public java.lang.String getTopologyKey(java.lang.Integer index) {
+  public String getTopologyKey(Integer index) {
     return this.topologyKeys.get(index);
   }
 
-  public java.lang.String getFirstTopologyKey() {
+  public String getFirstTopologyKey() {
     return this.topologyKeys.get(0);
   }
 
-  public java.lang.String getLastTopologyKey() {
+  public String getLastTopologyKey() {
     return this.topologyKeys.get(topologyKeys.size() - 1);
   }
 
-  public java.lang.String getMatchingTopologyKey(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : topologyKeys) {
+  public String getMatchingTopologyKey(Predicate<String> predicate) {
+    for (String item : topologyKeys) {
       if (predicate.test(item)) {
         return item;
       }
@@ -210,9 +198,8 @@ public class V1CSINodeDriverFluentImpl<
     return null;
   }
 
-  public java.lang.Boolean hasMatchingTopologyKey(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : topologyKeys) {
+  public Boolean hasMatchingTopologyKey(Predicate<String> predicate) {
+    for (String item : topologyKeys) {
       if (predicate.test(item)) {
         return true;
       }
@@ -220,10 +207,10 @@ public class V1CSINodeDriverFluentImpl<
     return false;
   }
 
-  public A withTopologyKeys(java.util.List<java.lang.String> topologyKeys) {
+  public A withTopologyKeys(List<String> topologyKeys) {
     if (topologyKeys != null) {
-      this.topologyKeys = new java.util.ArrayList();
-      for (java.lang.String item : topologyKeys) {
+      this.topologyKeys = new ArrayList();
+      for (String item : topologyKeys) {
         this.addToTopologyKeys(item);
       }
     } else {
@@ -237,22 +224,18 @@ public class V1CSINodeDriverFluentImpl<
       this.topologyKeys.clear();
     }
     if (topologyKeys != null) {
-      for (java.lang.String item : topologyKeys) {
+      for (String item : topologyKeys) {
         this.addToTopologyKeys(item);
       }
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasTopologyKeys() {
+  public Boolean hasTopologyKeys() {
     return topologyKeys != null && !topologyKeys.isEmpty();
   }
 
-  public A addNewTopologyKey(java.lang.String original) {
-    return (A) addToTopologyKeys(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1CSINodeDriverFluentImpl that = (V1CSINodeDriverFluentImpl) o;
@@ -269,21 +252,41 @@ public class V1CSINodeDriverFluentImpl<
     return java.util.Objects.hash(allocatable, name, nodeID, topologyKeys, super.hashCode());
   }
 
-  public class AllocatableNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1VolumeNodeResourcesFluentImpl<
-          io.kubernetes.client.openapi.models.V1CSINodeDriverFluent.AllocatableNested<N>>
-      implements io.kubernetes.client.openapi.models.V1CSINodeDriverFluent.AllocatableNested<N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    AllocatableNestedImpl(io.kubernetes.client.openapi.models.V1VolumeNodeResources item) {
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1VolumeNodeResourcesBuilder(this, item);
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (allocatable != null) {
+      sb.append("allocatable:");
+      sb.append(allocatable + ",");
+    }
+    if (name != null) {
+      sb.append("name:");
+      sb.append(name + ",");
+    }
+    if (nodeID != null) {
+      sb.append("nodeID:");
+      sb.append(nodeID + ",");
+    }
+    if (topologyKeys != null && !topologyKeys.isEmpty()) {
+      sb.append("topologyKeys:");
+      sb.append(topologyKeys);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class AllocatableNestedImpl<N>
+      extends V1VolumeNodeResourcesFluentImpl<V1CSINodeDriverFluent.AllocatableNested<N>>
+      implements V1CSINodeDriverFluent.AllocatableNested<N>, Nested<N> {
+    AllocatableNestedImpl(V1VolumeNodeResources item) {
+      this.builder = new V1VolumeNodeResourcesBuilder(this, item);
     }
 
     AllocatableNestedImpl() {
-      this.builder = new io.kubernetes.client.openapi.models.V1VolumeNodeResourcesBuilder(this);
+      this.builder = new V1VolumeNodeResourcesBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1VolumeNodeResourcesBuilder builder;
+    V1VolumeNodeResourcesBuilder builder;
 
     public N and() {
       return (N) V1CSINodeDriverFluentImpl.this.withAllocatable(builder.build());

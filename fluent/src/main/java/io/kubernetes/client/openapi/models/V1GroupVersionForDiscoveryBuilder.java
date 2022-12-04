@@ -12,41 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1GroupVersionForDiscoveryBuilder
-    extends io.kubernetes.client.openapi.models.V1GroupVersionForDiscoveryFluentImpl<
-        io.kubernetes.client.openapi.models.V1GroupVersionForDiscoveryBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1GroupVersionForDiscovery,
-        io.kubernetes.client.openapi.models.V1GroupVersionForDiscoveryBuilder> {
+    extends V1GroupVersionForDiscoveryFluentImpl<V1GroupVersionForDiscoveryBuilder>
+    implements VisitableBuilder<V1GroupVersionForDiscovery, V1GroupVersionForDiscoveryBuilder> {
   public V1GroupVersionForDiscoveryBuilder() {
     this(false);
   }
 
-  public V1GroupVersionForDiscoveryBuilder(java.lang.Boolean validationEnabled) {
+  public V1GroupVersionForDiscoveryBuilder(Boolean validationEnabled) {
     this(new V1GroupVersionForDiscovery(), validationEnabled);
   }
 
-  public V1GroupVersionForDiscoveryBuilder(
-      io.kubernetes.client.openapi.models.V1GroupVersionForDiscoveryFluent<?> fluent) {
+  public V1GroupVersionForDiscoveryBuilder(V1GroupVersionForDiscoveryFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1GroupVersionForDiscoveryBuilder(
-      io.kubernetes.client.openapi.models.V1GroupVersionForDiscoveryFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1GroupVersionForDiscoveryFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1GroupVersionForDiscovery(), validationEnabled);
   }
 
   public V1GroupVersionForDiscoveryBuilder(
-      io.kubernetes.client.openapi.models.V1GroupVersionForDiscoveryFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1GroupVersionForDiscovery instance) {
+      V1GroupVersionForDiscoveryFluent<?> fluent, V1GroupVersionForDiscovery instance) {
     this(fluent, instance, false);
   }
 
   public V1GroupVersionForDiscoveryBuilder(
-      io.kubernetes.client.openapi.models.V1GroupVersionForDiscoveryFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1GroupVersionForDiscovery instance,
-      java.lang.Boolean validationEnabled) {
+      V1GroupVersionForDiscoveryFluent<?> fluent,
+      V1GroupVersionForDiscovery instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withGroupVersion(instance.getGroupVersion());
 
@@ -55,14 +51,12 @@ public class V1GroupVersionForDiscoveryBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1GroupVersionForDiscoveryBuilder(
-      io.kubernetes.client.openapi.models.V1GroupVersionForDiscovery instance) {
+  public V1GroupVersionForDiscoveryBuilder(V1GroupVersionForDiscovery instance) {
     this(instance, false);
   }
 
   public V1GroupVersionForDiscoveryBuilder(
-      io.kubernetes.client.openapi.models.V1GroupVersionForDiscovery instance,
-      java.lang.Boolean validationEnabled) {
+      V1GroupVersionForDiscovery instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withGroupVersion(instance.getGroupVersion());
 
@@ -71,32 +65,13 @@ public class V1GroupVersionForDiscoveryBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1GroupVersionForDiscoveryFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1GroupVersionForDiscoveryFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1GroupVersionForDiscovery build() {
+  public V1GroupVersionForDiscovery build() {
     V1GroupVersionForDiscovery buildable = new V1GroupVersionForDiscovery();
     buildable.setGroupVersion(fluent.getGroupVersion());
     buildable.setVersion(fluent.getVersion());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1GroupVersionForDiscoveryBuilder that = (V1GroupVersionForDiscoveryBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

@@ -1,5 +1,5 @@
 /*
-Copyright 2021 The Kubernetes Authors.
+Copyright 2022 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -12,14 +12,9 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -28,7 +23,7 @@ import java.util.Objects;
 @ApiModel(description = "A single application container that you want to run within a pod.")
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    date = "2021-12-10T19:11:23.904Z[Etc/UTC]")
+    date = "2022-09-15T17:00:37.921Z[Etc/UTC]")
 public class V1Container {
   public static final String SERIALIZED_NAME_ARGS = "args";
 
@@ -55,68 +50,10 @@ public class V1Container {
   @SerializedName(SERIALIZED_NAME_IMAGE)
   private String image;
 
-  /**
-   * Image pull policy. One of Always, Never, IfNotPresent. Defaults to Always if :latest tag is
-   * specified, or IfNotPresent otherwise. Cannot be updated. More info:
-   * https://kubernetes.io/docs/concepts/containers/images#updating-images Possible enum values: -
-   * &#x60;\&quot;Always\&quot;&#x60; means that kubelet always attempts to pull the latest image.
-   * Container will fail If the pull fails. - &#x60;\&quot;IfNotPresent\&quot;&#x60; means that
-   * kubelet pulls if the image isn&#39;t present on disk. Container will fail if the image
-   * isn&#39;t present and the pull fails. - &#x60;\&quot;Never\&quot;&#x60; means that kubelet
-   * never pulls an image, but only uses a local image. Container will fail if the image isn&#39;t
-   * present
-   */
-  @JsonAdapter(ImagePullPolicyEnum.Adapter.class)
-  public enum ImagePullPolicyEnum {
-    ALWAYS("Always"),
-
-    IFNOTPRESENT("IfNotPresent"),
-
-    NEVER("Never");
-
-    private String value;
-
-    ImagePullPolicyEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static ImagePullPolicyEnum fromValue(String value) {
-      for (ImagePullPolicyEnum b : ImagePullPolicyEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<ImagePullPolicyEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ImagePullPolicyEnum enumeration)
-          throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ImagePullPolicyEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ImagePullPolicyEnum.fromValue(value);
-      }
-    }
-  }
-
   public static final String SERIALIZED_NAME_IMAGE_PULL_POLICY = "imagePullPolicy";
 
   @SerializedName(SERIALIZED_NAME_IMAGE_PULL_POLICY)
-  private ImagePullPolicyEnum imagePullPolicy;
+  private String imagePullPolicy;
 
   public static final String SERIALIZED_NAME_LIFECYCLE = "lifecycle";
 
@@ -173,68 +110,11 @@ public class V1Container {
   @SerializedName(SERIALIZED_NAME_TERMINATION_MESSAGE_PATH)
   private String terminationMessagePath;
 
-  /**
-   * Indicate how the termination message should be populated. File will use the contents of
-   * terminationMessagePath to populate the container status message on both success and failure.
-   * FallbackToLogsOnError will use the last chunk of container log output if the termination
-   * message file is empty and the container exited with an error. The log output is limited to 2048
-   * bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated. Possible enum
-   * values: - &#x60;\&quot;FallbackToLogsOnError\&quot;&#x60; will read the most recent contents of
-   * the container logs for the container status message when the container exits with an error and
-   * the terminationMessagePath has no contents. - &#x60;\&quot;File\&quot;&#x60; is the default
-   * behavior and will set the container status message to the contents of the container&#39;s
-   * terminationMessagePath when the container exits.
-   */
-  @JsonAdapter(TerminationMessagePolicyEnum.Adapter.class)
-  public enum TerminationMessagePolicyEnum {
-    FALLBACKTOLOGSONERROR("FallbackToLogsOnError"),
-
-    FILE("File");
-
-    private String value;
-
-    TerminationMessagePolicyEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static TerminationMessagePolicyEnum fromValue(String value) {
-      for (TerminationMessagePolicyEnum b : TerminationMessagePolicyEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<TerminationMessagePolicyEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TerminationMessagePolicyEnum enumeration)
-          throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public TerminationMessagePolicyEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return TerminationMessagePolicyEnum.fromValue(value);
-      }
-    }
-  }
-
   public static final String SERIALIZED_NAME_TERMINATION_MESSAGE_POLICY =
       "terminationMessagePolicy";
 
   @SerializedName(SERIALIZED_NAME_TERMINATION_MESSAGE_POLICY)
-  private TerminationMessagePolicyEnum terminationMessagePolicy;
+  private String terminationMessagePolicy;
 
   public static final String SERIALIZED_NAME_TTY = "tty";
 
@@ -271,7 +151,7 @@ public class V1Container {
   }
 
   /**
-   * Arguments to the entrypoint. The docker image&#39;s CMD is used if this is not provided.
+   * Arguments to the entrypoint. The container image&#39;s CMD is used if this is not provided.
    * Variable references $(VAR_NAME) are expanded using the container&#39;s environment. If a
    * variable cannot be resolved, the reference in the input string will be unchanged. Double $$ are
    * reduced to a single $, which allows for escaping the $(VAR_NAME) syntax: i.e.
@@ -285,7 +165,7 @@ public class V1Container {
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "Arguments to the entrypoint. The docker image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. Double $$ are reduced to a single $, which allows for escaping the $(VAR_NAME) syntax: i.e. \"$$(VAR_NAME)\" will produce the string literal \"$(VAR_NAME)\". Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell")
+          "Arguments to the entrypoint. The container image's CMD is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. Double $$ are reduced to a single $, which allows for escaping the $(VAR_NAME) syntax: i.e. \"$$(VAR_NAME)\" will produce the string literal \"$(VAR_NAME)\". Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell")
   public List<String> getArgs() {
     return args;
   }
@@ -309,7 +189,7 @@ public class V1Container {
   }
 
   /**
-   * Entrypoint array. Not executed within a shell. The docker image&#39;s ENTRYPOINT is used if
+   * Entrypoint array. Not executed within a shell. The container image&#39;s ENTRYPOINT is used if
    * this is not provided. Variable references $(VAR_NAME) are expanded using the container&#39;s
    * environment. If a variable cannot be resolved, the reference in the input string will be
    * unchanged. Double $$ are reduced to a single $, which allows for escaping the $(VAR_NAME)
@@ -323,7 +203,7 @@ public class V1Container {
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "Entrypoint array. Not executed within a shell. The docker image's ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. Double $$ are reduced to a single $, which allows for escaping the $(VAR_NAME) syntax: i.e. \"$$(VAR_NAME)\" will produce the string literal \"$(VAR_NAME)\". Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell")
+          "Entrypoint array. Not executed within a shell. The container image's ENTRYPOINT is used if this is not provided. Variable references $(VAR_NAME) are expanded using the container's environment. If a variable cannot be resolved, the reference in the input string will be unchanged. Double $$ are reduced to a single $, which allows for escaping the $(VAR_NAME) syntax: i.e. \"$$(VAR_NAME)\" will produce the string literal \"$(VAR_NAME)\". Escaped references will never be expanded, regardless of whether the variable exists or not. Cannot be updated. More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell")
   public List<String> getCommand() {
     return command;
   }
@@ -404,16 +284,16 @@ public class V1Container {
   }
 
   /**
-   * Docker image name. More info: https://kubernetes.io/docs/concepts/containers/images This field
-   * is optional to allow higher level config management to default or override container images in
-   * workload controllers like Deployments and StatefulSets.
+   * Container image name. More info: https://kubernetes.io/docs/concepts/containers/images This
+   * field is optional to allow higher level config management to default or override container
+   * images in workload controllers like Deployments and StatefulSets.
    *
    * @return image
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "Docker image name. More info: https://kubernetes.io/docs/concepts/containers/images This field is optional to allow higher level config management to default or override container images in workload controllers like Deployments and StatefulSets.")
+          "Container image name. More info: https://kubernetes.io/docs/concepts/containers/images This field is optional to allow higher level config management to default or override container images in workload controllers like Deployments and StatefulSets.")
   public String getImage() {
     return image;
   }
@@ -422,7 +302,7 @@ public class V1Container {
     this.image = image;
   }
 
-  public V1Container imagePullPolicy(ImagePullPolicyEnum imagePullPolicy) {
+  public V1Container imagePullPolicy(String imagePullPolicy) {
 
     this.imagePullPolicy = imagePullPolicy;
     return this;
@@ -431,25 +311,19 @@ public class V1Container {
   /**
    * Image pull policy. One of Always, Never, IfNotPresent. Defaults to Always if :latest tag is
    * specified, or IfNotPresent otherwise. Cannot be updated. More info:
-   * https://kubernetes.io/docs/concepts/containers/images#updating-images Possible enum values: -
-   * &#x60;\&quot;Always\&quot;&#x60; means that kubelet always attempts to pull the latest image.
-   * Container will fail If the pull fails. - &#x60;\&quot;IfNotPresent\&quot;&#x60; means that
-   * kubelet pulls if the image isn&#39;t present on disk. Container will fail if the image
-   * isn&#39;t present and the pull fails. - &#x60;\&quot;Never\&quot;&#x60; means that kubelet
-   * never pulls an image, but only uses a local image. Container will fail if the image isn&#39;t
-   * present
+   * https://kubernetes.io/docs/concepts/containers/images#updating-images
    *
    * @return imagePullPolicy
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "Image pull policy. One of Always, Never, IfNotPresent. Defaults to Always if :latest tag is specified, or IfNotPresent otherwise. Cannot be updated. More info: https://kubernetes.io/docs/concepts/containers/images#updating-images  Possible enum values:  - `\"Always\"` means that kubelet always attempts to pull the latest image. Container will fail If the pull fails.  - `\"IfNotPresent\"` means that kubelet pulls if the image isn't present on disk. Container will fail if the image isn't present and the pull fails.  - `\"Never\"` means that kubelet never pulls an image, but only uses a local image. Container will fail if the image isn't present")
-  public ImagePullPolicyEnum getImagePullPolicy() {
+          "Image pull policy. One of Always, Never, IfNotPresent. Defaults to Always if :latest tag is specified, or IfNotPresent otherwise. Cannot be updated. More info: https://kubernetes.io/docs/concepts/containers/images#updating-images  ")
+  public String getImagePullPolicy() {
     return imagePullPolicy;
   }
 
-  public void setImagePullPolicy(ImagePullPolicyEnum imagePullPolicy) {
+  public void setImagePullPolicy(String imagePullPolicy) {
     this.imagePullPolicy = imagePullPolicy;
   }
 
@@ -534,18 +408,18 @@ public class V1Container {
   }
 
   /**
-   * List of ports to expose from the container. Exposing a port here gives the system additional
-   * information about the network connections a container uses, but is primarily informational. Not
-   * specifying a port here DOES NOT prevent that port from being exposed. Any port which is
-   * listening on the default \&quot;0.0.0.0\&quot; address inside a container will be accessible
-   * from the network. Cannot be updated.
+   * List of ports to expose from the container. Not specifying a port here DOES NOT prevent that
+   * port from being exposed. Any port which is listening on the default \&quot;0.0.0.0\&quot;
+   * address inside a container will be accessible from the network. Modifying this array with
+   * strategic merge patch may corrupt the data. For more information See
+   * https://github.com/kubernetes/kubernetes/issues/108255. Cannot be updated.
    *
    * @return ports
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "List of ports to expose from the container. Exposing a port here gives the system additional information about the network connections a container uses, but is primarily informational. Not specifying a port here DOES NOT prevent that port from being exposed. Any port which is listening on the default \"0.0.0.0\" address inside a container will be accessible from the network. Cannot be updated.")
+          "List of ports to expose from the container. Not specifying a port here DOES NOT prevent that port from being exposed. Any port which is listening on the default \"0.0.0.0\" address inside a container will be accessible from the network. Modifying this array with strategic merge patch may corrupt the data. For more information See https://github.com/kubernetes/kubernetes/issues/108255. Cannot be updated.")
   public List<V1ContainerPort> getPorts() {
     return ports;
   }
@@ -718,8 +592,7 @@ public class V1Container {
     this.terminationMessagePath = terminationMessagePath;
   }
 
-  public V1Container terminationMessagePolicy(
-      TerminationMessagePolicyEnum terminationMessagePolicy) {
+  public V1Container terminationMessagePolicy(String terminationMessagePolicy) {
 
     this.terminationMessagePolicy = terminationMessagePolicy;
     return this;
@@ -730,24 +603,19 @@ public class V1Container {
    * terminationMessagePath to populate the container status message on both success and failure.
    * FallbackToLogsOnError will use the last chunk of container log output if the termination
    * message file is empty and the container exited with an error. The log output is limited to 2048
-   * bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated. Possible enum
-   * values: - &#x60;\&quot;FallbackToLogsOnError\&quot;&#x60; will read the most recent contents of
-   * the container logs for the container status message when the container exits with an error and
-   * the terminationMessagePath has no contents. - &#x60;\&quot;File\&quot;&#x60; is the default
-   * behavior and will set the container status message to the contents of the container&#39;s
-   * terminationMessagePath when the container exits.
+   * bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated.
    *
    * @return terminationMessagePolicy
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated.  Possible enum values:  - `\"FallbackToLogsOnError\"` will read the most recent contents of the container logs for the container status message when the container exits with an error and the terminationMessagePath has no contents.  - `\"File\"` is the default behavior and will set the container status message to the contents of the container's terminationMessagePath when the container exits.")
-  public TerminationMessagePolicyEnum getTerminationMessagePolicy() {
+          "Indicate how the termination message should be populated. File will use the contents of terminationMessagePath to populate the container status message on both success and failure. FallbackToLogsOnError will use the last chunk of container log output if the termination message file is empty and the container exited with an error. The log output is limited to 2048 bytes or 80 lines, whichever is smaller. Defaults to File. Cannot be updated.  ")
+  public String getTerminationMessagePolicy() {
     return terminationMessagePolicy;
   }
 
-  public void setTerminationMessagePolicy(TerminationMessagePolicyEnum terminationMessagePolicy) {
+  public void setTerminationMessagePolicy(String terminationMessagePolicy) {
     this.terminationMessagePolicy = terminationMessagePolicy;
   }
 

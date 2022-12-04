@@ -12,41 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1EmptyDirVolumeSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1EmptyDirVolumeSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1EmptyDirVolumeSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1EmptyDirVolumeSource,
-        io.kubernetes.client.openapi.models.V1EmptyDirVolumeSourceBuilder> {
+    extends V1EmptyDirVolumeSourceFluentImpl<V1EmptyDirVolumeSourceBuilder>
+    implements VisitableBuilder<V1EmptyDirVolumeSource, V1EmptyDirVolumeSourceBuilder> {
   public V1EmptyDirVolumeSourceBuilder() {
     this(false);
   }
 
-  public V1EmptyDirVolumeSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1EmptyDirVolumeSourceBuilder(Boolean validationEnabled) {
     this(new V1EmptyDirVolumeSource(), validationEnabled);
   }
 
-  public V1EmptyDirVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1EmptyDirVolumeSourceFluent<?> fluent) {
+  public V1EmptyDirVolumeSourceBuilder(V1EmptyDirVolumeSourceFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1EmptyDirVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1EmptyDirVolumeSourceFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1EmptyDirVolumeSourceFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1EmptyDirVolumeSource(), validationEnabled);
   }
 
   public V1EmptyDirVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1EmptyDirVolumeSourceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1EmptyDirVolumeSource instance) {
+      V1EmptyDirVolumeSourceFluent<?> fluent, V1EmptyDirVolumeSource instance) {
     this(fluent, instance, false);
   }
 
   public V1EmptyDirVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1EmptyDirVolumeSourceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1EmptyDirVolumeSource instance,
-      java.lang.Boolean validationEnabled) {
+      V1EmptyDirVolumeSourceFluent<?> fluent,
+      V1EmptyDirVolumeSource instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withMedium(instance.getMedium());
 
@@ -55,14 +51,11 @@ public class V1EmptyDirVolumeSourceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1EmptyDirVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1EmptyDirVolumeSource instance) {
+  public V1EmptyDirVolumeSourceBuilder(V1EmptyDirVolumeSource instance) {
     this(instance, false);
   }
 
-  public V1EmptyDirVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1EmptyDirVolumeSource instance,
-      java.lang.Boolean validationEnabled) {
+  public V1EmptyDirVolumeSourceBuilder(V1EmptyDirVolumeSource instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withMedium(instance.getMedium());
 
@@ -71,32 +64,13 @@ public class V1EmptyDirVolumeSourceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1EmptyDirVolumeSourceFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1EmptyDirVolumeSourceFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1EmptyDirVolumeSource build() {
+  public V1EmptyDirVolumeSource build() {
     V1EmptyDirVolumeSource buildable = new V1EmptyDirVolumeSource();
     buildable.setMedium(fluent.getMedium());
     buildable.setSizeLimit(fluent.getSizeLimit());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1EmptyDirVolumeSourceBuilder that = (V1EmptyDirVolumeSourceBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

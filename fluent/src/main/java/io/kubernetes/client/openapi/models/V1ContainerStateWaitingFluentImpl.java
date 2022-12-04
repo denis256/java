@@ -12,62 +12,50 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1ContainerStateWaitingFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1ContainerStateWaitingFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1ContainerStateWaitingFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1ContainerStateWaitingFluentImpl<A extends V1ContainerStateWaitingFluent<A>>
+    extends BaseFluent<A> implements V1ContainerStateWaitingFluent<A> {
   public V1ContainerStateWaitingFluentImpl() {}
 
-  public V1ContainerStateWaitingFluentImpl(
-      io.kubernetes.client.openapi.models.V1ContainerStateWaiting instance) {
+  public V1ContainerStateWaitingFluentImpl(V1ContainerStateWaiting instance) {
     this.withMessage(instance.getMessage());
 
     this.withReason(instance.getReason());
   }
 
-  private java.lang.String message;
-  private java.lang.String reason;
+  private String message;
+  private String reason;
 
-  public java.lang.String getMessage() {
+  public String getMessage() {
     return this.message;
   }
 
-  public A withMessage(java.lang.String message) {
+  public A withMessage(String message) {
     this.message = message;
     return (A) this;
   }
 
-  public java.lang.Boolean hasMessage() {
+  public Boolean hasMessage() {
     return this.message != null;
   }
 
-  /** Method is deprecated. use withMessage instead. */
-  @java.lang.Deprecated
-  public A withNewMessage(java.lang.String original) {
-    return (A) withMessage(new String(original));
-  }
-
-  public java.lang.String getReason() {
+  public String getReason() {
     return this.reason;
   }
 
-  public A withReason(java.lang.String reason) {
+  public A withReason(String reason) {
     this.reason = reason;
     return (A) this;
   }
 
-  public java.lang.Boolean hasReason() {
+  public Boolean hasReason() {
     return this.reason != null;
   }
 
-  /** Method is deprecated. use withReason instead. */
-  @java.lang.Deprecated
-  public A withNewReason(java.lang.String original) {
-    return (A) withReason(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1ContainerStateWaitingFluentImpl that = (V1ContainerStateWaitingFluentImpl) o;
@@ -78,5 +66,20 @@ public class V1ContainerStateWaitingFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(message, reason, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (message != null) {
+      sb.append("message:");
+      sb.append(message + ",");
+    }
+    if (reason != null) {
+      sb.append("reason:");
+      sb.append(reason);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

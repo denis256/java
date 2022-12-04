@@ -12,50 +12,51 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import java.time.OffsetDateTime;
+
 /** Generated */
-public class CoreV1EventSeriesFluentImpl<
-        A extends io.kubernetes.client.openapi.models.CoreV1EventSeriesFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.CoreV1EventSeriesFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class CoreV1EventSeriesFluentImpl<A extends CoreV1EventSeriesFluent<A>> extends BaseFluent<A>
+    implements CoreV1EventSeriesFluent<A> {
   public CoreV1EventSeriesFluentImpl() {}
 
-  public CoreV1EventSeriesFluentImpl(
-      io.kubernetes.client.openapi.models.CoreV1EventSeries instance) {
+  public CoreV1EventSeriesFluentImpl(CoreV1EventSeries instance) {
     this.withCount(instance.getCount());
 
     this.withLastObservedTime(instance.getLastObservedTime());
   }
 
-  private java.lang.Integer count;
-  private java.time.OffsetDateTime lastObservedTime;
+  private Integer count;
+  private OffsetDateTime lastObservedTime;
 
-  public java.lang.Integer getCount() {
+  public Integer getCount() {
     return this.count;
   }
 
-  public A withCount(java.lang.Integer count) {
+  public A withCount(Integer count) {
     this.count = count;
     return (A) this;
   }
 
-  public java.lang.Boolean hasCount() {
+  public Boolean hasCount() {
     return this.count != null;
   }
 
-  public java.time.OffsetDateTime getLastObservedTime() {
+  public OffsetDateTime getLastObservedTime() {
     return this.lastObservedTime;
   }
 
-  public A withLastObservedTime(java.time.OffsetDateTime lastObservedTime) {
+  public A withLastObservedTime(OffsetDateTime lastObservedTime) {
     this.lastObservedTime = lastObservedTime;
     return (A) this;
   }
 
-  public java.lang.Boolean hasLastObservedTime() {
+  public Boolean hasLastObservedTime() {
     return this.lastObservedTime != null;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     CoreV1EventSeriesFluentImpl that = (CoreV1EventSeriesFluentImpl) o;
@@ -68,5 +69,20 @@ public class CoreV1EventSeriesFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(count, lastObservedTime, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (count != null) {
+      sb.append("count:");
+      sb.append(count + ",");
+    }
+    if (lastObservedTime != null) {
+      sb.append("lastObservedTime:");
+      sb.append(lastObservedTime);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

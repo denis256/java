@@ -12,41 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1ContainerImageBuilder
-    extends io.kubernetes.client.openapi.models.V1ContainerImageFluentImpl<
-        io.kubernetes.client.openapi.models.V1ContainerImageBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1ContainerImage,
-        io.kubernetes.client.openapi.models.V1ContainerImageBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1ContainerImageBuilder extends V1ContainerImageFluentImpl<V1ContainerImageBuilder>
+    implements VisitableBuilder<V1ContainerImage, V1ContainerImageBuilder> {
   public V1ContainerImageBuilder() {
     this(false);
   }
 
-  public V1ContainerImageBuilder(java.lang.Boolean validationEnabled) {
+  public V1ContainerImageBuilder(Boolean validationEnabled) {
     this(new V1ContainerImage(), validationEnabled);
   }
 
-  public V1ContainerImageBuilder(
-      io.kubernetes.client.openapi.models.V1ContainerImageFluent<?> fluent) {
+  public V1ContainerImageBuilder(V1ContainerImageFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1ContainerImageBuilder(
-      io.kubernetes.client.openapi.models.V1ContainerImageFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1ContainerImageBuilder(V1ContainerImageFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1ContainerImage(), validationEnabled);
   }
 
-  public V1ContainerImageBuilder(
-      io.kubernetes.client.openapi.models.V1ContainerImageFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ContainerImage instance) {
+  public V1ContainerImageBuilder(V1ContainerImageFluent<?> fluent, V1ContainerImage instance) {
     this(fluent, instance, false);
   }
 
   public V1ContainerImageBuilder(
-      io.kubernetes.client.openapi.models.V1ContainerImageFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ContainerImage instance,
-      java.lang.Boolean validationEnabled) {
+      V1ContainerImageFluent<?> fluent, V1ContainerImage instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withNames(instance.getNames());
 
@@ -55,13 +46,11 @@ public class V1ContainerImageBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1ContainerImageBuilder(io.kubernetes.client.openapi.models.V1ContainerImage instance) {
+  public V1ContainerImageBuilder(V1ContainerImage instance) {
     this(instance, false);
   }
 
-  public V1ContainerImageBuilder(
-      io.kubernetes.client.openapi.models.V1ContainerImage instance,
-      java.lang.Boolean validationEnabled) {
+  public V1ContainerImageBuilder(V1ContainerImage instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withNames(instance.getNames());
 
@@ -70,32 +59,13 @@ public class V1ContainerImageBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1ContainerImageFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1ContainerImageFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1ContainerImage build() {
+  public V1ContainerImage build() {
     V1ContainerImage buildable = new V1ContainerImage();
     buildable.setNames(fluent.getNames());
     buildable.setSizeBytes(fluent.getSizeBytes());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1ContainerImageBuilder that = (V1ContainerImageBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

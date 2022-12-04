@@ -12,41 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1OwnerReferenceBuilder
-    extends io.kubernetes.client.openapi.models.V1OwnerReferenceFluentImpl<
-        io.kubernetes.client.openapi.models.V1OwnerReferenceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1OwnerReference,
-        io.kubernetes.client.openapi.models.V1OwnerReferenceBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1OwnerReferenceBuilder extends V1OwnerReferenceFluentImpl<V1OwnerReferenceBuilder>
+    implements VisitableBuilder<V1OwnerReference, V1OwnerReferenceBuilder> {
   public V1OwnerReferenceBuilder() {
     this(false);
   }
 
-  public V1OwnerReferenceBuilder(java.lang.Boolean validationEnabled) {
+  public V1OwnerReferenceBuilder(Boolean validationEnabled) {
     this(new V1OwnerReference(), validationEnabled);
   }
 
-  public V1OwnerReferenceBuilder(
-      io.kubernetes.client.openapi.models.V1OwnerReferenceFluent<?> fluent) {
+  public V1OwnerReferenceBuilder(V1OwnerReferenceFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1OwnerReferenceBuilder(
-      io.kubernetes.client.openapi.models.V1OwnerReferenceFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1OwnerReferenceBuilder(V1OwnerReferenceFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1OwnerReference(), validationEnabled);
   }
 
-  public V1OwnerReferenceBuilder(
-      io.kubernetes.client.openapi.models.V1OwnerReferenceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1OwnerReference instance) {
+  public V1OwnerReferenceBuilder(V1OwnerReferenceFluent<?> fluent, V1OwnerReference instance) {
     this(fluent, instance, false);
   }
 
   public V1OwnerReferenceBuilder(
-      io.kubernetes.client.openapi.models.V1OwnerReferenceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1OwnerReference instance,
-      java.lang.Boolean validationEnabled) {
+      V1OwnerReferenceFluent<?> fluent, V1OwnerReference instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withApiVersion(instance.getApiVersion());
 
@@ -63,13 +54,11 @@ public class V1OwnerReferenceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1OwnerReferenceBuilder(io.kubernetes.client.openapi.models.V1OwnerReference instance) {
+  public V1OwnerReferenceBuilder(V1OwnerReference instance) {
     this(instance, false);
   }
 
-  public V1OwnerReferenceBuilder(
-      io.kubernetes.client.openapi.models.V1OwnerReference instance,
-      java.lang.Boolean validationEnabled) {
+  public V1OwnerReferenceBuilder(V1OwnerReference instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withApiVersion(instance.getApiVersion());
 
@@ -86,10 +75,10 @@ public class V1OwnerReferenceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1OwnerReferenceFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1OwnerReferenceFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1OwnerReference build() {
+  public V1OwnerReference build() {
     V1OwnerReference buildable = new V1OwnerReference();
     buildable.setApiVersion(fluent.getApiVersion());
     buildable.setBlockOwnerDeletion(fluent.getBlockOwnerDeletion());
@@ -98,24 +87,5 @@ public class V1OwnerReferenceBuilder
     buildable.setName(fluent.getName());
     buildable.setUid(fluent.getUid());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1OwnerReferenceBuilder that = (V1OwnerReferenceBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

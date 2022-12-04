@@ -12,40 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1DeploymentBuilder
-    extends io.kubernetes.client.openapi.models.V1DeploymentFluentImpl<
-        io.kubernetes.client.openapi.models.V1DeploymentBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1Deployment,
-        io.kubernetes.client.openapi.models.V1DeploymentBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1DeploymentBuilder extends V1DeploymentFluentImpl<V1DeploymentBuilder>
+    implements VisitableBuilder<V1Deployment, V1DeploymentBuilder> {
   public V1DeploymentBuilder() {
     this(false);
   }
 
-  public V1DeploymentBuilder(java.lang.Boolean validationEnabled) {
+  public V1DeploymentBuilder(Boolean validationEnabled) {
     this(new V1Deployment(), validationEnabled);
   }
 
-  public V1DeploymentBuilder(io.kubernetes.client.openapi.models.V1DeploymentFluent<?> fluent) {
+  public V1DeploymentBuilder(V1DeploymentFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1DeploymentBuilder(
-      io.kubernetes.client.openapi.models.V1DeploymentFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1DeploymentBuilder(V1DeploymentFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1Deployment(), validationEnabled);
   }
 
-  public V1DeploymentBuilder(
-      io.kubernetes.client.openapi.models.V1DeploymentFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1Deployment instance) {
+  public V1DeploymentBuilder(V1DeploymentFluent<?> fluent, V1Deployment instance) {
     this(fluent, instance, false);
   }
 
   public V1DeploymentBuilder(
-      io.kubernetes.client.openapi.models.V1DeploymentFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1Deployment instance,
-      java.lang.Boolean validationEnabled) {
+      V1DeploymentFluent<?> fluent, V1Deployment instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withApiVersion(instance.getApiVersion());
 
@@ -60,13 +52,11 @@ public class V1DeploymentBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1DeploymentBuilder(io.kubernetes.client.openapi.models.V1Deployment instance) {
+  public V1DeploymentBuilder(V1Deployment instance) {
     this(instance, false);
   }
 
-  public V1DeploymentBuilder(
-      io.kubernetes.client.openapi.models.V1Deployment instance,
-      java.lang.Boolean validationEnabled) {
+  public V1DeploymentBuilder(V1Deployment instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withApiVersion(instance.getApiVersion());
 
@@ -81,10 +71,10 @@ public class V1DeploymentBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1DeploymentFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1DeploymentFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1Deployment build() {
+  public V1Deployment build() {
     V1Deployment buildable = new V1Deployment();
     buildable.setApiVersion(fluent.getApiVersion());
     buildable.setKind(fluent.getKind());
@@ -92,24 +82,5 @@ public class V1DeploymentBuilder
     buildable.setSpec(fluent.getSpec());
     buildable.setStatus(fluent.getStatus());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1DeploymentBuilder that = (V1DeploymentBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

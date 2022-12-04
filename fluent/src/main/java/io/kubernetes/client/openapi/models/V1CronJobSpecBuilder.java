@@ -12,40 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1CronJobSpecBuilder
-    extends io.kubernetes.client.openapi.models.V1CronJobSpecFluentImpl<
-        io.kubernetes.client.openapi.models.V1CronJobSpecBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1CronJobSpec,
-        io.kubernetes.client.openapi.models.V1CronJobSpecBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1CronJobSpecBuilder extends V1CronJobSpecFluentImpl<V1CronJobSpecBuilder>
+    implements VisitableBuilder<V1CronJobSpec, V1CronJobSpecBuilder> {
   public V1CronJobSpecBuilder() {
     this(false);
   }
 
-  public V1CronJobSpecBuilder(java.lang.Boolean validationEnabled) {
+  public V1CronJobSpecBuilder(Boolean validationEnabled) {
     this(new V1CronJobSpec(), validationEnabled);
   }
 
-  public V1CronJobSpecBuilder(io.kubernetes.client.openapi.models.V1CronJobSpecFluent<?> fluent) {
+  public V1CronJobSpecBuilder(V1CronJobSpecFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1CronJobSpecBuilder(
-      io.kubernetes.client.openapi.models.V1CronJobSpecFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1CronJobSpecBuilder(V1CronJobSpecFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1CronJobSpec(), validationEnabled);
   }
 
-  public V1CronJobSpecBuilder(
-      io.kubernetes.client.openapi.models.V1CronJobSpecFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1CronJobSpec instance) {
+  public V1CronJobSpecBuilder(V1CronJobSpecFluent<?> fluent, V1CronJobSpec instance) {
     this(fluent, instance, false);
   }
 
   public V1CronJobSpecBuilder(
-      io.kubernetes.client.openapi.models.V1CronJobSpecFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1CronJobSpec instance,
-      java.lang.Boolean validationEnabled) {
+      V1CronJobSpecFluent<?> fluent, V1CronJobSpec instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withConcurrencyPolicy(instance.getConcurrencyPolicy());
 
@@ -61,16 +53,16 @@ public class V1CronJobSpecBuilder
 
     fluent.withSuspend(instance.getSuspend());
 
+    fluent.withTimeZone(instance.getTimeZone());
+
     this.validationEnabled = validationEnabled;
   }
 
-  public V1CronJobSpecBuilder(io.kubernetes.client.openapi.models.V1CronJobSpec instance) {
+  public V1CronJobSpecBuilder(V1CronJobSpec instance) {
     this(instance, false);
   }
 
-  public V1CronJobSpecBuilder(
-      io.kubernetes.client.openapi.models.V1CronJobSpec instance,
-      java.lang.Boolean validationEnabled) {
+  public V1CronJobSpecBuilder(V1CronJobSpec instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withConcurrencyPolicy(instance.getConcurrencyPolicy());
 
@@ -86,13 +78,15 @@ public class V1CronJobSpecBuilder
 
     this.withSuspend(instance.getSuspend());
 
+    this.withTimeZone(instance.getTimeZone());
+
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1CronJobSpecFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1CronJobSpecFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1CronJobSpec build() {
+  public V1CronJobSpec build() {
     V1CronJobSpec buildable = new V1CronJobSpec();
     buildable.setConcurrencyPolicy(fluent.getConcurrencyPolicy());
     buildable.setFailedJobsHistoryLimit(fluent.getFailedJobsHistoryLimit());
@@ -101,25 +95,7 @@ public class V1CronJobSpecBuilder
     buildable.setStartingDeadlineSeconds(fluent.getStartingDeadlineSeconds());
     buildable.setSuccessfulJobsHistoryLimit(fluent.getSuccessfulJobsHistoryLimit());
     buildable.setSuspend(fluent.getSuspend());
+    buildable.setTimeZone(fluent.getTimeZone());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1CronJobSpecBuilder that = (V1CronJobSpecBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

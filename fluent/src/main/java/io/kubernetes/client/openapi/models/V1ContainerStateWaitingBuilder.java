@@ -12,41 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1ContainerStateWaitingBuilder
-    extends io.kubernetes.client.openapi.models.V1ContainerStateWaitingFluentImpl<
-        io.kubernetes.client.openapi.models.V1ContainerStateWaitingBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1ContainerStateWaiting,
-        io.kubernetes.client.openapi.models.V1ContainerStateWaitingBuilder> {
+    extends V1ContainerStateWaitingFluentImpl<V1ContainerStateWaitingBuilder>
+    implements VisitableBuilder<V1ContainerStateWaiting, V1ContainerStateWaitingBuilder> {
   public V1ContainerStateWaitingBuilder() {
     this(false);
   }
 
-  public V1ContainerStateWaitingBuilder(java.lang.Boolean validationEnabled) {
+  public V1ContainerStateWaitingBuilder(Boolean validationEnabled) {
     this(new V1ContainerStateWaiting(), validationEnabled);
   }
 
-  public V1ContainerStateWaitingBuilder(
-      io.kubernetes.client.openapi.models.V1ContainerStateWaitingFluent<?> fluent) {
+  public V1ContainerStateWaitingBuilder(V1ContainerStateWaitingFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1ContainerStateWaitingBuilder(
-      io.kubernetes.client.openapi.models.V1ContainerStateWaitingFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1ContainerStateWaitingFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1ContainerStateWaiting(), validationEnabled);
   }
 
   public V1ContainerStateWaitingBuilder(
-      io.kubernetes.client.openapi.models.V1ContainerStateWaitingFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ContainerStateWaiting instance) {
+      V1ContainerStateWaitingFluent<?> fluent, V1ContainerStateWaiting instance) {
     this(fluent, instance, false);
   }
 
   public V1ContainerStateWaitingBuilder(
-      io.kubernetes.client.openapi.models.V1ContainerStateWaitingFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ContainerStateWaiting instance,
-      java.lang.Boolean validationEnabled) {
+      V1ContainerStateWaitingFluent<?> fluent,
+      V1ContainerStateWaiting instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withMessage(instance.getMessage());
 
@@ -55,14 +51,12 @@ public class V1ContainerStateWaitingBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1ContainerStateWaitingBuilder(
-      io.kubernetes.client.openapi.models.V1ContainerStateWaiting instance) {
+  public V1ContainerStateWaitingBuilder(V1ContainerStateWaiting instance) {
     this(instance, false);
   }
 
   public V1ContainerStateWaitingBuilder(
-      io.kubernetes.client.openapi.models.V1ContainerStateWaiting instance,
-      java.lang.Boolean validationEnabled) {
+      V1ContainerStateWaiting instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withMessage(instance.getMessage());
 
@@ -71,32 +65,13 @@ public class V1ContainerStateWaitingBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1ContainerStateWaitingFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1ContainerStateWaitingFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1ContainerStateWaiting build() {
+  public V1ContainerStateWaiting build() {
     V1ContainerStateWaiting buildable = new V1ContainerStateWaiting();
     buildable.setMessage(fluent.getMessage());
     buildable.setReason(fluent.getReason());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1ContainerStateWaitingBuilder that = (V1ContainerStateWaitingBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

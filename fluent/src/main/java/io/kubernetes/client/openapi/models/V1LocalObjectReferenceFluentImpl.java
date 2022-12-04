@@ -12,40 +12,34 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1LocalObjectReferenceFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1LocalObjectReferenceFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1LocalObjectReferenceFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1LocalObjectReferenceFluentImpl<A extends V1LocalObjectReferenceFluent<A>>
+    extends BaseFluent<A> implements V1LocalObjectReferenceFluent<A> {
   public V1LocalObjectReferenceFluentImpl() {}
 
-  public V1LocalObjectReferenceFluentImpl(
-      io.kubernetes.client.openapi.models.V1LocalObjectReference instance) {
+  public V1LocalObjectReferenceFluentImpl(V1LocalObjectReference instance) {
     this.withName(instance.getName());
   }
 
-  private java.lang.String name;
+  private String name;
 
-  public java.lang.String getName() {
+  public String getName() {
     return this.name;
   }
 
-  public A withName(java.lang.String name) {
+  public A withName(String name) {
     this.name = name;
     return (A) this;
   }
 
-  public java.lang.Boolean hasName() {
+  public Boolean hasName() {
     return this.name != null;
   }
 
-  /** Method is deprecated. use withName instead. */
-  @java.lang.Deprecated
-  public A withNewName(java.lang.String original) {
-    return (A) withName(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1LocalObjectReferenceFluentImpl that = (V1LocalObjectReferenceFluentImpl) o;
@@ -55,5 +49,16 @@ public class V1LocalObjectReferenceFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(name, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (name != null) {
+      sb.append("name:");
+      sb.append(name);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

@@ -12,111 +12,84 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+
 /** Generated */
 public interface V1SelfSubjectAccessReviewSpecFluent<
-        A extends io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
+        A extends V1SelfSubjectAccessReviewSpecFluent<A>>
+    extends Fluent<A> {
 
   /**
    * This method has been deprecated, please use method buildNonResourceAttributes instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1NonResourceAttributes getNonResourceAttributes();
+  @Deprecated
+  public V1NonResourceAttributes getNonResourceAttributes();
 
-  public io.kubernetes.client.openapi.models.V1NonResourceAttributes buildNonResourceAttributes();
+  public V1NonResourceAttributes buildNonResourceAttributes();
 
-  public A withNonResourceAttributes(
-      io.kubernetes.client.openapi.models.V1NonResourceAttributes nonResourceAttributes);
+  public A withNonResourceAttributes(V1NonResourceAttributes nonResourceAttributes);
 
-  public java.lang.Boolean hasNonResourceAttributes();
+  public Boolean hasNonResourceAttributes();
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent
-              .NonResourceAttributesNested<
-          A>
+  public V1SelfSubjectAccessReviewSpecFluent.NonResourceAttributesNested<A>
       withNewNonResourceAttributes();
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent
-              .NonResourceAttributesNested<
-          A>
-      withNewNonResourceAttributesLike(
-          io.kubernetes.client.openapi.models.V1NonResourceAttributes item);
+  public V1SelfSubjectAccessReviewSpecFluent.NonResourceAttributesNested<A>
+      withNewNonResourceAttributesLike(V1NonResourceAttributes item);
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent
-              .NonResourceAttributesNested<
-          A>
+  public V1SelfSubjectAccessReviewSpecFluent.NonResourceAttributesNested<A>
       editNonResourceAttributes();
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent
-              .NonResourceAttributesNested<
-          A>
+  public V1SelfSubjectAccessReviewSpecFluent.NonResourceAttributesNested<A>
       editOrNewNonResourceAttributes();
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent
-              .NonResourceAttributesNested<
-          A>
-      editOrNewNonResourceAttributesLike(
-          io.kubernetes.client.openapi.models.V1NonResourceAttributes item);
+  public V1SelfSubjectAccessReviewSpecFluent.NonResourceAttributesNested<A>
+      editOrNewNonResourceAttributesLike(V1NonResourceAttributes item);
 
   /**
    * This method has been deprecated, please use method buildResourceAttributes instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ResourceAttributes getResourceAttributes();
+  @Deprecated
+  public V1ResourceAttributes getResourceAttributes();
 
-  public io.kubernetes.client.openapi.models.V1ResourceAttributes buildResourceAttributes();
+  public V1ResourceAttributes buildResourceAttributes();
 
-  public A withResourceAttributes(
-      io.kubernetes.client.openapi.models.V1ResourceAttributes resourceAttributes);
+  public A withResourceAttributes(V1ResourceAttributes resourceAttributes);
 
-  public java.lang.Boolean hasResourceAttributes();
+  public Boolean hasResourceAttributes();
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent
-              .ResourceAttributesNested<
-          A>
+  public V1SelfSubjectAccessReviewSpecFluent.ResourceAttributesNested<A>
       withNewResourceAttributes();
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent
-              .ResourceAttributesNested<
-          A>
-      withNewResourceAttributesLike(io.kubernetes.client.openapi.models.V1ResourceAttributes item);
+  public V1SelfSubjectAccessReviewSpecFluent.ResourceAttributesNested<A>
+      withNewResourceAttributesLike(V1ResourceAttributes item);
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent
-              .ResourceAttributesNested<
-          A>
-      editResourceAttributes();
+  public V1SelfSubjectAccessReviewSpecFluent.ResourceAttributesNested<A> editResourceAttributes();
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent
-              .ResourceAttributesNested<
-          A>
+  public V1SelfSubjectAccessReviewSpecFluent.ResourceAttributesNested<A>
       editOrNewResourceAttributes();
 
-  public io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent
-              .ResourceAttributesNested<
-          A>
-      editOrNewResourceAttributesLike(
-          io.kubernetes.client.openapi.models.V1ResourceAttributes item);
+  public V1SelfSubjectAccessReviewSpecFluent.ResourceAttributesNested<A>
+      editOrNewResourceAttributesLike(V1ResourceAttributes item);
 
   public interface NonResourceAttributesNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1NonResourceAttributesFluent<
-              io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent
-                      .NonResourceAttributesNested<
-                  N>> {
+      extends Nested<N>,
+          V1NonResourceAttributesFluent<
+              V1SelfSubjectAccessReviewSpecFluent.NonResourceAttributesNested<N>> {
     public N and();
 
     public N endNonResourceAttributes();
   }
 
   public interface ResourceAttributesNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1ResourceAttributesFluent<
-              io.kubernetes.client.openapi.models.V1SelfSubjectAccessReviewSpecFluent
-                      .ResourceAttributesNested<
-                  N>> {
+      extends Nested<N>,
+          V1ResourceAttributesFluent<
+              V1SelfSubjectAccessReviewSpecFluent.ResourceAttributesNested<N>> {
     public N and();
 
     public N endResourceAttributes();

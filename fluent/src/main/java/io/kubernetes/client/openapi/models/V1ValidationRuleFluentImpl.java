@@ -12,61 +12,50 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1ValidationRuleFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1ValidationRuleFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1ValidationRuleFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1ValidationRuleFluentImpl<A extends V1ValidationRuleFluent<A>> extends BaseFluent<A>
+    implements V1ValidationRuleFluent<A> {
   public V1ValidationRuleFluentImpl() {}
 
-  public V1ValidationRuleFluentImpl(io.kubernetes.client.openapi.models.V1ValidationRule instance) {
+  public V1ValidationRuleFluentImpl(V1ValidationRule instance) {
     this.withMessage(instance.getMessage());
 
     this.withRule(instance.getRule());
   }
 
-  private java.lang.String message;
-  private java.lang.String rule;
+  private String message;
+  private String rule;
 
-  public java.lang.String getMessage() {
+  public String getMessage() {
     return this.message;
   }
 
-  public A withMessage(java.lang.String message) {
+  public A withMessage(String message) {
     this.message = message;
     return (A) this;
   }
 
-  public java.lang.Boolean hasMessage() {
+  public Boolean hasMessage() {
     return this.message != null;
   }
 
-  /** Method is deprecated. use withMessage instead. */
-  @java.lang.Deprecated
-  public A withNewMessage(java.lang.String original) {
-    return (A) withMessage(new String(original));
-  }
-
-  public java.lang.String getRule() {
+  public String getRule() {
     return this.rule;
   }
 
-  public A withRule(java.lang.String rule) {
+  public A withRule(String rule) {
     this.rule = rule;
     return (A) this;
   }
 
-  public java.lang.Boolean hasRule() {
+  public Boolean hasRule() {
     return this.rule != null;
   }
 
-  /** Method is deprecated. use withRule instead. */
-  @java.lang.Deprecated
-  public A withNewRule(java.lang.String original) {
-    return (A) withRule(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1ValidationRuleFluentImpl that = (V1ValidationRuleFluentImpl) o;
@@ -77,5 +66,20 @@ public class V1ValidationRuleFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(message, rule, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (message != null) {
+      sb.append("message:");
+      sb.append(message + ",");
+    }
+    if (rule != null) {
+      sb.append("rule:");
+      sb.append(rule);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

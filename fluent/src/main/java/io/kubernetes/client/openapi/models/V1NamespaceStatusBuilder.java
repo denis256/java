@@ -12,41 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1NamespaceStatusBuilder
-    extends io.kubernetes.client.openapi.models.V1NamespaceStatusFluentImpl<
-        io.kubernetes.client.openapi.models.V1NamespaceStatusBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1NamespaceStatus,
-        io.kubernetes.client.openapi.models.V1NamespaceStatusBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1NamespaceStatusBuilder extends V1NamespaceStatusFluentImpl<V1NamespaceStatusBuilder>
+    implements VisitableBuilder<V1NamespaceStatus, V1NamespaceStatusBuilder> {
   public V1NamespaceStatusBuilder() {
     this(false);
   }
 
-  public V1NamespaceStatusBuilder(java.lang.Boolean validationEnabled) {
+  public V1NamespaceStatusBuilder(Boolean validationEnabled) {
     this(new V1NamespaceStatus(), validationEnabled);
   }
 
-  public V1NamespaceStatusBuilder(
-      io.kubernetes.client.openapi.models.V1NamespaceStatusFluent<?> fluent) {
+  public V1NamespaceStatusBuilder(V1NamespaceStatusFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1NamespaceStatusBuilder(
-      io.kubernetes.client.openapi.models.V1NamespaceStatusFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1NamespaceStatusBuilder(V1NamespaceStatusFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1NamespaceStatus(), validationEnabled);
   }
 
-  public V1NamespaceStatusBuilder(
-      io.kubernetes.client.openapi.models.V1NamespaceStatusFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1NamespaceStatus instance) {
+  public V1NamespaceStatusBuilder(V1NamespaceStatusFluent<?> fluent, V1NamespaceStatus instance) {
     this(fluent, instance, false);
   }
 
   public V1NamespaceStatusBuilder(
-      io.kubernetes.client.openapi.models.V1NamespaceStatusFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1NamespaceStatus instance,
-      java.lang.Boolean validationEnabled) {
+      V1NamespaceStatusFluent<?> fluent, V1NamespaceStatus instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withConditions(instance.getConditions());
 
@@ -55,13 +46,11 @@ public class V1NamespaceStatusBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1NamespaceStatusBuilder(io.kubernetes.client.openapi.models.V1NamespaceStatus instance) {
+  public V1NamespaceStatusBuilder(V1NamespaceStatus instance) {
     this(instance, false);
   }
 
-  public V1NamespaceStatusBuilder(
-      io.kubernetes.client.openapi.models.V1NamespaceStatus instance,
-      java.lang.Boolean validationEnabled) {
+  public V1NamespaceStatusBuilder(V1NamespaceStatus instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withConditions(instance.getConditions());
 
@@ -70,32 +59,13 @@ public class V1NamespaceStatusBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1NamespaceStatusFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1NamespaceStatusFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1NamespaceStatus build() {
+  public V1NamespaceStatus build() {
     V1NamespaceStatus buildable = new V1NamespaceStatus();
     buildable.setConditions(fluent.getConditions());
     buildable.setPhase(fluent.getPhase());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1NamespaceStatusBuilder that = (V1NamespaceStatusBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

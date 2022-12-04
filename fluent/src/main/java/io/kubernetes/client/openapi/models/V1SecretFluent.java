@@ -12,103 +12,92 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.Map;
+
 /** Generated */
-public interface V1SecretFluent<A extends io.kubernetes.client.openapi.models.V1SecretFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getApiVersion();
+public interface V1SecretFluent<A extends V1SecretFluent<A>> extends Fluent<A> {
+  public String getApiVersion();
 
-  public A withApiVersion(java.lang.String apiVersion);
+  public A withApiVersion(String apiVersion);
 
-  public java.lang.Boolean hasApiVersion();
+  public Boolean hasApiVersion();
 
-  /** Method is deprecated. use withApiVersion instead. */
-  @java.lang.Deprecated
-  public A withNewApiVersion(java.lang.String original);
+  public A addToData(String key, byte[] value);
 
-  public A addToData(java.lang.String key, byte[] value);
+  public A addToData(Map<String, byte[]> map);
 
-  public A addToData(java.util.Map<java.lang.String, byte[]> map);
+  public A removeFromData(String key);
 
-  public A removeFromData(java.lang.String key);
+  public A removeFromData(Map<String, byte[]> map);
 
-  public A removeFromData(java.util.Map<java.lang.String, byte[]> map);
+  public Map<String, byte[]> getData();
 
-  public java.util.Map<java.lang.String, byte[]> getData();
+  public <K, V> A withData(Map<String, byte[]> data);
 
-  public <K, V> A withData(java.util.Map<java.lang.String, byte[]> data);
+  public Boolean hasData();
 
-  public java.lang.Boolean hasData();
+  public Boolean getImmutable();
 
-  public java.lang.Boolean getImmutable();
+  public A withImmutable(Boolean immutable);
 
-  public A withImmutable(java.lang.Boolean immutable);
+  public Boolean hasImmutable();
 
-  public java.lang.Boolean hasImmutable();
+  public String getKind();
 
-  public java.lang.String getKind();
+  public A withKind(String kind);
 
-  public A withKind(java.lang.String kind);
-
-  public java.lang.Boolean hasKind();
-
-  /** Method is deprecated. use withKind instead. */
-  @java.lang.Deprecated
-  public A withNewKind(java.lang.String original);
+  public Boolean hasKind();
 
   /**
    * This method has been deprecated, please use method buildMetadata instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ObjectMeta getMetadata();
+  @Deprecated
+  public V1ObjectMeta getMetadata();
 
-  public io.kubernetes.client.openapi.models.V1ObjectMeta buildMetadata();
+  public V1ObjectMeta buildMetadata();
 
-  public A withMetadata(io.kubernetes.client.openapi.models.V1ObjectMeta metadata);
+  public A withMetadata(V1ObjectMeta metadata);
 
-  public java.lang.Boolean hasMetadata();
+  public Boolean hasMetadata();
 
-  public io.kubernetes.client.openapi.models.V1SecretFluent.MetadataNested<A> withNewMetadata();
+  public V1SecretFluent.MetadataNested<A> withNewMetadata();
 
-  public io.kubernetes.client.openapi.models.V1SecretFluent.MetadataNested<A> withNewMetadataLike(
-      io.kubernetes.client.openapi.models.V1ObjectMeta item);
+  public V1SecretFluent.MetadataNested<A> withNewMetadataLike(V1ObjectMeta item);
 
-  public io.kubernetes.client.openapi.models.V1SecretFluent.MetadataNested<A> editMetadata();
+  public V1SecretFluent.MetadataNested<A> editMetadata();
 
-  public io.kubernetes.client.openapi.models.V1SecretFluent.MetadataNested<A> editOrNewMetadata();
+  public V1SecretFluent.MetadataNested<A> editOrNewMetadata();
 
-  public io.kubernetes.client.openapi.models.V1SecretFluent.MetadataNested<A> editOrNewMetadataLike(
-      io.kubernetes.client.openapi.models.V1ObjectMeta item);
+  public V1SecretFluent.MetadataNested<A> editOrNewMetadataLike(V1ObjectMeta item);
 
-  public A addToStringData(java.lang.String key, java.lang.String value);
+  public A addToStringData(String key, String value);
 
-  public A addToStringData(java.util.Map<java.lang.String, java.lang.String> map);
+  public A addToStringData(Map<String, String> map);
 
-  public A removeFromStringData(java.lang.String key);
+  public A removeFromStringData(String key);
 
-  public A removeFromStringData(java.util.Map<java.lang.String, java.lang.String> map);
+  public A removeFromStringData(Map<String, String> map);
 
-  public java.util.Map<java.lang.String, java.lang.String> getStringData();
+  public Map<String, String> getStringData();
 
-  public <K, V> A withStringData(java.util.Map<java.lang.String, java.lang.String> stringData);
+  public <K, V> A withStringData(Map<String, String> stringData);
 
-  public java.lang.Boolean hasStringData();
+  public Boolean hasStringData();
 
-  public java.lang.String getType();
+  public String getType();
 
-  public A withType(java.lang.String type);
+  public A withType(String type);
 
-  public java.lang.Boolean hasType();
+  public Boolean hasType();
 
-  /** Method is deprecated. use withType instead. */
-  @java.lang.Deprecated
-  public A withNewType(java.lang.String original);
+  public A withImmutable();
 
   public interface MetadataNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1ObjectMetaFluent<
-              io.kubernetes.client.openapi.models.V1SecretFluent.MetadataNested<N>> {
+      extends Nested<N>, V1ObjectMetaFluent<V1SecretFluent.MetadataNested<N>> {
     public N and();
 
     public N endMetadata();

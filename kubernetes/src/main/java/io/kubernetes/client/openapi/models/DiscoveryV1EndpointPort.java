@@ -1,5 +1,5 @@
 /*
-Copyright 2021 The Kubernetes Authors.
+Copyright 2022 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -21,7 +21,7 @@ import java.util.Objects;
 @ApiModel(description = "EndpointPort represents a Port used by an EndpointSlice")
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    date = "2021-12-10T19:11:23.904Z[Etc/UTC]")
+    date = "2022-09-15T17:00:37.921Z[Etc/UTC]")
 public class DiscoveryV1EndpointPort {
   public static final String SERIALIZED_NAME_APP_PROTOCOL = "appProtocol";
 
@@ -52,7 +52,7 @@ public class DiscoveryV1EndpointPort {
   /**
    * The application protocol for this port. This field follows standard Kubernetes label syntax.
    * Un-prefixed names are reserved for IANA standard service names (as per RFC-6335 and
-   * http://www.iana.org/assignments/service-names). Non-standard protocols should use prefixed
+   * https://www.iana.org/assignments/service-names). Non-standard protocols should use prefixed
    * names such as mycompany.com/my-custom-protocol.
    *
    * @return appProtocol
@@ -60,7 +60,7 @@ public class DiscoveryV1EndpointPort {
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "The application protocol for this port. This field follows standard Kubernetes label syntax. Un-prefixed names are reserved for IANA standard service names (as per RFC-6335 and http://www.iana.org/assignments/service-names). Non-standard protocols should use prefixed names such as mycompany.com/my-custom-protocol.")
+          "The application protocol for this port. This field follows standard Kubernetes label syntax. Un-prefixed names are reserved for IANA standard service names (as per RFC-6335 and https://www.iana.org/assignments/service-names). Non-standard protocols should use prefixed names such as mycompany.com/my-custom-protocol.")
   public String getAppProtocol() {
     return appProtocol;
   }

@@ -12,55 +12,50 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1WatchEventFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1WatchEventFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1WatchEventFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1WatchEventFluentImpl<A extends V1WatchEventFluent<A>> extends BaseFluent<A>
+    implements V1WatchEventFluent<A> {
   public V1WatchEventFluentImpl() {}
 
-  public V1WatchEventFluentImpl(io.kubernetes.client.openapi.models.V1WatchEvent instance) {
+  public V1WatchEventFluentImpl(V1WatchEvent instance) {
     this.withObject(instance.getObject());
 
     this.withType(instance.getType());
   }
 
-  private java.lang.Object _object;
-  private java.lang.String type;
+  private Object _object;
+  private String type;
 
-  public java.lang.Object getObject() {
+  public Object getObject() {
     return this._object;
   }
 
-  public A withObject(java.lang.Object _object) {
+  public A withObject(Object _object) {
     this._object = _object;
     return (A) this;
   }
 
-  public java.lang.Boolean hasObject() {
+  public Boolean hasObject() {
     return this._object != null;
   }
 
-  public java.lang.String getType() {
+  public String getType() {
     return this.type;
   }
 
-  public A withType(java.lang.String type) {
+  public A withType(String type) {
     this.type = type;
     return (A) this;
   }
 
-  public java.lang.Boolean hasType() {
+  public Boolean hasType() {
     return this.type != null;
   }
 
-  /** Method is deprecated. use withType instead. */
-  @java.lang.Deprecated
-  public A withNewType(java.lang.String original) {
-    return (A) withType(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1WatchEventFluentImpl that = (V1WatchEventFluentImpl) o;
@@ -71,5 +66,20 @@ public class V1WatchEventFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(_object, type, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (_object != null) {
+      sb.append("_object:");
+      sb.append(_object + ",");
+    }
+    if (type != null) {
+      sb.append("type:");
+      sb.append(type);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

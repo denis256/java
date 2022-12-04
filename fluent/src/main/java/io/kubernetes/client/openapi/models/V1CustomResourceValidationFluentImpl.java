@@ -12,85 +12,77 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+
 /** Generated */
-public class V1CustomResourceValidationFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1CustomResourceValidationFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1CustomResourceValidationFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1CustomResourceValidationFluentImpl<A extends V1CustomResourceValidationFluent<A>>
+    extends BaseFluent<A> implements V1CustomResourceValidationFluent<A> {
   public V1CustomResourceValidationFluentImpl() {}
 
-  public V1CustomResourceValidationFluentImpl(
-      io.kubernetes.client.openapi.models.V1CustomResourceValidation instance) {
+  public V1CustomResourceValidationFluentImpl(V1CustomResourceValidation instance) {
     this.withOpenAPIV3Schema(instance.getOpenAPIV3Schema());
   }
 
-  private io.kubernetes.client.openapi.models.V1JSONSchemaPropsBuilder openAPIV3Schema;
+  private V1JSONSchemaPropsBuilder openAPIV3Schema;
 
   /**
    * This method has been deprecated, please use method buildOpenAPIV3Schema instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1JSONSchemaProps getOpenAPIV3Schema() {
+  @Deprecated
+  public V1JSONSchemaProps getOpenAPIV3Schema() {
     return this.openAPIV3Schema != null ? this.openAPIV3Schema.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1JSONSchemaProps buildOpenAPIV3Schema() {
+  public V1JSONSchemaProps buildOpenAPIV3Schema() {
     return this.openAPIV3Schema != null ? this.openAPIV3Schema.build() : null;
   }
 
-  public A withOpenAPIV3Schema(
-      io.kubernetes.client.openapi.models.V1JSONSchemaProps openAPIV3Schema) {
+  public A withOpenAPIV3Schema(V1JSONSchemaProps openAPIV3Schema) {
     _visitables.get("openAPIV3Schema").remove(this.openAPIV3Schema);
     if (openAPIV3Schema != null) {
-      this.openAPIV3Schema =
-          new io.kubernetes.client.openapi.models.V1JSONSchemaPropsBuilder(openAPIV3Schema);
+      this.openAPIV3Schema = new V1JSONSchemaPropsBuilder(openAPIV3Schema);
       _visitables.get("openAPIV3Schema").add(this.openAPIV3Schema);
+    } else {
+      this.openAPIV3Schema = null;
+      _visitables.get("openAPIV3Schema").remove(this.openAPIV3Schema);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasOpenAPIV3Schema() {
+  public Boolean hasOpenAPIV3Schema() {
     return this.openAPIV3Schema != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1CustomResourceValidationFluent.OpenAPIV3SchemaNested<
-          A>
-      withNewOpenAPIV3Schema() {
-    return new io.kubernetes.client.openapi.models.V1CustomResourceValidationFluentImpl
-        .OpenAPIV3SchemaNestedImpl();
+  public V1CustomResourceValidationFluent.OpenAPIV3SchemaNested<A> withNewOpenAPIV3Schema() {
+    return new V1CustomResourceValidationFluentImpl.OpenAPIV3SchemaNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1CustomResourceValidationFluent.OpenAPIV3SchemaNested<
-          A>
-      withNewOpenAPIV3SchemaLike(io.kubernetes.client.openapi.models.V1JSONSchemaProps item) {
-    return new io.kubernetes.client.openapi.models.V1CustomResourceValidationFluentImpl
-        .OpenAPIV3SchemaNestedImpl(item);
+  public V1CustomResourceValidationFluent.OpenAPIV3SchemaNested<A> withNewOpenAPIV3SchemaLike(
+      V1JSONSchemaProps item) {
+    return new V1CustomResourceValidationFluentImpl.OpenAPIV3SchemaNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1CustomResourceValidationFluent.OpenAPIV3SchemaNested<
-          A>
-      editOpenAPIV3Schema() {
+  public V1CustomResourceValidationFluent.OpenAPIV3SchemaNested<A> editOpenAPIV3Schema() {
     return withNewOpenAPIV3SchemaLike(getOpenAPIV3Schema());
   }
 
-  public io.kubernetes.client.openapi.models.V1CustomResourceValidationFluent.OpenAPIV3SchemaNested<
-          A>
-      editOrNewOpenAPIV3Schema() {
+  public V1CustomResourceValidationFluent.OpenAPIV3SchemaNested<A> editOrNewOpenAPIV3Schema() {
     return withNewOpenAPIV3SchemaLike(
         getOpenAPIV3Schema() != null
             ? getOpenAPIV3Schema()
-            : new io.kubernetes.client.openapi.models.V1JSONSchemaPropsBuilder().build());
+            : new V1JSONSchemaPropsBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1CustomResourceValidationFluent.OpenAPIV3SchemaNested<
-          A>
-      editOrNewOpenAPIV3SchemaLike(io.kubernetes.client.openapi.models.V1JSONSchemaProps item) {
+  public V1CustomResourceValidationFluent.OpenAPIV3SchemaNested<A> editOrNewOpenAPIV3SchemaLike(
+      V1JSONSchemaProps item) {
     return withNewOpenAPIV3SchemaLike(getOpenAPIV3Schema() != null ? getOpenAPIV3Schema() : item);
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1CustomResourceValidationFluentImpl that = (V1CustomResourceValidationFluentImpl) o;
@@ -104,24 +96,29 @@ public class V1CustomResourceValidationFluentImpl<
     return java.util.Objects.hash(openAPIV3Schema, super.hashCode());
   }
 
-  public class OpenAPIV3SchemaNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1JSONSchemaPropsFluentImpl<
-          io.kubernetes.client.openapi.models.V1CustomResourceValidationFluent
-                  .OpenAPIV3SchemaNested<
-              N>>
-      implements io.kubernetes.client.openapi.models.V1CustomResourceValidationFluent
-                  .OpenAPIV3SchemaNested<
-              N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    OpenAPIV3SchemaNestedImpl(io.kubernetes.client.openapi.models.V1JSONSchemaProps item) {
-      this.builder = new io.kubernetes.client.openapi.models.V1JSONSchemaPropsBuilder(this, item);
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (openAPIV3Schema != null) {
+      sb.append("openAPIV3Schema:");
+      sb.append(openAPIV3Schema);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class OpenAPIV3SchemaNestedImpl<N>
+      extends V1JSONSchemaPropsFluentImpl<V1CustomResourceValidationFluent.OpenAPIV3SchemaNested<N>>
+      implements V1CustomResourceValidationFluent.OpenAPIV3SchemaNested<N>, Nested<N> {
+    OpenAPIV3SchemaNestedImpl(V1JSONSchemaProps item) {
+      this.builder = new V1JSONSchemaPropsBuilder(this, item);
     }
 
     OpenAPIV3SchemaNestedImpl() {
-      this.builder = new io.kubernetes.client.openapi.models.V1JSONSchemaPropsBuilder(this);
+      this.builder = new V1JSONSchemaPropsBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1JSONSchemaPropsBuilder builder;
+    V1JSONSchemaPropsBuilder builder;
 
     public N and() {
       return (N) V1CustomResourceValidationFluentImpl.this.withOpenAPIV3Schema(builder.build());

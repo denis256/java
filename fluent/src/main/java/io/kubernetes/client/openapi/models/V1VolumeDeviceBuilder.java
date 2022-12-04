@@ -12,40 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1VolumeDeviceBuilder
-    extends io.kubernetes.client.openapi.models.V1VolumeDeviceFluentImpl<
-        io.kubernetes.client.openapi.models.V1VolumeDeviceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1VolumeDevice,
-        io.kubernetes.client.openapi.models.V1VolumeDeviceBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1VolumeDeviceBuilder extends V1VolumeDeviceFluentImpl<V1VolumeDeviceBuilder>
+    implements VisitableBuilder<V1VolumeDevice, V1VolumeDeviceBuilder> {
   public V1VolumeDeviceBuilder() {
     this(false);
   }
 
-  public V1VolumeDeviceBuilder(java.lang.Boolean validationEnabled) {
+  public V1VolumeDeviceBuilder(Boolean validationEnabled) {
     this(new V1VolumeDevice(), validationEnabled);
   }
 
-  public V1VolumeDeviceBuilder(io.kubernetes.client.openapi.models.V1VolumeDeviceFluent<?> fluent) {
+  public V1VolumeDeviceBuilder(V1VolumeDeviceFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1VolumeDeviceBuilder(
-      io.kubernetes.client.openapi.models.V1VolumeDeviceFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1VolumeDeviceBuilder(V1VolumeDeviceFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1VolumeDevice(), validationEnabled);
   }
 
-  public V1VolumeDeviceBuilder(
-      io.kubernetes.client.openapi.models.V1VolumeDeviceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1VolumeDevice instance) {
+  public V1VolumeDeviceBuilder(V1VolumeDeviceFluent<?> fluent, V1VolumeDevice instance) {
     this(fluent, instance, false);
   }
 
   public V1VolumeDeviceBuilder(
-      io.kubernetes.client.openapi.models.V1VolumeDeviceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1VolumeDevice instance,
-      java.lang.Boolean validationEnabled) {
+      V1VolumeDeviceFluent<?> fluent, V1VolumeDevice instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withDevicePath(instance.getDevicePath());
 
@@ -54,13 +46,11 @@ public class V1VolumeDeviceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1VolumeDeviceBuilder(io.kubernetes.client.openapi.models.V1VolumeDevice instance) {
+  public V1VolumeDeviceBuilder(V1VolumeDevice instance) {
     this(instance, false);
   }
 
-  public V1VolumeDeviceBuilder(
-      io.kubernetes.client.openapi.models.V1VolumeDevice instance,
-      java.lang.Boolean validationEnabled) {
+  public V1VolumeDeviceBuilder(V1VolumeDevice instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withDevicePath(instance.getDevicePath());
 
@@ -69,32 +59,13 @@ public class V1VolumeDeviceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1VolumeDeviceFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1VolumeDeviceFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1VolumeDevice build() {
+  public V1VolumeDevice build() {
     V1VolumeDevice buildable = new V1VolumeDevice();
     buildable.setDevicePath(fluent.getDevicePath());
     buildable.setName(fluent.getName());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1VolumeDeviceBuilder that = (V1VolumeDeviceBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

@@ -12,14 +12,20 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
+
 /** Generated */
-public class V1DeleteOptionsFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1DeleteOptionsFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1DeleteOptionsFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1DeleteOptionsFluentImpl<A extends V1DeleteOptionsFluent<A>> extends BaseFluent<A>
+    implements V1DeleteOptionsFluent<A> {
   public V1DeleteOptionsFluentImpl() {}
 
-  public V1DeleteOptionsFluentImpl(io.kubernetes.client.openapi.models.V1DeleteOptions instance) {
+  public V1DeleteOptionsFluentImpl(V1DeleteOptions instance) {
     this.withApiVersion(instance.getApiVersion());
 
     this.withDryRun(instance.getDryRun());
@@ -35,44 +41,38 @@ public class V1DeleteOptionsFluentImpl<
     this.withPropagationPolicy(instance.getPropagationPolicy());
   }
 
-  private java.lang.String apiVersion;
-  private java.util.List<java.lang.String> dryRun;
-  private java.lang.Long gracePeriodSeconds;
-  private java.lang.String kind;
-  private java.lang.Boolean orphanDependents;
-  private io.kubernetes.client.openapi.models.V1PreconditionsBuilder preconditions;
-  private java.lang.String propagationPolicy;
+  private String apiVersion;
+  private List<String> dryRun;
+  private Long gracePeriodSeconds;
+  private String kind;
+  private Boolean orphanDependents;
+  private V1PreconditionsBuilder preconditions;
+  private String propagationPolicy;
 
-  public java.lang.String getApiVersion() {
+  public String getApiVersion() {
     return this.apiVersion;
   }
 
-  public A withApiVersion(java.lang.String apiVersion) {
+  public A withApiVersion(String apiVersion) {
     this.apiVersion = apiVersion;
     return (A) this;
   }
 
-  public java.lang.Boolean hasApiVersion() {
+  public Boolean hasApiVersion() {
     return this.apiVersion != null;
   }
 
-  /** Method is deprecated. use withApiVersion instead. */
-  @java.lang.Deprecated
-  public A withNewApiVersion(java.lang.String original) {
-    return (A) withApiVersion(new String(original));
-  }
-
-  public A addToDryRun(java.lang.Integer index, java.lang.String item) {
+  public A addToDryRun(Integer index, String item) {
     if (this.dryRun == null) {
-      this.dryRun = new java.util.ArrayList<java.lang.String>();
+      this.dryRun = new ArrayList<String>();
     }
     this.dryRun.add(index, item);
     return (A) this;
   }
 
-  public A setToDryRun(java.lang.Integer index, java.lang.String item) {
+  public A setToDryRun(Integer index, String item) {
     if (this.dryRun == null) {
-      this.dryRun = new java.util.ArrayList<java.lang.String>();
+      this.dryRun = new ArrayList<String>();
     }
     this.dryRun.set(index, item);
     return (A) this;
@@ -80,26 +80,26 @@ public class V1DeleteOptionsFluentImpl<
 
   public A addToDryRun(java.lang.String... items) {
     if (this.dryRun == null) {
-      this.dryRun = new java.util.ArrayList<java.lang.String>();
+      this.dryRun = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.dryRun.add(item);
     }
     return (A) this;
   }
 
-  public A addAllToDryRun(java.util.Collection<java.lang.String> items) {
+  public A addAllToDryRun(Collection<String> items) {
     if (this.dryRun == null) {
-      this.dryRun = new java.util.ArrayList<java.lang.String>();
+      this.dryRun = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.dryRun.add(item);
     }
     return (A) this;
   }
 
   public A removeFromDryRun(java.lang.String... items) {
-    for (java.lang.String item : items) {
+    for (String item : items) {
       if (this.dryRun != null) {
         this.dryRun.remove(item);
       }
@@ -107,8 +107,8 @@ public class V1DeleteOptionsFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromDryRun(java.util.Collection<java.lang.String> items) {
-    for (java.lang.String item : items) {
+  public A removeAllFromDryRun(Collection<String> items) {
+    for (String item : items) {
       if (this.dryRun != null) {
         this.dryRun.remove(item);
       }
@@ -116,25 +116,24 @@ public class V1DeleteOptionsFluentImpl<
     return (A) this;
   }
 
-  public java.util.List<java.lang.String> getDryRun() {
+  public List<String> getDryRun() {
     return this.dryRun;
   }
 
-  public java.lang.String getDryRun(java.lang.Integer index) {
+  public String getDryRun(Integer index) {
     return this.dryRun.get(index);
   }
 
-  public java.lang.String getFirstDryRun() {
+  public String getFirstDryRun() {
     return this.dryRun.get(0);
   }
 
-  public java.lang.String getLastDryRun() {
+  public String getLastDryRun() {
     return this.dryRun.get(dryRun.size() - 1);
   }
 
-  public java.lang.String getMatchingDryRun(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : dryRun) {
+  public String getMatchingDryRun(Predicate<String> predicate) {
+    for (String item : dryRun) {
       if (predicate.test(item)) {
         return item;
       }
@@ -142,9 +141,8 @@ public class V1DeleteOptionsFluentImpl<
     return null;
   }
 
-  public java.lang.Boolean hasMatchingDryRun(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : dryRun) {
+  public Boolean hasMatchingDryRun(Predicate<String> predicate) {
+    for (String item : dryRun) {
       if (predicate.test(item)) {
         return true;
       }
@@ -152,10 +150,10 @@ public class V1DeleteOptionsFluentImpl<
     return false;
   }
 
-  public A withDryRun(java.util.List<java.lang.String> dryRun) {
+  public A withDryRun(List<String> dryRun) {
     if (dryRun != null) {
-      this.dryRun = new java.util.ArrayList();
-      for (java.lang.String item : dryRun) {
+      this.dryRun = new ArrayList();
+      for (String item : dryRun) {
         this.addToDryRun(item);
       }
     } else {
@@ -169,63 +167,53 @@ public class V1DeleteOptionsFluentImpl<
       this.dryRun.clear();
     }
     if (dryRun != null) {
-      for (java.lang.String item : dryRun) {
+      for (String item : dryRun) {
         this.addToDryRun(item);
       }
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasDryRun() {
+  public Boolean hasDryRun() {
     return dryRun != null && !dryRun.isEmpty();
   }
 
-  public A addNewDryRun(java.lang.String original) {
-    return (A) addToDryRun(new String(original));
-  }
-
-  public java.lang.Long getGracePeriodSeconds() {
+  public Long getGracePeriodSeconds() {
     return this.gracePeriodSeconds;
   }
 
-  public A withGracePeriodSeconds(java.lang.Long gracePeriodSeconds) {
+  public A withGracePeriodSeconds(Long gracePeriodSeconds) {
     this.gracePeriodSeconds = gracePeriodSeconds;
     return (A) this;
   }
 
-  public java.lang.Boolean hasGracePeriodSeconds() {
+  public Boolean hasGracePeriodSeconds() {
     return this.gracePeriodSeconds != null;
   }
 
-  public java.lang.String getKind() {
+  public String getKind() {
     return this.kind;
   }
 
-  public A withKind(java.lang.String kind) {
+  public A withKind(String kind) {
     this.kind = kind;
     return (A) this;
   }
 
-  public java.lang.Boolean hasKind() {
+  public Boolean hasKind() {
     return this.kind != null;
   }
 
-  /** Method is deprecated. use withKind instead. */
-  @java.lang.Deprecated
-  public A withNewKind(java.lang.String original) {
-    return (A) withKind(new String(original));
-  }
-
-  public java.lang.Boolean getOrphanDependents() {
+  public Boolean getOrphanDependents() {
     return this.orphanDependents;
   }
 
-  public A withOrphanDependents(java.lang.Boolean orphanDependents) {
+  public A withOrphanDependents(Boolean orphanDependents) {
     this.orphanDependents = orphanDependents;
     return (A) this;
   }
 
-  public java.lang.Boolean hasOrphanDependents() {
+  public Boolean hasOrphanDependents() {
     return this.orphanDependents != null;
   }
 
@@ -234,79 +222,68 @@ public class V1DeleteOptionsFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1Preconditions getPreconditions() {
+  @Deprecated
+  public V1Preconditions getPreconditions() {
     return this.preconditions != null ? this.preconditions.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1Preconditions buildPreconditions() {
+  public V1Preconditions buildPreconditions() {
     return this.preconditions != null ? this.preconditions.build() : null;
   }
 
-  public A withPreconditions(io.kubernetes.client.openapi.models.V1Preconditions preconditions) {
+  public A withPreconditions(V1Preconditions preconditions) {
     _visitables.get("preconditions").remove(this.preconditions);
     if (preconditions != null) {
-      this.preconditions =
-          new io.kubernetes.client.openapi.models.V1PreconditionsBuilder(preconditions);
+      this.preconditions = new V1PreconditionsBuilder(preconditions);
       _visitables.get("preconditions").add(this.preconditions);
+    } else {
+      this.preconditions = null;
+      _visitables.get("preconditions").remove(this.preconditions);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasPreconditions() {
+  public Boolean hasPreconditions() {
     return this.preconditions != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1DeleteOptionsFluent.PreconditionsNested<A>
-      withNewPreconditions() {
-    return new io.kubernetes.client.openapi.models.V1DeleteOptionsFluentImpl
-        .PreconditionsNestedImpl();
+  public V1DeleteOptionsFluent.PreconditionsNested<A> withNewPreconditions() {
+    return new V1DeleteOptionsFluentImpl.PreconditionsNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1DeleteOptionsFluent.PreconditionsNested<A>
-      withNewPreconditionsLike(io.kubernetes.client.openapi.models.V1Preconditions item) {
-    return new io.kubernetes.client.openapi.models.V1DeleteOptionsFluentImpl
-        .PreconditionsNestedImpl(item);
+  public V1DeleteOptionsFluent.PreconditionsNested<A> withNewPreconditionsLike(
+      V1Preconditions item) {
+    return new V1DeleteOptionsFluentImpl.PreconditionsNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1DeleteOptionsFluent.PreconditionsNested<A>
-      editPreconditions() {
+  public V1DeleteOptionsFluent.PreconditionsNested<A> editPreconditions() {
     return withNewPreconditionsLike(getPreconditions());
   }
 
-  public io.kubernetes.client.openapi.models.V1DeleteOptionsFluent.PreconditionsNested<A>
-      editOrNewPreconditions() {
+  public V1DeleteOptionsFluent.PreconditionsNested<A> editOrNewPreconditions() {
     return withNewPreconditionsLike(
-        getPreconditions() != null
-            ? getPreconditions()
-            : new io.kubernetes.client.openapi.models.V1PreconditionsBuilder().build());
+        getPreconditions() != null ? getPreconditions() : new V1PreconditionsBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1DeleteOptionsFluent.PreconditionsNested<A>
-      editOrNewPreconditionsLike(io.kubernetes.client.openapi.models.V1Preconditions item) {
+  public V1DeleteOptionsFluent.PreconditionsNested<A> editOrNewPreconditionsLike(
+      V1Preconditions item) {
     return withNewPreconditionsLike(getPreconditions() != null ? getPreconditions() : item);
   }
 
-  public java.lang.String getPropagationPolicy() {
+  public String getPropagationPolicy() {
     return this.propagationPolicy;
   }
 
-  public A withPropagationPolicy(java.lang.String propagationPolicy) {
+  public A withPropagationPolicy(String propagationPolicy) {
     this.propagationPolicy = propagationPolicy;
     return (A) this;
   }
 
-  public java.lang.Boolean hasPropagationPolicy() {
+  public Boolean hasPropagationPolicy() {
     return this.propagationPolicy != null;
   }
 
-  /** Method is deprecated. use withPropagationPolicy instead. */
-  @java.lang.Deprecated
-  public A withNewPropagationPolicy(java.lang.String original) {
-    return (A) withPropagationPolicy(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1DeleteOptionsFluentImpl that = (V1DeleteOptionsFluentImpl) o;
@@ -341,20 +318,57 @@ public class V1DeleteOptionsFluentImpl<
         super.hashCode());
   }
 
-  public class PreconditionsNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1PreconditionsFluentImpl<
-          io.kubernetes.client.openapi.models.V1DeleteOptionsFluent.PreconditionsNested<N>>
-      implements io.kubernetes.client.openapi.models.V1DeleteOptionsFluent.PreconditionsNested<N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    PreconditionsNestedImpl(io.kubernetes.client.openapi.models.V1Preconditions item) {
-      this.builder = new io.kubernetes.client.openapi.models.V1PreconditionsBuilder(this, item);
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (apiVersion != null) {
+      sb.append("apiVersion:");
+      sb.append(apiVersion + ",");
+    }
+    if (dryRun != null && !dryRun.isEmpty()) {
+      sb.append("dryRun:");
+      sb.append(dryRun + ",");
+    }
+    if (gracePeriodSeconds != null) {
+      sb.append("gracePeriodSeconds:");
+      sb.append(gracePeriodSeconds + ",");
+    }
+    if (kind != null) {
+      sb.append("kind:");
+      sb.append(kind + ",");
+    }
+    if (orphanDependents != null) {
+      sb.append("orphanDependents:");
+      sb.append(orphanDependents + ",");
+    }
+    if (preconditions != null) {
+      sb.append("preconditions:");
+      sb.append(preconditions + ",");
+    }
+    if (propagationPolicy != null) {
+      sb.append("propagationPolicy:");
+      sb.append(propagationPolicy);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  public A withOrphanDependents() {
+    return withOrphanDependents(true);
+  }
+
+  class PreconditionsNestedImpl<N>
+      extends V1PreconditionsFluentImpl<V1DeleteOptionsFluent.PreconditionsNested<N>>
+      implements V1DeleteOptionsFluent.PreconditionsNested<N>, Nested<N> {
+    PreconditionsNestedImpl(V1Preconditions item) {
+      this.builder = new V1PreconditionsBuilder(this, item);
     }
 
     PreconditionsNestedImpl() {
-      this.builder = new io.kubernetes.client.openapi.models.V1PreconditionsBuilder(this);
+      this.builder = new V1PreconditionsBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1PreconditionsBuilder builder;
+    V1PreconditionsBuilder builder;
 
     public N and() {
       return (N) V1DeleteOptionsFluentImpl.this.withPreconditions(builder.build());

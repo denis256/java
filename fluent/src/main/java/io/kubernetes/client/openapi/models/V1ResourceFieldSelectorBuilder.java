@@ -12,41 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1ResourceFieldSelectorBuilder
-    extends io.kubernetes.client.openapi.models.V1ResourceFieldSelectorFluentImpl<
-        io.kubernetes.client.openapi.models.V1ResourceFieldSelectorBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1ResourceFieldSelector,
-        io.kubernetes.client.openapi.models.V1ResourceFieldSelectorBuilder> {
+    extends V1ResourceFieldSelectorFluentImpl<V1ResourceFieldSelectorBuilder>
+    implements VisitableBuilder<V1ResourceFieldSelector, V1ResourceFieldSelectorBuilder> {
   public V1ResourceFieldSelectorBuilder() {
     this(false);
   }
 
-  public V1ResourceFieldSelectorBuilder(java.lang.Boolean validationEnabled) {
+  public V1ResourceFieldSelectorBuilder(Boolean validationEnabled) {
     this(new V1ResourceFieldSelector(), validationEnabled);
   }
 
-  public V1ResourceFieldSelectorBuilder(
-      io.kubernetes.client.openapi.models.V1ResourceFieldSelectorFluent<?> fluent) {
+  public V1ResourceFieldSelectorBuilder(V1ResourceFieldSelectorFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1ResourceFieldSelectorBuilder(
-      io.kubernetes.client.openapi.models.V1ResourceFieldSelectorFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1ResourceFieldSelectorFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1ResourceFieldSelector(), validationEnabled);
   }
 
   public V1ResourceFieldSelectorBuilder(
-      io.kubernetes.client.openapi.models.V1ResourceFieldSelectorFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ResourceFieldSelector instance) {
+      V1ResourceFieldSelectorFluent<?> fluent, V1ResourceFieldSelector instance) {
     this(fluent, instance, false);
   }
 
   public V1ResourceFieldSelectorBuilder(
-      io.kubernetes.client.openapi.models.V1ResourceFieldSelectorFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ResourceFieldSelector instance,
-      java.lang.Boolean validationEnabled) {
+      V1ResourceFieldSelectorFluent<?> fluent,
+      V1ResourceFieldSelector instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withContainerName(instance.getContainerName());
 
@@ -57,14 +53,12 @@ public class V1ResourceFieldSelectorBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1ResourceFieldSelectorBuilder(
-      io.kubernetes.client.openapi.models.V1ResourceFieldSelector instance) {
+  public V1ResourceFieldSelectorBuilder(V1ResourceFieldSelector instance) {
     this(instance, false);
   }
 
   public V1ResourceFieldSelectorBuilder(
-      io.kubernetes.client.openapi.models.V1ResourceFieldSelector instance,
-      java.lang.Boolean validationEnabled) {
+      V1ResourceFieldSelector instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withContainerName(instance.getContainerName());
 
@@ -75,33 +69,14 @@ public class V1ResourceFieldSelectorBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1ResourceFieldSelectorFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1ResourceFieldSelectorFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1ResourceFieldSelector build() {
+  public V1ResourceFieldSelector build() {
     V1ResourceFieldSelector buildable = new V1ResourceFieldSelector();
     buildable.setContainerName(fluent.getContainerName());
     buildable.setDivisor(fluent.getDivisor());
     buildable.setResource(fluent.getResource());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1ResourceFieldSelectorBuilder that = (V1ResourceFieldSelectorBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

@@ -13,53 +13,46 @@ limitations under the License.
 package io.kubernetes.client.openapi.models;
 
 import io.kubernetes.client.custom.IntOrString;
+import io.kubernetes.client.fluent.BaseFluent;
 
 /** Generated */
-public class V1TCPSocketActionFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1TCPSocketActionFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1TCPSocketActionFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1TCPSocketActionFluentImpl<A extends V1TCPSocketActionFluent<A>> extends BaseFluent<A>
+    implements V1TCPSocketActionFluent<A> {
   public V1TCPSocketActionFluentImpl() {}
 
-  public V1TCPSocketActionFluentImpl(
-      io.kubernetes.client.openapi.models.V1TCPSocketAction instance) {
+  public V1TCPSocketActionFluentImpl(V1TCPSocketAction instance) {
     this.withHost(instance.getHost());
 
     this.withPort(instance.getPort());
   }
 
-  private java.lang.String host;
-  private io.kubernetes.client.custom.IntOrString port;
+  private String host;
+  private IntOrString port;
 
-  public java.lang.String getHost() {
+  public String getHost() {
     return this.host;
   }
 
-  public A withHost(java.lang.String host) {
+  public A withHost(String host) {
     this.host = host;
     return (A) this;
   }
 
-  public java.lang.Boolean hasHost() {
+  public Boolean hasHost() {
     return this.host != null;
   }
 
-  /** Method is deprecated. use withHost instead. */
-  @java.lang.Deprecated
-  public A withNewHost(java.lang.String original) {
-    return (A) withHost(new String(original));
-  }
-
-  public io.kubernetes.client.custom.IntOrString getPort() {
+  public IntOrString getPort() {
     return this.port;
   }
 
-  public A withPort(io.kubernetes.client.custom.IntOrString port) {
+  public A withPort(IntOrString port) {
     this.port = port;
     return (A) this;
   }
 
-  public java.lang.Boolean hasPort() {
+  public Boolean hasPort() {
     return this.port != null;
   }
 
@@ -67,11 +60,11 @@ public class V1TCPSocketActionFluentImpl<
     return (A) withPort(new IntOrString(value));
   }
 
-  public A withNewPort(java.lang.String value) {
+  public A withNewPort(String value) {
     return (A) withPort(new IntOrString(value));
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1TCPSocketActionFluentImpl that = (V1TCPSocketActionFluentImpl) o;
@@ -82,5 +75,20 @@ public class V1TCPSocketActionFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(host, port, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (host != null) {
+      sb.append("host:");
+      sb.append(host + ",");
+    }
+    if (port != null) {
+      sb.append("port:");
+      sb.append(port);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

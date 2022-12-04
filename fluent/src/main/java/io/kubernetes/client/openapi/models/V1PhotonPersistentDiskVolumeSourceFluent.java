@@ -12,27 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
 public interface V1PhotonPersistentDiskVolumeSourceFluent<
-        A extends io.kubernetes.client.openapi.models.V1PhotonPersistentDiskVolumeSourceFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getFsType();
+        A extends V1PhotonPersistentDiskVolumeSourceFluent<A>>
+    extends Fluent<A> {
+  public String getFsType();
 
-  public A withFsType(java.lang.String fsType);
+  public A withFsType(String fsType);
 
-  public java.lang.Boolean hasFsType();
+  public Boolean hasFsType();
 
-  /** Method is deprecated. use withFsType instead. */
-  @java.lang.Deprecated
-  public A withNewFsType(java.lang.String original);
+  public String getPdID();
 
-  public java.lang.String getPdID();
+  public A withPdID(String pdID);
 
-  public A withPdID(java.lang.String pdID);
-
-  public java.lang.Boolean hasPdID();
-
-  /** Method is deprecated. use withPdID instead. */
-  @java.lang.Deprecated
-  public A withNewPdID(java.lang.String original);
+  public Boolean hasPdID();
 }

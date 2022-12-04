@@ -12,23 +12,20 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
-public interface StorageV1TokenRequestFluent<
-        A extends io.kubernetes.client.openapi.models.StorageV1TokenRequestFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getAudience();
+public interface StorageV1TokenRequestFluent<A extends StorageV1TokenRequestFluent<A>>
+    extends Fluent<A> {
+  public String getAudience();
 
-  public A withAudience(java.lang.String audience);
+  public A withAudience(String audience);
 
-  public java.lang.Boolean hasAudience();
+  public Boolean hasAudience();
 
-  /** Method is deprecated. use withAudience instead. */
-  @java.lang.Deprecated
-  public A withNewAudience(java.lang.String original);
+  public Long getExpirationSeconds();
 
-  public java.lang.Long getExpirationSeconds();
+  public A withExpirationSeconds(Long expirationSeconds);
 
-  public A withExpirationSeconds(java.lang.Long expirationSeconds);
-
-  public java.lang.Boolean hasExpirationSeconds();
+  public Boolean hasExpirationSeconds();
 }

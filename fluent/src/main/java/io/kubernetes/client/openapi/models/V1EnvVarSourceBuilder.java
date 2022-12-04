@@ -12,40 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1EnvVarSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1EnvVarSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1EnvVarSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1EnvVarSource,
-        io.kubernetes.client.openapi.models.V1EnvVarSourceBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1EnvVarSourceBuilder extends V1EnvVarSourceFluentImpl<V1EnvVarSourceBuilder>
+    implements VisitableBuilder<V1EnvVarSource, V1EnvVarSourceBuilder> {
   public V1EnvVarSourceBuilder() {
     this(false);
   }
 
-  public V1EnvVarSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1EnvVarSourceBuilder(Boolean validationEnabled) {
     this(new V1EnvVarSource(), validationEnabled);
   }
 
-  public V1EnvVarSourceBuilder(io.kubernetes.client.openapi.models.V1EnvVarSourceFluent<?> fluent) {
+  public V1EnvVarSourceBuilder(V1EnvVarSourceFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1EnvVarSourceBuilder(
-      io.kubernetes.client.openapi.models.V1EnvVarSourceFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1EnvVarSourceBuilder(V1EnvVarSourceFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1EnvVarSource(), validationEnabled);
   }
 
-  public V1EnvVarSourceBuilder(
-      io.kubernetes.client.openapi.models.V1EnvVarSourceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1EnvVarSource instance) {
+  public V1EnvVarSourceBuilder(V1EnvVarSourceFluent<?> fluent, V1EnvVarSource instance) {
     this(fluent, instance, false);
   }
 
   public V1EnvVarSourceBuilder(
-      io.kubernetes.client.openapi.models.V1EnvVarSourceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1EnvVarSource instance,
-      java.lang.Boolean validationEnabled) {
+      V1EnvVarSourceFluent<?> fluent, V1EnvVarSource instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withConfigMapKeyRef(instance.getConfigMapKeyRef());
 
@@ -58,13 +50,11 @@ public class V1EnvVarSourceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1EnvVarSourceBuilder(io.kubernetes.client.openapi.models.V1EnvVarSource instance) {
+  public V1EnvVarSourceBuilder(V1EnvVarSource instance) {
     this(instance, false);
   }
 
-  public V1EnvVarSourceBuilder(
-      io.kubernetes.client.openapi.models.V1EnvVarSource instance,
-      java.lang.Boolean validationEnabled) {
+  public V1EnvVarSourceBuilder(V1EnvVarSource instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withConfigMapKeyRef(instance.getConfigMapKeyRef());
 
@@ -77,34 +67,15 @@ public class V1EnvVarSourceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1EnvVarSourceFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1EnvVarSourceFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1EnvVarSource build() {
+  public V1EnvVarSource build() {
     V1EnvVarSource buildable = new V1EnvVarSource();
     buildable.setConfigMapKeyRef(fluent.getConfigMapKeyRef());
     buildable.setFieldRef(fluent.getFieldRef());
     buildable.setResourceFieldRef(fluent.getResourceFieldRef());
     buildable.setSecretKeyRef(fluent.getSecretKeyRef());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1EnvVarSourceBuilder that = (V1EnvVarSourceBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

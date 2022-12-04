@@ -12,41 +12,34 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1PersistentVolumeBuilder
-    extends io.kubernetes.client.openapi.models.V1PersistentVolumeFluentImpl<
-        io.kubernetes.client.openapi.models.V1PersistentVolumeBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1PersistentVolume,
-        io.kubernetes.client.openapi.models.V1PersistentVolumeBuilder> {
+    extends V1PersistentVolumeFluentImpl<V1PersistentVolumeBuilder>
+    implements VisitableBuilder<V1PersistentVolume, V1PersistentVolumeBuilder> {
   public V1PersistentVolumeBuilder() {
     this(false);
   }
 
-  public V1PersistentVolumeBuilder(java.lang.Boolean validationEnabled) {
+  public V1PersistentVolumeBuilder(Boolean validationEnabled) {
     this(new V1PersistentVolume(), validationEnabled);
   }
 
-  public V1PersistentVolumeBuilder(
-      io.kubernetes.client.openapi.models.V1PersistentVolumeFluent<?> fluent) {
+  public V1PersistentVolumeBuilder(V1PersistentVolumeFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1PersistentVolumeBuilder(
-      io.kubernetes.client.openapi.models.V1PersistentVolumeFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1PersistentVolumeBuilder(V1PersistentVolumeFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1PersistentVolume(), validationEnabled);
   }
 
   public V1PersistentVolumeBuilder(
-      io.kubernetes.client.openapi.models.V1PersistentVolumeFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1PersistentVolume instance) {
+      V1PersistentVolumeFluent<?> fluent, V1PersistentVolume instance) {
     this(fluent, instance, false);
   }
 
   public V1PersistentVolumeBuilder(
-      io.kubernetes.client.openapi.models.V1PersistentVolumeFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1PersistentVolume instance,
-      java.lang.Boolean validationEnabled) {
+      V1PersistentVolumeFluent<?> fluent, V1PersistentVolume instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withApiVersion(instance.getApiVersion());
 
@@ -61,14 +54,11 @@ public class V1PersistentVolumeBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1PersistentVolumeBuilder(
-      io.kubernetes.client.openapi.models.V1PersistentVolume instance) {
+  public V1PersistentVolumeBuilder(V1PersistentVolume instance) {
     this(instance, false);
   }
 
-  public V1PersistentVolumeBuilder(
-      io.kubernetes.client.openapi.models.V1PersistentVolume instance,
-      java.lang.Boolean validationEnabled) {
+  public V1PersistentVolumeBuilder(V1PersistentVolume instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withApiVersion(instance.getApiVersion());
 
@@ -83,10 +73,10 @@ public class V1PersistentVolumeBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1PersistentVolumeFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1PersistentVolumeFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1PersistentVolume build() {
+  public V1PersistentVolume build() {
     V1PersistentVolume buildable = new V1PersistentVolume();
     buildable.setApiVersion(fluent.getApiVersion());
     buildable.setKind(fluent.getKind());
@@ -94,24 +84,5 @@ public class V1PersistentVolumeBuilder
     buildable.setSpec(fluent.getSpec());
     buildable.setStatus(fluent.getStatus());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1PersistentVolumeBuilder that = (V1PersistentVolumeBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

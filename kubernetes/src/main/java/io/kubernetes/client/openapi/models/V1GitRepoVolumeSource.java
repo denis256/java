@@ -1,5 +1,5 @@
 /*
-Copyright 2021 The Kubernetes Authors.
+Copyright 2022 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -29,7 +29,7 @@ import java.util.Objects;
         "Represents a volume that is populated with the contents of a git repository. Git repo volumes do not support ownership management. Git repo volumes support SELinux relabeling.  DEPRECATED: GitRepo is deprecated. To provision a container with a git repo, mount an EmptyDir into an InitContainer that clones the repo using git, then mount the EmptyDir into the Pod's container.")
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    date = "2021-12-10T19:11:23.904Z[Etc/UTC]")
+    date = "2022-09-15T17:00:37.921Z[Etc/UTC]")
 public class V1GitRepoVolumeSource {
   public static final String SERIALIZED_NAME_DIRECTORY = "directory";
 
@@ -53,16 +53,16 @@ public class V1GitRepoVolumeSource {
   }
 
   /**
-   * Target directory name. Must not contain or start with &#39;..&#39;. If &#39;.&#39; is supplied,
-   * the volume directory will be the git repository. Otherwise, if specified, the volume will
-   * contain the git repository in the subdirectory with the given name.
+   * directory is the target directory name. Must not contain or start with &#39;..&#39;. If
+   * &#39;.&#39; is supplied, the volume directory will be the git repository. Otherwise, if
+   * specified, the volume will contain the git repository in the subdirectory with the given name.
    *
    * @return directory
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "Target directory name. Must not contain or start with '..'.  If '.' is supplied, the volume directory will be the git repository.  Otherwise, if specified, the volume will contain the git repository in the subdirectory with the given name.")
+          "directory is the target directory name. Must not contain or start with '..'.  If '.' is supplied, the volume directory will be the git repository.  Otherwise, if specified, the volume will contain the git repository in the subdirectory with the given name.")
   public String getDirectory() {
     return directory;
   }
@@ -78,11 +78,11 @@ public class V1GitRepoVolumeSource {
   }
 
   /**
-   * Repository URL
+   * repository is the URL
    *
    * @return repository
    */
-  @ApiModelProperty(required = true, value = "Repository URL")
+  @ApiModelProperty(required = true, value = "repository is the URL")
   public String getRepository() {
     return repository;
   }
@@ -98,12 +98,12 @@ public class V1GitRepoVolumeSource {
   }
 
   /**
-   * Commit hash for the specified revision.
+   * revision is the commit hash for the specified revision.
    *
    * @return revision
    */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Commit hash for the specified revision.")
+  @ApiModelProperty(value = "revision is the commit hash for the specified revision.")
   public String getRevision() {
     return revision;
   }

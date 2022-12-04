@@ -12,14 +12,15 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class VersionInfoFluentImpl<
-        A extends io.kubernetes.client.openapi.models.VersionInfoFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.VersionInfoFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class VersionInfoFluentImpl<A extends VersionInfoFluent<A>> extends BaseFluent<A>
+    implements VersionInfoFluent<A> {
   public VersionInfoFluentImpl() {}
 
-  public VersionInfoFluentImpl(io.kubernetes.client.openapi.models.VersionInfo instance) {
+  public VersionInfoFluentImpl(VersionInfo instance) {
     this.withBuildDate(instance.getBuildDate());
 
     this.withCompiler(instance.getCompiler());
@@ -39,188 +40,134 @@ public class VersionInfoFluentImpl<
     this.withPlatform(instance.getPlatform());
   }
 
-  private java.lang.String buildDate;
-  private java.lang.String compiler;
-  private java.lang.String gitCommit;
-  private java.lang.String gitTreeState;
-  private java.lang.String gitVersion;
-  private java.lang.String goVersion;
-  private java.lang.String major;
-  private java.lang.String minor;
-  private java.lang.String platform;
+  private String buildDate;
+  private String compiler;
+  private String gitCommit;
+  private String gitTreeState;
+  private String gitVersion;
+  private String goVersion;
+  private String major;
+  private String minor;
+  private String platform;
 
-  public java.lang.String getBuildDate() {
+  public String getBuildDate() {
     return this.buildDate;
   }
 
-  public A withBuildDate(java.lang.String buildDate) {
+  public A withBuildDate(String buildDate) {
     this.buildDate = buildDate;
     return (A) this;
   }
 
-  public java.lang.Boolean hasBuildDate() {
+  public Boolean hasBuildDate() {
     return this.buildDate != null;
   }
 
-  /** Method is deprecated. use withBuildDate instead. */
-  @java.lang.Deprecated
-  public A withNewBuildDate(java.lang.String original) {
-    return (A) withBuildDate(new String(original));
-  }
-
-  public java.lang.String getCompiler() {
+  public String getCompiler() {
     return this.compiler;
   }
 
-  public A withCompiler(java.lang.String compiler) {
+  public A withCompiler(String compiler) {
     this.compiler = compiler;
     return (A) this;
   }
 
-  public java.lang.Boolean hasCompiler() {
+  public Boolean hasCompiler() {
     return this.compiler != null;
   }
 
-  /** Method is deprecated. use withCompiler instead. */
-  @java.lang.Deprecated
-  public A withNewCompiler(java.lang.String original) {
-    return (A) withCompiler(new String(original));
-  }
-
-  public java.lang.String getGitCommit() {
+  public String getGitCommit() {
     return this.gitCommit;
   }
 
-  public A withGitCommit(java.lang.String gitCommit) {
+  public A withGitCommit(String gitCommit) {
     this.gitCommit = gitCommit;
     return (A) this;
   }
 
-  public java.lang.Boolean hasGitCommit() {
+  public Boolean hasGitCommit() {
     return this.gitCommit != null;
   }
 
-  /** Method is deprecated. use withGitCommit instead. */
-  @java.lang.Deprecated
-  public A withNewGitCommit(java.lang.String original) {
-    return (A) withGitCommit(new String(original));
-  }
-
-  public java.lang.String getGitTreeState() {
+  public String getGitTreeState() {
     return this.gitTreeState;
   }
 
-  public A withGitTreeState(java.lang.String gitTreeState) {
+  public A withGitTreeState(String gitTreeState) {
     this.gitTreeState = gitTreeState;
     return (A) this;
   }
 
-  public java.lang.Boolean hasGitTreeState() {
+  public Boolean hasGitTreeState() {
     return this.gitTreeState != null;
   }
 
-  /** Method is deprecated. use withGitTreeState instead. */
-  @java.lang.Deprecated
-  public A withNewGitTreeState(java.lang.String original) {
-    return (A) withGitTreeState(new String(original));
-  }
-
-  public java.lang.String getGitVersion() {
+  public String getGitVersion() {
     return this.gitVersion;
   }
 
-  public A withGitVersion(java.lang.String gitVersion) {
+  public A withGitVersion(String gitVersion) {
     this.gitVersion = gitVersion;
     return (A) this;
   }
 
-  public java.lang.Boolean hasGitVersion() {
+  public Boolean hasGitVersion() {
     return this.gitVersion != null;
   }
 
-  /** Method is deprecated. use withGitVersion instead. */
-  @java.lang.Deprecated
-  public A withNewGitVersion(java.lang.String original) {
-    return (A) withGitVersion(new String(original));
-  }
-
-  public java.lang.String getGoVersion() {
+  public String getGoVersion() {
     return this.goVersion;
   }
 
-  public A withGoVersion(java.lang.String goVersion) {
+  public A withGoVersion(String goVersion) {
     this.goVersion = goVersion;
     return (A) this;
   }
 
-  public java.lang.Boolean hasGoVersion() {
+  public Boolean hasGoVersion() {
     return this.goVersion != null;
   }
 
-  /** Method is deprecated. use withGoVersion instead. */
-  @java.lang.Deprecated
-  public A withNewGoVersion(java.lang.String original) {
-    return (A) withGoVersion(new String(original));
-  }
-
-  public java.lang.String getMajor() {
+  public String getMajor() {
     return this.major;
   }
 
-  public A withMajor(java.lang.String major) {
+  public A withMajor(String major) {
     this.major = major;
     return (A) this;
   }
 
-  public java.lang.Boolean hasMajor() {
+  public Boolean hasMajor() {
     return this.major != null;
   }
 
-  /** Method is deprecated. use withMajor instead. */
-  @java.lang.Deprecated
-  public A withNewMajor(java.lang.String original) {
-    return (A) withMajor(new String(original));
-  }
-
-  public java.lang.String getMinor() {
+  public String getMinor() {
     return this.minor;
   }
 
-  public A withMinor(java.lang.String minor) {
+  public A withMinor(String minor) {
     this.minor = minor;
     return (A) this;
   }
 
-  public java.lang.Boolean hasMinor() {
+  public Boolean hasMinor() {
     return this.minor != null;
   }
 
-  /** Method is deprecated. use withMinor instead. */
-  @java.lang.Deprecated
-  public A withNewMinor(java.lang.String original) {
-    return (A) withMinor(new String(original));
-  }
-
-  public java.lang.String getPlatform() {
+  public String getPlatform() {
     return this.platform;
   }
 
-  public A withPlatform(java.lang.String platform) {
+  public A withPlatform(String platform) {
     this.platform = platform;
     return (A) this;
   }
 
-  public java.lang.Boolean hasPlatform() {
+  public Boolean hasPlatform() {
     return this.platform != null;
   }
 
-  /** Method is deprecated. use withPlatform instead. */
-  @java.lang.Deprecated
-  public A withNewPlatform(java.lang.String original) {
-    return (A) withPlatform(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     VersionInfoFluentImpl that = (VersionInfoFluentImpl) o;
@@ -253,5 +200,48 @@ public class VersionInfoFluentImpl<
         minor,
         platform,
         super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (buildDate != null) {
+      sb.append("buildDate:");
+      sb.append(buildDate + ",");
+    }
+    if (compiler != null) {
+      sb.append("compiler:");
+      sb.append(compiler + ",");
+    }
+    if (gitCommit != null) {
+      sb.append("gitCommit:");
+      sb.append(gitCommit + ",");
+    }
+    if (gitTreeState != null) {
+      sb.append("gitTreeState:");
+      sb.append(gitTreeState + ",");
+    }
+    if (gitVersion != null) {
+      sb.append("gitVersion:");
+      sb.append(gitVersion + ",");
+    }
+    if (goVersion != null) {
+      sb.append("goVersion:");
+      sb.append(goVersion + ",");
+    }
+    if (major != null) {
+      sb.append("major:");
+      sb.append(major + ",");
+    }
+    if (minor != null) {
+      sb.append("minor:");
+      sb.append(minor + ",");
+    }
+    if (platform != null) {
+      sb.append("platform:");
+      sb.append(platform);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

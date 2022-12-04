@@ -12,15 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+
 /** Generated */
-public class V1VolumeAttachmentFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1VolumeAttachmentFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1VolumeAttachmentFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1VolumeAttachmentFluentImpl<A extends V1VolumeAttachmentFluent<A>>
+    extends BaseFluent<A> implements V1VolumeAttachmentFluent<A> {
   public V1VolumeAttachmentFluentImpl() {}
 
-  public V1VolumeAttachmentFluentImpl(
-      io.kubernetes.client.openapi.models.V1VolumeAttachment instance) {
+  public V1VolumeAttachmentFluentImpl(V1VolumeAttachment instance) {
     this.withApiVersion(instance.getApiVersion());
 
     this.withKind(instance.getKind());
@@ -32,48 +33,36 @@ public class V1VolumeAttachmentFluentImpl<
     this.withStatus(instance.getStatus());
   }
 
-  private java.lang.String apiVersion;
-  private java.lang.String kind;
-  private io.kubernetes.client.openapi.models.V1ObjectMetaBuilder metadata;
-  private io.kubernetes.client.openapi.models.V1VolumeAttachmentSpecBuilder spec;
-  private io.kubernetes.client.openapi.models.V1VolumeAttachmentStatusBuilder status;
+  private String apiVersion;
+  private String kind;
+  private V1ObjectMetaBuilder metadata;
+  private V1VolumeAttachmentSpecBuilder spec;
+  private V1VolumeAttachmentStatusBuilder status;
 
-  public java.lang.String getApiVersion() {
+  public String getApiVersion() {
     return this.apiVersion;
   }
 
-  public A withApiVersion(java.lang.String apiVersion) {
+  public A withApiVersion(String apiVersion) {
     this.apiVersion = apiVersion;
     return (A) this;
   }
 
-  public java.lang.Boolean hasApiVersion() {
+  public Boolean hasApiVersion() {
     return this.apiVersion != null;
   }
 
-  /** Method is deprecated. use withApiVersion instead. */
-  @java.lang.Deprecated
-  public A withNewApiVersion(java.lang.String original) {
-    return (A) withApiVersion(new String(original));
-  }
-
-  public java.lang.String getKind() {
+  public String getKind() {
     return this.kind;
   }
 
-  public A withKind(java.lang.String kind) {
+  public A withKind(String kind) {
     this.kind = kind;
     return (A) this;
   }
 
-  public java.lang.Boolean hasKind() {
+  public Boolean hasKind() {
     return this.kind != null;
-  }
-
-  /** Method is deprecated. use withKind instead. */
-  @java.lang.Deprecated
-  public A withNewKind(java.lang.String original) {
-    return (A) withKind(new String(original));
   }
 
   /**
@@ -81,55 +70,49 @@ public class V1VolumeAttachmentFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ObjectMeta getMetadata() {
+  @Deprecated
+  public V1ObjectMeta getMetadata() {
     return this.metadata != null ? this.metadata.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1ObjectMeta buildMetadata() {
+  public V1ObjectMeta buildMetadata() {
     return this.metadata != null ? this.metadata.build() : null;
   }
 
-  public A withMetadata(io.kubernetes.client.openapi.models.V1ObjectMeta metadata) {
+  public A withMetadata(V1ObjectMeta metadata) {
     _visitables.get("metadata").remove(this.metadata);
     if (metadata != null) {
-      this.metadata = new io.kubernetes.client.openapi.models.V1ObjectMetaBuilder(metadata);
+      this.metadata = new V1ObjectMetaBuilder(metadata);
       _visitables.get("metadata").add(this.metadata);
+    } else {
+      this.metadata = null;
+      _visitables.get("metadata").remove(this.metadata);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasMetadata() {
+  public Boolean hasMetadata() {
     return this.metadata != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1VolumeAttachmentFluent.MetadataNested<A>
-      withNewMetadata() {
-    return new io.kubernetes.client.openapi.models.V1VolumeAttachmentFluentImpl
-        .MetadataNestedImpl();
+  public V1VolumeAttachmentFluent.MetadataNested<A> withNewMetadata() {
+    return new V1VolumeAttachmentFluentImpl.MetadataNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1VolumeAttachmentFluent.MetadataNested<A>
-      withNewMetadataLike(io.kubernetes.client.openapi.models.V1ObjectMeta item) {
-    return new io.kubernetes.client.openapi.models.V1VolumeAttachmentFluentImpl.MetadataNestedImpl(
-        item);
+  public V1VolumeAttachmentFluent.MetadataNested<A> withNewMetadataLike(V1ObjectMeta item) {
+    return new V1VolumeAttachmentFluentImpl.MetadataNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1VolumeAttachmentFluent.MetadataNested<A>
-      editMetadata() {
+  public V1VolumeAttachmentFluent.MetadataNested<A> editMetadata() {
     return withNewMetadataLike(getMetadata());
   }
 
-  public io.kubernetes.client.openapi.models.V1VolumeAttachmentFluent.MetadataNested<A>
-      editOrNewMetadata() {
+  public V1VolumeAttachmentFluent.MetadataNested<A> editOrNewMetadata() {
     return withNewMetadataLike(
-        getMetadata() != null
-            ? getMetadata()
-            : new io.kubernetes.client.openapi.models.V1ObjectMetaBuilder().build());
+        getMetadata() != null ? getMetadata() : new V1ObjectMetaBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1VolumeAttachmentFluent.MetadataNested<A>
-      editOrNewMetadataLike(io.kubernetes.client.openapi.models.V1ObjectMeta item) {
+  public V1VolumeAttachmentFluent.MetadataNested<A> editOrNewMetadataLike(V1ObjectMeta item) {
     return withNewMetadataLike(getMetadata() != null ? getMetadata() : item);
   }
 
@@ -138,52 +121,49 @@ public class V1VolumeAttachmentFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1VolumeAttachmentSpec getSpec() {
+  @Deprecated
+  public V1VolumeAttachmentSpec getSpec() {
     return this.spec != null ? this.spec.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1VolumeAttachmentSpec buildSpec() {
+  public V1VolumeAttachmentSpec buildSpec() {
     return this.spec != null ? this.spec.build() : null;
   }
 
-  public A withSpec(io.kubernetes.client.openapi.models.V1VolumeAttachmentSpec spec) {
+  public A withSpec(V1VolumeAttachmentSpec spec) {
     _visitables.get("spec").remove(this.spec);
     if (spec != null) {
-      this.spec = new io.kubernetes.client.openapi.models.V1VolumeAttachmentSpecBuilder(spec);
+      this.spec = new V1VolumeAttachmentSpecBuilder(spec);
       _visitables.get("spec").add(this.spec);
+    } else {
+      this.spec = null;
+      _visitables.get("spec").remove(this.spec);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasSpec() {
+  public Boolean hasSpec() {
     return this.spec != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1VolumeAttachmentFluent.SpecNested<A> withNewSpec() {
-    return new io.kubernetes.client.openapi.models.V1VolumeAttachmentFluentImpl.SpecNestedImpl();
+  public V1VolumeAttachmentFluent.SpecNested<A> withNewSpec() {
+    return new V1VolumeAttachmentFluentImpl.SpecNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1VolumeAttachmentFluent.SpecNested<A> withNewSpecLike(
-      io.kubernetes.client.openapi.models.V1VolumeAttachmentSpec item) {
-    return new io.kubernetes.client.openapi.models.V1VolumeAttachmentFluentImpl.SpecNestedImpl(
-        item);
+  public V1VolumeAttachmentFluent.SpecNested<A> withNewSpecLike(V1VolumeAttachmentSpec item) {
+    return new V1VolumeAttachmentFluentImpl.SpecNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1VolumeAttachmentFluent.SpecNested<A> editSpec() {
+  public V1VolumeAttachmentFluent.SpecNested<A> editSpec() {
     return withNewSpecLike(getSpec());
   }
 
-  public io.kubernetes.client.openapi.models.V1VolumeAttachmentFluent.SpecNested<A>
-      editOrNewSpec() {
+  public V1VolumeAttachmentFluent.SpecNested<A> editOrNewSpec() {
     return withNewSpecLike(
-        getSpec() != null
-            ? getSpec()
-            : new io.kubernetes.client.openapi.models.V1VolumeAttachmentSpecBuilder().build());
+        getSpec() != null ? getSpec() : new V1VolumeAttachmentSpecBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1VolumeAttachmentFluent.SpecNested<A>
-      editOrNewSpecLike(io.kubernetes.client.openapi.models.V1VolumeAttachmentSpec item) {
+  public V1VolumeAttachmentFluent.SpecNested<A> editOrNewSpecLike(V1VolumeAttachmentSpec item) {
     return withNewSpecLike(getSpec() != null ? getSpec() : item);
   }
 
@@ -192,57 +172,54 @@ public class V1VolumeAttachmentFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1VolumeAttachmentStatus getStatus() {
+  @Deprecated
+  public V1VolumeAttachmentStatus getStatus() {
     return this.status != null ? this.status.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1VolumeAttachmentStatus buildStatus() {
+  public V1VolumeAttachmentStatus buildStatus() {
     return this.status != null ? this.status.build() : null;
   }
 
-  public A withStatus(io.kubernetes.client.openapi.models.V1VolumeAttachmentStatus status) {
+  public A withStatus(V1VolumeAttachmentStatus status) {
     _visitables.get("status").remove(this.status);
     if (status != null) {
-      this.status = new io.kubernetes.client.openapi.models.V1VolumeAttachmentStatusBuilder(status);
+      this.status = new V1VolumeAttachmentStatusBuilder(status);
       _visitables.get("status").add(this.status);
+    } else {
+      this.status = null;
+      _visitables.get("status").remove(this.status);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasStatus() {
+  public Boolean hasStatus() {
     return this.status != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1VolumeAttachmentFluent.StatusNested<A>
-      withNewStatus() {
-    return new io.kubernetes.client.openapi.models.V1VolumeAttachmentFluentImpl.StatusNestedImpl();
+  public V1VolumeAttachmentFluent.StatusNested<A> withNewStatus() {
+    return new V1VolumeAttachmentFluentImpl.StatusNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1VolumeAttachmentFluent.StatusNested<A>
-      withNewStatusLike(io.kubernetes.client.openapi.models.V1VolumeAttachmentStatus item) {
-    return new io.kubernetes.client.openapi.models.V1VolumeAttachmentFluentImpl.StatusNestedImpl(
-        item);
+  public V1VolumeAttachmentFluent.StatusNested<A> withNewStatusLike(V1VolumeAttachmentStatus item) {
+    return new V1VolumeAttachmentFluentImpl.StatusNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1VolumeAttachmentFluent.StatusNested<A> editStatus() {
+  public V1VolumeAttachmentFluent.StatusNested<A> editStatus() {
     return withNewStatusLike(getStatus());
   }
 
-  public io.kubernetes.client.openapi.models.V1VolumeAttachmentFluent.StatusNested<A>
-      editOrNewStatus() {
+  public V1VolumeAttachmentFluent.StatusNested<A> editOrNewStatus() {
     return withNewStatusLike(
-        getStatus() != null
-            ? getStatus()
-            : new io.kubernetes.client.openapi.models.V1VolumeAttachmentStatusBuilder().build());
+        getStatus() != null ? getStatus() : new V1VolumeAttachmentStatusBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1VolumeAttachmentFluent.StatusNested<A>
-      editOrNewStatusLike(io.kubernetes.client.openapi.models.V1VolumeAttachmentStatus item) {
+  public V1VolumeAttachmentFluent.StatusNested<A> editOrNewStatusLike(
+      V1VolumeAttachmentStatus item) {
     return withNewStatusLike(getStatus() != null ? getStatus() : item);
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1VolumeAttachmentFluentImpl that = (V1VolumeAttachmentFluentImpl) o;
@@ -259,20 +236,45 @@ public class V1VolumeAttachmentFluentImpl<
     return java.util.Objects.hash(apiVersion, kind, metadata, spec, status, super.hashCode());
   }
 
-  public class MetadataNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1ObjectMetaFluentImpl<
-          io.kubernetes.client.openapi.models.V1VolumeAttachmentFluent.MetadataNested<N>>
-      implements io.kubernetes.client.openapi.models.V1VolumeAttachmentFluent.MetadataNested<N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    MetadataNestedImpl(io.kubernetes.client.openapi.models.V1ObjectMeta item) {
-      this.builder = new io.kubernetes.client.openapi.models.V1ObjectMetaBuilder(this, item);
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (apiVersion != null) {
+      sb.append("apiVersion:");
+      sb.append(apiVersion + ",");
+    }
+    if (kind != null) {
+      sb.append("kind:");
+      sb.append(kind + ",");
+    }
+    if (metadata != null) {
+      sb.append("metadata:");
+      sb.append(metadata + ",");
+    }
+    if (spec != null) {
+      sb.append("spec:");
+      sb.append(spec + ",");
+    }
+    if (status != null) {
+      sb.append("status:");
+      sb.append(status);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class MetadataNestedImpl<N>
+      extends V1ObjectMetaFluentImpl<V1VolumeAttachmentFluent.MetadataNested<N>>
+      implements V1VolumeAttachmentFluent.MetadataNested<N>, Nested<N> {
+    MetadataNestedImpl(V1ObjectMeta item) {
+      this.builder = new V1ObjectMetaBuilder(this, item);
     }
 
     MetadataNestedImpl() {
-      this.builder = new io.kubernetes.client.openapi.models.V1ObjectMetaBuilder(this);
+      this.builder = new V1ObjectMetaBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1ObjectMetaBuilder builder;
+    V1ObjectMetaBuilder builder;
 
     public N and() {
       return (N) V1VolumeAttachmentFluentImpl.this.withMetadata(builder.build());
@@ -283,21 +285,18 @@ public class V1VolumeAttachmentFluentImpl<
     }
   }
 
-  public class SpecNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1VolumeAttachmentSpecFluentImpl<
-          io.kubernetes.client.openapi.models.V1VolumeAttachmentFluent.SpecNested<N>>
-      implements io.kubernetes.client.openapi.models.V1VolumeAttachmentFluent.SpecNested<N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    SpecNestedImpl(io.kubernetes.client.openapi.models.V1VolumeAttachmentSpec item) {
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1VolumeAttachmentSpecBuilder(this, item);
+  class SpecNestedImpl<N>
+      extends V1VolumeAttachmentSpecFluentImpl<V1VolumeAttachmentFluent.SpecNested<N>>
+      implements V1VolumeAttachmentFluent.SpecNested<N>, Nested<N> {
+    SpecNestedImpl(V1VolumeAttachmentSpec item) {
+      this.builder = new V1VolumeAttachmentSpecBuilder(this, item);
     }
 
     SpecNestedImpl() {
-      this.builder = new io.kubernetes.client.openapi.models.V1VolumeAttachmentSpecBuilder(this);
+      this.builder = new V1VolumeAttachmentSpecBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1VolumeAttachmentSpecBuilder builder;
+    V1VolumeAttachmentSpecBuilder builder;
 
     public N and() {
       return (N) V1VolumeAttachmentFluentImpl.this.withSpec(builder.build());
@@ -308,21 +307,18 @@ public class V1VolumeAttachmentFluentImpl<
     }
   }
 
-  public class StatusNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1VolumeAttachmentStatusFluentImpl<
-          io.kubernetes.client.openapi.models.V1VolumeAttachmentFluent.StatusNested<N>>
-      implements io.kubernetes.client.openapi.models.V1VolumeAttachmentFluent.StatusNested<N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    StatusNestedImpl(io.kubernetes.client.openapi.models.V1VolumeAttachmentStatus item) {
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1VolumeAttachmentStatusBuilder(this, item);
+  class StatusNestedImpl<N>
+      extends V1VolumeAttachmentStatusFluentImpl<V1VolumeAttachmentFluent.StatusNested<N>>
+      implements V1VolumeAttachmentFluent.StatusNested<N>, Nested<N> {
+    StatusNestedImpl(V1VolumeAttachmentStatus item) {
+      this.builder = new V1VolumeAttachmentStatusBuilder(this, item);
     }
 
     StatusNestedImpl() {
-      this.builder = new io.kubernetes.client.openapi.models.V1VolumeAttachmentStatusBuilder(this);
+      this.builder = new V1VolumeAttachmentStatusBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1VolumeAttachmentStatusBuilder builder;
+    V1VolumeAttachmentStatusBuilder builder;
 
     public N and() {
       return (N) V1VolumeAttachmentFluentImpl.this.withStatus(builder.build());

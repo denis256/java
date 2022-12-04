@@ -12,15 +12,15 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1AzureDiskVolumeSourceFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1AzureDiskVolumeSourceFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1AzureDiskVolumeSourceFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1AzureDiskVolumeSourceFluentImpl<A extends V1AzureDiskVolumeSourceFluent<A>>
+    extends BaseFluent<A> implements V1AzureDiskVolumeSourceFluent<A> {
   public V1AzureDiskVolumeSourceFluentImpl() {}
 
-  public V1AzureDiskVolumeSourceFluentImpl(
-      io.kubernetes.client.openapi.models.V1AzureDiskVolumeSource instance) {
+  public V1AzureDiskVolumeSourceFluentImpl(V1AzureDiskVolumeSource instance) {
     this.withCachingMode(instance.getCachingMode());
 
     this.withDiskName(instance.getDiskName());
@@ -34,122 +34,92 @@ public class V1AzureDiskVolumeSourceFluentImpl<
     this.withReadOnly(instance.getReadOnly());
   }
 
-  private java.lang.String cachingMode;
-  private java.lang.String diskName;
-  private java.lang.String diskURI;
-  private java.lang.String fsType;
-  private java.lang.String kind;
-  private java.lang.Boolean readOnly;
+  private String cachingMode;
+  private String diskName;
+  private String diskURI;
+  private String fsType;
+  private String kind;
+  private Boolean readOnly;
 
-  public java.lang.String getCachingMode() {
+  public String getCachingMode() {
     return this.cachingMode;
   }
 
-  public A withCachingMode(java.lang.String cachingMode) {
+  public A withCachingMode(String cachingMode) {
     this.cachingMode = cachingMode;
     return (A) this;
   }
 
-  public java.lang.Boolean hasCachingMode() {
+  public Boolean hasCachingMode() {
     return this.cachingMode != null;
   }
 
-  /** Method is deprecated. use withCachingMode instead. */
-  @java.lang.Deprecated
-  public A withNewCachingMode(java.lang.String original) {
-    return (A) withCachingMode(new String(original));
-  }
-
-  public java.lang.String getDiskName() {
+  public String getDiskName() {
     return this.diskName;
   }
 
-  public A withDiskName(java.lang.String diskName) {
+  public A withDiskName(String diskName) {
     this.diskName = diskName;
     return (A) this;
   }
 
-  public java.lang.Boolean hasDiskName() {
+  public Boolean hasDiskName() {
     return this.diskName != null;
   }
 
-  /** Method is deprecated. use withDiskName instead. */
-  @java.lang.Deprecated
-  public A withNewDiskName(java.lang.String original) {
-    return (A) withDiskName(new String(original));
-  }
-
-  public java.lang.String getDiskURI() {
+  public String getDiskURI() {
     return this.diskURI;
   }
 
-  public A withDiskURI(java.lang.String diskURI) {
+  public A withDiskURI(String diskURI) {
     this.diskURI = diskURI;
     return (A) this;
   }
 
-  public java.lang.Boolean hasDiskURI() {
+  public Boolean hasDiskURI() {
     return this.diskURI != null;
   }
 
-  /** Method is deprecated. use withDiskURI instead. */
-  @java.lang.Deprecated
-  public A withNewDiskURI(java.lang.String original) {
-    return (A) withDiskURI(new String(original));
-  }
-
-  public java.lang.String getFsType() {
+  public String getFsType() {
     return this.fsType;
   }
 
-  public A withFsType(java.lang.String fsType) {
+  public A withFsType(String fsType) {
     this.fsType = fsType;
     return (A) this;
   }
 
-  public java.lang.Boolean hasFsType() {
+  public Boolean hasFsType() {
     return this.fsType != null;
   }
 
-  /** Method is deprecated. use withFsType instead. */
-  @java.lang.Deprecated
-  public A withNewFsType(java.lang.String original) {
-    return (A) withFsType(new String(original));
-  }
-
-  public java.lang.String getKind() {
+  public String getKind() {
     return this.kind;
   }
 
-  public A withKind(java.lang.String kind) {
+  public A withKind(String kind) {
     this.kind = kind;
     return (A) this;
   }
 
-  public java.lang.Boolean hasKind() {
+  public Boolean hasKind() {
     return this.kind != null;
   }
 
-  /** Method is deprecated. use withKind instead. */
-  @java.lang.Deprecated
-  public A withNewKind(java.lang.String original) {
-    return (A) withKind(new String(original));
-  }
-
-  public java.lang.Boolean getReadOnly() {
+  public Boolean getReadOnly() {
     return this.readOnly;
   }
 
-  public A withReadOnly(java.lang.Boolean readOnly) {
+  public A withReadOnly(Boolean readOnly) {
     this.readOnly = readOnly;
     return (A) this;
   }
 
-  public java.lang.Boolean hasReadOnly() {
+  public Boolean hasReadOnly() {
     return this.readOnly != null;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1AzureDiskVolumeSourceFluentImpl that = (V1AzureDiskVolumeSourceFluentImpl) o;
@@ -166,5 +136,40 @@ public class V1AzureDiskVolumeSourceFluentImpl<
   public int hashCode() {
     return java.util.Objects.hash(
         cachingMode, diskName, diskURI, fsType, kind, readOnly, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (cachingMode != null) {
+      sb.append("cachingMode:");
+      sb.append(cachingMode + ",");
+    }
+    if (diskName != null) {
+      sb.append("diskName:");
+      sb.append(diskName + ",");
+    }
+    if (diskURI != null) {
+      sb.append("diskURI:");
+      sb.append(diskURI + ",");
+    }
+    if (fsType != null) {
+      sb.append("fsType:");
+      sb.append(fsType + ",");
+    }
+    if (kind != null) {
+      sb.append("kind:");
+      sb.append(kind + ",");
+    }
+    if (readOnly != null) {
+      sb.append("readOnly:");
+      sb.append(readOnly);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  public A withReadOnly() {
+    return withReadOnly(true);
   }
 }

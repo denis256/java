@@ -12,25 +12,26 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
-public interface V1beta2QueuingConfigurationFluent<
-        A extends io.kubernetes.client.openapi.models.V1beta2QueuingConfigurationFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.Integer getHandSize();
+public interface V1beta2QueuingConfigurationFluent<A extends V1beta2QueuingConfigurationFluent<A>>
+    extends Fluent<A> {
+  public Integer getHandSize();
 
-  public A withHandSize(java.lang.Integer handSize);
+  public A withHandSize(Integer handSize);
 
-  public java.lang.Boolean hasHandSize();
+  public Boolean hasHandSize();
 
-  public java.lang.Integer getQueueLengthLimit();
+  public Integer getQueueLengthLimit();
 
-  public A withQueueLengthLimit(java.lang.Integer queueLengthLimit);
+  public A withQueueLengthLimit(Integer queueLengthLimit);
 
-  public java.lang.Boolean hasQueueLengthLimit();
+  public Boolean hasQueueLengthLimit();
 
-  public java.lang.Integer getQueues();
+  public Integer getQueues();
 
-  public A withQueues(java.lang.Integer queues);
+  public A withQueues(Integer queues);
 
-  public java.lang.Boolean hasQueues();
+  public Boolean hasQueues();
 }

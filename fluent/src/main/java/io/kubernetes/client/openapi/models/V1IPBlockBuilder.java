@@ -12,40 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1IPBlockBuilder
-    extends io.kubernetes.client.openapi.models.V1IPBlockFluentImpl<
-        io.kubernetes.client.openapi.models.V1IPBlockBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1IPBlock,
-        io.kubernetes.client.openapi.models.V1IPBlockBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1IPBlockBuilder extends V1IPBlockFluentImpl<V1IPBlockBuilder>
+    implements VisitableBuilder<V1IPBlock, V1IPBlockBuilder> {
   public V1IPBlockBuilder() {
     this(false);
   }
 
-  public V1IPBlockBuilder(java.lang.Boolean validationEnabled) {
+  public V1IPBlockBuilder(Boolean validationEnabled) {
     this(new V1IPBlock(), validationEnabled);
   }
 
-  public V1IPBlockBuilder(io.kubernetes.client.openapi.models.V1IPBlockFluent<?> fluent) {
+  public V1IPBlockBuilder(V1IPBlockFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1IPBlockBuilder(
-      io.kubernetes.client.openapi.models.V1IPBlockFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1IPBlockBuilder(V1IPBlockFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1IPBlock(), validationEnabled);
   }
 
-  public V1IPBlockBuilder(
-      io.kubernetes.client.openapi.models.V1IPBlockFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1IPBlock instance) {
+  public V1IPBlockBuilder(V1IPBlockFluent<?> fluent, V1IPBlock instance) {
     this(fluent, instance, false);
   }
 
   public V1IPBlockBuilder(
-      io.kubernetes.client.openapi.models.V1IPBlockFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1IPBlock instance,
-      java.lang.Boolean validationEnabled) {
+      V1IPBlockFluent<?> fluent, V1IPBlock instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withCidr(instance.getCidr());
 
@@ -54,12 +46,11 @@ public class V1IPBlockBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1IPBlockBuilder(io.kubernetes.client.openapi.models.V1IPBlock instance) {
+  public V1IPBlockBuilder(V1IPBlock instance) {
     this(instance, false);
   }
 
-  public V1IPBlockBuilder(
-      io.kubernetes.client.openapi.models.V1IPBlock instance, java.lang.Boolean validationEnabled) {
+  public V1IPBlockBuilder(V1IPBlock instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withCidr(instance.getCidr());
 
@@ -68,32 +59,13 @@ public class V1IPBlockBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1IPBlockFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1IPBlockFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1IPBlock build() {
+  public V1IPBlock build() {
     V1IPBlock buildable = new V1IPBlock();
     buildable.setCidr(fluent.getCidr());
     buildable.setExcept(fluent.getExcept());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1IPBlockBuilder that = (V1IPBlockBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

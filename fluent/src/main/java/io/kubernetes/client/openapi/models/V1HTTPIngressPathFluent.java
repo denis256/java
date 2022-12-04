@@ -12,63 +12,50 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+
 /** Generated */
-public interface V1HTTPIngressPathFluent<
-        A extends io.kubernetes.client.openapi.models.V1HTTPIngressPathFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
+public interface V1HTTPIngressPathFluent<A extends V1HTTPIngressPathFluent<A>> extends Fluent<A> {
 
   /**
    * This method has been deprecated, please use method buildBackend instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1IngressBackend getBackend();
+  @Deprecated
+  public V1IngressBackend getBackend();
 
-  public io.kubernetes.client.openapi.models.V1IngressBackend buildBackend();
+  public V1IngressBackend buildBackend();
 
-  public A withBackend(io.kubernetes.client.openapi.models.V1IngressBackend backend);
+  public A withBackend(V1IngressBackend backend);
 
-  public java.lang.Boolean hasBackend();
+  public Boolean hasBackend();
 
-  public io.kubernetes.client.openapi.models.V1HTTPIngressPathFluent.BackendNested<A>
-      withNewBackend();
+  public V1HTTPIngressPathFluent.BackendNested<A> withNewBackend();
 
-  public io.kubernetes.client.openapi.models.V1HTTPIngressPathFluent.BackendNested<A>
-      withNewBackendLike(io.kubernetes.client.openapi.models.V1IngressBackend item);
+  public V1HTTPIngressPathFluent.BackendNested<A> withNewBackendLike(V1IngressBackend item);
 
-  public io.kubernetes.client.openapi.models.V1HTTPIngressPathFluent.BackendNested<A> editBackend();
+  public V1HTTPIngressPathFluent.BackendNested<A> editBackend();
 
-  public io.kubernetes.client.openapi.models.V1HTTPIngressPathFluent.BackendNested<A>
-      editOrNewBackend();
+  public V1HTTPIngressPathFluent.BackendNested<A> editOrNewBackend();
 
-  public io.kubernetes.client.openapi.models.V1HTTPIngressPathFluent.BackendNested<A>
-      editOrNewBackendLike(io.kubernetes.client.openapi.models.V1IngressBackend item);
+  public V1HTTPIngressPathFluent.BackendNested<A> editOrNewBackendLike(V1IngressBackend item);
 
-  public java.lang.String getPath();
+  public String getPath();
 
-  public A withPath(java.lang.String path);
+  public A withPath(String path);
 
-  public java.lang.Boolean hasPath();
+  public Boolean hasPath();
 
-  /** Method is deprecated. use withPath instead. */
-  @java.lang.Deprecated
-  public A withNewPath(java.lang.String original);
+  public String getPathType();
 
-  public java.lang.String getPathType();
+  public A withPathType(String pathType);
 
-  public A withPathType(java.lang.String pathType);
-
-  public java.lang.Boolean hasPathType();
-
-  /** Method is deprecated. use withPathType instead. */
-  @java.lang.Deprecated
-  public A withNewPathType(java.lang.String original);
+  public Boolean hasPathType();
 
   public interface BackendNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1IngressBackendFluent<
-              io.kubernetes.client.openapi.models.V1HTTPIngressPathFluent.BackendNested<N>> {
+      extends Nested<N>, V1IngressBackendFluent<V1HTTPIngressPathFluent.BackendNested<N>> {
     public N and();
 
     public N endBackend();

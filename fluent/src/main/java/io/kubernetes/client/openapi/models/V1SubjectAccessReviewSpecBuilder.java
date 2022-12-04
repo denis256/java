@@ -12,41 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1SubjectAccessReviewSpecBuilder
-    extends io.kubernetes.client.openapi.models.V1SubjectAccessReviewSpecFluentImpl<
-        io.kubernetes.client.openapi.models.V1SubjectAccessReviewSpecBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1SubjectAccessReviewSpec,
-        io.kubernetes.client.openapi.models.V1SubjectAccessReviewSpecBuilder> {
+    extends V1SubjectAccessReviewSpecFluentImpl<V1SubjectAccessReviewSpecBuilder>
+    implements VisitableBuilder<V1SubjectAccessReviewSpec, V1SubjectAccessReviewSpecBuilder> {
   public V1SubjectAccessReviewSpecBuilder() {
     this(false);
   }
 
-  public V1SubjectAccessReviewSpecBuilder(java.lang.Boolean validationEnabled) {
+  public V1SubjectAccessReviewSpecBuilder(Boolean validationEnabled) {
     this(new V1SubjectAccessReviewSpec(), validationEnabled);
   }
 
-  public V1SubjectAccessReviewSpecBuilder(
-      io.kubernetes.client.openapi.models.V1SubjectAccessReviewSpecFluent<?> fluent) {
+  public V1SubjectAccessReviewSpecBuilder(V1SubjectAccessReviewSpecFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1SubjectAccessReviewSpecBuilder(
-      io.kubernetes.client.openapi.models.V1SubjectAccessReviewSpecFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1SubjectAccessReviewSpecFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1SubjectAccessReviewSpec(), validationEnabled);
   }
 
   public V1SubjectAccessReviewSpecBuilder(
-      io.kubernetes.client.openapi.models.V1SubjectAccessReviewSpecFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1SubjectAccessReviewSpec instance) {
+      V1SubjectAccessReviewSpecFluent<?> fluent, V1SubjectAccessReviewSpec instance) {
     this(fluent, instance, false);
   }
 
   public V1SubjectAccessReviewSpecBuilder(
-      io.kubernetes.client.openapi.models.V1SubjectAccessReviewSpecFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1SubjectAccessReviewSpec instance,
-      java.lang.Boolean validationEnabled) {
+      V1SubjectAccessReviewSpecFluent<?> fluent,
+      V1SubjectAccessReviewSpec instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withExtra(instance.getExtra());
 
@@ -63,14 +59,12 @@ public class V1SubjectAccessReviewSpecBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1SubjectAccessReviewSpecBuilder(
-      io.kubernetes.client.openapi.models.V1SubjectAccessReviewSpec instance) {
+  public V1SubjectAccessReviewSpecBuilder(V1SubjectAccessReviewSpec instance) {
     this(instance, false);
   }
 
   public V1SubjectAccessReviewSpecBuilder(
-      io.kubernetes.client.openapi.models.V1SubjectAccessReviewSpec instance,
-      java.lang.Boolean validationEnabled) {
+      V1SubjectAccessReviewSpec instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withExtra(instance.getExtra());
 
@@ -87,10 +81,10 @@ public class V1SubjectAccessReviewSpecBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1SubjectAccessReviewSpecFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1SubjectAccessReviewSpecFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1SubjectAccessReviewSpec build() {
+  public V1SubjectAccessReviewSpec build() {
     V1SubjectAccessReviewSpec buildable = new V1SubjectAccessReviewSpec();
     buildable.setExtra(fluent.getExtra());
     buildable.setGroups(fluent.getGroups());
@@ -99,24 +93,5 @@ public class V1SubjectAccessReviewSpecBuilder
     buildable.setUid(fluent.getUid());
     buildable.setUser(fluent.getUser());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1SubjectAccessReviewSpecBuilder that = (V1SubjectAccessReviewSpecBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

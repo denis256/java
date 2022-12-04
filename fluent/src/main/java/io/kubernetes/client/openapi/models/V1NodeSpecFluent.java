@@ -12,184 +12,158 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
+
 /** Generated */
-public interface V1NodeSpecFluent<A extends io.kubernetes.client.openapi.models.V1NodeSpecFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
+public interface V1NodeSpecFluent<A extends V1NodeSpecFluent<A>> extends Fluent<A> {
 
   /**
    * This method has been deprecated, please use method buildConfigSource instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1NodeConfigSource getConfigSource();
+  @Deprecated
+  public V1NodeConfigSource getConfigSource();
 
-  public io.kubernetes.client.openapi.models.V1NodeConfigSource buildConfigSource();
+  public V1NodeConfigSource buildConfigSource();
 
-  public A withConfigSource(io.kubernetes.client.openapi.models.V1NodeConfigSource configSource);
+  public A withConfigSource(V1NodeConfigSource configSource);
 
-  public java.lang.Boolean hasConfigSource();
+  public Boolean hasConfigSource();
 
-  public io.kubernetes.client.openapi.models.V1NodeSpecFluent.ConfigSourceNested<A>
-      withNewConfigSource();
+  public V1NodeSpecFluent.ConfigSourceNested<A> withNewConfigSource();
 
-  public io.kubernetes.client.openapi.models.V1NodeSpecFluent.ConfigSourceNested<A>
-      withNewConfigSourceLike(io.kubernetes.client.openapi.models.V1NodeConfigSource item);
+  public V1NodeSpecFluent.ConfigSourceNested<A> withNewConfigSourceLike(V1NodeConfigSource item);
 
-  public io.kubernetes.client.openapi.models.V1NodeSpecFluent.ConfigSourceNested<A>
-      editConfigSource();
+  public V1NodeSpecFluent.ConfigSourceNested<A> editConfigSource();
 
-  public io.kubernetes.client.openapi.models.V1NodeSpecFluent.ConfigSourceNested<A>
-      editOrNewConfigSource();
+  public V1NodeSpecFluent.ConfigSourceNested<A> editOrNewConfigSource();
 
-  public io.kubernetes.client.openapi.models.V1NodeSpecFluent.ConfigSourceNested<A>
-      editOrNewConfigSourceLike(io.kubernetes.client.openapi.models.V1NodeConfigSource item);
+  public V1NodeSpecFluent.ConfigSourceNested<A> editOrNewConfigSourceLike(V1NodeConfigSource item);
 
-  public java.lang.String getExternalID();
+  public String getExternalID();
 
-  public A withExternalID(java.lang.String externalID);
+  public A withExternalID(String externalID);
 
-  public java.lang.Boolean hasExternalID();
+  public Boolean hasExternalID();
 
-  /** Method is deprecated. use withExternalID instead. */
-  @java.lang.Deprecated
-  public A withNewExternalID(java.lang.String original);
+  public String getPodCIDR();
 
-  public java.lang.String getPodCIDR();
+  public A withPodCIDR(String podCIDR);
 
-  public A withPodCIDR(java.lang.String podCIDR);
+  public Boolean hasPodCIDR();
 
-  public java.lang.Boolean hasPodCIDR();
+  public A addToPodCIDRs(Integer index, String item);
 
-  /** Method is deprecated. use withPodCIDR instead. */
-  @java.lang.Deprecated
-  public A withNewPodCIDR(java.lang.String original);
-
-  public A addToPodCIDRs(java.lang.Integer index, java.lang.String item);
-
-  public A setToPodCIDRs(java.lang.Integer index, java.lang.String item);
+  public A setToPodCIDRs(Integer index, String item);
 
   public A addToPodCIDRs(java.lang.String... items);
 
-  public A addAllToPodCIDRs(java.util.Collection<java.lang.String> items);
+  public A addAllToPodCIDRs(Collection<String> items);
 
   public A removeFromPodCIDRs(java.lang.String... items);
 
-  public A removeAllFromPodCIDRs(java.util.Collection<java.lang.String> items);
+  public A removeAllFromPodCIDRs(Collection<String> items);
 
-  public java.util.List<java.lang.String> getPodCIDRs();
+  public List<String> getPodCIDRs();
 
-  public java.lang.String getPodCIDR(java.lang.Integer index);
+  public String getPodCIDR(Integer index);
 
-  public java.lang.String getFirstPodCIDR();
+  public String getFirstPodCIDR();
 
-  public java.lang.String getLastPodCIDR();
+  public String getLastPodCIDR();
 
-  public java.lang.String getMatchingPodCIDR(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public String getMatchingPodCIDR(Predicate<String> predicate);
 
-  public java.lang.Boolean hasMatchingPodCIDR(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public Boolean hasMatchingPodCIDR(Predicate<String> predicate);
 
-  public A withPodCIDRs(java.util.List<java.lang.String> podCIDRs);
+  public A withPodCIDRs(List<String> podCIDRs);
 
   public A withPodCIDRs(java.lang.String... podCIDRs);
 
-  public java.lang.Boolean hasPodCIDRs();
+  public Boolean hasPodCIDRs();
 
-  public A addNewPodCIDR(java.lang.String original);
+  public String getProviderID();
 
-  public java.lang.String getProviderID();
+  public A withProviderID(String providerID);
 
-  public A withProviderID(java.lang.String providerID);
+  public Boolean hasProviderID();
 
-  public java.lang.Boolean hasProviderID();
+  public A addToTaints(Integer index, V1Taint item);
 
-  /** Method is deprecated. use withProviderID instead. */
-  @java.lang.Deprecated
-  public A withNewProviderID(java.lang.String original);
-
-  public A addToTaints(java.lang.Integer index, io.kubernetes.client.openapi.models.V1Taint item);
-
-  public A setToTaints(java.lang.Integer index, io.kubernetes.client.openapi.models.V1Taint item);
+  public A setToTaints(Integer index, V1Taint item);
 
   public A addToTaints(io.kubernetes.client.openapi.models.V1Taint... items);
 
-  public A addAllToTaints(java.util.Collection<io.kubernetes.client.openapi.models.V1Taint> items);
+  public A addAllToTaints(Collection<V1Taint> items);
 
   public A removeFromTaints(io.kubernetes.client.openapi.models.V1Taint... items);
 
-  public A removeAllFromTaints(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1Taint> items);
+  public A removeAllFromTaints(Collection<V1Taint> items);
 
-  public A removeMatchingFromTaints(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1TaintBuilder> predicate);
+  public A removeMatchingFromTaints(Predicate<V1TaintBuilder> predicate);
 
   /**
    * This method has been deprecated, please use method buildTaints instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V1Taint> getTaints();
+  @Deprecated
+  public List<V1Taint> getTaints();
 
-  public java.util.List<io.kubernetes.client.openapi.models.V1Taint> buildTaints();
+  public List<V1Taint> buildTaints();
 
-  public io.kubernetes.client.openapi.models.V1Taint buildTaint(java.lang.Integer index);
+  public V1Taint buildTaint(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1Taint buildFirstTaint();
+  public V1Taint buildFirstTaint();
 
-  public io.kubernetes.client.openapi.models.V1Taint buildLastTaint();
+  public V1Taint buildLastTaint();
 
-  public io.kubernetes.client.openapi.models.V1Taint buildMatchingTaint(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1TaintBuilder> predicate);
+  public V1Taint buildMatchingTaint(Predicate<V1TaintBuilder> predicate);
 
-  public java.lang.Boolean hasMatchingTaint(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1TaintBuilder> predicate);
+  public Boolean hasMatchingTaint(Predicate<V1TaintBuilder> predicate);
 
-  public A withTaints(java.util.List<io.kubernetes.client.openapi.models.V1Taint> taints);
+  public A withTaints(List<V1Taint> taints);
 
   public A withTaints(io.kubernetes.client.openapi.models.V1Taint... taints);
 
-  public java.lang.Boolean hasTaints();
+  public Boolean hasTaints();
 
-  public io.kubernetes.client.openapi.models.V1NodeSpecFluent.TaintsNested<A> addNewTaint();
+  public V1NodeSpecFluent.TaintsNested<A> addNewTaint();
 
-  public io.kubernetes.client.openapi.models.V1NodeSpecFluent.TaintsNested<A> addNewTaintLike(
-      io.kubernetes.client.openapi.models.V1Taint item);
+  public V1NodeSpecFluent.TaintsNested<A> addNewTaintLike(V1Taint item);
 
-  public io.kubernetes.client.openapi.models.V1NodeSpecFluent.TaintsNested<A> setNewTaintLike(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1Taint item);
+  public V1NodeSpecFluent.TaintsNested<A> setNewTaintLike(Integer index, V1Taint item);
 
-  public io.kubernetes.client.openapi.models.V1NodeSpecFluent.TaintsNested<A> editTaint(
-      java.lang.Integer index);
+  public V1NodeSpecFluent.TaintsNested<A> editTaint(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1NodeSpecFluent.TaintsNested<A> editFirstTaint();
+  public V1NodeSpecFluent.TaintsNested<A> editFirstTaint();
 
-  public io.kubernetes.client.openapi.models.V1NodeSpecFluent.TaintsNested<A> editLastTaint();
+  public V1NodeSpecFluent.TaintsNested<A> editLastTaint();
 
-  public io.kubernetes.client.openapi.models.V1NodeSpecFluent.TaintsNested<A> editMatchingTaint(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1TaintBuilder> predicate);
+  public V1NodeSpecFluent.TaintsNested<A> editMatchingTaint(Predicate<V1TaintBuilder> predicate);
 
-  public java.lang.Boolean getUnschedulable();
+  public Boolean getUnschedulable();
 
-  public A withUnschedulable(java.lang.Boolean unschedulable);
+  public A withUnschedulable(Boolean unschedulable);
 
-  public java.lang.Boolean hasUnschedulable();
+  public Boolean hasUnschedulable();
+
+  public A withUnschedulable();
 
   public interface ConfigSourceNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1NodeConfigSourceFluent<
-              io.kubernetes.client.openapi.models.V1NodeSpecFluent.ConfigSourceNested<N>> {
+      extends Nested<N>, V1NodeConfigSourceFluent<V1NodeSpecFluent.ConfigSourceNested<N>> {
     public N and();
 
     public N endConfigSource();
   }
 
   public interface TaintsNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1TaintFluent<
-              io.kubernetes.client.openapi.models.V1NodeSpecFluent.TaintsNested<N>> {
+      extends Nested<N>, V1TaintFluent<V1NodeSpecFluent.TaintsNested<N>> {
     public N and();
 
     public N endTaint();

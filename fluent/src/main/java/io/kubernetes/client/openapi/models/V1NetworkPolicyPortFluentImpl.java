@@ -13,16 +13,15 @@ limitations under the License.
 package io.kubernetes.client.openapi.models;
 
 import io.kubernetes.client.custom.IntOrString;
+import io.kubernetes.client.fluent.BaseFluent;
 
 /** Generated */
-public class V1NetworkPolicyPortFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1NetworkPolicyPortFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1NetworkPolicyPortFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1NetworkPolicyPortFluentImpl<A extends V1NetworkPolicyPortFluent<A>>
+    extends BaseFluent<A> implements V1NetworkPolicyPortFluent<A> {
   public V1NetworkPolicyPortFluentImpl() {}
 
-  public V1NetworkPolicyPortFluentImpl(
-      io.kubernetes.client.openapi.models.V1NetworkPolicyPort instance) {
+  public V1NetworkPolicyPortFluentImpl(V1NetworkPolicyPort instance) {
     this.withEndPort(instance.getEndPort());
 
     this.withPort(instance.getPort());
@@ -30,33 +29,33 @@ public class V1NetworkPolicyPortFluentImpl<
     this.withProtocol(instance.getProtocol());
   }
 
-  private java.lang.Integer endPort;
-  private io.kubernetes.client.custom.IntOrString port;
-  private java.lang.String protocol;
+  private Integer endPort;
+  private IntOrString port;
+  private String protocol;
 
-  public java.lang.Integer getEndPort() {
+  public Integer getEndPort() {
     return this.endPort;
   }
 
-  public A withEndPort(java.lang.Integer endPort) {
+  public A withEndPort(Integer endPort) {
     this.endPort = endPort;
     return (A) this;
   }
 
-  public java.lang.Boolean hasEndPort() {
+  public Boolean hasEndPort() {
     return this.endPort != null;
   }
 
-  public io.kubernetes.client.custom.IntOrString getPort() {
+  public IntOrString getPort() {
     return this.port;
   }
 
-  public A withPort(io.kubernetes.client.custom.IntOrString port) {
+  public A withPort(IntOrString port) {
     this.port = port;
     return (A) this;
   }
 
-  public java.lang.Boolean hasPort() {
+  public Boolean hasPort() {
     return this.port != null;
   }
 
@@ -64,30 +63,24 @@ public class V1NetworkPolicyPortFluentImpl<
     return (A) withPort(new IntOrString(value));
   }
 
-  public A withNewPort(java.lang.String value) {
+  public A withNewPort(String value) {
     return (A) withPort(new IntOrString(value));
   }
 
-  public java.lang.String getProtocol() {
+  public String getProtocol() {
     return this.protocol;
   }
 
-  public A withProtocol(java.lang.String protocol) {
+  public A withProtocol(String protocol) {
     this.protocol = protocol;
     return (A) this;
   }
 
-  public java.lang.Boolean hasProtocol() {
+  public Boolean hasProtocol() {
     return this.protocol != null;
   }
 
-  /** Method is deprecated. use withProtocol instead. */
-  @java.lang.Deprecated
-  public A withNewProtocol(java.lang.String original) {
-    return (A) withProtocol(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1NetworkPolicyPortFluentImpl that = (V1NetworkPolicyPortFluentImpl) o;
@@ -99,5 +92,24 @@ public class V1NetworkPolicyPortFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(endPort, port, protocol, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (endPort != null) {
+      sb.append("endPort:");
+      sb.append(endPort + ",");
+    }
+    if (port != null) {
+      sb.append("port:");
+      sb.append(port + ",");
+    }
+    if (protocol != null) {
+      sb.append("protocol:");
+      sb.append(protocol);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

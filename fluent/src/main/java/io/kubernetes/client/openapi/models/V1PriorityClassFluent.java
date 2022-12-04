@@ -12,94 +12,75 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+
 /** Generated */
-public interface V1PriorityClassFluent<
-        A extends io.kubernetes.client.openapi.models.V1PriorityClassFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getApiVersion();
+public interface V1PriorityClassFluent<A extends V1PriorityClassFluent<A>> extends Fluent<A> {
+  public String getApiVersion();
 
-  public A withApiVersion(java.lang.String apiVersion);
+  public A withApiVersion(String apiVersion);
 
-  public java.lang.Boolean hasApiVersion();
+  public Boolean hasApiVersion();
 
-  /** Method is deprecated. use withApiVersion instead. */
-  @java.lang.Deprecated
-  public A withNewApiVersion(java.lang.String original);
+  public String getDescription();
 
-  public java.lang.String getDescription();
+  public A withDescription(String description);
 
-  public A withDescription(java.lang.String description);
+  public Boolean hasDescription();
 
-  public java.lang.Boolean hasDescription();
+  public Boolean getGlobalDefault();
 
-  /** Method is deprecated. use withDescription instead. */
-  @java.lang.Deprecated
-  public A withNewDescription(java.lang.String original);
+  public A withGlobalDefault(Boolean globalDefault);
 
-  public java.lang.Boolean getGlobalDefault();
+  public Boolean hasGlobalDefault();
 
-  public A withGlobalDefault(java.lang.Boolean globalDefault);
+  public String getKind();
 
-  public java.lang.Boolean hasGlobalDefault();
+  public A withKind(String kind);
 
-  public java.lang.String getKind();
-
-  public A withKind(java.lang.String kind);
-
-  public java.lang.Boolean hasKind();
-
-  /** Method is deprecated. use withKind instead. */
-  @java.lang.Deprecated
-  public A withNewKind(java.lang.String original);
+  public Boolean hasKind();
 
   /**
    * This method has been deprecated, please use method buildMetadata instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ObjectMeta getMetadata();
+  @Deprecated
+  public V1ObjectMeta getMetadata();
 
-  public io.kubernetes.client.openapi.models.V1ObjectMeta buildMetadata();
+  public V1ObjectMeta buildMetadata();
 
-  public A withMetadata(io.kubernetes.client.openapi.models.V1ObjectMeta metadata);
+  public A withMetadata(V1ObjectMeta metadata);
 
-  public java.lang.Boolean hasMetadata();
+  public Boolean hasMetadata();
 
-  public io.kubernetes.client.openapi.models.V1PriorityClassFluent.MetadataNested<A>
-      withNewMetadata();
+  public V1PriorityClassFluent.MetadataNested<A> withNewMetadata();
 
-  public io.kubernetes.client.openapi.models.V1PriorityClassFluent.MetadataNested<A>
-      withNewMetadataLike(io.kubernetes.client.openapi.models.V1ObjectMeta item);
+  public V1PriorityClassFluent.MetadataNested<A> withNewMetadataLike(V1ObjectMeta item);
 
-  public io.kubernetes.client.openapi.models.V1PriorityClassFluent.MetadataNested<A> editMetadata();
+  public V1PriorityClassFluent.MetadataNested<A> editMetadata();
 
-  public io.kubernetes.client.openapi.models.V1PriorityClassFluent.MetadataNested<A>
-      editOrNewMetadata();
+  public V1PriorityClassFluent.MetadataNested<A> editOrNewMetadata();
 
-  public io.kubernetes.client.openapi.models.V1PriorityClassFluent.MetadataNested<A>
-      editOrNewMetadataLike(io.kubernetes.client.openapi.models.V1ObjectMeta item);
+  public V1PriorityClassFluent.MetadataNested<A> editOrNewMetadataLike(V1ObjectMeta item);
 
-  public java.lang.String getPreemptionPolicy();
+  public String getPreemptionPolicy();
 
-  public A withPreemptionPolicy(java.lang.String preemptionPolicy);
+  public A withPreemptionPolicy(String preemptionPolicy);
 
-  public java.lang.Boolean hasPreemptionPolicy();
+  public Boolean hasPreemptionPolicy();
 
-  /** Method is deprecated. use withPreemptionPolicy instead. */
-  @java.lang.Deprecated
-  public A withNewPreemptionPolicy(java.lang.String original);
+  public Integer getValue();
 
-  public java.lang.Integer getValue();
+  public A withValue(Integer value);
 
-  public A withValue(java.lang.Integer value);
+  public Boolean hasValue();
 
-  public java.lang.Boolean hasValue();
+  public A withGlobalDefault();
 
   public interface MetadataNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1ObjectMetaFluent<
-              io.kubernetes.client.openapi.models.V1PriorityClassFluent.MetadataNested<N>> {
+      extends Nested<N>, V1ObjectMetaFluent<V1PriorityClassFluent.MetadataNested<N>> {
     public N and();
 
     public N endMetadata();

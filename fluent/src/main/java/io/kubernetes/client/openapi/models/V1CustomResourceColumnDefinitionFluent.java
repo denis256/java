@@ -12,63 +12,45 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
 public interface V1CustomResourceColumnDefinitionFluent<
-        A extends io.kubernetes.client.openapi.models.V1CustomResourceColumnDefinitionFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getDescription();
+        A extends V1CustomResourceColumnDefinitionFluent<A>>
+    extends Fluent<A> {
+  public String getDescription();
 
-  public A withDescription(java.lang.String description);
+  public A withDescription(String description);
 
-  public java.lang.Boolean hasDescription();
+  public Boolean hasDescription();
 
-  /** Method is deprecated. use withDescription instead. */
-  @java.lang.Deprecated
-  public A withNewDescription(java.lang.String original);
+  public String getFormat();
 
-  public java.lang.String getFormat();
+  public A withFormat(String format);
 
-  public A withFormat(java.lang.String format);
+  public Boolean hasFormat();
 
-  public java.lang.Boolean hasFormat();
+  public String getJsonPath();
 
-  /** Method is deprecated. use withFormat instead. */
-  @java.lang.Deprecated
-  public A withNewFormat(java.lang.String original);
+  public A withJsonPath(String jsonPath);
 
-  public java.lang.String getJsonPath();
+  public Boolean hasJsonPath();
 
-  public A withJsonPath(java.lang.String jsonPath);
+  public String getName();
 
-  public java.lang.Boolean hasJsonPath();
+  public A withName(String name);
 
-  /** Method is deprecated. use withJsonPath instead. */
-  @java.lang.Deprecated
-  public A withNewJsonPath(java.lang.String original);
+  public Boolean hasName();
 
-  public java.lang.String getName();
+  public Integer getPriority();
 
-  public A withName(java.lang.String name);
+  public A withPriority(Integer priority);
 
-  public java.lang.Boolean hasName();
+  public Boolean hasPriority();
 
-  /** Method is deprecated. use withName instead. */
-  @java.lang.Deprecated
-  public A withNewName(java.lang.String original);
+  public String getType();
 
-  public java.lang.Integer getPriority();
+  public A withType(String type);
 
-  public A withPriority(java.lang.Integer priority);
-
-  public java.lang.Boolean hasPriority();
-
-  public java.lang.String getType();
-
-  public A withType(java.lang.String type);
-
-  public java.lang.Boolean hasType();
-
-  /** Method is deprecated. use withType instead. */
-  @java.lang.Deprecated
-  public A withNewType(java.lang.String original);
+  public Boolean hasType();
 }

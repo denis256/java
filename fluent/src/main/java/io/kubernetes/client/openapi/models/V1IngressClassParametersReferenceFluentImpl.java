@@ -12,15 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
+@SuppressWarnings(value = "unchecked")
 public class V1IngressClassParametersReferenceFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1IngressClassParametersReferenceFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1IngressClassParametersReferenceFluent<A> {
+        A extends V1IngressClassParametersReferenceFluent<A>>
+    extends BaseFluent<A> implements V1IngressClassParametersReferenceFluent<A> {
   public V1IngressClassParametersReferenceFluentImpl() {}
 
-  public V1IngressClassParametersReferenceFluentImpl(
-      io.kubernetes.client.openapi.models.V1IngressClassParametersReference instance) {
+  public V1IngressClassParametersReferenceFluentImpl(V1IngressClassParametersReference instance) {
     this.withApiGroup(instance.getApiGroup());
 
     this.withKind(instance.getKind());
@@ -32,108 +33,78 @@ public class V1IngressClassParametersReferenceFluentImpl<
     this.withScope(instance.getScope());
   }
 
-  private java.lang.String apiGroup;
-  private java.lang.String kind;
-  private java.lang.String name;
-  private java.lang.String namespace;
-  private java.lang.String scope;
+  private String apiGroup;
+  private String kind;
+  private String name;
+  private String namespace;
+  private String scope;
 
-  public java.lang.String getApiGroup() {
+  public String getApiGroup() {
     return this.apiGroup;
   }
 
-  public A withApiGroup(java.lang.String apiGroup) {
+  public A withApiGroup(String apiGroup) {
     this.apiGroup = apiGroup;
     return (A) this;
   }
 
-  public java.lang.Boolean hasApiGroup() {
+  public Boolean hasApiGroup() {
     return this.apiGroup != null;
   }
 
-  /** Method is deprecated. use withApiGroup instead. */
-  @java.lang.Deprecated
-  public A withNewApiGroup(java.lang.String original) {
-    return (A) withApiGroup(new String(original));
-  }
-
-  public java.lang.String getKind() {
+  public String getKind() {
     return this.kind;
   }
 
-  public A withKind(java.lang.String kind) {
+  public A withKind(String kind) {
     this.kind = kind;
     return (A) this;
   }
 
-  public java.lang.Boolean hasKind() {
+  public Boolean hasKind() {
     return this.kind != null;
   }
 
-  /** Method is deprecated. use withKind instead. */
-  @java.lang.Deprecated
-  public A withNewKind(java.lang.String original) {
-    return (A) withKind(new String(original));
-  }
-
-  public java.lang.String getName() {
+  public String getName() {
     return this.name;
   }
 
-  public A withName(java.lang.String name) {
+  public A withName(String name) {
     this.name = name;
     return (A) this;
   }
 
-  public java.lang.Boolean hasName() {
+  public Boolean hasName() {
     return this.name != null;
   }
 
-  /** Method is deprecated. use withName instead. */
-  @java.lang.Deprecated
-  public A withNewName(java.lang.String original) {
-    return (A) withName(new String(original));
-  }
-
-  public java.lang.String getNamespace() {
+  public String getNamespace() {
     return this.namespace;
   }
 
-  public A withNamespace(java.lang.String namespace) {
+  public A withNamespace(String namespace) {
     this.namespace = namespace;
     return (A) this;
   }
 
-  public java.lang.Boolean hasNamespace() {
+  public Boolean hasNamespace() {
     return this.namespace != null;
   }
 
-  /** Method is deprecated. use withNamespace instead. */
-  @java.lang.Deprecated
-  public A withNewNamespace(java.lang.String original) {
-    return (A) withNamespace(new String(original));
-  }
-
-  public java.lang.String getScope() {
+  public String getScope() {
     return this.scope;
   }
 
-  public A withScope(java.lang.String scope) {
+  public A withScope(String scope) {
     this.scope = scope;
     return (A) this;
   }
 
-  public java.lang.Boolean hasScope() {
+  public Boolean hasScope() {
     return this.scope != null;
   }
 
-  /** Method is deprecated. use withScope instead. */
-  @java.lang.Deprecated
-  public A withNewScope(java.lang.String original) {
-    return (A) withScope(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1IngressClassParametersReferenceFluentImpl that =
@@ -149,5 +120,32 @@ public class V1IngressClassParametersReferenceFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(apiGroup, kind, name, namespace, scope, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (apiGroup != null) {
+      sb.append("apiGroup:");
+      sb.append(apiGroup + ",");
+    }
+    if (kind != null) {
+      sb.append("kind:");
+      sb.append(kind + ",");
+    }
+    if (name != null) {
+      sb.append("name:");
+      sb.append(name + ",");
+    }
+    if (namespace != null) {
+      sb.append("namespace:");
+      sb.append(namespace + ",");
+    }
+    if (scope != null) {
+      sb.append("scope:");
+      sb.append(scope);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

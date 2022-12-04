@@ -1,5 +1,5 @@
 /*
-Copyright 2021 The Kubernetes Authors.
+Copyright 2022 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -12,14 +12,9 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,7 +25,7 @@ import java.util.Objects;
 @ApiModel(description = "ServiceSpec describes the attributes that a user creates on a service.")
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    date = "2021-12-10T19:11:23.904Z[Etc/UTC]")
+    date = "2022-09-15T17:00:37.921Z[Etc/UTC]")
 public class V1ServiceSpec {
   public static final String SERIALIZED_NAME_ALLOCATE_LOAD_BALANCER_NODE_PORTS =
       "allocateLoadBalancerNodePorts";
@@ -58,64 +53,10 @@ public class V1ServiceSpec {
   @SerializedName(SERIALIZED_NAME_EXTERNAL_NAME)
   private String externalName;
 
-  /**
-   * externalTrafficPolicy denotes if this Service desires to route external traffic to node-local
-   * or cluster-wide endpoints. \&quot;Local\&quot; preserves the client source IP and avoids a
-   * second hop for LoadBalancer and Nodeport type services, but risks potentially imbalanced
-   * traffic spreading. \&quot;Cluster\&quot; obscures the client source IP and may cause a second
-   * hop to another node, but should have good overall load-spreading. Possible enum values: -
-   * &#x60;\&quot;Cluster\&quot;&#x60; specifies node-global (legacy) behavior. -
-   * &#x60;\&quot;Local\&quot;&#x60; specifies node-local endpoints behavior.
-   */
-  @JsonAdapter(ExternalTrafficPolicyEnum.Adapter.class)
-  public enum ExternalTrafficPolicyEnum {
-    CLUSTER("Cluster"),
-
-    LOCAL("Local");
-
-    private String value;
-
-    ExternalTrafficPolicyEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static ExternalTrafficPolicyEnum fromValue(String value) {
-      for (ExternalTrafficPolicyEnum b : ExternalTrafficPolicyEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<ExternalTrafficPolicyEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ExternalTrafficPolicyEnum enumeration)
-          throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ExternalTrafficPolicyEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ExternalTrafficPolicyEnum.fromValue(value);
-      }
-    }
-  }
-
   public static final String SERIALIZED_NAME_EXTERNAL_TRAFFIC_POLICY = "externalTrafficPolicy";
 
   @SerializedName(SERIALIZED_NAME_EXTERNAL_TRAFFIC_POLICY)
-  private ExternalTrafficPolicyEnum externalTrafficPolicy;
+  private String externalTrafficPolicy;
 
   public static final String SERIALIZED_NAME_HEALTH_CHECK_NODE_PORT = "healthCheckNodePort";
 
@@ -169,143 +110,20 @@ public class V1ServiceSpec {
   @SerializedName(SERIALIZED_NAME_SELECTOR)
   private Map<String, String> selector = null;
 
-  /**
-   * Supports \&quot;ClientIP\&quot; and \&quot;None\&quot;. Used to maintain session affinity.
-   * Enable client IP based session affinity. Must be ClientIP or None. Defaults to None. More info:
-   * https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies
-   * Possible enum values: - &#x60;\&quot;ClientIP\&quot;&#x60; is the Client IP based. -
-   * &#x60;\&quot;None\&quot;&#x60; - no session affinity.
-   */
-  @JsonAdapter(SessionAffinityEnum.Adapter.class)
-  public enum SessionAffinityEnum {
-    CLIENTIP("ClientIP"),
-
-    NONE("None");
-
-    private String value;
-
-    SessionAffinityEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static SessionAffinityEnum fromValue(String value) {
-      for (SessionAffinityEnum b : SessionAffinityEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<SessionAffinityEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final SessionAffinityEnum enumeration)
-          throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public SessionAffinityEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return SessionAffinityEnum.fromValue(value);
-      }
-    }
-  }
-
   public static final String SERIALIZED_NAME_SESSION_AFFINITY = "sessionAffinity";
 
   @SerializedName(SERIALIZED_NAME_SESSION_AFFINITY)
-  private SessionAffinityEnum sessionAffinity;
+  private String sessionAffinity;
 
   public static final String SERIALIZED_NAME_SESSION_AFFINITY_CONFIG = "sessionAffinityConfig";
 
   @SerializedName(SERIALIZED_NAME_SESSION_AFFINITY_CONFIG)
   private V1SessionAffinityConfig sessionAffinityConfig;
 
-  /**
-   * type determines how the Service is exposed. Defaults to ClusterIP. Valid options are
-   * ExternalName, ClusterIP, NodePort, and LoadBalancer. \&quot;ClusterIP\&quot; allocates a
-   * cluster-internal IP address for load-balancing to endpoints. Endpoints are determined by the
-   * selector or if that is not specified, by manual construction of an Endpoints object or
-   * EndpointSlice objects. If clusterIP is \&quot;None\&quot;, no virtual IP is allocated and the
-   * endpoints are published as a set of endpoints rather than a virtual IP. \&quot;NodePort\&quot;
-   * builds on ClusterIP and allocates a port on every node which routes to the same endpoints as
-   * the clusterIP. \&quot;LoadBalancer\&quot; builds on NodePort and creates an external
-   * load-balancer (if supported in the current cloud) which routes to the same endpoints as the
-   * clusterIP. \&quot;ExternalName\&quot; aliases this service to the specified externalName.
-   * Several other fields do not apply to ExternalName services. More info:
-   * https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
-   * Possible enum values: - &#x60;\&quot;ClusterIP\&quot;&#x60; means a service will only be
-   * accessible inside the cluster, via the cluster IP. - &#x60;\&quot;ExternalName\&quot;&#x60;
-   * means a service consists of only a reference to an external name that kubedns or equivalent
-   * will return as a CNAME record, with no exposing or proxying of any pods involved. -
-   * &#x60;\&quot;LoadBalancer\&quot;&#x60; means a service will be exposed via an external load
-   * balancer (if the cloud provider supports it), in addition to &#39;NodePort&#39; type. -
-   * &#x60;\&quot;NodePort\&quot;&#x60; means a service will be exposed on one port of every node,
-   * in addition to &#39;ClusterIP&#39; type.
-   */
-  @JsonAdapter(TypeEnum.Adapter.class)
-  public enum TypeEnum {
-    CLUSTERIP("ClusterIP"),
-
-    EXTERNALNAME("ExternalName"),
-
-    LOADBALANCER("LoadBalancer"),
-
-    NODEPORT("NodePort");
-
-    private String value;
-
-    TypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static TypeEnum fromValue(String value) {
-      for (TypeEnum b : TypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<TypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration)
-          throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public TypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return TypeEnum.fromValue(value);
-      }
-    }
-  }
-
   public static final String SERIALIZED_NAME_TYPE = "type";
 
   @SerializedName(SERIALIZED_NAME_TYPE)
-  private TypeEnum type;
+  private String type;
 
   public V1ServiceSpec allocateLoadBalancerNodePorts(Boolean allocateLoadBalancerNodePorts) {
 
@@ -319,15 +137,14 @@ public class V1ServiceSpec {
    * the cluster load-balancer does not rely on NodePorts. If the caller requests specific NodePorts
    * (by specifying a value), those requests will be respected, regardless of this field. This field
    * may only be set for services with type LoadBalancer and will be cleared if the type is changed
-   * to any other type. This field is beta-level and is only honored by servers that enable the
-   * ServiceLBNodePortControl feature.
+   * to any other type.
    *
    * @return allocateLoadBalancerNodePorts
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "allocateLoadBalancerNodePorts defines if NodePorts will be automatically allocated for services with type LoadBalancer.  Default is \"true\". It may be set to \"false\" if the cluster load-balancer does not rely on NodePorts.  If the caller requests specific NodePorts (by specifying a value), those requests will be respected, regardless of this field. This field may only be set for services with type LoadBalancer and will be cleared if the type is changed to any other type. This field is beta-level and is only honored by servers that enable the ServiceLBNodePortControl feature.")
+          "allocateLoadBalancerNodePorts defines if NodePorts will be automatically allocated for services with type LoadBalancer.  Default is \"true\". It may be set to \"false\" if the cluster load-balancer does not rely on NodePorts.  If the caller requests specific NodePorts (by specifying a value), those requests will be respected, regardless of this field. This field may only be set for services with type LoadBalancer and will be cleared if the type is changed to any other type.")
   public Boolean getAllocateLoadBalancerNodePorts() {
     return allocateLoadBalancerNodePorts;
   }
@@ -478,32 +295,36 @@ public class V1ServiceSpec {
     this.externalName = externalName;
   }
 
-  public V1ServiceSpec externalTrafficPolicy(ExternalTrafficPolicyEnum externalTrafficPolicy) {
+  public V1ServiceSpec externalTrafficPolicy(String externalTrafficPolicy) {
 
     this.externalTrafficPolicy = externalTrafficPolicy;
     return this;
   }
 
   /**
-   * externalTrafficPolicy denotes if this Service desires to route external traffic to node-local
-   * or cluster-wide endpoints. \&quot;Local\&quot; preserves the client source IP and avoids a
-   * second hop for LoadBalancer and Nodeport type services, but risks potentially imbalanced
-   * traffic spreading. \&quot;Cluster\&quot; obscures the client source IP and may cause a second
-   * hop to another node, but should have good overall load-spreading. Possible enum values: -
-   * &#x60;\&quot;Cluster\&quot;&#x60; specifies node-global (legacy) behavior. -
-   * &#x60;\&quot;Local\&quot;&#x60; specifies node-local endpoints behavior.
+   * externalTrafficPolicy describes how nodes distribute service traffic they receive on one of the
+   * Service&#39;s \&quot;externally-facing\&quot; addresses (NodePorts, ExternalIPs, and
+   * LoadBalancer IPs). If set to \&quot;Local\&quot;, the proxy will configure the service in a way
+   * that assumes that external load balancers will take care of balancing the service traffic
+   * between nodes, and so each node will deliver traffic only to the node-local endpoints of the
+   * service, without masquerading the client source IP. (Traffic mistakenly sent to a node with no
+   * endpoints will be dropped.) The default value, \&quot;Cluster\&quot;, uses the standard
+   * behavior of routing to all endpoints evenly (possibly modified by topology and other features).
+   * Note that traffic sent to an External IP or LoadBalancer IP from within the cluster will always
+   * get \&quot;Cluster\&quot; semantics, but clients sending to a NodePort from within the cluster
+   * may need to take traffic policy into account when picking a node.
    *
    * @return externalTrafficPolicy
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "externalTrafficPolicy denotes if this Service desires to route external traffic to node-local or cluster-wide endpoints. \"Local\" preserves the client source IP and avoids a second hop for LoadBalancer and Nodeport type services, but risks potentially imbalanced traffic spreading. \"Cluster\" obscures the client source IP and may cause a second hop to another node, but should have good overall load-spreading.  Possible enum values:  - `\"Cluster\"` specifies node-global (legacy) behavior.  - `\"Local\"` specifies node-local endpoints behavior.")
-  public ExternalTrafficPolicyEnum getExternalTrafficPolicy() {
+          "externalTrafficPolicy describes how nodes distribute service traffic they receive on one of the Service's \"externally-facing\" addresses (NodePorts, ExternalIPs, and LoadBalancer IPs). If set to \"Local\", the proxy will configure the service in a way that assumes that external load balancers will take care of balancing the service traffic between nodes, and so each node will deliver traffic only to the node-local endpoints of the service, without masquerading the client source IP. (Traffic mistakenly sent to a node with no endpoints will be dropped.) The default value, \"Cluster\", uses the standard behavior of routing to all endpoints evenly (possibly modified by topology and other features). Note that traffic sent to an External IP or LoadBalancer IP from within the cluster will always get \"Cluster\" semantics, but clients sending to a NodePort from within the cluster may need to take traffic policy into account when picking a node.  ")
+  public String getExternalTrafficPolicy() {
     return externalTrafficPolicy;
   }
 
-  public void setExternalTrafficPolicy(ExternalTrafficPolicyEnum externalTrafficPolicy) {
+  public void setExternalTrafficPolicy(String externalTrafficPolicy) {
     this.externalTrafficPolicy = externalTrafficPolicy;
   }
 
@@ -520,14 +341,15 @@ public class V1ServiceSpec {
    * automatically allocated. External systems (e.g. load-balancers) can use this port to determine
    * if a given node holds endpoints for this service or not. If this field is specified when
    * creating a Service which does not need it, creation will fail. This field will be wiped when
-   * updating a Service to no longer need it (e.g. changing type).
+   * updating a Service to no longer need it (e.g. changing type). This field cannot be updated once
+   * set.
    *
    * @return healthCheckNodePort
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "healthCheckNodePort specifies the healthcheck nodePort for the service. This only applies when type is set to LoadBalancer and externalTrafficPolicy is set to Local. If a value is specified, is in-range, and is not in use, it will be used.  If not specified, a value will be automatically allocated.  External systems (e.g. load-balancers) can use this port to determine if a given node holds endpoints for this service or not.  If this field is specified when creating a Service which does not need it, creation will fail. This field will be wiped when updating a Service to no longer need it (e.g. changing type).")
+          "healthCheckNodePort specifies the healthcheck nodePort for the service. This only applies when type is set to LoadBalancer and externalTrafficPolicy is set to Local. If a value is specified, is in-range, and is not in use, it will be used.  If not specified, a value will be automatically allocated.  External systems (e.g. load-balancers) can use this port to determine if a given node holds endpoints for this service or not.  If this field is specified when creating a Service which does not need it, creation will fail. This field will be wiped when updating a Service to no longer need it (e.g. changing type). This field cannot be updated once set.")
   public Integer getHealthCheckNodePort() {
     return healthCheckNodePort;
   }
@@ -543,18 +365,18 @@ public class V1ServiceSpec {
   }
 
   /**
-   * InternalTrafficPolicy specifies if the cluster internal traffic should be routed to all
-   * endpoints or node-local endpoints only. \&quot;Cluster\&quot; routes internal traffic to a
-   * Service to all endpoints. \&quot;Local\&quot; routes traffic to node-local endpoints only,
-   * traffic is dropped if no node-local endpoints are ready. The default value is
-   * \&quot;Cluster\&quot;.
+   * InternalTrafficPolicy describes how nodes distribute service traffic they receive on the
+   * ClusterIP. If set to \&quot;Local\&quot;, the proxy will assume that pods only want to talk to
+   * endpoints of the service on the same node as the pod, dropping the traffic if there are no
+   * local endpoints. The default value, \&quot;Cluster\&quot;, uses the standard behavior of
+   * routing to all endpoints evenly (possibly modified by topology and other features).
    *
    * @return internalTrafficPolicy
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "InternalTrafficPolicy specifies if the cluster internal traffic should be routed to all endpoints or node-local endpoints only. \"Cluster\" routes internal traffic to a Service to all endpoints. \"Local\" routes traffic to node-local endpoints only, traffic is dropped if no node-local endpoints are ready. The default value is \"Cluster\".")
+          "InternalTrafficPolicy describes how nodes distribute service traffic they receive on the ClusterIP. If set to \"Local\", the proxy will assume that pods only want to talk to endpoints of the service on the same node as the pod, dropping the traffic if there are no local endpoints. The default value, \"Cluster\", uses the standard behavior of routing to all endpoints evenly (possibly modified by topology and other features).")
   public String getInternalTrafficPolicy() {
     return internalTrafficPolicy;
   }
@@ -674,17 +496,19 @@ public class V1ServiceSpec {
   }
 
   /**
-   * Only applies to Service Type: LoadBalancer LoadBalancer will get created with the IP specified
-   * in this field. This feature depends on whether the underlying cloud-provider supports
-   * specifying the loadBalancerIP when a load balancer is created. This field will be ignored if
-   * the cloud-provider does not support the feature.
+   * Only applies to Service Type: LoadBalancer. This feature depends on whether the underlying
+   * cloud-provider supports specifying the loadBalancerIP when a load balancer is created. This
+   * field will be ignored if the cloud-provider does not support the feature. Deprecated: This
+   * field was under-specified and its meaning varies across implementations, and it cannot support
+   * dual-stack. As of Kubernetes v1.24, users are encouraged to use implementation-specific
+   * annotations when available. This field may be removed in a future API version.
    *
    * @return loadBalancerIP
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "Only applies to Service Type: LoadBalancer LoadBalancer will get created with the IP specified in this field. This feature depends on whether the underlying cloud-provider supports specifying the loadBalancerIP when a load balancer is created. This field will be ignored if the cloud-provider does not support the feature.")
+          "Only applies to Service Type: LoadBalancer. This feature depends on whether the underlying cloud-provider supports specifying the loadBalancerIP when a load balancer is created. This field will be ignored if the cloud-provider does not support the feature. Deprecated: This field was under-specified and its meaning varies across implementations, and it cannot support dual-stack. As of Kubernetes v1.24, users are encouraged to use implementation-specific annotations when available. This field may be removed in a future API version.")
   public String getLoadBalancerIP() {
     return loadBalancerIP;
   }
@@ -824,7 +648,7 @@ public class V1ServiceSpec {
     this.selector = selector;
   }
 
-  public V1ServiceSpec sessionAffinity(SessionAffinityEnum sessionAffinity) {
+  public V1ServiceSpec sessionAffinity(String sessionAffinity) {
 
     this.sessionAffinity = sessionAffinity;
     return this;
@@ -834,20 +658,18 @@ public class V1ServiceSpec {
    * Supports \&quot;ClientIP\&quot; and \&quot;None\&quot;. Used to maintain session affinity.
    * Enable client IP based session affinity. Must be ClientIP or None. Defaults to None. More info:
    * https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies
-   * Possible enum values: - &#x60;\&quot;ClientIP\&quot;&#x60; is the Client IP based. -
-   * &#x60;\&quot;None\&quot;&#x60; - no session affinity.
    *
    * @return sessionAffinity
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "Supports \"ClientIP\" and \"None\". Used to maintain session affinity. Enable client IP based session affinity. Must be ClientIP or None. Defaults to None. More info: https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies  Possible enum values:  - `\"ClientIP\"` is the Client IP based.  - `\"None\"` - no session affinity.")
-  public SessionAffinityEnum getSessionAffinity() {
+          "Supports \"ClientIP\" and \"None\". Used to maintain session affinity. Enable client IP based session affinity. Must be ClientIP or None. Defaults to None. More info: https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies  ")
+  public String getSessionAffinity() {
     return sessionAffinity;
   }
 
-  public void setSessionAffinity(SessionAffinityEnum sessionAffinity) {
+  public void setSessionAffinity(String sessionAffinity) {
     this.sessionAffinity = sessionAffinity;
   }
 
@@ -872,7 +694,7 @@ public class V1ServiceSpec {
     this.sessionAffinityConfig = sessionAffinityConfig;
   }
 
-  public V1ServiceSpec type(TypeEnum type) {
+  public V1ServiceSpec type(String type) {
 
     this.type = type;
     return this;
@@ -891,26 +713,18 @@ public class V1ServiceSpec {
    * clusterIP. \&quot;ExternalName\&quot; aliases this service to the specified externalName.
    * Several other fields do not apply to ExternalName services. More info:
    * https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
-   * Possible enum values: - &#x60;\&quot;ClusterIP\&quot;&#x60; means a service will only be
-   * accessible inside the cluster, via the cluster IP. - &#x60;\&quot;ExternalName\&quot;&#x60;
-   * means a service consists of only a reference to an external name that kubedns or equivalent
-   * will return as a CNAME record, with no exposing or proxying of any pods involved. -
-   * &#x60;\&quot;LoadBalancer\&quot;&#x60; means a service will be exposed via an external load
-   * balancer (if the cloud provider supports it), in addition to &#39;NodePort&#39; type. -
-   * &#x60;\&quot;NodePort\&quot;&#x60; means a service will be exposed on one port of every node,
-   * in addition to &#39;ClusterIP&#39; type.
    *
    * @return type
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "type determines how the Service is exposed. Defaults to ClusterIP. Valid options are ExternalName, ClusterIP, NodePort, and LoadBalancer. \"ClusterIP\" allocates a cluster-internal IP address for load-balancing to endpoints. Endpoints are determined by the selector or if that is not specified, by manual construction of an Endpoints object or EndpointSlice objects. If clusterIP is \"None\", no virtual IP is allocated and the endpoints are published as a set of endpoints rather than a virtual IP. \"NodePort\" builds on ClusterIP and allocates a port on every node which routes to the same endpoints as the clusterIP. \"LoadBalancer\" builds on NodePort and creates an external load-balancer (if supported in the current cloud) which routes to the same endpoints as the clusterIP. \"ExternalName\" aliases this service to the specified externalName. Several other fields do not apply to ExternalName services. More info: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types  Possible enum values:  - `\"ClusterIP\"` means a service will only be accessible inside the cluster, via the cluster IP.  - `\"ExternalName\"` means a service consists of only a reference to an external name that kubedns or equivalent will return as a CNAME record, with no exposing or proxying of any pods involved.  - `\"LoadBalancer\"` means a service will be exposed via an external load balancer (if the cloud provider supports it), in addition to 'NodePort' type.  - `\"NodePort\"` means a service will be exposed on one port of every node, in addition to 'ClusterIP' type.")
-  public TypeEnum getType() {
+          "type determines how the Service is exposed. Defaults to ClusterIP. Valid options are ExternalName, ClusterIP, NodePort, and LoadBalancer. \"ClusterIP\" allocates a cluster-internal IP address for load-balancing to endpoints. Endpoints are determined by the selector or if that is not specified, by manual construction of an Endpoints object or EndpointSlice objects. If clusterIP is \"None\", no virtual IP is allocated and the endpoints are published as a set of endpoints rather than a virtual IP. \"NodePort\" builds on ClusterIP and allocates a port on every node which routes to the same endpoints as the clusterIP. \"LoadBalancer\" builds on NodePort and creates an external load-balancer (if supported in the current cloud) which routes to the same endpoints as the clusterIP. \"ExternalName\" aliases this service to the specified externalName. Several other fields do not apply to ExternalName services. More info: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types  ")
+  public String getType() {
     return type;
   }
 
-  public void setType(TypeEnum type) {
+  public void setType(String type) {
     this.type = type;
   }
 

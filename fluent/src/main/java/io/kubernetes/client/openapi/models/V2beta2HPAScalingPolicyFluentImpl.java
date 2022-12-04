@@ -12,15 +12,15 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V2beta2HPAScalingPolicyFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V2beta2HPAScalingPolicyFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V2beta2HPAScalingPolicyFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V2beta2HPAScalingPolicyFluentImpl<A extends V2beta2HPAScalingPolicyFluent<A>>
+    extends BaseFluent<A> implements V2beta2HPAScalingPolicyFluent<A> {
   public V2beta2HPAScalingPolicyFluentImpl() {}
 
-  public V2beta2HPAScalingPolicyFluentImpl(
-      io.kubernetes.client.openapi.models.V2beta2HPAScalingPolicy instance) {
+  public V2beta2HPAScalingPolicyFluentImpl(V2beta2HPAScalingPolicy instance) {
     this.withPeriodSeconds(instance.getPeriodSeconds());
 
     this.withType(instance.getType());
@@ -28,56 +28,50 @@ public class V2beta2HPAScalingPolicyFluentImpl<
     this.withValue(instance.getValue());
   }
 
-  private java.lang.Integer periodSeconds;
-  private java.lang.String type;
-  private java.lang.Integer value;
+  private Integer periodSeconds;
+  private String type;
+  private Integer value;
 
-  public java.lang.Integer getPeriodSeconds() {
+  public Integer getPeriodSeconds() {
     return this.periodSeconds;
   }
 
-  public A withPeriodSeconds(java.lang.Integer periodSeconds) {
+  public A withPeriodSeconds(Integer periodSeconds) {
     this.periodSeconds = periodSeconds;
     return (A) this;
   }
 
-  public java.lang.Boolean hasPeriodSeconds() {
+  public Boolean hasPeriodSeconds() {
     return this.periodSeconds != null;
   }
 
-  public java.lang.String getType() {
+  public String getType() {
     return this.type;
   }
 
-  public A withType(java.lang.String type) {
+  public A withType(String type) {
     this.type = type;
     return (A) this;
   }
 
-  public java.lang.Boolean hasType() {
+  public Boolean hasType() {
     return this.type != null;
   }
 
-  /** Method is deprecated. use withType instead. */
-  @java.lang.Deprecated
-  public A withNewType(java.lang.String original) {
-    return (A) withType(new String(original));
-  }
-
-  public java.lang.Integer getValue() {
+  public Integer getValue() {
     return this.value;
   }
 
-  public A withValue(java.lang.Integer value) {
+  public A withValue(Integer value) {
     this.value = value;
     return (A) this;
   }
 
-  public java.lang.Boolean hasValue() {
+  public Boolean hasValue() {
     return this.value != null;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V2beta2HPAScalingPolicyFluentImpl that = (V2beta2HPAScalingPolicyFluentImpl) o;
@@ -91,5 +85,24 @@ public class V2beta2HPAScalingPolicyFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(periodSeconds, type, value, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (periodSeconds != null) {
+      sb.append("periodSeconds:");
+      sb.append(periodSeconds + ",");
+    }
+    if (type != null) {
+      sb.append("type:");
+      sb.append(type + ",");
+    }
+    if (value != null) {
+      sb.append("value:");
+      sb.append(value);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

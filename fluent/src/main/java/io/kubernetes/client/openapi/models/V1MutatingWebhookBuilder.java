@@ -12,41 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1MutatingWebhookBuilder
-    extends io.kubernetes.client.openapi.models.V1MutatingWebhookFluentImpl<
-        io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1MutatingWebhook,
-        io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1MutatingWebhookBuilder extends V1MutatingWebhookFluentImpl<V1MutatingWebhookBuilder>
+    implements VisitableBuilder<V1MutatingWebhook, V1MutatingWebhookBuilder> {
   public V1MutatingWebhookBuilder() {
     this(false);
   }
 
-  public V1MutatingWebhookBuilder(java.lang.Boolean validationEnabled) {
+  public V1MutatingWebhookBuilder(Boolean validationEnabled) {
     this(new V1MutatingWebhook(), validationEnabled);
   }
 
-  public V1MutatingWebhookBuilder(
-      io.kubernetes.client.openapi.models.V1MutatingWebhookFluent<?> fluent) {
+  public V1MutatingWebhookBuilder(V1MutatingWebhookFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1MutatingWebhookBuilder(
-      io.kubernetes.client.openapi.models.V1MutatingWebhookFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1MutatingWebhookBuilder(V1MutatingWebhookFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1MutatingWebhook(), validationEnabled);
   }
 
-  public V1MutatingWebhookBuilder(
-      io.kubernetes.client.openapi.models.V1MutatingWebhookFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1MutatingWebhook instance) {
+  public V1MutatingWebhookBuilder(V1MutatingWebhookFluent<?> fluent, V1MutatingWebhook instance) {
     this(fluent, instance, false);
   }
 
   public V1MutatingWebhookBuilder(
-      io.kubernetes.client.openapi.models.V1MutatingWebhookFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1MutatingWebhook instance,
-      java.lang.Boolean validationEnabled) {
+      V1MutatingWebhookFluent<?> fluent, V1MutatingWebhook instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withAdmissionReviewVersions(instance.getAdmissionReviewVersions());
 
@@ -73,13 +64,11 @@ public class V1MutatingWebhookBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1MutatingWebhookBuilder(io.kubernetes.client.openapi.models.V1MutatingWebhook instance) {
+  public V1MutatingWebhookBuilder(V1MutatingWebhook instance) {
     this(instance, false);
   }
 
-  public V1MutatingWebhookBuilder(
-      io.kubernetes.client.openapi.models.V1MutatingWebhook instance,
-      java.lang.Boolean validationEnabled) {
+  public V1MutatingWebhookBuilder(V1MutatingWebhook instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withAdmissionReviewVersions(instance.getAdmissionReviewVersions());
 
@@ -106,10 +95,10 @@ public class V1MutatingWebhookBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1MutatingWebhookFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1MutatingWebhookFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1MutatingWebhook build() {
+  public V1MutatingWebhook build() {
     V1MutatingWebhook buildable = new V1MutatingWebhook();
     buildable.setAdmissionReviewVersions(fluent.getAdmissionReviewVersions());
     buildable.setClientConfig(fluent.getClientConfig());
@@ -123,24 +112,5 @@ public class V1MutatingWebhookBuilder
     buildable.setSideEffects(fluent.getSideEffects());
     buildable.setTimeoutSeconds(fluent.getTimeoutSeconds());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1MutatingWebhookBuilder that = (V1MutatingWebhookBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

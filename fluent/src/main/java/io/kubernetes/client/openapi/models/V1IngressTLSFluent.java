@@ -12,50 +12,46 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-/** Generated */
-public interface V1IngressTLSFluent<
-        A extends io.kubernetes.client.openapi.models.V1IngressTLSFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public A addToHosts(java.lang.Integer index, java.lang.String item);
+import io.kubernetes.client.fluent.Fluent;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
 
-  public A setToHosts(java.lang.Integer index, java.lang.String item);
+/** Generated */
+public interface V1IngressTLSFluent<A extends V1IngressTLSFluent<A>> extends Fluent<A> {
+  public A addToHosts(Integer index, String item);
+
+  public A setToHosts(Integer index, String item);
 
   public A addToHosts(java.lang.String... items);
 
-  public A addAllToHosts(java.util.Collection<java.lang.String> items);
+  public A addAllToHosts(Collection<String> items);
 
   public A removeFromHosts(java.lang.String... items);
 
-  public A removeAllFromHosts(java.util.Collection<java.lang.String> items);
+  public A removeAllFromHosts(Collection<String> items);
 
-  public java.util.List<java.lang.String> getHosts();
+  public List<String> getHosts();
 
-  public java.lang.String getHost(java.lang.Integer index);
+  public String getHost(Integer index);
 
-  public java.lang.String getFirstHost();
+  public String getFirstHost();
 
-  public java.lang.String getLastHost();
+  public String getLastHost();
 
-  public java.lang.String getMatchingHost(java.util.function.Predicate<java.lang.String> predicate);
+  public String getMatchingHost(Predicate<String> predicate);
 
-  public java.lang.Boolean hasMatchingHost(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public Boolean hasMatchingHost(Predicate<String> predicate);
 
-  public A withHosts(java.util.List<java.lang.String> hosts);
+  public A withHosts(List<String> hosts);
 
   public A withHosts(java.lang.String... hosts);
 
-  public java.lang.Boolean hasHosts();
+  public Boolean hasHosts();
 
-  public A addNewHost(java.lang.String original);
+  public String getSecretName();
 
-  public java.lang.String getSecretName();
+  public A withSecretName(String secretName);
 
-  public A withSecretName(java.lang.String secretName);
-
-  public java.lang.Boolean hasSecretName();
-
-  /** Method is deprecated. use withSecretName instead. */
-  @java.lang.Deprecated
-  public A withNewSecretName(java.lang.String original);
+  public Boolean hasSecretName();
 }

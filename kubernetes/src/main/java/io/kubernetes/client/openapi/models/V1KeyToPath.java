@@ -1,5 +1,5 @@
 /*
-Copyright 2021 The Kubernetes Authors.
+Copyright 2022 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -21,7 +21,7 @@ import java.util.Objects;
 @ApiModel(description = "Maps a string key to a path within a volume.")
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    date = "2021-12-10T19:11:23.904Z[Etc/UTC]")
+    date = "2022-09-15T17:00:37.921Z[Etc/UTC]")
 public class V1KeyToPath {
   public static final String SERIALIZED_NAME_KEY = "key";
 
@@ -45,11 +45,11 @@ public class V1KeyToPath {
   }
 
   /**
-   * The key to project.
+   * key is the key to project.
    *
    * @return key
    */
-  @ApiModelProperty(required = true, value = "The key to project.")
+  @ApiModelProperty(required = true, value = "key is the key to project.")
   public String getKey() {
     return key;
   }
@@ -65,18 +65,18 @@ public class V1KeyToPath {
   }
 
   /**
-   * Optional: mode bits used to set permissions on this file. Must be an octal value between 0000
-   * and 0777 or a decimal value between 0 and 511. YAML accepts both octal and decimal values, JSON
-   * requires decimal values for mode bits. If not specified, the volume defaultMode will be used.
-   * This might be in conflict with other options that affect the file mode, like fsGroup, and the
-   * result can be other mode bits set.
+   * mode is Optional: mode bits used to set permissions on this file. Must be an octal value
+   * between 0000 and 0777 or a decimal value between 0 and 511. YAML accepts both octal and decimal
+   * values, JSON requires decimal values for mode bits. If not specified, the volume defaultMode
+   * will be used. This might be in conflict with other options that affect the file mode, like
+   * fsGroup, and the result can be other mode bits set.
    *
    * @return mode
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "Optional: mode bits used to set permissions on this file. Must be an octal value between 0000 and 0777 or a decimal value between 0 and 511. YAML accepts both octal and decimal values, JSON requires decimal values for mode bits. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.")
+          "mode is Optional: mode bits used to set permissions on this file. Must be an octal value between 0000 and 0777 or a decimal value between 0 and 511. YAML accepts both octal and decimal values, JSON requires decimal values for mode bits. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.")
   public Integer getMode() {
     return mode;
   }
@@ -92,15 +92,15 @@ public class V1KeyToPath {
   }
 
   /**
-   * The relative path of the file to map the key to. May not be an absolute path. May not contain
-   * the path element &#39;..&#39;. May not start with the string &#39;..&#39;.
+   * path is the relative path of the file to map the key to. May not be an absolute path. May not
+   * contain the path element &#39;..&#39;. May not start with the string &#39;..&#39;.
    *
    * @return path
    */
   @ApiModelProperty(
       required = true,
       value =
-          "The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'.")
+          "path is the relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'.")
   public String getPath() {
     return path;
   }

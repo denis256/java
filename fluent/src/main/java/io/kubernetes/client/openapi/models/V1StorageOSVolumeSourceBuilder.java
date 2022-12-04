@@ -12,41 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1StorageOSVolumeSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1StorageOSVolumeSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1StorageOSVolumeSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1StorageOSVolumeSource,
-        io.kubernetes.client.openapi.models.V1StorageOSVolumeSourceBuilder> {
+    extends V1StorageOSVolumeSourceFluentImpl<V1StorageOSVolumeSourceBuilder>
+    implements VisitableBuilder<V1StorageOSVolumeSource, V1StorageOSVolumeSourceBuilder> {
   public V1StorageOSVolumeSourceBuilder() {
     this(false);
   }
 
-  public V1StorageOSVolumeSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1StorageOSVolumeSourceBuilder(Boolean validationEnabled) {
     this(new V1StorageOSVolumeSource(), validationEnabled);
   }
 
-  public V1StorageOSVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1StorageOSVolumeSourceFluent<?> fluent) {
+  public V1StorageOSVolumeSourceBuilder(V1StorageOSVolumeSourceFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1StorageOSVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1StorageOSVolumeSourceFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1StorageOSVolumeSourceFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1StorageOSVolumeSource(), validationEnabled);
   }
 
   public V1StorageOSVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1StorageOSVolumeSourceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1StorageOSVolumeSource instance) {
+      V1StorageOSVolumeSourceFluent<?> fluent, V1StorageOSVolumeSource instance) {
     this(fluent, instance, false);
   }
 
   public V1StorageOSVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1StorageOSVolumeSourceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1StorageOSVolumeSource instance,
-      java.lang.Boolean validationEnabled) {
+      V1StorageOSVolumeSourceFluent<?> fluent,
+      V1StorageOSVolumeSource instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withFsType(instance.getFsType());
 
@@ -61,14 +57,12 @@ public class V1StorageOSVolumeSourceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1StorageOSVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1StorageOSVolumeSource instance) {
+  public V1StorageOSVolumeSourceBuilder(V1StorageOSVolumeSource instance) {
     this(instance, false);
   }
 
   public V1StorageOSVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1StorageOSVolumeSource instance,
-      java.lang.Boolean validationEnabled) {
+      V1StorageOSVolumeSource instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withFsType(instance.getFsType());
 
@@ -83,10 +77,10 @@ public class V1StorageOSVolumeSourceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1StorageOSVolumeSourceFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1StorageOSVolumeSourceFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1StorageOSVolumeSource build() {
+  public V1StorageOSVolumeSource build() {
     V1StorageOSVolumeSource buildable = new V1StorageOSVolumeSource();
     buildable.setFsType(fluent.getFsType());
     buildable.setReadOnly(fluent.getReadOnly());
@@ -94,24 +88,5 @@ public class V1StorageOSVolumeSourceBuilder
     buildable.setVolumeName(fluent.getVolumeName());
     buildable.setVolumeNamespace(fluent.getVolumeNamespace());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1StorageOSVolumeSourceBuilder that = (V1StorageOSVolumeSourceBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

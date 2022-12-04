@@ -12,40 +12,31 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1ProbeBuilder
-    extends io.kubernetes.client.openapi.models.V1ProbeFluentImpl<
-        io.kubernetes.client.openapi.models.V1ProbeBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1Probe,
-        io.kubernetes.client.openapi.models.V1ProbeBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1ProbeBuilder extends V1ProbeFluentImpl<V1ProbeBuilder>
+    implements VisitableBuilder<V1Probe, V1ProbeBuilder> {
   public V1ProbeBuilder() {
     this(false);
   }
 
-  public V1ProbeBuilder(java.lang.Boolean validationEnabled) {
+  public V1ProbeBuilder(Boolean validationEnabled) {
     this(new V1Probe(), validationEnabled);
   }
 
-  public V1ProbeBuilder(io.kubernetes.client.openapi.models.V1ProbeFluent<?> fluent) {
+  public V1ProbeBuilder(V1ProbeFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1ProbeBuilder(
-      io.kubernetes.client.openapi.models.V1ProbeFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1ProbeBuilder(V1ProbeFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1Probe(), validationEnabled);
   }
 
-  public V1ProbeBuilder(
-      io.kubernetes.client.openapi.models.V1ProbeFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1Probe instance) {
+  public V1ProbeBuilder(V1ProbeFluent<?> fluent, V1Probe instance) {
     this(fluent, instance, false);
   }
 
-  public V1ProbeBuilder(
-      io.kubernetes.client.openapi.models.V1ProbeFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1Probe instance,
-      java.lang.Boolean validationEnabled) {
+  public V1ProbeBuilder(V1ProbeFluent<?> fluent, V1Probe instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withExec(instance.getExec());
 
@@ -70,12 +61,11 @@ public class V1ProbeBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1ProbeBuilder(io.kubernetes.client.openapi.models.V1Probe instance) {
+  public V1ProbeBuilder(V1Probe instance) {
     this(instance, false);
   }
 
-  public V1ProbeBuilder(
-      io.kubernetes.client.openapi.models.V1Probe instance, java.lang.Boolean validationEnabled) {
+  public V1ProbeBuilder(V1Probe instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withExec(instance.getExec());
 
@@ -100,10 +90,10 @@ public class V1ProbeBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1ProbeFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1ProbeFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1Probe build() {
+  public V1Probe build() {
     V1Probe buildable = new V1Probe();
     buildable.setExec(fluent.getExec());
     buildable.setFailureThreshold(fluent.getFailureThreshold());
@@ -116,24 +106,5 @@ public class V1ProbeBuilder
     buildable.setTerminationGracePeriodSeconds(fluent.getTerminationGracePeriodSeconds());
     buildable.setTimeoutSeconds(fluent.getTimeoutSeconds());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1ProbeBuilder that = (V1ProbeBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

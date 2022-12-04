@@ -1,5 +1,5 @@
 /*
-Copyright 2021 The Kubernetes Authors.
+Copyright 2022 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -28,7 +28,7 @@ import java.util.Objects;
         "ServiceAccount binds together: * a name, understood by users, and perhaps by peripheral systems, for an identity * a principal that can be authenticated and authorized * a set of secrets")
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    date = "2021-12-10T19:11:23.904Z[Etc/UTC]")
+    date = "2022-09-15T17:00:37.921Z[Etc/UTC]")
 public class V1ServiceAccount implements io.kubernetes.client.common.KubernetesObject {
   public static final String SERIALIZED_NAME_API_VERSION = "apiVersion";
 
@@ -208,15 +208,20 @@ public class V1ServiceAccount implements io.kubernetes.client.common.KubernetesO
   }
 
   /**
-   * Secrets is the list of secrets allowed to be used by pods running using this ServiceAccount.
-   * More info: https://kubernetes.io/docs/concepts/configuration/secret
+   * Secrets is a list of the secrets in the same namespace that pods running using this
+   * ServiceAccount are allowed to use. Pods are only limited to this list if this service account
+   * has a \&quot;kubernetes.io/enforce-mountable-secrets\&quot; annotation set to
+   * \&quot;true\&quot;. This field should not be used to find auto-generated service account token
+   * secrets for use outside of pods. Instead, tokens can be requested directly using the
+   * TokenRequest API, or service account token secrets can be manually created. More info:
+   * https://kubernetes.io/docs/concepts/configuration/secret
    *
    * @return secrets
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "Secrets is the list of secrets allowed to be used by pods running using this ServiceAccount. More info: https://kubernetes.io/docs/concepts/configuration/secret")
+          "Secrets is a list of the secrets in the same namespace that pods running using this ServiceAccount are allowed to use. Pods are only limited to this list if this service account has a \"kubernetes.io/enforce-mountable-secrets\" annotation set to \"true\". This field should not be used to find auto-generated service account token secrets for use outside of pods. Instead, tokens can be requested directly using the TokenRequest API, or service account token secrets can be manually created. More info: https://kubernetes.io/docs/concepts/configuration/secret")
   public List<V1ObjectReference> getSecrets() {
     return secrets;
   }

@@ -12,130 +12,107 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.custom.Quantity;
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+
 /** Generated */
-public interface V1beta1CSIStorageCapacityFluent<
-        A extends io.kubernetes.client.openapi.models.V1beta1CSIStorageCapacityFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getApiVersion();
+public interface V1beta1CSIStorageCapacityFluent<A extends V1beta1CSIStorageCapacityFluent<A>>
+    extends Fluent<A> {
+  public String getApiVersion();
 
-  public A withApiVersion(java.lang.String apiVersion);
+  public A withApiVersion(String apiVersion);
 
-  public java.lang.Boolean hasApiVersion();
+  public Boolean hasApiVersion();
 
-  /** Method is deprecated. use withApiVersion instead. */
-  @java.lang.Deprecated
-  public A withNewApiVersion(java.lang.String original);
+  public Quantity getCapacity();
 
-  public io.kubernetes.client.custom.Quantity getCapacity();
+  public A withCapacity(Quantity capacity);
 
-  public A withCapacity(io.kubernetes.client.custom.Quantity capacity);
+  public Boolean hasCapacity();
 
-  public java.lang.Boolean hasCapacity();
+  public A withNewCapacity(String value);
 
-  public A withNewCapacity(java.lang.String value);
+  public String getKind();
 
-  public java.lang.String getKind();
+  public A withKind(String kind);
 
-  public A withKind(java.lang.String kind);
+  public Boolean hasKind();
 
-  public java.lang.Boolean hasKind();
+  public Quantity getMaximumVolumeSize();
 
-  /** Method is deprecated. use withKind instead. */
-  @java.lang.Deprecated
-  public A withNewKind(java.lang.String original);
+  public A withMaximumVolumeSize(Quantity maximumVolumeSize);
 
-  public io.kubernetes.client.custom.Quantity getMaximumVolumeSize();
+  public Boolean hasMaximumVolumeSize();
 
-  public A withMaximumVolumeSize(io.kubernetes.client.custom.Quantity maximumVolumeSize);
-
-  public java.lang.Boolean hasMaximumVolumeSize();
-
-  public A withNewMaximumVolumeSize(java.lang.String value);
+  public A withNewMaximumVolumeSize(String value);
 
   /**
    * This method has been deprecated, please use method buildMetadata instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ObjectMeta getMetadata();
+  @Deprecated
+  public V1ObjectMeta getMetadata();
 
-  public io.kubernetes.client.openapi.models.V1ObjectMeta buildMetadata();
+  public V1ObjectMeta buildMetadata();
 
-  public A withMetadata(io.kubernetes.client.openapi.models.V1ObjectMeta metadata);
+  public A withMetadata(V1ObjectMeta metadata);
 
-  public java.lang.Boolean hasMetadata();
+  public Boolean hasMetadata();
 
-  public io.kubernetes.client.openapi.models.V1beta1CSIStorageCapacityFluent.MetadataNested<A>
-      withNewMetadata();
+  public V1beta1CSIStorageCapacityFluent.MetadataNested<A> withNewMetadata();
 
-  public io.kubernetes.client.openapi.models.V1beta1CSIStorageCapacityFluent.MetadataNested<A>
-      withNewMetadataLike(io.kubernetes.client.openapi.models.V1ObjectMeta item);
+  public V1beta1CSIStorageCapacityFluent.MetadataNested<A> withNewMetadataLike(V1ObjectMeta item);
 
-  public io.kubernetes.client.openapi.models.V1beta1CSIStorageCapacityFluent.MetadataNested<A>
-      editMetadata();
+  public V1beta1CSIStorageCapacityFluent.MetadataNested<A> editMetadata();
 
-  public io.kubernetes.client.openapi.models.V1beta1CSIStorageCapacityFluent.MetadataNested<A>
-      editOrNewMetadata();
+  public V1beta1CSIStorageCapacityFluent.MetadataNested<A> editOrNewMetadata();
 
-  public io.kubernetes.client.openapi.models.V1beta1CSIStorageCapacityFluent.MetadataNested<A>
-      editOrNewMetadataLike(io.kubernetes.client.openapi.models.V1ObjectMeta item);
+  public V1beta1CSIStorageCapacityFluent.MetadataNested<A> editOrNewMetadataLike(V1ObjectMeta item);
 
   /**
    * This method has been deprecated, please use method buildNodeTopology instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1LabelSelector getNodeTopology();
+  @Deprecated
+  public V1LabelSelector getNodeTopology();
 
-  public io.kubernetes.client.openapi.models.V1LabelSelector buildNodeTopology();
+  public V1LabelSelector buildNodeTopology();
 
-  public A withNodeTopology(io.kubernetes.client.openapi.models.V1LabelSelector nodeTopology);
+  public A withNodeTopology(V1LabelSelector nodeTopology);
 
-  public java.lang.Boolean hasNodeTopology();
+  public Boolean hasNodeTopology();
 
-  public io.kubernetes.client.openapi.models.V1beta1CSIStorageCapacityFluent.NodeTopologyNested<A>
-      withNewNodeTopology();
+  public V1beta1CSIStorageCapacityFluent.NodeTopologyNested<A> withNewNodeTopology();
 
-  public io.kubernetes.client.openapi.models.V1beta1CSIStorageCapacityFluent.NodeTopologyNested<A>
-      withNewNodeTopologyLike(io.kubernetes.client.openapi.models.V1LabelSelector item);
+  public V1beta1CSIStorageCapacityFluent.NodeTopologyNested<A> withNewNodeTopologyLike(
+      V1LabelSelector item);
 
-  public io.kubernetes.client.openapi.models.V1beta1CSIStorageCapacityFluent.NodeTopologyNested<A>
-      editNodeTopology();
+  public V1beta1CSIStorageCapacityFluent.NodeTopologyNested<A> editNodeTopology();
 
-  public io.kubernetes.client.openapi.models.V1beta1CSIStorageCapacityFluent.NodeTopologyNested<A>
-      editOrNewNodeTopology();
+  public V1beta1CSIStorageCapacityFluent.NodeTopologyNested<A> editOrNewNodeTopology();
 
-  public io.kubernetes.client.openapi.models.V1beta1CSIStorageCapacityFluent.NodeTopologyNested<A>
-      editOrNewNodeTopologyLike(io.kubernetes.client.openapi.models.V1LabelSelector item);
+  public V1beta1CSIStorageCapacityFluent.NodeTopologyNested<A> editOrNewNodeTopologyLike(
+      V1LabelSelector item);
 
-  public java.lang.String getStorageClassName();
+  public String getStorageClassName();
 
-  public A withStorageClassName(java.lang.String storageClassName);
+  public A withStorageClassName(String storageClassName);
 
-  public java.lang.Boolean hasStorageClassName();
-
-  /** Method is deprecated. use withStorageClassName instead. */
-  @java.lang.Deprecated
-  public A withNewStorageClassName(java.lang.String original);
+  public Boolean hasStorageClassName();
 
   public interface MetadataNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1ObjectMetaFluent<
-              io.kubernetes.client.openapi.models.V1beta1CSIStorageCapacityFluent.MetadataNested<
-                  N>> {
+      extends Nested<N>, V1ObjectMetaFluent<V1beta1CSIStorageCapacityFluent.MetadataNested<N>> {
     public N and();
 
     public N endMetadata();
   }
 
   public interface NodeTopologyNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1LabelSelectorFluent<
-              io.kubernetes.client.openapi.models.V1beta1CSIStorageCapacityFluent
-                      .NodeTopologyNested<
-                  N>> {
+      extends Nested<N>,
+          V1LabelSelectorFluent<V1beta1CSIStorageCapacityFluent.NodeTopologyNested<N>> {
     public N and();
 
     public N endNodeTopology();

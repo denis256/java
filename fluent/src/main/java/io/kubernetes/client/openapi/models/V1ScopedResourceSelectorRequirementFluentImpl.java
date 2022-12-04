@@ -12,15 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
+
 /** Generated */
+@SuppressWarnings(value = "unchecked")
 public class V1ScopedResourceSelectorRequirementFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1ScopedResourceSelectorRequirementFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1ScopedResourceSelectorRequirementFluent<A> {
+        A extends V1ScopedResourceSelectorRequirementFluent<A>>
+    extends BaseFluent<A> implements V1ScopedResourceSelectorRequirementFluent<A> {
   public V1ScopedResourceSelectorRequirementFluentImpl() {}
 
   public V1ScopedResourceSelectorRequirementFluentImpl(
-      io.kubernetes.client.openapi.models.V1ScopedResourceSelectorRequirement instance) {
+      V1ScopedResourceSelectorRequirement instance) {
     this.withOperator(instance.getOperator());
 
     this.withScopeName(instance.getScopeName());
@@ -28,55 +34,47 @@ public class V1ScopedResourceSelectorRequirementFluentImpl<
     this.withValues(instance.getValues());
   }
 
-  private io.kubernetes.client.openapi.models.V1ScopedResourceSelectorRequirement.OperatorEnum
-      operator;
-  private io.kubernetes.client.openapi.models.V1ScopedResourceSelectorRequirement.ScopeNameEnum
-      scopeName;
-  private java.util.List<java.lang.String> values;
+  private String operator;
+  private String scopeName;
+  private List<String> values;
 
-  public io.kubernetes.client.openapi.models.V1ScopedResourceSelectorRequirement.OperatorEnum
-      getOperator() {
+  public String getOperator() {
     return this.operator;
   }
 
-  public A withOperator(
-      io.kubernetes.client.openapi.models.V1ScopedResourceSelectorRequirement.OperatorEnum
-          operator) {
+  public A withOperator(String operator) {
     this.operator = operator;
     return (A) this;
   }
 
-  public java.lang.Boolean hasOperator() {
+  public Boolean hasOperator() {
     return this.operator != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1ScopedResourceSelectorRequirement.ScopeNameEnum
-      getScopeName() {
+  public String getScopeName() {
     return this.scopeName;
   }
 
-  public A withScopeName(
-      io.kubernetes.client.openapi.models.V1ScopedResourceSelectorRequirement.ScopeNameEnum
-          scopeName) {
+  public A withScopeName(String scopeName) {
     this.scopeName = scopeName;
     return (A) this;
   }
 
-  public java.lang.Boolean hasScopeName() {
+  public Boolean hasScopeName() {
     return this.scopeName != null;
   }
 
-  public A addToValues(java.lang.Integer index, java.lang.String item) {
+  public A addToValues(Integer index, String item) {
     if (this.values == null) {
-      this.values = new java.util.ArrayList<java.lang.String>();
+      this.values = new ArrayList<String>();
     }
     this.values.add(index, item);
     return (A) this;
   }
 
-  public A setToValues(java.lang.Integer index, java.lang.String item) {
+  public A setToValues(Integer index, String item) {
     if (this.values == null) {
-      this.values = new java.util.ArrayList<java.lang.String>();
+      this.values = new ArrayList<String>();
     }
     this.values.set(index, item);
     return (A) this;
@@ -84,26 +82,26 @@ public class V1ScopedResourceSelectorRequirementFluentImpl<
 
   public A addToValues(java.lang.String... items) {
     if (this.values == null) {
-      this.values = new java.util.ArrayList<java.lang.String>();
+      this.values = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.values.add(item);
     }
     return (A) this;
   }
 
-  public A addAllToValues(java.util.Collection<java.lang.String> items) {
+  public A addAllToValues(Collection<String> items) {
     if (this.values == null) {
-      this.values = new java.util.ArrayList<java.lang.String>();
+      this.values = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.values.add(item);
     }
     return (A) this;
   }
 
   public A removeFromValues(java.lang.String... items) {
-    for (java.lang.String item : items) {
+    for (String item : items) {
       if (this.values != null) {
         this.values.remove(item);
       }
@@ -111,8 +109,8 @@ public class V1ScopedResourceSelectorRequirementFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromValues(java.util.Collection<java.lang.String> items) {
-    for (java.lang.String item : items) {
+  public A removeAllFromValues(Collection<String> items) {
+    for (String item : items) {
       if (this.values != null) {
         this.values.remove(item);
       }
@@ -120,25 +118,24 @@ public class V1ScopedResourceSelectorRequirementFluentImpl<
     return (A) this;
   }
 
-  public java.util.List<java.lang.String> getValues() {
+  public List<String> getValues() {
     return this.values;
   }
 
-  public java.lang.String getValue(java.lang.Integer index) {
+  public String getValue(Integer index) {
     return this.values.get(index);
   }
 
-  public java.lang.String getFirstValue() {
+  public String getFirstValue() {
     return this.values.get(0);
   }
 
-  public java.lang.String getLastValue() {
+  public String getLastValue() {
     return this.values.get(values.size() - 1);
   }
 
-  public java.lang.String getMatchingValue(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : values) {
+  public String getMatchingValue(Predicate<String> predicate) {
+    for (String item : values) {
       if (predicate.test(item)) {
         return item;
       }
@@ -146,9 +143,8 @@ public class V1ScopedResourceSelectorRequirementFluentImpl<
     return null;
   }
 
-  public java.lang.Boolean hasMatchingValue(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : values) {
+  public Boolean hasMatchingValue(Predicate<String> predicate) {
+    for (String item : values) {
       if (predicate.test(item)) {
         return true;
       }
@@ -156,10 +152,10 @@ public class V1ScopedResourceSelectorRequirementFluentImpl<
     return false;
   }
 
-  public A withValues(java.util.List<java.lang.String> values) {
+  public A withValues(List<String> values) {
     if (values != null) {
-      this.values = new java.util.ArrayList();
-      for (java.lang.String item : values) {
+      this.values = new ArrayList();
+      for (String item : values) {
         this.addToValues(item);
       }
     } else {
@@ -173,22 +169,18 @@ public class V1ScopedResourceSelectorRequirementFluentImpl<
       this.values.clear();
     }
     if (values != null) {
-      for (java.lang.String item : values) {
+      for (String item : values) {
         this.addToValues(item);
       }
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasValues() {
+  public Boolean hasValues() {
     return values != null && !values.isEmpty();
   }
 
-  public A addNewValue(java.lang.String original) {
-    return (A) addToValues(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1ScopedResourceSelectorRequirementFluentImpl that =
@@ -202,5 +194,24 @@ public class V1ScopedResourceSelectorRequirementFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(operator, scopeName, values, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (operator != null) {
+      sb.append("operator:");
+      sb.append(operator + ",");
+    }
+    if (scopeName != null) {
+      sb.append("scopeName:");
+      sb.append(scopeName + ",");
+    }
+    if (values != null && !values.isEmpty()) {
+      sb.append("values:");
+      sb.append(values);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

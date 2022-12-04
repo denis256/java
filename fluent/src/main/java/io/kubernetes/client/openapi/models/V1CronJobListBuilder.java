@@ -12,40 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1CronJobListBuilder
-    extends io.kubernetes.client.openapi.models.V1CronJobListFluentImpl<
-        io.kubernetes.client.openapi.models.V1CronJobListBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1CronJobList,
-        io.kubernetes.client.openapi.models.V1CronJobListBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1CronJobListBuilder extends V1CronJobListFluentImpl<V1CronJobListBuilder>
+    implements VisitableBuilder<V1CronJobList, V1CronJobListBuilder> {
   public V1CronJobListBuilder() {
     this(false);
   }
 
-  public V1CronJobListBuilder(java.lang.Boolean validationEnabled) {
+  public V1CronJobListBuilder(Boolean validationEnabled) {
     this(new V1CronJobList(), validationEnabled);
   }
 
-  public V1CronJobListBuilder(io.kubernetes.client.openapi.models.V1CronJobListFluent<?> fluent) {
+  public V1CronJobListBuilder(V1CronJobListFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1CronJobListBuilder(
-      io.kubernetes.client.openapi.models.V1CronJobListFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1CronJobListBuilder(V1CronJobListFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1CronJobList(), validationEnabled);
   }
 
-  public V1CronJobListBuilder(
-      io.kubernetes.client.openapi.models.V1CronJobListFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1CronJobList instance) {
+  public V1CronJobListBuilder(V1CronJobListFluent<?> fluent, V1CronJobList instance) {
     this(fluent, instance, false);
   }
 
   public V1CronJobListBuilder(
-      io.kubernetes.client.openapi.models.V1CronJobListFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1CronJobList instance,
-      java.lang.Boolean validationEnabled) {
+      V1CronJobListFluent<?> fluent, V1CronJobList instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withApiVersion(instance.getApiVersion());
 
@@ -58,13 +50,11 @@ public class V1CronJobListBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1CronJobListBuilder(io.kubernetes.client.openapi.models.V1CronJobList instance) {
+  public V1CronJobListBuilder(V1CronJobList instance) {
     this(instance, false);
   }
 
-  public V1CronJobListBuilder(
-      io.kubernetes.client.openapi.models.V1CronJobList instance,
-      java.lang.Boolean validationEnabled) {
+  public V1CronJobListBuilder(V1CronJobList instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withApiVersion(instance.getApiVersion());
 
@@ -77,34 +67,15 @@ public class V1CronJobListBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1CronJobListFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1CronJobListFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1CronJobList build() {
+  public V1CronJobList build() {
     V1CronJobList buildable = new V1CronJobList();
     buildable.setApiVersion(fluent.getApiVersion());
     buildable.setItems(fluent.getItems());
     buildable.setKind(fluent.getKind());
     buildable.setMetadata(fluent.getMetadata());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1CronJobListBuilder that = (V1CronJobListBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

@@ -12,61 +12,50 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1PreconditionsFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1PreconditionsFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1PreconditionsFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1PreconditionsFluentImpl<A extends V1PreconditionsFluent<A>> extends BaseFluent<A>
+    implements V1PreconditionsFluent<A> {
   public V1PreconditionsFluentImpl() {}
 
-  public V1PreconditionsFluentImpl(io.kubernetes.client.openapi.models.V1Preconditions instance) {
+  public V1PreconditionsFluentImpl(V1Preconditions instance) {
     this.withResourceVersion(instance.getResourceVersion());
 
     this.withUid(instance.getUid());
   }
 
-  private java.lang.String resourceVersion;
-  private java.lang.String uid;
+  private String resourceVersion;
+  private String uid;
 
-  public java.lang.String getResourceVersion() {
+  public String getResourceVersion() {
     return this.resourceVersion;
   }
 
-  public A withResourceVersion(java.lang.String resourceVersion) {
+  public A withResourceVersion(String resourceVersion) {
     this.resourceVersion = resourceVersion;
     return (A) this;
   }
 
-  public java.lang.Boolean hasResourceVersion() {
+  public Boolean hasResourceVersion() {
     return this.resourceVersion != null;
   }
 
-  /** Method is deprecated. use withResourceVersion instead. */
-  @java.lang.Deprecated
-  public A withNewResourceVersion(java.lang.String original) {
-    return (A) withResourceVersion(new String(original));
-  }
-
-  public java.lang.String getUid() {
+  public String getUid() {
     return this.uid;
   }
 
-  public A withUid(java.lang.String uid) {
+  public A withUid(String uid) {
     this.uid = uid;
     return (A) this;
   }
 
-  public java.lang.Boolean hasUid() {
+  public Boolean hasUid() {
     return this.uid != null;
   }
 
-  /** Method is deprecated. use withUid instead. */
-  @java.lang.Deprecated
-  public A withNewUid(java.lang.String original) {
-    return (A) withUid(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1PreconditionsFluentImpl that = (V1PreconditionsFluentImpl) o;
@@ -79,5 +68,20 @@ public class V1PreconditionsFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(resourceVersion, uid, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (resourceVersion != null) {
+      sb.append("resourceVersion:");
+      sb.append(resourceVersion + ",");
+    }
+    if (uid != null) {
+      sb.append("uid:");
+      sb.append(uid);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

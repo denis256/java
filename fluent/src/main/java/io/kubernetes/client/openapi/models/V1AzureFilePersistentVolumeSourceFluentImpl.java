@@ -12,15 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
+@SuppressWarnings(value = "unchecked")
 public class V1AzureFilePersistentVolumeSourceFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1AzureFilePersistentVolumeSourceFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1AzureFilePersistentVolumeSourceFluent<A> {
+        A extends V1AzureFilePersistentVolumeSourceFluent<A>>
+    extends BaseFluent<A> implements V1AzureFilePersistentVolumeSourceFluent<A> {
   public V1AzureFilePersistentVolumeSourceFluentImpl() {}
 
-  public V1AzureFilePersistentVolumeSourceFluentImpl(
-      io.kubernetes.client.openapi.models.V1AzureFilePersistentVolumeSource instance) {
+  public V1AzureFilePersistentVolumeSourceFluentImpl(V1AzureFilePersistentVolumeSource instance) {
     this.withReadOnly(instance.getReadOnly());
 
     this.withSecretName(instance.getSecretName());
@@ -30,82 +31,64 @@ public class V1AzureFilePersistentVolumeSourceFluentImpl<
     this.withShareName(instance.getShareName());
   }
 
-  private java.lang.Boolean readOnly;
-  private java.lang.String secretName;
-  private java.lang.String secretNamespace;
-  private java.lang.String shareName;
+  private Boolean readOnly;
+  private String secretName;
+  private String secretNamespace;
+  private String shareName;
 
-  public java.lang.Boolean getReadOnly() {
+  public Boolean getReadOnly() {
     return this.readOnly;
   }
 
-  public A withReadOnly(java.lang.Boolean readOnly) {
+  public A withReadOnly(Boolean readOnly) {
     this.readOnly = readOnly;
     return (A) this;
   }
 
-  public java.lang.Boolean hasReadOnly() {
+  public Boolean hasReadOnly() {
     return this.readOnly != null;
   }
 
-  public java.lang.String getSecretName() {
+  public String getSecretName() {
     return this.secretName;
   }
 
-  public A withSecretName(java.lang.String secretName) {
+  public A withSecretName(String secretName) {
     this.secretName = secretName;
     return (A) this;
   }
 
-  public java.lang.Boolean hasSecretName() {
+  public Boolean hasSecretName() {
     return this.secretName != null;
   }
 
-  /** Method is deprecated. use withSecretName instead. */
-  @java.lang.Deprecated
-  public A withNewSecretName(java.lang.String original) {
-    return (A) withSecretName(new String(original));
-  }
-
-  public java.lang.String getSecretNamespace() {
+  public String getSecretNamespace() {
     return this.secretNamespace;
   }
 
-  public A withSecretNamespace(java.lang.String secretNamespace) {
+  public A withSecretNamespace(String secretNamespace) {
     this.secretNamespace = secretNamespace;
     return (A) this;
   }
 
-  public java.lang.Boolean hasSecretNamespace() {
+  public Boolean hasSecretNamespace() {
     return this.secretNamespace != null;
   }
 
-  /** Method is deprecated. use withSecretNamespace instead. */
-  @java.lang.Deprecated
-  public A withNewSecretNamespace(java.lang.String original) {
-    return (A) withSecretNamespace(new String(original));
-  }
-
-  public java.lang.String getShareName() {
+  public String getShareName() {
     return this.shareName;
   }
 
-  public A withShareName(java.lang.String shareName) {
+  public A withShareName(String shareName) {
     this.shareName = shareName;
     return (A) this;
   }
 
-  public java.lang.Boolean hasShareName() {
+  public Boolean hasShareName() {
     return this.shareName != null;
   }
 
-  /** Method is deprecated. use withShareName instead. */
-  @java.lang.Deprecated
-  public A withNewShareName(java.lang.String original) {
-    return (A) withShareName(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1AzureFilePersistentVolumeSourceFluentImpl that =
@@ -124,5 +107,32 @@ public class V1AzureFilePersistentVolumeSourceFluentImpl<
   public int hashCode() {
     return java.util.Objects.hash(
         readOnly, secretName, secretNamespace, shareName, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (readOnly != null) {
+      sb.append("readOnly:");
+      sb.append(readOnly + ",");
+    }
+    if (secretName != null) {
+      sb.append("secretName:");
+      sb.append(secretName + ",");
+    }
+    if (secretNamespace != null) {
+      sb.append("secretNamespace:");
+      sb.append(secretNamespace + ",");
+    }
+    if (shareName != null) {
+      sb.append("shareName:");
+      sb.append(shareName);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  public A withReadOnly() {
+    return withReadOnly(true);
   }
 }

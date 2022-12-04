@@ -12,15 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Predicate;
+
 /** Generated */
+@SuppressWarnings(value = "unchecked")
 public class V1CertificateSigningRequestSpecFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1CertificateSigningRequestSpecFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1CertificateSigningRequestSpecFluent<A> {
+        A extends V1CertificateSigningRequestSpecFluent<A>>
+    extends BaseFluent<A> implements V1CertificateSigningRequestSpecFluent<A> {
   public V1CertificateSigningRequestSpecFluentImpl() {}
 
-  public V1CertificateSigningRequestSpecFluentImpl(
-      io.kubernetes.client.openapi.models.V1CertificateSigningRequestSpec instance) {
+  public V1CertificateSigningRequestSpecFluentImpl(V1CertificateSigningRequestSpec instance) {
     this.withExpirationSeconds(instance.getExpirationSeconds());
 
     this.withExtra(instance.getExtra());
@@ -38,31 +45,31 @@ public class V1CertificateSigningRequestSpecFluentImpl<
     this.withUsername(instance.getUsername());
   }
 
-  private java.lang.Integer expirationSeconds;
-  private java.util.Map<java.lang.String, java.util.List<java.lang.String>> extra;
-  private java.util.List<java.lang.String> groups;
-  private java.util.List<java.lang.Byte> request;
-  private java.lang.String signerName;
-  private java.lang.String uid;
-  private java.util.List<java.lang.String> usages;
-  private java.lang.String username;
+  private Integer expirationSeconds;
+  private Map<String, List<String>> extra;
+  private List<String> groups;
+  private List<Byte> request;
+  private String signerName;
+  private String uid;
+  private List<String> usages;
+  private String username;
 
-  public java.lang.Integer getExpirationSeconds() {
+  public Integer getExpirationSeconds() {
     return this.expirationSeconds;
   }
 
-  public A withExpirationSeconds(java.lang.Integer expirationSeconds) {
+  public A withExpirationSeconds(Integer expirationSeconds) {
     this.expirationSeconds = expirationSeconds;
     return (A) this;
   }
 
-  public java.lang.Boolean hasExpirationSeconds() {
+  public Boolean hasExpirationSeconds() {
     return this.expirationSeconds != null;
   }
 
-  public A addToExtra(java.lang.String key, java.util.List<java.lang.String> value) {
+  public A addToExtra(String key, List<String> value) {
     if (this.extra == null && key != null && value != null) {
-      this.extra = new java.util.LinkedHashMap();
+      this.extra = new LinkedHashMap();
     }
     if (key != null && value != null) {
       this.extra.put(key, value);
@@ -70,9 +77,9 @@ public class V1CertificateSigningRequestSpecFluentImpl<
     return (A) this;
   }
 
-  public A addToExtra(java.util.Map<java.lang.String, java.util.List<java.lang.String>> map) {
+  public A addToExtra(Map<String, List<String>> map) {
     if (this.extra == null && map != null) {
-      this.extra = new java.util.LinkedHashMap();
+      this.extra = new LinkedHashMap();
     }
     if (map != null) {
       this.extra.putAll(map);
@@ -80,7 +87,7 @@ public class V1CertificateSigningRequestSpecFluentImpl<
     return (A) this;
   }
 
-  public A removeFromExtra(java.lang.String key) {
+  public A removeFromExtra(String key) {
     if (this.extra == null) {
       return (A) this;
     }
@@ -90,7 +97,7 @@ public class V1CertificateSigningRequestSpecFluentImpl<
     return (A) this;
   }
 
-  public A removeFromExtra(java.util.Map<java.lang.String, java.util.List<java.lang.String>> map) {
+  public A removeFromExtra(Map<String, List<String>> map) {
     if (this.extra == null) {
       return (A) this;
     }
@@ -104,35 +111,34 @@ public class V1CertificateSigningRequestSpecFluentImpl<
     return (A) this;
   }
 
-  public java.util.Map<java.lang.String, java.util.List<java.lang.String>> getExtra() {
+  public Map<String, List<String>> getExtra() {
     return this.extra;
   }
 
-  public <K, V> A withExtra(
-      java.util.Map<java.lang.String, java.util.List<java.lang.String>> extra) {
+  public <K, V> A withExtra(Map<String, List<String>> extra) {
     if (extra == null) {
       this.extra = null;
     } else {
-      this.extra = new java.util.LinkedHashMap(extra);
+      this.extra = new LinkedHashMap(extra);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasExtra() {
+  public Boolean hasExtra() {
     return this.extra != null;
   }
 
-  public A addToGroups(java.lang.Integer index, java.lang.String item) {
+  public A addToGroups(Integer index, String item) {
     if (this.groups == null) {
-      this.groups = new java.util.ArrayList<java.lang.String>();
+      this.groups = new ArrayList<String>();
     }
     this.groups.add(index, item);
     return (A) this;
   }
 
-  public A setToGroups(java.lang.Integer index, java.lang.String item) {
+  public A setToGroups(Integer index, String item) {
     if (this.groups == null) {
-      this.groups = new java.util.ArrayList<java.lang.String>();
+      this.groups = new ArrayList<String>();
     }
     this.groups.set(index, item);
     return (A) this;
@@ -140,26 +146,26 @@ public class V1CertificateSigningRequestSpecFluentImpl<
 
   public A addToGroups(java.lang.String... items) {
     if (this.groups == null) {
-      this.groups = new java.util.ArrayList<java.lang.String>();
+      this.groups = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.groups.add(item);
     }
     return (A) this;
   }
 
-  public A addAllToGroups(java.util.Collection<java.lang.String> items) {
+  public A addAllToGroups(Collection<String> items) {
     if (this.groups == null) {
-      this.groups = new java.util.ArrayList<java.lang.String>();
+      this.groups = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.groups.add(item);
     }
     return (A) this;
   }
 
   public A removeFromGroups(java.lang.String... items) {
-    for (java.lang.String item : items) {
+    for (String item : items) {
       if (this.groups != null) {
         this.groups.remove(item);
       }
@@ -167,8 +173,8 @@ public class V1CertificateSigningRequestSpecFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromGroups(java.util.Collection<java.lang.String> items) {
-    for (java.lang.String item : items) {
+  public A removeAllFromGroups(Collection<String> items) {
+    for (String item : items) {
       if (this.groups != null) {
         this.groups.remove(item);
       }
@@ -176,25 +182,24 @@ public class V1CertificateSigningRequestSpecFluentImpl<
     return (A) this;
   }
 
-  public java.util.List<java.lang.String> getGroups() {
+  public List<String> getGroups() {
     return this.groups;
   }
 
-  public java.lang.String getGroup(java.lang.Integer index) {
+  public String getGroup(Integer index) {
     return this.groups.get(index);
   }
 
-  public java.lang.String getFirstGroup() {
+  public String getFirstGroup() {
     return this.groups.get(0);
   }
 
-  public java.lang.String getLastGroup() {
+  public String getLastGroup() {
     return this.groups.get(groups.size() - 1);
   }
 
-  public java.lang.String getMatchingGroup(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : groups) {
+  public String getMatchingGroup(Predicate<String> predicate) {
+    for (String item : groups) {
       if (predicate.test(item)) {
         return item;
       }
@@ -202,9 +207,8 @@ public class V1CertificateSigningRequestSpecFluentImpl<
     return null;
   }
 
-  public java.lang.Boolean hasMatchingGroup(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : groups) {
+  public Boolean hasMatchingGroup(Predicate<String> predicate) {
+    for (String item : groups) {
       if (predicate.test(item)) {
         return true;
       }
@@ -212,10 +216,10 @@ public class V1CertificateSigningRequestSpecFluentImpl<
     return false;
   }
 
-  public A withGroups(java.util.List<java.lang.String> groups) {
+  public A withGroups(List<String> groups) {
     if (groups != null) {
-      this.groups = new java.util.ArrayList();
-      for (java.lang.String item : groups) {
+      this.groups = new ArrayList();
+      for (String item : groups) {
         this.addToGroups(item);
       }
     } else {
@@ -229,19 +233,15 @@ public class V1CertificateSigningRequestSpecFluentImpl<
       this.groups.clear();
     }
     if (groups != null) {
-      for (java.lang.String item : groups) {
+      for (String item : groups) {
         this.addToGroups(item);
       }
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasGroups() {
+  public Boolean hasGroups() {
     return groups != null && !groups.isEmpty();
-  }
-
-  public A addNewGroup(java.lang.String original) {
-    return (A) addToGroups(new String(original));
   }
 
   public A withRequest(byte... request) {
@@ -270,17 +270,17 @@ public class V1CertificateSigningRequestSpecFluentImpl<
     return result;
   }
 
-  public A addToRequest(java.lang.Integer index, java.lang.Byte item) {
+  public A addToRequest(Integer index, Byte item) {
     if (this.request == null) {
-      this.request = new java.util.ArrayList<java.lang.Byte>();
+      this.request = new ArrayList<Byte>();
     }
     this.request.add(index, item);
     return (A) this;
   }
 
-  public A setToRequest(java.lang.Integer index, java.lang.Byte item) {
+  public A setToRequest(Integer index, Byte item) {
     if (this.request == null) {
-      this.request = new java.util.ArrayList<java.lang.Byte>();
+      this.request = new ArrayList<Byte>();
     }
     this.request.set(index, item);
     return (A) this;
@@ -288,26 +288,26 @@ public class V1CertificateSigningRequestSpecFluentImpl<
 
   public A addToRequest(java.lang.Byte... items) {
     if (this.request == null) {
-      this.request = new java.util.ArrayList<java.lang.Byte>();
+      this.request = new ArrayList<Byte>();
     }
-    for (java.lang.Byte item : items) {
+    for (Byte item : items) {
       this.request.add(item);
     }
     return (A) this;
   }
 
-  public A addAllToRequest(java.util.Collection<java.lang.Byte> items) {
+  public A addAllToRequest(Collection<Byte> items) {
     if (this.request == null) {
-      this.request = new java.util.ArrayList<java.lang.Byte>();
+      this.request = new ArrayList<Byte>();
     }
-    for (java.lang.Byte item : items) {
+    for (Byte item : items) {
       this.request.add(item);
     }
     return (A) this;
   }
 
   public A removeFromRequest(java.lang.Byte... items) {
-    for (java.lang.Byte item : items) {
+    for (Byte item : items) {
       if (this.request != null) {
         this.request.remove(item);
       }
@@ -315,8 +315,8 @@ public class V1CertificateSigningRequestSpecFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromRequest(java.util.Collection<java.lang.Byte> items) {
-    for (java.lang.Byte item : items) {
+  public A removeAllFromRequest(Collection<Byte> items) {
+    for (Byte item : items) {
       if (this.request != null) {
         this.request.remove(item);
       }
@@ -324,59 +324,47 @@ public class V1CertificateSigningRequestSpecFluentImpl<
     return (A) this;
   }
 
-  public java.lang.Boolean hasRequest() {
+  public Boolean hasRequest() {
     return request != null && !request.isEmpty();
   }
 
-  public java.lang.String getSignerName() {
+  public String getSignerName() {
     return this.signerName;
   }
 
-  public A withSignerName(java.lang.String signerName) {
+  public A withSignerName(String signerName) {
     this.signerName = signerName;
     return (A) this;
   }
 
-  public java.lang.Boolean hasSignerName() {
+  public Boolean hasSignerName() {
     return this.signerName != null;
   }
 
-  /** Method is deprecated. use withSignerName instead. */
-  @java.lang.Deprecated
-  public A withNewSignerName(java.lang.String original) {
-    return (A) withSignerName(new String(original));
-  }
-
-  public java.lang.String getUid() {
+  public String getUid() {
     return this.uid;
   }
 
-  public A withUid(java.lang.String uid) {
+  public A withUid(String uid) {
     this.uid = uid;
     return (A) this;
   }
 
-  public java.lang.Boolean hasUid() {
+  public Boolean hasUid() {
     return this.uid != null;
   }
 
-  /** Method is deprecated. use withUid instead. */
-  @java.lang.Deprecated
-  public A withNewUid(java.lang.String original) {
-    return (A) withUid(new String(original));
-  }
-
-  public A addToUsages(java.lang.Integer index, java.lang.String item) {
+  public A addToUsages(Integer index, String item) {
     if (this.usages == null) {
-      this.usages = new java.util.ArrayList<java.lang.String>();
+      this.usages = new ArrayList<String>();
     }
     this.usages.add(index, item);
     return (A) this;
   }
 
-  public A setToUsages(java.lang.Integer index, java.lang.String item) {
+  public A setToUsages(Integer index, String item) {
     if (this.usages == null) {
-      this.usages = new java.util.ArrayList<java.lang.String>();
+      this.usages = new ArrayList<String>();
     }
     this.usages.set(index, item);
     return (A) this;
@@ -384,26 +372,26 @@ public class V1CertificateSigningRequestSpecFluentImpl<
 
   public A addToUsages(java.lang.String... items) {
     if (this.usages == null) {
-      this.usages = new java.util.ArrayList<java.lang.String>();
+      this.usages = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.usages.add(item);
     }
     return (A) this;
   }
 
-  public A addAllToUsages(java.util.Collection<java.lang.String> items) {
+  public A addAllToUsages(Collection<String> items) {
     if (this.usages == null) {
-      this.usages = new java.util.ArrayList<java.lang.String>();
+      this.usages = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.usages.add(item);
     }
     return (A) this;
   }
 
   public A removeFromUsages(java.lang.String... items) {
-    for (java.lang.String item : items) {
+    for (String item : items) {
       if (this.usages != null) {
         this.usages.remove(item);
       }
@@ -411,8 +399,8 @@ public class V1CertificateSigningRequestSpecFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromUsages(java.util.Collection<java.lang.String> items) {
-    for (java.lang.String item : items) {
+  public A removeAllFromUsages(Collection<String> items) {
+    for (String item : items) {
       if (this.usages != null) {
         this.usages.remove(item);
       }
@@ -420,25 +408,24 @@ public class V1CertificateSigningRequestSpecFluentImpl<
     return (A) this;
   }
 
-  public java.util.List<java.lang.String> getUsages() {
+  public List<String> getUsages() {
     return this.usages;
   }
 
-  public java.lang.String getUsage(java.lang.Integer index) {
+  public String getUsage(Integer index) {
     return this.usages.get(index);
   }
 
-  public java.lang.String getFirstUsage() {
+  public String getFirstUsage() {
     return this.usages.get(0);
   }
 
-  public java.lang.String getLastUsage() {
+  public String getLastUsage() {
     return this.usages.get(usages.size() - 1);
   }
 
-  public java.lang.String getMatchingUsage(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : usages) {
+  public String getMatchingUsage(Predicate<String> predicate) {
+    for (String item : usages) {
       if (predicate.test(item)) {
         return item;
       }
@@ -446,9 +433,8 @@ public class V1CertificateSigningRequestSpecFluentImpl<
     return null;
   }
 
-  public java.lang.Boolean hasMatchingUsage(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : usages) {
+  public Boolean hasMatchingUsage(Predicate<String> predicate) {
+    for (String item : usages) {
       if (predicate.test(item)) {
         return true;
       }
@@ -456,10 +442,10 @@ public class V1CertificateSigningRequestSpecFluentImpl<
     return false;
   }
 
-  public A withUsages(java.util.List<java.lang.String> usages) {
+  public A withUsages(List<String> usages) {
     if (usages != null) {
-      this.usages = new java.util.ArrayList();
-      for (java.lang.String item : usages) {
+      this.usages = new ArrayList();
+      for (String item : usages) {
         this.addToUsages(item);
       }
     } else {
@@ -473,41 +459,31 @@ public class V1CertificateSigningRequestSpecFluentImpl<
       this.usages.clear();
     }
     if (usages != null) {
-      for (java.lang.String item : usages) {
+      for (String item : usages) {
         this.addToUsages(item);
       }
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasUsages() {
+  public Boolean hasUsages() {
     return usages != null && !usages.isEmpty();
   }
 
-  public A addNewUsage(java.lang.String original) {
-    return (A) addToUsages(new String(original));
-  }
-
-  public java.lang.String getUsername() {
+  public String getUsername() {
     return this.username;
   }
 
-  public A withUsername(java.lang.String username) {
+  public A withUsername(String username) {
     this.username = username;
     return (A) this;
   }
 
-  public java.lang.Boolean hasUsername() {
+  public Boolean hasUsername() {
     return this.username != null;
   }
 
-  /** Method is deprecated. use withUsername instead. */
-  @java.lang.Deprecated
-  public A withNewUsername(java.lang.String original) {
-    return (A) withUsername(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1CertificateSigningRequestSpecFluentImpl that = (V1CertificateSigningRequestSpecFluentImpl) o;
@@ -536,5 +512,44 @@ public class V1CertificateSigningRequestSpecFluentImpl<
         usages,
         username,
         super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (expirationSeconds != null) {
+      sb.append("expirationSeconds:");
+      sb.append(expirationSeconds + ",");
+    }
+    if (extra != null && !extra.isEmpty()) {
+      sb.append("extra:");
+      sb.append(extra + ",");
+    }
+    if (groups != null && !groups.isEmpty()) {
+      sb.append("groups:");
+      sb.append(groups + ",");
+    }
+    if (request != null && !request.isEmpty()) {
+      sb.append("request:");
+      sb.append(request + ",");
+    }
+    if (signerName != null) {
+      sb.append("signerName:");
+      sb.append(signerName + ",");
+    }
+    if (uid != null) {
+      sb.append("uid:");
+      sb.append(uid + ",");
+    }
+    if (usages != null && !usages.isEmpty()) {
+      sb.append("usages:");
+      sb.append(usages + ",");
+    }
+    if (username != null) {
+      sb.append("username:");
+      sb.append(username);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

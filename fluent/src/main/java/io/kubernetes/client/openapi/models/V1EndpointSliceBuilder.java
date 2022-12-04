@@ -12,41 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1EndpointSliceBuilder
-    extends io.kubernetes.client.openapi.models.V1EndpointSliceFluentImpl<
-        io.kubernetes.client.openapi.models.V1EndpointSliceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1EndpointSlice,
-        io.kubernetes.client.openapi.models.V1EndpointSliceBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1EndpointSliceBuilder extends V1EndpointSliceFluentImpl<V1EndpointSliceBuilder>
+    implements VisitableBuilder<V1EndpointSlice, V1EndpointSliceBuilder> {
   public V1EndpointSliceBuilder() {
     this(false);
   }
 
-  public V1EndpointSliceBuilder(java.lang.Boolean validationEnabled) {
+  public V1EndpointSliceBuilder(Boolean validationEnabled) {
     this(new V1EndpointSlice(), validationEnabled);
   }
 
-  public V1EndpointSliceBuilder(
-      io.kubernetes.client.openapi.models.V1EndpointSliceFluent<?> fluent) {
+  public V1EndpointSliceBuilder(V1EndpointSliceFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1EndpointSliceBuilder(
-      io.kubernetes.client.openapi.models.V1EndpointSliceFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1EndpointSliceBuilder(V1EndpointSliceFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1EndpointSlice(), validationEnabled);
   }
 
-  public V1EndpointSliceBuilder(
-      io.kubernetes.client.openapi.models.V1EndpointSliceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1EndpointSlice instance) {
+  public V1EndpointSliceBuilder(V1EndpointSliceFluent<?> fluent, V1EndpointSlice instance) {
     this(fluent, instance, false);
   }
 
   public V1EndpointSliceBuilder(
-      io.kubernetes.client.openapi.models.V1EndpointSliceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1EndpointSlice instance,
-      java.lang.Boolean validationEnabled) {
+      V1EndpointSliceFluent<?> fluent, V1EndpointSlice instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withAddressType(instance.getAddressType());
 
@@ -63,13 +54,11 @@ public class V1EndpointSliceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1EndpointSliceBuilder(io.kubernetes.client.openapi.models.V1EndpointSlice instance) {
+  public V1EndpointSliceBuilder(V1EndpointSlice instance) {
     this(instance, false);
   }
 
-  public V1EndpointSliceBuilder(
-      io.kubernetes.client.openapi.models.V1EndpointSlice instance,
-      java.lang.Boolean validationEnabled) {
+  public V1EndpointSliceBuilder(V1EndpointSlice instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withAddressType(instance.getAddressType());
 
@@ -86,10 +75,10 @@ public class V1EndpointSliceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1EndpointSliceFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1EndpointSliceFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1EndpointSlice build() {
+  public V1EndpointSlice build() {
     V1EndpointSlice buildable = new V1EndpointSlice();
     buildable.setAddressType(fluent.getAddressType());
     buildable.setApiVersion(fluent.getApiVersion());
@@ -98,24 +87,5 @@ public class V1EndpointSliceBuilder
     buildable.setMetadata(fluent.getMetadata());
     buildable.setPorts(fluent.getPorts());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1EndpointSliceBuilder that = (V1EndpointSliceBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

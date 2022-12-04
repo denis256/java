@@ -12,15 +12,20 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
+
 /** Generated */
-public class V1CephFSVolumeSourceFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1CephFSVolumeSourceFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1CephFSVolumeSourceFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1CephFSVolumeSourceFluentImpl<A extends V1CephFSVolumeSourceFluent<A>>
+    extends BaseFluent<A> implements V1CephFSVolumeSourceFluent<A> {
   public V1CephFSVolumeSourceFluentImpl() {}
 
-  public V1CephFSVolumeSourceFluentImpl(
-      io.kubernetes.client.openapi.models.V1CephFSVolumeSource instance) {
+  public V1CephFSVolumeSourceFluentImpl(V1CephFSVolumeSource instance) {
     this.withMonitors(instance.getMonitors());
 
     this.withPath(instance.getPath());
@@ -34,24 +39,24 @@ public class V1CephFSVolumeSourceFluentImpl<
     this.withUser(instance.getUser());
   }
 
-  private java.util.List<java.lang.String> monitors;
-  private java.lang.String path;
-  private java.lang.Boolean readOnly;
-  private java.lang.String secretFile;
-  private io.kubernetes.client.openapi.models.V1LocalObjectReferenceBuilder secretRef;
-  private java.lang.String user;
+  private List<String> monitors;
+  private String path;
+  private Boolean readOnly;
+  private String secretFile;
+  private V1LocalObjectReferenceBuilder secretRef;
+  private String user;
 
-  public A addToMonitors(java.lang.Integer index, java.lang.String item) {
+  public A addToMonitors(Integer index, String item) {
     if (this.monitors == null) {
-      this.monitors = new java.util.ArrayList<java.lang.String>();
+      this.monitors = new ArrayList<String>();
     }
     this.monitors.add(index, item);
     return (A) this;
   }
 
-  public A setToMonitors(java.lang.Integer index, java.lang.String item) {
+  public A setToMonitors(Integer index, String item) {
     if (this.monitors == null) {
-      this.monitors = new java.util.ArrayList<java.lang.String>();
+      this.monitors = new ArrayList<String>();
     }
     this.monitors.set(index, item);
     return (A) this;
@@ -59,26 +64,26 @@ public class V1CephFSVolumeSourceFluentImpl<
 
   public A addToMonitors(java.lang.String... items) {
     if (this.monitors == null) {
-      this.monitors = new java.util.ArrayList<java.lang.String>();
+      this.monitors = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.monitors.add(item);
     }
     return (A) this;
   }
 
-  public A addAllToMonitors(java.util.Collection<java.lang.String> items) {
+  public A addAllToMonitors(Collection<String> items) {
     if (this.monitors == null) {
-      this.monitors = new java.util.ArrayList<java.lang.String>();
+      this.monitors = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.monitors.add(item);
     }
     return (A) this;
   }
 
   public A removeFromMonitors(java.lang.String... items) {
-    for (java.lang.String item : items) {
+    for (String item : items) {
       if (this.monitors != null) {
         this.monitors.remove(item);
       }
@@ -86,8 +91,8 @@ public class V1CephFSVolumeSourceFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromMonitors(java.util.Collection<java.lang.String> items) {
-    for (java.lang.String item : items) {
+  public A removeAllFromMonitors(Collection<String> items) {
+    for (String item : items) {
       if (this.monitors != null) {
         this.monitors.remove(item);
       }
@@ -95,25 +100,24 @@ public class V1CephFSVolumeSourceFluentImpl<
     return (A) this;
   }
 
-  public java.util.List<java.lang.String> getMonitors() {
+  public List<String> getMonitors() {
     return this.monitors;
   }
 
-  public java.lang.String getMonitor(java.lang.Integer index) {
+  public String getMonitor(Integer index) {
     return this.monitors.get(index);
   }
 
-  public java.lang.String getFirstMonitor() {
+  public String getFirstMonitor() {
     return this.monitors.get(0);
   }
 
-  public java.lang.String getLastMonitor() {
+  public String getLastMonitor() {
     return this.monitors.get(monitors.size() - 1);
   }
 
-  public java.lang.String getMatchingMonitor(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : monitors) {
+  public String getMatchingMonitor(Predicate<String> predicate) {
+    for (String item : monitors) {
       if (predicate.test(item)) {
         return item;
       }
@@ -121,9 +125,8 @@ public class V1CephFSVolumeSourceFluentImpl<
     return null;
   }
 
-  public java.lang.Boolean hasMatchingMonitor(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : monitors) {
+  public Boolean hasMatchingMonitor(Predicate<String> predicate) {
+    for (String item : monitors) {
       if (predicate.test(item)) {
         return true;
       }
@@ -131,10 +134,10 @@ public class V1CephFSVolumeSourceFluentImpl<
     return false;
   }
 
-  public A withMonitors(java.util.List<java.lang.String> monitors) {
+  public A withMonitors(List<String> monitors) {
     if (monitors != null) {
-      this.monitors = new java.util.ArrayList();
-      for (java.lang.String item : monitors) {
+      this.monitors = new ArrayList();
+      for (String item : monitors) {
         this.addToMonitors(item);
       }
     } else {
@@ -148,70 +151,54 @@ public class V1CephFSVolumeSourceFluentImpl<
       this.monitors.clear();
     }
     if (monitors != null) {
-      for (java.lang.String item : monitors) {
+      for (String item : monitors) {
         this.addToMonitors(item);
       }
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasMonitors() {
+  public Boolean hasMonitors() {
     return monitors != null && !monitors.isEmpty();
   }
 
-  public A addNewMonitor(java.lang.String original) {
-    return (A) addToMonitors(new String(original));
-  }
-
-  public java.lang.String getPath() {
+  public String getPath() {
     return this.path;
   }
 
-  public A withPath(java.lang.String path) {
+  public A withPath(String path) {
     this.path = path;
     return (A) this;
   }
 
-  public java.lang.Boolean hasPath() {
+  public Boolean hasPath() {
     return this.path != null;
   }
 
-  /** Method is deprecated. use withPath instead. */
-  @java.lang.Deprecated
-  public A withNewPath(java.lang.String original) {
-    return (A) withPath(new String(original));
-  }
-
-  public java.lang.Boolean getReadOnly() {
+  public Boolean getReadOnly() {
     return this.readOnly;
   }
 
-  public A withReadOnly(java.lang.Boolean readOnly) {
+  public A withReadOnly(Boolean readOnly) {
     this.readOnly = readOnly;
     return (A) this;
   }
 
-  public java.lang.Boolean hasReadOnly() {
+  public Boolean hasReadOnly() {
     return this.readOnly != null;
   }
 
-  public java.lang.String getSecretFile() {
+  public String getSecretFile() {
     return this.secretFile;
   }
 
-  public A withSecretFile(java.lang.String secretFile) {
+  public A withSecretFile(String secretFile) {
     this.secretFile = secretFile;
     return (A) this;
   }
 
-  public java.lang.Boolean hasSecretFile() {
+  public Boolean hasSecretFile() {
     return this.secretFile != null;
-  }
-
-  /** Method is deprecated. use withSecretFile instead. */
-  @java.lang.Deprecated
-  public A withNewSecretFile(java.lang.String original) {
-    return (A) withSecretFile(new String(original));
   }
 
   /**
@@ -219,79 +206,68 @@ public class V1CephFSVolumeSourceFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1LocalObjectReference getSecretRef() {
+  @Deprecated
+  public V1LocalObjectReference getSecretRef() {
     return this.secretRef != null ? this.secretRef.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1LocalObjectReference buildSecretRef() {
+  public V1LocalObjectReference buildSecretRef() {
     return this.secretRef != null ? this.secretRef.build() : null;
   }
 
-  public A withSecretRef(io.kubernetes.client.openapi.models.V1LocalObjectReference secretRef) {
+  public A withSecretRef(V1LocalObjectReference secretRef) {
     _visitables.get("secretRef").remove(this.secretRef);
     if (secretRef != null) {
-      this.secretRef =
-          new io.kubernetes.client.openapi.models.V1LocalObjectReferenceBuilder(secretRef);
+      this.secretRef = new V1LocalObjectReferenceBuilder(secretRef);
       _visitables.get("secretRef").add(this.secretRef);
+    } else {
+      this.secretRef = null;
+      _visitables.get("secretRef").remove(this.secretRef);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasSecretRef() {
+  public Boolean hasSecretRef() {
     return this.secretRef != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1CephFSVolumeSourceFluent.SecretRefNested<A>
-      withNewSecretRef() {
-    return new io.kubernetes.client.openapi.models.V1CephFSVolumeSourceFluentImpl
-        .SecretRefNestedImpl();
+  public V1CephFSVolumeSourceFluent.SecretRefNested<A> withNewSecretRef() {
+    return new V1CephFSVolumeSourceFluentImpl.SecretRefNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1CephFSVolumeSourceFluent.SecretRefNested<A>
-      withNewSecretRefLike(io.kubernetes.client.openapi.models.V1LocalObjectReference item) {
-    return new io.kubernetes.client.openapi.models.V1CephFSVolumeSourceFluentImpl
-        .SecretRefNestedImpl(item);
+  public V1CephFSVolumeSourceFluent.SecretRefNested<A> withNewSecretRefLike(
+      V1LocalObjectReference item) {
+    return new V1CephFSVolumeSourceFluentImpl.SecretRefNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1CephFSVolumeSourceFluent.SecretRefNested<A>
-      editSecretRef() {
+  public V1CephFSVolumeSourceFluent.SecretRefNested<A> editSecretRef() {
     return withNewSecretRefLike(getSecretRef());
   }
 
-  public io.kubernetes.client.openapi.models.V1CephFSVolumeSourceFluent.SecretRefNested<A>
-      editOrNewSecretRef() {
+  public V1CephFSVolumeSourceFluent.SecretRefNested<A> editOrNewSecretRef() {
     return withNewSecretRefLike(
-        getSecretRef() != null
-            ? getSecretRef()
-            : new io.kubernetes.client.openapi.models.V1LocalObjectReferenceBuilder().build());
+        getSecretRef() != null ? getSecretRef() : new V1LocalObjectReferenceBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1CephFSVolumeSourceFluent.SecretRefNested<A>
-      editOrNewSecretRefLike(io.kubernetes.client.openapi.models.V1LocalObjectReference item) {
+  public V1CephFSVolumeSourceFluent.SecretRefNested<A> editOrNewSecretRefLike(
+      V1LocalObjectReference item) {
     return withNewSecretRefLike(getSecretRef() != null ? getSecretRef() : item);
   }
 
-  public java.lang.String getUser() {
+  public String getUser() {
     return this.user;
   }
 
-  public A withUser(java.lang.String user) {
+  public A withUser(String user) {
     this.user = user;
     return (A) this;
   }
 
-  public java.lang.Boolean hasUser() {
+  public Boolean hasUser() {
     return this.user != null;
   }
 
-  /** Method is deprecated. use withUser instead. */
-  @java.lang.Deprecated
-  public A withNewUser(java.lang.String original) {
-    return (A) withUser(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1CephFSVolumeSourceFluentImpl that = (V1CephFSVolumeSourceFluentImpl) o;
@@ -311,21 +287,53 @@ public class V1CephFSVolumeSourceFluentImpl<
         monitors, path, readOnly, secretFile, secretRef, user, super.hashCode());
   }
 
-  public class SecretRefNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1LocalObjectReferenceFluentImpl<
-          io.kubernetes.client.openapi.models.V1CephFSVolumeSourceFluent.SecretRefNested<N>>
-      implements io.kubernetes.client.openapi.models.V1CephFSVolumeSourceFluent.SecretRefNested<N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    SecretRefNestedImpl(io.kubernetes.client.openapi.models.V1LocalObjectReference item) {
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1LocalObjectReferenceBuilder(this, item);
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (monitors != null && !monitors.isEmpty()) {
+      sb.append("monitors:");
+      sb.append(monitors + ",");
+    }
+    if (path != null) {
+      sb.append("path:");
+      sb.append(path + ",");
+    }
+    if (readOnly != null) {
+      sb.append("readOnly:");
+      sb.append(readOnly + ",");
+    }
+    if (secretFile != null) {
+      sb.append("secretFile:");
+      sb.append(secretFile + ",");
+    }
+    if (secretRef != null) {
+      sb.append("secretRef:");
+      sb.append(secretRef + ",");
+    }
+    if (user != null) {
+      sb.append("user:");
+      sb.append(user);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  public A withReadOnly() {
+    return withReadOnly(true);
+  }
+
+  class SecretRefNestedImpl<N>
+      extends V1LocalObjectReferenceFluentImpl<V1CephFSVolumeSourceFluent.SecretRefNested<N>>
+      implements V1CephFSVolumeSourceFluent.SecretRefNested<N>, Nested<N> {
+    SecretRefNestedImpl(V1LocalObjectReference item) {
+      this.builder = new V1LocalObjectReferenceBuilder(this, item);
     }
 
     SecretRefNestedImpl() {
-      this.builder = new io.kubernetes.client.openapi.models.V1LocalObjectReferenceBuilder(this);
+      this.builder = new V1LocalObjectReferenceBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1LocalObjectReferenceBuilder builder;
+    V1LocalObjectReferenceBuilder builder;
 
     public N and() {
       return (N) V1CephFSVolumeSourceFluentImpl.this.withSecretRef(builder.build());

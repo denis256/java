@@ -12,41 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1beta1NonResourcePolicyRuleBuilder
-    extends io.kubernetes.client.openapi.models.V1beta1NonResourcePolicyRuleFluentImpl<
-        io.kubernetes.client.openapi.models.V1beta1NonResourcePolicyRuleBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1beta1NonResourcePolicyRule,
-        io.kubernetes.client.openapi.models.V1beta1NonResourcePolicyRuleBuilder> {
+    extends V1beta1NonResourcePolicyRuleFluentImpl<V1beta1NonResourcePolicyRuleBuilder>
+    implements VisitableBuilder<V1beta1NonResourcePolicyRule, V1beta1NonResourcePolicyRuleBuilder> {
   public V1beta1NonResourcePolicyRuleBuilder() {
     this(false);
   }
 
-  public V1beta1NonResourcePolicyRuleBuilder(java.lang.Boolean validationEnabled) {
+  public V1beta1NonResourcePolicyRuleBuilder(Boolean validationEnabled) {
     this(new V1beta1NonResourcePolicyRule(), validationEnabled);
   }
 
-  public V1beta1NonResourcePolicyRuleBuilder(
-      io.kubernetes.client.openapi.models.V1beta1NonResourcePolicyRuleFluent<?> fluent) {
+  public V1beta1NonResourcePolicyRuleBuilder(V1beta1NonResourcePolicyRuleFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1beta1NonResourcePolicyRuleBuilder(
-      io.kubernetes.client.openapi.models.V1beta1NonResourcePolicyRuleFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1beta1NonResourcePolicyRuleFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1beta1NonResourcePolicyRule(), validationEnabled);
   }
 
   public V1beta1NonResourcePolicyRuleBuilder(
-      io.kubernetes.client.openapi.models.V1beta1NonResourcePolicyRuleFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1beta1NonResourcePolicyRule instance) {
+      V1beta1NonResourcePolicyRuleFluent<?> fluent, V1beta1NonResourcePolicyRule instance) {
     this(fluent, instance, false);
   }
 
   public V1beta1NonResourcePolicyRuleBuilder(
-      io.kubernetes.client.openapi.models.V1beta1NonResourcePolicyRuleFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1beta1NonResourcePolicyRule instance,
-      java.lang.Boolean validationEnabled) {
+      V1beta1NonResourcePolicyRuleFluent<?> fluent,
+      V1beta1NonResourcePolicyRule instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withNonResourceURLs(instance.getNonResourceURLs());
 
@@ -55,14 +51,12 @@ public class V1beta1NonResourcePolicyRuleBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1beta1NonResourcePolicyRuleBuilder(
-      io.kubernetes.client.openapi.models.V1beta1NonResourcePolicyRule instance) {
+  public V1beta1NonResourcePolicyRuleBuilder(V1beta1NonResourcePolicyRule instance) {
     this(instance, false);
   }
 
   public V1beta1NonResourcePolicyRuleBuilder(
-      io.kubernetes.client.openapi.models.V1beta1NonResourcePolicyRule instance,
-      java.lang.Boolean validationEnabled) {
+      V1beta1NonResourcePolicyRule instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withNonResourceURLs(instance.getNonResourceURLs());
 
@@ -71,32 +65,13 @@ public class V1beta1NonResourcePolicyRuleBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1beta1NonResourcePolicyRuleFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1beta1NonResourcePolicyRuleFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1beta1NonResourcePolicyRule build() {
+  public V1beta1NonResourcePolicyRule build() {
     V1beta1NonResourcePolicyRule buildable = new V1beta1NonResourcePolicyRule();
     buildable.setNonResourceURLs(fluent.getNonResourceURLs());
     buildable.setVerbs(fluent.getVerbs());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1beta1NonResourcePolicyRuleBuilder that = (V1beta1NonResourcePolicyRuleBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

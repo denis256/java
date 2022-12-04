@@ -12,41 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1PersistentVolumeSpecBuilder
-    extends io.kubernetes.client.openapi.models.V1PersistentVolumeSpecFluentImpl<
-        io.kubernetes.client.openapi.models.V1PersistentVolumeSpecBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1PersistentVolumeSpec,
-        io.kubernetes.client.openapi.models.V1PersistentVolumeSpecBuilder> {
+    extends V1PersistentVolumeSpecFluentImpl<V1PersistentVolumeSpecBuilder>
+    implements VisitableBuilder<V1PersistentVolumeSpec, V1PersistentVolumeSpecBuilder> {
   public V1PersistentVolumeSpecBuilder() {
     this(false);
   }
 
-  public V1PersistentVolumeSpecBuilder(java.lang.Boolean validationEnabled) {
+  public V1PersistentVolumeSpecBuilder(Boolean validationEnabled) {
     this(new V1PersistentVolumeSpec(), validationEnabled);
   }
 
-  public V1PersistentVolumeSpecBuilder(
-      io.kubernetes.client.openapi.models.V1PersistentVolumeSpecFluent<?> fluent) {
+  public V1PersistentVolumeSpecBuilder(V1PersistentVolumeSpecFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1PersistentVolumeSpecBuilder(
-      io.kubernetes.client.openapi.models.V1PersistentVolumeSpecFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1PersistentVolumeSpecFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1PersistentVolumeSpec(), validationEnabled);
   }
 
   public V1PersistentVolumeSpecBuilder(
-      io.kubernetes.client.openapi.models.V1PersistentVolumeSpecFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1PersistentVolumeSpec instance) {
+      V1PersistentVolumeSpecFluent<?> fluent, V1PersistentVolumeSpec instance) {
     this(fluent, instance, false);
   }
 
   public V1PersistentVolumeSpecBuilder(
-      io.kubernetes.client.openapi.models.V1PersistentVolumeSpecFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1PersistentVolumeSpec instance,
-      java.lang.Boolean validationEnabled) {
+      V1PersistentVolumeSpecFluent<?> fluent,
+      V1PersistentVolumeSpec instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withAccessModes(instance.getAccessModes());
 
@@ -111,14 +107,11 @@ public class V1PersistentVolumeSpecBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1PersistentVolumeSpecBuilder(
-      io.kubernetes.client.openapi.models.V1PersistentVolumeSpec instance) {
+  public V1PersistentVolumeSpecBuilder(V1PersistentVolumeSpec instance) {
     this(instance, false);
   }
 
-  public V1PersistentVolumeSpecBuilder(
-      io.kubernetes.client.openapi.models.V1PersistentVolumeSpec instance,
-      java.lang.Boolean validationEnabled) {
+  public V1PersistentVolumeSpecBuilder(V1PersistentVolumeSpec instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withAccessModes(instance.getAccessModes());
 
@@ -183,10 +176,10 @@ public class V1PersistentVolumeSpecBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1PersistentVolumeSpecFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1PersistentVolumeSpecFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1PersistentVolumeSpec build() {
+  public V1PersistentVolumeSpec build() {
     V1PersistentVolumeSpec buildable = new V1PersistentVolumeSpec();
     buildable.setAccessModes(fluent.getAccessModes());
     buildable.setAwsElasticBlockStore(fluent.getAwsElasticBlockStore());
@@ -219,24 +212,5 @@ public class V1PersistentVolumeSpecBuilder
     buildable.setVolumeMode(fluent.getVolumeMode());
     buildable.setVsphereVolume(fluent.getVsphereVolume());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1PersistentVolumeSpecBuilder that = (V1PersistentVolumeSpecBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

@@ -12,15 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
+@SuppressWarnings(value = "unchecked")
 public class ApiextensionsV1ServiceReferenceFluentImpl<
-        A extends io.kubernetes.client.openapi.models.ApiextensionsV1ServiceReferenceFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.ApiextensionsV1ServiceReferenceFluent<A> {
+        A extends ApiextensionsV1ServiceReferenceFluent<A>>
+    extends BaseFluent<A> implements ApiextensionsV1ServiceReferenceFluent<A> {
   public ApiextensionsV1ServiceReferenceFluentImpl() {}
 
-  public ApiextensionsV1ServiceReferenceFluentImpl(
-      io.kubernetes.client.openapi.models.ApiextensionsV1ServiceReference instance) {
+  public ApiextensionsV1ServiceReferenceFluentImpl(ApiextensionsV1ServiceReference instance) {
     this.withName(instance.getName());
 
     this.withNamespace(instance.getNamespace());
@@ -30,82 +31,64 @@ public class ApiextensionsV1ServiceReferenceFluentImpl<
     this.withPort(instance.getPort());
   }
 
-  private java.lang.String name;
-  private java.lang.String namespace;
-  private java.lang.String path;
-  private java.lang.Integer port;
+  private String name;
+  private String namespace;
+  private String path;
+  private Integer port;
 
-  public java.lang.String getName() {
+  public String getName() {
     return this.name;
   }
 
-  public A withName(java.lang.String name) {
+  public A withName(String name) {
     this.name = name;
     return (A) this;
   }
 
-  public java.lang.Boolean hasName() {
+  public Boolean hasName() {
     return this.name != null;
   }
 
-  /** Method is deprecated. use withName instead. */
-  @java.lang.Deprecated
-  public A withNewName(java.lang.String original) {
-    return (A) withName(new String(original));
-  }
-
-  public java.lang.String getNamespace() {
+  public String getNamespace() {
     return this.namespace;
   }
 
-  public A withNamespace(java.lang.String namespace) {
+  public A withNamespace(String namespace) {
     this.namespace = namespace;
     return (A) this;
   }
 
-  public java.lang.Boolean hasNamespace() {
+  public Boolean hasNamespace() {
     return this.namespace != null;
   }
 
-  /** Method is deprecated. use withNamespace instead. */
-  @java.lang.Deprecated
-  public A withNewNamespace(java.lang.String original) {
-    return (A) withNamespace(new String(original));
-  }
-
-  public java.lang.String getPath() {
+  public String getPath() {
     return this.path;
   }
 
-  public A withPath(java.lang.String path) {
+  public A withPath(String path) {
     this.path = path;
     return (A) this;
   }
 
-  public java.lang.Boolean hasPath() {
+  public Boolean hasPath() {
     return this.path != null;
   }
 
-  /** Method is deprecated. use withPath instead. */
-  @java.lang.Deprecated
-  public A withNewPath(java.lang.String original) {
-    return (A) withPath(new String(original));
-  }
-
-  public java.lang.Integer getPort() {
+  public Integer getPort() {
     return this.port;
   }
 
-  public A withPort(java.lang.Integer port) {
+  public A withPort(Integer port) {
     this.port = port;
     return (A) this;
   }
 
-  public java.lang.Boolean hasPort() {
+  public Boolean hasPort() {
     return this.port != null;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     ApiextensionsV1ServiceReferenceFluentImpl that = (ApiextensionsV1ServiceReferenceFluentImpl) o;
@@ -119,5 +102,28 @@ public class ApiextensionsV1ServiceReferenceFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(name, namespace, path, port, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (name != null) {
+      sb.append("name:");
+      sb.append(name + ",");
+    }
+    if (namespace != null) {
+      sb.append("namespace:");
+      sb.append(namespace + ",");
+    }
+    if (path != null) {
+      sb.append("path:");
+      sb.append(path + ",");
+    }
+    if (port != null) {
+      sb.append("port:");
+      sb.append(port);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

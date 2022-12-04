@@ -12,41 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1ConfigMapVolumeSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1ConfigMapVolumeSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1ConfigMapVolumeSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1ConfigMapVolumeSource,
-        io.kubernetes.client.openapi.models.V1ConfigMapVolumeSourceBuilder> {
+    extends V1ConfigMapVolumeSourceFluentImpl<V1ConfigMapVolumeSourceBuilder>
+    implements VisitableBuilder<V1ConfigMapVolumeSource, V1ConfigMapVolumeSourceBuilder> {
   public V1ConfigMapVolumeSourceBuilder() {
     this(false);
   }
 
-  public V1ConfigMapVolumeSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1ConfigMapVolumeSourceBuilder(Boolean validationEnabled) {
     this(new V1ConfigMapVolumeSource(), validationEnabled);
   }
 
-  public V1ConfigMapVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1ConfigMapVolumeSourceFluent<?> fluent) {
+  public V1ConfigMapVolumeSourceBuilder(V1ConfigMapVolumeSourceFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1ConfigMapVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1ConfigMapVolumeSourceFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1ConfigMapVolumeSourceFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1ConfigMapVolumeSource(), validationEnabled);
   }
 
   public V1ConfigMapVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1ConfigMapVolumeSourceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ConfigMapVolumeSource instance) {
+      V1ConfigMapVolumeSourceFluent<?> fluent, V1ConfigMapVolumeSource instance) {
     this(fluent, instance, false);
   }
 
   public V1ConfigMapVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1ConfigMapVolumeSourceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ConfigMapVolumeSource instance,
-      java.lang.Boolean validationEnabled) {
+      V1ConfigMapVolumeSourceFluent<?> fluent,
+      V1ConfigMapVolumeSource instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withDefaultMode(instance.getDefaultMode());
 
@@ -59,14 +55,12 @@ public class V1ConfigMapVolumeSourceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1ConfigMapVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1ConfigMapVolumeSource instance) {
+  public V1ConfigMapVolumeSourceBuilder(V1ConfigMapVolumeSource instance) {
     this(instance, false);
   }
 
   public V1ConfigMapVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1ConfigMapVolumeSource instance,
-      java.lang.Boolean validationEnabled) {
+      V1ConfigMapVolumeSource instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withDefaultMode(instance.getDefaultMode());
 
@@ -79,34 +73,15 @@ public class V1ConfigMapVolumeSourceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1ConfigMapVolumeSourceFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1ConfigMapVolumeSourceFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1ConfigMapVolumeSource build() {
+  public V1ConfigMapVolumeSource build() {
     V1ConfigMapVolumeSource buildable = new V1ConfigMapVolumeSource();
     buildable.setDefaultMode(fluent.getDefaultMode());
     buildable.setItems(fluent.getItems());
     buildable.setName(fluent.getName());
     buildable.setOptional(fluent.getOptional());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1ConfigMapVolumeSourceBuilder that = (V1ConfigMapVolumeSourceBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

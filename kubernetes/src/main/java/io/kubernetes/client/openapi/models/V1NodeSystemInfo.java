@@ -1,5 +1,5 @@
 /*
-Copyright 2021 The Kubernetes Authors.
+Copyright 2022 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -21,7 +21,7 @@ import java.util.Objects;
 @ApiModel(description = "NodeSystemInfo is a set of ids/uuids to uniquely identify the node.")
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    date = "2021-12-10T19:11:23.904Z[Etc/UTC]")
+    date = "2022-09-15T17:00:37.921Z[Etc/UTC]")
 public class V1NodeSystemInfo {
   public static final String SERIALIZED_NAME_ARCHITECTURE = "architecture";
 
@@ -120,14 +120,15 @@ public class V1NodeSystemInfo {
   }
 
   /**
-   * ContainerRuntime Version reported by the node through runtime remote API (e.g. docker://1.5.0).
+   * ContainerRuntime Version reported by the node through runtime remote API (e.g.
+   * containerd://1.4.2).
    *
    * @return containerRuntimeVersion
    */
   @ApiModelProperty(
       required = true,
       value =
-          "ContainerRuntime Version reported by the node through runtime remote API (e.g. docker://1.5.0).")
+          "ContainerRuntime Version reported by the node through runtime remote API (e.g. containerd://1.4.2).")
   public String getContainerRuntimeVersion() {
     return containerRuntimeVersion;
   }

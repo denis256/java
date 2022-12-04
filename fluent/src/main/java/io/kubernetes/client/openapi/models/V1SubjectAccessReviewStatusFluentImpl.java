@@ -12,15 +12,15 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1SubjectAccessReviewStatusFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1SubjectAccessReviewStatusFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1SubjectAccessReviewStatusFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1SubjectAccessReviewStatusFluentImpl<A extends V1SubjectAccessReviewStatusFluent<A>>
+    extends BaseFluent<A> implements V1SubjectAccessReviewStatusFluent<A> {
   public V1SubjectAccessReviewStatusFluentImpl() {}
 
-  public V1SubjectAccessReviewStatusFluentImpl(
-      io.kubernetes.client.openapi.models.V1SubjectAccessReviewStatus instance) {
+  public V1SubjectAccessReviewStatusFluentImpl(V1SubjectAccessReviewStatus instance) {
     this.withAllowed(instance.getAllowed());
 
     this.withDenied(instance.getDenied());
@@ -30,76 +30,64 @@ public class V1SubjectAccessReviewStatusFluentImpl<
     this.withReason(instance.getReason());
   }
 
-  private java.lang.Boolean allowed;
-  private java.lang.Boolean denied;
-  private java.lang.String evaluationError;
-  private java.lang.String reason;
+  private Boolean allowed;
+  private Boolean denied;
+  private String evaluationError;
+  private String reason;
 
-  public java.lang.Boolean getAllowed() {
+  public Boolean getAllowed() {
     return this.allowed;
   }
 
-  public A withAllowed(java.lang.Boolean allowed) {
+  public A withAllowed(Boolean allowed) {
     this.allowed = allowed;
     return (A) this;
   }
 
-  public java.lang.Boolean hasAllowed() {
+  public Boolean hasAllowed() {
     return this.allowed != null;
   }
 
-  public java.lang.Boolean getDenied() {
+  public Boolean getDenied() {
     return this.denied;
   }
 
-  public A withDenied(java.lang.Boolean denied) {
+  public A withDenied(Boolean denied) {
     this.denied = denied;
     return (A) this;
   }
 
-  public java.lang.Boolean hasDenied() {
+  public Boolean hasDenied() {
     return this.denied != null;
   }
 
-  public java.lang.String getEvaluationError() {
+  public String getEvaluationError() {
     return this.evaluationError;
   }
 
-  public A withEvaluationError(java.lang.String evaluationError) {
+  public A withEvaluationError(String evaluationError) {
     this.evaluationError = evaluationError;
     return (A) this;
   }
 
-  public java.lang.Boolean hasEvaluationError() {
+  public Boolean hasEvaluationError() {
     return this.evaluationError != null;
   }
 
-  /** Method is deprecated. use withEvaluationError instead. */
-  @java.lang.Deprecated
-  public A withNewEvaluationError(java.lang.String original) {
-    return (A) withEvaluationError(new String(original));
-  }
-
-  public java.lang.String getReason() {
+  public String getReason() {
     return this.reason;
   }
 
-  public A withReason(java.lang.String reason) {
+  public A withReason(String reason) {
     this.reason = reason;
     return (A) this;
   }
 
-  public java.lang.Boolean hasReason() {
+  public Boolean hasReason() {
     return this.reason != null;
   }
 
-  /** Method is deprecated. use withReason instead. */
-  @java.lang.Deprecated
-  public A withNewReason(java.lang.String original) {
-    return (A) withReason(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1SubjectAccessReviewStatusFluentImpl that = (V1SubjectAccessReviewStatusFluentImpl) o;
@@ -114,5 +102,36 @@ public class V1SubjectAccessReviewStatusFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(allowed, denied, evaluationError, reason, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (allowed != null) {
+      sb.append("allowed:");
+      sb.append(allowed + ",");
+    }
+    if (denied != null) {
+      sb.append("denied:");
+      sb.append(denied + ",");
+    }
+    if (evaluationError != null) {
+      sb.append("evaluationError:");
+      sb.append(evaluationError + ",");
+    }
+    if (reason != null) {
+      sb.append("reason:");
+      sb.append(reason);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  public A withAllowed() {
+    return withAllowed(true);
+  }
+
+  public A withDenied() {
+    return withDenied(true);
   }
 }

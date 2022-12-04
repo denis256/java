@@ -12,41 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1ClusterRoleListBuilder
-    extends io.kubernetes.client.openapi.models.V1ClusterRoleListFluentImpl<
-        io.kubernetes.client.openapi.models.V1ClusterRoleListBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1ClusterRoleList,
-        io.kubernetes.client.openapi.models.V1ClusterRoleListBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1ClusterRoleListBuilder extends V1ClusterRoleListFluentImpl<V1ClusterRoleListBuilder>
+    implements VisitableBuilder<V1ClusterRoleList, V1ClusterRoleListBuilder> {
   public V1ClusterRoleListBuilder() {
     this(false);
   }
 
-  public V1ClusterRoleListBuilder(java.lang.Boolean validationEnabled) {
+  public V1ClusterRoleListBuilder(Boolean validationEnabled) {
     this(new V1ClusterRoleList(), validationEnabled);
   }
 
-  public V1ClusterRoleListBuilder(
-      io.kubernetes.client.openapi.models.V1ClusterRoleListFluent<?> fluent) {
+  public V1ClusterRoleListBuilder(V1ClusterRoleListFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1ClusterRoleListBuilder(
-      io.kubernetes.client.openapi.models.V1ClusterRoleListFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1ClusterRoleListBuilder(V1ClusterRoleListFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1ClusterRoleList(), validationEnabled);
   }
 
-  public V1ClusterRoleListBuilder(
-      io.kubernetes.client.openapi.models.V1ClusterRoleListFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ClusterRoleList instance) {
+  public V1ClusterRoleListBuilder(V1ClusterRoleListFluent<?> fluent, V1ClusterRoleList instance) {
     this(fluent, instance, false);
   }
 
   public V1ClusterRoleListBuilder(
-      io.kubernetes.client.openapi.models.V1ClusterRoleListFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ClusterRoleList instance,
-      java.lang.Boolean validationEnabled) {
+      V1ClusterRoleListFluent<?> fluent, V1ClusterRoleList instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withApiVersion(instance.getApiVersion());
 
@@ -59,13 +50,11 @@ public class V1ClusterRoleListBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1ClusterRoleListBuilder(io.kubernetes.client.openapi.models.V1ClusterRoleList instance) {
+  public V1ClusterRoleListBuilder(V1ClusterRoleList instance) {
     this(instance, false);
   }
 
-  public V1ClusterRoleListBuilder(
-      io.kubernetes.client.openapi.models.V1ClusterRoleList instance,
-      java.lang.Boolean validationEnabled) {
+  public V1ClusterRoleListBuilder(V1ClusterRoleList instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withApiVersion(instance.getApiVersion());
 
@@ -78,34 +67,15 @@ public class V1ClusterRoleListBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1ClusterRoleListFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1ClusterRoleListFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1ClusterRoleList build() {
+  public V1ClusterRoleList build() {
     V1ClusterRoleList buildable = new V1ClusterRoleList();
     buildable.setApiVersion(fluent.getApiVersion());
     buildable.setItems(fluent.getItems());
     buildable.setKind(fluent.getKind());
     buildable.setMetadata(fluent.getMetadata());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1ClusterRoleListBuilder that = (V1ClusterRoleListBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

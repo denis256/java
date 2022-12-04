@@ -12,41 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1HTTPGetActionBuilder
-    extends io.kubernetes.client.openapi.models.V1HTTPGetActionFluentImpl<
-        io.kubernetes.client.openapi.models.V1HTTPGetActionBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1HTTPGetAction,
-        io.kubernetes.client.openapi.models.V1HTTPGetActionBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1HTTPGetActionBuilder extends V1HTTPGetActionFluentImpl<V1HTTPGetActionBuilder>
+    implements VisitableBuilder<V1HTTPGetAction, V1HTTPGetActionBuilder> {
   public V1HTTPGetActionBuilder() {
     this(false);
   }
 
-  public V1HTTPGetActionBuilder(java.lang.Boolean validationEnabled) {
+  public V1HTTPGetActionBuilder(Boolean validationEnabled) {
     this(new V1HTTPGetAction(), validationEnabled);
   }
 
-  public V1HTTPGetActionBuilder(
-      io.kubernetes.client.openapi.models.V1HTTPGetActionFluent<?> fluent) {
+  public V1HTTPGetActionBuilder(V1HTTPGetActionFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1HTTPGetActionBuilder(
-      io.kubernetes.client.openapi.models.V1HTTPGetActionFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1HTTPGetActionBuilder(V1HTTPGetActionFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1HTTPGetAction(), validationEnabled);
   }
 
-  public V1HTTPGetActionBuilder(
-      io.kubernetes.client.openapi.models.V1HTTPGetActionFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1HTTPGetAction instance) {
+  public V1HTTPGetActionBuilder(V1HTTPGetActionFluent<?> fluent, V1HTTPGetAction instance) {
     this(fluent, instance, false);
   }
 
   public V1HTTPGetActionBuilder(
-      io.kubernetes.client.openapi.models.V1HTTPGetActionFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1HTTPGetAction instance,
-      java.lang.Boolean validationEnabled) {
+      V1HTTPGetActionFluent<?> fluent, V1HTTPGetAction instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withHost(instance.getHost());
 
@@ -61,13 +52,11 @@ public class V1HTTPGetActionBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1HTTPGetActionBuilder(io.kubernetes.client.openapi.models.V1HTTPGetAction instance) {
+  public V1HTTPGetActionBuilder(V1HTTPGetAction instance) {
     this(instance, false);
   }
 
-  public V1HTTPGetActionBuilder(
-      io.kubernetes.client.openapi.models.V1HTTPGetAction instance,
-      java.lang.Boolean validationEnabled) {
+  public V1HTTPGetActionBuilder(V1HTTPGetAction instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withHost(instance.getHost());
 
@@ -82,10 +71,10 @@ public class V1HTTPGetActionBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1HTTPGetActionFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1HTTPGetActionFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1HTTPGetAction build() {
+  public V1HTTPGetAction build() {
     V1HTTPGetAction buildable = new V1HTTPGetAction();
     buildable.setHost(fluent.getHost());
     buildable.setHttpHeaders(fluent.getHttpHeaders());
@@ -93,24 +82,5 @@ public class V1HTTPGetActionBuilder
     buildable.setPort(fluent.getPort());
     buildable.setScheme(fluent.getScheme());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1HTTPGetActionBuilder that = (V1HTTPGetActionBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

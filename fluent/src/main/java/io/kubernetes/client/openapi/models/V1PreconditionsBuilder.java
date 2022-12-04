@@ -12,41 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1PreconditionsBuilder
-    extends io.kubernetes.client.openapi.models.V1PreconditionsFluentImpl<
-        io.kubernetes.client.openapi.models.V1PreconditionsBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1Preconditions,
-        io.kubernetes.client.openapi.models.V1PreconditionsBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1PreconditionsBuilder extends V1PreconditionsFluentImpl<V1PreconditionsBuilder>
+    implements VisitableBuilder<V1Preconditions, V1PreconditionsBuilder> {
   public V1PreconditionsBuilder() {
     this(false);
   }
 
-  public V1PreconditionsBuilder(java.lang.Boolean validationEnabled) {
+  public V1PreconditionsBuilder(Boolean validationEnabled) {
     this(new V1Preconditions(), validationEnabled);
   }
 
-  public V1PreconditionsBuilder(
-      io.kubernetes.client.openapi.models.V1PreconditionsFluent<?> fluent) {
+  public V1PreconditionsBuilder(V1PreconditionsFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1PreconditionsBuilder(
-      io.kubernetes.client.openapi.models.V1PreconditionsFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1PreconditionsBuilder(V1PreconditionsFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1Preconditions(), validationEnabled);
   }
 
-  public V1PreconditionsBuilder(
-      io.kubernetes.client.openapi.models.V1PreconditionsFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1Preconditions instance) {
+  public V1PreconditionsBuilder(V1PreconditionsFluent<?> fluent, V1Preconditions instance) {
     this(fluent, instance, false);
   }
 
   public V1PreconditionsBuilder(
-      io.kubernetes.client.openapi.models.V1PreconditionsFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1Preconditions instance,
-      java.lang.Boolean validationEnabled) {
+      V1PreconditionsFluent<?> fluent, V1Preconditions instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withResourceVersion(instance.getResourceVersion());
 
@@ -55,13 +46,11 @@ public class V1PreconditionsBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1PreconditionsBuilder(io.kubernetes.client.openapi.models.V1Preconditions instance) {
+  public V1PreconditionsBuilder(V1Preconditions instance) {
     this(instance, false);
   }
 
-  public V1PreconditionsBuilder(
-      io.kubernetes.client.openapi.models.V1Preconditions instance,
-      java.lang.Boolean validationEnabled) {
+  public V1PreconditionsBuilder(V1Preconditions instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withResourceVersion(instance.getResourceVersion());
 
@@ -70,32 +59,13 @@ public class V1PreconditionsBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1PreconditionsFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1PreconditionsFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1Preconditions build() {
+  public V1Preconditions build() {
     V1Preconditions buildable = new V1Preconditions();
     buildable.setResourceVersion(fluent.getResourceVersion());
     buildable.setUid(fluent.getUid());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1PreconditionsBuilder that = (V1PreconditionsBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

@@ -12,61 +12,51 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import java.time.OffsetDateTime;
+
 /** Generated */
-public interface V1ContainerStateTerminatedFluent<
-        A extends io.kubernetes.client.openapi.models.V1ContainerStateTerminatedFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getContainerID();
+public interface V1ContainerStateTerminatedFluent<A extends V1ContainerStateTerminatedFluent<A>>
+    extends Fluent<A> {
+  public String getContainerID();
 
-  public A withContainerID(java.lang.String containerID);
+  public A withContainerID(String containerID);
 
-  public java.lang.Boolean hasContainerID();
+  public Boolean hasContainerID();
 
-  /** Method is deprecated. use withContainerID instead. */
-  @java.lang.Deprecated
-  public A withNewContainerID(java.lang.String original);
+  public Integer getExitCode();
 
-  public java.lang.Integer getExitCode();
+  public A withExitCode(Integer exitCode);
 
-  public A withExitCode(java.lang.Integer exitCode);
+  public Boolean hasExitCode();
 
-  public java.lang.Boolean hasExitCode();
+  public OffsetDateTime getFinishedAt();
 
-  public java.time.OffsetDateTime getFinishedAt();
+  public A withFinishedAt(OffsetDateTime finishedAt);
 
-  public A withFinishedAt(java.time.OffsetDateTime finishedAt);
+  public Boolean hasFinishedAt();
 
-  public java.lang.Boolean hasFinishedAt();
+  public String getMessage();
 
-  public java.lang.String getMessage();
+  public A withMessage(String message);
 
-  public A withMessage(java.lang.String message);
+  public Boolean hasMessage();
 
-  public java.lang.Boolean hasMessage();
+  public String getReason();
 
-  /** Method is deprecated. use withMessage instead. */
-  @java.lang.Deprecated
-  public A withNewMessage(java.lang.String original);
+  public A withReason(String reason);
 
-  public java.lang.String getReason();
+  public Boolean hasReason();
 
-  public A withReason(java.lang.String reason);
+  public Integer getSignal();
 
-  public java.lang.Boolean hasReason();
+  public A withSignal(Integer signal);
 
-  /** Method is deprecated. use withReason instead. */
-  @java.lang.Deprecated
-  public A withNewReason(java.lang.String original);
+  public Boolean hasSignal();
 
-  public java.lang.Integer getSignal();
+  public OffsetDateTime getStartedAt();
 
-  public A withSignal(java.lang.Integer signal);
+  public A withStartedAt(OffsetDateTime startedAt);
 
-  public java.lang.Boolean hasSignal();
-
-  public java.time.OffsetDateTime getStartedAt();
-
-  public A withStartedAt(java.time.OffsetDateTime startedAt);
-
-  public java.lang.Boolean hasStartedAt();
+  public Boolean hasStartedAt();
 }

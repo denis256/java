@@ -12,95 +12,91 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+
 /** Generated */
-public class V1PreferredSchedulingTermFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1PreferredSchedulingTermFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1PreferredSchedulingTermFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1PreferredSchedulingTermFluentImpl<A extends V1PreferredSchedulingTermFluent<A>>
+    extends BaseFluent<A> implements V1PreferredSchedulingTermFluent<A> {
   public V1PreferredSchedulingTermFluentImpl() {}
 
-  public V1PreferredSchedulingTermFluentImpl(
-      io.kubernetes.client.openapi.models.V1PreferredSchedulingTerm instance) {
+  public V1PreferredSchedulingTermFluentImpl(V1PreferredSchedulingTerm instance) {
     this.withPreference(instance.getPreference());
 
     this.withWeight(instance.getWeight());
   }
 
-  private io.kubernetes.client.openapi.models.V1NodeSelectorTermBuilder preference;
-  private java.lang.Integer weight;
+  private V1NodeSelectorTermBuilder preference;
+  private Integer weight;
 
   /**
    * This method has been deprecated, please use method buildPreference instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1NodeSelectorTerm getPreference() {
+  @Deprecated
+  public V1NodeSelectorTerm getPreference() {
     return this.preference != null ? this.preference.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1NodeSelectorTerm buildPreference() {
+  public V1NodeSelectorTerm buildPreference() {
     return this.preference != null ? this.preference.build() : null;
   }
 
-  public A withPreference(io.kubernetes.client.openapi.models.V1NodeSelectorTerm preference) {
+  public A withPreference(V1NodeSelectorTerm preference) {
     _visitables.get("preference").remove(this.preference);
     if (preference != null) {
-      this.preference =
-          new io.kubernetes.client.openapi.models.V1NodeSelectorTermBuilder(preference);
+      this.preference = new V1NodeSelectorTermBuilder(preference);
       _visitables.get("preference").add(this.preference);
+    } else {
+      this.preference = null;
+      _visitables.get("preference").remove(this.preference);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasPreference() {
+  public Boolean hasPreference() {
     return this.preference != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1PreferredSchedulingTermFluent.PreferenceNested<A>
-      withNewPreference() {
-    return new io.kubernetes.client.openapi.models.V1PreferredSchedulingTermFluentImpl
-        .PreferenceNestedImpl();
+  public V1PreferredSchedulingTermFluent.PreferenceNested<A> withNewPreference() {
+    return new V1PreferredSchedulingTermFluentImpl.PreferenceNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1PreferredSchedulingTermFluent.PreferenceNested<A>
-      withNewPreferenceLike(io.kubernetes.client.openapi.models.V1NodeSelectorTerm item) {
-    return new io.kubernetes.client.openapi.models.V1PreferredSchedulingTermFluentImpl
-        .PreferenceNestedImpl(item);
+  public V1PreferredSchedulingTermFluent.PreferenceNested<A> withNewPreferenceLike(
+      V1NodeSelectorTerm item) {
+    return new V1PreferredSchedulingTermFluentImpl.PreferenceNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1PreferredSchedulingTermFluent.PreferenceNested<A>
-      editPreference() {
+  public V1PreferredSchedulingTermFluent.PreferenceNested<A> editPreference() {
     return withNewPreferenceLike(getPreference());
   }
 
-  public io.kubernetes.client.openapi.models.V1PreferredSchedulingTermFluent.PreferenceNested<A>
-      editOrNewPreference() {
+  public V1PreferredSchedulingTermFluent.PreferenceNested<A> editOrNewPreference() {
     return withNewPreferenceLike(
-        getPreference() != null
-            ? getPreference()
-            : new io.kubernetes.client.openapi.models.V1NodeSelectorTermBuilder().build());
+        getPreference() != null ? getPreference() : new V1NodeSelectorTermBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1PreferredSchedulingTermFluent.PreferenceNested<A>
-      editOrNewPreferenceLike(io.kubernetes.client.openapi.models.V1NodeSelectorTerm item) {
+  public V1PreferredSchedulingTermFluent.PreferenceNested<A> editOrNewPreferenceLike(
+      V1NodeSelectorTerm item) {
     return withNewPreferenceLike(getPreference() != null ? getPreference() : item);
   }
 
-  public java.lang.Integer getWeight() {
+  public Integer getWeight() {
     return this.weight;
   }
 
-  public A withWeight(java.lang.Integer weight) {
+  public A withWeight(Integer weight) {
     this.weight = weight;
     return (A) this;
   }
 
-  public java.lang.Boolean hasWeight() {
+  public Boolean hasWeight() {
     return this.weight != null;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1PreferredSchedulingTermFluentImpl that = (V1PreferredSchedulingTermFluentImpl) o;
@@ -114,22 +110,33 @@ public class V1PreferredSchedulingTermFluentImpl<
     return java.util.Objects.hash(preference, weight, super.hashCode());
   }
 
-  public class PreferenceNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1NodeSelectorTermFluentImpl<
-          io.kubernetes.client.openapi.models.V1PreferredSchedulingTermFluent.PreferenceNested<N>>
-      implements io.kubernetes.client.openapi.models.V1PreferredSchedulingTermFluent
-                  .PreferenceNested<
-              N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    PreferenceNestedImpl(io.kubernetes.client.openapi.models.V1NodeSelectorTerm item) {
-      this.builder = new io.kubernetes.client.openapi.models.V1NodeSelectorTermBuilder(this, item);
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (preference != null) {
+      sb.append("preference:");
+      sb.append(preference + ",");
+    }
+    if (weight != null) {
+      sb.append("weight:");
+      sb.append(weight);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class PreferenceNestedImpl<N>
+      extends V1NodeSelectorTermFluentImpl<V1PreferredSchedulingTermFluent.PreferenceNested<N>>
+      implements V1PreferredSchedulingTermFluent.PreferenceNested<N>, Nested<N> {
+    PreferenceNestedImpl(V1NodeSelectorTerm item) {
+      this.builder = new V1NodeSelectorTermBuilder(this, item);
     }
 
     PreferenceNestedImpl() {
-      this.builder = new io.kubernetes.client.openapi.models.V1NodeSelectorTermBuilder(this);
+      this.builder = new V1NodeSelectorTermBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1NodeSelectorTermBuilder builder;
+    V1NodeSelectorTermBuilder builder;
 
     public N and() {
       return (N) V1PreferredSchedulingTermFluentImpl.this.withPreference(builder.build());

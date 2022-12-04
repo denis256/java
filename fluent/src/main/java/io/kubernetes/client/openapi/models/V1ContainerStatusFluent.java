@@ -12,137 +12,114 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+
 /** Generated */
-public interface V1ContainerStatusFluent<
-        A extends io.kubernetes.client.openapi.models.V1ContainerStatusFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getContainerID();
+public interface V1ContainerStatusFluent<A extends V1ContainerStatusFluent<A>> extends Fluent<A> {
+  public String getContainerID();
 
-  public A withContainerID(java.lang.String containerID);
+  public A withContainerID(String containerID);
 
-  public java.lang.Boolean hasContainerID();
+  public Boolean hasContainerID();
 
-  /** Method is deprecated. use withContainerID instead. */
-  @java.lang.Deprecated
-  public A withNewContainerID(java.lang.String original);
+  public String getImage();
 
-  public java.lang.String getImage();
+  public A withImage(String image);
 
-  public A withImage(java.lang.String image);
+  public Boolean hasImage();
 
-  public java.lang.Boolean hasImage();
+  public String getImageID();
 
-  /** Method is deprecated. use withImage instead. */
-  @java.lang.Deprecated
-  public A withNewImage(java.lang.String original);
+  public A withImageID(String imageID);
 
-  public java.lang.String getImageID();
-
-  public A withImageID(java.lang.String imageID);
-
-  public java.lang.Boolean hasImageID();
-
-  /** Method is deprecated. use withImageID instead. */
-  @java.lang.Deprecated
-  public A withNewImageID(java.lang.String original);
+  public Boolean hasImageID();
 
   /**
    * This method has been deprecated, please use method buildLastState instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ContainerState getLastState();
+  @Deprecated
+  public V1ContainerState getLastState();
 
-  public io.kubernetes.client.openapi.models.V1ContainerState buildLastState();
+  public V1ContainerState buildLastState();
 
-  public A withLastState(io.kubernetes.client.openapi.models.V1ContainerState lastState);
+  public A withLastState(V1ContainerState lastState);
 
-  public java.lang.Boolean hasLastState();
+  public Boolean hasLastState();
 
-  public io.kubernetes.client.openapi.models.V1ContainerStatusFluent.LastStateNested<A>
-      withNewLastState();
+  public V1ContainerStatusFluent.LastStateNested<A> withNewLastState();
 
-  public io.kubernetes.client.openapi.models.V1ContainerStatusFluent.LastStateNested<A>
-      withNewLastStateLike(io.kubernetes.client.openapi.models.V1ContainerState item);
+  public V1ContainerStatusFluent.LastStateNested<A> withNewLastStateLike(V1ContainerState item);
 
-  public io.kubernetes.client.openapi.models.V1ContainerStatusFluent.LastStateNested<A>
-      editLastState();
+  public V1ContainerStatusFluent.LastStateNested<A> editLastState();
 
-  public io.kubernetes.client.openapi.models.V1ContainerStatusFluent.LastStateNested<A>
-      editOrNewLastState();
+  public V1ContainerStatusFluent.LastStateNested<A> editOrNewLastState();
 
-  public io.kubernetes.client.openapi.models.V1ContainerStatusFluent.LastStateNested<A>
-      editOrNewLastStateLike(io.kubernetes.client.openapi.models.V1ContainerState item);
+  public V1ContainerStatusFluent.LastStateNested<A> editOrNewLastStateLike(V1ContainerState item);
 
-  public java.lang.String getName();
+  public String getName();
 
-  public A withName(java.lang.String name);
+  public A withName(String name);
 
-  public java.lang.Boolean hasName();
+  public Boolean hasName();
 
-  /** Method is deprecated. use withName instead. */
-  @java.lang.Deprecated
-  public A withNewName(java.lang.String original);
+  public Boolean getReady();
 
-  public java.lang.Boolean getReady();
+  public A withReady(Boolean ready);
 
-  public A withReady(java.lang.Boolean ready);
+  public Boolean hasReady();
 
-  public java.lang.Boolean hasReady();
+  public Integer getRestartCount();
 
-  public java.lang.Integer getRestartCount();
+  public A withRestartCount(Integer restartCount);
 
-  public A withRestartCount(java.lang.Integer restartCount);
+  public Boolean hasRestartCount();
 
-  public java.lang.Boolean hasRestartCount();
+  public Boolean getStarted();
 
-  public java.lang.Boolean getStarted();
+  public A withStarted(Boolean started);
 
-  public A withStarted(java.lang.Boolean started);
-
-  public java.lang.Boolean hasStarted();
+  public Boolean hasStarted();
 
   /**
    * This method has been deprecated, please use method buildState instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ContainerState getState();
+  @Deprecated
+  public V1ContainerState getState();
 
-  public io.kubernetes.client.openapi.models.V1ContainerState buildState();
+  public V1ContainerState buildState();
 
-  public A withState(io.kubernetes.client.openapi.models.V1ContainerState state);
+  public A withState(V1ContainerState state);
 
-  public java.lang.Boolean hasState();
+  public Boolean hasState();
 
-  public io.kubernetes.client.openapi.models.V1ContainerStatusFluent.StateNested<A> withNewState();
+  public V1ContainerStatusFluent.StateNested<A> withNewState();
 
-  public io.kubernetes.client.openapi.models.V1ContainerStatusFluent.StateNested<A>
-      withNewStateLike(io.kubernetes.client.openapi.models.V1ContainerState item);
+  public V1ContainerStatusFluent.StateNested<A> withNewStateLike(V1ContainerState item);
 
-  public io.kubernetes.client.openapi.models.V1ContainerStatusFluent.StateNested<A> editState();
+  public V1ContainerStatusFluent.StateNested<A> editState();
 
-  public io.kubernetes.client.openapi.models.V1ContainerStatusFluent.StateNested<A>
-      editOrNewState();
+  public V1ContainerStatusFluent.StateNested<A> editOrNewState();
 
-  public io.kubernetes.client.openapi.models.V1ContainerStatusFluent.StateNested<A>
-      editOrNewStateLike(io.kubernetes.client.openapi.models.V1ContainerState item);
+  public V1ContainerStatusFluent.StateNested<A> editOrNewStateLike(V1ContainerState item);
+
+  public A withReady();
+
+  public A withStarted();
 
   public interface LastStateNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1ContainerStateFluent<
-              io.kubernetes.client.openapi.models.V1ContainerStatusFluent.LastStateNested<N>> {
+      extends Nested<N>, V1ContainerStateFluent<V1ContainerStatusFluent.LastStateNested<N>> {
     public N and();
 
     public N endLastState();
   }
 
   public interface StateNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1ContainerStateFluent<
-              io.kubernetes.client.openapi.models.V1ContainerStatusFluent.StateNested<N>> {
+      extends Nested<N>, V1ContainerStateFluent<V1ContainerStatusFluent.StateNested<N>> {
     public N and();
 
     public N endState();

@@ -1,5 +1,5 @@
 /*
-Copyright 2021 The Kubernetes Authors.
+Copyright 2022 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -12,15 +12,10 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.kubernetes.client.custom.Quantity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -31,7 +26,7 @@ import java.util.Objects;
 @ApiModel(description = "PersistentVolumeSpec is the specification of a persistent volume.")
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    date = "2021-12-10T19:11:23.904Z[Etc/UTC]")
+    date = "2022-09-15T17:00:37.921Z[Etc/UTC]")
 public class V1PersistentVolumeSpec {
   public static final String SERIALIZED_NAME_ACCESS_MODES = "accessModes";
 
@@ -133,73 +128,11 @@ public class V1PersistentVolumeSpec {
   @SerializedName(SERIALIZED_NAME_NODE_AFFINITY)
   private V1VolumeNodeAffinity nodeAffinity;
 
-  /**
-   * What happens to a persistent volume when released from its claim. Valid options are Retain
-   * (default for manually created PersistentVolumes), Delete (default for dynamically provisioned
-   * PersistentVolumes), and Recycle (deprecated). Recycle must be supported by the volume plugin
-   * underlying this PersistentVolume. More info:
-   * https://kubernetes.io/docs/concepts/storage/persistent-volumes#reclaiming Possible enum values:
-   * - &#x60;\&quot;Delete\&quot;&#x60; means the volume will be deleted from Kubernetes on release
-   * from its claim. The volume plugin must support Deletion. - &#x60;\&quot;Recycle\&quot;&#x60;
-   * means the volume will be recycled back into the pool of unbound persistent volumes on release
-   * from its claim. The volume plugin must support Recycling. - &#x60;\&quot;Retain\&quot;&#x60;
-   * means the volume will be left in its current phase (Released) for manual reclamation by the
-   * administrator. The default policy is Retain.
-   */
-  @JsonAdapter(PersistentVolumeReclaimPolicyEnum.Adapter.class)
-  public enum PersistentVolumeReclaimPolicyEnum {
-    DELETE("Delete"),
-
-    RECYCLE("Recycle"),
-
-    RETAIN("Retain");
-
-    private String value;
-
-    PersistentVolumeReclaimPolicyEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static PersistentVolumeReclaimPolicyEnum fromValue(String value) {
-      for (PersistentVolumeReclaimPolicyEnum b : PersistentVolumeReclaimPolicyEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<PersistentVolumeReclaimPolicyEnum> {
-      @Override
-      public void write(
-          final JsonWriter jsonWriter, final PersistentVolumeReclaimPolicyEnum enumeration)
-          throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public PersistentVolumeReclaimPolicyEnum read(final JsonReader jsonReader)
-          throws IOException {
-        String value = jsonReader.nextString();
-        return PersistentVolumeReclaimPolicyEnum.fromValue(value);
-      }
-    }
-  }
-
   public static final String SERIALIZED_NAME_PERSISTENT_VOLUME_RECLAIM_POLICY =
       "persistentVolumeReclaimPolicy";
 
   @SerializedName(SERIALIZED_NAME_PERSISTENT_VOLUME_RECLAIM_POLICY)
-  private PersistentVolumeReclaimPolicyEnum persistentVolumeReclaimPolicy;
+  private String persistentVolumeReclaimPolicy;
 
   public static final String SERIALIZED_NAME_PHOTON_PERSISTENT_DISK = "photonPersistentDisk";
 
@@ -261,7 +194,7 @@ public class V1PersistentVolumeSpec {
   }
 
   /**
-   * AccessModes contains all ways the volume can be mounted. More info:
+   * accessModes contains all ways the volume can be mounted. More info:
    * https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes
    *
    * @return accessModes
@@ -269,7 +202,7 @@ public class V1PersistentVolumeSpec {
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "AccessModes contains all ways the volume can be mounted. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes")
+          "accessModes contains all ways the volume can be mounted. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes")
   public List<String> getAccessModes() {
     return accessModes;
   }
@@ -357,7 +290,7 @@ public class V1PersistentVolumeSpec {
   }
 
   /**
-   * A description of the persistent volume&#39;s resources and capacity. More info:
+   * capacity is the description of the persistent volume&#39;s resources and capacity. More info:
    * https://kubernetes.io/docs/concepts/storage/persistent-volumes#capacity
    *
    * @return capacity
@@ -365,7 +298,7 @@ public class V1PersistentVolumeSpec {
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "A description of the persistent volume's resources and capacity. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#capacity")
+          "capacity is the description of the persistent volume's resources and capacity. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#capacity")
   public Map<String, Quantity> getCapacity() {
     return capacity;
   }
@@ -642,8 +575,8 @@ public class V1PersistentVolumeSpec {
   }
 
   /**
-   * A list of mount options, e.g. [\&quot;ro\&quot;, \&quot;soft\&quot;]. Not validated - mount
-   * will simply fail if one is invalid. More info:
+   * mountOptions is the list of mount options, e.g. [\&quot;ro\&quot;, \&quot;soft\&quot;]. Not
+   * validated - mount will simply fail if one is invalid. More info:
    * https://kubernetes.io/docs/concepts/storage/persistent-volumes/#mount-options
    *
    * @return mountOptions
@@ -651,7 +584,7 @@ public class V1PersistentVolumeSpec {
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "A list of mount options, e.g. [\"ro\", \"soft\"]. Not validated - mount will simply fail if one is invalid. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#mount-options")
+          "mountOptions is the list of mount options, e.g. [\"ro\", \"soft\"]. Not validated - mount will simply fail if one is invalid. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#mount-options")
   public List<String> getMountOptions() {
     return mountOptions;
   }
@@ -703,37 +636,30 @@ public class V1PersistentVolumeSpec {
   }
 
   public V1PersistentVolumeSpec persistentVolumeReclaimPolicy(
-      PersistentVolumeReclaimPolicyEnum persistentVolumeReclaimPolicy) {
+      String persistentVolumeReclaimPolicy) {
 
     this.persistentVolumeReclaimPolicy = persistentVolumeReclaimPolicy;
     return this;
   }
 
   /**
-   * What happens to a persistent volume when released from its claim. Valid options are Retain
-   * (default for manually created PersistentVolumes), Delete (default for dynamically provisioned
-   * PersistentVolumes), and Recycle (deprecated). Recycle must be supported by the volume plugin
-   * underlying this PersistentVolume. More info:
-   * https://kubernetes.io/docs/concepts/storage/persistent-volumes#reclaiming Possible enum values:
-   * - &#x60;\&quot;Delete\&quot;&#x60; means the volume will be deleted from Kubernetes on release
-   * from its claim. The volume plugin must support Deletion. - &#x60;\&quot;Recycle\&quot;&#x60;
-   * means the volume will be recycled back into the pool of unbound persistent volumes on release
-   * from its claim. The volume plugin must support Recycling. - &#x60;\&quot;Retain\&quot;&#x60;
-   * means the volume will be left in its current phase (Released) for manual reclamation by the
-   * administrator. The default policy is Retain.
+   * persistentVolumeReclaimPolicy defines what happens to a persistent volume when released from
+   * its claim. Valid options are Retain (default for manually created PersistentVolumes), Delete
+   * (default for dynamically provisioned PersistentVolumes), and Recycle (deprecated). Recycle must
+   * be supported by the volume plugin underlying this PersistentVolume. More info:
+   * https://kubernetes.io/docs/concepts/storage/persistent-volumes#reclaiming
    *
    * @return persistentVolumeReclaimPolicy
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "What happens to a persistent volume when released from its claim. Valid options are Retain (default for manually created PersistentVolumes), Delete (default for dynamically provisioned PersistentVolumes), and Recycle (deprecated). Recycle must be supported by the volume plugin underlying this PersistentVolume. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#reclaiming  Possible enum values:  - `\"Delete\"` means the volume will be deleted from Kubernetes on release from its claim. The volume plugin must support Deletion.  - `\"Recycle\"` means the volume will be recycled back into the pool of unbound persistent volumes on release from its claim. The volume plugin must support Recycling.  - `\"Retain\"` means the volume will be left in its current phase (Released) for manual reclamation by the administrator. The default policy is Retain.")
-  public PersistentVolumeReclaimPolicyEnum getPersistentVolumeReclaimPolicy() {
+          "persistentVolumeReclaimPolicy defines what happens to a persistent volume when released from its claim. Valid options are Retain (default for manually created PersistentVolumes), Delete (default for dynamically provisioned PersistentVolumes), and Recycle (deprecated). Recycle must be supported by the volume plugin underlying this PersistentVolume. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#reclaiming  ")
+  public String getPersistentVolumeReclaimPolicy() {
     return persistentVolumeReclaimPolicy;
   }
 
-  public void setPersistentVolumeReclaimPolicy(
-      PersistentVolumeReclaimPolicyEnum persistentVolumeReclaimPolicy) {
+  public void setPersistentVolumeReclaimPolicy(String persistentVolumeReclaimPolicy) {
     this.persistentVolumeReclaimPolicy = persistentVolumeReclaimPolicy;
   }
 
@@ -850,15 +776,15 @@ public class V1PersistentVolumeSpec {
   }
 
   /**
-   * Name of StorageClass to which this persistent volume belongs. Empty value means that this
-   * volume does not belong to any StorageClass.
+   * storageClassName is the name of StorageClass to which this persistent volume belongs. Empty
+   * value means that this volume does not belong to any StorageClass.
    *
    * @return storageClassName
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "Name of StorageClass to which this persistent volume belongs. Empty value means that this volume does not belong to any StorageClass.")
+          "storageClassName is the name of StorageClass to which this persistent volume belongs. Empty value means that this volume does not belong to any StorageClass.")
   public String getStorageClassName() {
     return storageClassName;
   }

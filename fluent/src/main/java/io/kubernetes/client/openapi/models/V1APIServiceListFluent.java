@@ -12,141 +12,114 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
+
 /** Generated */
-public interface V1APIServiceListFluent<
-        A extends io.kubernetes.client.openapi.models.V1APIServiceListFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getApiVersion();
+public interface V1APIServiceListFluent<A extends V1APIServiceListFluent<A>> extends Fluent<A> {
+  public String getApiVersion();
 
-  public A withApiVersion(java.lang.String apiVersion);
+  public A withApiVersion(String apiVersion);
 
-  public java.lang.Boolean hasApiVersion();
+  public Boolean hasApiVersion();
 
-  /** Method is deprecated. use withApiVersion instead. */
-  @java.lang.Deprecated
-  public A withNewApiVersion(java.lang.String original);
+  public A addToItems(Integer index, V1APIService item);
 
-  public A addToItems(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1APIService item);
-
-  public A setToItems(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1APIService item);
+  public A setToItems(Integer index, V1APIService item);
 
   public A addToItems(io.kubernetes.client.openapi.models.V1APIService... items);
 
-  public A addAllToItems(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1APIService> items);
+  public A addAllToItems(Collection<V1APIService> items);
 
   public A removeFromItems(io.kubernetes.client.openapi.models.V1APIService... items);
 
-  public A removeAllFromItems(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1APIService> items);
+  public A removeAllFromItems(Collection<V1APIService> items);
 
-  public A removeMatchingFromItems(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1APIServiceBuilder>
-          predicate);
+  public A removeMatchingFromItems(Predicate<V1APIServiceBuilder> predicate);
 
   /**
    * This method has been deprecated, please use method buildItems instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V1APIService> getItems();
+  @Deprecated
+  public List<V1APIService> getItems();
 
-  public java.util.List<io.kubernetes.client.openapi.models.V1APIService> buildItems();
+  public List<V1APIService> buildItems();
 
-  public io.kubernetes.client.openapi.models.V1APIService buildItem(java.lang.Integer index);
+  public V1APIService buildItem(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1APIService buildFirstItem();
+  public V1APIService buildFirstItem();
 
-  public io.kubernetes.client.openapi.models.V1APIService buildLastItem();
+  public V1APIService buildLastItem();
 
-  public io.kubernetes.client.openapi.models.V1APIService buildMatchingItem(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1APIServiceBuilder>
-          predicate);
+  public V1APIService buildMatchingItem(Predicate<V1APIServiceBuilder> predicate);
 
-  public java.lang.Boolean hasMatchingItem(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1APIServiceBuilder>
-          predicate);
+  public Boolean hasMatchingItem(Predicate<V1APIServiceBuilder> predicate);
 
-  public A withItems(java.util.List<io.kubernetes.client.openapi.models.V1APIService> items);
+  public A withItems(List<V1APIService> items);
 
   public A withItems(io.kubernetes.client.openapi.models.V1APIService... items);
 
-  public java.lang.Boolean hasItems();
+  public Boolean hasItems();
 
-  public io.kubernetes.client.openapi.models.V1APIServiceListFluent.ItemsNested<A> addNewItem();
+  public V1APIServiceListFluent.ItemsNested<A> addNewItem();
 
-  public io.kubernetes.client.openapi.models.V1APIServiceListFluent.ItemsNested<A> addNewItemLike(
-      io.kubernetes.client.openapi.models.V1APIService item);
+  public V1APIServiceListFluent.ItemsNested<A> addNewItemLike(V1APIService item);
 
-  public io.kubernetes.client.openapi.models.V1APIServiceListFluent.ItemsNested<A> setNewItemLike(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1APIService item);
+  public V1APIServiceListFluent.ItemsNested<A> setNewItemLike(Integer index, V1APIService item);
 
-  public io.kubernetes.client.openapi.models.V1APIServiceListFluent.ItemsNested<A> editItem(
-      java.lang.Integer index);
+  public V1APIServiceListFluent.ItemsNested<A> editItem(Integer index);
 
-  public io.kubernetes.client.openapi.models.V1APIServiceListFluent.ItemsNested<A> editFirstItem();
+  public V1APIServiceListFluent.ItemsNested<A> editFirstItem();
 
-  public io.kubernetes.client.openapi.models.V1APIServiceListFluent.ItemsNested<A> editLastItem();
+  public V1APIServiceListFluent.ItemsNested<A> editLastItem();
 
-  public io.kubernetes.client.openapi.models.V1APIServiceListFluent.ItemsNested<A> editMatchingItem(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1APIServiceBuilder>
-          predicate);
+  public V1APIServiceListFluent.ItemsNested<A> editMatchingItem(
+      Predicate<V1APIServiceBuilder> predicate);
 
-  public java.lang.String getKind();
+  public String getKind();
 
-  public A withKind(java.lang.String kind);
+  public A withKind(String kind);
 
-  public java.lang.Boolean hasKind();
-
-  /** Method is deprecated. use withKind instead. */
-  @java.lang.Deprecated
-  public A withNewKind(java.lang.String original);
+  public Boolean hasKind();
 
   /**
    * This method has been deprecated, please use method buildMetadata instead.
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ListMeta getMetadata();
+  @Deprecated
+  public V1ListMeta getMetadata();
 
-  public io.kubernetes.client.openapi.models.V1ListMeta buildMetadata();
+  public V1ListMeta buildMetadata();
 
-  public A withMetadata(io.kubernetes.client.openapi.models.V1ListMeta metadata);
+  public A withMetadata(V1ListMeta metadata);
 
-  public java.lang.Boolean hasMetadata();
+  public Boolean hasMetadata();
 
-  public io.kubernetes.client.openapi.models.V1APIServiceListFluent.MetadataNested<A>
-      withNewMetadata();
+  public V1APIServiceListFluent.MetadataNested<A> withNewMetadata();
 
-  public io.kubernetes.client.openapi.models.V1APIServiceListFluent.MetadataNested<A>
-      withNewMetadataLike(io.kubernetes.client.openapi.models.V1ListMeta item);
+  public V1APIServiceListFluent.MetadataNested<A> withNewMetadataLike(V1ListMeta item);
 
-  public io.kubernetes.client.openapi.models.V1APIServiceListFluent.MetadataNested<A>
-      editMetadata();
+  public V1APIServiceListFluent.MetadataNested<A> editMetadata();
 
-  public io.kubernetes.client.openapi.models.V1APIServiceListFluent.MetadataNested<A>
-      editOrNewMetadata();
+  public V1APIServiceListFluent.MetadataNested<A> editOrNewMetadata();
 
-  public io.kubernetes.client.openapi.models.V1APIServiceListFluent.MetadataNested<A>
-      editOrNewMetadataLike(io.kubernetes.client.openapi.models.V1ListMeta item);
+  public V1APIServiceListFluent.MetadataNested<A> editOrNewMetadataLike(V1ListMeta item);
 
   public interface ItemsNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1APIServiceFluent<
-              io.kubernetes.client.openapi.models.V1APIServiceListFluent.ItemsNested<N>> {
+      extends Nested<N>, V1APIServiceFluent<V1APIServiceListFluent.ItemsNested<N>> {
     public N and();
 
     public N endItem();
   }
 
   public interface MetadataNested<N>
-      extends io.kubernetes.client.fluent.Nested<N>,
-          io.kubernetes.client.openapi.models.V1ListMetaFluent<
-              io.kubernetes.client.openapi.models.V1APIServiceListFluent.MetadataNested<N>> {
+      extends Nested<N>, V1ListMetaFluent<V1APIServiceListFluent.MetadataNested<N>> {
     public N and();
 
     public N endMetadata();

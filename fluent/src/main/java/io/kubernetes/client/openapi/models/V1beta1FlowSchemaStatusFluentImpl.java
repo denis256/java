@@ -12,34 +12,31 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Predicate;
 
 /** Generated */
-public class V1beta1FlowSchemaStatusFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1beta1FlowSchemaStatusFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1beta1FlowSchemaStatusFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1beta1FlowSchemaStatusFluentImpl<A extends V1beta1FlowSchemaStatusFluent<A>>
+    extends BaseFluent<A> implements V1beta1FlowSchemaStatusFluent<A> {
   public V1beta1FlowSchemaStatusFluentImpl() {}
 
-  public V1beta1FlowSchemaStatusFluentImpl(
-      io.kubernetes.client.openapi.models.V1beta1FlowSchemaStatus instance) {
+  public V1beta1FlowSchemaStatusFluentImpl(V1beta1FlowSchemaStatus instance) {
     this.withConditions(instance.getConditions());
   }
 
-  private java.util.ArrayList<io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder>
-      conditions;
+  private ArrayList<V1beta1FlowSchemaConditionBuilder> conditions;
 
-  public A addToConditions(
-      java.lang.Integer index,
-      io.kubernetes.client.openapi.models.V1beta1FlowSchemaCondition item) {
+  public A addToConditions(Integer index, V1beta1FlowSchemaCondition item) {
     if (this.conditions == null) {
-      this.conditions =
-          new java.util.ArrayList<
-              io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder>();
+      this.conditions = new ArrayList<V1beta1FlowSchemaConditionBuilder>();
     }
-    io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder builder =
-        new io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder(item);
+    V1beta1FlowSchemaConditionBuilder builder = new V1beta1FlowSchemaConditionBuilder(item);
     _visitables
         .get("conditions")
         .add(index >= 0 ? index : _visitables.get("conditions").size(), builder);
@@ -47,16 +44,11 @@ public class V1beta1FlowSchemaStatusFluentImpl<
     return (A) this;
   }
 
-  public A setToConditions(
-      java.lang.Integer index,
-      io.kubernetes.client.openapi.models.V1beta1FlowSchemaCondition item) {
+  public A setToConditions(Integer index, V1beta1FlowSchemaCondition item) {
     if (this.conditions == null) {
-      this.conditions =
-          new java.util.ArrayList<
-              io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder>();
+      this.conditions = new ArrayList<V1beta1FlowSchemaConditionBuilder>();
     }
-    io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder builder =
-        new io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder(item);
+    V1beta1FlowSchemaConditionBuilder builder = new V1beta1FlowSchemaConditionBuilder(item);
     if (index < 0 || index >= _visitables.get("conditions").size()) {
       _visitables.get("conditions").add(builder);
     } else {
@@ -73,29 +65,22 @@ public class V1beta1FlowSchemaStatusFluentImpl<
   public A addToConditions(
       io.kubernetes.client.openapi.models.V1beta1FlowSchemaCondition... items) {
     if (this.conditions == null) {
-      this.conditions =
-          new java.util.ArrayList<
-              io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder>();
+      this.conditions = new ArrayList<V1beta1FlowSchemaConditionBuilder>();
     }
-    for (io.kubernetes.client.openapi.models.V1beta1FlowSchemaCondition item : items) {
-      io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder builder =
-          new io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder(item);
+    for (V1beta1FlowSchemaCondition item : items) {
+      V1beta1FlowSchemaConditionBuilder builder = new V1beta1FlowSchemaConditionBuilder(item);
       _visitables.get("conditions").add(builder);
       this.conditions.add(builder);
     }
     return (A) this;
   }
 
-  public A addAllToConditions(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1beta1FlowSchemaCondition> items) {
+  public A addAllToConditions(Collection<V1beta1FlowSchemaCondition> items) {
     if (this.conditions == null) {
-      this.conditions =
-          new java.util.ArrayList<
-              io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder>();
+      this.conditions = new ArrayList<V1beta1FlowSchemaConditionBuilder>();
     }
-    for (io.kubernetes.client.openapi.models.V1beta1FlowSchemaCondition item : items) {
-      io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder builder =
-          new io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder(item);
+    for (V1beta1FlowSchemaCondition item : items) {
+      V1beta1FlowSchemaConditionBuilder builder = new V1beta1FlowSchemaConditionBuilder(item);
       _visitables.get("conditions").add(builder);
       this.conditions.add(builder);
     }
@@ -104,9 +89,8 @@ public class V1beta1FlowSchemaStatusFluentImpl<
 
   public A removeFromConditions(
       io.kubernetes.client.openapi.models.V1beta1FlowSchemaCondition... items) {
-    for (io.kubernetes.client.openapi.models.V1beta1FlowSchemaCondition item : items) {
-      io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder builder =
-          new io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder(item);
+    for (V1beta1FlowSchemaCondition item : items) {
+      V1beta1FlowSchemaConditionBuilder builder = new V1beta1FlowSchemaConditionBuilder(item);
       _visitables.get("conditions").remove(builder);
       if (this.conditions != null) {
         this.conditions.remove(builder);
@@ -115,11 +99,9 @@ public class V1beta1FlowSchemaStatusFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromConditions(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1beta1FlowSchemaCondition> items) {
-    for (io.kubernetes.client.openapi.models.V1beta1FlowSchemaCondition item : items) {
-      io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder builder =
-          new io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder(item);
+  public A removeAllFromConditions(Collection<V1beta1FlowSchemaCondition> items) {
+    for (V1beta1FlowSchemaCondition item : items) {
+      V1beta1FlowSchemaConditionBuilder builder = new V1beta1FlowSchemaConditionBuilder(item);
       _visitables.get("conditions").remove(builder);
       if (this.conditions != null) {
         this.conditions.remove(builder);
@@ -128,16 +110,12 @@ public class V1beta1FlowSchemaStatusFluentImpl<
     return (A) this;
   }
 
-  public A removeMatchingFromConditions(
-      java.util.function.Predicate<
-              io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder>
-          predicate) {
+  public A removeMatchingFromConditions(Predicate<V1beta1FlowSchemaConditionBuilder> predicate) {
     if (conditions == null) return (A) this;
-    final Iterator<io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder> each =
-        conditions.iterator();
+    final Iterator<V1beta1FlowSchemaConditionBuilder> each = conditions.iterator();
     final List visitables = _visitables.get("conditions");
     while (each.hasNext()) {
-      io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder builder = each.next();
+      V1beta1FlowSchemaConditionBuilder builder = each.next();
       if (predicate.test(builder)) {
         visitables.remove(builder);
         each.remove();
@@ -151,35 +129,30 @@ public class V1beta1FlowSchemaStatusFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V1beta1FlowSchemaCondition>
-      getConditions() {
+  @Deprecated
+  public List<V1beta1FlowSchemaCondition> getConditions() {
     return conditions != null ? build(conditions) : null;
   }
 
-  public java.util.List<io.kubernetes.client.openapi.models.V1beta1FlowSchemaCondition>
-      buildConditions() {
+  public List<V1beta1FlowSchemaCondition> buildConditions() {
     return conditions != null ? build(conditions) : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1beta1FlowSchemaCondition buildCondition(
-      java.lang.Integer index) {
+  public V1beta1FlowSchemaCondition buildCondition(Integer index) {
     return this.conditions.get(index).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1beta1FlowSchemaCondition buildFirstCondition() {
+  public V1beta1FlowSchemaCondition buildFirstCondition() {
     return this.conditions.get(0).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1beta1FlowSchemaCondition buildLastCondition() {
+  public V1beta1FlowSchemaCondition buildLastCondition() {
     return this.conditions.get(conditions.size() - 1).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1beta1FlowSchemaCondition buildMatchingCondition(
-      java.util.function.Predicate<
-              io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder>
-          predicate) {
-    for (io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder item : conditions) {
+  public V1beta1FlowSchemaCondition buildMatchingCondition(
+      Predicate<V1beta1FlowSchemaConditionBuilder> predicate) {
+    for (V1beta1FlowSchemaConditionBuilder item : conditions) {
       if (predicate.test(item)) {
         return item.build();
       }
@@ -187,11 +160,8 @@ public class V1beta1FlowSchemaStatusFluentImpl<
     return null;
   }
 
-  public java.lang.Boolean hasMatchingCondition(
-      java.util.function.Predicate<
-              io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder>
-          predicate) {
-    for (io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder item : conditions) {
+  public Boolean hasMatchingCondition(Predicate<V1beta1FlowSchemaConditionBuilder> predicate) {
+    for (V1beta1FlowSchemaConditionBuilder item : conditions) {
       if (predicate.test(item)) {
         return true;
       }
@@ -199,14 +169,13 @@ public class V1beta1FlowSchemaStatusFluentImpl<
     return false;
   }
 
-  public A withConditions(
-      java.util.List<io.kubernetes.client.openapi.models.V1beta1FlowSchemaCondition> conditions) {
+  public A withConditions(List<V1beta1FlowSchemaCondition> conditions) {
     if (this.conditions != null) {
       _visitables.get("conditions").removeAll(this.conditions);
     }
     if (conditions != null) {
-      this.conditions = new java.util.ArrayList();
-      for (io.kubernetes.client.openapi.models.V1beta1FlowSchemaCondition item : conditions) {
+      this.conditions = new ArrayList();
+      for (V1beta1FlowSchemaCondition item : conditions) {
         this.addToConditions(item);
       }
     } else {
@@ -221,63 +190,51 @@ public class V1beta1FlowSchemaStatusFluentImpl<
       this.conditions.clear();
     }
     if (conditions != null) {
-      for (io.kubernetes.client.openapi.models.V1beta1FlowSchemaCondition item : conditions) {
+      for (V1beta1FlowSchemaCondition item : conditions) {
         this.addToConditions(item);
       }
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasConditions() {
+  public Boolean hasConditions() {
     return conditions != null && !conditions.isEmpty();
   }
 
-  public io.kubernetes.client.openapi.models.V1beta1FlowSchemaStatusFluent.ConditionsNested<A>
-      addNewCondition() {
-    return new io.kubernetes.client.openapi.models.V1beta1FlowSchemaStatusFluentImpl
-        .ConditionsNestedImpl();
+  public V1beta1FlowSchemaStatusFluent.ConditionsNested<A> addNewCondition() {
+    return new V1beta1FlowSchemaStatusFluentImpl.ConditionsNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1beta1FlowSchemaStatusFluent.ConditionsNested<A>
-      addNewConditionLike(io.kubernetes.client.openapi.models.V1beta1FlowSchemaCondition item) {
-    return new io.kubernetes.client.openapi.models.V1beta1FlowSchemaStatusFluentImpl
-        .ConditionsNestedImpl(-1, item);
+  public V1beta1FlowSchemaStatusFluent.ConditionsNested<A> addNewConditionLike(
+      V1beta1FlowSchemaCondition item) {
+    return new V1beta1FlowSchemaStatusFluentImpl.ConditionsNestedImpl(-1, item);
   }
 
-  public io.kubernetes.client.openapi.models.V1beta1FlowSchemaStatusFluent.ConditionsNested<A>
-      setNewConditionLike(
-          java.lang.Integer index,
-          io.kubernetes.client.openapi.models.V1beta1FlowSchemaCondition item) {
-    return new io.kubernetes.client.openapi.models.V1beta1FlowSchemaStatusFluentImpl
-        .ConditionsNestedImpl(index, item);
+  public V1beta1FlowSchemaStatusFluent.ConditionsNested<A> setNewConditionLike(
+      Integer index, V1beta1FlowSchemaCondition item) {
+    return new V1beta1FlowSchemaStatusFluentImpl.ConditionsNestedImpl(index, item);
   }
 
-  public io.kubernetes.client.openapi.models.V1beta1FlowSchemaStatusFluent.ConditionsNested<A>
-      editCondition(java.lang.Integer index) {
+  public V1beta1FlowSchemaStatusFluent.ConditionsNested<A> editCondition(Integer index) {
     if (conditions.size() <= index)
       throw new RuntimeException("Can't edit conditions. Index exceeds size.");
     return setNewConditionLike(index, buildCondition(index));
   }
 
-  public io.kubernetes.client.openapi.models.V1beta1FlowSchemaStatusFluent.ConditionsNested<A>
-      editFirstCondition() {
+  public V1beta1FlowSchemaStatusFluent.ConditionsNested<A> editFirstCondition() {
     if (conditions.size() == 0)
       throw new RuntimeException("Can't edit first conditions. The list is empty.");
     return setNewConditionLike(0, buildCondition(0));
   }
 
-  public io.kubernetes.client.openapi.models.V1beta1FlowSchemaStatusFluent.ConditionsNested<A>
-      editLastCondition() {
+  public V1beta1FlowSchemaStatusFluent.ConditionsNested<A> editLastCondition() {
     int index = conditions.size() - 1;
     if (index < 0) throw new RuntimeException("Can't edit last conditions. The list is empty.");
     return setNewConditionLike(index, buildCondition(index));
   }
 
-  public io.kubernetes.client.openapi.models.V1beta1FlowSchemaStatusFluent.ConditionsNested<A>
-      editMatchingCondition(
-          java.util.function.Predicate<
-                  io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder>
-              predicate) {
+  public V1beta1FlowSchemaStatusFluent.ConditionsNested<A> editMatchingCondition(
+      Predicate<V1beta1FlowSchemaConditionBuilder> predicate) {
     int index = -1;
     for (int i = 0; i < conditions.size(); i++) {
       if (predicate.test(conditions.get(i))) {
@@ -289,7 +246,7 @@ public class V1beta1FlowSchemaStatusFluentImpl<
     return setNewConditionLike(index, buildCondition(index));
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1beta1FlowSchemaStatusFluentImpl that = (V1beta1FlowSchemaStatusFluentImpl) o;
@@ -302,28 +259,33 @@ public class V1beta1FlowSchemaStatusFluentImpl<
     return java.util.Objects.hash(conditions, super.hashCode());
   }
 
-  public class ConditionsNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionFluentImpl<
-          io.kubernetes.client.openapi.models.V1beta1FlowSchemaStatusFluent.ConditionsNested<N>>
-      implements io.kubernetes.client.openapi.models.V1beta1FlowSchemaStatusFluent.ConditionsNested<
-              N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    ConditionsNestedImpl(
-        java.lang.Integer index,
-        io.kubernetes.client.openapi.models.V1beta1FlowSchemaCondition item) {
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (conditions != null && !conditions.isEmpty()) {
+      sb.append("conditions:");
+      sb.append(conditions);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class ConditionsNestedImpl<N>
+      extends V1beta1FlowSchemaConditionFluentImpl<
+          V1beta1FlowSchemaStatusFluent.ConditionsNested<N>>
+      implements V1beta1FlowSchemaStatusFluent.ConditionsNested<N>, Nested<N> {
+    ConditionsNestedImpl(Integer index, V1beta1FlowSchemaCondition item) {
       this.index = index;
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder(this, item);
+      this.builder = new V1beta1FlowSchemaConditionBuilder(this, item);
     }
 
     ConditionsNestedImpl() {
       this.index = -1;
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder(this);
+      this.builder = new V1beta1FlowSchemaConditionBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1beta1FlowSchemaConditionBuilder builder;
-    java.lang.Integer index;
+    V1beta1FlowSchemaConditionBuilder builder;
+    Integer index;
 
     public N and() {
       return (N) V1beta1FlowSchemaStatusFluentImpl.this.setToConditions(index, builder.build());

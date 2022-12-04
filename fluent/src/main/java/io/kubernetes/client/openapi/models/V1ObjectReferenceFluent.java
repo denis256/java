@@ -12,77 +12,49 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
-public interface V1ObjectReferenceFluent<
-        A extends io.kubernetes.client.openapi.models.V1ObjectReferenceFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getApiVersion();
+public interface V1ObjectReferenceFluent<A extends V1ObjectReferenceFluent<A>> extends Fluent<A> {
+  public String getApiVersion();
 
-  public A withApiVersion(java.lang.String apiVersion);
+  public A withApiVersion(String apiVersion);
 
-  public java.lang.Boolean hasApiVersion();
+  public Boolean hasApiVersion();
 
-  /** Method is deprecated. use withApiVersion instead. */
-  @java.lang.Deprecated
-  public A withNewApiVersion(java.lang.String original);
+  public String getFieldPath();
 
-  public java.lang.String getFieldPath();
+  public A withFieldPath(String fieldPath);
 
-  public A withFieldPath(java.lang.String fieldPath);
+  public Boolean hasFieldPath();
 
-  public java.lang.Boolean hasFieldPath();
+  public String getKind();
 
-  /** Method is deprecated. use withFieldPath instead. */
-  @java.lang.Deprecated
-  public A withNewFieldPath(java.lang.String original);
+  public A withKind(String kind);
 
-  public java.lang.String getKind();
+  public Boolean hasKind();
 
-  public A withKind(java.lang.String kind);
+  public String getName();
 
-  public java.lang.Boolean hasKind();
+  public A withName(String name);
 
-  /** Method is deprecated. use withKind instead. */
-  @java.lang.Deprecated
-  public A withNewKind(java.lang.String original);
+  public Boolean hasName();
 
-  public java.lang.String getName();
+  public String getNamespace();
 
-  public A withName(java.lang.String name);
+  public A withNamespace(String namespace);
 
-  public java.lang.Boolean hasName();
+  public Boolean hasNamespace();
 
-  /** Method is deprecated. use withName instead. */
-  @java.lang.Deprecated
-  public A withNewName(java.lang.String original);
+  public String getResourceVersion();
 
-  public java.lang.String getNamespace();
+  public A withResourceVersion(String resourceVersion);
 
-  public A withNamespace(java.lang.String namespace);
+  public Boolean hasResourceVersion();
 
-  public java.lang.Boolean hasNamespace();
+  public String getUid();
 
-  /** Method is deprecated. use withNamespace instead. */
-  @java.lang.Deprecated
-  public A withNewNamespace(java.lang.String original);
+  public A withUid(String uid);
 
-  public java.lang.String getResourceVersion();
-
-  public A withResourceVersion(java.lang.String resourceVersion);
-
-  public java.lang.Boolean hasResourceVersion();
-
-  /** Method is deprecated. use withResourceVersion instead. */
-  @java.lang.Deprecated
-  public A withNewResourceVersion(java.lang.String original);
-
-  public java.lang.String getUid();
-
-  public A withUid(java.lang.String uid);
-
-  public java.lang.Boolean hasUid();
-
-  /** Method is deprecated. use withUid instead. */
-  @java.lang.Deprecated
-  public A withNewUid(java.lang.String original);
+  public Boolean hasUid();
 }

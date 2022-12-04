@@ -12,41 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1ISCSIVolumeSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1ISCSIVolumeSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1ISCSIVolumeSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1ISCSIVolumeSource,
-        io.kubernetes.client.openapi.models.V1ISCSIVolumeSourceBuilder> {
+    extends V1ISCSIVolumeSourceFluentImpl<V1ISCSIVolumeSourceBuilder>
+    implements VisitableBuilder<V1ISCSIVolumeSource, V1ISCSIVolumeSourceBuilder> {
   public V1ISCSIVolumeSourceBuilder() {
     this(false);
   }
 
-  public V1ISCSIVolumeSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1ISCSIVolumeSourceBuilder(Boolean validationEnabled) {
     this(new V1ISCSIVolumeSource(), validationEnabled);
   }
 
-  public V1ISCSIVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1ISCSIVolumeSourceFluent<?> fluent) {
+  public V1ISCSIVolumeSourceBuilder(V1ISCSIVolumeSourceFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1ISCSIVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1ISCSIVolumeSourceFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1ISCSIVolumeSourceFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1ISCSIVolumeSource(), validationEnabled);
   }
 
   public V1ISCSIVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1ISCSIVolumeSourceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ISCSIVolumeSource instance) {
+      V1ISCSIVolumeSourceFluent<?> fluent, V1ISCSIVolumeSource instance) {
     this(fluent, instance, false);
   }
 
   public V1ISCSIVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1ISCSIVolumeSourceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1ISCSIVolumeSource instance,
-      java.lang.Boolean validationEnabled) {
+      V1ISCSIVolumeSourceFluent<?> fluent,
+      V1ISCSIVolumeSource instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withChapAuthDiscovery(instance.getChapAuthDiscovery());
 
@@ -73,14 +69,11 @@ public class V1ISCSIVolumeSourceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1ISCSIVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1ISCSIVolumeSource instance) {
+  public V1ISCSIVolumeSourceBuilder(V1ISCSIVolumeSource instance) {
     this(instance, false);
   }
 
-  public V1ISCSIVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1ISCSIVolumeSource instance,
-      java.lang.Boolean validationEnabled) {
+  public V1ISCSIVolumeSourceBuilder(V1ISCSIVolumeSource instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withChapAuthDiscovery(instance.getChapAuthDiscovery());
 
@@ -107,10 +100,10 @@ public class V1ISCSIVolumeSourceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1ISCSIVolumeSourceFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1ISCSIVolumeSourceFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1ISCSIVolumeSource build() {
+  public V1ISCSIVolumeSource build() {
     V1ISCSIVolumeSource buildable = new V1ISCSIVolumeSource();
     buildable.setChapAuthDiscovery(fluent.getChapAuthDiscovery());
     buildable.setChapAuthSession(fluent.getChapAuthSession());
@@ -124,24 +117,5 @@ public class V1ISCSIVolumeSourceBuilder
     buildable.setSecretRef(fluent.getSecretRef());
     buildable.setTargetPortal(fluent.getTargetPortal());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1ISCSIVolumeSourceBuilder that = (V1ISCSIVolumeSourceBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

@@ -12,41 +12,40 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-/** Generated */
-public interface V1NamespaceSpecFluent<
-        A extends io.kubernetes.client.openapi.models.V1NamespaceSpecFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public A addToFinalizers(java.lang.Integer index, java.lang.String item);
+import io.kubernetes.client.fluent.Fluent;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
 
-  public A setToFinalizers(java.lang.Integer index, java.lang.String item);
+/** Generated */
+public interface V1NamespaceSpecFluent<A extends V1NamespaceSpecFluent<A>> extends Fluent<A> {
+  public A addToFinalizers(Integer index, String item);
+
+  public A setToFinalizers(Integer index, String item);
 
   public A addToFinalizers(java.lang.String... items);
 
-  public A addAllToFinalizers(java.util.Collection<java.lang.String> items);
+  public A addAllToFinalizers(Collection<String> items);
 
   public A removeFromFinalizers(java.lang.String... items);
 
-  public A removeAllFromFinalizers(java.util.Collection<java.lang.String> items);
+  public A removeAllFromFinalizers(Collection<String> items);
 
-  public java.util.List<java.lang.String> getFinalizers();
+  public List<String> getFinalizers();
 
-  public java.lang.String getFinalizer(java.lang.Integer index);
+  public String getFinalizer(Integer index);
 
-  public java.lang.String getFirstFinalizer();
+  public String getFirstFinalizer();
 
-  public java.lang.String getLastFinalizer();
+  public String getLastFinalizer();
 
-  public java.lang.String getMatchingFinalizer(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public String getMatchingFinalizer(Predicate<String> predicate);
 
-  public java.lang.Boolean hasMatchingFinalizer(
-      java.util.function.Predicate<java.lang.String> predicate);
+  public Boolean hasMatchingFinalizer(Predicate<String> predicate);
 
-  public A withFinalizers(java.util.List<java.lang.String> finalizers);
+  public A withFinalizers(List<String> finalizers);
 
   public A withFinalizers(java.lang.String... finalizers);
 
-  public java.lang.Boolean hasFinalizers();
-
-  public A addNewFinalizer(java.lang.String original);
+  public Boolean hasFinalizers();
 }

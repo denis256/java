@@ -12,14 +12,16 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import java.time.OffsetDateTime;
+
 /** Generated */
-public class V1LeaseSpecFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1LeaseSpecFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1LeaseSpecFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1LeaseSpecFluentImpl<A extends V1LeaseSpecFluent<A>> extends BaseFluent<A>
+    implements V1LeaseSpecFluent<A> {
   public V1LeaseSpecFluentImpl() {}
 
-  public V1LeaseSpecFluentImpl(io.kubernetes.client.openapi.models.V1LeaseSpec instance) {
+  public V1LeaseSpecFluentImpl(V1LeaseSpec instance) {
     this.withAcquireTime(instance.getAcquireTime());
 
     this.withHolderIdentity(instance.getHolderIdentity());
@@ -31,84 +33,78 @@ public class V1LeaseSpecFluentImpl<
     this.withRenewTime(instance.getRenewTime());
   }
 
-  private java.time.OffsetDateTime acquireTime;
-  private java.lang.String holderIdentity;
-  private java.lang.Integer leaseDurationSeconds;
-  private java.lang.Integer leaseTransitions;
-  private java.time.OffsetDateTime renewTime;
+  private OffsetDateTime acquireTime;
+  private String holderIdentity;
+  private Integer leaseDurationSeconds;
+  private Integer leaseTransitions;
+  private OffsetDateTime renewTime;
 
-  public java.time.OffsetDateTime getAcquireTime() {
+  public OffsetDateTime getAcquireTime() {
     return this.acquireTime;
   }
 
-  public A withAcquireTime(java.time.OffsetDateTime acquireTime) {
+  public A withAcquireTime(OffsetDateTime acquireTime) {
     this.acquireTime = acquireTime;
     return (A) this;
   }
 
-  public java.lang.Boolean hasAcquireTime() {
+  public Boolean hasAcquireTime() {
     return this.acquireTime != null;
   }
 
-  public java.lang.String getHolderIdentity() {
+  public String getHolderIdentity() {
     return this.holderIdentity;
   }
 
-  public A withHolderIdentity(java.lang.String holderIdentity) {
+  public A withHolderIdentity(String holderIdentity) {
     this.holderIdentity = holderIdentity;
     return (A) this;
   }
 
-  public java.lang.Boolean hasHolderIdentity() {
+  public Boolean hasHolderIdentity() {
     return this.holderIdentity != null;
   }
 
-  /** Method is deprecated. use withHolderIdentity instead. */
-  @java.lang.Deprecated
-  public A withNewHolderIdentity(java.lang.String original) {
-    return (A) withHolderIdentity(new String(original));
-  }
-
-  public java.lang.Integer getLeaseDurationSeconds() {
+  public Integer getLeaseDurationSeconds() {
     return this.leaseDurationSeconds;
   }
 
-  public A withLeaseDurationSeconds(java.lang.Integer leaseDurationSeconds) {
+  public A withLeaseDurationSeconds(Integer leaseDurationSeconds) {
     this.leaseDurationSeconds = leaseDurationSeconds;
     return (A) this;
   }
 
-  public java.lang.Boolean hasLeaseDurationSeconds() {
+  public Boolean hasLeaseDurationSeconds() {
     return this.leaseDurationSeconds != null;
   }
 
-  public java.lang.Integer getLeaseTransitions() {
+  public Integer getLeaseTransitions() {
     return this.leaseTransitions;
   }
 
-  public A withLeaseTransitions(java.lang.Integer leaseTransitions) {
+  public A withLeaseTransitions(Integer leaseTransitions) {
     this.leaseTransitions = leaseTransitions;
     return (A) this;
   }
 
-  public java.lang.Boolean hasLeaseTransitions() {
+  public Boolean hasLeaseTransitions() {
     return this.leaseTransitions != null;
   }
 
-  public java.time.OffsetDateTime getRenewTime() {
+  public OffsetDateTime getRenewTime() {
     return this.renewTime;
   }
 
-  public A withRenewTime(java.time.OffsetDateTime renewTime) {
+  public A withRenewTime(OffsetDateTime renewTime) {
     this.renewTime = renewTime;
     return (A) this;
   }
 
-  public java.lang.Boolean hasRenewTime() {
+  public Boolean hasRenewTime() {
     return this.renewTime != null;
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1LeaseSpecFluentImpl that = (V1LeaseSpecFluentImpl) o;
@@ -136,5 +132,32 @@ public class V1LeaseSpecFluentImpl<
         leaseTransitions,
         renewTime,
         super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (acquireTime != null) {
+      sb.append("acquireTime:");
+      sb.append(acquireTime + ",");
+    }
+    if (holderIdentity != null) {
+      sb.append("holderIdentity:");
+      sb.append(holderIdentity + ",");
+    }
+    if (leaseDurationSeconds != null) {
+      sb.append("leaseDurationSeconds:");
+      sb.append(leaseDurationSeconds + ",");
+    }
+    if (leaseTransitions != null) {
+      sb.append("leaseTransitions:");
+      sb.append(leaseTransitions + ",");
+    }
+    if (renewTime != null) {
+      sb.append("renewTime:");
+      sb.append(renewTime);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

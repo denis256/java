@@ -12,35 +12,29 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.custom.Quantity;
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
-public interface V1ResourceFieldSelectorFluent<
-        A extends io.kubernetes.client.openapi.models.V1ResourceFieldSelectorFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getContainerName();
+public interface V1ResourceFieldSelectorFluent<A extends V1ResourceFieldSelectorFluent<A>>
+    extends Fluent<A> {
+  public String getContainerName();
 
-  public A withContainerName(java.lang.String containerName);
+  public A withContainerName(String containerName);
 
-  public java.lang.Boolean hasContainerName();
+  public Boolean hasContainerName();
 
-  /** Method is deprecated. use withContainerName instead. */
-  @java.lang.Deprecated
-  public A withNewContainerName(java.lang.String original);
+  public Quantity getDivisor();
 
-  public io.kubernetes.client.custom.Quantity getDivisor();
+  public A withDivisor(Quantity divisor);
 
-  public A withDivisor(io.kubernetes.client.custom.Quantity divisor);
+  public Boolean hasDivisor();
 
-  public java.lang.Boolean hasDivisor();
+  public A withNewDivisor(String value);
 
-  public A withNewDivisor(java.lang.String value);
+  public String getResource();
 
-  public java.lang.String getResource();
+  public A withResource(String resource);
 
-  public A withResource(java.lang.String resource);
-
-  public java.lang.Boolean hasResource();
-
-  /** Method is deprecated. use withResource instead. */
-  @java.lang.Deprecated
-  public A withNewResource(java.lang.String original);
+  public Boolean hasResource();
 }

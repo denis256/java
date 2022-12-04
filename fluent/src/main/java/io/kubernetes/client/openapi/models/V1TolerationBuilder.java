@@ -12,40 +12,32 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1TolerationBuilder
-    extends io.kubernetes.client.openapi.models.V1TolerationFluentImpl<
-        io.kubernetes.client.openapi.models.V1TolerationBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1Toleration,
-        io.kubernetes.client.openapi.models.V1TolerationBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1TolerationBuilder extends V1TolerationFluentImpl<V1TolerationBuilder>
+    implements VisitableBuilder<V1Toleration, V1TolerationBuilder> {
   public V1TolerationBuilder() {
     this(false);
   }
 
-  public V1TolerationBuilder(java.lang.Boolean validationEnabled) {
+  public V1TolerationBuilder(Boolean validationEnabled) {
     this(new V1Toleration(), validationEnabled);
   }
 
-  public V1TolerationBuilder(io.kubernetes.client.openapi.models.V1TolerationFluent<?> fluent) {
+  public V1TolerationBuilder(V1TolerationFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1TolerationBuilder(
-      io.kubernetes.client.openapi.models.V1TolerationFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1TolerationBuilder(V1TolerationFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1Toleration(), validationEnabled);
   }
 
-  public V1TolerationBuilder(
-      io.kubernetes.client.openapi.models.V1TolerationFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1Toleration instance) {
+  public V1TolerationBuilder(V1TolerationFluent<?> fluent, V1Toleration instance) {
     this(fluent, instance, false);
   }
 
   public V1TolerationBuilder(
-      io.kubernetes.client.openapi.models.V1TolerationFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1Toleration instance,
-      java.lang.Boolean validationEnabled) {
+      V1TolerationFluent<?> fluent, V1Toleration instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withEffect(instance.getEffect());
 
@@ -60,13 +52,11 @@ public class V1TolerationBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1TolerationBuilder(io.kubernetes.client.openapi.models.V1Toleration instance) {
+  public V1TolerationBuilder(V1Toleration instance) {
     this(instance, false);
   }
 
-  public V1TolerationBuilder(
-      io.kubernetes.client.openapi.models.V1Toleration instance,
-      java.lang.Boolean validationEnabled) {
+  public V1TolerationBuilder(V1Toleration instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withEffect(instance.getEffect());
 
@@ -81,10 +71,10 @@ public class V1TolerationBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1TolerationFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1TolerationFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1Toleration build() {
+  public V1Toleration build() {
     V1Toleration buildable = new V1Toleration();
     buildable.setEffect(fluent.getEffect());
     buildable.setKey(fluent.getKey());
@@ -92,24 +82,5 @@ public class V1TolerationBuilder
     buildable.setTolerationSeconds(fluent.getTolerationSeconds());
     buildable.setValue(fluent.getValue());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1TolerationBuilder that = (V1TolerationBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

@@ -12,41 +12,37 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.VisitableBuilder;
+
 public class V1AzureDiskVolumeSourceBuilder
-    extends io.kubernetes.client.openapi.models.V1AzureDiskVolumeSourceFluentImpl<
-        io.kubernetes.client.openapi.models.V1AzureDiskVolumeSourceBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1AzureDiskVolumeSource,
-        io.kubernetes.client.openapi.models.V1AzureDiskVolumeSourceBuilder> {
+    extends V1AzureDiskVolumeSourceFluentImpl<V1AzureDiskVolumeSourceBuilder>
+    implements VisitableBuilder<V1AzureDiskVolumeSource, V1AzureDiskVolumeSourceBuilder> {
   public V1AzureDiskVolumeSourceBuilder() {
     this(false);
   }
 
-  public V1AzureDiskVolumeSourceBuilder(java.lang.Boolean validationEnabled) {
+  public V1AzureDiskVolumeSourceBuilder(Boolean validationEnabled) {
     this(new V1AzureDiskVolumeSource(), validationEnabled);
   }
 
-  public V1AzureDiskVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1AzureDiskVolumeSourceFluent<?> fluent) {
+  public V1AzureDiskVolumeSourceBuilder(V1AzureDiskVolumeSourceFluent<?> fluent) {
     this(fluent, false);
   }
 
   public V1AzureDiskVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1AzureDiskVolumeSourceFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+      V1AzureDiskVolumeSourceFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1AzureDiskVolumeSource(), validationEnabled);
   }
 
   public V1AzureDiskVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1AzureDiskVolumeSourceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1AzureDiskVolumeSource instance) {
+      V1AzureDiskVolumeSourceFluent<?> fluent, V1AzureDiskVolumeSource instance) {
     this(fluent, instance, false);
   }
 
   public V1AzureDiskVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1AzureDiskVolumeSourceFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1AzureDiskVolumeSource instance,
-      java.lang.Boolean validationEnabled) {
+      V1AzureDiskVolumeSourceFluent<?> fluent,
+      V1AzureDiskVolumeSource instance,
+      Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withCachingMode(instance.getCachingMode());
 
@@ -63,14 +59,12 @@ public class V1AzureDiskVolumeSourceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  public V1AzureDiskVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1AzureDiskVolumeSource instance) {
+  public V1AzureDiskVolumeSourceBuilder(V1AzureDiskVolumeSource instance) {
     this(instance, false);
   }
 
   public V1AzureDiskVolumeSourceBuilder(
-      io.kubernetes.client.openapi.models.V1AzureDiskVolumeSource instance,
-      java.lang.Boolean validationEnabled) {
+      V1AzureDiskVolumeSource instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withCachingMode(instance.getCachingMode());
 
@@ -87,10 +81,10 @@ public class V1AzureDiskVolumeSourceBuilder
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1AzureDiskVolumeSourceFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1AzureDiskVolumeSourceFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1AzureDiskVolumeSource build() {
+  public V1AzureDiskVolumeSource build() {
     V1AzureDiskVolumeSource buildable = new V1AzureDiskVolumeSource();
     buildable.setCachingMode(fluent.getCachingMode());
     buildable.setDiskName(fluent.getDiskName());
@@ -99,24 +93,5 @@ public class V1AzureDiskVolumeSourceBuilder
     buildable.setKind(fluent.getKind());
     buildable.setReadOnly(fluent.getReadOnly());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1AzureDiskVolumeSourceBuilder that = (V1AzureDiskVolumeSourceBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

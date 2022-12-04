@@ -12,14 +12,19 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.function.Predicate;
+
 /** Generated */
-public class V1FCVolumeSourceFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1FCVolumeSourceFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1FCVolumeSourceFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1FCVolumeSourceFluentImpl<A extends V1FCVolumeSourceFluent<A>> extends BaseFluent<A>
+    implements V1FCVolumeSourceFluent<A> {
   public V1FCVolumeSourceFluentImpl() {}
 
-  public V1FCVolumeSourceFluentImpl(io.kubernetes.client.openapi.models.V1FCVolumeSource instance) {
+  public V1FCVolumeSourceFluentImpl(V1FCVolumeSource instance) {
     this.withFsType(instance.getFsType());
 
     this.withLun(instance.getLun());
@@ -31,68 +36,62 @@ public class V1FCVolumeSourceFluentImpl<
     this.withWwids(instance.getWwids());
   }
 
-  private java.lang.String fsType;
-  private java.lang.Integer lun;
-  private java.lang.Boolean readOnly;
-  private java.util.List<java.lang.String> targetWWNs;
-  private java.util.List<java.lang.String> wwids;
+  private String fsType;
+  private Integer lun;
+  private Boolean readOnly;
+  private List<String> targetWWNs;
+  private List<String> wwids;
 
-  public java.lang.String getFsType() {
+  public String getFsType() {
     return this.fsType;
   }
 
-  public A withFsType(java.lang.String fsType) {
+  public A withFsType(String fsType) {
     this.fsType = fsType;
     return (A) this;
   }
 
-  public java.lang.Boolean hasFsType() {
+  public Boolean hasFsType() {
     return this.fsType != null;
   }
 
-  /** Method is deprecated. use withFsType instead. */
-  @java.lang.Deprecated
-  public A withNewFsType(java.lang.String original) {
-    return (A) withFsType(new String(original));
-  }
-
-  public java.lang.Integer getLun() {
+  public Integer getLun() {
     return this.lun;
   }
 
-  public A withLun(java.lang.Integer lun) {
+  public A withLun(Integer lun) {
     this.lun = lun;
     return (A) this;
   }
 
-  public java.lang.Boolean hasLun() {
+  public Boolean hasLun() {
     return this.lun != null;
   }
 
-  public java.lang.Boolean getReadOnly() {
+  public Boolean getReadOnly() {
     return this.readOnly;
   }
 
-  public A withReadOnly(java.lang.Boolean readOnly) {
+  public A withReadOnly(Boolean readOnly) {
     this.readOnly = readOnly;
     return (A) this;
   }
 
-  public java.lang.Boolean hasReadOnly() {
+  public Boolean hasReadOnly() {
     return this.readOnly != null;
   }
 
-  public A addToTargetWWNs(java.lang.Integer index, java.lang.String item) {
+  public A addToTargetWWNs(Integer index, String item) {
     if (this.targetWWNs == null) {
-      this.targetWWNs = new java.util.ArrayList<java.lang.String>();
+      this.targetWWNs = new ArrayList<String>();
     }
     this.targetWWNs.add(index, item);
     return (A) this;
   }
 
-  public A setToTargetWWNs(java.lang.Integer index, java.lang.String item) {
+  public A setToTargetWWNs(Integer index, String item) {
     if (this.targetWWNs == null) {
-      this.targetWWNs = new java.util.ArrayList<java.lang.String>();
+      this.targetWWNs = new ArrayList<String>();
     }
     this.targetWWNs.set(index, item);
     return (A) this;
@@ -100,26 +99,26 @@ public class V1FCVolumeSourceFluentImpl<
 
   public A addToTargetWWNs(java.lang.String... items) {
     if (this.targetWWNs == null) {
-      this.targetWWNs = new java.util.ArrayList<java.lang.String>();
+      this.targetWWNs = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.targetWWNs.add(item);
     }
     return (A) this;
   }
 
-  public A addAllToTargetWWNs(java.util.Collection<java.lang.String> items) {
+  public A addAllToTargetWWNs(Collection<String> items) {
     if (this.targetWWNs == null) {
-      this.targetWWNs = new java.util.ArrayList<java.lang.String>();
+      this.targetWWNs = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.targetWWNs.add(item);
     }
     return (A) this;
   }
 
   public A removeFromTargetWWNs(java.lang.String... items) {
-    for (java.lang.String item : items) {
+    for (String item : items) {
       if (this.targetWWNs != null) {
         this.targetWWNs.remove(item);
       }
@@ -127,8 +126,8 @@ public class V1FCVolumeSourceFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromTargetWWNs(java.util.Collection<java.lang.String> items) {
-    for (java.lang.String item : items) {
+  public A removeAllFromTargetWWNs(Collection<String> items) {
+    for (String item : items) {
       if (this.targetWWNs != null) {
         this.targetWWNs.remove(item);
       }
@@ -136,25 +135,24 @@ public class V1FCVolumeSourceFluentImpl<
     return (A) this;
   }
 
-  public java.util.List<java.lang.String> getTargetWWNs() {
+  public List<String> getTargetWWNs() {
     return this.targetWWNs;
   }
 
-  public java.lang.String getTargetWWN(java.lang.Integer index) {
+  public String getTargetWWN(Integer index) {
     return this.targetWWNs.get(index);
   }
 
-  public java.lang.String getFirstTargetWWN() {
+  public String getFirstTargetWWN() {
     return this.targetWWNs.get(0);
   }
 
-  public java.lang.String getLastTargetWWN() {
+  public String getLastTargetWWN() {
     return this.targetWWNs.get(targetWWNs.size() - 1);
   }
 
-  public java.lang.String getMatchingTargetWWN(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : targetWWNs) {
+  public String getMatchingTargetWWN(Predicate<String> predicate) {
+    for (String item : targetWWNs) {
       if (predicate.test(item)) {
         return item;
       }
@@ -162,9 +160,8 @@ public class V1FCVolumeSourceFluentImpl<
     return null;
   }
 
-  public java.lang.Boolean hasMatchingTargetWWN(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : targetWWNs) {
+  public Boolean hasMatchingTargetWWN(Predicate<String> predicate) {
+    for (String item : targetWWNs) {
       if (predicate.test(item)) {
         return true;
       }
@@ -172,10 +169,10 @@ public class V1FCVolumeSourceFluentImpl<
     return false;
   }
 
-  public A withTargetWWNs(java.util.List<java.lang.String> targetWWNs) {
+  public A withTargetWWNs(List<String> targetWWNs) {
     if (targetWWNs != null) {
-      this.targetWWNs = new java.util.ArrayList();
-      for (java.lang.String item : targetWWNs) {
+      this.targetWWNs = new ArrayList();
+      for (String item : targetWWNs) {
         this.addToTargetWWNs(item);
       }
     } else {
@@ -189,32 +186,28 @@ public class V1FCVolumeSourceFluentImpl<
       this.targetWWNs.clear();
     }
     if (targetWWNs != null) {
-      for (java.lang.String item : targetWWNs) {
+      for (String item : targetWWNs) {
         this.addToTargetWWNs(item);
       }
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasTargetWWNs() {
+  public Boolean hasTargetWWNs() {
     return targetWWNs != null && !targetWWNs.isEmpty();
   }
 
-  public A addNewTargetWWN(java.lang.String original) {
-    return (A) addToTargetWWNs(new String(original));
-  }
-
-  public A addToWwids(java.lang.Integer index, java.lang.String item) {
+  public A addToWwids(Integer index, String item) {
     if (this.wwids == null) {
-      this.wwids = new java.util.ArrayList<java.lang.String>();
+      this.wwids = new ArrayList<String>();
     }
     this.wwids.add(index, item);
     return (A) this;
   }
 
-  public A setToWwids(java.lang.Integer index, java.lang.String item) {
+  public A setToWwids(Integer index, String item) {
     if (this.wwids == null) {
-      this.wwids = new java.util.ArrayList<java.lang.String>();
+      this.wwids = new ArrayList<String>();
     }
     this.wwids.set(index, item);
     return (A) this;
@@ -222,26 +215,26 @@ public class V1FCVolumeSourceFluentImpl<
 
   public A addToWwids(java.lang.String... items) {
     if (this.wwids == null) {
-      this.wwids = new java.util.ArrayList<java.lang.String>();
+      this.wwids = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.wwids.add(item);
     }
     return (A) this;
   }
 
-  public A addAllToWwids(java.util.Collection<java.lang.String> items) {
+  public A addAllToWwids(Collection<String> items) {
     if (this.wwids == null) {
-      this.wwids = new java.util.ArrayList<java.lang.String>();
+      this.wwids = new ArrayList<String>();
     }
-    for (java.lang.String item : items) {
+    for (String item : items) {
       this.wwids.add(item);
     }
     return (A) this;
   }
 
   public A removeFromWwids(java.lang.String... items) {
-    for (java.lang.String item : items) {
+    for (String item : items) {
       if (this.wwids != null) {
         this.wwids.remove(item);
       }
@@ -249,8 +242,8 @@ public class V1FCVolumeSourceFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromWwids(java.util.Collection<java.lang.String> items) {
-    for (java.lang.String item : items) {
+  public A removeAllFromWwids(Collection<String> items) {
+    for (String item : items) {
       if (this.wwids != null) {
         this.wwids.remove(item);
       }
@@ -258,25 +251,24 @@ public class V1FCVolumeSourceFluentImpl<
     return (A) this;
   }
 
-  public java.util.List<java.lang.String> getWwids() {
+  public List<String> getWwids() {
     return this.wwids;
   }
 
-  public java.lang.String getWwid(java.lang.Integer index) {
+  public String getWwid(Integer index) {
     return this.wwids.get(index);
   }
 
-  public java.lang.String getFirstWwid() {
+  public String getFirstWwid() {
     return this.wwids.get(0);
   }
 
-  public java.lang.String getLastWwid() {
+  public String getLastWwid() {
     return this.wwids.get(wwids.size() - 1);
   }
 
-  public java.lang.String getMatchingWwid(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : wwids) {
+  public String getMatchingWwid(Predicate<String> predicate) {
+    for (String item : wwids) {
       if (predicate.test(item)) {
         return item;
       }
@@ -284,9 +276,8 @@ public class V1FCVolumeSourceFluentImpl<
     return null;
   }
 
-  public java.lang.Boolean hasMatchingWwid(
-      java.util.function.Predicate<java.lang.String> predicate) {
-    for (java.lang.String item : wwids) {
+  public Boolean hasMatchingWwid(Predicate<String> predicate) {
+    for (String item : wwids) {
       if (predicate.test(item)) {
         return true;
       }
@@ -294,10 +285,10 @@ public class V1FCVolumeSourceFluentImpl<
     return false;
   }
 
-  public A withWwids(java.util.List<java.lang.String> wwids) {
+  public A withWwids(List<String> wwids) {
     if (wwids != null) {
-      this.wwids = new java.util.ArrayList();
-      for (java.lang.String item : wwids) {
+      this.wwids = new ArrayList();
+      for (String item : wwids) {
         this.addToWwids(item);
       }
     } else {
@@ -311,22 +302,18 @@ public class V1FCVolumeSourceFluentImpl<
       this.wwids.clear();
     }
     if (wwids != null) {
-      for (java.lang.String item : wwids) {
+      for (String item : wwids) {
         this.addToWwids(item);
       }
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasWwids() {
+  public Boolean hasWwids() {
     return wwids != null && !wwids.isEmpty();
   }
 
-  public A addNewWwid(java.lang.String original) {
-    return (A) addToWwids(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1FCVolumeSourceFluentImpl that = (V1FCVolumeSourceFluentImpl) o;
@@ -341,5 +328,36 @@ public class V1FCVolumeSourceFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(fsType, lun, readOnly, targetWWNs, wwids, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (fsType != null) {
+      sb.append("fsType:");
+      sb.append(fsType + ",");
+    }
+    if (lun != null) {
+      sb.append("lun:");
+      sb.append(lun + ",");
+    }
+    if (readOnly != null) {
+      sb.append("readOnly:");
+      sb.append(readOnly + ",");
+    }
+    if (targetWWNs != null && !targetWWNs.isEmpty()) {
+      sb.append("targetWWNs:");
+      sb.append(targetWWNs + ",");
+    }
+    if (wwids != null && !wwids.isEmpty()) {
+      sb.append("wwids:");
+      sb.append(wwids);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  public A withReadOnly() {
+    return withReadOnly(true);
   }
 }

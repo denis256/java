@@ -12,17 +12,21 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Predicate;
 
 /** Generated */
-public class V1StatusDetailsFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1StatusDetailsFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1StatusDetailsFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1StatusDetailsFluentImpl<A extends V1StatusDetailsFluent<A>> extends BaseFluent<A>
+    implements V1StatusDetailsFluent<A> {
   public V1StatusDetailsFluentImpl() {}
 
-  public V1StatusDetailsFluentImpl(io.kubernetes.client.openapi.models.V1StatusDetails instance) {
+  public V1StatusDetailsFluentImpl(V1StatusDetails instance) {
     this.withCauses(instance.getCauses());
 
     this.withGroup(instance.getGroup());
@@ -36,34 +40,28 @@ public class V1StatusDetailsFluentImpl<
     this.withUid(instance.getUid());
   }
 
-  private java.util.ArrayList<io.kubernetes.client.openapi.models.V1StatusCauseBuilder> causes;
-  private java.lang.String group;
-  private java.lang.String kind;
-  private java.lang.String name;
-  private java.lang.Integer retryAfterSeconds;
-  private java.lang.String uid;
+  private ArrayList<V1StatusCauseBuilder> causes;
+  private String group;
+  private String kind;
+  private String name;
+  private Integer retryAfterSeconds;
+  private String uid;
 
-  public A addToCauses(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1StatusCause item) {
+  public A addToCauses(Integer index, V1StatusCause item) {
     if (this.causes == null) {
-      this.causes =
-          new java.util.ArrayList<io.kubernetes.client.openapi.models.V1StatusCauseBuilder>();
+      this.causes = new ArrayList<V1StatusCauseBuilder>();
     }
-    io.kubernetes.client.openapi.models.V1StatusCauseBuilder builder =
-        new io.kubernetes.client.openapi.models.V1StatusCauseBuilder(item);
+    V1StatusCauseBuilder builder = new V1StatusCauseBuilder(item);
     _visitables.get("causes").add(index >= 0 ? index : _visitables.get("causes").size(), builder);
     this.causes.add(index >= 0 ? index : causes.size(), builder);
     return (A) this;
   }
 
-  public A setToCauses(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1StatusCause item) {
+  public A setToCauses(Integer index, V1StatusCause item) {
     if (this.causes == null) {
-      this.causes =
-          new java.util.ArrayList<io.kubernetes.client.openapi.models.V1StatusCauseBuilder>();
+      this.causes = new ArrayList<V1StatusCauseBuilder>();
     }
-    io.kubernetes.client.openapi.models.V1StatusCauseBuilder builder =
-        new io.kubernetes.client.openapi.models.V1StatusCauseBuilder(item);
+    V1StatusCauseBuilder builder = new V1StatusCauseBuilder(item);
     if (index < 0 || index >= _visitables.get("causes").size()) {
       _visitables.get("causes").add(builder);
     } else {
@@ -79,27 +77,22 @@ public class V1StatusDetailsFluentImpl<
 
   public A addToCauses(io.kubernetes.client.openapi.models.V1StatusCause... items) {
     if (this.causes == null) {
-      this.causes =
-          new java.util.ArrayList<io.kubernetes.client.openapi.models.V1StatusCauseBuilder>();
+      this.causes = new ArrayList<V1StatusCauseBuilder>();
     }
-    for (io.kubernetes.client.openapi.models.V1StatusCause item : items) {
-      io.kubernetes.client.openapi.models.V1StatusCauseBuilder builder =
-          new io.kubernetes.client.openapi.models.V1StatusCauseBuilder(item);
+    for (V1StatusCause item : items) {
+      V1StatusCauseBuilder builder = new V1StatusCauseBuilder(item);
       _visitables.get("causes").add(builder);
       this.causes.add(builder);
     }
     return (A) this;
   }
 
-  public A addAllToCauses(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1StatusCause> items) {
+  public A addAllToCauses(Collection<V1StatusCause> items) {
     if (this.causes == null) {
-      this.causes =
-          new java.util.ArrayList<io.kubernetes.client.openapi.models.V1StatusCauseBuilder>();
+      this.causes = new ArrayList<V1StatusCauseBuilder>();
     }
-    for (io.kubernetes.client.openapi.models.V1StatusCause item : items) {
-      io.kubernetes.client.openapi.models.V1StatusCauseBuilder builder =
-          new io.kubernetes.client.openapi.models.V1StatusCauseBuilder(item);
+    for (V1StatusCause item : items) {
+      V1StatusCauseBuilder builder = new V1StatusCauseBuilder(item);
       _visitables.get("causes").add(builder);
       this.causes.add(builder);
     }
@@ -107,9 +100,8 @@ public class V1StatusDetailsFluentImpl<
   }
 
   public A removeFromCauses(io.kubernetes.client.openapi.models.V1StatusCause... items) {
-    for (io.kubernetes.client.openapi.models.V1StatusCause item : items) {
-      io.kubernetes.client.openapi.models.V1StatusCauseBuilder builder =
-          new io.kubernetes.client.openapi.models.V1StatusCauseBuilder(item);
+    for (V1StatusCause item : items) {
+      V1StatusCauseBuilder builder = new V1StatusCauseBuilder(item);
       _visitables.get("causes").remove(builder);
       if (this.causes != null) {
         this.causes.remove(builder);
@@ -118,11 +110,9 @@ public class V1StatusDetailsFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromCauses(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1StatusCause> items) {
-    for (io.kubernetes.client.openapi.models.V1StatusCause item : items) {
-      io.kubernetes.client.openapi.models.V1StatusCauseBuilder builder =
-          new io.kubernetes.client.openapi.models.V1StatusCauseBuilder(item);
+  public A removeAllFromCauses(Collection<V1StatusCause> items) {
+    for (V1StatusCause item : items) {
+      V1StatusCauseBuilder builder = new V1StatusCauseBuilder(item);
       _visitables.get("causes").remove(builder);
       if (this.causes != null) {
         this.causes.remove(builder);
@@ -131,15 +121,12 @@ public class V1StatusDetailsFluentImpl<
     return (A) this;
   }
 
-  public A removeMatchingFromCauses(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1StatusCauseBuilder>
-          predicate) {
+  public A removeMatchingFromCauses(Predicate<V1StatusCauseBuilder> predicate) {
     if (causes == null) return (A) this;
-    final Iterator<io.kubernetes.client.openapi.models.V1StatusCauseBuilder> each =
-        causes.iterator();
+    final Iterator<V1StatusCauseBuilder> each = causes.iterator();
     final List visitables = _visitables.get("causes");
     while (each.hasNext()) {
-      io.kubernetes.client.openapi.models.V1StatusCauseBuilder builder = each.next();
+      V1StatusCauseBuilder builder = each.next();
       if (predicate.test(builder)) {
         visitables.remove(builder);
         each.remove();
@@ -153,31 +140,29 @@ public class V1StatusDetailsFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V1StatusCause> getCauses() {
+  @Deprecated
+  public List<V1StatusCause> getCauses() {
     return causes != null ? build(causes) : null;
   }
 
-  public java.util.List<io.kubernetes.client.openapi.models.V1StatusCause> buildCauses() {
+  public List<V1StatusCause> buildCauses() {
     return causes != null ? build(causes) : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1StatusCause buildCause(java.lang.Integer index) {
+  public V1StatusCause buildCause(Integer index) {
     return this.causes.get(index).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1StatusCause buildFirstCause() {
+  public V1StatusCause buildFirstCause() {
     return this.causes.get(0).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1StatusCause buildLastCause() {
+  public V1StatusCause buildLastCause() {
     return this.causes.get(causes.size() - 1).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1StatusCause buildMatchingCause(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1StatusCauseBuilder>
-          predicate) {
-    for (io.kubernetes.client.openapi.models.V1StatusCauseBuilder item : causes) {
+  public V1StatusCause buildMatchingCause(Predicate<V1StatusCauseBuilder> predicate) {
+    for (V1StatusCauseBuilder item : causes) {
       if (predicate.test(item)) {
         return item.build();
       }
@@ -185,10 +170,8 @@ public class V1StatusDetailsFluentImpl<
     return null;
   }
 
-  public java.lang.Boolean hasMatchingCause(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1StatusCauseBuilder>
-          predicate) {
-    for (io.kubernetes.client.openapi.models.V1StatusCauseBuilder item : causes) {
+  public Boolean hasMatchingCause(Predicate<V1StatusCauseBuilder> predicate) {
+    for (V1StatusCauseBuilder item : causes) {
       if (predicate.test(item)) {
         return true;
       }
@@ -196,13 +179,13 @@ public class V1StatusDetailsFluentImpl<
     return false;
   }
 
-  public A withCauses(java.util.List<io.kubernetes.client.openapi.models.V1StatusCause> causes) {
+  public A withCauses(List<V1StatusCause> causes) {
     if (this.causes != null) {
       _visitables.get("causes").removeAll(this.causes);
     }
     if (causes != null) {
-      this.causes = new java.util.ArrayList();
-      for (io.kubernetes.client.openapi.models.V1StatusCause item : causes) {
+      this.causes = new ArrayList();
+      for (V1StatusCause item : causes) {
         this.addToCauses(item);
       }
     } else {
@@ -216,57 +199,49 @@ public class V1StatusDetailsFluentImpl<
       this.causes.clear();
     }
     if (causes != null) {
-      for (io.kubernetes.client.openapi.models.V1StatusCause item : causes) {
+      for (V1StatusCause item : causes) {
         this.addToCauses(item);
       }
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasCauses() {
+  public Boolean hasCauses() {
     return causes != null && !causes.isEmpty();
   }
 
-  public io.kubernetes.client.openapi.models.V1StatusDetailsFluent.CausesNested<A> addNewCause() {
-    return new io.kubernetes.client.openapi.models.V1StatusDetailsFluentImpl.CausesNestedImpl();
+  public V1StatusDetailsFluent.CausesNested<A> addNewCause() {
+    return new V1StatusDetailsFluentImpl.CausesNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1StatusDetailsFluent.CausesNested<A> addNewCauseLike(
-      io.kubernetes.client.openapi.models.V1StatusCause item) {
-    return new io.kubernetes.client.openapi.models.V1StatusDetailsFluentImpl.CausesNestedImpl(
-        -1, item);
+  public V1StatusDetailsFluent.CausesNested<A> addNewCauseLike(V1StatusCause item) {
+    return new V1StatusDetailsFluentImpl.CausesNestedImpl(-1, item);
   }
 
-  public io.kubernetes.client.openapi.models.V1StatusDetailsFluent.CausesNested<A> setNewCauseLike(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1StatusCause item) {
-    return new io.kubernetes.client.openapi.models.V1StatusDetailsFluentImpl.CausesNestedImpl(
-        index, item);
+  public V1StatusDetailsFluent.CausesNested<A> setNewCauseLike(Integer index, V1StatusCause item) {
+    return new V1StatusDetailsFluentImpl.CausesNestedImpl(index, item);
   }
 
-  public io.kubernetes.client.openapi.models.V1StatusDetailsFluent.CausesNested<A> editCause(
-      java.lang.Integer index) {
+  public V1StatusDetailsFluent.CausesNested<A> editCause(Integer index) {
     if (causes.size() <= index)
       throw new RuntimeException("Can't edit causes. Index exceeds size.");
     return setNewCauseLike(index, buildCause(index));
   }
 
-  public io.kubernetes.client.openapi.models.V1StatusDetailsFluent.CausesNested<A>
-      editFirstCause() {
+  public V1StatusDetailsFluent.CausesNested<A> editFirstCause() {
     if (causes.size() == 0)
       throw new RuntimeException("Can't edit first causes. The list is empty.");
     return setNewCauseLike(0, buildCause(0));
   }
 
-  public io.kubernetes.client.openapi.models.V1StatusDetailsFluent.CausesNested<A> editLastCause() {
+  public V1StatusDetailsFluent.CausesNested<A> editLastCause() {
     int index = causes.size() - 1;
     if (index < 0) throw new RuntimeException("Can't edit last causes. The list is empty.");
     return setNewCauseLike(index, buildCause(index));
   }
 
-  public io.kubernetes.client.openapi.models.V1StatusDetailsFluent.CausesNested<A>
-      editMatchingCause(
-          java.util.function.Predicate<io.kubernetes.client.openapi.models.V1StatusCauseBuilder>
-              predicate) {
+  public V1StatusDetailsFluent.CausesNested<A> editMatchingCause(
+      Predicate<V1StatusCauseBuilder> predicate) {
     int index = -1;
     for (int i = 0; i < causes.size(); i++) {
       if (predicate.test(causes.get(i))) {
@@ -278,96 +253,72 @@ public class V1StatusDetailsFluentImpl<
     return setNewCauseLike(index, buildCause(index));
   }
 
-  public java.lang.String getGroup() {
+  public String getGroup() {
     return this.group;
   }
 
-  public A withGroup(java.lang.String group) {
+  public A withGroup(String group) {
     this.group = group;
     return (A) this;
   }
 
-  public java.lang.Boolean hasGroup() {
+  public Boolean hasGroup() {
     return this.group != null;
   }
 
-  /** Method is deprecated. use withGroup instead. */
-  @java.lang.Deprecated
-  public A withNewGroup(java.lang.String original) {
-    return (A) withGroup(new String(original));
-  }
-
-  public java.lang.String getKind() {
+  public String getKind() {
     return this.kind;
   }
 
-  public A withKind(java.lang.String kind) {
+  public A withKind(String kind) {
     this.kind = kind;
     return (A) this;
   }
 
-  public java.lang.Boolean hasKind() {
+  public Boolean hasKind() {
     return this.kind != null;
   }
 
-  /** Method is deprecated. use withKind instead. */
-  @java.lang.Deprecated
-  public A withNewKind(java.lang.String original) {
-    return (A) withKind(new String(original));
-  }
-
-  public java.lang.String getName() {
+  public String getName() {
     return this.name;
   }
 
-  public A withName(java.lang.String name) {
+  public A withName(String name) {
     this.name = name;
     return (A) this;
   }
 
-  public java.lang.Boolean hasName() {
+  public Boolean hasName() {
     return this.name != null;
   }
 
-  /** Method is deprecated. use withName instead. */
-  @java.lang.Deprecated
-  public A withNewName(java.lang.String original) {
-    return (A) withName(new String(original));
-  }
-
-  public java.lang.Integer getRetryAfterSeconds() {
+  public Integer getRetryAfterSeconds() {
     return this.retryAfterSeconds;
   }
 
-  public A withRetryAfterSeconds(java.lang.Integer retryAfterSeconds) {
+  public A withRetryAfterSeconds(Integer retryAfterSeconds) {
     this.retryAfterSeconds = retryAfterSeconds;
     return (A) this;
   }
 
-  public java.lang.Boolean hasRetryAfterSeconds() {
+  public Boolean hasRetryAfterSeconds() {
     return this.retryAfterSeconds != null;
   }
 
-  public java.lang.String getUid() {
+  public String getUid() {
     return this.uid;
   }
 
-  public A withUid(java.lang.String uid) {
+  public A withUid(String uid) {
     this.uid = uid;
     return (A) this;
   }
 
-  public java.lang.Boolean hasUid() {
+  public Boolean hasUid() {
     return this.uid != null;
   }
 
-  /** Method is deprecated. use withUid instead. */
-  @java.lang.Deprecated
-  public A withNewUid(java.lang.String original) {
-    return (A) withUid(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1StatusDetailsFluentImpl that = (V1StatusDetailsFluentImpl) o;
@@ -387,24 +338,51 @@ public class V1StatusDetailsFluentImpl<
         causes, group, kind, name, retryAfterSeconds, uid, super.hashCode());
   }
 
-  public class CausesNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1StatusCauseFluentImpl<
-          io.kubernetes.client.openapi.models.V1StatusDetailsFluent.CausesNested<N>>
-      implements io.kubernetes.client.openapi.models.V1StatusDetailsFluent.CausesNested<N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    CausesNestedImpl(
-        java.lang.Integer index, io.kubernetes.client.openapi.models.V1StatusCause item) {
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (causes != null && !causes.isEmpty()) {
+      sb.append("causes:");
+      sb.append(causes + ",");
+    }
+    if (group != null) {
+      sb.append("group:");
+      sb.append(group + ",");
+    }
+    if (kind != null) {
+      sb.append("kind:");
+      sb.append(kind + ",");
+    }
+    if (name != null) {
+      sb.append("name:");
+      sb.append(name + ",");
+    }
+    if (retryAfterSeconds != null) {
+      sb.append("retryAfterSeconds:");
+      sb.append(retryAfterSeconds + ",");
+    }
+    if (uid != null) {
+      sb.append("uid:");
+      sb.append(uid);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class CausesNestedImpl<N> extends V1StatusCauseFluentImpl<V1StatusDetailsFluent.CausesNested<N>>
+      implements V1StatusDetailsFluent.CausesNested<N>, Nested<N> {
+    CausesNestedImpl(Integer index, V1StatusCause item) {
       this.index = index;
-      this.builder = new io.kubernetes.client.openapi.models.V1StatusCauseBuilder(this, item);
+      this.builder = new V1StatusCauseBuilder(this, item);
     }
 
     CausesNestedImpl() {
       this.index = -1;
-      this.builder = new io.kubernetes.client.openapi.models.V1StatusCauseBuilder(this);
+      this.builder = new V1StatusCauseBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1StatusCauseBuilder builder;
-    java.lang.Integer index;
+    V1StatusCauseBuilder builder;
+    Integer index;
 
     public N and() {
       return (N) V1StatusDetailsFluentImpl.this.setToCauses(index, builder.build());

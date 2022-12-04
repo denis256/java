@@ -12,44 +12,33 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+
 /** Generated */
 public interface AdmissionregistrationV1ServiceReferenceFluent<
-        A extends
-            io.kubernetes.client.openapi.models.AdmissionregistrationV1ServiceReferenceFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.String getName();
+        A extends AdmissionregistrationV1ServiceReferenceFluent<A>>
+    extends Fluent<A> {
+  public String getName();
 
-  public A withName(java.lang.String name);
+  public A withName(String name);
 
-  public java.lang.Boolean hasName();
+  public Boolean hasName();
 
-  /** Method is deprecated. use withName instead. */
-  @java.lang.Deprecated
-  public A withNewName(java.lang.String original);
+  public String getNamespace();
 
-  public java.lang.String getNamespace();
+  public A withNamespace(String namespace);
 
-  public A withNamespace(java.lang.String namespace);
+  public Boolean hasNamespace();
 
-  public java.lang.Boolean hasNamespace();
+  public String getPath();
 
-  /** Method is deprecated. use withNamespace instead. */
-  @java.lang.Deprecated
-  public A withNewNamespace(java.lang.String original);
+  public A withPath(String path);
 
-  public java.lang.String getPath();
+  public Boolean hasPath();
 
-  public A withPath(java.lang.String path);
+  public Integer getPort();
 
-  public java.lang.Boolean hasPath();
+  public A withPort(Integer port);
 
-  /** Method is deprecated. use withPath instead. */
-  @java.lang.Deprecated
-  public A withNewPath(java.lang.String original);
-
-  public java.lang.Integer getPort();
-
-  public A withPort(java.lang.Integer port);
-
-  public java.lang.Boolean hasPort();
+  public Boolean hasPort();
 }

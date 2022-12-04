@@ -12,37 +12,40 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.Fluent;
+import java.time.OffsetDateTime;
+
 /** Generated */
 public interface V1HorizontalPodAutoscalerStatusFluent<
-        A extends io.kubernetes.client.openapi.models.V1HorizontalPodAutoscalerStatusFluent<A>>
-    extends io.kubernetes.client.fluent.Fluent<A> {
-  public java.lang.Integer getCurrentCPUUtilizationPercentage();
+        A extends V1HorizontalPodAutoscalerStatusFluent<A>>
+    extends Fluent<A> {
+  public Integer getCurrentCPUUtilizationPercentage();
 
-  public A withCurrentCPUUtilizationPercentage(java.lang.Integer currentCPUUtilizationPercentage);
+  public A withCurrentCPUUtilizationPercentage(Integer currentCPUUtilizationPercentage);
 
-  public java.lang.Boolean hasCurrentCPUUtilizationPercentage();
+  public Boolean hasCurrentCPUUtilizationPercentage();
 
-  public java.lang.Integer getCurrentReplicas();
+  public Integer getCurrentReplicas();
 
-  public A withCurrentReplicas(java.lang.Integer currentReplicas);
+  public A withCurrentReplicas(Integer currentReplicas);
 
-  public java.lang.Boolean hasCurrentReplicas();
+  public Boolean hasCurrentReplicas();
 
-  public java.lang.Integer getDesiredReplicas();
+  public Integer getDesiredReplicas();
 
-  public A withDesiredReplicas(java.lang.Integer desiredReplicas);
+  public A withDesiredReplicas(Integer desiredReplicas);
 
-  public java.lang.Boolean hasDesiredReplicas();
+  public Boolean hasDesiredReplicas();
 
-  public java.time.OffsetDateTime getLastScaleTime();
+  public OffsetDateTime getLastScaleTime();
 
-  public A withLastScaleTime(java.time.OffsetDateTime lastScaleTime);
+  public A withLastScaleTime(OffsetDateTime lastScaleTime);
 
-  public java.lang.Boolean hasLastScaleTime();
+  public Boolean hasLastScaleTime();
 
-  public java.lang.Long getObservedGeneration();
+  public Long getObservedGeneration();
 
-  public A withObservedGeneration(java.lang.Long observedGeneration);
+  public A withObservedGeneration(Long observedGeneration);
 
-  public java.lang.Boolean hasObservedGeneration();
+  public Boolean hasObservedGeneration();
 }

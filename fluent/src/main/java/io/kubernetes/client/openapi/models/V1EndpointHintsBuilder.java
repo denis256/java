@@ -12,85 +12,55 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-public class V1EndpointHintsBuilder
-    extends io.kubernetes.client.openapi.models.V1EndpointHintsFluentImpl<
-        io.kubernetes.client.openapi.models.V1EndpointHintsBuilder>
-    implements io.kubernetes.client.fluent.VisitableBuilder<
-        io.kubernetes.client.openapi.models.V1EndpointHints,
-        io.kubernetes.client.openapi.models.V1EndpointHintsBuilder> {
+import io.kubernetes.client.fluent.VisitableBuilder;
+
+public class V1EndpointHintsBuilder extends V1EndpointHintsFluentImpl<V1EndpointHintsBuilder>
+    implements VisitableBuilder<V1EndpointHints, V1EndpointHintsBuilder> {
   public V1EndpointHintsBuilder() {
     this(false);
   }
 
-  public V1EndpointHintsBuilder(java.lang.Boolean validationEnabled) {
+  public V1EndpointHintsBuilder(Boolean validationEnabled) {
     this(new V1EndpointHints(), validationEnabled);
   }
 
-  public V1EndpointHintsBuilder(
-      io.kubernetes.client.openapi.models.V1EndpointHintsFluent<?> fluent) {
+  public V1EndpointHintsBuilder(V1EndpointHintsFluent<?> fluent) {
     this(fluent, false);
   }
 
-  public V1EndpointHintsBuilder(
-      io.kubernetes.client.openapi.models.V1EndpointHintsFluent<?> fluent,
-      java.lang.Boolean validationEnabled) {
+  public V1EndpointHintsBuilder(V1EndpointHintsFluent<?> fluent, Boolean validationEnabled) {
     this(fluent, new V1EndpointHints(), validationEnabled);
   }
 
-  public V1EndpointHintsBuilder(
-      io.kubernetes.client.openapi.models.V1EndpointHintsFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1EndpointHints instance) {
+  public V1EndpointHintsBuilder(V1EndpointHintsFluent<?> fluent, V1EndpointHints instance) {
     this(fluent, instance, false);
   }
 
   public V1EndpointHintsBuilder(
-      io.kubernetes.client.openapi.models.V1EndpointHintsFluent<?> fluent,
-      io.kubernetes.client.openapi.models.V1EndpointHints instance,
-      java.lang.Boolean validationEnabled) {
+      V1EndpointHintsFluent<?> fluent, V1EndpointHints instance, Boolean validationEnabled) {
     this.fluent = fluent;
     fluent.withForZones(instance.getForZones());
 
     this.validationEnabled = validationEnabled;
   }
 
-  public V1EndpointHintsBuilder(io.kubernetes.client.openapi.models.V1EndpointHints instance) {
+  public V1EndpointHintsBuilder(V1EndpointHints instance) {
     this(instance, false);
   }
 
-  public V1EndpointHintsBuilder(
-      io.kubernetes.client.openapi.models.V1EndpointHints instance,
-      java.lang.Boolean validationEnabled) {
+  public V1EndpointHintsBuilder(V1EndpointHints instance, Boolean validationEnabled) {
     this.fluent = this;
     this.withForZones(instance.getForZones());
 
     this.validationEnabled = validationEnabled;
   }
 
-  io.kubernetes.client.openapi.models.V1EndpointHintsFluent<?> fluent;
-  java.lang.Boolean validationEnabled;
+  V1EndpointHintsFluent<?> fluent;
+  Boolean validationEnabled;
 
-  public io.kubernetes.client.openapi.models.V1EndpointHints build() {
+  public V1EndpointHints build() {
     V1EndpointHints buildable = new V1EndpointHints();
     buildable.setForZones(fluent.getForZones());
     return buildable;
-  }
-
-  public boolean equals(java.lang.Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    if (!super.equals(o)) return false;
-    V1EndpointHintsBuilder that = (V1EndpointHintsBuilder) o;
-    if (fluent != null && fluent != this
-        ? !fluent.equals(that.fluent)
-        : that.fluent != null && fluent != this) return false;
-
-    if (validationEnabled != null
-        ? !validationEnabled.equals(that.validationEnabled)
-        : that.validationEnabled != null) return false;
-    return true;
-  }
-
-  public int hashCode() {
-    return java.util.Objects.hash(fluent, validationEnabled, super.hashCode());
   }
 }

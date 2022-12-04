@@ -12,18 +12,22 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Predicate;
 
 /** Generated */
+@SuppressWarnings(value = "unchecked")
 public class V1MutatingWebhookConfigurationFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1MutatingWebhookConfigurationFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1MutatingWebhookConfigurationFluent<A> {
+        A extends V1MutatingWebhookConfigurationFluent<A>>
+    extends BaseFluent<A> implements V1MutatingWebhookConfigurationFluent<A> {
   public V1MutatingWebhookConfigurationFluentImpl() {}
 
-  public V1MutatingWebhookConfigurationFluentImpl(
-      io.kubernetes.client.openapi.models.V1MutatingWebhookConfiguration instance) {
+  public V1MutatingWebhookConfigurationFluentImpl(V1MutatingWebhookConfiguration instance) {
     this.withApiVersion(instance.getApiVersion());
 
     this.withKind(instance.getKind());
@@ -33,48 +37,35 @@ public class V1MutatingWebhookConfigurationFluentImpl<
     this.withWebhooks(instance.getWebhooks());
   }
 
-  private java.lang.String apiVersion;
-  private java.lang.String kind;
-  private io.kubernetes.client.openapi.models.V1ObjectMetaBuilder metadata;
-  private java.util.ArrayList<io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder>
-      webhooks;
+  private String apiVersion;
+  private String kind;
+  private V1ObjectMetaBuilder metadata;
+  private ArrayList<V1MutatingWebhookBuilder> webhooks;
 
-  public java.lang.String getApiVersion() {
+  public String getApiVersion() {
     return this.apiVersion;
   }
 
-  public A withApiVersion(java.lang.String apiVersion) {
+  public A withApiVersion(String apiVersion) {
     this.apiVersion = apiVersion;
     return (A) this;
   }
 
-  public java.lang.Boolean hasApiVersion() {
+  public Boolean hasApiVersion() {
     return this.apiVersion != null;
   }
 
-  /** Method is deprecated. use withApiVersion instead. */
-  @java.lang.Deprecated
-  public A withNewApiVersion(java.lang.String original) {
-    return (A) withApiVersion(new String(original));
-  }
-
-  public java.lang.String getKind() {
+  public String getKind() {
     return this.kind;
   }
 
-  public A withKind(java.lang.String kind) {
+  public A withKind(String kind) {
     this.kind = kind;
     return (A) this;
   }
 
-  public java.lang.Boolean hasKind() {
+  public Boolean hasKind() {
     return this.kind != null;
-  }
-
-  /** Method is deprecated. use withKind instead. */
-  @java.lang.Deprecated
-  public A withNewKind(java.lang.String original) {
-    return (A) withKind(new String(original));
   }
 
   /**
@@ -82,66 +73,59 @@ public class V1MutatingWebhookConfigurationFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1ObjectMeta getMetadata() {
+  @Deprecated
+  public V1ObjectMeta getMetadata() {
     return this.metadata != null ? this.metadata.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1ObjectMeta buildMetadata() {
+  public V1ObjectMeta buildMetadata() {
     return this.metadata != null ? this.metadata.build() : null;
   }
 
-  public A withMetadata(io.kubernetes.client.openapi.models.V1ObjectMeta metadata) {
+  public A withMetadata(V1ObjectMeta metadata) {
     _visitables.get("metadata").remove(this.metadata);
     if (metadata != null) {
-      this.metadata = new io.kubernetes.client.openapi.models.V1ObjectMetaBuilder(metadata);
+      this.metadata = new V1ObjectMetaBuilder(metadata);
       _visitables.get("metadata").add(this.metadata);
+    } else {
+      this.metadata = null;
+      _visitables.get("metadata").remove(this.metadata);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasMetadata() {
+  public Boolean hasMetadata() {
     return this.metadata != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1MutatingWebhookConfigurationFluent.MetadataNested<A>
-      withNewMetadata() {
-    return new io.kubernetes.client.openapi.models.V1MutatingWebhookConfigurationFluentImpl
-        .MetadataNestedImpl();
+  public V1MutatingWebhookConfigurationFluent.MetadataNested<A> withNewMetadata() {
+    return new V1MutatingWebhookConfigurationFluentImpl.MetadataNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1MutatingWebhookConfigurationFluent.MetadataNested<A>
-      withNewMetadataLike(io.kubernetes.client.openapi.models.V1ObjectMeta item) {
-    return new io.kubernetes.client.openapi.models.V1MutatingWebhookConfigurationFluentImpl
-        .MetadataNestedImpl(item);
+  public V1MutatingWebhookConfigurationFluent.MetadataNested<A> withNewMetadataLike(
+      V1ObjectMeta item) {
+    return new V1MutatingWebhookConfigurationFluentImpl.MetadataNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1MutatingWebhookConfigurationFluent.MetadataNested<A>
-      editMetadata() {
+  public V1MutatingWebhookConfigurationFluent.MetadataNested<A> editMetadata() {
     return withNewMetadataLike(getMetadata());
   }
 
-  public io.kubernetes.client.openapi.models.V1MutatingWebhookConfigurationFluent.MetadataNested<A>
-      editOrNewMetadata() {
+  public V1MutatingWebhookConfigurationFluent.MetadataNested<A> editOrNewMetadata() {
     return withNewMetadataLike(
-        getMetadata() != null
-            ? getMetadata()
-            : new io.kubernetes.client.openapi.models.V1ObjectMetaBuilder().build());
+        getMetadata() != null ? getMetadata() : new V1ObjectMetaBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1MutatingWebhookConfigurationFluent.MetadataNested<A>
-      editOrNewMetadataLike(io.kubernetes.client.openapi.models.V1ObjectMeta item) {
+  public V1MutatingWebhookConfigurationFluent.MetadataNested<A> editOrNewMetadataLike(
+      V1ObjectMeta item) {
     return withNewMetadataLike(getMetadata() != null ? getMetadata() : item);
   }
 
-  public A addToWebhooks(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1MutatingWebhook item) {
+  public A addToWebhooks(Integer index, V1MutatingWebhook item) {
     if (this.webhooks == null) {
-      this.webhooks =
-          new java.util.ArrayList<io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder>();
+      this.webhooks = new ArrayList<V1MutatingWebhookBuilder>();
     }
-    io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder builder =
-        new io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder(item);
+    V1MutatingWebhookBuilder builder = new V1MutatingWebhookBuilder(item);
     _visitables
         .get("webhooks")
         .add(index >= 0 ? index : _visitables.get("webhooks").size(), builder);
@@ -149,14 +133,11 @@ public class V1MutatingWebhookConfigurationFluentImpl<
     return (A) this;
   }
 
-  public A setToWebhooks(
-      java.lang.Integer index, io.kubernetes.client.openapi.models.V1MutatingWebhook item) {
+  public A setToWebhooks(Integer index, V1MutatingWebhook item) {
     if (this.webhooks == null) {
-      this.webhooks =
-          new java.util.ArrayList<io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder>();
+      this.webhooks = new ArrayList<V1MutatingWebhookBuilder>();
     }
-    io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder builder =
-        new io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder(item);
+    V1MutatingWebhookBuilder builder = new V1MutatingWebhookBuilder(item);
     if (index < 0 || index >= _visitables.get("webhooks").size()) {
       _visitables.get("webhooks").add(builder);
     } else {
@@ -172,27 +153,22 @@ public class V1MutatingWebhookConfigurationFluentImpl<
 
   public A addToWebhooks(io.kubernetes.client.openapi.models.V1MutatingWebhook... items) {
     if (this.webhooks == null) {
-      this.webhooks =
-          new java.util.ArrayList<io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder>();
+      this.webhooks = new ArrayList<V1MutatingWebhookBuilder>();
     }
-    for (io.kubernetes.client.openapi.models.V1MutatingWebhook item : items) {
-      io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder builder =
-          new io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder(item);
+    for (V1MutatingWebhook item : items) {
+      V1MutatingWebhookBuilder builder = new V1MutatingWebhookBuilder(item);
       _visitables.get("webhooks").add(builder);
       this.webhooks.add(builder);
     }
     return (A) this;
   }
 
-  public A addAllToWebhooks(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1MutatingWebhook> items) {
+  public A addAllToWebhooks(Collection<V1MutatingWebhook> items) {
     if (this.webhooks == null) {
-      this.webhooks =
-          new java.util.ArrayList<io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder>();
+      this.webhooks = new ArrayList<V1MutatingWebhookBuilder>();
     }
-    for (io.kubernetes.client.openapi.models.V1MutatingWebhook item : items) {
-      io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder builder =
-          new io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder(item);
+    for (V1MutatingWebhook item : items) {
+      V1MutatingWebhookBuilder builder = new V1MutatingWebhookBuilder(item);
       _visitables.get("webhooks").add(builder);
       this.webhooks.add(builder);
     }
@@ -200,9 +176,8 @@ public class V1MutatingWebhookConfigurationFluentImpl<
   }
 
   public A removeFromWebhooks(io.kubernetes.client.openapi.models.V1MutatingWebhook... items) {
-    for (io.kubernetes.client.openapi.models.V1MutatingWebhook item : items) {
-      io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder builder =
-          new io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder(item);
+    for (V1MutatingWebhook item : items) {
+      V1MutatingWebhookBuilder builder = new V1MutatingWebhookBuilder(item);
       _visitables.get("webhooks").remove(builder);
       if (this.webhooks != null) {
         this.webhooks.remove(builder);
@@ -211,11 +186,9 @@ public class V1MutatingWebhookConfigurationFluentImpl<
     return (A) this;
   }
 
-  public A removeAllFromWebhooks(
-      java.util.Collection<io.kubernetes.client.openapi.models.V1MutatingWebhook> items) {
-    for (io.kubernetes.client.openapi.models.V1MutatingWebhook item : items) {
-      io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder builder =
-          new io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder(item);
+  public A removeAllFromWebhooks(Collection<V1MutatingWebhook> items) {
+    for (V1MutatingWebhook item : items) {
+      V1MutatingWebhookBuilder builder = new V1MutatingWebhookBuilder(item);
       _visitables.get("webhooks").remove(builder);
       if (this.webhooks != null) {
         this.webhooks.remove(builder);
@@ -224,15 +197,12 @@ public class V1MutatingWebhookConfigurationFluentImpl<
     return (A) this;
   }
 
-  public A removeMatchingFromWebhooks(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder>
-          predicate) {
+  public A removeMatchingFromWebhooks(Predicate<V1MutatingWebhookBuilder> predicate) {
     if (webhooks == null) return (A) this;
-    final Iterator<io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder> each =
-        webhooks.iterator();
+    final Iterator<V1MutatingWebhookBuilder> each = webhooks.iterator();
     final List visitables = _visitables.get("webhooks");
     while (each.hasNext()) {
-      io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder builder = each.next();
+      V1MutatingWebhookBuilder builder = each.next();
       if (predicate.test(builder)) {
         visitables.remove(builder);
         each.remove();
@@ -246,32 +216,29 @@ public class V1MutatingWebhookConfigurationFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public java.util.List<io.kubernetes.client.openapi.models.V1MutatingWebhook> getWebhooks() {
+  @Deprecated
+  public List<V1MutatingWebhook> getWebhooks() {
     return webhooks != null ? build(webhooks) : null;
   }
 
-  public java.util.List<io.kubernetes.client.openapi.models.V1MutatingWebhook> buildWebhooks() {
+  public List<V1MutatingWebhook> buildWebhooks() {
     return webhooks != null ? build(webhooks) : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1MutatingWebhook buildWebhook(
-      java.lang.Integer index) {
+  public V1MutatingWebhook buildWebhook(Integer index) {
     return this.webhooks.get(index).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1MutatingWebhook buildFirstWebhook() {
+  public V1MutatingWebhook buildFirstWebhook() {
     return this.webhooks.get(0).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1MutatingWebhook buildLastWebhook() {
+  public V1MutatingWebhook buildLastWebhook() {
     return this.webhooks.get(webhooks.size() - 1).build();
   }
 
-  public io.kubernetes.client.openapi.models.V1MutatingWebhook buildMatchingWebhook(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder>
-          predicate) {
-    for (io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder item : webhooks) {
+  public V1MutatingWebhook buildMatchingWebhook(Predicate<V1MutatingWebhookBuilder> predicate) {
+    for (V1MutatingWebhookBuilder item : webhooks) {
       if (predicate.test(item)) {
         return item.build();
       }
@@ -279,10 +246,8 @@ public class V1MutatingWebhookConfigurationFluentImpl<
     return null;
   }
 
-  public java.lang.Boolean hasMatchingWebhook(
-      java.util.function.Predicate<io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder>
-          predicate) {
-    for (io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder item : webhooks) {
+  public Boolean hasMatchingWebhook(Predicate<V1MutatingWebhookBuilder> predicate) {
+    for (V1MutatingWebhookBuilder item : webhooks) {
       if (predicate.test(item)) {
         return true;
       }
@@ -290,14 +255,13 @@ public class V1MutatingWebhookConfigurationFluentImpl<
     return false;
   }
 
-  public A withWebhooks(
-      java.util.List<io.kubernetes.client.openapi.models.V1MutatingWebhook> webhooks) {
+  public A withWebhooks(List<V1MutatingWebhook> webhooks) {
     if (this.webhooks != null) {
       _visitables.get("webhooks").removeAll(this.webhooks);
     }
     if (webhooks != null) {
-      this.webhooks = new java.util.ArrayList();
-      for (io.kubernetes.client.openapi.models.V1MutatingWebhook item : webhooks) {
+      this.webhooks = new ArrayList();
+      for (V1MutatingWebhook item : webhooks) {
         this.addToWebhooks(item);
       }
     } else {
@@ -311,61 +275,51 @@ public class V1MutatingWebhookConfigurationFluentImpl<
       this.webhooks.clear();
     }
     if (webhooks != null) {
-      for (io.kubernetes.client.openapi.models.V1MutatingWebhook item : webhooks) {
+      for (V1MutatingWebhook item : webhooks) {
         this.addToWebhooks(item);
       }
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasWebhooks() {
+  public Boolean hasWebhooks() {
     return webhooks != null && !webhooks.isEmpty();
   }
 
-  public io.kubernetes.client.openapi.models.V1MutatingWebhookConfigurationFluent.WebhooksNested<A>
-      addNewWebhook() {
-    return new io.kubernetes.client.openapi.models.V1MutatingWebhookConfigurationFluentImpl
-        .WebhooksNestedImpl();
+  public V1MutatingWebhookConfigurationFluent.WebhooksNested<A> addNewWebhook() {
+    return new V1MutatingWebhookConfigurationFluentImpl.WebhooksNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1MutatingWebhookConfigurationFluent.WebhooksNested<A>
-      addNewWebhookLike(io.kubernetes.client.openapi.models.V1MutatingWebhook item) {
-    return new io.kubernetes.client.openapi.models.V1MutatingWebhookConfigurationFluentImpl
-        .WebhooksNestedImpl(-1, item);
+  public V1MutatingWebhookConfigurationFluent.WebhooksNested<A> addNewWebhookLike(
+      V1MutatingWebhook item) {
+    return new V1MutatingWebhookConfigurationFluentImpl.WebhooksNestedImpl(-1, item);
   }
 
-  public io.kubernetes.client.openapi.models.V1MutatingWebhookConfigurationFluent.WebhooksNested<A>
-      setNewWebhookLike(
-          java.lang.Integer index, io.kubernetes.client.openapi.models.V1MutatingWebhook item) {
-    return new io.kubernetes.client.openapi.models.V1MutatingWebhookConfigurationFluentImpl
-        .WebhooksNestedImpl(index, item);
+  public V1MutatingWebhookConfigurationFluent.WebhooksNested<A> setNewWebhookLike(
+      Integer index, V1MutatingWebhook item) {
+    return new V1MutatingWebhookConfigurationFluentImpl.WebhooksNestedImpl(index, item);
   }
 
-  public io.kubernetes.client.openapi.models.V1MutatingWebhookConfigurationFluent.WebhooksNested<A>
-      editWebhook(java.lang.Integer index) {
+  public V1MutatingWebhookConfigurationFluent.WebhooksNested<A> editWebhook(Integer index) {
     if (webhooks.size() <= index)
       throw new RuntimeException("Can't edit webhooks. Index exceeds size.");
     return setNewWebhookLike(index, buildWebhook(index));
   }
 
-  public io.kubernetes.client.openapi.models.V1MutatingWebhookConfigurationFluent.WebhooksNested<A>
-      editFirstWebhook() {
+  public V1MutatingWebhookConfigurationFluent.WebhooksNested<A> editFirstWebhook() {
     if (webhooks.size() == 0)
       throw new RuntimeException("Can't edit first webhooks. The list is empty.");
     return setNewWebhookLike(0, buildWebhook(0));
   }
 
-  public io.kubernetes.client.openapi.models.V1MutatingWebhookConfigurationFluent.WebhooksNested<A>
-      editLastWebhook() {
+  public V1MutatingWebhookConfigurationFluent.WebhooksNested<A> editLastWebhook() {
     int index = webhooks.size() - 1;
     if (index < 0) throw new RuntimeException("Can't edit last webhooks. The list is empty.");
     return setNewWebhookLike(index, buildWebhook(index));
   }
 
-  public io.kubernetes.client.openapi.models.V1MutatingWebhookConfigurationFluent.WebhooksNested<A>
-      editMatchingWebhook(
-          java.util.function.Predicate<io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder>
-              predicate) {
+  public V1MutatingWebhookConfigurationFluent.WebhooksNested<A> editMatchingWebhook(
+      Predicate<V1MutatingWebhookBuilder> predicate) {
     int index = -1;
     for (int i = 0; i < webhooks.size(); i++) {
       if (predicate.test(webhooks.get(i))) {
@@ -377,7 +331,7 @@ public class V1MutatingWebhookConfigurationFluentImpl<
     return setNewWebhookLike(index, buildWebhook(index));
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1MutatingWebhookConfigurationFluentImpl that = (V1MutatingWebhookConfigurationFluentImpl) o;
@@ -393,23 +347,41 @@ public class V1MutatingWebhookConfigurationFluentImpl<
     return java.util.Objects.hash(apiVersion, kind, metadata, webhooks, super.hashCode());
   }
 
-  public class MetadataNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1ObjectMetaFluentImpl<
-          io.kubernetes.client.openapi.models.V1MutatingWebhookConfigurationFluent.MetadataNested<
-              N>>
-      implements io.kubernetes.client.openapi.models.V1MutatingWebhookConfigurationFluent
-                  .MetadataNested<
-              N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    MetadataNestedImpl(io.kubernetes.client.openapi.models.V1ObjectMeta item) {
-      this.builder = new io.kubernetes.client.openapi.models.V1ObjectMetaBuilder(this, item);
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (apiVersion != null) {
+      sb.append("apiVersion:");
+      sb.append(apiVersion + ",");
+    }
+    if (kind != null) {
+      sb.append("kind:");
+      sb.append(kind + ",");
+    }
+    if (metadata != null) {
+      sb.append("metadata:");
+      sb.append(metadata + ",");
+    }
+    if (webhooks != null && !webhooks.isEmpty()) {
+      sb.append("webhooks:");
+      sb.append(webhooks);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class MetadataNestedImpl<N>
+      extends V1ObjectMetaFluentImpl<V1MutatingWebhookConfigurationFluent.MetadataNested<N>>
+      implements V1MutatingWebhookConfigurationFluent.MetadataNested<N>, Nested<N> {
+    MetadataNestedImpl(V1ObjectMeta item) {
+      this.builder = new V1ObjectMetaBuilder(this, item);
     }
 
     MetadataNestedImpl() {
-      this.builder = new io.kubernetes.client.openapi.models.V1ObjectMetaBuilder(this);
+      this.builder = new V1ObjectMetaBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1ObjectMetaBuilder builder;
+    V1ObjectMetaBuilder builder;
 
     public N and() {
       return (N) V1MutatingWebhookConfigurationFluentImpl.this.withMetadata(builder.build());
@@ -420,27 +392,21 @@ public class V1MutatingWebhookConfigurationFluentImpl<
     }
   }
 
-  public class WebhooksNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1MutatingWebhookFluentImpl<
-          io.kubernetes.client.openapi.models.V1MutatingWebhookConfigurationFluent.WebhooksNested<
-              N>>
-      implements io.kubernetes.client.openapi.models.V1MutatingWebhookConfigurationFluent
-                  .WebhooksNested<
-              N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    WebhooksNestedImpl(
-        java.lang.Integer index, io.kubernetes.client.openapi.models.V1MutatingWebhook item) {
+  class WebhooksNestedImpl<N>
+      extends V1MutatingWebhookFluentImpl<V1MutatingWebhookConfigurationFluent.WebhooksNested<N>>
+      implements V1MutatingWebhookConfigurationFluent.WebhooksNested<N>, Nested<N> {
+    WebhooksNestedImpl(Integer index, V1MutatingWebhook item) {
       this.index = index;
-      this.builder = new io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder(this, item);
+      this.builder = new V1MutatingWebhookBuilder(this, item);
     }
 
     WebhooksNestedImpl() {
       this.index = -1;
-      this.builder = new io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder(this);
+      this.builder = new V1MutatingWebhookBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1MutatingWebhookBuilder builder;
-    java.lang.Integer index;
+    V1MutatingWebhookBuilder builder;
+    Integer index;
 
     public N and() {
       return (N)

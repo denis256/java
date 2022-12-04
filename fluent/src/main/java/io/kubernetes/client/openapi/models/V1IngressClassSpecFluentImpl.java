@@ -12,40 +12,35 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+import io.kubernetes.client.fluent.Nested;
+
 /** Generated */
-public class V1IngressClassSpecFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1IngressClassSpecFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1IngressClassSpecFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1IngressClassSpecFluentImpl<A extends V1IngressClassSpecFluent<A>>
+    extends BaseFluent<A> implements V1IngressClassSpecFluent<A> {
   public V1IngressClassSpecFluentImpl() {}
 
-  public V1IngressClassSpecFluentImpl(
-      io.kubernetes.client.openapi.models.V1IngressClassSpec instance) {
+  public V1IngressClassSpecFluentImpl(V1IngressClassSpec instance) {
     this.withController(instance.getController());
 
     this.withParameters(instance.getParameters());
   }
 
-  private java.lang.String controller;
-  private io.kubernetes.client.openapi.models.V1IngressClassParametersReferenceBuilder parameters;
+  private String controller;
+  private V1IngressClassParametersReferenceBuilder parameters;
 
-  public java.lang.String getController() {
+  public String getController() {
     return this.controller;
   }
 
-  public A withController(java.lang.String controller) {
+  public A withController(String controller) {
     this.controller = controller;
     return (A) this;
   }
 
-  public java.lang.Boolean hasController() {
+  public Boolean hasController() {
     return this.controller != null;
-  }
-
-  /** Method is deprecated. use withController instead. */
-  @java.lang.Deprecated
-  public A withNewController(java.lang.String original) {
-    return (A) withController(new String(original));
   }
 
   /**
@@ -53,65 +48,57 @@ public class V1IngressClassSpecFluentImpl<
    *
    * @return The buildable object.
    */
-  @java.lang.Deprecated
-  public io.kubernetes.client.openapi.models.V1IngressClassParametersReference getParameters() {
+  @Deprecated
+  public V1IngressClassParametersReference getParameters() {
     return this.parameters != null ? this.parameters.build() : null;
   }
 
-  public io.kubernetes.client.openapi.models.V1IngressClassParametersReference buildParameters() {
+  public V1IngressClassParametersReference buildParameters() {
     return this.parameters != null ? this.parameters.build() : null;
   }
 
-  public A withParameters(
-      io.kubernetes.client.openapi.models.V1IngressClassParametersReference parameters) {
+  public A withParameters(V1IngressClassParametersReference parameters) {
     _visitables.get("parameters").remove(this.parameters);
     if (parameters != null) {
-      this.parameters =
-          new io.kubernetes.client.openapi.models.V1IngressClassParametersReferenceBuilder(
-              parameters);
+      this.parameters = new V1IngressClassParametersReferenceBuilder(parameters);
       _visitables.get("parameters").add(this.parameters);
+    } else {
+      this.parameters = null;
+      _visitables.get("parameters").remove(this.parameters);
     }
     return (A) this;
   }
 
-  public java.lang.Boolean hasParameters() {
+  public Boolean hasParameters() {
     return this.parameters != null;
   }
 
-  public io.kubernetes.client.openapi.models.V1IngressClassSpecFluent.ParametersNested<A>
-      withNewParameters() {
-    return new io.kubernetes.client.openapi.models.V1IngressClassSpecFluentImpl
-        .ParametersNestedImpl();
+  public V1IngressClassSpecFluent.ParametersNested<A> withNewParameters() {
+    return new V1IngressClassSpecFluentImpl.ParametersNestedImpl();
   }
 
-  public io.kubernetes.client.openapi.models.V1IngressClassSpecFluent.ParametersNested<A>
-      withNewParametersLike(
-          io.kubernetes.client.openapi.models.V1IngressClassParametersReference item) {
-    return new io.kubernetes.client.openapi.models.V1IngressClassSpecFluentImpl
-        .ParametersNestedImpl(item);
+  public V1IngressClassSpecFluent.ParametersNested<A> withNewParametersLike(
+      V1IngressClassParametersReference item) {
+    return new V1IngressClassSpecFluentImpl.ParametersNestedImpl(item);
   }
 
-  public io.kubernetes.client.openapi.models.V1IngressClassSpecFluent.ParametersNested<A>
-      editParameters() {
+  public V1IngressClassSpecFluent.ParametersNested<A> editParameters() {
     return withNewParametersLike(getParameters());
   }
 
-  public io.kubernetes.client.openapi.models.V1IngressClassSpecFluent.ParametersNested<A>
-      editOrNewParameters() {
+  public V1IngressClassSpecFluent.ParametersNested<A> editOrNewParameters() {
     return withNewParametersLike(
         getParameters() != null
             ? getParameters()
-            : new io.kubernetes.client.openapi.models.V1IngressClassParametersReferenceBuilder()
-                .build());
+            : new V1IngressClassParametersReferenceBuilder().build());
   }
 
-  public io.kubernetes.client.openapi.models.V1IngressClassSpecFluent.ParametersNested<A>
-      editOrNewParametersLike(
-          io.kubernetes.client.openapi.models.V1IngressClassParametersReference item) {
+  public V1IngressClassSpecFluent.ParametersNested<A> editOrNewParametersLike(
+      V1IngressClassParametersReference item) {
     return withNewParametersLike(getParameters() != null ? getParameters() : item);
   }
 
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1IngressClassSpecFluentImpl that = (V1IngressClassSpecFluentImpl) o;
@@ -126,24 +113,34 @@ public class V1IngressClassSpecFluentImpl<
     return java.util.Objects.hash(controller, parameters, super.hashCode());
   }
 
-  public class ParametersNestedImpl<N>
-      extends io.kubernetes.client.openapi.models.V1IngressClassParametersReferenceFluentImpl<
-          io.kubernetes.client.openapi.models.V1IngressClassSpecFluent.ParametersNested<N>>
-      implements io.kubernetes.client.openapi.models.V1IngressClassSpecFluent.ParametersNested<N>,
-          io.kubernetes.client.fluent.Nested<N> {
-    ParametersNestedImpl(
-        io.kubernetes.client.openapi.models.V1IngressClassParametersReference item) {
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1IngressClassParametersReferenceBuilder(
-              this, item);
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (controller != null) {
+      sb.append("controller:");
+      sb.append(controller + ",");
+    }
+    if (parameters != null) {
+      sb.append("parameters:");
+      sb.append(parameters);
+    }
+    sb.append("}");
+    return sb.toString();
+  }
+
+  class ParametersNestedImpl<N>
+      extends V1IngressClassParametersReferenceFluentImpl<
+          V1IngressClassSpecFluent.ParametersNested<N>>
+      implements V1IngressClassSpecFluent.ParametersNested<N>, Nested<N> {
+    ParametersNestedImpl(V1IngressClassParametersReference item) {
+      this.builder = new V1IngressClassParametersReferenceBuilder(this, item);
     }
 
     ParametersNestedImpl() {
-      this.builder =
-          new io.kubernetes.client.openapi.models.V1IngressClassParametersReferenceBuilder(this);
+      this.builder = new V1IngressClassParametersReferenceBuilder(this);
     }
 
-    io.kubernetes.client.openapi.models.V1IngressClassParametersReferenceBuilder builder;
+    V1IngressClassParametersReferenceBuilder builder;
 
     public N and() {
       return (N) V1IngressClassSpecFluentImpl.this.withParameters(builder.build());

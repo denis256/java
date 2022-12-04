@@ -12,61 +12,50 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
+import io.kubernetes.client.fluent.BaseFluent;
+
 /** Generated */
-public class V1EventSourceFluentImpl<
-        A extends io.kubernetes.client.openapi.models.V1EventSourceFluent<A>>
-    extends io.kubernetes.client.fluent.BaseFluent<A>
-    implements io.kubernetes.client.openapi.models.V1EventSourceFluent<A> {
+@SuppressWarnings(value = "unchecked")
+public class V1EventSourceFluentImpl<A extends V1EventSourceFluent<A>> extends BaseFluent<A>
+    implements V1EventSourceFluent<A> {
   public V1EventSourceFluentImpl() {}
 
-  public V1EventSourceFluentImpl(io.kubernetes.client.openapi.models.V1EventSource instance) {
+  public V1EventSourceFluentImpl(V1EventSource instance) {
     this.withComponent(instance.getComponent());
 
     this.withHost(instance.getHost());
   }
 
-  private java.lang.String component;
-  private java.lang.String host;
+  private String component;
+  private String host;
 
-  public java.lang.String getComponent() {
+  public String getComponent() {
     return this.component;
   }
 
-  public A withComponent(java.lang.String component) {
+  public A withComponent(String component) {
     this.component = component;
     return (A) this;
   }
 
-  public java.lang.Boolean hasComponent() {
+  public Boolean hasComponent() {
     return this.component != null;
   }
 
-  /** Method is deprecated. use withComponent instead. */
-  @java.lang.Deprecated
-  public A withNewComponent(java.lang.String original) {
-    return (A) withComponent(new String(original));
-  }
-
-  public java.lang.String getHost() {
+  public String getHost() {
     return this.host;
   }
 
-  public A withHost(java.lang.String host) {
+  public A withHost(String host) {
     this.host = host;
     return (A) this;
   }
 
-  public java.lang.Boolean hasHost() {
+  public Boolean hasHost() {
     return this.host != null;
   }
 
-  /** Method is deprecated. use withHost instead. */
-  @java.lang.Deprecated
-  public A withNewHost(java.lang.String original) {
-    return (A) withHost(new String(original));
-  }
-
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     V1EventSourceFluentImpl that = (V1EventSourceFluentImpl) o;
@@ -78,5 +67,20 @@ public class V1EventSourceFluentImpl<
 
   public int hashCode() {
     return java.util.Objects.hash(component, host, super.hashCode());
+  }
+
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    if (component != null) {
+      sb.append("component:");
+      sb.append(component + ",");
+    }
+    if (host != null) {
+      sb.append("host:");
+      sb.append(host);
+    }
+    sb.append("}");
+    return sb.toString();
   }
 }

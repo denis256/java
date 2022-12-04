@@ -1,5 +1,5 @@
 /*
-Copyright 2021 The Kubernetes Authors.
+Copyright 2022 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -12,14 +12,9 @@ limitations under the License.
 */
 package io.kubernetes.client.openapi.models;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 import java.util.Objects;
 
 /** CronJobSpec describes how the job execution will look like and when it will actually run. */
@@ -28,69 +23,12 @@ import java.util.Objects;
         "CronJobSpec describes how the job execution will look like and when it will actually run.")
 @javax.annotation.Generated(
     value = "org.openapitools.codegen.languages.JavaClientCodegen",
-    date = "2021-12-10T19:11:23.904Z[Etc/UTC]")
+    date = "2022-09-15T17:00:37.921Z[Etc/UTC]")
 public class V1CronJobSpec {
-  /**
-   * Specifies how to treat concurrent executions of a Job. Valid values are: - \&quot;Allow\&quot;
-   * (default): allows CronJobs to run concurrently; - \&quot;Forbid\&quot;: forbids concurrent
-   * runs, skipping next run if previous run hasn&#39;t finished yet; - \&quot;Replace\&quot;:
-   * cancels currently running job and replaces it with a new one Possible enum values: -
-   * &#x60;\&quot;Allow\&quot;&#x60; allows CronJobs to run concurrently. -
-   * &#x60;\&quot;Forbid\&quot;&#x60; forbids concurrent runs, skipping next run if previous
-   * hasn&#39;t finished yet. - &#x60;\&quot;Replace\&quot;&#x60; cancels currently running job and
-   * replaces it with a new one.
-   */
-  @JsonAdapter(ConcurrencyPolicyEnum.Adapter.class)
-  public enum ConcurrencyPolicyEnum {
-    ALLOW("Allow"),
-
-    FORBID("Forbid"),
-
-    REPLACE("Replace");
-
-    private String value;
-
-    ConcurrencyPolicyEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static ConcurrencyPolicyEnum fromValue(String value) {
-      for (ConcurrencyPolicyEnum b : ConcurrencyPolicyEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<ConcurrencyPolicyEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ConcurrencyPolicyEnum enumeration)
-          throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ConcurrencyPolicyEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ConcurrencyPolicyEnum.fromValue(value);
-      }
-    }
-  }
-
   public static final String SERIALIZED_NAME_CONCURRENCY_POLICY = "concurrencyPolicy";
 
   @SerializedName(SERIALIZED_NAME_CONCURRENCY_POLICY)
-  private ConcurrencyPolicyEnum concurrencyPolicy;
+  private String concurrencyPolicy;
 
   public static final String SERIALIZED_NAME_FAILED_JOBS_HISTORY_LIMIT = "failedJobsHistoryLimit";
 
@@ -123,7 +61,12 @@ public class V1CronJobSpec {
   @SerializedName(SERIALIZED_NAME_SUSPEND)
   private Boolean suspend;
 
-  public V1CronJobSpec concurrencyPolicy(ConcurrencyPolicyEnum concurrencyPolicy) {
+  public static final String SERIALIZED_NAME_TIME_ZONE = "timeZone";
+
+  @SerializedName(SERIALIZED_NAME_TIME_ZONE)
+  private String timeZone;
+
+  public V1CronJobSpec concurrencyPolicy(String concurrencyPolicy) {
 
     this.concurrencyPolicy = concurrencyPolicy;
     return this;
@@ -133,23 +76,19 @@ public class V1CronJobSpec {
    * Specifies how to treat concurrent executions of a Job. Valid values are: - \&quot;Allow\&quot;
    * (default): allows CronJobs to run concurrently; - \&quot;Forbid\&quot;: forbids concurrent
    * runs, skipping next run if previous run hasn&#39;t finished yet; - \&quot;Replace\&quot;:
-   * cancels currently running job and replaces it with a new one Possible enum values: -
-   * &#x60;\&quot;Allow\&quot;&#x60; allows CronJobs to run concurrently. -
-   * &#x60;\&quot;Forbid\&quot;&#x60; forbids concurrent runs, skipping next run if previous
-   * hasn&#39;t finished yet. - &#x60;\&quot;Replace\&quot;&#x60; cancels currently running job and
-   * replaces it with a new one.
+   * cancels currently running job and replaces it with a new one
    *
    * @return concurrencyPolicy
    */
   @javax.annotation.Nullable
   @ApiModelProperty(
       value =
-          "Specifies how to treat concurrent executions of a Job. Valid values are: - \"Allow\" (default): allows CronJobs to run concurrently; - \"Forbid\": forbids concurrent runs, skipping next run if previous run hasn't finished yet; - \"Replace\": cancels currently running job and replaces it with a new one  Possible enum values:  - `\"Allow\"` allows CronJobs to run concurrently.  - `\"Forbid\"` forbids concurrent runs, skipping next run if previous hasn't finished yet.  - `\"Replace\"` cancels currently running job and replaces it with a new one.")
-  public ConcurrencyPolicyEnum getConcurrencyPolicy() {
+          "Specifies how to treat concurrent executions of a Job. Valid values are: - \"Allow\" (default): allows CronJobs to run concurrently; - \"Forbid\": forbids concurrent runs, skipping next run if previous run hasn't finished yet; - \"Replace\": cancels currently running job and replaces it with a new one  ")
+  public String getConcurrencyPolicy() {
     return concurrencyPolicy;
   }
 
-  public void setConcurrencyPolicy(ConcurrencyPolicyEnum concurrencyPolicy) {
+  public void setConcurrencyPolicy(String concurrencyPolicy) {
     this.concurrencyPolicy = concurrencyPolicy;
   }
 
@@ -291,6 +230,39 @@ public class V1CronJobSpec {
     this.suspend = suspend;
   }
 
+  public V1CronJobSpec timeZone(String timeZone) {
+
+    this.timeZone = timeZone;
+    return this;
+  }
+
+  /**
+   * The time zone name for the given schedule, see
+   * https://en.wikipedia.org/wiki/List_of_tz_database_time_zones. If not specified, this will
+   * default to the time zone of the kube-controller-manager process. The set of valid time zone
+   * names and the time zone offset is loaded from the system-wide time zone database by the API
+   * server during CronJob validation and the controller manager during execution. If no system-wide
+   * time zone database can be found a bundled version of the database is used instead. If the time
+   * zone name becomes invalid during the lifetime of a CronJob or due to a change in host
+   * configuration, the controller will stop creating new new Jobs and will create a system event
+   * with the reason UnknownTimeZone. More information can be found in
+   * https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#time-zones This is beta
+   * field and must be enabled via the &#x60;CronJobTimeZone&#x60; feature gate.
+   *
+   * @return timeZone
+   */
+  @javax.annotation.Nullable
+  @ApiModelProperty(
+      value =
+          "The time zone name for the given schedule, see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones. If not specified, this will default to the time zone of the kube-controller-manager process. The set of valid time zone names and the time zone offset is loaded from the system-wide time zone database by the API server during CronJob validation and the controller manager during execution. If no system-wide time zone database can be found a bundled version of the database is used instead. If the time zone name becomes invalid during the lifetime of a CronJob or due to a change in host configuration, the controller will stop creating new new Jobs and will create a system event with the reason UnknownTimeZone. More information can be found in https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#time-zones This is beta field and must be enabled via the `CronJobTimeZone` feature gate.")
+  public String getTimeZone() {
+    return timeZone;
+  }
+
+  public void setTimeZone(String timeZone) {
+    this.timeZone = timeZone;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -306,7 +278,8 @@ public class V1CronJobSpec {
         && Objects.equals(this.schedule, v1CronJobSpec.schedule)
         && Objects.equals(this.startingDeadlineSeconds, v1CronJobSpec.startingDeadlineSeconds)
         && Objects.equals(this.successfulJobsHistoryLimit, v1CronJobSpec.successfulJobsHistoryLimit)
-        && Objects.equals(this.suspend, v1CronJobSpec.suspend);
+        && Objects.equals(this.suspend, v1CronJobSpec.suspend)
+        && Objects.equals(this.timeZone, v1CronJobSpec.timeZone);
   }
 
   @Override
@@ -318,7 +291,8 @@ public class V1CronJobSpec {
         schedule,
         startingDeadlineSeconds,
         successfulJobsHistoryLimit,
-        suspend);
+        suspend,
+        timeZone);
   }
 
   @Override
@@ -338,6 +312,7 @@ public class V1CronJobSpec {
         .append(toIndentedString(successfulJobsHistoryLimit))
         .append("\n");
     sb.append("    suspend: ").append(toIndentedString(suspend)).append("\n");
+    sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("}");
     return sb.toString();
   }
